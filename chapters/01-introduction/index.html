@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Chapter 1: Introduction to World Regional Geography - Learn foundational concepts of spatial thinking, scale, and regional analysis.">
+    <title>Chapter 1: Introduction | World Regional Geography</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-brand">
+                <a href="../../index.html" class="logo">
+                    <span class="logo-icon">🌍</span>
+                    <span class="logo-text">World Regional Geography</span>
+                </a>
+            </div>
+            <nav class="main-nav" aria-label="Main navigation">
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="../../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active">Chapters</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../01-introduction/index.html" class="active">1. Introduction</a></li>
+                            <li><a href="../02-europe/index.html">2. Europe</a></li>
+                            <li><a href="../03-russia/index.html">3. Russia & Post-Soviet</a></li>
+                            <li><a href="../04-north-america/index.html">4. North America</a></li>
+                            <li><a href="../05-latin-america/index.html">5. Latin America</a></li>
+                            <li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
+                            <li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa & SW Asia</a></li>
+                            <li><a href="../08-south-asia/index.html">8. South Asia</a></li>
+                            <li><a href="../09-east-asia/index.html">9. East Asia</a></li>
+                            <li><a href="../10-southeast-asia/index.html">10. Southeast Asia</a></li>
+                            <li><a href="../11-australia-oceania/index.html">11. Australia & Oceania</a></li>
+                            <li><a href="../12-conclusion/index.html">12. Global Connections</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../../index.html#resources" class="nav-link">Resources</a></li>
+                    <li><a href="../../index.html#about" class="nav-link">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Chapter Header -->
+    <section class="chapter-header">
+        <div class="container">
+            <p class="chapter-meta">Chapter 1</p>
+            <h1 class="chapter-title">Introduction to World Regional Geography</h1>
+            <p class="chapter-description">Discover how geographers study the world through spatial thinking, understand
+                the concept of regions, and explore the forces that shape our interconnected planet.</p>
+        </div>
+    </section>
+
+    <!-- Chapter Content -->
+    <main class="chapter-content">
+        <div class="container">
+
+            <!-- Learning Objectives -->
+            <div class="learning-objectives">
+                <h2>🎯 Learning Objectives</h2>
+                <p>After completing this chapter, you will be able to:</p>
+                <ul>
+                    <li>Define geography and explain the geographic perspective</li>
+                    <li>Apply spatial thinking to analyze patterns and processes</li>
+                    <li>Distinguish between different types of regions (formal, functional, perceptual)</li>
+                    <li>Explain how scale affects geographic analysis</li>
+                    <li>Identify the key themes and concepts used throughout this textbook</li>
+                    <li>Describe the forces of globalization and their geographic implications</li>
+                </ul>
+            </div>
+
+            <!-- Section 1 -->
+            <section id="what-is-geography">
+                <h2>What is Geography?</h2>
+
+                <p>Geography is the study of places and the relationships between people and their environments. The
+                    word comes from the Greek <em>geo</em> (Earth) and <em>graphein</em> (to write)—literally "Earth
+                    writing." But geography is much more than describing places; it's about understanding
+                    <strong>why</strong> things are where they are and <strong>how</strong> they interact.</p>
+
+                <p>Geographers ask spatial questions: <em>Where is it? Why is it there? How does it relate to other
+                        places?</em> This spatial perspective is what makes geography unique among the social and
+                    physical sciences.</p>
+
+                <div class="key-terms">
+                    <h3>📚 Key Terms</h3>
+                    <dl class="term-grid">
+                        <div class="term">
+                            <dt>Geography</dt>
+                            <dd>The study of the spatial distribution of phenomena on Earth's surface and the processes
+                                that create these patterns.</dd>
+                        </div>
+                        <div class="term">
+                            <dt>Spatial Thinking</dt>
+                            <dd>The ability to visualize and interpret location, distance, direction, relationships, and
+                                change across space.</dd>
+                        </div>
+                        <div class="term">
+                            <dt>Human-Environment Interaction</dt>
+                            <dd>The relationship between human activities and the natural environment, including how
+                                humans modify environments and how environments influence human behavior.</dd>
+                        </div>
+                    </dl>
+                </div>
+            </section>
+
+            <!-- Interactive Map -->
+            <section id="world-regions-map">
+                <h2>Explore World Regions</h2>
+                <p>This interactive map shows the major world regions we will study in this textbook. Click on each
+                    region to learn more about its key characteristics.</p>
+                <div id="regions-map" class="interactive-map"></div>
+            </section>
+
+            <!-- Section 2 -->
+            <section id="types-of-regions">
+                <h2>Understanding Regions</h2>
+
+                <p>A <strong>region</strong> is an area with shared characteristics that distinguish it from surrounding
+                    areas. Geographers use regions to organize and simplify the complexity of the world. There are three
+                    main types of regions:</p>
+
+                <h3>Formal Regions</h3>
+                <p>Formal regions (also called <em>uniform</em> or <em>homogeneous</em> regions) are defined by one or
+                    more common characteristics throughout the area. Examples include:</p>
+                <ul>
+                    <li>Countries and political boundaries</li>
+                    <li>Climate zones (tropical, temperate, polar)</li>
+                    <li>Language regions (Spanish-speaking Latin America)</li>
+                    <li>Religious regions (the "Bible Belt" in the U.S.)</li>
+                </ul>
+
+                <h3>Functional Regions</h3>
+                <p>Functional regions (or <em>nodal</em> regions) are organized around a central node or focal point,
+                    with connections decreasing as distance from the center increases. Examples include:</p>
+                <ul>
+                    <li>Metropolitan areas (organized around a central city)</li>
+                    <li>Trade areas (organized around a port or market)</li>
+                    <li>TV broadcast areas</li>
+                    <li>School districts</li>
+                </ul>
+
+                <h3>Perceptual Regions</h3>
+                <p>Perceptual regions (or <em>vernacular</em> regions) exist in people's minds based on cultural
+                    identity and feelings. They may not have precise boundaries. Examples include:</p>
+                <ul>
+                    <li>"The Middle East"</li>
+                    <li>"The South" in the United States</li>
+                    <li>"Silicon Valley"</li>
+                </ul>
+
+                <!-- Case Study -->
+                <div class="case-study">
+                    <div class="case-study-header">
+                        <span class="case-study-label">Case Study</span>
+                        <h4>What Makes "Europe" a Region?</h4>
+                    </div>
+                    <p>Europe is often treated as a distinct continent, yet it's actually a peninsula of the Eurasian
+                        landmass. The boundaries of Europe are as much cultural and historical as they are physical.
+                        Where does Europe "end" and Asia "begin"?</p>
+                    <p>Traditionally, the Ural Mountains and Ural River in Russia mark the eastern boundary. But this is
+                        a convention, not a clear physical divide. The European Union defines membership politically,
+                        not geographically—Turkey and Russia remain outside despite having European territory.</p>
+                    <p><strong>Questions to Consider:</strong></p>
+                    <ul>
+                        <li>Is Europe a formal, functional, or perceptual region? Could it be all three?</li>
+                        <li>How do historical and cultural factors shape our definition of Europe?</li>
+                        <li>Does the European Union represent a new kind of functional region?</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 3 -->
+            <section id="scale">
+                <h2>The Importance of Scale</h2>
+
+                <p><strong>Scale</strong> refers to the relationship between the size of an area on a map and the actual
+                    size on Earth's surface. But in geographic analysis, scale has a broader meaning: it refers to the
+                    <em>level of analysis</em>—local, regional, national, or global.</p>
+
+                <p>Geographic phenomena look different at different scales. Consider population distribution:</p>
+                <ul>
+                    <li><strong>Global scale:</strong> Most people live in Asia and coastal areas</li>
+                    <li><strong>National scale:</strong> Population concentrates in certain regions of a country</li>
+                    <li><strong>Local scale:</strong> Within cities, population density varies by neighborhood</li>
+                </ul>
+
+                <!-- Think Box -->
+                <div class="think-box">
+                    <h3>🧠 Think Like a Geographer</h3>
+                    <p>Consider climate change. At a <strong>global scale</strong>, we see rising average temperatures
+                        and sea levels. At a <strong>regional scale</strong>, some areas may experience more drought
+                        while others see increased flooding. At a <strong>local scale</strong>, a coastal community
+                        might debate whether to build a seawall.</p>
+                    <p><strong>Your Turn:</strong> Pick a current event (like a migration crisis, trade dispute, or
+                        environmental issue). How does it look different at global, national, and local scales? Who are
+                        the key actors at each scale?</p>
+                </div>
+            </section>
+
+            <!-- Section 4 -->
+            <section id="globalization">
+                <h2>Globalization and the World Today</h2>
+
+                <p><strong>Globalization</strong> refers to the increasing interconnectedness of people, places, and
+                    economies around the world. While exchange between distant places isn't new (think of the ancient
+                    Silk Road), modern globalization is characterized by:</p>
+
+                <ul>
+                    <li><strong>Speed:</strong> Information, money, and goods move almost instantaneously</li>
+                    <li><strong>Scale:</strong> Global networks connect even remote places</li>
+                    <li><strong>Intensity:</strong> The volume of global flows has increased dramatically</li>
+                </ul>
+
+                <h3>Dimensions of Globalization</h3>
+
+                <p><strong>Economic:</strong> Trade agreements, multinational corporations, global supply chains, and
+                    financial markets link economies worldwide.</p>
+
+                <p><strong>Cultural:</strong> Ideas, languages, foods, music, and values spread across borders through
+                    media, migration, and tourism.</p>
+
+                <p><strong>Political:</strong> International organizations (UN, WTO, EU) and global governance address
+                    issues that cross national boundaries.</p>
+
+                <p><strong>Environmental:</strong> Pollution, climate change, and resource use have global impacts that
+                    require international cooperation.</p>
+
+                <div class="key-terms">
+                    <h3>📚 Key Terms</h3>
+                    <dl class="term-grid">
+                        <div class="term">
+                            <dt>Globalization</dt>
+                            <dd>The increasing interconnection of people and places through economic, political, and
+                                cultural exchanges.</dd>
+                        </div>
+                        <div class="term">
+                            <dt>Time-Space Compression</dt>
+                            <dd>The reduction in travel time between places due to improved transportation and
+                                communication technology.</dd>
+                        </div>
+                        <div class="term">
+                            <dt>Glocalization</dt>
+                            <dd>The adaptation of global products and ideas to local contexts and preferences.</dd>
+                        </div>
+                    </dl>
+                </div>
+            </section>
+
+            <!-- Knowledge Check Quiz -->
+            <section id="knowledge-check">
+                <h2>✅ Knowledge Check</h2>
+                <p>Test your understanding of the concepts covered in this chapter.</p>
+
+                <div class="quiz-container" data-quiz="q1">
+                    <p class="quiz-question">1. Which type of region is defined by a central node with surrounding
+                        connections?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" data-correct="false">
+                            <input type="radio" name="q1" value="a">
+                            <span>Formal region</span>
+                        </label>
+                        <label class="quiz-option" data-correct="true"
+                            data-feedback="Functional regions are organized around a central focal point, like a city and its suburbs.">
+                            <input type="radio" name="q1" value="b">
+                            <span>Functional region</span>
+                        </label>
+                        <label class="quiz-option" data-correct="false">
+                            <input type="radio" name="q1" value="c">
+                            <span>Perceptual region</span>
+                        </label>
+                        <label class="quiz-option" data-correct="false">
+                            <input type="radio" name="q1" value="d">
+                            <span>Physical region</span>
+                        </label>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+
+                <div class="quiz-container" data-quiz="q2">
+                    <p class="quiz-question">2. "The Middle East" is best described as what type of region?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" data-correct="false">
+                            <input type="radio" name="q2" value="a">
+                            <span>Formal region</span>
+                        </label>
+                        <label class="quiz-option" data-correct="false">
+                            <input type="radio" name="q2" value="b">
+                            <span>Functional region</span>
+                        </label>
+                        <label class="quiz-option" data-correct="true"
+                            data-feedback="The Middle East is a perceptual region—its boundaries are vague and based on cultural perceptions rather than formal criteria.">
+                            <input type="radio" name="q2" value="c">
+                            <span>Perceptual region</span>
+                        </label>
+                        <label class="quiz-option" data-correct="false">
+                            <input type="radio" name="q2" value="d">
+                            <span>Economic region</span>
+                        </label>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+
+                <div class="quiz-container" data-quiz="q3">
+                    <p class="quiz-question">3. Which is NOT a characteristic of modern globalization?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" data-correct="false">
+                            <input type="radio" name="q3" value="a">
+                            <span>Increased speed of exchange</span>
+                        </label>
+                        <label class="quiz-option" data-correct="false">
+                            <input type="radio" name="q3" value="b">
+                            <span>Greater intensity of connections</span>
+                        </label>
+                        <label class="quiz-option" data-correct="true"
+                            data-feedback="Globalization does not reduce cultural diversity everywhere—instead, it often leads to 'glocalization,' where global influences blend with local cultures.">
+                            <input type="radio" name="q3" value="c">
+                            <span>Universal reduction of cultural diversity</span>
+                        </label>
+                        <label class="quiz-option" data-correct="false">
+                            <input type="radio" name="q3" value="d">
+                            <span>Worldwide economic integration</span>
+                        </label>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+            </section>
+
+            <!-- Chapter Summary -->
+            <section id="summary">
+                <h2>Chapter Summary</h2>
+                <p>In this introductory chapter, we've established the foundations for our geographic exploration of the
+                    world:</p>
+                <ul>
+                    <li><strong>Geography</strong> studies the spatial distribution of phenomena and asks "where," "why
+                        there," and "so what?"</li>
+                    <li><strong>Spatial thinking</strong> is the geographer's core skill—analyzing patterns,
+                        relationships, and change across space</li>
+                    <li><strong>Regions</strong> help us organize the world: formal regions share common
+                        characteristics, functional regions are organized around nodes, and perceptual regions exist in
+                        people's minds</li>
+                    <li><strong>Scale</strong> matters—the same phenomenon looks different at local, regional, national,
+                        and global levels</li>
+                    <li><strong>Globalization</strong> connects people and places economically, culturally, politically,
+                        and environmentally, creating both opportunities and challenges</li>
+                </ul>
+            </section>
+
+            <!-- Discussion Questions -->
+            <section id="discussion">
+                <h2>💬 Discussion Questions</h2>
+                <ol>
+                    <li>How does where you live shape your daily life? Consider factors like climate, access to
+                        resources, and connections to other places.</li>
+                    <li>Is globalization making the world more uniform or more connected while remaining diverse? Give
+                        examples to support your view.</li>
+                    <li>Pick a "region" you identify with (your state, neighborhood, cultural community). Is it a
+                        formal, functional, or perceptual region—or a combination?</li>
+                    <li>How might digital technology be changing our sense of place and our connections to distant
+                        places?</li>
+                </ol>
+            </section>
+
+            <!-- Chapter Navigation -->
+            <nav class="chapter-nav">
+                <a href="../../index.html" class="chapter-nav-link">
+                    ← Home
+                </a>
+                <a href="../02-europe/index.html" class="chapter-nav-link">
+                    Chapter 2: Europe →
+                </a>
+            </nav>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🌍</span>
+                    <span>World Regional Geography</span>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Dr. Sounny. Open Educational Resource.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../../js/main.js"></script>
+    <script>
+        // Initialize the interactive regions map for this chapter
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof L !== 'undefined' && document.getElementById('regions-map')) {
+                const map = L.map('regions-map').setView([20, 0], 2);
+
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                    attribution: '&copy; OpenStreetMap &copy; CARTO',
+                    subdomains: 'abcd',
+                    maxZoom: 19
+                }).addTo(map);
+
+                // World regions with approximate bounds
+                const regions = [
+                    { name: 'Europe', bounds: [[35, -10], [70, 40]], color: '#2d8fa8', chapter: '../02-europe/index.html' },
+                    { name: 'Russia & Post-Soviet', bounds: [[40, 40], [75, 180]], color: '#1e5f74', chapter: '../03-russia/index.html' },
+                    { name: 'North America', bounds: [[15, -170], [75, -50]], color: '#f4a261', chapter: '../04-north-america/index.html' },
+                    { name: 'Latin America', bounds: [[-55, -120], [30, -35]], color: '#e07b3c', chapter: '../05-latin-america/index.html' },
+                    { name: 'Sub-Saharan Africa', bounds: [[-35, -20], [20, 50]], color: '#2a9d8f', chapter: '../06-sub-saharan-africa/index.html' },
+                    { name: 'North Africa & SW Asia', bounds: [[10, -20], [45, 75]], color: '#40c9b8', chapter: '../07-north-africa-sw-asia/index.html' },
+                    { name: 'South Asia', bounds: [[5, 60], [40, 100]], color: '#e76f51', chapter: '../08-south-asia/index.html' },
+                    { name: 'East Asia', bounds: [[18, 100], [55, 150]], color: '#264653', chapter: '../09-east-asia/index.html' },
+                    { name: 'Southeast Asia', bounds: [[-12, 90], [25, 140]], color: '#287271', chapter: '../10-southeast-asia/index.html' },
+                    { name: 'Australia & Oceania', bounds: [[-50, 110], [0, 180]], color: '#8ab17d', chapter: '../11-australia-oceania/index.html' }
+                ];
+
+                regions.forEach(region => {
+                    const rect = L.rectangle(region.bounds, {
+                        color: region.color,
+                        weight: 2,
+                        fillColor: region.color,
+                        fillOpacity: 0.2
+                    }).addTo(map);
+
+                    rect.bindPopup(`<strong>${region.name}</strong><br><a href="${region.chapter}">Explore this region →</a>`);
+
+                    rect.on('mouseover', function () {
+                        this.setStyle({ fillOpacity: 0.4 });
+                    });
+                    rect.on('mouseout', function () {
+                        this.setStyle({ fillOpacity: 0.2 });
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
