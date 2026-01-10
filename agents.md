@@ -8,6 +8,7 @@ To create an engaging, brand-neutral, and pedagogically-rich online textbook for
 - **No Branding**: Do **NOT** use university branding or color schemes/logos specific to any single institution.
 - **No TSU Reference**: Do **NOT** mention "Texas Southern University" or "TSU" anywhere in the content of this textbook. All institution-specific materials (grading, assignments, local policies) must be kept in the internal workspace (`G:\My Drive\0-TSU\WorldRegionalGeography-Internal`).
 - **Monetization Ready**: Structure content to integrate seamlessly with YouTube video embedded content for broad educational reach.
+- **Live Textbook**: [https://sounny.github.io/worldregionalgeography/](https://sounny.github.io/worldregionalgeography/)
 
 ## Core Pedagogical Principles
 
