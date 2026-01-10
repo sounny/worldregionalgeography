@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="World Regional Geography - An interactive online textbook exploring the world's regions through spatial thinking, cultural landscapes, and human-environment interactions.">
+    <meta name="keywords" content="geography, world regions, textbook, education, spatial thinking, cultural geography">
+    <meta name="author" content="Dr. Sounny">
+    
+    <title>World Regional Geography</title>
+    
+    <!-- Fonts -->
+    <!-- Using System Font Stack per RSGEE Theme -->
+    
+    <!-- Leaflet CSS for maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🌍</span>
+                    <span class="logo-text">World Regional Geography</span>
+                </a>
+            </div>
+            <nav class="main-nav" aria-label="Main navigation">
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Chapters</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="chapters/01-introduction/index.html">1. Introduction</a></li>
+                            <li><a href="chapters/02-europe/index.html">2. Europe</a></li>
+                            <li><a href="chapters/03-russia/index.html">3. Russia & Post-Soviet</a></li>
+                            <li><a href="chapters/04-north-america/index.html">4. North America</a></li>
+                            <li><a href="chapters/05-latin-america/index.html">5. Latin America</a></li>
+                            <li><a href="chapters/06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
+                            <li><a href="chapters/07-north-africa-sw-asia/index.html">7. N. Africa & SW Asia</a></li>
+                            <li><a href="chapters/08-south-asia/index.html">8. South Asia</a></li>
+                            <li><a href="chapters/09-east-asia/index.html">9. East Asia</a></li>
+                            <li><a href="chapters/10-southeast-asia/index.html">10. Southeast Asia</a></li>
+                            <li><a href="chapters/11-australia-oceania/index.html">11. Australia & Oceania</a></li>
+                            <li><a href="chapters/12-conclusion/index.html">12. Global Connections</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#resources" class="nav-link">Resources</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container hero-content">
+            <h1 class="hero-title">World Regional Geography</h1>
+            <p class="hero-subtitle">Explore the world's regions through the lens of spatial thinking, cultural landscapes, and human-environment interactions</p>
+            <div class="hero-actions">
+                <a href="chapters/01-introduction/index.html" class="btn btn-primary">Start Learning</a>
+                <a href="#regions" class="btn btn-secondary">Explore Regions</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about-preview">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2>About This Textbook</h2>
+                    <p>This interactive online textbook is designed to help you understand the complex patterns and processes that shape our world. Through engaging content, interactive maps, and real-world case studies, you'll develop the spatial thinking skills essential for understanding global issues.</p>
+                    <ul class="feature-list">
+                        <li><span class="feature-icon">🗺️</span> Interactive maps and visualizations</li>
+                        <li><span class="feature-icon">📚</span> In-depth case studies</li>
+                        <li><span class="feature-icon">✅</span> Self-assessment quizzes</li>
+                        <li><span class="feature-icon">🌐</span> Real-world connections</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <div id="preview-map" class="map-preview"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regions Grid -->
+    <section class="regions-section" id="regions">
+        <div class="container">
+            <h2 class="section-title">Explore World Regions</h2>
+            <p class="section-subtitle">Click on a region to begin your geographic exploration</p>
+            
+            <div class="regions-grid">
+                <a href="chapters/02-europe/index.html" class="region-card" data-region="europe">
+                    <div class="region-icon">🏰</div>
+                    <h3>Europe</h3>
+                    <p>EU integration, cultural landscapes, migration</p>
+                </a>
+                
+                <a href="chapters/03-russia/index.html" class="region-card" data-region="russia">
+                    <div class="region-icon">🏔️</div>
+                    <h3>Russia & Post-Soviet</h3>
+                    <p>Resource geography, political transitions</p>
+                </a>
+                
+                <a href="chapters/04-north-america/index.html" class="region-card" data-region="north-america">
+                    <div class="region-icon">🌆</div>
+                    <h3>North America</h3>
+                    <p>Urbanization, diversity, environment</p>
+                </a>
+                
+                <a href="chapters/05-latin-america/index.html" class="region-card" data-region="latin-america">
+                    <div class="region-icon">🌴</div>
+                    <h3>Latin America</h3>
+                    <p>Development, biodiversity, cultural fusion</p>
+                </a>
+                
+                <a href="chapters/06-sub-saharan-africa/index.html" class="region-card" data-region="sub-saharan-africa">
+                    <div class="region-icon">🦁</div>
+                    <h3>Sub-Saharan Africa</h3>
+                    <p>Colonial legacy, resources, demographics</p>
+                </a>
+                
+                <a href="chapters/07-north-africa-sw-asia/index.html" class="region-card" data-region="mena">
+                    <div class="region-icon">🕌</div>
+                    <h3>N. Africa & SW Asia</h3>
+                    <p>Water, religion, geopolitics</p>
+                </a>
+                
+                <a href="chapters/08-south-asia/index.html" class="region-card" data-region="south-asia">
+                    <div class="region-icon">🏛️</div>
+                    <h3>South Asia</h3>
+                    <p>Population, monsoons, transformation</p>
+                </a>
+                
+                <a href="chapters/09-east-asia/index.html" class="region-card" data-region="east-asia">
+                    <div class="region-icon">🏯</div>
+                    <h3>East Asia</h3>
+                    <p>Economic power, urbanization, history</p>
+                </a>
+                
+                <a href="chapters/10-southeast-asia/index.html" class="region-card" data-region="southeast-asia">
+                    <div class="region-icon">🌊</div>
+                    <h3>Southeast Asia</h3>
+                    <p>Maritime geography, ASEAN, biodiversity</p>
+                </a>
+                
+                <a href="chapters/11-australia-oceania/index.html" class="region-card" data-region="oceania">
+                    <div class="region-icon">🏝️</div>
+                    <h3>Australia & Oceania</h3>
+                    <p>Island geography, Indigenous peoples</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Features -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <h2 class="section-title">Pedagogical Approach</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-card-icon">🎯</div>
+                    <h3>Learning Objectives</h3>
+                    <p>Clear, measurable goals guide your learning journey through each chapter.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon">🗺️</div>
+                    <h3>Interactive Maps</h3>
+                    <p>Explore regions with dynamic, zoomable maps featuring key geographic data.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon">📖</div>
+                    <h3>Case Studies</h3>
+                    <p>Real-world examples with guiding questions to develop critical thinking.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon">🧠</div>
+                    <h3>Think Like a Geographer</h3>
+                    <p>Exercises that build spatial reasoning and geographic perspectives.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon">✅</div>
+                    <h3>Knowledge Checks</h3>
+                    <p>Self-assessment quizzes to test your understanding as you learn.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-card-icon">💡</div>
+                    <h3>Key Terms</h3>
+                    <p>Geographic vocabulary with clear definitions and context.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🌍</span>
+                    <span>World Regional Geography</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#resources">Resources</a>
+                    <a href="https://github.com/sounny/worldregionalgeography" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2024 Dr. Sounny. Open Educational Resource.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
