@@ -1,6 +1,7 @@
 # Project-specific ignores
 agents.md
 references/
+lectures/
 
 # OS generated files
 .DS_Store

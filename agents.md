@@ -10,6 +10,8 @@ To create an engaging, brand-neutral, and pedagogically-rich online textbook for
 - **Monetization Ready**: Structure content to integrate seamlessly with YouTube video embedded content for broad educational reach.
 - **Live Textbook**: [https://sounny.github.io/worldregionalgeography/](https://sounny.github.io/worldregionalgeography/)
 
+---
+
 ## Core Pedagogical Principles
 
 ### 1. Active Learning
@@ -54,6 +56,8 @@ To create an engaging, brand-neutral, and pedagogically-rich online textbook for
 - Collaborative learning activities
 - Portfolio-based summative assessments
 
+---
+
 ## Design Standards (RSGEE Theme)
 
 To maintain consistency with the user's existing work (Remote Sensing with GEE):
@@ -69,17 +73,34 @@ To maintain consistency with the user's existing work (Remote Sensing with GEE):
   - _Info/Case Studies_: Blue background (`#e8f0fe`) with dark blue left border.
 - **Layout**: Clean, minimalist, white cards on gray background.
 
+---
+
 ## Development Status & Roadmap
 
 ### Current Status
 
 - **Core Framework**: ✅ HTML/CSS/JS Structure established
 - **Homepage (Public)**: ✅ High-aesthetic "Coming Soon" page active
-- **Homepage (Dev)**: ✅ Renamed to `index-dev.html` for internal development
+- **Homepage (Dev)**: 🚧 Interactive Map Navigator (Leaflet Integration)
 - **Chapter 1 (Introduction)**: ✅ Content, Key Terms, Quiz, and Map integration active
-- **Chapters 2-12**: 🚧 Placeholders / Pending Content
+- **Chapters 2-12**: 📅 See Detailed Roadmap in `development_plan.md`
 - **Syllabus**: ✅ Complete Spring 2026 schedule created
-- **Canvas Structure**: ✅ Folders created for assignments, exams, discussions
+- **Canvas Structure**: ✅ Folders created
+
+### Textbook Regional Roadmap
+
+1. **Chapter 1**: Introduction to World Regional Geography
+2. **Chapter 2**: Europe
+3. **Chapter 4**: North America
+4. **Chapter 5**: Latin America & the Caribbean
+5. **Chapter 6**: Sub-Saharan Africa
+6. **Chapter 7**: North Africa & Southwest Asia (Middle East)
+7. **Chapter 8**: South Asia
+8. **Chapter 9**: East Asia
+9. **Chapter 10**: Southeast Asia
+10. **Chapter 11**: Australia & Oceania
+11. **Chapter 12**: Global Connections & Synthesis
+    (Note: Chapter numbering aligns with internal course mapping)
 
 ### Completed Tasks
 
@@ -92,19 +113,19 @@ To maintain consistency with the user's existing work (Remote Sensing with GEE):
 
 ### Immediate Tasks (Pre-Semester)
 
-- [ ] **Quizzes 2-12**: Create remaining auto-graded quizzes
-- [ ] **Discussions 2-15**: Create all discussion prompts
-- [ ] **Final Exam Outline**: Create comprehensive exam structure
+- [ ] **Interactive Navigator**: Replace static region grid on `index-dev.html` with a clickable Leaflet map.
 - [ ] **Chapter 2 (Europe)**:
-  - [ ] Structure HTML
-  - [ ] Import content (Regional profile, physical geography, human geography)
-  - [ ] Create specialized map layers
+  - [ ] Script Video Lecture (in `/lectures`)
+  - [ ] Build Template (Learning Objectives, Regional Profile, Case Study)
 - [ ] **Global Resources**: Verify bibliography and external links
+
+---
 
 ## Active Workspaces
 
 - **Source Code**: `c:\Users\sounn\Git\worldregionalgeography`
 - **Asset Management**: `img/` (Needs organization) & Leaflet Maps
+- **Lectures (Private)**: `/lectures` (Ignored by Git)
 
 ## Project Team
 
