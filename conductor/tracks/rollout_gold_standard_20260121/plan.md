@@ -5,15 +5,15 @@
 - [x] Task: Standardize Chapter 03 (Russia & Central Asia) - Full refactor, map integration, and 10+ question quiz. ada10c2
 - [x] Task: Conductor - User Manual Verification 'Batch A Rollout' (Protocol in workflow.md) 4603c5d
 
-## Phase 2: Batch B - The Americas & Africa (Ch 04-07)
+## Phase 2: Batch B - The Americas & Africa (Ch 04-07) [checkpoint: f0b5a69]
 - [x] Task: Standardize Chapter 04 (North America) - Full refactor, map integration, and 10+ question quiz. d1651cb
 - [x] Task: Standardize Chapter 05 (Latin America) - Full refactor, map integration, and 10+ question quiz. b3f3c7e
 - [x] Task: Standardize Chapter 06 (Sub-Saharan Africa) - Full refactor, map integration, and 10+ question quiz. 4562ba6
-- [~] Task: Standardize Chapter 07 (N. Africa & SW Asia) - Full refactor, map integration, and 10+ question quiz.
-- [ ] Task: Conductor - User Manual Verification 'Batch B Rollout' (Protocol in workflow.md)
+- [x] Task: Standardize Chapter 07 (N. Africa & SW Asia) - Full refactor, map integration, and 10+ question quiz. f0b5a69
+- [x] Task: Conductor - User Manual Verification 'Batch B Rollout' (Protocol in workflow.md) f0b5a69
 
 ## Phase 3: Batch C - Southern & Eastern Eurasia & Oceania (Ch 08-12)
-- [ ] Task: Standardize Chapter 08 (South Asia) - Full refactor, map integration, and 10+ question quiz.
+- [~] Task: Standardize Chapter 08 (South Asia) - Full refactor, map integration, and 10+ question quiz.
 - [ ] Task: Standardize Chapter 09 (East Asia) - Full refactor, map integration, and 10+ question quiz.
 - [ ] Task: Standardize Chapter 10 (Southeast Asia) - Full refactor, map integration, and 10+ question quiz.
 - [ ] Task: Standardize Chapter 11 (Australia & Oceania) - Full refactor, map integration, and 10+ question quiz.
