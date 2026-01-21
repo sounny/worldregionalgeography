@@ -1,12 +1,12 @@
 # Implementation Plan - Track: Standardize Chapter 01
 
-## Phase 1: Structural Refactoring & Styling
+## Phase 1: Structural Refactoring & Styling [checkpoint: b62ac61]
 - [x] Task: Create specific CSS variables for "Gold Standard" theme (colors, spacing) in `css/style.css`. 7e0bd3e
 - [x] Task: Refactor `chapters/01-introduction/index.html` to match the 10-point semantic structure (Objectives through Quiz). 21ff1f3
 - [x] Task: Implement responsive grid layout for Sidebars ("Important Person") and Main Content. e96f755
 - [x] Task: Implement "Texas Connection" toggle UI and CSS styling. f0cee79
 - [x] Task: Implement "Accordion" UI and CSS styling for Summary and Glossary. 956ec22
-- [ ] Task: Conductor - User Manual Verification 'Structural Refactoring & Styling' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Structural Refactoring & Styling' (Protocol in workflow.md) b62ac61
 
 ## Phase 2: Interactive Map Implementation
 - [ ] Task: Create `js/map-init.js` module to handle Leaflet initialization.
@@ -17,14 +17,14 @@
 
 ## Phase 3: Pedagogical Logic (Quiz & Interactivity)
 - [ ] Task: Create `js/quiz-engine.js` module for simple client-side validation.
-- [ ] Task: Define 5 introductory quiz questions in a JSON structure (embedded or external).
+- [ ] Task: Define 10+ in-depth quiz questions (multiple choice & scenario-based) in a JSON structure.
 - [ ] Task: wire up the "Texas Connection" toggle button event listener.
 - [ ] Task: Wire up the Summary/Glossary accordion event listeners.
 - [ ] Task: Conductor - User Manual Verification 'Pedagogical Logic' (Protocol in workflow.md)
 
 ## Phase 4: Content Population & Polish
 - [ ] Task: Review `references/` (if any) or standard geographic sources to populate the "Regional Profile" data.
-- [ ] Task: Write the "Texas Connection" content (e.g., Texas's place in the world).
+- [ ] Task: Write robust content for "Texas Connection" and "Case Study" to ensure depth.
 - [ ] Task: Source and embed 1-2 Wikimedia Commons images for the "Important Person" and "Case Study".
 - [ ] Task: Final polish of typography (check for em-dashes, quote styles).
 - [ ] Task: Conductor - User Manual Verification 'Content Population & Polish' (Protocol in workflow.md)
