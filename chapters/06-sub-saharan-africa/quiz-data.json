@@ -1,29 +1,110 @@
 [
     {
-        "question": "Which 1884 event arbitrarily divided the African continent among European powers?",
+        "question": "Which geological feature is a massive fault system stretching from Southwest Asia down through East Africa, creating deep lakes and volcanic peaks?",
         "options": [
-            { "text": "The Berlin Conference", "correct": true, "feedback": "Borders were drawn without regard for ethnic or linguistic groups, leading to long-term instability." },
-            { "text": "The Treaty of Versailles", "correct": false },
-            { "text": "The Yalta Conference", "correct": false },
-            { "text": "The Congress of Vienna", "correct": false }
+            { "text": "The Congo Basin", "correct": false },
+            { "text": "The Great Rift Valley", "correct": true, "feedback": "The Rift Valley is a divergent plate boundary that is literally pulling the African continent apart." },
+            { "text": "The Atlas Mountains", "correct": false },
+            { "text": "The Sahel", "correct": false }
         ]
     },
     {
-        "question": "Which geological feature is a massive fault system stretching from Southwest Asia through East Africa?",
+        "question": "What is the 'Sahel' in African geography?",
         "options": [
-            { "text": "The Great Rift Valley", "correct": true, "feedback": "The Great Rift Valley is a divergent plate boundary creating deep lakes and volcanoes." },
-            { "text": "The Andes Mountains", "correct": false },
-            { "text": "The San Andreas Fault", "correct": false },
-            { "text": "The Himalayan Plateau", "correct": false }
+            { "text": "A dense tropical rainforest in Central Africa.", "correct": false },
+            { "text": "A semi-arid transition zone between the Sahara Desert and the tropical savannas.", "correct": true, "feedback": "The Sahel is highly vulnerable to desertification and climate change." },
+            { "text": "The highest mountain range in the south.", "correct": false },
+            { "text": "A major river system in West Africa.", "correct": false }
         ]
     },
     {
-        "question": "What term describes an urban economy divided between a corporate/government sector and a street-level/artisan sector?",
+        "question": "The 1884 Berlin Conference is significant in African geography because:",
         "options": [
-            { "text": "Dual Economy", "correct": true, "feedback": "The dual economy consists of a formal sector and a large, unregulated informal sector." },
-            { "text": "Command Economy", "correct": false },
-            { "text": "Subsistence Economy", "correct": false },
-            { "text": "Digital Economy", "correct": false }
+            { "text": "It established the first African university.", "correct": false },
+            { "text": "European powers arbitrarily divided the continent into colonial territories without regard for ethnic boundaries.", "correct": true, "feedback": "These arbitrary borders remain a primary source of political instability today." },
+            { "text": "It ended the slave trade.", "correct": false },
+            { "text": "It mapped the source of the Nile River.", "correct": false }
+        ]
+    },
+    {
+        "question": "Regional Scenario: If a city like Lagos, Nigeria, has a modern high-rise business district right next to a vast area of informal street markets and self-built housing, this is an example of:",
+        "options": [
+            { "text": "A Command Economy", "correct": false },
+            { "text": "A Dual Economy (Formal vs. Informal)", "correct": true, "feedback": "Most African cities feature a mix of formal corporate sectors and a massive informal market sector." },
+            { "text": "Deurbanization", "correct": false },
+            { "text": "Latitudinal Zonation", "correct": false }
+        ]
+    },
+    {
+        "question": "Which term refers to the potential economic growth that can result from a country having a large working-age population and few dependents?",
+        "options": [
+            { "text": "Brain Drain", "correct": false },
+            { "text": "Demographic Dividend", "correct": true, "feedback": "With the world's youngest population, Sub-Saharan Africa has a major opportunity for a demographic dividend." },
+            { "text": "Malthusian Trap", "correct": false },
+            { "text": "Urban Sprawl", "correct": false }
+        ]
+    },
+    {
+        "question": "Sub-Saharan Africa is often described as a 'Continent of Plateaus.' What is a primary geographic consequence of this?",
+        "options": [
+            { "text": "Rivers are easily navigable from the coast to the interior.", "correct": false },
+            { "text": "Most rivers have waterfalls or rapids (escarpments) near the coast, hindering early inland navigation.", "correct": true, "feedback": "Plateau edges (escarpments) created 'falls' that made inland exploration difficult for Europeans." },
+            { "text": "There are no rivers in Africa.", "correct": false },
+            { "text": "The entire continent is at sea level.", "correct": false }
+        ]
+    },
+    {
+        "question": "Demographic Trend: Sub-Saharan Africa is currently the world's:",
+        "options": [
+            { "text": "Slowest urbanizing region.", "correct": false },
+            { "text": "Fastest urbanizing and fastest growing region.", "correct": true, "feedback": "High birth rates and rural-to-urban migration are transforming the region's landscape." },
+            { "text": "Most aged region.", "correct": false },
+            { "text": "Only region with a shrinking population.", "correct": false }
+        ]
+    },
+    {
+        "question": "Geographic Inquiry: How do 'Landlocked' states in Africa face a development disadvantage?",
+        "options": [
+            { "text": "They don't have enough sand for construction.", "correct": false },
+            { "text": "They must rely on neighboring countries for access to international maritime trade routes.", "correct": true, "feedback": "Lack of ocean access increases transport costs and dependence on regional stability." },
+            { "text": "It is too hot to work without a sea breeze.", "correct": false },
+            { "text": "They cannot catch any fish.", "correct": false }
+        ]
+    },
+    {
+        "question": "Which country experienced a system of institutionalized racial segregation known as 'Apartheid' until the early 1990s?",
+        "options": [
+            { "text": "Nigeria", "correct": false },
+            { "text": "Kenya", "correct": false },
+            { "text": "South Africa", "correct": true, "feedback": "Apartheid profoundly shaped the urban and social geography of South Africa." },
+            { "text": "Ethiopia", "correct": false }
+        ]
+    },
+    {
+        "question": "The 'African Transition Zone' is a perceptual and formal region where:",
+        "options": [
+            { "text": "Everyone speaks French.", "correct": false },
+            { "text": "Islamic cultures of the north meet Christian and animist cultures of the south.", "correct": true, "feedback": "This zone is a site of both intense cultural exchange and frequent conflict." },
+            { "text": "The temperature never changes.", "correct": false },
+            { "text": "Agriculture is impossible.", "correct": false }
+        ]
+    },
+    {
+        "question": "Texas Connection: Houston's status as the 'Energy Capital of the World' links it to Sub-Saharan Africa through:",
+        "options": [
+            { "text": "Shared climate zones.", "correct": false },
+            { "text": "Oil exploration and production partnerships in nations like Nigeria and Angola.", "correct": true, "feedback": "Texas energy expertise and investment are major drivers in the African oil sector." },
+            { "text": "A common language.", "correct": false },
+            { "text": "Direct bridge connections.", "correct": false }
+        ]
+    },
+    {
+        "question": "Environmental Hero: Wangari Maathai founded the 'Green Belt Movement' in Kenya primarily to:",
+        "options": [
+            { "text": "Build new factories.", "correct": false },
+            { "text": "Combat deforestation and empower women through community tree planting.", "correct": true, "feedback": "Her work linked environmental conservation with social justice and human rights." },
+            { "text": "Explore the Congo River.", "correct": false },
+            { "text": "Promote cattle ranching.", "correct": false }
         ]
     }
 ]

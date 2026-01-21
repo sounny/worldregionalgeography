@@ -22,144 +22,163 @@
 
     <section class="chapter-header">
         <div class="container">
-            <p class="chapter-meta">Chapter 6 - Week 8</p>
-            <h1 class="chapter-title">Sub-Saharan Africa</h1>
+            <p class="chapter-meta">Chapter 6 · Week 8</p>
+            <h1 class="chapter-title">Sub-Saharan Africa: Development and Global Links</h1>
             <p class="chapter-description">The world's youngest and fastest-growing population, extraordinary biodiversity, and rapid urbanization define this diverse region of 48 countries south of the Sahara Desert.</p>
         </div>
     </section>
 
     <main id="main-content" class="chapter-content">
         <div class="container">
-            <div class="learning-objectives">
-                <h2>🎯 Learning Objectives</h2>
-                <ul>
-                    <li><strong>Describe:</strong> Explain the physical geography and climate zones of Sub-Saharan Africa</li>
-                    <li><strong>Analyze:</strong> Examine the colonial legacy and its impact on modern political borders and development</li>
-                    <li><strong>Explain:</strong> Describe demographic trends including rapid population growth and urbanization</li>
-                    <li><strong>Evaluate:</strong> Assess the interconnected development challenges and opportunities facing Sub-Saharan Africa</li>
-                    <li><strong>Apply:</strong> Use geographic concepts to understand resource distribution and regional inequality</li>
-                    <li><strong>Compare:</strong> Contrast development trajectories across different Sub-Saharan African countries</li>
-                    <li><strong>Create:</strong> Design a development strategy that leverages Africa's demographic dividend while addressing environmental sustainability</li>
-                </ul>
-            </div>
+            
+            <!-- 1. Learning Objectives -->
+            <section id="objectives" class="section-container">
+                <div class="learning-objectives">
+                    <h2>🎯 Learning Objectives</h2>
+                    <p>By the end of this chapter, you will be able to:</p>
+                    <ul>
+                        <li><strong>Describe:</strong> Explain the physical geography and climate zones of Sub-Saharan Africa</li>
+                        <li><strong>Analyze:</strong> Examine the colonial legacy and its impact on modern political borders</li>
+                        <li><strong>Explain:</strong> Describe demographic trends including rapid population growth and urbanization</li>
+                        <li><strong>Evaluate:</strong> Assess the interconnected development challenges and opportunities</li>
+                        <li><strong>Apply:</strong> Use geographic concepts to understand resource distribution and inequality</li>
+                    </ul>
+                </div>
+            </section>
 
-            <section id="regional-profile">
-                <h2>🦁 Regional Profile</h2>
+            <!-- 2. Regional Profile (Snapshot) -->
+            <section id="profile" class="section-container">
+                <h2>🦁 Regional Snapshot: Africa South of the Sahara</h2>
                 <div class="profile-grid">
-                    <div class="profile-stat">
-                        <div style="font-size: 2rem;">👥</div>
-                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">~1.2 Billion</div>
-                        <div style="color: var(--color-text-muted);">Population</div>
+                    <div class="profile-item">
+                        <strong>Population</strong>
+                        <span>~1.2 Billion</span>
                     </div>
-                    <div class="profile-stat">
-                        <div style="font-size: 2rem;">🗺️</div>
-                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">48 Countries</div>
-                        <div style="color: var(--color-text-muted);">Nations</div>
+                    <div class="profile-item">
+                        <strong>Median Age</strong>
+                        <span>~19 years (Youngest in World)</span>
                     </div>
-                    <div class="profile-stat">
-                        <div style="font-size: 2rem;">📈</div>
-                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">Youngest</div>
-                        <div style="color: var(--color-text-muted);">Population in World</div>
+                    <div class="profile-item">
+                        <strong>Urbanization Rate</strong>
+                        <span>World's fastest urbanizing region</span>
                     </div>
-                    <div class="profile-stat">
-                        <div style="font-size: 2rem;">🗣️</div>
-                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">2,000+</div>
-                        <div style="color: var(--color-text-muted);">Languages</div>
+                    <div class="profile-item">
+                        <strong>Primary Theme</strong>
+                        <span>Development & Demographic Dividend</span>
                     </div>
                 </div>
-            </section>
-
-            <section id="africa-map">
-                <h2>🗺️ Interactive Map: Sub-Saharan Africa</h2>
-                <div id="regions-map" class="interactive-map" role="region" aria-label="Interactive map"></div>
-            </section>
-
-            <section id="physical-geography">
-                <h2>Physical Geography</h2>
+                <p class="mt-4">Sub-Saharan Africa is a region of immense potential and complex challenges. It contains some of the world's fastest-growing economies and its most youthful population. Geographically, it is a "continent of plateaus," where elevation and access to water define the limits of human activity.</p>
                 
-                <h3>A Continent of Plateaus</h3>
-                <p>Sub-Saharan Africa is dominated by extensive plateau areas, with few major mountain ranges compared to other continents. The key features include:</p>
-                <ul>
-                    <li><strong>The Great Rift Valley:</strong> A massive geological fault system stretching from Southwest Asia down through East Africa, creating deep lakes and volcanic mountains.</li>
-                    <li><strong>The Congo Basin:</strong> A vast, tropical rainforest basin in Central Africa, second only to the Amazon in size.</li>
-                    <li><strong>The Sahel:</strong> A semi-arid transition zone between the Sahara Desert to the north and the tropical savannas to the south, susceptible to desertification.</li>
-                </ul>
-
-                <div class="regional-grid">
-                    <figure class="figure" style="text-align: center;">
-                        <img src="../../images/africa_physical_map.jpg" alt="Physical map of Africa" style="max-width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                        <figcaption style="margin-top: var(--space-3); color: var(--color-text-muted); font-size: var(--text-sm);">
-                            <strong>Figure 6.1:</strong> Physical Geography of Africa. Note the extensive plateau surfaces and the Great Rift Valley in the east.
-                        </figcaption>
-                    </figure>
-                    <figure class="figure" style="text-align: center;">
-                        <img src="../../images/africa_transition_zone.jpg" alt="Map of the African Transition Zone" style="max-width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                        <figcaption style="margin-top: var(--space-3); color: var(--color-text-muted); font-size: var(--text-sm);">
-                            <strong>Figure 6.2:</strong> The African Transition Zone (Sahel), separating the arid Sahara from the tropical south.
-                        </figcaption>
-                    </figure>
-                </div>
-
-                <figure class="figure" style="margin: var(--space-8) 0; text-align: center;">
-                    <img src="../../images/africa_kilimanjaro.jpg" alt="Mount Kilimanjaro with giraffe" style="max-width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                    <figcaption style="margin-top: var(--space-3); color: var(--color-text-muted); font-size: var(--text-sm);">
-                        <strong>Figure 6.3:</strong> Mount Kilimanjaro. Africa's highest peak rises dramatically above the East African plains.
-                    </figcaption>
+                <figure class="figure" style="max-width: 600px; margin: var(--space-6) auto;">
+                    <img src="../../images/africa_physical_map.jpg" alt="Physical map of Sub-Saharan Africa">
+                    <figcaption><strong>Figure 6.0:</strong> Physical Landscape. Note the vast plateaus and the distinct lack of massive linear mountain ranges compared to the Andes or Himalayas.</figcaption>
                 </figure>
             </section>
 
-            <section id="historical-context">
-                <h2>📜 Historical Context</h2>
-                <p>Africa is the cradle of humanity, but its recent history has been defined by the Scramble for Africa, where European powers arbitrarily divided the continent at the Berlin Conference of 1884.</p>
-                <ul>
-                    <li><strong>Colonial Borders:</strong> Boundaries were drawn without regard for ethnic or linguistic groups, leading to lasting political instability.</li>
-                    <li><strong>Independence:</strong> Most countries gained independence in the 1950s and 60s but faced challenges in nation-building.</li>
-                </ul>
+            <!-- 3. Interactive Regional Map -->
+            <section id="interactive-map" class="section-container">
+                <h2>🗺️ Interactive Map: The African Plateaus</h2>
+                <p>Explore the Great Rift Valley, the Congo Basin, and the semi-arid Sahel. Zoom in to see the locations of rising megacities like Lagos, Kinshasa, and Nairobi.</p>
+                <div id="regions-map" class="interactive-map"></div>
+                <div class="map-controls">
+                    <p class="text-sm italic text-muted">Toggle between Physical terrain and Political boundaries. Notice the large number of landlocked states - a major geographic challenge for trade.</p>
+                </div>
+            </section>
 
+            <!-- 4. Physical Geography Analysis -->
+            <section id="physical-geography" class="section-container">
+                <h2>⛰️ Physical Geography: Rifts, Basins, and Transitions</h2>
+                <p>Africa's physical geography is unique for its extensive <strong>Plateau</strong> surfaces. The <strong>Great Rift Valley</strong> in the east is a massive geological fault where the continent is slowly pulling apart, creating some of the world's deepest lakes.</p>
+                
+                <div class="figure-row">
+                    <figure class="figure">
+                        <img src="../../images/africa_kilimanjaro.jpg" alt="Mount Kilimanjaro">
+                        <figcaption><strong>Figure 6.1:</strong> Volcanic Peaks. Kilimanjaro rises above the East African plateau, illustrating the dramatic topography of the Rift region.</figcaption>
+                    </figure>
+                    <figure class="figure">
+                        <img src="../../images/africa_transition_zone.jpg" alt="African Transition Zone map">
+                        <figcaption><strong>Figure 6.2:</strong> The Sahel. This semi-arid belt serves as a critical transition zone between the Sahara and the tropical south.</figcaption>
+                    </figure>
+                </div>
+                
+                <p>The <strong>Congo Basin</strong> contains the world's second-largest rainforest, while the <strong>Sahel</strong> represents a critical environmental and cultural transition zone currently threatened by desertification.</p>
+                
                 <div class="inquiry-prompt">
                     <h3>🔍 Geographic Inquiry</h3>
-                    <p>Colonial borders in Africa were drawn by European powers with little regard for ethnic, cultural, or religious boundaries. How do these arbitrary geographic boundaries continue to shape conflicts, trade patterns, and development challenges in Sub-Saharan Africa today?</p>
+                    <p>Sub-Saharan Africa has few natural harbors and many waterfalls (escarpments) near its coasts. How did these physical features historically hinder European inland exploration and how do they still impact modern infrastructure costs?</p>
                 </div>
             </section>
 
-            <section id="start-global-theme">
-                <h2>🌐 Global Theme: Urbanization and Development</h2>
-                <p>Sub-Saharan Africa is the world's fastest-urbanizing region. While traditionally rural, millions are moving to cities like Lagos, Kinshasa, and Nairobi for economic opportunities.</p>
-                
-                <h3>The Dual Economy</h3>
-                <p>African cities often feature a dual economy:</p>
-                <ul>
-                    <li><strong>Formal Sector:</strong> Government, large corporations, and global trade.</li>
-                    <li><strong>Informal Sector:</strong> Street vending, small-scale services, and artisan work, which employs the majority of the urban poor.</li>
-                </ul>
-
-                <div class="figure-row">
-                    <figure class="figure" style="text-align: center;">
-                        <img src="../../images/africa_nairobi.jpg" alt="Nairobi city skyline" style="max-width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                        <figcaption style="margin-top: var(--space-3); color: var(--color-text-muted); font-size: var(--text-sm);">
-                            <strong>Figure 6.4:</strong> Nairobi, Kenya. A major hub of commerce and culture in East Africa.
-                        </figcaption>
-                    </figure>
-                    <figure class="figure" style="text-align: center;">
-                        <img src="../../images/africa_maasai.jpg" alt="Maasai people in traditional dress" style="max-width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                        <figcaption style="margin-top: var(--space-3); color: var(--color-text-muted); font-size: var(--text-sm);">
-                            <strong>Figure 6.5:</strong> Cultural Continuity. Traditional practices, like those of the Maasai, coexist with modernization.
-                        </figcaption>
-                    </figure>
-                </div>
-            </section>
-
-            <section id="texas-connection" class="section-container">
-                <div class="texas-toggle">
-                    <button class="btn-texas-toggle" type="button" aria-expanded="false">
-                        <span class="star-icon">⭐</span> Texas Connection: Energy and Expertise Exchange
-                    </button>
-                    <div class="texas-content hidden" aria-hidden="true">
-                        <p>Texas and Sub-Saharan Africa share strong ties in the energy sector. Houston-based companies are heavily involved in oil exploration and production in West Africa (Nigeria, Angola). Furthermore, many Texas universities host African scholars and students, fostering a knowledge exchange in agriculture, engineering, and geosciences.</p>
+            <!-- 6. Important Person Break-out (Wangari Maathai) -->
+            <section class="important-person-sidebar">
+                <div class="sidebar-content">
+                    <div class="person-image" style="margin-bottom: var(--space-4);">
+                        <img src="../../images/africa_maasai.jpg" alt="Environmental and cultural heritage" style="border-radius: var(--radius-md);">
+                    </div>
+                    <div class="person-header">
+                        <h3>👤 Important Person</h3>
+                    </div>
+                    <div class="person-info">
+                        <strong>Wangari Maathai</strong>
+                        <p class="person-title">Environmentalist & Nobel Laureate</p>
+                        <p>Maathai founded the <strong>Green Belt Movement</strong> in Kenya, which focused on planting millions of trees to combat deforestation and soil erosion. Her work demonstrated that environmental geography is inseparable from social justice, women's rights, and democratic governance.</p>
+                        <a href="https://www.greenbeltmovement.org/wangari-maathai" target="_blank" class="btn-text">Read about her legacy →</a>
                     </div>
                 </div>
             </section>
 
+            <!-- 5. Human Geography Analysis -->
+            <section id="human-geography" class="section-container">
+                <h2>👥 Human Geography: Colonial Borders and Dual Economies</h2>
+                <p>The contemporary political map of Africa was largely drawn at the <strong>Berlin Conference (1884)</strong>, where European powers divided the continent without regard for existing ethnic or linguistic boundaries. This legacy of "arbitrary borders" remains a significant <strong>centrifugal force</strong> in the region.</p>
+                
+                <div class="figure-row">
+                    <figure class="figure">
+                        <img src="../../images/africa_nairobi.jpg" alt="Nairobi urban landscape">
+                        <figcaption><strong>Figure 6.3:</strong> Rapid Urbanization. Cities like Nairobi are growing at exponential rates, creating a vibrant but strained urban geography.</figcaption>
+                    </figure>
+                    <figure class="figure">
+                        <img src="../../images/colonialism.jpg" alt="Colonial legacy illustration">
+                        <figcaption><strong>Figure 6.4:</strong> Historical Imprint. The Scramble for Africa fundamentally reoriented the region's trade toward Europe.</figcaption>
+                    </figure>
+                </div>
+
+                <p>Most African cities operate as <strong>Dual Economies</strong>, with a formal sector of corporate and government jobs and a massive <strong>Informal Sector</strong> of street vending and small-scale services that employs up to 80% of the urban workforce.</p>
+            </section>
+
+            <!-- 7. Texas Connection Toggle -->
+            <section id="texas-connection" class="section-container">
+                <div class="texas-toggle">
+                    <button class="btn-texas-toggle" id="texas-btn">
+                        <span class="star-icon">⭐</span> Texas Connection: The Energy and Expertise Bridge
+                    </button>
+                    <div class="texas-content hidden" id="texas-content">
+                        <h4>A Partnership in Energy</h4>
+                        <p>Texas and Sub-Saharan Africa are deeply linked via the global petroleum industry. Houston-based companies lead major offshore oil and gas projects in the Gulf of Guinea (Nigeria, Angola). This connection has made Texas a primary hub for West African energy trade and a destination for a growing West African diaspora.</p>
+                        <p><strong>Agricultural Exchange:</strong> Texas universities often lead research partnerships with African nations to improve crop resilience in semi-arid environments, mirroring the shared challenges of the Texas Panhandle and the African Sahel.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Case Study -->
+            <section id="case-study" class="section-container">
+                <div class="case-study-gold">
+                    <div class="case-study-header">
+                        <span class="label">Case Study</span>
+                        <h2>The Great Green Wall: A Continental Shield</h2>
+                    </div>
+                    <p>The "Great Green Wall" is a massive geographic project spanning 8,000 km across the Sahel. It aims to restore 100 million hectares of degraded land and sequester 250 million tons of carbon. It represents a proactive geographic solution to the combined threats of <strong>desertification</strong> and climate change.</p>
+                    <div class="case-study-questions">
+                        <h4>Questions to Consider:</h4>
+                        <ul>
+                            <li>Is the Great Green Wall a formal, functional, or perceptual region?</li>
+                            <li>How does this project illustrate the intersection of physical environmental management and human development?</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. Interactive Accordions (Summary & Glossary) -->
             <section id="summary-glossary" class="section-container">
                 <div class="accordion">
                     <div class="accordion-item">
@@ -169,13 +188,11 @@
                         <div class="accordion-content">
                             <dl>
                                 <dt>Sahel</dt>
-                                <dd>The semi-arid transition zone between the Sahara Desert and the Sudanian Savanna.</dd>
-                                <dt>Berlin Conference</dt>
-                                <dd>The 1884 meeting where European powers divided Africa without regard for ethnic boundaries, setting the stage for modern conflicts.</dd>
-                                <dt>Great Rift Valley</dt>
-                                <dd>A continuous geographic trench running from Lebanon to Mozambique, creating deep lakes and elevations.</dd>
-                                <dt>Apartheid</dt>
-                                <dd>A system of institutionalised racial segregation that existed in South Africa until the 1990s.</dd>
+                                <dd>The semi-arid transition zone between the Sahara Desert and the tropical savannas.</dd>
+                                <dt>Demographic Dividend</dt>
+                                <dd>The economic growth potential that can result from shifts in a population's age structure.</dd>
+                                <dt>Escarpment</dt>
+                                <dd>A steep slope or long cliff that forms as a result of faulting or erosion, separating two levels of differing elevation (common at the edges of Africa's plateaus).</dd>
                             </dl>
                         </div>
                     </div>
@@ -185,43 +202,27 @@
                         </button>
                         <div class="accordion-content">
                             <ul>
-                                <li>Africa is a continent of plateaus, with few major mountain ranges but significant rift valleys.</li>
-                                <li>The legacy of colonial borders continues to impact political stability and economic integration.</li>
-                                <li>Sub-Saharan Africa has the world's youngest population, offering a potential "demographic dividend" if development can keep pace.</li>
+                                <li>Africa is a "Continent of Plateaus" with high average elevations and significant interior rift systems.</li>
+                                <li>The colonial legacy of the Berlin Conference remains a primary factor in contemporary political and economic challenges.</li>
+                                <li>The region is the world's youngest and fastest-urbanizing, presenting both an immense developmental opportunity and an infrastructure crisis.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="knowledge-check" class="section-container">
+            <!-- 10. Knowledge Check (Quiz) -->
+            <section id="quiz" class="section-container">
                 <h2>✅ Knowledge Check</h2>
                 <div id="quiz-container" class="quiz-wrapper">
                     <p class="loading">Loading quiz questions...</p>
                 </div>
             </section>
 
-            <section id="discussion" class="section-container">
-                <h2>💬 Discussion & Reflection Prompts</h2>
-                <div style="background: #e8f0fe; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #1e40af;">
-                    <h3 style="margin-top: 0; color: #1e40af;">Reflect on Your Learning</h3>
-                    <ol style="line-height: 1.8;">
-                        <li><strong>Colonial Impact:</strong> How do colonial borders drawn without considering ethnic, cultural, or resource boundaries still cause conflict today?</li>
-                        <li><strong>Resource Curse:</strong> Why do resource-rich nations sometimes remain poor? What would sustainable resource management look like?</li>
-                        <li><strong>Climate Vulnerability:</strong> How does the Sahel's geography make it especially vulnerable to droughts and climate change?</li>
-                    </ol>
-                    <h3 style="margin-top: 1.5rem; color: #1e40af;">Discuss With Your Peers</h3>
-                    <ul style="line-height: 1.8;">
-                        <li>How should the international community support African nations in climate adaptation?</li>
-                        <li>What role could regional organizations play in resolving conflicts rooted in colonial borders?</li>
-                        <li>How can Sub-Saharan Africa leverage its young, growing population for sustainable development?</li>
-                    </ul>
-                </div>
-            </section>
-
+            <!-- Navigation -->
             <nav class="chapter-nav">
                 <a href="../05-latin-america/index.html" class="chapter-nav-link">← Chapter 5: Latin America</a>
-                <a href="../07-north-africa-sw-asia/index.html" class="chapter-nav-link">Chapter 7: N. Africa and SW Asia →</a>
+                <a href="../07-north-africa-sw-asia/index.html" class="chapter-nav-link">Chapter 7: N. Africa & SW Asia →</a>
             </nav>
         </div>
     </main>
@@ -229,21 +230,26 @@
     <footer class="site-footer"><div class="container"><div class="footer-content"><div class="footer-brand"><span class="logo-icon">🌍</span><span>World Regional Geography</span></div><div class="footer-copyright"><p>© 2026 Dr. Sounny. Open Educational Resource.</p></div></div></div></footer>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="../../js/main.js"></script>
+    <script src="../../js/map-init.js"></script>
+    <script src="../../js/regions-data.js"></script>
     <script src="../../js/quiz-engine.js"></script>
+    <script src="../../js/main.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof L !== 'undefined' && document.getElementById('regions-map')) {
-                const map = L.map('regions-map').setView([0, 20], 3);
-                L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { attribution: '© OpenStreetMap © CARTO' }).addTo(map);
-                const cities = [
-                    { name: 'Lagos', coords: [6.5244, 3.3792], note: 'Nigeria, largest city' },
-                    { name: 'Nairobi', coords: [-1.2921, 36.8219], note: 'Kenya capital' },
-                    { name: 'Johannesburg', coords: [-26.2041, 28.0473], note: 'South Africa, largest city' },
-                    { name: 'Addis Ababa', coords: [9.0320, 38.7469], note: 'Ethiopia capital' },
-                    { name: 'Kinshasa', coords: [-4.4419, 15.2663], note: 'DRC capital' }
-                ];
-                cities.forEach(city => { L.circleMarker(city.coords, { radius: 8, fillColor: '#3b82f6', color: '#fff', weight: 2, fillOpacity: 0.8 }).addTo(map).bindPopup('<strong>' + city.name + '</strong><br>' + city.note); });
+        // Initialize the Chapter 6 Interactive Map
+        document.addEventListener('DOMContentLoaded', () => {
+            const map = MapManager.initMap('regions-map', [0, 20], 3);
+            if (map && window.WorldRegionsData) {
+                const africaData = window.WorldRegionsData.features.find(f => f.id === 'africa-sub');
+                if (africaData) {
+                    MapManager.addGeoJson(map, { type: "FeatureCollection", features: [africaData] }, {
+                        style: {
+                            color: 'var(--color-primary-dark)',
+                            weight: 2,
+                            fillColor: 'var(--color-primary)',
+                            fillOpacity: 0.1
+                        }
+                    }, "Sub-Saharan Africa Region");
+                }
             }
 
             // Initialize Quiz
