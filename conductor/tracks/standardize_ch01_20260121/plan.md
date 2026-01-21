@@ -8,12 +8,12 @@
 - [x] Task: Implement "Accordion" UI and CSS styling for Summary and Glossary. 956ec22
 - [x] Task: Conductor - User Manual Verification 'Structural Refactoring & Styling' (Protocol in workflow.md) b62ac61
 
-## Phase 2: Interactive Map Implementation
-- [ ] Task: Create `js/map-init.js` module to handle Leaflet initialization.
-- [ ] Task: Define a basic GeoJSON dataset for "World Regions" (Introduction context).
-- [ ] Task: Integrate the Leaflet map into the `chapters/01-introduction/index.html` "Interactive Map" section.
-- [ ] Task: Add layer control to toggle between "Physical" (TileLayer) and "Political" (GeoJSON) views.
-- [ ] Task: Conductor - User Manual Verification 'Interactive Map Implementation' (Protocol in workflow.md)
+## Phase 2: Interactive Map Implementation [checkpoint: 5ce5b51]
+- [x] Task: Create `js/map-init.js` module to handle Leaflet initialization. 5ce5b51
+- [x] Task: Define a basic GeoJSON dataset for "World Regions" (Introduction context). 5ce5b51
+- [x] Task: Integrate the Leaflet map into the `chapters/01-introduction/index.html" "Interactive Map" section. 5ce5b51
+- [x] Task: Add layer control to toggle between "Physical" (TileLayer) and "Political" (GeoJSON) views. 5ce5b51
+- [x] Task: Conductor - User Manual Verification 'Interactive Map Implementation' (Protocol in workflow.md) 5ce5b51
 
 ## Phase 3: Pedagogical Logic (Quiz & Interactivity)
 - [ ] Task: Create `js/quiz-engine.js` module for simple client-side validation.
