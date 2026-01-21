@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10: Southeast Asia | World Regional Geography</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-brand"><a href="../../index.html" class="logo"><span class="logo-icon">🌍</span><span class="logo-text">World Regional Geography</span></a></div>
+            <nav class="main-nav"><ul class="nav-menu"><li><a href="../../index.html" class="nav-link">Home</a></li><li class="nav-dropdown"><a href="#" class="nav-link dropdown-toggle active">Chapters</a><ul class="dropdown-menu"><li><a href="../01-introduction/index.html">1. Introduction</a></li><li><a href="../02-europe/index.html">2. Europe</a></li><li><a href="../03-russia/index.html">3. Russia</a></li><li><a href="../04-north-america/index.html">4. North America</a></li><li><a href="../05-latin-america/index.html">5. Latin America</a></li><li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li><li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa and SW Asia</a></li><li><a href="../08-south-asia/index.html">8. South Asia</a></li><li><a href="../09-east-asia/index.html">9. East Asia</a></li><li><a href="../10-southeast-asia/index.html" class="active">10. Southeast Asia</a></li><li><a href="../11-australia-oceania/index.html">11. Australia and Oceania</a></li><li><a href="../12-conclusion/index.html">12. Global Connections</a></li></ul></li></ul></nav>
+        </div>
+    </header>
+
+    <section class="chapter-header">
+        <div class="container">
+            <p class="chapter-meta">Chapter 10 - Week 12</p>
+            <h1 class="chapter-title">Southeast Asia</h1>
+            <p class="chapter-description">A crossroads of cultures, religions, and trade routes, Southeast Asia comprises 11 diverse nations balancing rapid development, cultural preservation, and environmental challenges.</p>
+        </div>
+    </section>
+
+    <main class="chapter-content">
+        <div class="container">
+            <div class="learning-objectives">
+                <h2>🎯 Learning Objectives</h2>
+                <ul>
+                    <li>Distinguish between mainland and insular Southeast Asia</li>
+                    <li>Explain the role of ASEAN in regional integration</li>
+                    <li>Analyze maritime trade routes and strategic waterways</li>
+                    <li>Evaluate deforestation and environmental challenges</li>
+                </ul>
+            </div>
+
+            <section id="regional-profile">
+                <h2>🌊 Regional Profile</h2>
+                <div class="profile-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
+                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                        <div style="font-size: 2rem;">👥</div>
+                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">~680 Million</div>
+                        <div style="color: var(--color-text-muted);">Population</div>
+                    </div>
+                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                        <div style="font-size: 2rem;">🗺️</div>
+                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">11 Countries</div>
+                        <div style="color: var(--color-text-muted);">Diverse Nations</div>
+                    </div>
+                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                        <div style="font-size: 2rem;">🚢</div>
+                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">Malacca Strait</div>
+                        <div style="color: var(--color-text-muted);">Key Trade Route</div>
+                    </div>
+                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                        <div style="font-size: 2rem;">🌴</div>
+                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">Tropical</div>
+                        <div style="color: var(--color-text-muted);">Climate Throughout</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="southeast-asia-map">
+                <h2>🗺️ Interactive Map: Southeast Asia</h2>
+                <div id="regions-map" class="interactive-map" style="height: 500px; border-radius: var(--radius-lg); overflow: hidden;"></div>
+            </section>
+
+            <section id="physical-geography">
+                <h2>Physical Geography</h2>
+                <p><strong>Mainland vs. Insular:</strong> The region divides into mainland countries (Myanmar, Thailand, Vietnam, Laos, Cambodia) and insular countries (Indonesia, Philippines, Malaysia's eastern portion, Singapore, Brunei, Timor-Leste).</p>
+                <p><strong>Strategic Waterways:</strong> The Strait of Malacca and South China Sea are among the world's busiest shipping lanes, critical for global trade.</p>
+                <p><strong>Biodiversity:</strong> Tropical rainforests host extraordinary biodiversity, though deforestation for palm oil threatens these ecosystems.</p>
+            </section>
+
+            <section id="global-theme">
+                <h2>🌐 Global Theme: Globalization and Trade</h2>
+                <p>Southeast Asia is a major manufacturing hub for global supply chains. ASEAN (Association of Southeast Asian Nations) promotes economic integration and regional cooperation.</p>
+                <p>The region balances between Chinese and American influence while seeking its own path to development.</p>
+            </section>
+
+            <section id="texas-connection">
+                <div class="case-study" style="border-left-color: #bf5700;">
+                    <div class="case-study-header">
+                        <span class="case-study-label" style="background: #bf5700;">Texas Connection</span>
+                        <h4>Manufacturing and Trade</h4>
+                    </div>
+                    <p>Electronics, textiles, and manufactured goods from Southeast Asia fill Texas stores. Texas ports handle significant trade with the region, and Vietnamese and Filipino communities are among the largest Asian populations in Texas.</p>
+                </div>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="../09-east-asia/index.html" class="chapter-nav-link">← Chapter 9: East Asia</a>
+                <a href="../11-australia-oceania/index.html" class="chapter-nav-link">Chapter 11: Australia and Oceania →</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="site-footer"><div class="container"><div class="footer-content"><div class="footer-brand"><span class="logo-icon">🌍</span><span>World Regional Geography</span></div><div class="footer-copyright"><p>© 2026 Dr. Sounny. Open Educational Resource.</p></div></div></div></footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof L !== 'undefined' && document.getElementById('regions-map')) {
+                const map = L.map('regions-map').setView([5, 115], 4);
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { attribution: '© OpenStreetMap © CARTO' }).addTo(map);
+                const cities = [
+                    { name: 'Singapore', coords: [1.3521, 103.8198], note: 'City-state, financial hub' },
+                    { name: 'Bangkok', coords: [13.7563, 100.5018], note: 'Thailand capital' },
+                    { name: 'Jakarta', coords: [-6.2088, 106.8456], note: 'Indonesia capital' },
+                    { name: 'Hanoi', coords: [21.0285, 105.8542], note: 'Vietnam capital' },
+                    { name: 'Manila', coords: [14.5995, 120.9842], note: 'Philippines capital' },
+                    { name: 'Kuala Lumpur', coords: [3.1390, 101.6869], note: 'Malaysia capital' }
+                ];
+                cities.forEach(city => { L.circleMarker(city.coords, { radius: 8, fillColor: '#3b82f6', color: '#fff', weight: 2, fillOpacity: 0.8 }).addTo(map).bindPopup('<strong>' + city.name + '</strong><br>' + city.note); });
+            }
+        });
+    </script>
+</body>
+</html>

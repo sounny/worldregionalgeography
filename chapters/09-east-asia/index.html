@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9: East Asia | World Regional Geography</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-brand"><a href="../../index.html" class="logo"><span class="logo-icon">🌍</span><span class="logo-text">World Regional Geography</span></a></div>
+            <nav class="main-nav"><ul class="nav-menu"><li><a href="../../index.html" class="nav-link">Home</a></li><li class="nav-dropdown"><a href="#" class="nav-link dropdown-toggle active">Chapters</a><ul class="dropdown-menu"><li><a href="../01-introduction/index.html">1. Introduction</a></li><li><a href="../02-europe/index.html">2. Europe</a></li><li><a href="../03-russia/index.html">3. Russia</a></li><li><a href="../04-north-america/index.html">4. North America</a></li><li><a href="../05-latin-america/index.html">5. Latin America</a></li><li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li><li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa and SW Asia</a></li><li><a href="../08-south-asia/index.html">8. South Asia</a></li><li><a href="../09-east-asia/index.html" class="active">9. East Asia</a></li><li><a href="../10-southeast-asia/index.html">10. Southeast Asia</a></li><li><a href="../11-australia-oceania/index.html">11. Australia and Oceania</a></li><li><a href="../12-conclusion/index.html">12. Global Connections</a></li></ul></li></ul></nav>
+        </div>
+    </header>
+
+    <section class="chapter-header">
+        <div class="container">
+            <p class="chapter-meta">Chapter 9 - Week 11</p>
+            <h1 class="chapter-title">East Asia</h1>
+            <p class="chapter-description">Economic powerhouses, ancient civilizations, and complex geopolitics define this region home to China, Japan, Korea, and Mongolia - containing about 1.5 billion people.</p>
+        </div>
+    </section>
+
+    <main class="chapter-content">
+        <div class="container">
+            <div class="learning-objectives">
+                <h2>🎯 Learning Objectives</h2>
+                <ul>
+                    <li>Describe the physical geography including the Pacific Ring of Fire</li>
+                    <li>Explain China's economic transformation and global impact</li>
+                    <li>Analyze the Korean Peninsula division</li>
+                    <li>Evaluate demographic challenges including aging populations</li>
+                </ul>
+            </div>
+
+            <section id="regional-profile">
+                <h2>🏯 Regional Profile</h2>
+                <div class="profile-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
+                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                        <div style="font-size: 2rem;">👥</div>
+                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">~1.5 Billion</div>
+                        <div style="color: var(--color-text-muted);">Population</div>
+                    </div>
+                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                        <div style="font-size: 2rem;">💰</div>
+                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">China #2</div>
+                        <div style="color: var(--color-text-muted);">World Economy</div>
+                    </div>
+                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                        <div style="font-size: 2rem;">🌋</div>
+                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">Ring of Fire</div>
+                        <div style="color: var(--color-text-muted);">Seismic Activity</div>
+                    </div>
+                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                        <div style="font-size: 2rem;">👴</div>
+                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">Aging</div>
+                        <div style="color: var(--color-text-muted);">Population Challenge</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="east-asia-map">
+                <h2>🗺️ Interactive Map: East Asia</h2>
+                <div id="regions-map" class="interactive-map" style="height: 500px; border-radius: var(--radius-lg); overflow: hidden;"></div>
+            </section>
+
+            <section id="physical-geography">
+                <h2>Physical Geography</h2>
+                <p><strong>The Pacific Ring of Fire:</strong> Japan and Taiwan face frequent earthquakes and volcanic activity due to their position on tectonic plate boundaries.</p>
+                <p><strong>Mountains and Deserts:</strong> The Gobi and Taklamakan deserts, Tibetan Plateau, and numerous mountain ranges create significant internal barriers.</p>
+                <p><strong>Rivers:</strong> The Yangtze and Yellow rivers are cradles of Chinese civilization and remain vital for agriculture and transportation.</p>
+            </section>
+
+            <section id="global-theme">
+                <h2>🌐 Global Theme: Economic Rise and Geopolitics</h2>
+                <p>China's economic transformation since 1978 has reshaped global trade, supply chains, and geopolitics. The Belt and Road Initiative extends Chinese influence worldwide.</p>
+                <p>Tensions over Taiwan, North Korea's nuclear program, and territorial disputes in the South China Sea create ongoing security concerns.</p>
+            </section>
+
+            <section id="texas-connection">
+                <div class="case-study" style="border-left-color: #bf5700;">
+                    <div class="case-study-header">
+                        <span class="case-study-label" style="background: #bf5700;">Texas Connection</span>
+                        <h4>Trade and Manufacturing</h4>
+                    </div>
+                    <p>China is among Texas's largest trading partners. Many consumer goods sold in Texas are manufactured in China, while Texas exports significant quantities of agricultural products and technology to East Asia.</p>
+                </div>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="../08-south-asia/index.html" class="chapter-nav-link">← Chapter 8: South Asia</a>
+                <a href="../10-southeast-asia/index.html" class="chapter-nav-link">Chapter 10: Southeast Asia →</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="site-footer"><div class="container"><div class="footer-content"><div class="footer-brand"><span class="logo-icon">🌍</span><span>World Regional Geography</span></div><div class="footer-copyright"><p>© 2026 Dr. Sounny. Open Educational Resource.</p></div></div></div></footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof L !== 'undefined' && document.getElementById('regions-map')) {
+                const map = L.map('regions-map').setView([35, 115], 4);
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { attribution: '© OpenStreetMap © CARTO' }).addTo(map);
+                const cities = [
+                    { name: 'Beijing', coords: [39.9042, 116.4074], note: 'China capital' },
+                    { name: 'Shanghai', coords: [31.2304, 121.4737], note: 'China largest city' },
+                    { name: 'Tokyo', coords: [35.6762, 139.6503], note: 'Japan capital' },
+                    { name: 'Seoul', coords: [37.5665, 126.9780], note: 'South Korea capital' },
+                    { name: 'Hong Kong', coords: [22.3193, 114.1694], note: 'Special Administrative Region' },
+                    { name: 'Taipei', coords: [25.0330, 121.5654], note: 'Taiwan capital' }
+                ];
+                cities.forEach(city => { L.circleMarker(city.coords, { radius: 8, fillColor: '#3b82f6', color: '#fff', weight: 2, fillOpacity: 0.8 }).addTo(map).bindPopup('<strong>' + city.name + '</strong><br>' + city.note); });
+            }
+        });
+    </script>
+</body>
+</html>

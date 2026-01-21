@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chapter 4: North America - Explore the geography of the United States, Canada, and Mexico.">
+    <title>Chapter 4: North America | World Regional Geography</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-brand">
+                <a href="../../index.html" class="logo">
+                    <span class="logo-icon">🌍</span>
+                    <span class="logo-text">World Regional Geography</span>
+                </a>
+            </div>
+            <nav class="main-nav" aria-label="Main navigation">
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="../../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active">Chapters</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../01-introduction/index.html">1. Introduction</a></li>
+                            <li><a href="../02-europe/index.html">2. Europe</a></li>
+                            <li><a href="../03-russia/index.html">3. Russia and Post-Soviet</a></li>
+                            <li><a href="../04-north-america/index.html" class="active">4. North America</a></li>
+                            <li><a href="../05-latin-america/index.html">5. Latin America</a></li>
+                            <li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
+                            <li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa and SW Asia</a></li>
+                            <li><a href="../08-south-asia/index.html">8. South Asia</a></li>
+                            <li><a href="../09-east-asia/index.html">9. East Asia</a></li>
+                            <li><a href="../10-southeast-asia/index.html">10. Southeast Asia</a></li>
+                            <li><a href="../11-australia-oceania/index.html">11. Australia and Oceania</a></li>
+                            <li><a href="../12-conclusion/index.html">12. Global Connections</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="chapter-header">
+        <div class="container">
+            <p class="chapter-meta">Chapter 4 - Week 6</p>
+            <h1 class="chapter-title">North America</h1>
+            <p class="chapter-description">The United States, Canada, and Mexico form a diverse region of vast landscapes, economic integration, and complex cultural dynamics spanning from Arctic tundra to tropical beaches.</p>
+        </div>
+    </section>
+
+    <main class="chapter-content">
+        <div class="container">
+            <div class="learning-objectives">
+                <h2>🎯 Learning Objectives</h2>
+                <ul>
+                    <li>Describe the major physical regions of North America</li>
+                    <li>Analyze urbanization patterns and metropolitan growth</li>
+                    <li>Explain the significance of USMCA and continental integration</li>
+                    <li>Evaluate immigration and cultural diversity</li>
+                </ul>
+            </div>
+
+            <section id="regional-profile">
+                <h2>🗽 Regional Profile</h2>
+                <div class="profile-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
+                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                        <div style="font-size: 2rem;">👥</div>
+                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">~500 Million</div>
+                        <div style="color: var(--color-text-muted);">Population</div>
+                    </div>
+                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                        <div style="font-size: 2rem;">🗺️</div>
+                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">3 Countries</div>
+                        <div style="color: var(--color-text-muted);">Major Nations</div>
+                    </div>
+                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                        <div style="font-size: 2rem;">💰</div>
+                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">$28+ Trillion</div>
+                        <div style="color: var(--color-text-muted);">Combined GDP</div>
+                    </div>
+                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                        <div style="font-size: 2rem;">🏙️</div>
+                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">82%</div>
+                        <div style="color: var(--color-text-muted);">Urban Population</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="north-america-map">
+                <h2>🗺️ Interactive Map: North America</h2>
+                <div id="regions-map" class="interactive-map" style="height: 500px; border-radius: var(--radius-lg); overflow: hidden;"></div>
+            </section>
+
+            <section id="physical-geography">
+                <h2>Physical Geography</h2>
+                <p><strong>The Rocky Mountains:</strong> Running from Alaska through Canada and the western U.S., these young mountains shape climate and settlement patterns.</p>
+                <p><strong>The Great Plains:</strong> The agricultural heartland stretching from Canada to Texas produces much of North America's grain.</p>
+                <p><strong>The Appalachians:</strong> Older, lower mountains in the east that historically limited westward expansion.</p>
+            </section>
+
+            <section id="global-theme">
+                <h2>🌐 Global Theme: Urbanization and Diversity</h2>
+                <p>North America is highly urbanized, with major metropolitan areas like New York, Los Angeles, Toronto, and Mexico City driving economic and cultural life.</p>
+                <p>Immigration has made North American cities among the world's most diverse, with significant populations from every world region.</p>
+            </section>
+
+            <section id="texas-connection">
+                <div class="case-study" style="border-left-color: #bf5700;">
+                    <div class="case-study-header">
+                        <span class="case-study-label" style="background: #bf5700;">Texas Connection</span>
+                        <h4>Texas: A Geographic Crossroads</h4>
+                    </div>
+                    <p>Texas exemplifies North American geographic diversity, spanning multiple climate zones, cultural influences, and economic systems. As the second-largest state by both area and population, Texas connects the U.S. to Mexico through the world's busiest land border.</p>
+                </div>
+            </section>
+
+            <section id="knowledge-check">
+                <h2>✅ Knowledge Check</h2>
+                <div class="quiz-container" data-quiz="q1">
+                    <p class="quiz-question">1. What percentage of North America's population is urban?</p>
+                    <div class="quiz-options">
+                        <label class="quiz-option" data-correct="true" data-feedback="About 82% of North Americans live in urban areas, making it one of the most urbanized regions globally.">
+                            <input type="radio" name="q1" value="a"><span>About 82%</span>
+                        </label>
+                        <label class="quiz-option" data-correct="false">
+                            <input type="radio" name="q1" value="b"><span>About 50%</span>
+                        </label>
+                        <label class="quiz-option" data-correct="false">
+                            <input type="radio" name="q1" value="c"><span>About 35%</span>
+                        </label>
+                    </div>
+                    <div class="quiz-feedback"></div>
+                </div>
+            </section>
+
+            <nav class="chapter-nav">
+                <a href="../03-russia/index.html" class="chapter-nav-link">← Chapter 3: Russia</a>
+                <a href="../05-latin-america/index.html" class="chapter-nav-link">Chapter 5: Latin America →</a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🌍</span>
+                    <span>World Regional Geography</span>
+                </div>
+                <div class="footer-copyright">
+                    <p>© 2026 Dr. Sounny. Open Educational Resource.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../../js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof L !== 'undefined' && document.getElementById('regions-map')) {
+                const map = L.map('regions-map').setView([40, -100], 3);
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                    attribution: '© OpenStreetMap © CARTO'
+                }).addTo(map);
+
+                const cities = [
+                    { name: 'New York', coords: [40.7128, -74.0060], note: 'Largest U.S. city' },
+                    { name: 'Los Angeles', coords: [34.0522, -118.2437], note: 'West Coast hub' },
+                    { name: 'Chicago', coords: [41.8781, -87.6298], note: 'Midwest center' },
+                    { name: 'Houston', coords: [29.7604, -95.3698], note: 'Texas largest city' },
+                    { name: 'Toronto', coords: [43.6532, -79.3832], note: 'Canada largest city' },
+                    { name: 'Mexico City', coords: [19.4326, -99.1332], note: 'Mexico capital' }
+                ];
+
+                cities.forEach(city => {
+                    L.circleMarker(city.coords, {
+                        radius: 8, fillColor: '#3b82f6', color: '#fff', weight: 2, fillOpacity: 0.8
+                    }).addTo(map).bindPopup('<strong>' + city.name + '</strong><br>' + city.note);
+                });
+            }
+
+            document.querySelectorAll('.quiz-container').forEach(container => {
+                const options = container.querySelectorAll('.quiz-option');
+                const feedbackDiv = container.querySelector('.quiz-feedback');
+                options.forEach(option => {
+                    option.querySelector('input').addEventListener('change', () => {
+                        options.forEach(opt => opt.classList.remove('correct', 'incorrect'));
+                        const isCorrect = option.dataset.correct === 'true';
+                        option.classList.add(isCorrect ? 'correct' : 'incorrect');
+                        const correctOpt = Array.from(options).find(opt => opt.dataset.correct === 'true');
+                        feedbackDiv.innerHTML = isCorrect 
+                            ? '<p class="feedback-correct">Correct! ' + option.dataset.feedback + '</p>'
+                            : '<p class="feedback-incorrect">Try again. ' + correctOpt.dataset.feedback + '</p>';
+                        feedbackDiv.className = 'quiz-feedback show ' + (isCorrect ? 'correct' : 'incorrect');
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -3,199 +3,248 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="World Regional Geography - A premium online textbook exploring the world's regions. Coming soon.">
-    <title>Coming Soon | World Regional Geography</title>
-    <style>
-        :root {
-            --primary-teal: #4A90A4;
-            --dark-bg: #1A1A1B;
-            --light-text: #F5F5F5;
-            --accent-glow: rgba(74, 144, 164, 0.3);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            background-color: var(--dark-bg);
-            color: var(--light-text);
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .background-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background-image: url('img/coming-soon-bg.png');
-            background-size: cover;
-            background-position: center;
-            filter: brightness(0.4);
-            animation: subtleZoom 20s infinite alternate ease-in-out;
-        }
-
-        @keyframes subtleZoom {
-            from { transform: scale(1); }
-            to { transform: scale(1.1); }
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at center, transparent 0%, var(--dark-bg) 80%);
-            z-index: 0;
-        }
-
-        .content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            max-width: 800px;
-            padding: 2rem;
-            animation: fadeIn 1.5s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .badge {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: var(--accent-glow);
-            border: 1px solid var(--primary-teal);
-            border-radius: 50px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--primary-teal);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(5px);
-        }
-
-        h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            background: linear-gradient(to bottom, #FFFFFF, var(--primary-teal));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        p {
-            font-size: clamp(1.1rem, 3vw, 1.4rem);
-            line-height: 1.6;
-            color: #CCCCCC;
-            margin-bottom: 3rem;
-            font-weight: 300;
-        }
-
-        .loader {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 3rem;
-        }
-
-        .dot {
-            width: 12px;
-            height: 12px;
-            background-color: var(--primary-teal);
-            border-radius: 50%;
-            animation: bounce 1.4s infinite ease-in-out both;
-        }
-
-        .dot:nth-child(1) { animation-delay: -0.32s; }
-        .dot:nth-child(2) { animation-delay: -0.16s; }
-
-        @keyframes bounce {
-            0%, 80%, 100% { transform: scale(0); }
-            40% { transform: scale(1.0); }
-        }
-
-        .footer {
-            position: absolute;
-            bottom: 2rem;
-            width: 100%;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #666;
-            z-index: 10;
-        }
-
-        .dev-link {
-            color: var(--primary-teal);
-            text-decoration: none;
-            opacity: 0.3;
-            transition: opacity 0.3s;
-            margin-left: 10px;
-        }
-
-        .dev-link:hover {
-            opacity: 1;
-        }
-
-        /* Glass Card */
-        .card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-        }
-    </style>
+    <meta name="description" content="World Regional Geography - An interactive open educational resource exploring the world's major regions through geographic analysis.">
+    <title>World Regional Geography</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="background-container"></div>
-    <div class="overlay"></div>
-
-    <main class="content">
-        <div class="card">
-            <span class="badge">In Development</span>
-            <h1>World Regional Geography</h1>
-            <p>
-                We are crafting a premium, interactive online textbook designed to help you 
-                discover the complex stories of our world. A new educational frontier is arriving soon.
-            </p>
-            <div class="loader">
-                <div class="dot"></div>
-                <div class="dot"></div>
-                <div class="dot"></div>
+    <header class="site-header">
+        <div class="container">
+            <div class="header-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🌍</span>
+                    <span class="logo-text">World Regional Geography</span>
+                </a>
             </div>
-            <a href="chapters/01-introduction/index.html" class="btn btn-primary" style="
-                display: inline-block;
-                padding: 1rem 2rem;
-                background: var(--primary-teal);
-                color: white;
-                text-decoration: none;
-                border-radius: 8px;
-                font-weight: 600;
-                transition: all 0.3s ease;
-            ">📘 Preview Chapter 1</a>
+            <nav class="main-nav" aria-label="Main navigation">
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Chapters</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="chapters/01-introduction/index.html">1. Introduction</a></li>
+                            <li><a href="chapters/02-europe/index.html">2. Europe</a></li>
+                            <li><a href="chapters/03-russia/index.html">3. Russia and Central Asia</a></li>
+                            <li><a href="chapters/04-north-america/index.html">4. North America</a></li>
+                            <li><a href="chapters/05-latin-america/index.html">5. Latin America</a></li>
+                            <li><a href="chapters/06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
+                            <li><a href="chapters/07-north-africa-sw-asia/index.html">7. N. Africa and SW Asia</a></li>
+                            <li><a href="chapters/08-south-asia/index.html">8. South Asia</a></li>
+                            <li><a href="chapters/09-east-asia/index.html">9. East Asia</a></li>
+                            <li><a href="chapters/10-southeast-asia/index.html">10. Southeast Asia</a></li>
+                            <li><a href="chapters/11-australia-oceania/index.html">11. Australia and Oceania</a></li>
+                            <li><a href="chapters/12-conclusion/index.html">12. Global Connections</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#resources" class="nav-link">Resources</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                </ul>
+            </nav>
         </div>
-    </main>
+    </header>
 
-    <footer class="footer">
-        &copy; 2026 Dr. Sounny. All rights reserved.
-        <a href="index-dev.html" class="dev-link">Dev Access</a>
+    <section class="hero" style="background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.85)), url('images/hero_banner.png'); background-size: cover; background-position: center; min-height: 500px; display: flex; align-items: center;">
+        <div class="container">
+            <div class="hero-content" style="color: white;">
+                <h1 class="hero-title">World Regional Geography</h1>
+                <p class="hero-subtitle">An Interactive Journey Through Earth's Diverse Regions</p>
+                <p class="hero-description">Explore the physical landscapes, human cultures, and global connections that define our world. This open educational resource provides comprehensive coverage of all major world regions.</p>
+                <div class="hero-actions">
+                    <a href="chapters/01-introduction/index.html" class="btn btn-primary">Start Learning</a>
+                    <a href="#chapters" class="btn btn-secondary">Browse Chapters</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="world-map" class="world-map-section">
+        <div class="container">
+            <h2>Explore the World</h2>
+            <p>Click on any region to begin exploring. Each area offers unique geographic features, cultures, and connections to global issues.</p>
+            <div id="global-map" style="height: 450px; border-radius: var(--radius-lg); overflow: hidden; margin-top: var(--space-6);"></div>
+        </div>
+    </section>
+
+    <section id="chapters" class="chapters-section">
+        <div class="container">
+            <h2>Course Chapters</h2>
+            <p>Navigate through 12 comprehensive chapters covering all world regions.</p>
+            
+            <div class="chapter-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: var(--space-6); margin-top: var(--space-8);">
+                
+                <a href="chapters/01-introduction/index.html" class="chapter-card" style="display: block; background: var(--color-bg-alt); border-radius: var(--radius-lg); padding: var(--space-6); text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s;">
+                    <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">🌐</div>
+                    <h3 style="color: var(--color-primary); margin-bottom: var(--space-2);">Chapter 1</h3>
+                    <h4 style="margin-bottom: var(--space-3);">Introduction to Geography</h4>
+                    <p style="color: var(--color-text-muted); font-size: var(--text-sm);">Foundations of geographic thinking, spatial analysis, and world regions framework.</p>
+                </a>
+
+                <a href="chapters/02-europe/index.html" class="chapter-card" style="display: block; background: var(--color-bg-alt); border-radius: var(--radius-lg); padding: var(--space-6); text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s;">
+                    <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">🏰</div>
+                    <h3 style="color: var(--color-primary); margin-bottom: var(--space-2);">Chapter 2</h3>
+                    <h4 style="margin-bottom: var(--space-3);">Europe</h4>
+                    <p style="color: var(--color-text-muted); font-size: var(--text-sm);">Supranationalism, EU integration, and cultural diversity.</p>
+                </a>
+
+                <a href="chapters/03-russia/index.html" class="chapter-card" style="display: block; background: var(--color-bg-alt); border-radius: var(--radius-lg); padding: var(--space-6); text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s;">
+                    <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">🏔️</div>
+                    <h3 style="color: var(--color-primary); margin-bottom: var(--space-2);">Chapter 3</h3>
+                    <h4 style="margin-bottom: var(--space-3);">Russia and Central Asia</h4>
+                    <p style="color: var(--color-text-muted); font-size: var(--text-sm);">Energy geopolitics, vast territory, and post-Soviet transitions.</p>
+                </a>
+
+                <a href="chapters/04-north-america/index.html" class="chapter-card" style="display: block; background: var(--color-bg-alt); border-radius: var(--radius-lg); padding: var(--space-6); text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s;">
+                    <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">🗽</div>
+                    <h3 style="color: var(--color-primary); margin-bottom: var(--space-2);">Chapter 4</h3>
+                    <h4 style="margin-bottom: var(--space-3);">North America</h4>
+                    <p style="color: var(--color-text-muted); font-size: var(--text-sm);">Urbanization, diversity, and continental integration.</p>
+                </a>
+
+                <a href="chapters/05-latin-america/index.html" class="chapter-card" style="display: block; background: var(--color-bg-alt); border-radius: var(--radius-lg); padding: var(--space-6); text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s;">
+                    <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">🌴</div>
+                    <h3 style="color: var(--color-primary); margin-bottom: var(--space-2);">Chapter 5</h3>
+                    <h4 style="margin-bottom: var(--space-3);">Latin America</h4>
+                    <p style="color: var(--color-text-muted); font-size: var(--text-sm);">Biodiversity, inequality, and colonial legacies.</p>
+                </a>
+
+                <a href="chapters/06-sub-saharan-africa/index.html" class="chapter-card" style="display: block; background: var(--color-bg-alt); border-radius: var(--radius-lg); padding: var(--space-6); text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s;">
+                    <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">🦁</div>
+                    <h3 style="color: var(--color-primary); margin-bottom: var(--space-2);">Chapter 6</h3>
+                    <h4 style="margin-bottom: var(--space-3);">Sub-Saharan Africa</h4>
+                    <p style="color: var(--color-text-muted); font-size: var(--text-sm);">Development challenges, youth population, and global connections.</p>
+                </a>
+
+                <a href="chapters/07-north-africa-sw-asia/index.html" class="chapter-card" style="display: block; background: var(--color-bg-alt); border-radius: var(--radius-lg); padding: var(--space-6); text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s;">
+                    <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">🕌</div>
+                    <h3 style="color: var(--color-primary); margin-bottom: var(--space-2);">Chapter 7</h3>
+                    <h4 style="margin-bottom: var(--space-3);">N. Africa and SW Asia</h4>
+                    <p style="color: var(--color-text-muted); font-size: var(--text-sm);">Water scarcity, oil geopolitics, and religious significance.</p>
+                </a>
+
+                <a href="chapters/08-south-asia/index.html" class="chapter-card" style="display: block; background: var(--color-bg-alt); border-radius: var(--radius-lg); padding: var(--space-6); text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s;">
+                    <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">🏛️</div>
+                    <h3 style="color: var(--color-primary); margin-bottom: var(--space-2);">Chapter 8</h3>
+                    <h4 style="margin-bottom: var(--space-3);">South Asia</h4>
+                    <p style="color: var(--color-text-muted); font-size: var(--text-sm);">Monsoons, population dynamics, and climate vulnerability.</p>
+                </a>
+
+                <a href="chapters/09-east-asia/index.html" class="chapter-card" style="display: block; background: var(--color-bg-alt); border-radius: var(--radius-lg); padding: var(--space-6); text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s;">
+                    <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">🏯</div>
+                    <h3 style="color: var(--color-primary); margin-bottom: var(--space-2);">Chapter 9</h3>
+                    <h4 style="margin-bottom: var(--space-3);">East Asia</h4>
+                    <p style="color: var(--color-text-muted); font-size: var(--text-sm);">Economic powerhouses, demographic challenges, and geopolitics.</p>
+                </a>
+
+                <a href="chapters/10-southeast-asia/index.html" class="chapter-card" style="display: block; background: var(--color-bg-alt); border-radius: var(--radius-lg); padding: var(--space-6); text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s;">
+                    <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">🌊</div>
+                    <h3 style="color: var(--color-primary); margin-bottom: var(--space-2);">Chapter 10</h3>
+                    <h4 style="margin-bottom: var(--space-3);">Southeast Asia</h4>
+                    <p style="color: var(--color-text-muted); font-size: var(--text-sm);">Cultural crossroads, ASEAN, and maritime importance.</p>
+                </a>
+
+                <a href="chapters/11-australia-oceania/index.html" class="chapter-card" style="display: block; background: var(--color-bg-alt); border-radius: var(--radius-lg); padding: var(--space-6); text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s;">
+                    <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">🏝️</div>
+                    <h3 style="color: var(--color-primary); margin-bottom: var(--space-2);">Chapter 11</h3>
+                    <h4 style="margin-bottom: var(--space-3);">Australia and Oceania</h4>
+                    <p style="color: var(--color-text-muted); font-size: var(--text-sm);">Island geography, endemic species, and climate vulnerability.</p>
+                </a>
+
+                <a href="chapters/12-conclusion/index.html" class="chapter-card" style="display: block; background: var(--color-bg-alt); border-radius: var(--radius-lg); padding: var(--space-6); text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s;">
+                    <div style="font-size: 2.5rem; margin-bottom: var(--space-3);">🌐</div>
+                    <h3 style="color: var(--color-primary); margin-bottom: var(--space-2);">Chapter 12</h3>
+                    <h4 style="margin-bottom: var(--space-3);">Global Connections</h4>
+                    <p style="color: var(--color-text-muted); font-size: var(--text-sm);">Synthesizing regional knowledge and understanding global flows.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section" style="padding: var(--space-16) 0; background: var(--color-bg-alt);">
+        <div class="container">
+            <h2>About This Textbook</h2>
+            <p>This interactive textbook is designed for introductory World Regional Geography courses. Each chapter combines physical and human geography with contemporary global issues, providing students with a comprehensive understanding of our interconnected world.</p>
+            <h3>Features</h3>
+            <ul>
+                <li>Interactive maps for each world region</li>
+                <li>Knowledge check quizzes with instant feedback</li>
+                <li>Texas connections linking local to global</li>
+                <li>Case studies exploring real-world issues</li>
+                <li>Mobile-friendly responsive design</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🌍</span>
+                    <span>World Regional Geography</span>
+                </div>
+                <div class="footer-copyright">
+                    <p>© 2026 Dr. Sounny. Open Educational Resource.</p>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize global map
+            if (typeof L !== 'undefined' && document.getElementById('global-map')) {
+                const map = L.map('global-map').setView([20, 0], 2);
+                
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                    attribution: '© OpenStreetMap © CARTO'
+                }).addTo(map);
+
+                // Add region markers
+                const regions = [
+                    { name: 'Europe', coords: [50, 10], url: 'chapters/02-europe/index.html' },
+                    { name: 'Russia', coords: [60, 100], url: 'chapters/03-russia/index.html' },
+                    { name: 'North America', coords: [40, -100], url: 'chapters/04-north-america/index.html' },
+                    { name: 'Latin America', coords: [-10, -60], url: 'chapters/05-latin-america/index.html' },
+                    { name: 'Sub-Saharan Africa', coords: [0, 20], url: 'chapters/06-sub-saharan-africa/index.html' },
+                    { name: 'Middle East', coords: [25, 45], url: 'chapters/07-north-africa-sw-asia/index.html' },
+                    { name: 'South Asia', coords: [20, 78], url: 'chapters/08-south-asia/index.html' },
+                    { name: 'East Asia', coords: [35, 105], url: 'chapters/09-east-asia/index.html' },
+                    { name: 'Southeast Asia', coords: [5, 115], url: 'chapters/10-southeast-asia/index.html' },
+                    { name: 'Oceania', coords: [-25, 135], url: 'chapters/11-australia-oceania/index.html' }
+                ];
+
+                regions.forEach(region => {
+                    L.circleMarker(region.coords, {
+                        radius: 12,
+                        fillColor: '#3b82f6',
+                        color: '#fff',
+                        weight: 2,
+                        fillOpacity: 0.8
+                    }).addTo(map)
+                    .bindPopup('<strong>' + region.name + '</strong><br><a href="' + region.url + '">Explore Chapter</a>')
+                    .on('click', function() {
+                        this.openPopup();
+                    });
+                });
+            }
+
+            // Add hover effect to chapter cards
+            document.querySelectorAll('.chapter-card').forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-4px)';
+                    this.style.boxShadow = '0 10px 30px rgba(0,0,0,0.15)';
+                });
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
