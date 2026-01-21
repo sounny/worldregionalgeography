@@ -1,5 +1,5 @@
 # Initial Concept
-I am developing this textbook for world regional geography. I need to have it fully developed, make plan to go through it chapter by chapter, add interacive maps when possible, add interactive graphs and figures when possible. Review the reference folder, and add content from that. The goal is to have a pedogoically enagaging maerials that the students will want to use. review the agents md file. make pedogogical enhancments to the chapters. Have each chapter have interactive quizzes, glossory of terms, and summary of big ideas. When you talk about an importat person have a box that gives a highlight of who they are. Try to get images of wikimedia when possible to add more graphics, etc.
+I am developing this textbook for world regional geography. I need to have it fully developed, make plan to go through it chapter by chapter, add interactive maps when possible, add interactive graphs and figures when possible. Review the reference folder, and add content from that. The goal is to have a pedagogically engaging materials that the students will want to use. review the agents md file. make pedagogical enhancements to the chapters. Have each chapter have interactive quizzes, glossary of terms, and summary of big ideas. When you talk about an important person have a box that gives a highlight of who they are. Try to get images of wikimedia when possible to add more graphics, etc.
 
 # Product Definition: World Regional Geography Interactive Textbook
 
@@ -18,10 +18,10 @@ An interactive, Open Educational Resource (OER) textbook for World Regional Geog
 
 ## 4. Key Features (The "Gold Standard" Chapter)
 Each of the 12 chapters will eventually include:
-- **Interactive LeafletJS Maps**: Multi-layered maps (Physical, Political, Thematic) for spatial exploration.
-- **Auto-Graded Quizzes**: Embedded Knowledge Checks with immediate feedback for students.
+- **Interactive LeafletJS Maps**: Modular, multi-layered maps (Physical, Political, Thematic) powered by `map-init.js`.
+- **Deep-Dive Quizzes**: Embedded, scenario-based Knowledge Checks (10+ questions) using a custom `quiz-engine.js` with immediate feedback.
 - **Data Visualizations**: Interactive graphs and charts for regional demographics and economic trends.
-- **Biographical Highlights**: "Important Person" boxes featuring regional figures with Wikimedia Commons imagery.
+- **Biographical Break-outs**: "Important Person" sections featuring regional figures, integrated as inline break-outs to vary reading flow.
 - **Texas Connection Sidebars**: Specific call-outs linking the region's geography to Texas.
 - **Case Studies**: Deep dives into regional conflicts, sustainability successes, or cultural shifts.
 - **Scenario-Based Exercises**: "Regional Decisions" prompts that place students in role-playing scenarios.

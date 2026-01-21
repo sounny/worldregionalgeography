@@ -6,9 +6,9 @@
 - **Scripting**: Vanilla JavaScript (ES6+) for UI interactivity and pedagogical components.
 
 ## Interactive & Multimedia
-- **Mapping**: [LeafletJS](https://leafletjs.com/) - Used for all interactive regional, physiographic, and thematic maps.
+- **Mapping**: [LeafletJS](https://leafletjs.com/) with custom `js/map-init.js` module and `js/regions-data.js` for centralized GeoJSON management.
 - **Data Visualizations**: [Chart.js](https://www.chartjs.org/) - Recommended for interactive, minimalist graphs and demographic charts.
-- **Quizzes**: Custom JavaScript-based quiz engine for immediate student feedback.
+- **Quizzes**: Custom `js/quiz-engine.js` module handling JSON-based question loading, scenario support, and client-side validation.
 
 ## Content & Assets
 - **Content Source**: `references/` folder (Factual data) and `chapters/` (HTML structure).
