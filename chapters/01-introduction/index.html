@@ -264,6 +264,25 @@
                 </div>
             </section>
 
+            <!-- 11. Discussion & Reflection -->
+            <section id="discussion" class="section-container">
+                <h2>💬 Discussion & Reflection Prompts</h2>
+                <div style="background: #e8f0fe; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #1e40af;">
+                    <h3 style="margin-top: 0; color: #1e40af;">Reflect on Your Learning</h3>
+                    <ol style="line-height: 1.8;">
+                        <li><strong>Personal Connection:</strong> Which geographic concept connects most to your own place or community? How does geographic thinking help you understand it differently?</li>
+                        <li><strong>Scale Analysis:</strong> Choose a problem you care about (climate, migration, poverty). How would you analyze it at local, regional, and global scales? What patterns emerge?</li>
+                        <li><strong>Map Making:</strong> If you created a map of something important to you, what would you show? What would you leave out? What does that reveal about representation?</li>
+                    </ol>
+                    <h3 style="margin-top: 1.5rem; color: #1e40af;">Discuss With Your Peers</h3>
+                    <ul style="line-height: 1.8;">
+                        <li>What surprised you most about how geographers think about the world?</li>
+                        <li>How might a geographer approach a problem differently than a historian or economist?</li>
+                        <li>Can you think of an example where geographic understanding resolved a real-world challenge?</li>
+                    </ul>
+                </div>
+            </section>
+
             <!-- Navigation -->
             <nav class="chapter-nav">
                 <a href="../../index.html" class="chapter-nav-link">← Home</a>
@@ -309,12 +328,18 @@
             }
 
             // Initialize the Chapter 1 Quiz from external JSON
-            fetch('quiz-data.json')
-                .then(response => response.json())
-                .then(data => {
-                    QuizEngine.init('quiz-container', data);
-                })
-                .catch(err => console.error('Error loading quiz data:', err));
+            const quizContainer = document.getElementById('quiz-container');
+            if (quizContainer) {
+                fetch('quiz-data.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        QuizEngine.init('quiz-container', data);
+                    })
+                    .catch(err => {
+                        console.error('Error loading quiz data:', err);
+                        quizContainer.innerHTML = '<p class="text-muted">Quiz unavailable right now.</p>';
+                    });
+            }
         });
     </script>
 </body>

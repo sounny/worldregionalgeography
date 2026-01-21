@@ -196,22 +196,64 @@
                 </div>
             </section>
 
-            <section id="knowledge-check">
-                <h2>✅ Knowledge Check</h2>
-                <div class="quiz-container" data-quiz="q1">
-                    <p class="quiz-question">1. What percentage of Earth's fresh water is in the Amazon River system?</p>
-                    <div class="quiz-options">
-                        <label class="quiz-option" data-correct="true" data-feedback="The Amazon contains about 20% of Earth's river water, making it the world's largest river system by volume.">
-                            <input type="radio" name="q1" value="a"><span>About 20%</span>
-                        </label>
-                        <label class="quiz-option" data-correct="false">
-                            <input type="radio" name="q1" value="b"><span>About 5%</span>
-                        </label>
-                        <label class="quiz-option" data-correct="false">
-                            <input type="radio" name="q1" value="c"><span>About 50%</span>
-                        </label>
+            </section>
+
+            <section id="summary-glossary" class="section-container">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            📖 Glossary of Terms <span class="chevron">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <dl>
+                                <dt>Altitudinal Zonation</dt>
+                                <dd>The division of land into zones based on elevation, which determines climate and vegetation (tierra caliente, templada, fria).</dd>
+                                <dt>Remittances</dt>
+                                <dd>Money sent by migrants working abroad back to their families in their home country.</dd>
+                                <dt>Informal Economy</dt>
+                                <dd>Economic activities not taxed or monitored by the government, employing a large portion of the urban poor.</dd>
+                                <dt>Treaty of Tordesillas</dt>
+                                <dd>A 1494 agreement dividing the "New World" between Spain and Portugal, explaining why Brazil speaks Portuguese.</dd>
+                            </dl>
+                        </div>
                     </div>
-                    <div class="quiz-feedback"></div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            💡 Summary of Big Ideas <span class="chevron">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>The Andes Mountains and Amazon Basin are dominant physical features shaping human activity.</li>
+                                <li>Colonialism created lasting structures of inequality and cultural fusion (mestizo populations).</li>
+                                <li>Rapid urbanization has created megacities where modern development contrasts with informal settlements (favelas).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="knowledge-check" class="section-container">
+                <h2>✅ Knowledge Check</h2>
+                <div id="quiz-container" class="quiz-wrapper">
+                    <p class="loading">Loading quiz questions...</p>
+                </div>
+            </section>
+
+            <section id="discussion" class="section-container">
+                <h2>💬 Discussion & Reflection Prompts</h2>
+                <div style="background: #e8f0fe; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #1e40af;">
+                    <h3 style="margin-top: 0; color: #1e40af;">Reflect on Your Learning</h3>
+                    <ol style="line-height: 1.8;">
+                        <li><strong>Biodiversity & Development:</strong> Why is the Amazon so crucial to global climate? How can Latin America balance protecting this resource with economic development?</li>
+                        <li><strong>Colonial Legacy:</strong> How do patterns of colonial extraction still shape Latin American economies and inequality today?</li>
+                        <li><strong>Geographic Diversity:</strong> How do the Andes mountains, Amazon rainforest, and coastal zones create distinct regional economies and challenges?</li>
+                    </ol>
+                    <h3 style="margin-top: 1.5rem; color: #1e40af;">Discuss With Your Peers</h3>
+                    <ul style="line-height: 1.8;">
+                        <li>What responsibilities do wealthy nations have in protecting Amazon rainforests?</li>
+                        <li>How can Indigenous geographic knowledge inform sustainable development in Latin America?</li>
+                        <li>What role should trade agreements play in Latin American development?</li>
+                    </ul>
                 </div>
             </section>
 
@@ -232,6 +274,7 @@
     </footer>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../../js/quiz-engine.js"></script>
     <script src="../../js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -252,20 +295,16 @@
                     .addTo(map).bindPopup('<strong>' + city.name + '</strong><br>' + city.note);
                 });
             }
-            document.querySelectorAll('.quiz-container').forEach(container => {
-                const options = container.querySelectorAll('.quiz-option');
-                const feedbackDiv = container.querySelector('.quiz-feedback');
-                options.forEach(option => {
-                    option.querySelector('input').addEventListener('change', () => {
-                        options.forEach(opt => opt.classList.remove('correct', 'incorrect'));
-                        const isCorrect = option.dataset.correct === 'true';
-                        option.classList.add(isCorrect ? 'correct' : 'incorrect');
-                        const correctOpt = Array.from(options).find(opt => opt.dataset.correct === 'true');
-                        feedbackDiv.innerHTML = isCorrect ? '<p class="feedback-correct">Correct! ' + option.dataset.feedback + '</p>' : '<p class="feedback-incorrect">Try again.</p>';
-                        feedbackDiv.className = 'quiz-feedback show ' + (isCorrect ? 'correct' : 'incorrect');
+            const quizContainer = document.getElementById('quiz-container');
+            if (quizContainer) {
+                fetch('quiz-data.json')
+                    .then(response => response.json())
+                    .then(data => QuizEngine.init('quiz-container', data))
+                    .catch(err => {
+                        console.error('Error loading quiz data:', err);
+                        quizContainer.innerHTML = '<p class="text-muted">Quiz unavailable right now.</p>';
                     });
-                });
-            });
+            }
         });
     </script>
 </body>

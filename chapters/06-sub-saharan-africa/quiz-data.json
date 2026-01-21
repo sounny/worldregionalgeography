@@ -1,0 +1,29 @@
+[
+    {
+        "question": "Which 1884 event arbitrarily divided the African continent among European powers?",
+        "options": [
+            { "text": "The Berlin Conference", "correct": true, "feedback": "Borders were drawn without regard for ethnic or linguistic groups, leading to long-term instability." },
+            { "text": "The Treaty of Versailles", "correct": false },
+            { "text": "The Yalta Conference", "correct": false },
+            { "text": "The Congress of Vienna", "correct": false }
+        ]
+    },
+    {
+        "question": "Which geological feature is a massive fault system stretching from Southwest Asia through East Africa?",
+        "options": [
+            { "text": "The Great Rift Valley", "correct": true, "feedback": "The Great Rift Valley is a divergent plate boundary creating deep lakes and volcanoes." },
+            { "text": "The Andes Mountains", "correct": false },
+            { "text": "The San Andreas Fault", "correct": false },
+            { "text": "The Himalayan Plateau", "correct": false }
+        ]
+    },
+    {
+        "question": "What term describes an urban economy divided between a corporate/government sector and a street-level/artisan sector?",
+        "options": [
+            { "text": "Dual Economy", "correct": true, "feedback": "The dual economy consists of a formal sector and a large, unregulated informal sector." },
+            { "text": "Command Economy", "correct": false },
+            { "text": "Subsistence Economy", "correct": false },
+            { "text": "Digital Economy", "correct": false }
+        ]
+    }
+]

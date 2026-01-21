@@ -1,0 +1,28 @@
+[
+  {
+    "question": "Which two rivers are often described as the historic lifeblood of Chinese agriculture and transport?",
+    "options": [
+      {
+        "text": "The Yellow (Huang He) and the Yangtze (Chang Jiang)",
+        "correct": true,
+        "feedback": "The Yellow and Yangtze river systems supported early settlement, farming, and state formation in China."
+      },
+      { "text": "The Nile and the Congo", "correct": false },
+      { "text": "The Rhine and the Danube", "correct": false },
+      { "text": "The Amazon and the Orinoco", "correct": false }
+    ]
+  },
+  {
+    "question": "Why do Japan and Taiwan experience frequent earthquakes and volcanic activity?",
+    "options": [
+      {
+        "text": "They sit on active tectonic plate boundaries in the Pacific Ring of Fire",
+        "correct": true,
+        "feedback": "Subduction zones and plate boundaries around the Pacific generate earthquakes, volcanoes, and tsunamis."
+      },
+      { "text": "They are located at the center of a stable continental interior", "correct": false },
+      { "text": "They have the world's largest deserts", "correct": false },
+      { "text": "They are far from the ocean", "correct": false }
+    ]
+  }
+]

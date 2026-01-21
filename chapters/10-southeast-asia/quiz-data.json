@@ -9,33 +9,20 @@
       },
       { "text": "Isthmus", "correct": false },
       { "text": "Peninsula", "correct": false },
-      { "text": "Plateau", "correct": false }
+      { "text": "Delta", "correct": false }
     ]
   },
   {
-    "question": "Which city-state is known as an 'Economic Tiger' and major financial hub?",
+    "question": "Which city-state is known as an 'Economic Tiger' and a major financial hub in Southeast Asia?",
     "options": [
       {
         "text": "Singapore",
         "correct": true,
-        "feedback": "Singapore is a highly developed wealthy city-state."
+        "feedback": "Singapore is a highly developed city-state and a major global shipping and finance hub."
       },
       { "text": "Hanoi", "correct": false },
       { "text": "Jakarta", "correct": false },
       { "text": "Manila", "correct": false }
-    ]
-  },
-  {
-    "question": "The Malacca Strait is a strategic waterway primarily important for what reason?",
-    "options": [
-      {
-        "text": "Global shipping and trade",
-        "correct": true,
-        "feedback": "It is one of the busiest shipping lanes in the world, linking the Indian and Pacific Oceans."
-      },
-      { "text": "Tourism", "correct": false },
-      { "text": "Fishing exclusively", "correct": false },
-      { "text": "Generating hydroelectric power", "correct": false }
     ]
   }
 ]

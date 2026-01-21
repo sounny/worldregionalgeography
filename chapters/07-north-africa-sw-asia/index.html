@@ -142,7 +142,66 @@
                 </div>
             </section>
 
-            <nav class="chapter-nav">
+            <section id="summary-glossary" class="section-container">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            📖 Glossary of Terms <span class="chevron">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <dl>
+                                <dt>Fertile Crescent</dt>
+                                <dd>The crescent-shaped region containing the moist and fertile land of otherwise arid Western Asia, known as a cradle of civilization.</dd>
+                                <dt>OPEC</dt>
+                                <dd>Organization of the Petroleum Exporting Countries, which coordinates oil policies to influence global prices.</dd>
+                                <dt>Desalination</dt>
+                                <dd>Energy-intensive process that removes salt from seawater to produce fresh water, vital for Gulf states.</dd>
+                                <dt>Arab Spring</dt>
+                                <dd>A series of anti-government protests and uprisings that spread across the Arab world in the early 2010s.</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            💡 Summary of Big Ideas <span class="chevron">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>Aridity defines the region's physical geography, making water management a central political issue.</li>
+                                <li>The region is the birthplace of Judaism, Christianity, and Islam, shaping its profound cultural significance.</li>
+                                <li>Uneven distribution of oil and gas wealth creates sharp economic disparities and fuels geopolitical tensions.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="knowledge-check" class="section-container">
+                <h2>✅ Knowledge Check</h2>
+                <div id="quiz-container" class="quiz-wrapper">
+                    <p class="loading">Loading quiz questions...</p>
+                </div>
+            </section>
+
+            <section id="discussion" class="section-container">
+                <h2>💬 Discussion & Reflection Prompts</h2>
+                <div style="background: #e8f0fe; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #1e40af;">
+                    <h3 style="margin-top: 0; color: #1e40af;">Reflect on Your Learning</h3>
+                    <ol style="line-height: 1.8;">
+                        <li><strong>Water Politics:</strong> Why is water control so central to Middle Eastern geopolitics? How do shared rivers create both opportunity and conflict?</li>
+                        <li><strong>Oil & Development:</strong> How do oil reserves enable development but also create economic vulnerability and geopolitical tension?</li>
+                        <li><strong>Religious Geography:</strong> How does the distribution of religious communities relate to territorial and political conflicts in this region?</li>
+                    </ol>
+                    <h3 style="margin-top: 1.5rem; color: #1e40af;\">Discuss With Your Peers</h3>
+                    <ul style=\"line-height: 1.8;\">
+                        <li>What role should water treaties play in promoting Middle Eastern stability and cooperation?</li>
+                        <li>How can MENA nations diversify their economies beyond oil dependency?</li>
+                        <li>What geographic compromises might enable lasting peace in contentious territorial disputes?</li>
+                    </ul>
+                </div>
+            </section>
+
+            <nav class=\"chapter-nav\">
                 <a href="../06-sub-saharan-africa/index.html" class="chapter-nav-link">← Chapter 6: Sub-Saharan Africa</a>
                 <a href="../08-south-asia/index.html" class="chapter-nav-link">Chapter 8: South Asia →</a>
             </nav>
@@ -152,6 +211,7 @@
     <footer class="site-footer"><div class="container"><div class="footer-content"><div class="footer-brand"><span class="logo-icon">🌍</span><span>World Regional Geography</span></div><div class="footer-copyright"><p>© 2026 Dr. Sounny. Open Educational Resource.</p></div></div></div></footer>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../../js/quiz-engine.js"></script>
     <script src="../../js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -167,6 +227,17 @@
                     { name: 'Jerusalem', coords: [31.7683, 35.2137], note: 'Sacred to three religions' }
                 ];
                 cities.forEach(city => { L.circleMarker(city.coords, { radius: 8, fillColor: '#3b82f6', color: '#fff', weight: 2, fillOpacity: 0.8 }).addTo(map).bindPopup('<strong>' + city.name + '</strong><br>' + city.note); });
+            }
+
+            const quizContainer = document.getElementById('quiz-container');
+            if (quizContainer) {
+                fetch('quiz-data.json')
+                    .then(response => response.json())
+                    .then(data => QuizEngine.init('quiz-container', data))
+                    .catch(err => {
+                        console.error('Error loading quiz data:', err);
+                        quizContainer.innerHTML = '<p class="text-muted">Quiz unavailable right now.</p>';
+                    });
             }
         });
     </script>

@@ -1,0 +1,28 @@
+[
+  {
+    "question": "What percentage of Earth's fresh water is in the Amazon River system?",
+    "options": [
+      {
+        "text": "About 20%",
+        "correct": true,
+        "feedback": "The Amazon contains about 20% of Earth's river water, making it the world's largest river system by volume."
+      },
+      { "text": "About 5%", "correct": false },
+      { "text": "About 50%", "correct": false },
+      { "text": "About 1%", "correct": false }
+    ]
+  },
+  {
+    "question": "What term describes manufacturing plants on the Mexican side of the U.S.-Mexico border that rely on cross-border trade?",
+    "options": [
+      {
+        "text": "Maquiladoras",
+        "correct": true,
+        "feedback": "Maquiladoras are factories (often export-oriented) that grew with cross-border manufacturing and trade."
+      },
+      { "text": "Cantons", "correct": false },
+      { "text": "Atolls", "correct": false },
+      { "text": "Sultanates", "correct": false }
+    ]
+  }
+]

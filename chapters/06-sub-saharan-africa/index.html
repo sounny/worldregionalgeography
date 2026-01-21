@@ -133,7 +133,7 @@
                     <li><strong>Informal Sector:</strong> Street vending, small-scale services, and artisan work, which employs the majority of the urban poor.</li>
                 </ul>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0;">
+                <div class="figure-row">
                     <figure class="figure" style="text-align: center;">
                         <img src="../../images/africa_nairobi.jpg" alt="Nairobi city skyline" style="max-width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                         <figcaption style="margin-top: var(--space-3); color: var(--color-text-muted); font-size: var(--text-sm);">
@@ -160,6 +160,65 @@
                 </div>
             </section>
 
+            <section id="summary-glossary" class="section-container">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            📖 Glossary of Terms <span class="chevron">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <dl>
+                                <dt>Sahel</dt>
+                                <dd>The semi-arid transition zone between the Sahara Desert and the Sudanian Savanna.</dd>
+                                <dt>Berlin Conference</dt>
+                                <dd>The 1884 meeting where European powers divided Africa without regard for ethnic boundaries, setting the stage for modern conflicts.</dd>
+                                <dt>Great Rift Valley</dt>
+                                <dd>A continuous geographic trench running from Lebanon to Mozambique, creating deep lakes and elevations.</dd>
+                                <dt>Apartheid</dt>
+                                <dd>A system of institutionalised racial segregation that existed in South Africa until the 1990s.</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            💡 Summary of Big Ideas <span class="chevron">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>Africa is a continent of plateaus, with few major mountain ranges but significant rift valleys.</li>
+                                <li>The legacy of colonial borders continues to impact political stability and economic integration.</li>
+                                <li>Sub-Saharan Africa has the world's youngest population, offering a potential "demographic dividend" if development can keep pace.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="knowledge-check" class="section-container">
+                <h2>✅ Knowledge Check</h2>
+                <div id="quiz-container" class="quiz-wrapper">
+                    <p class="loading">Loading quiz questions...</p>
+                </div>
+            </section>
+
+            <section id="discussion" class="section-container">
+                <h2>💬 Discussion & Reflection Prompts</h2>
+                <div style="background: #e8f0fe; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #1e40af;">
+                    <h3 style="margin-top: 0; color: #1e40af;">Reflect on Your Learning</h3>
+                    <ol style="line-height: 1.8;">
+                        <li><strong>Colonial Impact:</strong> How do colonial borders drawn without considering ethnic, cultural, or resource boundaries still cause conflict today?</li>
+                        <li><strong>Resource Curse:</strong> Why do resource-rich nations sometimes remain poor? What would sustainable resource management look like?</li>
+                        <li><strong>Climate Vulnerability:</strong> How does the Sahel's geography make it especially vulnerable to droughts and climate change?</li>
+                    </ol>
+                    <h3 style="margin-top: 1.5rem; color: #1e40af;">Discuss With Your Peers</h3>
+                    <ul style="line-height: 1.8;">
+                        <li>How should the international community support African nations in climate adaptation?</li>
+                        <li>What role could regional organizations play in resolving conflicts rooted in colonial borders?</li>
+                        <li>How can Sub-Saharan Africa leverage its young, growing population for sustainable development?</li>
+                    </ul>
+                </div>
+            </section>
+
             <nav class="chapter-nav">
                 <a href="../05-latin-america/index.html" class="chapter-nav-link">← Chapter 5: Latin America</a>
                 <a href="../07-north-africa-sw-asia/index.html" class="chapter-nav-link">Chapter 7: N. Africa and SW Asia →</a>
@@ -171,6 +230,7 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="../../js/main.js"></script>
+    <script src="../../js/quiz-engine.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             if (typeof L !== 'undefined' && document.getElementById('regions-map')) {
@@ -185,6 +245,12 @@
                 ];
                 cities.forEach(city => { L.circleMarker(city.coords, { radius: 8, fillColor: '#3b82f6', color: '#fff', weight: 2, fillOpacity: 0.8 }).addTo(map).bindPopup('<strong>' + city.name + '</strong><br>' + city.note); });
             }
+
+            // Initialize Quiz
+            fetch('quiz-data.json')
+                .then(response => response.json())
+                .then(data => QuizEngine.init('quiz-container', data))
+                .catch(err => console.error('Error loading quiz data:', err));
         });
     </script>
 </body>

@@ -131,41 +131,27 @@
                     <p>Now that you've studied all world regions, how can geographic frameworks help address interconnected global challenges like climate change, inequality, and migration? Which regional examples best illustrate both the obstacles and opportunities for creating just, sustainable solutions that respect regional diversity while building global cooperation?</p>
                 </div>
             </section>
-
+            <section id="discussion" class="section-container">
+                <h2>💬 Discussion & Reflection Prompts</h2>
+                <div style="background: #e8f0fe; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #1e40af;">
+                    <h3 style="margin-top: 0; color: #1e40af;">Reflect on Your Learning</h3>
+                    <ol style="line-height: 1.8;">
+                        <li><strong>Synthesis Reflection:</strong> How has your understanding of geography changed throughout this course? Which concepts or regions surprised you most?</li>
+                        <li><strong>Global Interconnection:</strong> Choose two regions from this course. How are they connected through trade, migration, culture, or environmental systems?</li>
+                        <li><strong>Personal Agency:</strong> How can you apply geographic thinking to address global challenges in your own community or career?</li>
+                    </ol>
+                    <h3 style="margin-top: 1.5rem; color: #1e40af;">Discuss With Your Peers</h3>
+                    <ul style="line-height: 1.8;">
+                        <li>What are the most pressing geographic challenges facing humanity today? How are they interconnected?</li>
+                        <li>How can geographic understanding help us create more just, equitable, and sustainable solutions to global problems?</li>
+                        <li>What role should different regions and perspectives play in solving global challenges? Whose voices are often missing from international discussions?</li>
+                    </ul>
+                </div>
+            </section>
             <section id="quiz" class="section-container">
                 <h2>✅ Knowledge Check</h2>
-                <div class="quiz-wrapper">
-                    <div class="quiz-container" data-quiz-engine="main">
-                        <p class="quiz-question">1. Which term describes the process of increasing interconnectedness of the world's markets and cultures?</p>
-                        <div class="quiz-options">
-                            <label class="quiz-option" data-correct="true" data-feedback="Globalization is the process of interaction and integration among people, companies, and governments worldwide.">
-                                <input type="radio" name="q1" value="a"> <span>Globalization</span>
-                            </label>
-                            <label class="quiz-option" data-correct="false">
-                                <input type="radio" name="q1" value="b"> <span>Isolationism</span>
-                            </label>
-                            <label class="quiz-option" data-correct="false">
-                                <input type="radio" name="q1" value="c"> <span>Nationalism</span>
-                            </label>
-                        </div>
-                        <div class="quiz-feedback"></div>
-                    </div>
-
-                    <div class="quiz-container" data-quiz-engine="main">
-                        <p class="quiz-question">2. What is the defining geographic challenge of the 21st century mentioned in this chapter?</p>
-                        <div class="quiz-options">
-                            <label class="quiz-option" data-correct="true" data-feedback="Climate Change is characterized as the defining challenge with global impacts.">
-                                <input type="radio" name="q2" value="a"> <span>Climate Change</span>
-                            </label>
-                            <label class="quiz-option" data-correct="false">
-                                <input type="radio" name="q2" value="b"> <span>Plate Tectonics</span>
-                            </label>
-                            <label class="quiz-option" data-correct="false">
-                                <input type="radio" name="q2" value="c"> <span>Urban Sprawl</span>
-                            </label>
-                        </div>
-                        <div class="quiz-feedback"></div>
-                    </div>
+                <div id="quiz-container" class="quiz-wrapper">
+                    <p class="loading">Loading quiz questions...</p>
                 </div>
             </section>
 
@@ -180,5 +166,21 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="../../js/main.js"></script>
+    <script src="../../js/quiz-engine.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Quiz
+            const quizContainer = document.getElementById('quiz-container');
+            if (quizContainer) {
+                fetch('quiz-data.json')
+                    .then(response => response.json())
+                    .then(data => QuizEngine.init('quiz-container', data))
+                    .catch(err => {
+                        console.error('Error loading quiz data:', err);
+                        quizContainer.innerHTML = '<p class="text-muted">Quiz unavailable right now.</p>';
+                    });
+            }
+        });
+    </script>
 </body>
 </html>

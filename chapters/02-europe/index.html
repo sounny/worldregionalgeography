@@ -295,12 +295,18 @@
             }
 
             // Initialize the Chapter 2 Quiz from external JSON
-            fetch('quiz-data.json')
-                .then(response => response.json())
-                .then(data => {
-                    QuizEngine.init('quiz-container', data);
-                })
-                .catch(err => console.error('Error loading quiz data:', err));
+            const quizContainer = document.getElementById('quiz-container');
+            if (quizContainer) {
+                fetch('quiz-data.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        QuizEngine.init('quiz-container', data);
+                    })
+                    .catch(err => {
+                        console.error('Error loading quiz data:', err);
+                        quizContainer.innerHTML = '<p class="text-muted">Quiz unavailable right now.</p>';
+                    });
+            }
         });
     </script>
 </body>

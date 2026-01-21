@@ -142,6 +142,65 @@
                 </div>
             </section>
 
+            <section id="summary-glossary" class="section-container">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            📖 Glossary of Terms <span class="chevron">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <dl>
+                                <dt>Hukou System</dt>
+                                <dd>In China, a household registration system that ties social services to place of birth, limiting internal migration.</dd>
+                                <dt>Special Economic Zones (SEZs)</dt>
+                                <dd>Designated areas with flexible economic laws to attract foreign investment (e.g., Shenzhen).</dd>
+                                <dt>Confucianism</dt>
+                                <dd>A philosophy emphasizing social harmony, respect for authority, and education that deeply influences East Asian culture.</dd>
+                                <dt>Tsunami</dt>
+                                <dd>A long high sea wave caused by an earthquake, submarine landslide, or other disturbance.</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            💡 Summary of Big Ideas <span class="chevron">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>East Asia is defined by the physical hazards of the Ring of Fire and the economic weight of China.</li>
+                                <li>The region faces severe demographic challenges with rapidly aging populations in Japan, Korea, and China.</li>
+                                <li>Complex geopolitics involving Taiwan, North Korea, and the South China Sea threaten regional stability.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="knowledge-check" class="section-container">
+                <h2>✅ Knowledge Check</h2>
+                <div id="quiz-container" class="quiz-wrapper">
+                    <p class="loading">Loading quiz questions...</p>
+                </div>
+            </section>
+
+            <section id="discussion" class="section-container">
+                <h2>💬 Discussion & Reflection Prompts</h2>
+                <div style="background: #e8f0fe; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #1e40af;">
+                    <h3 style="margin-top: 0; color: #1e40af;">Reflect on Your Learning</h3>
+                    <ol style="line-height: 1.8;">
+                        <li><strong>Engineering Nature:</strong> The Three Gorges Dam is the world's largest power station. How does this project reflect China's approach to the environment versus development? What are the geographic trade-offs?</li>
+                        <li><strong>Demographic Crisis:</strong> Japan, South Korea, and China all face rapidly aging populations. How will this "graying" shift their economic power and social structures in the coming decades?</li>
+                        <li><strong>Geopolitics of Trade:</strong> How does the status of Taiwan and the South China Sea affect global shipping and supply chains?</li>
+                    </ol>
+                    <h3 style="margin-top: 1.5rem; color: #1e40af;">Discuss With Your Peers</h3>
+                    <ul style="line-height: 1.8;">
+                        <li>How can East Asian nations balance their historical rivalries with the need for economic cooperation?</li>
+                        <li>Is the "East Asian Model" of state-led development replicable in other regions like Africa?</li>
+                        <li>How is the spread of "Soft Power" (K-Pop, Anime, Chinese cinema) reshaping the global perception of East Asia?</li>
+                    </ul>
+                </div>
+            </section>
+
             <nav class="chapter-nav">
                 <a href="../08-south-asia/index.html" class="chapter-nav-link">← Chapter 8: South Asia</a>
                 <a href="../10-southeast-asia/index.html" class="chapter-nav-link">Chapter 10: Southeast Asia →</a>
@@ -152,6 +211,7 @@
     <footer class="site-footer"><div class="container"><div class="footer-content"><div class="footer-brand"><span class="logo-icon">🌍</span><span>World Regional Geography</span></div><div class="footer-copyright"><p>© 2026 Dr. Sounny. Open Educational Resource.</p></div></div></div></footer>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../../js/quiz-engine.js"></script>
     <script src="../../js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -167,6 +227,17 @@
                     { name: 'Taipei', coords: [25.0330, 121.5654], note: 'Taiwan capital' }
                 ];
                 cities.forEach(city => { L.circleMarker(city.coords, { radius: 8, fillColor: '#3b82f6', color: '#fff', weight: 2, fillOpacity: 0.8 }).addTo(map).bindPopup('<strong>' + city.name + '</strong><br>' + city.note); });
+            }
+
+            const quizContainer = document.getElementById('quiz-container');
+            if (quizContainer) {
+                fetch('quiz-data.json')
+                    .then(response => response.json())
+                    .then(data => QuizEngine.init('quiz-container', data))
+                    .catch(err => {
+                        console.error('Error loading quiz data:', err);
+                        quizContainer.innerHTML = '<p class="text-muted">Quiz unavailable right now.</p>';
+                    });
             }
         });
     </script>

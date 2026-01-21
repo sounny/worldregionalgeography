@@ -1,0 +1,28 @@
+[
+  {
+    "question": "What climate system brings seasonal rains that are essential for agriculture across much of South Asia?",
+    "options": [
+      {
+        "text": "The monsoon",
+        "correct": true,
+        "feedback": "Monsoon circulation produces seasonal wet and dry periods that strongly shape farming and water management."
+      },
+      { "text": "The Gulf Stream", "correct": false },
+      { "text": "El Nino", "correct": false },
+      { "text": "The Jet Stream", "correct": false }
+    ]
+  },
+  {
+    "question": "South Asia's rapid urban growth is especially visible in which type of place?",
+    "options": [
+      {
+        "text": "Large, densely populated cities (megacities)",
+        "correct": true,
+        "feedback": "Cities such as Dhaka, Mumbai, and Karachi highlight high density and fast-paced urbanization."
+      },
+      { "text": "Uninhabited deserts only", "correct": false },
+      { "text": "Polar research stations", "correct": false },
+      { "text": "Deep ocean trenches", "correct": false }
+    ]
+  }
+]

@@ -138,6 +138,24 @@
                 </div>
             </section>
 
+            <section id="discussion" class="section-container">
+                <h2>💬 Discussion & Reflection Prompts</h2>
+                <div style="background: #e8f0fe; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #1e40af;">
+                    <h3 style="margin-top: 0; color: #1e40af;">Reflect on Your Learning</h3>
+                    <ol style="line-height: 1.8;">
+                        <li><strong>Biogeography & Isolation:</strong> How has geographic isolation shaped unique ecosystems in Australia and the Pacific? What threats do these ecosystems face today?</li>
+                        <li><strong>Island Vulnerability:</strong> Why are Pacific Island nations at existential risk from climate change? What ethical obligations do wealthy nations have?</li>
+                        <li><strong>Indigenous Rights:</strong> How does geographic knowledge of Aboriginal peoples and Pacific Islanders offer insights for sustainable land management?</li>
+                    </ol>
+                    <h3 style="margin-top: 1.5rem; color: #1e40af;">Discuss With Your Peers</h3>
+                    <ul style="line-height: 1.8;">
+                        <li>What does justice look like for island nations facing climate displacement?</li>
+                        <li>How can Australia and Pacific nations adapt to rising sea levels while maintaining cultural identity?</li>
+                        <li>What role should Indigenous peoples play in environmental policy and conservation?</li>
+                    </ul>
+                </div>
+            </section>
+
             <section id="texas-connection" class="section-container">
                 <div class="texas-toggle">
                     <button class="btn-texas-toggle" type="button" aria-expanded="false">
@@ -185,10 +203,16 @@
             }
 
             // Initialize Quiz
-            fetch('quiz-data.json')
-                .then(response => response.json())
-                .then(data => QuizEngine.init('quiz-container', data))
-                .catch(err => console.error('Error loading quiz data:', err));
+            const quizContainer = document.getElementById('quiz-container');
+            if (quizContainer) {
+                fetch('quiz-data.json')
+                    .then(response => response.json())
+                    .then(data => QuizEngine.init('quiz-container', data))
+                    .catch(err => {
+                        console.error('Error loading quiz data:', err);
+                        quizContainer.innerHTML = '<p class="text-muted">Quiz unavailable right now.</p>';
+                    });
+            }
         });
     </script>
 </body>

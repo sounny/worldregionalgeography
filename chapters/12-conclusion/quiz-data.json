@@ -1,29 +1,28 @@
 [
-    {
-        "question": "Which term describes the process of increasing interconnectedness of the world's markets and cultures?",
-        "options": [
-            { "text": "Globalization", "correct": true, "feedback": "Globalization is the process of interaction and integration among people, companies, and governments worldwide." },
-            { "text": "Isolationism", "correct": false },
-            { "text": "Nationalism", "correct": false },
-            { "text": "Regionalism", "correct": false }
-        ]
-    },
-    {
-        "question": "What is the defining geographic challenge of the 21st century mentioned in this chapter?",
-        "options": [
-            { "text": "Climate Change", "correct": true, "feedback": "Climate Change is characterized as the defining challenge with global impacts." },
-            { "text": "Plate Tectonics", "correct": false },
-            { "text": "Urban Sprawl", "correct": false },
-            { "text": "Deforestation", "correct": false }
-        ]
-    },
-    {
-        "question": "Which term is used to describe the economic divide between developed and developing nations?",
-        "options": [
-            { "text": "Global North and Global South", "correct": true, "feedback": "The Global North/South divide is a socio-economic and political division." },
-            { "text": "East and West", "correct": false },
-            { "text": "Old World and New World", "correct": false },
-            { "text": "Core and Periphery", "correct": false }
-        ]
-    }
+  {
+    "question": "Which term describes the increasing interconnectedness of the world's markets and cultures?",
+    "options": [
+      {
+        "text": "Globalization",
+        "correct": true,
+        "feedback": "Globalization refers to growing interdependence through flows of goods, people, ideas, and capital."
+      },
+      { "text": "Isolationism", "correct": false },
+      { "text": "Balkanization", "correct": false },
+      { "text": "Permafrost", "correct": false }
+    ]
+  },
+  {
+    "question": "Which challenge is repeatedly framed across regions as a defining 21st-century issue with global impacts?",
+    "options": [
+      {
+        "text": "Climate change",
+        "correct": true,
+        "feedback": "Climate change affects physical systems and human systems across every world region."
+      },
+      { "text": "The formation of Pangaea", "correct": false },
+      { "text": "The invention of agriculture", "correct": false },
+      { "text": "The Bronze Age", "correct": false }
+    ]
+  }
 ]

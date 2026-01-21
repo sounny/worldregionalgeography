@@ -1,0 +1,28 @@
+[
+  {
+    "question": "What physical condition most strongly shapes settlement and agriculture across much of North Africa and Southwest Asia?",
+    "options": [
+      {
+        "text": "Aridity and water scarcity",
+        "correct": true,
+        "feedback": "Low precipitation and limited freshwater availability shape where people live and how food is produced."
+      },
+      { "text": "Permafrost", "correct": false },
+      { "text": "Dense tropical rainforest", "correct": false },
+      { "text": "Frequent hurricanes", "correct": false }
+    ]
+  },
+  {
+    "question": "Which river is most closely associated with dense settlement and agriculture in Egypt?",
+    "options": [
+      {
+        "text": "The Nile",
+        "correct": true,
+        "feedback": "The Nile Valley and Delta are Egypt's agricultural and population core."
+      },
+      { "text": "The Amazon", "correct": false },
+      { "text": "The Danube", "correct": false },
+      { "text": "The Yangtze", "correct": false }
+    ]
+  }
+]

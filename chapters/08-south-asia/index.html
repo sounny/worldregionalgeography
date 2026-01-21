@@ -149,6 +149,65 @@
                 </div>
             </section>
 
+            <section id="summary-glossary" class="section-container">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            📖 Glossary of Terms <span class="chevron">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <dl>
+                                <dt>Monsoon</dt>
+                                <dd>A seasonal reversing wind accompanied by heavy precipitation, essential for the region's agriculture.</dd>
+                                <dt>Partition</dt>
+                                <dd>The division of British India in 1947 into independent India and Pakistan, leading to massive migration and conflict.</dd>
+                                <dt>Caste System</dt>
+                                <dd>A historical social stratification system in India that continues to influence social dynamics.</dd>
+                                <dt>Green Revolution</dt>
+                                <dd>The introduction of high-yield crops and modern agricultural techniques that prevented famine but raised ecological concerns.</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            💡 Summary of Big Ideas <span class="chevron">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li>The Himalayas and the monsoon system are the dominant physical forces shaping life in South Asia.</li>
+                                <li>The region is a mosaic of intense religious and linguistic diversity, with a complex history of empire and partition.</li>
+                                <li>South Asia faces the dual challenge of sustaining a massive population while adapting to severe climate change risks.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="knowledge-check" class="section-container">
+                <h2>✅ Knowledge Check</h2>
+                <div id="quiz-container" class="quiz-wrapper">
+                    <p class="loading">Loading quiz questions...</p>
+                </div>
+            </section>
+
+            <section id="discussion" class="section-container">
+                <h2>💬 Discussion & Reflection Prompts</h2>
+                <div style="background: #e8f0fe; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #1e40af;">
+                    <h3 style="margin-top: 0; color: #1e40af;">Reflect on Your Learning</h3>
+                    <ol style="line-height: 1.8;">
+                        <li><strong>Population & Resources:</strong> How do monsoons and river systems support 2 billion people? What happens when populations exceed what geography can sustain?</li>
+                        <li><strong>Water Disputes:</strong> Why do shared rivers create such intense geopolitical tensions? How can nations cooperate over shared water resources?</li>
+                        <li><strong>Development Pathways:</strong> How can South Asian nations achieve economic growth while addressing poverty, inequality, and environmental protection?</li>
+                    </ol>
+                    <h3 style="margin-top: 1.5rem; color: #1e40af;">Discuss With Your Peers</h3>
+                    <ul style="line-height: 1.8;">
+                        <li>What role should regional organizations play in resolving South Asian conflicts?</li>
+                        <li>How can cities like Delhi, Mumbai, and Dhaka address inequality and provide services to massive populations?</li>
+                        <li>What climate adaptation strategies are essential for monsoon-dependent agriculture?</li>
+                    </ul>
+                </div>
+            </section>
+
             <nav class="chapter-nav">
                 <a href="../07-north-africa-sw-asia/index.html" class="chapter-nav-link">← Chapter 7: N. Africa and SW Asia</a>
                 <a href="../09-east-asia/index.html" class="chapter-nav-link">Chapter 9: East Asia →</a>
@@ -159,6 +218,7 @@
     <footer class="site-footer"><div class="container"><div class="footer-content"><div class="footer-brand"><span class="logo-icon">🌍</span><span>World Regional Geography</span></div><div class="footer-copyright"><p>© 2026 Dr. Sounny. Open Educational Resource.</p></div></div></div></footer>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../../js/quiz-engine.js"></script>
     <script src="../../js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -174,6 +234,17 @@
                     { name: 'Kathmandu', coords: [27.7172, 85.3240], note: 'Nepal capital' }
                 ];
                 cities.forEach(city => { L.circleMarker(city.coords, { radius: 8, fillColor: '#3b82f6', color: '#fff', weight: 2, fillOpacity: 0.8 }).addTo(map).bindPopup('<strong>' + city.name + '</strong><br>' + city.note); });
+            }
+
+            const quizContainer = document.getElementById('quiz-container');
+            if (quizContainer) {
+                fetch('quiz-data.json')
+                    .then(response => response.json())
+                    .then(data => QuizEngine.init('quiz-container', data))
+                    .catch(err => {
+                        console.error('Error loading quiz data:', err);
+                        quizContainer.innerHTML = '<p class="text-muted">Quiz unavailable right now.</p>';
+                    });
             }
         });
     </script>

@@ -1,0 +1,28 @@
+[
+  {
+    "question": "What percentage of North America's population is urban?",
+    "options": [
+      {
+        "text": "About 82%",
+        "correct": true,
+        "feedback": "About 82% of North Americans live in urban areas, making it one of the most urbanized regions globally."
+      },
+      { "text": "About 50%", "correct": false },
+      { "text": "About 35%", "correct": false },
+      { "text": "About 15%", "correct": false }
+    ]
+  },
+  {
+    "question": "Which three countries form the core of North America's major trade agreement (USMCA)?",
+    "options": [
+      {
+        "text": "United States, Canada, and Mexico",
+        "correct": true,
+        "feedback": "USMCA links the United States, Canada, and Mexico through trade and investment."
+      },
+      { "text": "United States, Brazil, and Argentina", "correct": false },
+      { "text": "Canada, France, and Germany", "correct": false },
+      { "text": "Mexico, Spain, and Portugal", "correct": false }
+    ]
+  }
+]

@@ -198,22 +198,28 @@
                 </div>
             </section>
 
-            <section id="knowledge-check">
+            <section id="knowledge-check" class="section-container">
                 <h2>✅ Knowledge Check</h2>
-                <div class="quiz-container" data-quiz="q1">
-                    <p class="quiz-question">1. What percentage of North America's population is urban?</p>
-                    <div class="quiz-options">
-                        <label class="quiz-option" data-correct="true" data-feedback="About 82% of North Americans live in urban areas, making it one of the most urbanized regions globally.">
-                            <input type="radio" name="q1" value="a"><span>About 82%</span>
-                        </label>
-                        <label class="quiz-option" data-correct="false">
-                            <input type="radio" name="q1" value="b"><span>About 50%</span>
-                        </label>
-                        <label class="quiz-option" data-correct="false">
-                            <input type="radio" name="q1" value="c"><span>About 35%</span>
-                        </label>
-                    </div>
-                    <div class="quiz-feedback"></div>
+                <div id="quiz-container" class="quiz-wrapper">
+                    <p class="loading">Loading quiz questions...</p>
+                </div>
+            </section>
+
+            <section id="discussion" class="section-container">
+                <h2>💬 Discussion & Reflection Prompts</h2>
+                <div style="background: #e8f0fe; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #1e40af;">
+                    <h3 style="margin-top: 0; color: #1e40af;">Reflect on Your Learning</h3>
+                    <ol style="line-height: 1.8;">
+                        <li><strong>Geographic Advantage:</strong> How have North America's natural resources, water systems, and geographic position contributed to its economic power?</li>
+                        <li><strong>Environmental Challenges:</strong> How do water scarcity in the West and flooding in the Midwest reflect broader patterns of climate and geography?</li>
+                        <li><strong>Border Dynamics:</strong> How does the US-Mexico border exemplify both economic integration and social division?</li>
+                    </ol>
+                    <h3 style="margin-top: 1.5rem; color: #1e40af;">Discuss With Your Peers</h3>
+                    <ul style="line-height: 1.8;">
+                        <li>How should North America balance infrastructure development with environmental protection?</li>
+                        <li>What would a more integrated North American economy look like? What would be the benefits and challenges?</li>
+                        <li>How is climate change reshaping North American geography and economy?</li>
+                    </ul>
                 </div>
             </section>
 
@@ -239,6 +245,7 @@
     </footer>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../../js/quiz-engine.js"></script>
     <script src="../../js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -264,22 +271,16 @@
                 });
             }
 
-            document.querySelectorAll('.quiz-container').forEach(container => {
-                const options = container.querySelectorAll('.quiz-option');
-                const feedbackDiv = container.querySelector('.quiz-feedback');
-                options.forEach(option => {
-                    option.querySelector('input').addEventListener('change', () => {
-                        options.forEach(opt => opt.classList.remove('correct', 'incorrect'));
-                        const isCorrect = option.dataset.correct === 'true';
-                        option.classList.add(isCorrect ? 'correct' : 'incorrect');
-                        const correctOpt = Array.from(options).find(opt => opt.dataset.correct === 'true');
-                        feedbackDiv.innerHTML = isCorrect 
-                            ? '<p class="feedback-correct">Correct! ' + option.dataset.feedback + '</p>'
-                            : '<p class="feedback-incorrect">Try again. ' + correctOpt.dataset.feedback + '</p>';
-                        feedbackDiv.className = 'quiz-feedback show ' + (isCorrect ? 'correct' : 'incorrect');
+            const quizContainer = document.getElementById('quiz-container');
+            if (quizContainer) {
+                fetch('quiz-data.json')
+                    .then(response => response.json())
+                    .then(data => QuizEngine.init('quiz-container', data))
+                    .catch(err => {
+                        console.error('Error loading quiz data:', err);
+                        quizContainer.innerHTML = '<p class="text-muted">Quiz unavailable right now.</p>';
                     });
-                });
-            });
+            }
         });
     </script>
 </body>
