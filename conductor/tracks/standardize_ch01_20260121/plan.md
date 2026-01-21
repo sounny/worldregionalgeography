@@ -16,8 +16,8 @@
 - [x] Task: Conductor - User Manual Verification 'Interactive Map Implementation' (Protocol in workflow.md) 5ce5b51
 
 ## Phase 3: Pedagogical Logic (Quiz & Interactivity)
-- [ ] Task: Create `js/quiz-engine.js` module for simple client-side validation.
-- [ ] Task: Define 10+ in-depth quiz questions (multiple choice & scenario-based) in a JSON structure.
+- [x] Task: Create `js/quiz-engine.js` module for simple client-side validation. 26b4b20
+- [~] Task: Define 10+ in-depth quiz questions (multiple choice & scenario-based) in a JSON structure.
 - [ ] Task: wire up the "Texas Connection" toggle button event listener.
 - [ ] Task: Wire up the Summary/Glossary accordion event listeners.
 - [ ] Task: Conductor - User Manual Verification 'Pedagogical Logic' (Protocol in workflow.md)
