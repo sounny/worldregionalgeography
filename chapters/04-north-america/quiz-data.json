@@ -1,28 +1,110 @@
 [
-  {
-    "question": "What percentage of North America's population is urban?",
-    "options": [
-      {
-        "text": "About 82%",
-        "correct": true,
-        "feedback": "About 82% of North Americans live in urban areas, making it one of the most urbanized regions globally."
-      },
-      { "text": "About 50%", "correct": false },
-      { "text": "About 35%", "correct": false },
-      { "text": "About 15%", "correct": false }
-    ]
-  },
-  {
-    "question": "Which three countries form the core of North America's major trade agreement (USMCA)?",
-    "options": [
-      {
-        "text": "United States, Canada, and Mexico",
-        "correct": true,
-        "feedback": "USMCA links the United States, Canada, and Mexico through trade and investment."
-      },
-      { "text": "United States, Brazil, and Argentina", "correct": false },
-      { "text": "Canada, France, and Germany", "correct": false },
-      { "text": "Mexico, Spain, and Portugal", "correct": false }
-    ]
-  }
+    {
+        "question": "Which physiographic region of North America consists of a vast area of exposed Precambrian rock and is known for its mineral wealth but poor agricultural soils?",
+        "options": [
+            { "text": "The Appalachian Mountains", "correct": false },
+            { "text": "The Great Plains", "correct": false },
+            { "text": "The Canadian Shield", "correct": true, "feedback": "The Canadian Shield covers about half of Canada and is a major source of minerals like gold, copper, and iron." },
+            { "text": "The Rocky Mountains", "correct": false }
+        ]
+    },
+    {
+        "question": "The 'Fall Line' in the eastern United States is geographically significant because:",
+        "options": [
+            { "text": "It is the primary fault line for earthquakes.", "correct": false },
+            { "text": "It marks the boundary between the Piedmont and Coastal Plain where waterfalls provided early water power.", "correct": true, "feedback": "Many major cities (like Richmond and Philadelphia) grew along the fall line due to the transition in elevation and power source." },
+            { "text": "It is the northernmost point where tropical hurricanes can land.", "correct": false },
+            { "text": "It separates the United States from Canada.", "correct": false }
+        ]
+    },
+    {
+        "question": "Regional Scenario: If a manufacturing plant in Monterrey, Mexico, assembles components made in Ohio and ships the final product to Toronto, which agreement facilitates this integrated supply chain?",
+        "options": [
+            { "text": "EU Schengen Agreement", "correct": false },
+            { "text": "USMCA (formerly NAFTA)", "correct": true, "feedback": "USMCA promotes economic integration and duty-free trade between the US, Mexico, and Canada." },
+            { "text": "ASEAN", "correct": false },
+            { "text": "OPEC", "correct": false }
+        ]
+    },
+    {
+        "question": "Which demographic trend describes the movement of the U.S. population toward the southern and western states over the last several decades?",
+        "options": [
+            { "text": "The Rust Belt to Sun Belt shift", "correct": true, "feedback": "Economic opportunities and air conditioning have driven massive internal migration to the Sun Belt." },
+            { "text": "Rural-to-Urban shift", "correct": false },
+            { "text": "The Great Migration", "correct": false },
+            { "text": "Counter-urbanization", "correct": false }
+        ]
+    },
+    {
+        "question": "Geographic Inquiry: Why is the Ogallala Aquifer critical to the geography of the Great Plains?",
+        "options": [
+            { "text": "It provides the majority of the region's hydroelectric power.", "correct": false },
+            { "text": "It is the primary source of irrigation for one of the world's most productive agricultural regions.", "correct": true, "feedback": "Without the Ogallala Aquifer, agriculture in the semi-arid High Plains would be largely impossible." },
+            { "text": "It is a major transportation route for barges.", "correct": false },
+            { "text": "It acts as a natural border between the US and Mexico.", "correct": false }
+        ]
+    },
+    {
+        "question": "What is a 'Megalopolis' in the context of North American urbanization?",
+        "options": [
+            { "text": "A city with more than 10 million people.", "correct": false },
+            { "text": "A chain of roughly adjacent metropolitan areas that merge into a continuous urban region.", "correct": true, "feedback": "The 'BosWash' corridor (Boston to Washington) is the classic example of a North American megalopolis." },
+            { "text": "A city that has lost its entire population.", "correct": false },
+            { "text": "A planned city built in the middle of a desert.", "correct": false }
+        ]
+    },
+    {
+        "question": "Climate Pattern: Which phenomenon creates a parched environment on the eastern side of the Cascade Mountains in the Pacific Northwest?",
+        "options": [
+            { "text": "The Greenhouse Effect", "correct": false },
+            { "text": "The Rain Shadow Effect", "correct": true, "feedback": "Moisture from the Pacific is dropped on the western slopes, leaving the eastern side arid." },
+            { "text": "El Niño", "correct": false },
+            { "text": "The Gulf Stream", "correct": false }
+        ]
+    },
+    {
+        "question": "Texas Connection Scenario: The rapid growth of the 'Texas Triangle' (Dallas-Houston-San Antonio) is primarily an example of:",
+        "options": [
+            { "text": "Deindustrialization", "correct": false },
+            { "text": "Urban Sprawl and Metropolitan Expansion", "correct": true, "feedback": "Texas cities are among the fastest-growing in North America, characterized by massive low-density expansion." },
+            { "text": "Agricultural intensification", "correct": false },
+            { "text": "Formal Regionalism", "correct": false }
+        ]
+    },
+    {
+        "question": "Economic Geography: What is a 'Maquiladora'?",
+        "options": [
+            { "text": "A large cattle ranch in the Great Plains.", "correct": false },
+            { "text": "A foreign-owned factory in Mexico that assembles duty-free components for export.", "correct": true, "feedback": "Maquiladoras are a key feature of the US-Mexico border economy." },
+            { "text": "A type of irrigation system used in the Canadian Shield.", "correct": false },
+            { "text": "A religious monument in Mexico City.", "correct": false }
+        ]
+    },
+    {
+        "question": "Which city is the most populous metropolitan area in North America?",
+        "options": [
+            { "text": "New York City", "correct": false },
+            { "text": "Los Angeles", "correct": false },
+            { "text": "Mexico City", "correct": true, "feedback": "Mexico City is one of the world's largest megacities and the largest in North America." },
+            { "text": "Toronto", "correct": false }
+        ]
+    },
+    {
+        "question": "Inland Waterways: The Great Lakes-St. Lawrence Seaway system is geographically important because:",
+        "options": [
+            { "text": "It is the only source of salt in the region.", "correct": false },
+            { "text": "It provides a deep-draft water route from the Atlantic Ocean to the heart of the continent.", "correct": true, "feedback": "This system connects the industrial Midwest and Ontario to global trade networks." },
+            { "text": "It prevents cold Arctic air from moving south.", "correct": false },
+            { "text": "It is the site of the world's largest oil deposits.", "correct": false }
+        ]
+    },
+    {
+        "question": "Why is North America often described as having an 'uneven geography of opportunity'?",
+        "options": [
+            { "text": "Because the terrain is not flat.", "correct": false },
+            { "text": "Because economic wealth and development are highly concentrated in certain urban cores while rural and deindustrialized areas struggle.", "correct": true, "feedback": "Regional disparities between the 'Rust Belt' and 'Sun Belt' or urban and rural zones illustrate this concept." },
+            { "text": "Because everyone has the exact same income.", "correct": false },
+            { "text": "Because the climate is the same everywhere.", "correct": false }
+        ]
+    }
 ]
