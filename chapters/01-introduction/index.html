@@ -285,81 +285,24 @@
     </footer>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../../js/map-init.js"></script>
+    <script src="../../js/regions-data.js"></script>
     <script src="../../js/main.js"></script>
     <script>
-        // Initialize the interactive regions map for this chapter
-        document.addEventListener('DOMContentLoaded', function () {
-            if (typeof L !== 'undefined' && document.getElementById('regions-map')) {
-                const map = L.map('regions-map').setView([20, 0], 2);
-
-                L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-                    attribution: '&copy; OpenStreetMap &copy; CARTO',
-                    subdomains: 'abcd',
-                    maxZoom: 19
-                }).addTo(map);
-
-                // World regions with approximate bounds
-                const regions = [
-                    { name: 'Europe', bounds: [[35, -10], [70, 40]], color: '#2d8fa8', chapter: '../02-europe/index.html' },
-                    { name: 'Russia & Post-Soviet', bounds: [[40, 40], [75, 180]], color: '#1e5f74', chapter: '../03-russia/index.html' },
-                    { name: 'North America', bounds: [[15, -170], [75, -50]], color: '#f4a261', chapter: '../04-north-america/index.html' },
-                    { name: 'Latin America', bounds: [[-55, -120], [30, -35]], color: '#e07b3c', chapter: '../05-latin-america/index.html' },
-                    { name: 'Sub-Saharan Africa', bounds: [[-35, -20], [20, 50]], color: '#2a9d8f', chapter: '../06-sub-saharan-africa/index.html' },
-                    { name: 'North Africa & SW Asia', bounds: [[10, -20], [45, 75]], color: '#40c9b8', chapter: '../07-north-africa-sw-asia/index.html' },
-                    { name: 'South Asia', bounds: [[5, 60], [40, 100]], color: '#e76f51', chapter: '../08-south-asia/index.html' },
-                    { name: 'East Asia', bounds: [[18, 100], [55, 150]], color: '#264653', chapter: '../09-east-asia/index.html' },
-                    { name: 'Southeast Asia', bounds: [[-12, 90], [25, 140]], color: '#287271', chapter: '../10-southeast-asia/index.html' },
-                    { name: 'Australia & Oceania', bounds: [[-50, 110], [0, 180]], color: '#8ab17d', chapter: '../11-australia-oceania/index.html' }
-                ];
-
-                regions.forEach(region => {
-                    const rect = L.rectangle(region.bounds, {
-                        color: region.color,
-                        weight: 2,
-                        fillColor: region.color,
-                        fillOpacity: 0.2
-                    }).addTo(map);
-
-                    rect.bindPopup(`<strong>${region.name}</strong><br><a href="${region.chapter}">Explore this region →</a>`);
-
-                    rect.on('mouseover', function () {
-                        this.setStyle({ fillOpacity: 0.4 });
-                    });
-                    rect.on('mouseout', function () {
-                        this.setStyle({ fillOpacity: 0.2 });
-                    });
+        // Initialize the Chapter 1 Interactive Map
+        document.addEventListener('DOMContentLoaded', () => {
+            const map = MapManager.initMap('regions-map', [20, 10], 1.5);
+            if (map && window.WorldRegionsData) {
+                MapManager.addGeoJson(map, window.WorldRegionsData, {
+                    onEachFeature: (feature, layer) => {
+                        layer.on('click', () => {
+                            if (feature.properties.chapter) {
+                                window.location.href = feature.properties.chapter;
+                            }
+                        });
+                    }
                 });
             }
-
-            // Quiz functionality
-            document.querySelectorAll('.quiz-container').forEach(container => {
-                const options = container.querySelectorAll('.quiz-option');
-                const feedbackDiv = container.querySelector('.quiz-feedback');
-
-                options.forEach(option => {
-                    const input = option.querySelector('input');
-                    input.addEventListener('change', () => {
-                        // Reset all options
-                        options.forEach(opt => {
-                            opt.classList.remove('correct', 'incorrect');
-                        });
-
-                        // Check answer
-                        const isCorrect = option.dataset.correct === 'true';
-                        if (isCorrect) {
-                            option.classList.add('correct');
-                            feedbackDiv.innerHTML = `<p class="feedback-correct">✓ Correct! ${option.dataset.feedback || ''}</p>`;
-                            feedbackDiv.className = 'quiz-feedback show correct';
-                        } else {
-                            option.classList.add('incorrect');
-                            // Find the correct answer
-                            const correctOption = Array.from(options).find(opt => opt.dataset.correct === 'true');
-                            feedbackDiv.innerHTML = `<p class="feedback-incorrect">✗ Not quite. ${correctOption.dataset.feedback || ''}</p>`;
-                            feedbackDiv.className = 'quiz-feedback show incorrect';
-                        }
-                    });
-                });
-            });
         });
     </script>
 </body>
