@@ -1,0 +1,110 @@
+[
+    {
+        "question": "Which concept describes Russia's inland position, far from the moderating effects of the ocean?",
+        "options": [
+            { "text": "Maritime Influence", "correct": false },
+            { "text": "Continentality", "correct": true, "feedback": "Continentality results in extreme temperature variations between summer and winter." },
+            { "text": "Orographic Precipitation", "correct": false },
+            { "text": "Latitudinal Zonation", "correct": false }
+        ]
+    },
+    {
+        "question": "The Ural Mountains are significant in Russian geography primarily because:",
+        "options": [
+            { "text": "They are the highest mountains in the world.", "correct": false },
+            { "text": "They form the traditional boundary between Europe and Asia and are rich in minerals.", "correct": true, "feedback": "The Urals are an ancient range critical for resources and regional division." },
+            { "text": "They block all moisture from reaching the Russian Plain.", "correct": false },
+            { "text": "They are the site of the Russian capital.", "correct": false }
+        ]
+    },
+    {
+        "question": "Regional Scenario: If you are traveling through a vast, swampy, frozen forest in Northern Russia, which biome are you most likely in?",
+        "options": [
+            { "text": "Steppe", "correct": false },
+            { "text": "Tundra", "correct": false },
+            { "text": "Taiga", "correct": true, "feedback": "The Taiga is the world's largest boreal forest biome, covering much of Russia." },
+            { "text": "Savanna", "correct": false }
+        ]
+    },
+    {
+        "question": "Which environmental challenge is specifically linked to the thawing of permafrost in Siberia?",
+        "options": [
+            { "text": "The release of methane and damage to infrastructure.", "correct": true, "feedback": "Thawing permafrost destabilizes buildings and contributes to greenhouse gas emissions." },
+            { "text": "Increased desertification of the steppe.", "correct": false },
+            { "text": "The drying up of the Aral Sea.", "correct": false },
+            { "text": "Acid rain from industrial centers.", "correct": false }
+        ]
+    },
+    {
+        "question": "Geopolitical Concept: Ukraine is often described as a 'shatterbelt.' What does this mean in a geographic context?",
+        "options": [
+            { "text": "A region with high earthquake activity.", "correct": false },
+            { "text": "A region caught between stronger, colliding external cultural-political forces.", "correct": true, "feedback": "Ukraine's position between Russia and NATO makes it a classic shatterbelt." },
+            { "text": "A region that produces large amounts of glass.", "correct": false },
+            { "text": "A region where all political borders have been abolished.", "correct": false }
+        ]
+    },
+    {
+        "question": "What was a primary geographic goal of the Soviet Union's 'planned economy'?",
+        "options": [
+            { "text": "To concentrate all population in Moscow.", "correct": false },
+            { "text": "To rapidly industrialize and develop resource-rich frontiers in Siberia.", "correct": true, "feedback": "Soviet planning forced development into harsh eastern regions to access minerals and energy." },
+            { "text": "To preserve all natural environments in their original state.", "correct": false },
+            { "text": "To discourage urbanization.", "correct": false }
+        ]
+    },
+    {
+        "question": "Which Central Asian country is the largest in land area and holds significant oil reserves?",
+        "options": [
+            { "text": "Uzbekistan", "correct": false },
+            { "text": "Kazakhstan", "correct": true, "feedback": "Kazakhstan is the regional giant in both size and energy wealth." },
+            { "text": "Tajikistan", "correct": false },
+            { "text": "Kyrgyzstan", "correct": false }
+        ]
+    },
+    {
+        "question": "Demographic Inquiry: What is the current population trend in the Russian Federation?",
+        "options": [
+            { "text": "Rapid natural increase.", "correct": false },
+            { "text": "Population stability with high birth rates.", "correct": false },
+            { "text": "A demographic crisis characterized by a shrinking population and low birth rates.", "correct": true, "feedback": "Russia has faced significant population decline since the collapse of the USSR." },
+            { "text": "Growth driven entirely by immigration from East Asia.", "correct": false }
+        ]
+    },
+    {
+        "question": "Energy Geopolitics: Why is Russia's control over natural gas pipelines a significant tool of influence in Europe?",
+        "options": [
+            { "text": "Because it makes European countries dependent on Russian energy for heating and industry.", "correct": true, "feedback": "Pipeline diplomacy has historically given Russia leverage in European political decisions." },
+            { "text": "Because Russian gas is the only type of energy that works in Europe.", "correct": false },
+            { "text": "Because it prevents European countries from building their own power plants.", "correct": false },
+            { "text": "Because pipelines are the only way to transport any goods to Europe.", "correct": false }
+        ]
+    },
+    {
+        "question": "Texas Connection: How does the Texas energy sector relate to the Russian invasion of Ukraine?",
+        "options": [
+            { "text": "Texas stopped producing oil to help Russia.", "correct": false },
+            { "text": "Texas increased LNG exports to Europe to help reduce dependence on Russian gas.", "correct": true, "feedback": "The global energy market shift has linked Texas production to European energy security." },
+            { "text": "Texas and Russia formed an energy alliance against the EU.", "correct": false },
+            { "text": "There is no geographic or economic connection.", "correct": false }
+        ]
+    },
+    {
+        "question": "Why did Peter the Great move the Russian capital to St. Petersburg?",
+        "options": [
+            { "text": "To escape the cold winters of Moscow.", "correct": false },
+            { "text": "To create a 'window to the west' and orient Russia toward European trade and culture.", "correct": true, "feedback": "The move was a strategic geographic shift toward the Baltic Sea." },
+            { "text": "Because St. Petersburg was the geographical center of Russia.", "correct": false },
+            { "text": "To be closer to the Pacific Ocean.", "correct": false }
+        ]
+    },
+    {
+        "question": "What happened to the Aral Sea as a result of Soviet-era geographic engineering?",
+        "options": [
+            { "text": "It became the world's largest freshwater lake.", "correct": false },
+            { "text": "It shrank dramatically due to the diversion of rivers for cotton irrigation.", "correct": true, "feedback": "The Aral Sea disaster is one of the world's worst environmental catastrophes." },
+            { "text": "It was renamed the Caspian Sea.", "correct": false },
+            { "text": "It became a major hub for international maritime trade.", "correct": false }
+        ]
+    }
+]

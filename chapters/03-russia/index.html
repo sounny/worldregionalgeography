@@ -31,15 +31,15 @@
                         <ul class="dropdown-menu">
                             <li><a href="../01-introduction/index.html">1. Introduction</a></li>
                             <li><a href="../02-europe/index.html">2. Europe</a></li>
-                            <li><a href="../03-russia/index.html" class="active">3. Russia and Central Asia</a></li>
+                            <li><a href="../03-russia/index.html" class="active">3. Russia & Central Asia</a></li>
                             <li><a href="../04-north-america/index.html">4. North America</a></li>
                             <li><a href="../05-latin-america/index.html">5. Latin America</a></li>
                             <li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
-                            <li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa and SW Asia</a></li>
+                            <li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa & SW Asia</a></li>
                             <li><a href="../08-south-asia/index.html">8. South Asia</a></li>
                             <li><a href="../09-east-asia/index.html">9. East Asia</a></li>
                             <li><a href="../10-southeast-asia/index.html">10. Southeast Asia</a></li>
-                            <li><a href="../11-australia-oceania/index.html">11. Australia and Oceania</a></li>
+                            <li><a href="../11-australia-oceania/index.html">11. Australia & Oceania</a></li>
                             <li><a href="../12-conclusion/index.html">12. Global Connections</a></li>
                         </ul>
                     </li>
@@ -50,8 +50,8 @@
 
     <section class="chapter-header">
         <div class="container">
-            <p class="chapter-meta">Chapter 3 - Week 4-5</p>
-            <h1 class="chapter-title">Russia and Central Asia</h1>
+            <p class="chapter-meta">Chapter 3 · Week 4 - 5</p>
+            <h1 class="chapter-title">Russia & Central Asia: Resources and Geopolitics</h1>
             <p class="chapter-description">Spanning eleven time zones, Russia is the world's largest country. Together with the Central Asian republics, this region bridges Europe and Asia with vast resources, complex politics, and enduring geographic challenges.</p>
         </div>
     </section>
@@ -235,22 +235,28 @@
                 </div>
             </section>
 
-            <section id="knowledge-check">
+            <section id="knowledge-check" class="section-container">
                 <h2>✅ Knowledge Check</h2>
-                <div class="quiz-container" data-quiz="q1">
-                    <p class="quiz-question">1. How many time zones does Russia span?</p>
-                    <div class="quiz-options">
-                        <label class="quiz-option" data-correct="true" data-feedback="Russia spans 11 time zones, reflecting its vast east-west extent.">
-                            <input type="radio" name="q1" value="a"><span>11 time zones</span>
-                        </label>
-                        <label class="quiz-option" data-correct="false">
-                            <input type="radio" name="q1" value="b"><span>6 time zones</span>
-                        </label>
-                        <label class="quiz-option" data-correct="false">
-                            <input type="radio" name="q1" value="c"><span>4 time zones</span>
-                        </label>
-                    </div>
-                    <div class="quiz-feedback"></div>
+                <div id="quiz-container" class="quiz-wrapper">
+                    <p class="loading">Loading quiz questions...</p>
+                </div>
+            </section>
+
+            <section id="discussion" class="section-container">
+                <h2>💬 Discussion & Reflection Prompts</h2>
+                <div style="background: #e8f0fe; padding: 1.5rem; border-radius: 8px; border-left: 4px solid #1e40af;">
+                    <h3 style="margin-top: 0; color: #1e40af;">Reflect on Your Learning</h3>
+                    <ol style="line-height: 1.8;">
+                        <li><strong>Energy Geopolitics:</strong> How do Russia's oil and gas reserves shape its relationships with Europe, Asia, and the rest of the world? What geographic advantages or vulnerabilities does this create?</li>
+                        <li><strong>Geographic Isolation:</strong> Why do Russia's vast distances and harsh climate make development so challenging? How do these physical constraints explain regional inequality?</li>
+                        <li><strong>Historical Cycles:</strong> How does understanding Russia's geography help explain its cyclical patterns of expansion, contraction, and re-expansion throughout history?</li>
+                    </ol>
+                    <h3 style="margin-top: 1.5rem; color: #1e40af;">Discuss With Your Peers</h3>
+                    <ul style="line-height: 1.8;">
+                        <li>How does Russia's geographic position between Europe and Asia shape its political identity and international relations?</li>
+                        <li>What role should environmental sustainability play in Russia's resource extraction industries?</li>
+                        <li>How might climate change impact Russia's Arctic regions and global influence?</li>
+                    </ul>
                 </div>
             </section>
 
@@ -276,6 +282,7 @@
     </footer>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../../js/quiz-engine.js"></script>
     <script src="../../js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -300,22 +307,16 @@
                 });
             }
 
-            document.querySelectorAll('.quiz-container').forEach(container => {
-                const options = container.querySelectorAll('.quiz-option');
-                const feedbackDiv = container.querySelector('.quiz-feedback');
-                options.forEach(option => {
-                    option.querySelector('input').addEventListener('change', () => {
-                        options.forEach(opt => opt.classList.remove('correct', 'incorrect'));
-                        const isCorrect = option.dataset.correct === 'true';
-                        option.classList.add(isCorrect ? 'correct' : 'incorrect');
-                        const correctOpt = Array.from(options).find(opt => opt.dataset.correct === 'true');
-                        feedbackDiv.innerHTML = isCorrect 
-                            ? '<p class="feedback-correct">Correct! ' + option.dataset.feedback + '</p>'
-                            : '<p class="feedback-incorrect">Try again. ' + correctOpt.dataset.feedback + '</p>';
-                        feedbackDiv.className = 'quiz-feedback show ' + (isCorrect ? 'correct' : 'incorrect');
+            const quizContainer = document.getElementById('quiz-container');
+            if (quizContainer) {
+                fetch('quiz-data.json')
+                    .then(response => response.json())
+                    .then(data => QuizEngine.init('quiz-container', data))
+                    .catch(err => {
+                        console.error('Error loading quiz data:', err);
+                        quizContainer.innerHTML = '<p class="text-muted">Quiz unavailable right now.</p>';
                     });
-                });
-            });
+            }
         });
     </script>
 </body>
