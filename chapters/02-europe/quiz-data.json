@@ -2,16 +2,16 @@
     {
         "question": "Which physical feature is most often used to mark Europe's eastern boundary?",
         "options": [
-            { "text": "The Ural Mountains", "correct": true, "feedback": "The Ural Mountains are commonly used as Europe's eastern boundary." },
+            { "text": "The Ural Mountains", "correct": true, "feedback": "The Ural Mountains are commonly used as Europe's eastern boundary, though they are low mountains that haven't stopped historical flows of people." },
             { "text": "The Mediterranean Sea", "correct": false },
             { "text": "The Rhine River", "correct": false },
             { "text": "The Alps", "correct": false }
         ]
     },
     {
-        "question": "What is the primary climate influence that keeps Western Europe relatively mild?",
+        "question": "What is the primary climate influence that keeps Western Europe relatively mild compared to similar latitudes in North America?",
         "options": [
-            { "text": "The Gulf Stream and North Atlantic Drift", "correct": true, "feedback": "The Gulf Stream and North Atlantic Drift bring warm ocean water toward Europe." },
+            { "text": "The Gulf Stream and North Atlantic Drift", "correct": true, "feedback": "The North Atlantic Drift acts as an 'oceanic radiator,' bringing warm water from the Gulf of Mexico toward Europe." },
             { "text": "The Sahara Desert winds", "correct": false },
             { "text": "The Siberian High Pressure system", "correct": false },
             { "text": "The Himalayan monsoon", "correct": false }
@@ -20,25 +20,34 @@
     {
         "question": "Which statement best describes supranationalism?",
         "options": [
-            { "text": "Countries sharing authority with a regional organization", "correct": true, "feedback": "Supranationalism involves countries sharing authority with a regional organization." },
+            { "text": "Countries voluntarily sharing authority with a regional organization to achieve common goals.", "correct": true, "feedback": "Supranationalism involves nations giving up some sovereignty to a higher body like the EU." },
             { "text": "A country that has never joined any international treaty", "correct": false },
             { "text": "A policy of complete isolation from global affairs", "correct": false },
             { "text": "A form of government where one ruler controls all aspects of life", "correct": false }
         ]
     },
     {
-        "question": "What is the primary economic organization that has driven European integration?",
+        "question": "The 'Blue Banana' refers to which geographic phenomenon in Europe?",
         "options": [
-            { "text": "The European Union (EU)", "correct": true, "feedback": "The EU has been the primary driver of European economic and political integration." },
-            { "text": "NATO", "correct": false },
-            { "text": "The United Nations", "correct": false },
-            { "text": "The World Trade Organization", "correct": false }
+            { "text": "A specific variety of fruit grown in the Mediterranean.", "correct": false },
+            { "text": "A discontinuous corridor of high population density and economic activity stretching from London to Milan.", "correct": true, "feedback": "This urban corridor highlights Europe's core industrial and economic heartland." },
+            { "text": "A political alliance between maritime nations.", "correct": false },
+            { "text": "The path taken by the Rhine River.", "correct": false }
         ]
     },
     {
-        "question": "Which European country is NOT a member of the European Union?",
+        "question": "Regional Scenario: If a European country decides to leave the EU to regain control over its borders and trade policies, it is responding to which force?",
         "options": [
-            { "text": "Switzerland", "correct": true, "feedback": "Switzerland has chosen to remain outside the EU while maintaining close economic ties." },
+            { "text": "Centripetal Force", "correct": false },
+            { "text": "Centrifugal Force", "correct": true, "feedback": "Centrifugal forces are factors that pull a region apart, such as nationalism or economic disparity." },
+            { "text": "Gravitational Force", "correct": false },
+            { "text": "Magnetic Force", "correct": false }
+        ]
+    },
+    {
+        "question": "Which European country is NOT a member of the European Union, despite its central location?",
+        "options": [
+            { "text": "Switzerland", "correct": true, "feedback": "Switzerland maintains its neutrality and has chosen to stay outside the formal EU structure while participating in the single market." },
             { "text": "Germany", "correct": false },
             { "text": "France", "correct": false },
             { "text": "Italy", "correct": false }
@@ -47,46 +56,55 @@
     {
         "question": "What is the primary language family spoken in most of Europe?",
         "options": [
-            { "text": "Indo-European", "correct": true, "feedback": "Most European languages belong to the Indo-European language family." },
+            { "text": "Indo-European", "correct": true, "feedback": "Most European languages (Germanic, Romance, Slavic) belong to the Indo-European family." },
             { "text": "Sino-Tibetan", "correct": false },
             { "text": "Afro-Asiatic", "correct": false },
             { "text": "Austronesian", "correct": false }
         ]
     },
     {
-        "question": "Which European city serves as the administrative capital of the European Union?",
+        "question": "Demographic Inquiry: Many European nations are facing a 'contracting' population pyramid. What is the primary geographic implication of this?",
         "options": [
-            { "text": "Brussels, Belgium", "correct": true, "feedback": "Brussels is the administrative capital of the EU." },
-            { "text": "Paris, France", "correct": false },
-            { "text": "Berlin, Germany", "correct": false },
-            { "text": "London, United Kingdom", "correct": false }
+            { "text": "A sudden lack of housing in major cities.", "correct": false },
+            { "text": "A shrinking workforce and an increasing need for healthcare for the elderly.", "correct": true, "feedback": "An aging population places unique strains on national social services and the economy." },
+            { "text": "Rapid urbanization in rural areas.", "correct": false },
+            { "text": "A decrease in the use of renewable energy.", "correct": false }
         ]
     },
     {
-        "question": "What is the primary religion that has historically shaped European culture?",
+        "question": "Which physical feature separates the Iberian Peninsula (Spain/Portugal) from the rest of mainland Europe?",
         "options": [
-            { "text": "Christianity", "correct": true, "feedback": "Christianity has been the dominant religious influence in European history." },
-            { "text": "Islam", "correct": false },
-            { "text": "Buddhism", "correct": false },
-            { "text": "Hinduism", "correct": false }
-        ]
-    },
-    {
-        "question": "Which physical feature separates the Iberian Peninsula from the rest of Europe?",
-        "options": [
-            { "text": "The Pyrenees Mountains", "correct": true, "feedback": "The Pyrenees form a natural barrier between Spain and France." },
+            { "text": "The Pyrenees Mountains", "correct": true, "feedback": "The Pyrenees form a rugged natural barrier that has historically isolated the peninsula from France." },
             { "text": "The English Channel", "correct": false },
             { "text": "The Danube River", "correct": false },
             { "text": "The Carpathian Mountains", "correct": false }
         ]
     },
     {
-        "question": "What is the primary economic challenge facing many Southern European countries?",
+        "question": "The Schengen Area is best described as:",
         "options": [
-            { "text": "High youth unemployment and public debt", "correct": true, "feedback": "Southern European countries have struggled with economic stagnation and high debt levels." },
-            { "text": "Overpopulation", "correct": false },
-            { "text": "Lack of natural resources", "correct": false },
-            { "text": "Excessive industrialization", "correct": false }
+            { "text": "A region where all countries use the Euro.", "correct": false },
+            { "text": "A zone where many European countries have abolished internal border controls.", "correct": true, "feedback": "The Schengen Agreement facilitates the free movement of people across most of the EU." },
+            { "text": "The agricultural heartland of Ukraine.", "correct": false },
+            { "text": "A defensive alliance against external threats.", "correct": false }
+        ]
+    },
+    {
+        "question": "Texas Connection Scenario: If a Texas energy company exports Liquified Natural Gas (LNG) to Germany to help replace Russian gas, this is an example of:",
+        "options": [
+            { "text": "Cultural Glocalization", "correct": false },
+            { "text": "Economic Globalization and Geopolitical Interdependence", "correct": true, "feedback": "This trade link connects local Texas production to European energy security." },
+            { "text": "Centrifugal Forces in North America", "correct": false },
+            { "text": "Physical Geography shift", "correct": false }
+        ]
+    },
+    {
+        "question": "Why is Jean Monnet considered the 'Architect of European Integration'?",
+        "options": [
+            { "text": "He designed the actual buildings of the EU Parliament.", "correct": false },
+            { "text": "He pioneered the concept of merging key industries to make war between neighbors impossible.", "correct": true, "feedback": "Monnet's functional approach to integration started with coal and steel." },
+            { "text": "He was the first King of a unified Europe.", "correct": false },
+            { "text": "He discovered the North Atlantic Drift.", "correct": false }
         ]
     }
 ]
