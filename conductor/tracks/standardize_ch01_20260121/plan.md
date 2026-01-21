@@ -3,8 +3,8 @@
 ## Phase 1: Structural Refactoring & Styling
 - [x] Task: Create specific CSS variables for "Gold Standard" theme (colors, spacing) in `css/style.css`. 7e0bd3e
 - [x] Task: Refactor `chapters/01-introduction/index.html` to match the 10-point semantic structure (Objectives through Quiz). 21ff1f3
-- [~] Task: Implement responsive grid layout for Sidebars ("Important Person") and Main Content.
-- [ ] Task: Implement "Texas Connection" toggle UI and CSS styling.
+- [x] Task: Implement responsive grid layout for Sidebars ("Important Person") and Main Content. e96f755
+- [~] Task: Implement "Texas Connection" toggle UI and CSS styling.
 - [ ] Task: Implement "Accordion" UI and CSS styling for Summary and Glossary.
 - [ ] Task: Conductor - User Manual Verification 'Structural Refactoring & Styling' (Protocol in workflow.md)
 
