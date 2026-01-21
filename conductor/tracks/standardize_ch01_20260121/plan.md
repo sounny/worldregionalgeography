@@ -4,8 +4,8 @@
 - [x] Task: Create specific CSS variables for "Gold Standard" theme (colors, spacing) in `css/style.css`. 7e0bd3e
 - [x] Task: Refactor `chapters/01-introduction/index.html` to match the 10-point semantic structure (Objectives through Quiz). 21ff1f3
 - [x] Task: Implement responsive grid layout for Sidebars ("Important Person") and Main Content. e96f755
-- [~] Task: Implement "Texas Connection" toggle UI and CSS styling.
-- [ ] Task: Implement "Accordion" UI and CSS styling for Summary and Glossary.
+- [x] Task: Implement "Texas Connection" toggle UI and CSS styling. f0cee79
+- [~] Task: Implement "Accordion" UI and CSS styling for Summary and Glossary.
 - [ ] Task: Conductor - User Manual Verification 'Structural Refactoring & Styling' (Protocol in workflow.md)
 
 ## Phase 2: Interactive Map Implementation
