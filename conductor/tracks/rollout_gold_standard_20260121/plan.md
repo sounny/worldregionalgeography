@@ -6,10 +6,10 @@
 - [x] Task: Conductor - User Manual Verification 'Batch A Rollout' (Protocol in workflow.md) 4603c5d
 
 ## Phase 2: Batch B - The Americas & Africa (Ch 04-07)
-- [~] Task: Standardize Chapter 04 (North America) - Full refactor, map integration, and 10+ question quiz.
-- [ ] Task: Standardize Chapter 05 (Latin America) - Full refactor, map integration, and 10+ question quiz.
-- [ ] Task: Standardize Chapter 06 (Sub-Saharan Africa) - Full refactor, map integration, and 10+ question quiz.
-- [ ] Task: Standardize Chapter 07 (N. Africa & SW Asia) - Full refactor, map integration, and 10+ question quiz.
+- [x] Task: Standardize Chapter 04 (North America) - Full refactor, map integration, and 10+ question quiz. d1651cb
+- [x] Task: Standardize Chapter 05 (Latin America) - Full refactor, map integration, and 10+ question quiz. b3f3c7e
+- [x] Task: Standardize Chapter 06 (Sub-Saharan Africa) - Full refactor, map integration, and 10+ question quiz. 4562ba6
+- [~] Task: Standardize Chapter 07 (N. Africa & SW Asia) - Full refactor, map integration, and 10+ question quiz.
 - [ ] Task: Conductor - User Manual Verification 'Batch B Rollout' (Protocol in workflow.md)
 
 ## Phase 3: Batch C - Southern & Eastern Eurasia & Oceania (Ch 08-12)

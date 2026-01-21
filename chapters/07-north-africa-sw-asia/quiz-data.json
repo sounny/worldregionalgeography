@@ -1,28 +1,110 @@
 [
-  {
-    "question": "What physical condition most strongly shapes settlement and agriculture across much of North Africa and Southwest Asia?",
-    "options": [
-      {
-        "text": "Aridity and water scarcity",
-        "correct": true,
-        "feedback": "Low precipitation and limited freshwater availability shape where people live and how food is produced."
-      },
-      { "text": "Permafrost", "correct": false },
-      { "text": "Dense tropical rainforest", "correct": false },
-      { "text": "Frequent hurricanes", "correct": false }
-    ]
-  },
-  {
-    "question": "Which river is most closely associated with dense settlement and agriculture in Egypt?",
-    "options": [
-      {
-        "text": "The Nile",
-        "correct": true,
-        "feedback": "The Nile Valley and Delta are Egypt's agricultural and population core."
-      },
-      { "text": "The Amazon", "correct": false },
-      { "text": "The Danube", "correct": false },
-      { "text": "The Yangtze", "correct": false }
-    ]
-  }
+    {
+        "question": "Which term describes a river like the Nile that originates in a humid region and flows through an arid desert, providing a critical water source?",
+        "options": [
+            { "text": "Endorheic stream", "correct": false },
+            { "text": "Exotic stream", "correct": true, "feedback": "Exotic streams are vital for life in arid regions like Egypt and Iraq." },
+            { "text": "Ephemeral stream", "correct": false },
+            { "text": "Intermittent stream", "correct": false }
+        ]
+    },
+    {
+        "question": "The 'Fertile Crescent' is historically significant because it was:",
+        "options": [
+            { "text": "A region where oil was first discovered.", "correct": false },
+            { "text": "A major hearth of early civilization and plant/animal domestication.", "correct": true, "feedback": "This region between the Tigris and Euphrates rivers saw the birth of agriculture." },
+            { "text": "The only part of the Middle East with high mountains.", "correct": false },
+            { "text": "The location of the first modern oil pipeline.", "correct": false }
+        ]
+    },
+    {
+        "question": "What is the primary goal of the Organization of the Petroleum Exporting Countries (OPEC)?",
+        "options": [
+            { "text": "To provide humanitarian aid to all developing nations.", "correct": false },
+            { "text": "To coordinate petroleum policies and influence global oil prices.", "correct": true, "feedback": "OPEC members work together to manage the global oil market." },
+            { "text": "To build a single pipeline connecting Africa to Asia.", "correct": false },
+            { "text": "To promote the use of solar energy in desert regions.", "correct": false }
+        ]
+    },
+    {
+        "question": "Regional Scenario: If a city like Dubai uses energy-intensive technology to turn seawater into drinking water, which process is it utilizing?",
+        "options": [
+            { "text": "Carbon Sequestration", "correct": false },
+            { "text": "Desalination", "correct": true, "feedback": "Desalination is a critical, though expensive, technology for water-scarce Gulf states." },
+            { "text": "Fracking", "correct": false },
+            { "text": "Hydroponics", "correct": false }
+        ]
+    },
+    {
+        "question": "Which monotheistic religion originated in the city of Mecca in the 7th century AD?",
+        "options": [
+            { "text": "Judaism", "correct": false },
+            { "text": "Christianity", "correct": false },
+            { "text": "Islam", "correct": true, "feedback": "Islam's spread profoundly shaped the cultural and political geography of the region." },
+            { "text": "Zoroastrianism", "correct": false }
+        ]
+    },
+    {
+        "question": "What is the 'Arab Spring'?",
+        "options": [
+            { "text": "A seasonal shift in winds that brings rain to the desert.", "correct": false },
+            { "text": "A series of anti-government protests and uprisings that began in 2010.", "correct": true, "feedback": "The Arab Spring led to significant political transformations and conflicts across the region." },
+            { "text": "The name of a major water conservation project in Libya.", "correct": false },
+            { "text": "A cultural festival celebrating Islamic art.", "correct": false }
+        ]
+    },
+    {
+        "question": "Demographic Pattern: The region's population is overwhelmingly concentrated in:",
+        "options": [
+            { "text": "The center of the Sahara Desert.", "correct": false },
+            { "text": "River valleys, coastal zones, and highland areas with more rainfall.", "correct": true, "feedback": "Water availability is the primary driver of population distribution in MENA." },
+            { "text": "Mountain peaks over 15,000 feet.", "correct": false },
+            { "text": "Underground mining tunnels.", "correct": false }
+        ]
+    },
+    {
+        "question": "Geographic Inquiry: Why is 'Water' often considered a more strategic resource than 'Oil' in this region?",
+        "options": [
+            { "text": "Because oil is too heavy to transport.", "correct": false },
+            { "text": "Because water is essential for basic human survival and agriculture, and its scarcity leads to conflict.", "correct": true, "feedback": "While oil brings wealth, water security is an existential requirement." },
+            { "text": "Because there is actually more oil than water in the world.", "correct": false },
+            { "text": "Because water can be turned into oil through chemical processes.", "correct": false }
+        ]
+    },
+    {
+        "question": "Which city is sacred to followers of Judaism, Christianity, and Islam?",
+        "options": [
+            { "text": "Cairo", "correct": false },
+            { "text": "Istanbul", "correct": false },
+            { "text": "Jerusalem", "correct": true, "feedback": "Jerusalem's status as a shared holy site makes its geography highly contested." },
+            { "text": "Baghdad", "correct": false }
+        ]
+    },
+    {
+        "question": "The 'Maghreb' refers to which sub-region of North Africa?",
+        "options": [
+            { "text": "The area around the Nile River.", "correct": false },
+            { "text": "The western part of North Africa, including Morocco, Algeria, and Tunisia.", "correct": true, "feedback": "The term 'Maghreb' literally means 'the west' in Arabic." },
+            { "text": "The region bordering the Red Sea.", "correct": false },
+            { "text": "The island of Cyprus.", "correct": false }
+        ]
+    },
+    {
+        "question": "Texas Connection: Texas and Saudi Arabia both share a geographic interest in:",
+        "options": [
+            { "text": "Exporting maple syrup.", "correct": false },
+            { "text": "Innovations in arid lands agriculture and advanced petroleum engineering.", "correct": true, "feedback": "Both regions face similar environmental challenges and lead the global energy sector." },
+            { "text": "Building ski resorts in the desert.", "correct": false },
+            { "text": "Developing ice-breaking ships.", "correct": false }
+        ]
+    },
+    {
+        "question": "Why is the Bosporus Strait considered a 'Strategic Chokepoint'?",
+        "options": [
+            { "text": "It is the only way to get from the Mediterranean to the Black Sea.", "correct": true, "feedback": "Control of this narrow waterway has been a major geopolitical issue for centuries." },
+            { "text": "It is the world's deepest canyon.", "correct": false },
+            { "text": "It is where all the world's freshwater is stored.", "correct": false },
+            { "text": "It prevents the flow of air between continents.", "correct": false }
+        ]
+    }
 ]

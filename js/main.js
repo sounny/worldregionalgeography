@@ -1,56 +1,27 @@
-// Navigation
-// =====================================================
-
-document.addEventListener('DOMContentLoaded', () => {
-    initNavigation();
-    initPreviewMap();
-    initRegionalNavigator(); // Added for dev index
-    initQuizzes();
-    initSmoothScroll();
-    initTexasToggle();
-    initAccordions();
-    initKeyTerms();
-});
-=======
 /**
- * World Regional Geography - Main JavaScript (Legacy Version)
+ * World Regional Geography - Main JavaScript
  * Interactive features for the online textbook
- * This file provides backward compatibility for browsers that don't support ES6 modules
+ * Consolidated initialization for all interactive components
  */
 
-// Check if we should use the modular version
-if (typeof window.WRG_MODULAR !== 'undefined' && window.WRG_MODULAR) {
-    // Modular version will handle everything
-    console.log('Using modular version of WRG');
-} else {
-    // Legacy version for backward compatibility
-    console.log('Using legacy version of WRG');
-    
-    // =====================================================
-    // Navigation
-    // =====================================================
-
-    document.addEventListener('DOMContentLoaded', () => {
-        initAccessibilityEnhancements();
-        initNavigation();
-        initPreviewMap();
-        initRegionalNavigator(); // Added for dev index
-        initQuizzes();
-        initSmoothScroll();
-        initTexasToggle();
-        initAccordions();
-        initKeyTerms();
-    });=====================================================
-// Navigation
+// =====================================================
+// DOMContentLoaded Event Handler (Consolidated)
 // =====================================================
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Accessibility enhancements
     initAccessibilityEnhancements();
+    
+    // Navigation and navigation features
     initNavigation();
-    initPreviewMap();
-    initRegionalNavigator(); // Added for dev index
-    initQuizzes();
     initSmoothScroll();
+    
+    // Map initialization
+    initPreviewMap();
+    initRegionalNavigator();
+    
+    // Interactive components
+    initQuizzes();
     initTexasToggle();
     initAccordions();
     initKeyTerms();
