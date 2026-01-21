@@ -104,7 +104,7 @@
                         <span>Global Interconnectedness</span>
                     </div>
                 </div>
-                <p class="mt-4">Geography is fundamentally about understanding <strong>place</strong>—not just knowing where things are, but understanding <em>why</em> they are there and <em>what difference it makes</em>. This "spatial perspective" is what makes geography unique among academic disciplines.</p>
+                <p class="mt-4">Geography is fundamentally about understanding <strong>place</strong> - not just knowing where things are, but understanding <em>why</em> they are there and <em>what difference it makes</em>. This "spatial perspective" is what makes geography unique among academic disciplines.</p>
             </section>
 
             <!-- 3. Interactive Regional Map -->
@@ -120,7 +120,7 @@
             <!-- 4. Physical Geography Analysis -->
             <section id="physical-geography" class="section-container">
                 <h2>⛰️ Physical Geography: The Natural Environment</h2>
-                <p><strong>Physical geography</strong> focuses on the natural environment—the physical characteristics and processes of the Earth. It examines the "stage" upon which human history unfolds.</p>
+                <p><strong>Physical geography</strong> focuses on the natural environment - the physical characteristics and processes of the Earth. It examines the "stage" upon which human history unfolds.</p>
                 
                 <div class="figure-row">
                     <figure class="figure">
@@ -182,7 +182,7 @@
                         <span class="star-icon">⭐</span> Texas Connection: The Lone Star State in Global Context
                     </button>
                     <div class="texas-content hidden" id="texas-content">
-                        <p>Consider how Texas demonstrates the concept of <strong>place</strong>. Its physical characteristics include diverse landscapes—from the Gulf Coast wetlands to the Hill Country. Its human characteristics include a blend of Indigenous, Spanish, Mexican, and Anglo-American heritage.</p>
+                        <p>Consider how Texas demonstrates the concept of <strong>place</strong>. Its physical characteristics include diverse landscapes - from the Gulf Coast wetlands to the Hill Country. Its human characteristics include a blend of Indigenous, Spanish, Mexican, and Anglo-American heritage.</p>
                         <p>Texas is also a major player in <strong>economic globalization</strong>, serving as a hub for energy, technology, and international trade (especially via the Port of Houston and the Mexican border).</p>
                     </div>
                 </div>
@@ -232,7 +232,7 @@
                             <ul>
                                 <li>Geography is the study of "What is where, why there, and why care?"</li>
                                 <li>Regions (Formal, Functional, Perceptual) are tools geographers use to organize the world.</li>
-                                <li>Scale is the level of analysis—from local to global.</li>
+                                <li>Scale is the level of analysis - from local to global.</li>
                             </ul>
                         </div>
                     </div>
@@ -242,22 +242,8 @@
             <!-- 10. Knowledge Check (Quiz) -->
             <section id="quiz" class="section-container">
                 <h2>✅ Knowledge Check</h2>
-                <div class="quiz-wrapper">
-                    <div class="quiz-container" data-quiz="q1">
-                        <p class="quiz-question">1. Which type of region is defined by a central node with surrounding connections?</p>
-                        <div class="quiz-options">
-                            <label class="quiz-option" data-correct="false">
-                                <input type="radio" name="q1" value="a"> <span>Formal region</span>
-                            </label>
-                            <label class="quiz-option" data-correct="true" data-feedback="Functional regions are organized around a focal point, like a city.">
-                                <input type="radio" name="q1" value="b"> <span>Functional region</span>
-                            </label>
-                            <label class="quiz-option" data-correct="false">
-                                <input type="radio" name="q1" value="c"> <span>Perceptual region</span>
-                            </label>
-                        </div>
-                        <div class="quiz-feedback"></div>
-                    </div>
+                <div id="quiz-container" class="quiz-wrapper">
+                    <p class="loading">Loading quiz questions...</p>
                 </div>
             </section>
 
@@ -287,6 +273,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="../../js/map-init.js"></script>
     <script src="../../js/regions-data.js"></script>
+    <script src="../../js/quiz-engine.js"></script>
     <script src="../../js/main.js"></script>
     <script>
         // Initialize the Chapter 1 Interactive Map
@@ -303,6 +290,14 @@
                     }
                 });
             }
+
+            // Initialize the Chapter 1 Quiz from external JSON
+            fetch('quiz-data.json')
+                .then(response => response.json())
+                .then(data => {
+                    QuizEngine.init('quiz-container', data);
+                })
+                .catch(err => console.error('Error loading quiz data:', err));
         });
     </script>
 </body>

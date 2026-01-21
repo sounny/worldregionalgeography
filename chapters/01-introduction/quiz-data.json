@@ -1,0 +1,110 @@
+[
+    {
+        "question": "Which of the following best describes the 'spatial perspective' in geography?",
+        "options": [
+            { "text": "Simply knowing where things are located on a map.", "correct": false },
+            { "text": "Analyzing why phenomena are located where they are and how they interact across space.", "correct": true, "feedback": "Geography is about understanding spatial relationships and patterns, not just location." },
+            { "text": "The study of history through a chronological lens.", "correct": false },
+            { "text": "The exclusive study of physical landforms.", "correct": false }
+        ]
+    },
+    {
+        "question": "Apply Gritzner's framework: If a geographer is investigating the 'Why Care?' aspect of a new dam in Ethiopia, what are they primarily evaluating?",
+        "options": [
+            { "text": "The absolute coordinates of the dam.", "correct": false },
+            { "text": "The engineering blueprints of the construction.", "correct": false },
+            { "text": "The significance and implications of the dam for regional water security and geopolitics.", "correct": true, "feedback": "'Why Care?' focuses on the human and environmental significance of geographic patterns." },
+            { "text": "The list of ethnic groups living near the river.", "correct": false }
+        ]
+    },
+    {
+        "question": "Distinguish the Branch: A researcher studying how urban heat islands affect local respiratory health in Dallas is working in which sub-field?",
+        "options": [
+            { "text": "Purely Physical Geography", "correct": false },
+            { "text": "Purely Human Geography", "correct": false },
+            { "text": "Human-Environment Interaction", "correct": true, "feedback": "This study bridges the physical (climate/heat) and human (health/urbanization) branches." },
+            { "text": "Geomorphology", "correct": false }
+        ]
+    },
+    {
+        "question": "Regional Scenario: A pizza delivery route or a local television station's broadcast area is an example of what type of region?",
+        "options": [
+            { "text": "Formal Region", "correct": false },
+            { "text": "Functional (Nodal) Region", "correct": true, "feedback": "Functional regions are organized around a central node (the station or shop) and defined by interactions (delivery/signals)." },
+            { "text": "Perceptual Region", "correct": false },
+            { "text": "Physiographic Region", "correct": false }
+        ]
+    },
+    {
+        "question": "Perceptual Boundaries: Why is the 'Middle East' considered a perceptual (vernacular) region?",
+        "options": [
+            { "text": "Because it is defined by a single, undisputed political treaty.", "correct": false },
+            { "text": "Because its boundaries exist in people's minds based on cultural identity and vary between individuals.", "correct": true, "feedback": "Perceptual regions lack official borders and are defined by shared cultural ideas." },
+            { "text": "Because it follows the exact borders of the Tectonic Plates.", "correct": false },
+            { "text": "Because it is a region where everyone speaks the same language.", "correct": false }
+        ]
+    },
+    {
+        "question": "The Importance of Scale: A policy designed to reduce global CO2 emissions is an example of analysis at which scale?",
+        "options": [
+            { "text": "Local Scale", "correct": false },
+            { "text": "Regional Scale", "correct": false },
+            { "text": "Global Scale", "correct": true, "feedback": "Global scale addresses phenomena affecting the entire planet or involving international cooperation." },
+            { "text": "National Scale", "correct": false }
+        ]
+    },
+    {
+        "question": "Economic Globalization: Which concept describes the reduction in travel time between places due to technology?",
+        "options": [
+            { "text": "Distance Decay", "correct": false },
+            { "text": "Time-Space Compression", "correct": true, "feedback": "Technology 'compresses' the time it takes to interact across great distances." },
+            { "text": "Glocalization", "correct": false },
+            { "text": "Spatial Diffusion", "correct": false }
+        ]
+    },
+    {
+        "question": "Glocalization Scenario: A fast-food chain in India offering a 'Spicy Paneer Wrap' instead of a beef burger is an example of:",
+        "options": [
+            { "text": "Pure Cultural Imperialism", "correct": false },
+            { "text": "Glocalization", "correct": true, "feedback": "Glocalization is the adaptation of global products to fit local cultural preferences." },
+            { "text": "Environmental Determinism", "correct": false },
+            { "text": "Formal Regionalism", "correct": false }
+        ]
+    },
+    {
+        "question": "Place vs. Location: Describing Austin, Texas as 'The Live Music Capital of the World' with a 'Keep Austin Weird' vibe is describing its:",
+        "options": [
+            { "text": "Absolute Location", "correct": false },
+            { "text": "Sense of Place", "correct": true, "feedback": "Sense of place refers to the unique human and cultural characteristics that give a location meaning." },
+            { "text": "Relative Location", "correct": false },
+            { "text": "Site and Situation", "correct": false }
+        ]
+    },
+    {
+        "question": "Which of these is a primary advantage of the 'Regional Approach' to geography?",
+        "options": [
+            { "text": "It allows for the study of the world in manageable, coherent units.", "correct": true, "feedback": "Regions simplify complexity, making it easier to compare and contrast different parts of the world." },
+            { "text": "It focuses only on physical landforms without human interference.", "correct": false },
+            { "text": "It eliminates the need for maps.", "correct": false },
+            { "text": "It is the only way to calculate absolute location.", "correct": false }
+        ]
+    },
+    {
+        "question": "Human Geography Inquiry: What does the term 'Cultural Landscape' refer to?",
+        "options": [
+            { "text": "A landscape that has never been touched by humans.", "correct": false },
+            { "text": "The visible imprint of human activity on the Earth's surface.", "correct": true, "feedback": "Buildings, farms, and roads are all part of the cultural landscape created by human societies." },
+            { "text": "The study of rocks and soil types.", "correct": false },
+            { "text": "A map showing only elevation changes.", "correct": false }
+        ]
+    },
+    {
+        "question": "Geographer Highlight: Susan Hanson's work emphasizes that 'who asks the questions shapes what questions get asked.' This is a core tenet of:",
+        "options": [
+            { "text": "Cartographic Precision", "correct": false },
+            { "text": "Critical and Feminist Geography", "correct": true, "feedback": "Hanson's work highlights how social identity and power dynamics influence geographic research." },
+            { "text": "Physical Climatology", "correct": false },
+            { "text": "Absolute Location Theory", "correct": false }
+        ]
+    }
+]
