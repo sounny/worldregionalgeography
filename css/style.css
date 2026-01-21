@@ -1078,8 +1078,48 @@ ul, ol {
     margin: var(--space-8) 0;
 }
 
-.inquiry-prompt h3 {
-    color: #9d174d;
-    font-size: var(--text-lg);
-    margin-bottom: var(--space-2);
+/* Texas Connection Toggle */
+.texas-toggle {
+    margin: var(--space-8) 0;
+}
+
+.btn-texas-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-4) var(--space-6);
+    background: var(--color-texas-bg);
+    border: 2px solid var(--color-texas-border);
+    color: var(--color-texas-text);
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: var(--text-base);
+    transition: all var(--transition-fast);
+    text-align: left;
+}
+
+.btn-texas-toggle:hover {
+    background: #ffe4e6;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.texas-content {
+    background: white;
+    border: 2px solid var(--color-texas-border);
+    border-top: none;
+    padding: var(--space-6);
+    border-bottom-left-radius: var(--radius-md);
+    border-bottom-right-radius: var(--radius-md);
+    animation: slideDown 0.3s ease-out;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
