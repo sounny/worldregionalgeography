@@ -1,8 +1,8 @@
 # Implementation Plan - Track: Standardize Chapter 01
 
 ## Phase 1: Structural Refactoring & Styling
-- [ ] Task: Create specific CSS variables for "Gold Standard" theme (colors, spacing) in `css/style.css`.
-- [ ] Task: Refactor `chapters/01-introduction/index.html` to match the 10-point semantic structure (Objectives through Quiz).
+- [x] Task: Create specific CSS variables for "Gold Standard" theme (colors, spacing) in `css/style.css`. 7e0bd3e
+- [~] Task: Refactor `chapters/01-introduction/index.html` to match the 10-point semantic structure (Objectives through Quiz).
 - [ ] Task: Implement responsive grid layout for Sidebars ("Important Person") and Main Content.
 - [ ] Task: Implement "Texas Connection" toggle UI and CSS styling.
 - [ ] Task: Implement "Accordion" UI and CSS styling for Summary and Glossary.
