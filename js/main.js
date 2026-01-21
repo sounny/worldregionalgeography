@@ -13,7 +13,43 @@ document.addEventListener('DOMContentLoaded', () => {
     initRegionalNavigator(); // Added for dev index
     initQuizzes();
     initSmoothScroll();
+    initTexasToggle();
+    initAccordions();
 });
+
+/**
+ * Initialize Texas Connection toggles
+ */
+function initTexasToggle() {
+    const btn = document.getElementById('texas-btn');
+    const content = document.getElementById('texas-content');
+
+    if (btn && content) {
+        btn.addEventListener('click', () => {
+            content.classList.toggle('hidden');
+            btn.classList.toggle('active');
+        });
+    }
+}
+
+/**
+ * Initialize accordion components
+ */
+function initAccordions() {
+    const items = document.querySelectorAll('.accordion-item');
+
+    items.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        if (header) {
+            header.addEventListener('click', () => {
+                // Optional: Close other items
+                // items.forEach(i => { if (i !== item) i.classList.remove('active'); });
+                
+                item.classList.toggle('active');
+            });
+        }
+    });
+}
 
 /**
  * Initialize mobile navigation toggle
