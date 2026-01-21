@@ -1,28 +1,110 @@
 [
-  {
-    "question": "What percentage of Earth's fresh water is in the Amazon River system?",
-    "options": [
-      {
-        "text": "About 20%",
-        "correct": true,
-        "feedback": "The Amazon contains about 20% of Earth's river water, making it the world's largest river system by volume."
-      },
-      { "text": "About 5%", "correct": false },
-      { "text": "About 50%", "correct": false },
-      { "text": "About 1%", "correct": false }
-    ]
-  },
-  {
-    "question": "What term describes manufacturing plants on the Mexican side of the U.S.-Mexico border that rely on cross-border trade?",
-    "options": [
-      {
-        "text": "Maquiladoras",
-        "correct": true,
-        "feedback": "Maquiladoras are factories (often export-oriented) that grew with cross-border manufacturing and trade."
-      },
-      { "text": "Cantons", "correct": false },
-      { "text": "Atolls", "correct": false },
-      { "text": "Sultanates", "correct": false }
-    ]
-  }
+    {
+        "question": "Which physical feature runs the entire length of South America's western edge and is the longest continental mountain range in the world?",
+        "options": [
+            { "text": "The Rockies", "correct": false },
+            { "text": "The Appalachians", "correct": false },
+            { "text": "The Andes", "correct": true, "feedback": "The Andes stretch for over 7,000 km and deeply influence the climate and culture of South America's west coast." },
+            { "text": "The Alps", "correct": false }
+        ]
+    },
+    {
+        "question": "What is 'Altitudinal Zonation' in the context of Latin American geography?",
+        "options": [
+            { "text": "The division of land based on its distance from the Equator.", "correct": false },
+            { "text": "The classification of environments into zones based on elevation, which determines climate and crops.", "correct": true, "feedback": "Zones like 'tierra caliente' and 'tierra fria' are essential for understanding Andean agriculture." },
+            { "text": "A political system where only high-altitude regions have power.", "correct": false },
+            { "text": "The study of tectonic plate movement in the Amazon.", "correct": false }
+        ]
+    },
+    {
+        "question": "The 1494 Treaty of Tordesillas is significant because it explains why:",
+        "options": [
+            { "text": "Spanish is the primary language of Brazil.", "correct": false },
+            { "text": "Portugal colonized Brazil while Spain colonized most of the rest of Latin America.", "correct": true, "feedback": "The treaty divided the 'New World' between the two Iberian powers." },
+            { "text": "The Amazon rainforest is located where it is.", "correct": false },
+            { "text": "All Latin American countries are landlocked.", "correct": false }
+        ]
+    },
+    {
+        "question": "Regional Scenario: If a migrant in New York City sends part of their paycheck back to their family in El Salvador, this financial flow is called a:",
+        "options": [
+            { "text": "Tariff", "correct": false },
+            { "text": "Remittance", "correct": true, "feedback": "Remittances are a major economic force in many Latin American nations, often exceeding foreign aid." },
+            { "text": "Subsidy", "correct": false },
+            { "text": "Quota", "correct": false }
+        ]
+    },
+    {
+        "question": "Which ecosystem contains approximately 20% of the world's freshwater runoff and is a critical 'carbon sink' for the planet?",
+        "options": [
+            { "text": "The Atacama Desert", "correct": false },
+            { "text": "The Amazon Basin", "correct": true, "feedback": "The Amazon is vital for global climate regulation and biodiversity." },
+            { "text": "The Pampas", "correct": false },
+            { "text": "Lake Titicaca", "correct": false }
+        ]
+    },
+    {
+        "question": "In many Latin American megacities, 'Informal Settlements' are known by which term in Brazil?",
+        "options": [
+            { "text": "Maquiladoras", "correct": false },
+            { "text": "Favelas", "correct": true, "feedback": "Favelas are self-built urban communities that often lack formal government services but are hubs of cultural activity." },
+            { "text": "Haciendas", "correct": false },
+            { "text": "Pampas", "correct": false }
+        ]
+    },
+    {
+        "question": "Demographic History: What was the 'Columbian Exchange'?",
+        "options": [
+            { "text": "A trade agreement signed by Christopher Columbus.", "correct": false },
+            { "text": "The multi-directional flow of plants, animals, and diseases between the Old and New Worlds.", "correct": true, "feedback": "This exchange fundamentally altered the biology and culture of both hemispheres." },
+            { "text": "The process of moving the capital of Brazil to Brasília.", "correct": false },
+            { "text": "The name of the first canal built in Panama.", "correct": false }
+        ]
+    },
+    {
+        "question": "Geographic Inquiry: Why is 'Cattle Ranching' a primary driver of Amazon deforestation?",
+        "options": [
+            { "text": "Cows naturally eat trees.", "correct": false },
+            { "text": "Vast areas of forest are cleared to create pasture land for global beef demand.", "correct": true, "feedback": "Commercial ranching is responsible for the majority of land clearing in the Brazilian Amazon." },
+            { "text": "Cattle are used to pull down large trees for logging.", "correct": false },
+            { "text": "The forest soil is too rich for cows to survive without clearing it.", "correct": false }
+        ]
+    },
+    {
+        "question": "Which sub-region of South America is characterized by fertile temperate grasslands and a highly Europeanized cultural landscape?",
+        "options": [
+            { "text": "The Guianas", "correct": false },
+            { "text": "The Southern Cone (Argentina, Uruguay, Chile)", "correct": true, "feedback": "The Southern Cone's climate and history led to significant European settlement and agriculture." },
+            { "text": "Central America", "correct": false },
+            { "text": "The Caribbean", "correct": false }
+        ]
+    },
+    {
+        "question": "Geopolitics: The Panama Canal is a classic example of a 'Strategic Chokepoint' because:",
+        "options": [
+            { "text": "It is always clogged with trash.", "correct": false },
+            { "text": "It is a narrow waterway that significantly shortens global maritime trade routes.", "correct": true, "feedback": "The canal connects the Atlantic and Pacific, making it vital for international commerce." },
+            { "text": "It is the only place in Latin America with high elevation.", "correct": false },
+            { "text": "It prevents migration between North and South America.", "correct": false }
+        ]
+    },
+    {
+        "question": "Texas Connection: The 'Tex-Mex' cultural landscape is a product of:",
+        "options": [
+            { "text": "Recent isolationist policies.", "correct": false },
+            { "text": "The long-standing cultural fusion and geographic proximity along the Texas-Mexico border.", "correct": true, "feedback": "Centuries of interaction have created a unique hybrid culture in the borderlands." },
+            { "text": "Importing food from Europe.", "correct": false },
+            { "text": "Strict formal boundaries that prevent interaction.", "correct": false }
+        ]
+    },
+    {
+        "question": "Social Geography: Which term describes people of mixed European and Indigenous ancestry?",
+        "options": [
+            { "text": "Peninsulares", "correct": false },
+            { "text": "Mestizo", "correct": true, "feedback": "The Mestizo population is a majority in many Latin American nations, reflecting colonial history." },
+            { "text": "Creole", "correct": false },
+            { "text": "Indigenous", "correct": false }
+        ]
+    }
 ]
