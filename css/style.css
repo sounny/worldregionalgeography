@@ -75,6 +75,18 @@
     /* Layout */
     --container-max: 1200px;
     --header-height: 64px;
+
+    /* Pedagogical Components - Gold Standard */
+    --sidebar-width: 300px;
+    --color-sidebar-bg: #f8fafc;
+    --color-sidebar-border: #cbd5e1;
+    
+    --color-texas-bg: #fff1f2;
+    --color-texas-border: #fda4af;
+    --color-texas-text: #9f1239;
+    
+    --color-accordion-bg: #ffffff;
+    --color-accordion-hover: #f1f5f9;
 }
 
 /* Dark Mode - Simplified */
