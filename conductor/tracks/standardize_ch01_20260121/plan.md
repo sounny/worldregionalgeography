@@ -15,12 +15,12 @@
 - [x] Task: Add layer control to toggle between "Physical" (TileLayer) and "Political" (GeoJSON) views. 5ce5b51
 - [x] Task: Conductor - User Manual Verification 'Interactive Map Implementation' (Protocol in workflow.md) 5ce5b51
 
-## Phase 3: Pedagogical Logic (Quiz & Interactivity)
+## Phase 3: Pedagogical Logic (Quiz & Interactivity) [checkpoint: 711e220]
 - [x] Task: Create `js/quiz-engine.js` module for simple client-side validation. 26b4b20
 - [x] Task: Define 10+ in-depth quiz questions (multiple choice & scenario-based) in a JSON structure. ef12cf7
-- [~] Task: wire up the "Texas Connection" toggle button event listener.
-- [ ] Task: Wire up the Summary/Glossary accordion event listeners.
-- [ ] Task: Conductor - User Manual Verification 'Pedagogical Logic' (Protocol in workflow.md)
+- [x] Task: wire up the "Texas Connection" toggle button event listener. f0cee79
+- [x] Task: Wire up the Summary/Glossary accordion event listeners. 956ec22
+- [x] Task: Conductor - User Manual Verification 'Pedagogical Logic' (Protocol in workflow.md) 711e220
 
 ## Phase 4: Content Population & Polish
 - [ ] Task: Review `references/` (if any) or standard geographic sources to populate the "Regional Profile" data.
