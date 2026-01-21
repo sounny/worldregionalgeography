@@ -17,8 +17,8 @@
 
 ## Phase 3: Pedagogical Logic (Quiz & Interactivity)
 - [x] Task: Create `js/quiz-engine.js` module for simple client-side validation. 26b4b20
-- [~] Task: Define 10+ in-depth quiz questions (multiple choice & scenario-based) in a JSON structure.
-- [ ] Task: wire up the "Texas Connection" toggle button event listener.
+- [x] Task: Define 10+ in-depth quiz questions (multiple choice & scenario-based) in a JSON structure. ef12cf7
+- [~] Task: wire up the "Texas Connection" toggle button event listener.
 - [ ] Task: Wire up the Summary/Glossary accordion event listeners.
 - [ ] Task: Conductor - User Manual Verification 'Pedagogical Logic' (Protocol in workflow.md)
 
