@@ -23,8 +23,8 @@
 - [x] Task: Conductor - User Manual Verification 'Pedagogical Logic' (Protocol in workflow.md) 711e220
 
 ## Phase 4: Content Population & Polish
-- [ ] Task: Review `references/` (if any) or standard geographic sources to populate the "Regional Profile" data.
-- [ ] Task: Write robust content for "Texas Connection" and "Case Study" to ensure depth.
-- [ ] Task: Source and embed 1-2 Wikimedia Commons images for the "Important Person" and "Case Study".
+- [x] Task: Review `references/` (if any) or standard geographic sources to populate the "Regional Profile" data. c32d532
+- [x] Task: Write robust content for "Texas Connection" and "Case Study" to ensure depth. c32d532
+- [~] Task: Source and embed 1-2 Wikimedia Commons images for the "Important Person" and "Case Study".
 - [ ] Task: Final polish of typography (check for em-dashes, quote styles).
 - [ ] Task: Conductor - User Manual Verification 'Content Population & Polish' (Protocol in workflow.md)
