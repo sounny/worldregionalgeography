@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
+    <!-- Skip to Main Content Link (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <header class="site-header">
         <div class="container">
             <div class="header-brand">
@@ -26,7 +29,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="../01-introduction/index.html">1. Introduction</a></li>
                             <li><a href="../02-europe/index.html">2. Europe</a></li>
-                            <li><a href="../03-russia/index.html">3. Russia</a></li>
+                            <li><a href="../03-russia/index.html">3. Russia and Central Asia</a></li>
                             <li><a href="../04-north-america/index.html">4. North America</a></li>
                             <li><a href="../05-latin-america/index.html" class="active">5. Latin America</a></li>
                             <li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
@@ -51,37 +54,40 @@
         </div>
     </section>
 
-    <main class="chapter-content">
+    <main id="main-content" class="chapter-content">
         <div class="container">
             <div class="learning-objectives">
                 <h2>🎯 Learning Objectives</h2>
                 <ul>
-                    <li>Describe the major physical regions and climate zones of Latin America</li>
-                    <li>Analyze the legacy of colonialism on regional development</li>
-                    <li>Explain the causes and consequences of Amazon deforestation</li>
-                    <li>Evaluate patterns of inequality and urbanization</li>
+                    <li><strong>Describe:</strong> Identify the major physical regions and climate zones of Latin America</li>
+                    <li><strong>Analyze:</strong> Examine the legacy and ongoing impacts of colonialism on regional development</li>
+                    <li><strong>Explain:</strong> Discuss the causes and consequences of Amazon deforestation for global and regional systems</li>
+                    <li><strong>Evaluate:</strong> Assess the geographic patterns of inequality and urbanization in Latin America</li>
+                    <li><strong>Apply:</strong> Use geographic concepts to understand resource extraction and development tensions</li>
+                    <li><strong>Compare:</strong> Contrast development patterns across different Latin American countries and regions</li>
+                    <li><strong>Create:</strong> Design a sustainable development strategy that balances environmental conservation with economic opportunity</li>
                 </ul>
             </div>
 
             <section id="regional-profile">
                 <h2>🌴 Regional Profile</h2>
-                <div class="profile-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
-                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                <div class="profile-grid">
+                    <div class="profile-stat">
                         <div style="font-size: 2rem;">👥</div>
                         <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">~660 Million</div>
                         <div style="color: var(--color-text-muted);">Population</div>
                     </div>
-                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                    <div class="profile-stat">
                         <div style="font-size: 2rem;">🗺️</div>
                         <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">33 Countries</div>
                         <div style="color: var(--color-text-muted);">Nations</div>
                     </div>
-                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                    <div class="profile-stat">
                         <div style="font-size: 2rem;">🌳</div>
                         <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">Amazon</div>
                         <div style="color: var(--color-text-muted);">World's Largest Rainforest</div>
                     </div>
-                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                    <div class="profile-stat">
                         <div style="font-size: 2rem;">🗣️</div>
                         <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">Spanish and Portuguese</div>
                         <div style="color: var(--color-text-muted);">Dominant Languages</div>
@@ -91,7 +97,7 @@
 
             <section id="latin-america-map">
                 <h2>🗺️ Interactive Map: Latin America</h2>
-                <div id="regions-map" class="interactive-map" style="height: 500px; border-radius: var(--radius-lg); overflow: hidden;"></div>
+                <div id="regions-map" class="interactive-map" role="region" aria-label="Interactive map"></div>
             </section>
 
             <section id="physical-geography">
@@ -140,6 +146,11 @@
                     <li><strong>To Americas:</strong> Horses, cattle, wheat, sugarcane, diseases</li>
                     <li><strong>Population collapse:</strong> Indigenous populations declined by 90% due to European diseases</li>
                 </ul>
+
+                <div class="inquiry-prompt">
+                    <h3>🔍 Geographic Inquiry</h3>
+                    <p>The Amazon rainforest is often called "the lungs of the planet." If we lose this critical ecosystem to deforestation, how would the geographic impacts ripple beyond Latin America to affect global climate, Indigenous communities, and future development possibilities?</p>
+                </div>
             </section>
 
             <section id="global-theme">
@@ -167,20 +178,21 @@
                 </figure>
             </section>
 
-            <section id="texas-connection">
-                <div class="case-study" style="border-left-color: #bf5700;">
-                    <div class="case-study-header">
-                        <span class="case-study-label" style="background: #bf5700;">Texas Connection</span>
-                        <h4>The Texas-Mexico Borderland</h4>
+            <section id="texas-connection" class="section-container">
+                <div class="texas-toggle">
+                    <button class="btn-texas-toggle" type="button" aria-expanded="false">
+                        <span class="star-icon">⭐</span> Texas Connection: The Texas-Mexico Borderland
+                    </button>
+                    <div class="texas-content hidden" aria-hidden="true">
+                        <p>Texas shares 1,254 miles of border with Mexico, creating a unique binational region. Trade, migration, and cultural exchange flow across this boundary daily, making Texas deeply connected to Latin America.</p>
+                        <p><strong>Border Economy:</strong></p>
+                        <ul>
+                            <li><strong>Maquiladoras:</strong> Manufacturing plants on the Mexican side that rely on cross-border trade</li>
+                            <li><strong>Ports of Entry:</strong> Laredo is the busiest land port in the Western Hemisphere</li>
+                            <li><strong>Energy Trade:</strong> Texas refineries process Mexican oil</li>
+                            <li><strong>Cultural Exchange:</strong> Tex-Mex cuisine, music, and language reflect this fusion</li>
+                        </ul>
                     </div>
-                    <p>Texas shares 1,254 miles of border with Mexico, creating a unique binational region. Trade, migration, and cultural exchange flow across this boundary daily, making Texas deeply connected to Latin America.</p>
-                    <p><strong>Border Economy:</strong></p>
-                    <ul>
-                        <li><strong>Maquiladoras:</strong> Manufacturing plants on the Mexican side that rely on cross-border trade</li>
-                        <li><strong>Ports of Entry:</strong> Laredo is the busiest land port in the Western Hemisphere</li>
-                        <li><strong>Energy Trade:</strong> Texas refineries process Mexican oil</li>
-                        <li><strong>Cultural Exchange:</strong> Tex-Mex cuisine, music, and language reflect this fusion</li>
-                    </ul>
                 </div>
             </section>
 

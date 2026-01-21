@@ -1,0 +1,41 @@
+[
+  {
+    "question": "Which term best describes the physical geography of island nations like Indonesia and the Philippines?",
+    "options": [
+      {
+        "text": "Archipelago",
+        "correct": true,
+        "feedback": "An archipelago is a group or chain of islands."
+      },
+      { "text": "Isthmus", "correct": false },
+      { "text": "Peninsula", "correct": false },
+      { "text": "Plateau", "correct": false }
+    ]
+  },
+  {
+    "question": "Which city-state is known as an 'Economic Tiger' and major financial hub?",
+    "options": [
+      {
+        "text": "Singapore",
+        "correct": true,
+        "feedback": "Singapore is a highly developed wealthy city-state."
+      },
+      { "text": "Hanoi", "correct": false },
+      { "text": "Jakarta", "correct": false },
+      { "text": "Manila", "correct": false }
+    ]
+  },
+  {
+    "question": "The Malacca Strait is a strategic waterway primarily important for what reason?",
+    "options": [
+      {
+        "text": "Global shipping and trade",
+        "correct": true,
+        "feedback": "It is one of the busiest shipping lanes in the world, linking the Indian and Pacific Oceans."
+      },
+      { "text": "Tourism", "correct": false },
+      { "text": "Fishing exclusively", "correct": false },
+      { "text": "Generating hydroelectric power", "correct": false }
+    ]
+  }
+]

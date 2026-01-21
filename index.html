@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Skip to Main Content Link (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <header class="site-header">
         <div class="container">
             <div class="header-brand">
@@ -55,17 +58,19 @@
                 <p class="hero-description">Explore the physical landscapes, human cultures, and global connections that define our world. This open educational resource provides comprehensive coverage of all major world regions.</p>
                 <div class="hero-actions">
                     <a href="chapters/01-introduction/index.html" class="btn btn-primary">Start Learning</a>
-                    <a href="#chapters" class="btn btn-secondary">Browse Chapters</a>
+                    <a href="#main-content" class="btn btn-secondary">Browse Chapters</a>
                 </div>
             </div>
         </div>
     </section>
 
+    <main id="main-content">
+
     <section id="world-map" class="world-map-section">
         <div class="container">
             <h2>Explore the World</h2>
             <p>Click on any region to begin exploring. Each area offers unique geographic features, cultures, and connections to global issues.</p>
-            <div id="global-map" style="height: 450px; border-radius: var(--radius-lg); overflow: hidden; margin-top: var(--space-6);"></div>
+            <div id="global-map" role="region" aria-label="Interactive map" style="height: 450px; border-radius: var(--radius-lg); overflow: hidden; margin-top: var(--space-6);"></div>
         </div>
     </section>
 
@@ -177,6 +182,7 @@
             </ul>
         </div>
     </section>
+    </main>
 
     <footer class="site-footer">
         <div class="container">
@@ -207,7 +213,7 @@
                 // Add region markers
                 const regions = [
                     { name: 'Europe', coords: [50, 10], url: 'chapters/02-europe/index.html' },
-                    { name: 'Russia', coords: [60, 100], url: 'chapters/03-russia/index.html' },
+                    { name: 'Russia and Central Asia', coords: [60, 100], url: 'chapters/03-russia/index.html' },
                     { name: 'North America', coords: [40, -100], url: 'chapters/04-north-america/index.html' },
                     { name: 'Latin America', coords: [-10, -60], url: 'chapters/05-latin-america/index.html' },
                     { name: 'Sub-Saharan Africa', coords: [0, 20], url: 'chapters/06-sub-saharan-africa/index.html' },

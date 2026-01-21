@@ -1,0 +1,92 @@
+[
+    {
+        "question": "Which physical feature is most often used to mark Europe's eastern boundary?",
+        "options": [
+            { "text": "The Ural Mountains", "correct": true, "feedback": "The Ural Mountains are commonly used as Europe's eastern boundary." },
+            { "text": "The Mediterranean Sea", "correct": false },
+            { "text": "The Rhine River", "correct": false },
+            { "text": "The Alps", "correct": false }
+        ]
+    },
+    {
+        "question": "What is the primary climate influence that keeps Western Europe relatively mild?",
+        "options": [
+            { "text": "The Gulf Stream and North Atlantic Drift", "correct": true, "feedback": "The Gulf Stream and North Atlantic Drift bring warm ocean water toward Europe." },
+            { "text": "The Sahara Desert winds", "correct": false },
+            { "text": "The Siberian High Pressure system", "correct": false },
+            { "text": "The Himalayan monsoon", "correct": false }
+        ]
+    },
+    {
+        "question": "Which statement best describes supranationalism?",
+        "options": [
+            { "text": "Countries sharing authority with a regional organization", "correct": true, "feedback": "Supranationalism involves countries sharing authority with a regional organization." },
+            { "text": "A country that has never joined any international treaty", "correct": false },
+            { "text": "A policy of complete isolation from global affairs", "correct": false },
+            { "text": "A form of government where one ruler controls all aspects of life", "correct": false }
+        ]
+    },
+    {
+        "question": "What is the primary economic organization that has driven European integration?",
+        "options": [
+            { "text": "The European Union (EU)", "correct": true, "feedback": "The EU has been the primary driver of European economic and political integration." },
+            { "text": "NATO", "correct": false },
+            { "text": "The United Nations", "correct": false },
+            { "text": "The World Trade Organization", "correct": false }
+        ]
+    },
+    {
+        "question": "Which European country is NOT a member of the European Union?",
+        "options": [
+            { "text": "Switzerland", "correct": true, "feedback": "Switzerland has chosen to remain outside the EU while maintaining close economic ties." },
+            { "text": "Germany", "correct": false },
+            { "text": "France", "correct": false },
+            { "text": "Italy", "correct": false }
+        ]
+    },
+    {
+        "question": "What is the primary language family spoken in most of Europe?",
+        "options": [
+            { "text": "Indo-European", "correct": true, "feedback": "Most European languages belong to the Indo-European language family." },
+            { "text": "Sino-Tibetan", "correct": false },
+            { "text": "Afro-Asiatic", "correct": false },
+            { "text": "Austronesian", "correct": false }
+        ]
+    },
+    {
+        "question": "Which European city serves as the administrative capital of the European Union?",
+        "options": [
+            { "text": "Brussels, Belgium", "correct": true, "feedback": "Brussels is the administrative capital of the EU." },
+            { "text": "Paris, France", "correct": false },
+            { "text": "Berlin, Germany", "correct": false },
+            { "text": "London, United Kingdom", "correct": false }
+        ]
+    },
+    {
+        "question": "What is the primary religion that has historically shaped European culture?",
+        "options": [
+            { "text": "Christianity", "correct": true, "feedback": "Christianity has been the dominant religious influence in European history." },
+            { "text": "Islam", "correct": false },
+            { "text": "Buddhism", "correct": false },
+            { "text": "Hinduism", "correct": false }
+        ]
+    },
+    {
+        "question": "Which physical feature separates the Iberian Peninsula from the rest of Europe?",
+        "options": [
+            { "text": "The Pyrenees Mountains", "correct": true, "feedback": "The Pyrenees form a natural barrier between Spain and France." },
+            { "text": "The English Channel", "correct": false },
+            { "text": "The Danube River", "correct": false },
+            { "text": "The Carpathian Mountains", "correct": false }
+        ]
+    },
+    {
+        "question": "What is the primary economic challenge facing many Southern European countries?",
+        "options": [
+            { "text": "High youth unemployment and public debt", "correct": true, "feedback": "Southern European countries have struggled with economic stagnation and high debt levels." },
+            { "text": "Overpopulation", "correct": false },
+            { "text": "Lack of natural resources", "correct": false },
+            { "text": "Excessive industrialization", "correct": false }
+        ]
+    }
+]

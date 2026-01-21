@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
+    <!-- Skip to Main Content Link (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <header class="site-header">
         <div class="container">
             <div class="header-brand">
@@ -28,7 +31,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="../01-introduction/index.html">1. Introduction</a></li>
                             <li><a href="../02-europe/index.html">2. Europe</a></li>
-                            <li><a href="../03-russia/index.html" class="active">3. Russia and Post-Soviet</a></li>
+                            <li><a href="../03-russia/index.html" class="active">3. Russia and Central Asia</a></li>
                             <li><a href="../04-north-america/index.html">4. North America</a></li>
                             <li><a href="../05-latin-america/index.html">5. Latin America</a></li>
                             <li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
@@ -53,37 +56,40 @@
         </div>
     </section>
 
-    <main class="chapter-content">
+    <main id="main-content" class="chapter-content">
         <div class="container">
             <div class="learning-objectives">
                 <h2>🎯 Learning Objectives</h2>
                 <ul>
-                    <li>Describe the physical geography of Russia and Central Asia</li>
-                    <li>Explain the legacy of the Soviet Union</li>
-                    <li>Analyze the role of energy resources in regional geopolitics</li>
-                    <li>Evaluate the causes and consequences of the Ukraine conflict</li>
+                    <li><strong>Describe:</strong> Explain the physical geography of Russia and Central Asia</li>
+                    <li><strong>Understand:</strong> Summarize the legacy and impact of the Soviet Union</li>
+                    <li><strong>Analyze:</strong> Examine the role of energy resources in regional geopolitics and international relations</li>
+                    <li><strong>Evaluate:</strong> Assess the geographic, political, and human causes and consequences of the Ukraine conflict</li>
+                    <li><strong>Apply:</strong> Use geographic concepts to understand Russia's strategic position bridging Europe and Asia</li>
+                    <li><strong>Compare:</strong> Contrast the development patterns of Russia and Central Asian republics</li>
+                    <li><strong>Create:</strong> Propose a geographic framework for understanding regional stability and conflict resolution in Russia and Central Asia</li>
                 </ul>
             </div>
 
             <section id="regional-profile">
                 <h2>🏔️ Regional Profile</h2>
-                <div class="profile-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
-                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                <div class="profile-grid">
+                    <div class="profile-stat">
                         <div style="font-size: 2rem;">👥</div>
                         <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">~290 Million</div>
                         <div style="color: var(--color-text-muted);">Population</div>
                     </div>
-                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                    <div class="profile-stat">
                         <div style="font-size: 2rem;">🗺️</div>
                         <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">17.1 Million km2</div>
                         <div style="color: var(--color-text-muted);">Russia's Area</div>
                     </div>
-                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                    <div class="profile-stat">
                         <div style="font-size: 2rem;">⛽</div>
                         <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">Major Exporter</div>
                         <div style="color: var(--color-text-muted);">Oil and Gas</div>
                     </div>
-                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                    <div class="profile-stat">
                         <div style="font-size: 2rem;">🕐</div>
                         <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">11 Time Zones</div>
                         <div style="color: var(--color-text-muted);">East to West</div>
@@ -93,7 +99,7 @@
 
             <section id="russia-map">
                 <h2>🗺️ Interactive Map: Russia and Central Asia</h2>
-                <div id="regions-map" class="interactive-map" style="height: 500px; border-radius: var(--radius-lg); overflow: hidden;"></div>
+                <div id="regions-map" class="interactive-map" role="region" aria-label="Interactive map"></div>
             </section>
 
             <section id="physical-geography">
@@ -191,6 +197,11 @@
                         <strong>Figure 3.6:</strong> Ukraine and the Surrounding Region. Ukraine's geographic position between Russia and NATO states is central to understanding the conflict.
                     </figcaption>
                 </figure>
+
+                <div class="inquiry-prompt">
+                    <h3>🔍 Geographic Inquiry</h3>
+                    <p>Ukraine's geography places it at the intersection of European and Russian spheres of influence. How might Ukraine's physical geography (landlocked except for small Black Sea access), history of empire, and language communities create competing geographic identities and geopolitical claims?</p>
+                </div>
             </section>
 
             <section id="central-asia">
@@ -213,13 +224,14 @@
                 </figure>
             </section>
 
-            <section id="texas-connection">
-                <div class="case-study" style="border-left-color: #bf5700;">
-                    <div class="case-study-header">
-                        <span class="case-study-label" style="background: #bf5700;">Texas Connection</span>
-                        <h4>Energy Competition</h4>
+            <section id="texas-connection" class="section-container">
+                <div class="texas-toggle">
+                    <button class="btn-texas-toggle" type="button" aria-expanded="false">
+                        <span class="star-icon">⭐</span> Texas Connection: Energy Competition
+                    </button>
+                    <div class="texas-content hidden" aria-hidden="true">
+                        <p>Texas and Russia both rank among the world's top oil and gas producers. As sanctions limited Russian exports, Texas LNG exports to Europe increased significantly.</p>
                     </div>
-                    <p>Texas and Russia both rank among the world's top oil and gas producers. As sanctions limited Russian exports, Texas LNG exports to Europe increased significantly.</p>
                 </div>
             </section>
 

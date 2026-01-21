@@ -1,14 +1,17 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chapter 2: Europe - Explore the geography, supranational organizations, and cultural diversity of the European continent.">
+    <meta name="description" content="Chapter 2: Europe - Explore the physical landscapes, cultural diversity, and supranational integration of Europe.">
     <title>Chapter 2: Europe | World Regional Geography</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
+    <!-- Skip to Main Content Link (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <header class="site-header">
         <div class="container">
             <div class="header-brand">
@@ -28,7 +31,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="../01-introduction/index.html">1. Introduction</a></li>
                             <li><a href="../02-europe/index.html" class="active">2. Europe</a></li>
-                            <li><a href="../03-russia/index.html">3. Russia and Post-Soviet</a></li>
+                            <li><a href="../03-russia/index.html">3. Russia and Central Asia</a></li>
                             <li><a href="../04-north-america/index.html">4. North America</a></li>
                             <li><a href="../05-latin-america/index.html">5. Latin America</a></li>
                             <li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
@@ -49,151 +52,249 @@
         <div class="container">
             <p class="chapter-meta">Chapter 2 - Week 2-3</p>
             <h1 class="chapter-title">Europe</h1>
-            <p class="chapter-description">A peninsula of peninsulas, Europe has exerted global influence far beyond its size. From the Industrial Revolution to the European Union, this region offers crucial lessons in integration and cultural diversity.</p>
+            <p class="chapter-description">A peninsula of peninsulas, Europe has shaped global history through exploration, industrialization, and integration. Its geography reveals how physical landscapes and cultural systems interact across dense, diverse societies.</p>
         </div>
     </section>
 
-    <main class="chapter-content">
+    <main id="main-content" class="chapter-content">
         <div class="container">
-            <div class="learning-objectives">
-                <h2>🎯 Learning Objectives</h2>
-                <p>By the end of this chapter, you will be able to:</p>
-                <ul>
-                    <li>Identify the major physical regions and climate zones of Europe</li>
-                    <li>Explain the development and structure of the European Union</li>
-                    <li>Analyze the geographic factors that contributed to Europe's global influence</li>
-                    <li>Evaluate current challenges facing European integration</li>
-                </ul>
-            </div>
-
-            <section id="regional-profile">
-                <h2>🏰 Regional Profile: Europe at a Glance</h2>
-                <div class="profile-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
-                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
-                        <div style="font-size: 2rem;">👥</div>
-                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">~750 Million</div>
-                        <div style="color: var(--color-text-muted);">Population</div>
-                    </div>
-                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
-                        <div style="font-size: 2rem;">🗺️</div>
-                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">44 Countries</div>
-                        <div style="color: var(--color-text-muted);">Sovereign Nations</div>
-                    </div>
-                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
-                        <div style="font-size: 2rem;">🇪🇺</div>
-                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">27 Members</div>
-                        <div style="color: var(--color-text-muted);">European Union</div>
-                    </div>
-                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
-                        <div style="font-size: 2rem;">💶</div>
-                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">$18+ Trillion</div>
-                        <div style="color: var(--color-text-muted);">EU GDP</div>
-                    </div>
+            <section id="objectives" class="section-container">
+                <div class="learning-objectives">
+                    <h2>🎯 Learning Objectives</h2>
+                    <p>By the end of this chapter, you will be able to:</p>
+                    <ul>
+                        <li><strong>Locate:</strong> Identify Europe's physical boundaries and major peninsulas on a map</li>
+                        <li><strong>Describe:</strong> Explain Europe's major landform regions and climate influences</li>
+                        <li><strong>Explain:</strong> Analyze how geography shaped European settlement, trade, and industrial development</li>
+                        <li><strong>Define:</strong> Summarize supranationalism and the evolution of the European Union</li>
+                        <li><strong>Apply:</strong> Use centripetal and centrifugal force concepts in a European case study</li>
+                        <li><strong>Analyze:</strong> Examine how physical geography influences cultural, political, and economic divisions within Europe</li>
+                        <li><strong>Evaluate:</strong> Assess the challenges and benefits of supranational integration in the European context</li>
+                        <li><strong>Create:</strong> Design a geographic solution to a regional challenge in Europe (e.g., climate migration, economic inequality)</li>
+                    </ul>
                 </div>
-                <p>Europe is often described as a <strong>"peninsula of peninsulas"</strong> - a western extension of the Eurasian landmass containing numerous peninsular features (Iberian, Italian, Balkan, Scandinavian).</p>
             </section>
 
-            <section id="europe-map">
+            <section id="regional-profile" class="section-container">
+                <h2>🏛️ Regional Snapshot: Europe at a Glance</h2>
+                <div class="profile-grid">
+                    <div class="profile-item">
+                        <strong>Approximate Area</strong>
+                        <span>About 10 million km2</span>
+                    </div>
+                    <div class="profile-item">
+                        <strong>Population</strong>
+                        <span>About 740 million</span>
+                    </div>
+                    <div class="profile-item">
+                        <strong>Countries</strong>
+                        <span>About 44 sovereign states</span>
+                    </div>
+                    <div class="profile-item">
+                        <strong>EU Members</strong>
+                        <span>27</span>
+                    </div>
+                </div>
+                <p class="mt-4">Europe is often described as a <span class="term-highlight" data-definition="A large landform that projects into water and is surrounded on three sides.">peninsula</span> of peninsulas. Its cultural boundaries are just as important as its physical ones, making Europe a classic example of a region defined by both place and perception.</p>
+            </section>
+
+            <section id="regional-boundaries" class="section-container">
+                <h2>🧭 Boundaries and Regional Identity</h2>
+                <p>Europe's western edge meets the Atlantic Ocean, while the Arctic Ocean forms a northern boundary. The Mediterranean Sea shapes its southern limits. To the east, the <span class="term-highlight" data-definition="A mountain chain that traditionally marks Europe's eastern boundary.">Ural Mountains</span> are commonly used to separate Europe from Asia. The <span class="term-highlight" data-definition="A narrow strait connecting the Black Sea to the Sea of Marmara.">Bosporus</span> in Turkey highlights how physical geography can also be a cultural border.</p>
+                <p>Because these borders are shaped by history, culture, and politics, Europe illustrates how regions are social constructions as well as physical places.</p>
+            </section>
+
+            <section id="europe-map" class="section-container">
                 <h2>🗺️ Interactive Map: Europe</h2>
-                <p>Explore Europe's countries and capitals. Click on markers to learn more.</p>
-                <div id="regions-map" class="interactive-map" style="height: 500px; border-radius: var(--radius-lg); overflow: hidden;"></div>
+                <p>Explore major cities and regional anchors. Zoom in to see how mountains, rivers, and seas influence settlement and trade.</p>
+                <div id="regions-map" class="interactive-map" role="region" aria-label="Interactive map"></div>
+                <div class="map-controls">
+                    <p class="text-sm italic text-muted">Click a marker to learn about key urban nodes across Europe.</p>
+                </div>
             </section>
 
-            <section id="physical-geography">
-                <h2>Physical Geography</h2>
-                <h3>Major Physical Regions</h3>
-                <p><strong>The Northern European Lowland:</strong> A flat plain stretching from France through Germany and Poland. Major rivers including the Rhine and Elbe cross this region.</p>
-                <p><strong>The Alpine System:</strong> Young, folded mountains including the Alps, Pyrenees, and Carpathians, created by plate collision.</p>
-                <p><strong>The Scandinavian Shield:</strong> Ancient rocks scraped by glaciers, featuring fjords and numerous lakes.</p>
-                
-                <h3>Climate</h3>
-                <p>Europe's climate is moderated by the <strong>North Atlantic Drift</strong>, keeping Western Europe warmer than other regions at similar latitudes.</p>
+            <section id="physical-geography" class="section-container">
+                <h2>⛰️ Physical Geography: Landforms and Climate</h2>
+                <p>Europe's landforms cluster into four major regions, each shaping human activity in distinctive ways:</p>
+                <ul>
+                    <li><strong>Alpine Region:</strong> High, young mountains such as the Alps, Pyrenees, and Carpathians influence transport and tourism.</li>
+                    <li><strong>Northern Lowlands:</strong> Broad plains that support dense settlement and agriculture across northern Europe.</li>
+                    <li><strong>Central Uplands:</strong> Rolling hills and forested plateaus with coal and industrial resources.</li>
+                    <li><strong>Western Highlands:</strong> Rugged landscapes of Scandinavia and the British Isles with fjords and glaciated terrain.</li>
+                </ul>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0;">
-                    <figure class="figure" style="text-align: center;">
-                        <img src="../../images/europe_map.jpg" alt="Physical map of Europe" style="max-width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                        <figcaption style="margin-top: var(--space-3); color: var(--color-text-muted); font-size: var(--text-sm);">
-                            <strong>Figure 2.1:</strong> Physical Map of Europe showing major physical features, countries, and bodies of water.
-                        </figcaption>
+                <div class="figure-row">
+                    <figure class="figure">
+                        <img src="../../images/europe_physical.jpg" alt="Physical map of Europe showing major landforms">
+                        <figcaption><strong>Figure 2.1:</strong> Physical geography of Europe highlighting the Alps, lowlands, and uplands.</figcaption>
                     </figure>
-                    <figure class="figure" style="text-align: center;">
-                        <img src="../../images/europe_climate.jpg" alt="Climate zones of Europe" style="max-width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                        <figcaption style="margin-top: var(--space-3); color: var(--color-text-muted); font-size: var(--text-sm);">
-                            <strong>Figure 2.2:</strong> Europe's Climate Zones. The North Atlantic Drift moderates Western Europe's climate.
-                        </figcaption>
+                    <figure class="figure">
+                        <img src="../../images/europe_climate.jpg" alt="Climate zones of Europe">
+                        <figcaption><strong>Figure 2.2:</strong> Europe's climate zones shaped by latitude and ocean influence.</figcaption>
+                    </figure>
+                </div>
+
+                <p>Europe's climate is moderated by the <span class="term-highlight" data-definition="A warm ocean current that carries heat from the Gulf of Mexico toward Europe.">Gulf Stream</span> and the broader North Atlantic Drift. Coastal regions have milder temperatures, while interior areas experience greater seasonal variation.</p>
+
+                <div class="inquiry-prompt">
+                    <h3>🔍 Geographic Inquiry</h3>
+                    <p>Why do you think Western Europe has a milder climate than places at the same latitude in North America'</p>
+                </div>
+            </section>
+
+            <section id="human-geography" class="section-container">
+                <h2>👥 Human Geography: People, Cities, and Culture</h2>
+                <p>Europe is one of the world's most urbanized regions, with dense networks of cities and strong transportation corridors. Cultural landscapes reflect linguistic diversity, religious history, and shifting political borders.</p>
+
+                <div class="figure-row">
+                    <figure class="figure">
+                        <img src="../../images/europe_languages.jpg" alt="Map of major language families in Europe">
+                        <figcaption><strong>Figure 2.3:</strong> Language diversity across Europe illustrates cultural regions and historical migration.</figcaption>
+                    </figure>
+                    <figure class="figure">
+                        <img src="../../images/europe_population.jpg" alt="Population density map of Europe">
+                        <figcaption><strong>Figure 2.4:</strong> High population densities cluster along coasts, river valleys, and industrial cores.</figcaption>
                     </figure>
                 </div>
             </section>
 
-            <section id="global-theme">
-                <h2>🌐 Global Theme: Supranationalism</h2>
-                <p>The <strong>European Union (EU)</strong> represents the world's most ambitious experiment in supranationalism.</p>
-                <h3>Evolution of European Integration</h3>
+            <section id="global-theme" class="section-container">
+                <h2>🌐 Global Theme: Supranationalism and Integration</h2>
+                <p><span class="term-highlight" data-definition="A system where countries voluntarily share authority with a larger organization.">Supranationalism</span> is most visible in the European Union, which seeks to coordinate trade, movement, and policy across member states.</p>
                 <ul>
-                    <li><strong>1951:</strong> European Coal and Steel Community founded</li>
+                    <li><strong>1951:</strong> European Coal and Steel Community formed to reduce conflict</li>
                     <li><strong>1957:</strong> Treaty of Rome creates the European Economic Community</li>
                     <li><strong>1993:</strong> Maastricht Treaty establishes the European Union</li>
-                    <li><strong>2002:</strong> Euro currency introduced</li>
-                    <li><strong>2020:</strong> Brexit - the United Kingdom leaves the EU</li>
+                    <li><strong>2002:</strong> Euro currency enters circulation</li>
+                    <li><strong>2020:</strong> The United Kingdom leaves the EU</li>
                 </ul>
 
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-6); margin: var(--space-8) 0;">
-                    <figure class="figure" style="text-align: center;">
-                        <img src="../../images/eurozone.jpg" alt="Map showing Eurozone countries" style="max-width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                        <figcaption style="margin-top: var(--space-3); color: var(--color-text-muted); font-size: var(--text-sm);">
-                            <strong>Figure 2.3:</strong> The Eurozone. Countries using the Euro as their official currency represent the deepest level of economic integration.
-                        </figcaption>
+                <div class="figure-row">
+                    <figure class="figure">
+                        <img src="../../images/europe_eu.jpg" alt="Map of European Union member states">
+                        <figcaption><strong>Figure 2.5:</strong> The EU highlights regional integration in Europe.</figcaption>
                     </figure>
-                    <figure class="figure" style="text-align: center;">
-                        <img src="../../images/europe_eu.jpg" alt="Map of EU member states" style="max-width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-                        <figcaption style="margin-top: var(--space-3); color: var(--color-text-muted); font-size: var(--text-sm);">
-                            <strong>Figure 2.4:</strong> European Union Membership. The EU has expanded from 6 founding members to 27 countries.
-                        </figcaption>
+                    <figure class="figure">
+                        <img src="../../images/europe_nato.jpg" alt="Map of NATO member states in Europe">
+                        <figcaption><strong>Figure 2.6:</strong> NATO membership overlaps with but differs from EU integration.</figcaption>
                     </figure>
                 </div>
             </section>
 
-            <section id="texas-connection">
-                <div class="case-study" style="border-left-color: #bf5700;">
+            <section class="important-person-sidebar">
+                <div class="sidebar-content">
+                    <div class="person-header">
+                        <h3>👤 Important Person</h3>
+                    </div>
+                    <div class="person-info">
+                        <strong>Jean Monnet</strong>
+                        <p class="person-title">Architect of European Integration</p>
+                        <p>Monnet promoted economic cooperation after World War II. His ideas helped create the European Coal and Steel Community, laying the groundwork for the EU's supranational model.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="key-terms" class="section-container">
+                <div class="key-terms">
+                    <h3>Key Terms</h3>
+                    <dl class="term-grid">
+                        <div class="term">
+                            <dt>Supranationalism</dt>
+                            <dd>Shared authority among countries through a higher regional body.</dd>
+                        </div>
+                        <div class="term">
+                            <dt>Schengen Area</dt>
+                            <dd>A zone where many European countries allow passport-free travel.</dd>
+                        </div>
+                        <div class="term">
+                            <dt>Gulf Stream</dt>
+                            <dd>A warm Atlantic current that moderates Western Europe's climate.</dd>
+                        </div>
+                        <div class="term">
+                            <dt>Centrifugal Forces</dt>
+                            <dd>Forces that pull a region apart, such as nationalism or regional inequality.</dd>
+                        </div>
+                    </dl>
+                </div>
+            </section>
+
+            <section id="texas-connection" class="section-container">
+                <div class="texas-toggle">
+                    <button class="btn-texas-toggle" type="button" aria-expanded="false">
+                        <span class="star-icon">⭐</span> Texas Connection: Europe and the Lone Star State
+                    </button>
+                    <div class="texas-content hidden" aria-hidden="true">
+                        <p>European migration shaped Texas culture through German, Czech, Polish, and Italian communities. Today, Texas trades heavily with Europe in energy, chemicals, and technology, linking local industries to global markets.</p>
+                        <p>Ports like Houston and Corpus Christi move goods between Texas and European consumers, showing how local places participate in global networks.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="case-study" class="section-container">
+                <div class="case-study-gold">
                     <div class="case-study-header">
-                        <span class="case-study-label" style="background: #bf5700;">Texas Connection</span>
-                        <h4>Trade Ties: Texas and Europe</h4>
+                        <span class="label">Case Study</span>
+                        <h2>Brexit and the Geography of Sovereignty</h2>
                     </div>
-                    <p>The European Union is Texas's second-largest export destination after Mexico. Key exports include petroleum products, chemicals, and electronics. German immigration significantly shaped Central Texas culture.</p>
+                    <p>The United Kingdom's departure from the EU illustrates the tension between national sovereignty and regional integration. The decision raised new questions about trade, migration, and border management, especially on the island of Ireland.</p>
+                    <div class="case-study-questions">
+                        <h4>Questions to Consider:</h4>
+                        <ul>
+                            <li>Which centripetal forces encouraged integration within the EU'</li>
+                            <li>Which centrifugal forces contributed to Brexit'</li>
+                            <li>How do borders affect everyday life and economic flows'</li>
+                        </ul>
+                    </div>
                 </div>
             </section>
 
-            <section id="knowledge-check">
+            <section id="summary-glossary" class="section-container">
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header" type="button" aria-expanded="false">
+                            📖 Glossary of Terms <span class="chevron">▼</span>
+                        </button>
+                        <div class="accordion-content" aria-hidden="true">
+                            <dl>
+                                <dt>Alpine Region</dt>
+                                <dd>Europe's high mountain system that includes the Alps, Pyrenees, and Carpathians.</dd>
+                                <dt>Northern Lowlands</dt>
+                                <dd>Broad, flat plains with fertile soils and dense settlement.</dd>
+                                <dt>Supranationalism</dt>
+                                <dd>Shared decision-making authority across multiple countries.</dd>
+                                <dt>Centripetal Forces</dt>
+                                <dd>Forces that bind a region together, such as shared institutions.</dd>
+                                <dt>Centrifugal Forces</dt>
+                                <dd>Forces that pull a region apart, such as separatism or inequality.</dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header" type="button" aria-expanded="false">
+                            💡 Summary of Big Ideas <span class="chevron">▼</span>
+                        </button>
+                        <div class="accordion-content" aria-hidden="true">
+                            <ul>
+                                <li>Europe's physical geography shaped trade routes, agriculture, and settlement.</li>
+                                <li>Ocean currents moderate climate and support dense coastal populations.</li>
+                                <li>The EU illustrates how supranationalism can reduce conflict and expand markets.</li>
+                                <li>Regional identity in Europe is shaped by both cultural and political borders.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="knowledge-check" class="section-container">
                 <h2>✅ Knowledge Check</h2>
-                <div class="quiz-container" data-quiz="q1">
-                    <p class="quiz-question">1. What ocean current moderates Western Europe's climate?</p>
-                    <div class="quiz-options">
-                        <label class="quiz-option" data-correct="true" data-feedback="The North Atlantic Drift carries warm water toward Europe, significantly moderating the climate.">
-                            <input type="radio" name="q1" value="a"><span>The North Atlantic Drift</span>
-                        </label>
-                        <label class="quiz-option" data-correct="false">
-                            <input type="radio" name="q1" value="b"><span>The California Current</span>
-                        </label>
-                        <label class="quiz-option" data-correct="false">
-                            <input type="radio" name="q1" value="c"><span>The Labrador Current</span>
-                        </label>
-                    </div>
-                    <div class="quiz-feedback"></div>
+                <div id="quiz-container" class="quiz-wrapper">
+                    <p class="loading">Loading quiz questions...</p>
                 </div>
-            </section>
-
-            <section id="summary">
-                <h2>Chapter Summary</h2>
-                <ul>
-                    <li><strong>Physical geography:</strong> Europe is a peninsula of peninsulas with diverse regions from lowlands to mountains.</li>
-                    <li><strong>Supranationalism:</strong> The EU represents the world's most ambitious integration experiment.</li>
-                    <li><strong>Brexit:</strong> The UK's departure demonstrates tensions between sovereignty and integration.</li>
-                </ul>
             </section>
 
             <nav class="chapter-nav">
                 <a href="../01-introduction/index.html" class="chapter-nav-link">← Chapter 1: Introduction</a>
-                <a href="../03-russia/index.html" class="chapter-nav-link">Chapter 3: Russia →</a>
+                <a href="../03-russia/index.html" class="chapter-nav-link">Chapter 3: Russia and Central Asia →</a>
             </nav>
         </div>
     </main>
@@ -206,7 +307,7 @@
                     <span>World Regional Geography</span>
                 </div>
                 <div class="footer-copyright">
-                    <p>© 2026 Dr. Sounny. Open Educational Resource.</p>
+                    <p>&copy; 2026 Dr. Sounny. Open Educational Resource.</p>
                 </div>
             </div>
         </div>
@@ -214,9 +315,9 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="../../js/main.js"></script>
+    <script src="../../js/quiz-engine.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Initialize Europe map
             if (typeof L !== 'undefined' && document.getElementById('regions-map')) {
                 const map = L.map('regions-map', {
                     maxBounds: [[30, -30], [75, 50]],
@@ -224,18 +325,18 @@
                 }).setView([50, 10], 4);
 
                 L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-                    attribution: '© OpenStreetMap © CARTO',
+                    attribution: '&copy; OpenStreetMap &copy; CARTO',
                     subdomains: 'abcd',
                     maxZoom: 19
                 }).addTo(map);
 
                 const cities = [
-                    { name: 'London', coords: [51.5074, -0.1278], note: 'UK capital' },
-                    { name: 'Paris', coords: [48.8566, 2.3522], note: 'France capital' },
-                    { name: 'Berlin', coords: [52.5200, 13.4050], note: 'Germany capital' },
-                    { name: 'Rome', coords: [41.9028, 12.4964], note: 'Italy capital' },
-                    { name: 'Madrid', coords: [40.4168, -3.7038], note: 'Spain capital' },
-                    { name: 'Brussels', coords: [50.8503, 4.3517], note: 'EU headquarters' }
+                    { name: 'London', coords: [51.5074, -0.1278], note: 'United Kingdom' },
+                    { name: 'Paris', coords: [48.8566, 2.3522], note: 'France' },
+                    { name: 'Berlin', coords: [52.5200, 13.4050], note: 'Germany' },
+                    { name: 'Rome', coords: [41.9028, 12.4964], note: 'Italy' },
+                    { name: 'Madrid', coords: [40.4168, -3.7038], note: 'Spain' },
+                    { name: 'Brussels', coords: [50.8503, 4.3517], note: 'EU institutions' }
                 ];
 
                 cities.forEach(city => {
@@ -244,24 +345,12 @@
                     }).addTo(map).bindPopup('<strong>' + city.name + '</strong><br>' + city.note);
                 });
             }
-
-            // Quiz functionality
-            document.querySelectorAll('.quiz-container').forEach(container => {
-                const options = container.querySelectorAll('.quiz-option');
-                const feedbackDiv = container.querySelector('.quiz-feedback');
-                options.forEach(option => {
-                    option.querySelector('input').addEventListener('change', () => {
-                        options.forEach(opt => opt.classList.remove('correct', 'incorrect'));
-                        const isCorrect = option.dataset.correct === 'true';
-                        option.classList.add(isCorrect ? 'correct' : 'incorrect');
-                        const correctOpt = Array.from(options).find(opt => opt.dataset.correct === 'true');
-                        feedbackDiv.innerHTML = isCorrect 
-                            ? '<p class="feedback-correct">Correct! ' + option.dataset.feedback + '</p>'
-                            : '<p class="feedback-incorrect">Try again. ' + correctOpt.dataset.feedback + '</p>';
-                        feedbackDiv.className = 'quiz-feedback show ' + (isCorrect ? 'correct' : 'incorrect');
-                    });
-                });
-            });
+            
+            // Initialize the Chapter 2 Quiz from external JSON
+            fetch('quiz-data.json')
+                .then(response => response.json())
+                .then(data => QuizEngine.init('quiz-container', data))
+                .catch(err => console.error('Error loading quiz data:', err));
         });
     </script>
 </body>

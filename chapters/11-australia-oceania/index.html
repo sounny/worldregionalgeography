@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
+    <!-- Skip to Main Content Link (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <header class="site-header">
         <div class="container">
             <div class="header-brand"><a href="../../index.html" class="logo"><span class="logo-icon">🌍</span><span class="logo-text">World Regional Geography</span></a></div>
-            <nav class="main-nav"><ul class="nav-menu"><li><a href="../../index.html" class="nav-link">Home</a></li><li class="nav-dropdown"><a href="#" class="nav-link dropdown-toggle active">Chapters</a><ul class="dropdown-menu"><li><a href="../01-introduction/index.html">1. Introduction</a></li><li><a href="../02-europe/index.html">2. Europe</a></li><li><a href="../03-russia/index.html">3. Russia</a></li><li><a href="../04-north-america/index.html">4. North America</a></li><li><a href="../05-latin-america/index.html">5. Latin America</a></li><li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li><li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa and SW Asia</a></li><li><a href="../08-south-asia/index.html">8. South Asia</a></li><li><a href="../09-east-asia/index.html">9. East Asia</a></li><li><a href="../10-southeast-asia/index.html">10. Southeast Asia</a></li><li><a href="../11-australia-oceania/index.html" class="active">11. Australia and Oceania</a></li><li><a href="../12-conclusion/index.html">12. Global Connections</a></li></ul></li></ul></nav>
+            <nav class="main-nav"><ul class="nav-menu"><li><a href="../../index.html" class="nav-link">Home</a></li><li class="nav-dropdown"><a href="#" class="nav-link dropdown-toggle active">Chapters</a><ul class="dropdown-menu"><li><a href="../01-introduction/index.html">1. Introduction</a></li><li><a href="../02-europe/index.html">2. Europe</a></li><li><a href="../03-russia/index.html">3. Russia and Central Asia</a></li><li><a href="../04-north-america/index.html">4. North America</a></li><li><a href="../05-latin-america/index.html">5. Latin America</a></li><li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li><li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa and SW Asia</a></li><li><a href="../08-south-asia/index.html">8. South Asia</a></li><li><a href="../09-east-asia/index.html">9. East Asia</a></li><li><a href="../10-southeast-asia/index.html">10. Southeast Asia</a></li><li><a href="../11-australia-oceania/index.html" class="active">11. Australia and Oceania</a></li><li><a href="../12-conclusion/index.html">12. Global Connections</a></li></ul></li></ul></nav>
         </div>
     </header>
 
@@ -23,69 +26,133 @@
         </div>
     </section>
 
-    <main class="chapter-content">
+    <main id="main-content" class="chapter-content">
         <div class="container">
             <div class="learning-objectives">
                 <h2>🎯 Learning Objectives</h2>
                 <ul>
-                    <li>Describe Australia's unique physical geography and endemic species</li>
-                    <li>Distinguish between Melanesia, Micronesia, and Polynesia</li>
-                    <li>Analyze Indigenous land rights and reconciliation efforts</li>
-                    <li>Evaluate climate change threats to Pacific Island nations</li>
+                    <li><strong>Describe:</strong> Explain Australia's unique physical geography and endemic species distribution</li>
+                    <li><strong>Distinguish:</strong> Identify the differences between Melanesia, Micronesia, and Polynesia</li>
+                    <li><strong>Analyze:</strong> Examine Indigenous land rights, cultural preservation, and reconciliation efforts</li>
+                    <li><strong>Evaluate:</strong> Assess climate change threats and adaptation strategies for Pacific Island nations</li>
+                    <li><strong>Apply:</strong> Use geographic concepts to understand island biogeography and human adaptation</li>
+                    <li><strong>Compare:</strong> Contrast development challenges and opportunities across different Pacific island nations</li>
+                    <li><strong>Create:</strong> Design a climate adaptation and mitigation strategy that acknowledges Indigenous knowledge and ensures sustainable island futures</li>
                 </ul>
             </div>
 
             <section id="regional-profile">
                 <h2>🏝️ Regional Profile</h2>
-                <div class="profile-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
-                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                <div class="profile-grid">
+                    <div class="profile-stat">
                         <div style="font-size: 2rem;">👥</div>
-                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">~45 Million</div>
-                        <div style="color: var(--color-text-muted);">Population</div>
+                        <div class="stat-value">~45 Million</div>
+                        <div class="stat-label">Population</div>
                     </div>
-                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                    <div class="profile-stat">
                         <div style="font-size: 2rem;">🗺️</div>
-                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">14 Countries</div>
-                        <div style="color: var(--color-text-muted);">Independent Nations</div>
+                        <div class="stat-value">14 Countries</div>
+                        <div class="stat-label">Independent Nations</div>
                     </div>
-                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                    <div class="profile-stat">
                         <div style="font-size: 2rem;">🐨</div>
-                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">Endemic</div>
-                        <div style="color: var(--color-text-muted);">Unique Wildlife</div>
+                        <div class="stat-value">Endemic</div>
+                        <div class="stat-label">Unique Wildlife</div>
                     </div>
-                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                    <div class="profile-stat">
                         <div style="font-size: 2rem;">🌊</div>
-                        <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">Rising Seas</div>
-                        <div style="color: var(--color-text-muted);">Climate Threat</div>
+                        <div class="stat-value">Rising Seas</div>
+                        <div class="stat-label">Climate Threat</div>
                     </div>
                 </div>
             </section>
 
             <section id="oceania-map">
                 <h2>🗺️ Interactive Map: Australia and Oceania</h2>
-                <div id="regions-map" class="interactive-map" style="height: 500px; border-radius: var(--radius-lg); overflow: hidden;"></div>
+                <div id="regions-map" class="interactive-map" role="region" aria-label="Interactive map"></div>
             </section>
 
             <section id="physical-geography">
                 <h2>Physical Geography</h2>
-                <p><strong>Australia:</strong> A continent-nation with vast arid interior (the Outback), coastal population clusters, and unique flora and fauna evolved in isolation.</p>
-                <p><strong>New Zealand:</strong> Geologically active islands on the Pacific Ring of Fire, known for dramatic landscapes from fjords to volcanic peaks.</p>
-                <p><strong>Pacific Islands:</strong> Three cultural regions - Melanesia, Micronesia, and Polynesia - contain thousands of islands formed by volcanic activity and coral growth.</p>
+                
+                <h3>A Unique Biogeography</h3>
+                <p>Isolated for millions of years, Australia developed a unique flora and fauna found nowhere else on Earth. The continent is dry, flat, and ancient, while New Zealand is young, mountainous, and geologically active.</p>
+                <ul>
+                    <li><strong>Biogeography:</strong> Wallace's Line and Weber's Line mark the boundary between Asian and Australian species, a fundamental concept in evolutionary biology.</li>
+                    <li><strong>The Outback:</strong> The vast, arid interior of Australia, known for its red soil and iconic landmarks like Uluru.</li>
+                    <li><strong>Island Types:</strong> The Pacific Islands are classified as high islands (volcanic, fertile) or low islands (coral atolls, vulnerable to sea-level rise).</li>
+                </ul>
+
+                <div class="figure-row">
+                    <figure class="figure" style="text-align: center;">
+                        <img src="../../images/pacific_regions_map.jpg" alt="Map of Pacific Regions: Melanesia, Micronesia, Polynesia">
+                        <figcaption>
+                            <strong>Figure 11.1:</strong> The Pacific Islands. The region is traditionally divided into Melanesia, Micronesia, and Polynesia.
+                        </figcaption>
+                    </figure>
+                    <figure class="figure" style="text-align: center;">
+                        <img src="../../images/wallaces_line.jpg" alt="Map of Wallace's Line">
+                        <figcaption>
+                            <strong>Figure 11.2:</strong> Biogeographical Lines. Wallace's Line separates the ecozones of Asia and Australia.
+                        </figcaption>
+                    </figure>
+                    <figure class="figure" style="text-align: center;">
+                        <img src="../../images/uluru.jpg" alt="Uluru in the Outback">
+                        <figcaption>
+                            <strong>Figure 11.3:</strong> Uluru (Ayers Rock). A sacred site for the Anangu people and an icon of the Australian Outback.
+                        </figcaption>
+                    </figure>
+                    <figure class="figure" style="text-align: center;">
+                        <img src="../../images/nz_alps.jpg" alt="Southern Alps of New Zealand">
+                        <figcaption>
+                            <strong>Figure 11.4:</strong> The Southern Alps, New Zealand. Dramatic mountain landscapes formed by the collision of tectonic plates.
+                        </figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <section id="human-geography">
+                <h2>🌏 Human Geography and Adaptation</h2>
+                <p>From the ancient traditions of Aboriginal Australians to the diverse cultures of the Pacific, the region is defined by its people's connection to the land and sea.</p>
+                
+                <figure class="figure" style="margin: var(--space-8) 0; text-align: center;">
+                    <img src="../../images/alice_springs.jpg" alt="The Ghan train in Alice Springs" style="max-width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <figcaption style="margin-top: var(--space-3); color: var(--color-text-muted); font-size: var(--text-sm);">
+                        <strong>Figure 11.4:</strong> Alice Springs. A vital hub in the Red Centre, connected by the historic Ghan railway.
+                    </figcaption>
+                </figure>
             </section>
 
             <section id="global-theme">
                 <h2>🌐 Global Theme: Climate Change Frontline</h2>
-                <p>Low-lying Pacific Island nations like Tuvalu, Kiribati, and the Marshall Islands face existential threats from rising sea levels. Some nations are already planning for potential evacuation.</p>
-                <p>Australia faces increasing bushfire intensity, drought, and threats to the Great Barrier Reef from ocean warming and acidification.</p>
+                <p>The Pacific Islands are tragic barometers for climate change. Rising sea levels urge nations like Kiribati to plan for a future where their land may no longer exist.</p>
+                <p>In Australia, the impact is seen in shifting agricultural zones and intensifying bushfires.</p>
+
+                <div class="figure-row">
+                    <figure class="figure" style="text-align: center;">
+                        <img src="../../images/australia_vineyard.jpg" alt="Australian Vineyard">
+                        <figcaption>
+                            <strong>Figure 11.5:</strong> Agriculture and Climate. Vineyards in Australia face challenges from changing rainfall patterns and temperatures.
+                        </figcaption>
+                    </figure>
+                </div>
             </section>
 
-            <section id="texas-connection">
-                <div class="case-study" style="border-left-color: #bf5700;">
-                    <div class="case-study-header">
-                        <span class="case-study-label" style="background: #bf5700;">Texas Connection</span>
-                        <h4>Mining and Energy</h4>
+            <section id="texas-connection" class="section-container">
+                <div class="texas-toggle">
+                    <button class="btn-texas-toggle" type="button" aria-expanded="false">
+                        <span class="star-icon">⭐</span> Texas Connection: Mining and Energy
+                    </button>
+                    <div class="texas-content hidden" aria-hidden="true">
+                        <p>Both Australia and Texas are global leaders in energy and mining. They share similar semi-arid environments and ranching cultures ("stations" in Australia, "ranches" in Texas). There is significant exchange of technology and expertise in oil, gas, and renewable energy sectors between the two regions.</p>
                     </div>
-                    <p>Both Australia and Texas are major mining regions with significant fossil fuel industries. Australian mining companies operate in Texas, and both regions face similar challenges in balancing resource extraction with environmental protection.</p>
+                </div>
+            </section>
+
+            <section id="knowledge-check" class="section-container">
+                <h2>✅ Knowledge Check</h2>
+                <div id="quiz-container" class="quiz-wrapper">
+                    <p class="loading">Loading quiz questions...</p>
                 </div>
             </section>
 
@@ -100,6 +167,7 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="../../js/main.js"></script>
+    <script src="../../js/quiz-engine.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             if (typeof L !== 'undefined' && document.getElementById('regions-map')) {
@@ -115,6 +183,12 @@
                 ];
                 cities.forEach(city => { L.circleMarker(city.coords, { radius: 8, fillColor: '#3b82f6', color: '#fff', weight: 2, fillOpacity: 0.8 }).addTo(map).bindPopup('<strong>' + city.name + '</strong><br>' + city.note); });
             }
+
+            // Initialize Quiz
+            fetch('quiz-data.json')
+                .then(response => response.json())
+                .then(data => QuizEngine.init('quiz-container', data))
+                .catch(err => console.error('Error loading quiz data:', err));
         });
     </script>
 </body>

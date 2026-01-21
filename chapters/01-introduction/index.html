@@ -14,6 +14,9 @@
 </head>
 
 <body>
+    <!-- Skip to Main Content Link (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Header -->
     <header class="site-header">
         <div class="container">
@@ -34,7 +37,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="../01-introduction/index.html" class="active">1. Introduction</a></li>
                             <li><a href="../02-europe/index.html">2. Europe</a></li>
-                            <li><a href="../03-russia/index.html">3. Russia & Post-Soviet</a></li>
+                            <li><a href="../03-russia/index.html">3. Russia and Central Asia</a></li>
                             <li><a href="../04-north-america/index.html">4. North America</a></li>
                             <li><a href="../05-latin-america/index.html">5. Latin America</a></li>
                             <li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
@@ -64,7 +67,7 @@
     </section>
 
     <!-- Chapter Content -->
-    <main class="chapter-content">
+    <main id="main-content" class="chapter-content">
         <div class="container">
             
             <!-- 1. Learning Objectives -->
@@ -73,12 +76,13 @@
                     <h2>🎯 Learning Objectives</h2>
                     <p>By the end of this chapter, you will be able to:</p>
                     <ul>
-                        <li>Define geography and explain its relevance in a globalized world</li>
-                        <li>Distinguish between physical and human geography</li>
-                        <li>Apply the concepts of location, place, and region to real-world examples</li>
-                        <li>Explain what spatial thinking is and why geographers use it</li>
-                        <li>Describe how globalization connects people, economies, and cultures</li>
-                        <li>Justify the use of a regional approach to studying world geography</li>
+                        <li><strong>Remember:</strong> Define geography and explain its relevance in a globalized world</li>
+                        <li><strong>Understand:</strong> Distinguish between physical and human geography</li>
+                        <li><strong>Apply:</strong> Use the concepts of location, place, and region to analyze real-world examples</li>
+                        <li><strong>Explain:</strong> Describe what spatial thinking is and why geographers use it</li>
+                        <li><strong>Analyze:</strong> Examine how globalization connects and shapes people, economies, and cultures across regions</li>
+                        <li><strong>Evaluate:</strong> Assess the strengths and limitations of regional frameworks in geographic study</li>
+                        <li><strong>Create:</strong> Design a geographic analysis of a local or global issue using geographic concepts from this chapter</li>
                     </ul>
                 </div>
             </section>
@@ -116,7 +120,7 @@
             <section id="interactive-map" class="section-container">
                 <h2>🗺️ Interactive Map: Global Regions</h2>
                 <p>Geographers use regions to organize and simplify the complexity of the world. This textbook is structured around ten major world regions, each defined by shared physical or cultural characteristics. Explore them below:</p>
-                <div id="regions-map" class="interactive-map"></div>
+                <div id="regions-map" class="interactive-map" role="region" aria-label="Interactive map"></div>
                 <div class="map-controls">
                     <p class="text-sm italic text-muted">Toggle the layers in the top-right to compare political boundaries with physical terrain. Notice how physical features like the Himalayas or the Sahara Desert often define regional edges.</p>
                 </div>
@@ -149,13 +153,16 @@
             <!-- 6. Important Person Break-out (Susan Hanson) -->
             <section class="important-person-sidebar">
                 <div class="sidebar-content">
+                    <div class="person-image" style="margin-bottom: var(--space-4);">
+                        <img src="../../images/megacities.jpg" alt="Dense urban landscape" style="border-radius: var(--radius-md);">
+                    </div>
                     <div class="person-header">
                         <h3>👤 Important Person</h3>
                     </div>
                     <div class="person-info">
                         <strong>Susan Hanson</strong>
                         <p class="person-title">Pioneer of Feminist & Urban Geography</p>
-                        <p>Professor Susan Hanson's work revolutionized the field by arguing that <em>"who asks the questions shapes what questions get asked."</em> She shifted the geographic focus from purely economic or masculine perspectives to the "geography of everyday life," emphasizing how gender, class, and place intersect to shape human experience.</p>
+                        <p>Professor Susan Hanson's work revolutionized the field by arguing that <em>"who asks the questions shapes what questions get asked."</em> She shifted the geographic focus to the "geography of everyday life," examining how urban environments - like the megacities shown above - are experienced differently based on gender, class, and identity.</p>
                         <a href="https://www.nasonline.org/directory-entry/susan-hanson-bupfad/" target="_blank" class="btn-text">Read more about her research →</a>
                     </div>
                 </div>
@@ -164,7 +171,7 @@
             <!-- 5. Human Geography Analysis -->
             <section id="human-geography" class="section-container">
                 <h2>👥 Human Geography: The Cultural Landscape</h2>
-                <p><strong>Human geography</strong> examines how human activities—migration, culture, industry, and politics—interact with the Earth's surface. It bridges the social sciences with spatial analysis to understand the <strong>cultural landscape</strong>: the visible imprint of human activity on the land.</p>
+                <p><strong>Human geography</strong> examines how human activities - migration, culture, industry, and politics - interact with the Earth's surface. It bridges the social sciences with spatial analysis to understand the <strong>cultural landscape</strong>: the visible imprint of human activity on the land.</p>
                 
                 <div class="figure-row">
                     <figure class="figure">
@@ -177,7 +184,7 @@
                     </figure>
                 </div>
 
-                <p>Key themes include <strong>Globalization</strong>—the increasing interconnectedness of people and places—and <strong>Glocalization</strong>—the way global forces are adapted to fit local cultural contexts (such as a global brand offering specific regional food menus).</p>
+                <p>Key themes include <strong>Globalization</strong> - the increasing interconnectedness of people and places - and <strong>Glocalization</strong> - the way global forces are adapted to fit local cultural contexts (such as a global brand offering specific regional food menus).</p>
             </section>
 
             <!-- 7. Texas Connection Toggle -->

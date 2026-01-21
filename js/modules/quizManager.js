@@ -1,9 +1,9 @@
 /**
- * World Regional Geography - Quiz Engine
- * A lightweight, dependency-free quiz module for client-side validation.
+ * Quiz Manager Module
+ * Handles quiz initialization, rendering, and interaction
  */
 
-const QuizEngine = {
+const QuizManager = {
     /**
      * Initialize quiz components from JSON data or existing DOM structure
      * @param {string} containerId - The ID of the container where questions will be rendered
@@ -57,46 +57,41 @@ const QuizEngine = {
         quizContainers.forEach(quiz => {
             const options = quiz.querySelectorAll('.quiz-option');
             const feedback = quiz.querySelector('.quiz-feedback');
-
-            if (feedback) {
-                feedback.setAttribute('aria-live', 'polite');
-                feedback.setAttribute('role', 'status');
-            }
             
             options.forEach(option => {
-                const input = option.querySelector('input[type="radio"]');
-                if (!input) return;
-
-                // Use change so keyboard selection works (Space/Arrow keys)
-                input.addEventListener('change', () => {
+                option.addEventListener('click', (e) => {
                     // Prevent re-answering if already answered
                     if (quiz.classList.contains('answered')) return;
+                    
+                    // Prevent default only if clicking label wrapper (to allow radio check)
+                    // e.preventDefault(); 
 
                     const isCorrect = option.dataset.correct === 'true';
-
+                    
                     // Mark quiz as answered
                     quiz.classList.add('answered');
-
+                    
                     // Style the selected option
                     option.classList.add(isCorrect ? 'correct' : 'incorrect');
-
+                    option.querySelector('input').checked = true; // Ensure checked state
+                    
                     // Highlight correct answer if wrong
                     if (!isCorrect) {
                         const correctOption = quiz.querySelector('[data-correct="true"]');
                         if (correctOption) correctOption.classList.add('correct');
                     }
-
+                    
                     // Show feedback
                     if (feedback) {
                         feedback.classList.add('show');
                         feedback.classList.add(isCorrect ? 'success' : 'error');
+                        
+                        const feedbackText = option.dataset.feedback;
+                        const correctFeedback = quiz.querySelector('[data-correct="true"]')?.dataset.feedback;
 
-                        const feedbackText = option.dataset.feedback || '';
-                        const correctFeedback = quiz.querySelector('[data-correct="true"]')?.dataset.feedback || '';
-
-                        feedback.innerHTML = isCorrect
-                            ? `<p class="feedback-correct">Correct! ${feedbackText}</p>`
-                            : `<p class="feedback-incorrect">Not quite. ${correctFeedback}</p>`;
+                        feedback.innerHTML = isCorrect 
+                            ? `<p class="feedback-correct">✓ Correct! ${feedbackText}</p>`
+                            : `<p class="feedback-incorrect">✗ Not quite. ${correctFeedback || ''}</p>`;
                     }
                 });
             });
@@ -104,5 +99,5 @@ const QuizEngine = {
     }
 };
 
-// Export for global use
-window.QuizEngine = QuizEngine;
+// Export for use in main application
+export default QuizManager;

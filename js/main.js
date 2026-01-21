@@ -1,9 +1,3 @@
-/**
- * World Regional Geography - Main JavaScript
- * Interactive features for the online textbook
- */
-
-// =====================================================
 // Navigation
 // =====================================================
 
@@ -15,21 +9,97 @@ document.addEventListener('DOMContentLoaded', () => {
     initSmoothScroll();
     initTexasToggle();
     initAccordions();
+    initKeyTerms();
+});
+=======
+/**
+ * World Regional Geography - Main JavaScript (Legacy Version)
+ * Interactive features for the online textbook
+ * This file provides backward compatibility for browsers that don't support ES6 modules
+ */
+
+// Check if we should use the modular version
+if (typeof window.WRG_MODULAR !== 'undefined' && window.WRG_MODULAR) {
+    // Modular version will handle everything
+    console.log('Using modular version of WRG');
+} else {
+    // Legacy version for backward compatibility
+    console.log('Using legacy version of WRG');
+    
+    // =====================================================
+    // Navigation
+    // =====================================================
+
+    document.addEventListener('DOMContentLoaded', () => {
+        initAccessibilityEnhancements();
+        initNavigation();
+        initPreviewMap();
+        initRegionalNavigator(); // Added for dev index
+        initQuizzes();
+        initSmoothScroll();
+        initTexasToggle();
+        initAccordions();
+        initKeyTerms();
+    });=====================================================
+// Navigation
+// =====================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    initAccessibilityEnhancements();
+    initNavigation();
+    initPreviewMap();
+    initRegionalNavigator(); // Added for dev index
+    initQuizzes();
+    initSmoothScroll();
+    initTexasToggle();
+    initAccordions();
+    initKeyTerms();
 });
 
 /**
- * Initialize Texas Connection toggles
+ * Initialize Texas Connection toggles with enhanced accessibility
  */
 function initTexasToggle() {
-    const btn = document.getElementById('texas-btn');
-    const content = document.getElementById('texas-content');
+    const toggles = document.querySelectorAll('.texas-toggle');
+    if (!toggles.length) return;
 
-    if (btn && content) {
+    toggles.forEach((toggle, index) => {
+        const btn = toggle.querySelector('.btn-texas-toggle');
+        const content = toggle.querySelector('.texas-content');
+        if (!btn || !content) return;
+
+        if (!content.id) {
+            content.id = `texas-connection-${index + 1}`;
+        }
+
+        btn.setAttribute('aria-controls', content.id);
+        if (!btn.id) {
+            btn.id = `${content.id}-label`;
+        }
+        
+        // Keep initial state consistent between class + ARIA attributes
+        const isInitiallyHidden = content.classList.contains('hidden');
+        btn.setAttribute('aria-expanded', isInitiallyHidden ? 'false' : 'true');
+        content.setAttribute('aria-hidden', String(isInitiallyHidden));
+        content.setAttribute('role', 'region');
+        content.setAttribute('aria-labelledby', btn.id);
+
         btn.addEventListener('click', () => {
+            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+            btn.setAttribute('aria-expanded', String(!isExpanded));
             content.classList.toggle('hidden');
+            content.setAttribute('aria-hidden', String(isExpanded));
             btn.classList.toggle('active');
         });
-    }
+
+        // Keyboard navigation support
+        btn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                btn.click();
+            }
+        });
+    });
 }
 
 /**
@@ -38,16 +108,48 @@ function initTexasToggle() {
 function initAccordions() {
     const items = document.querySelectorAll('.accordion-item');
 
-    items.forEach(item => {
+    items.forEach((item, index) => {
         const header = item.querySelector('.accordion-header');
-        if (header) {
-            header.addEventListener('click', () => {
-                // Optional: Close other items
-                // items.forEach(i => { if (i !== item) i.classList.remove('active'); });
-                
-                item.classList.toggle('active');
-            });
+        const content = item.querySelector('.accordion-content');
+
+        if (!header || !content) return;
+
+        if (!content.id) {
+            content.id = `accordion-content-${index + 1}`;
         }
+
+        if (!header.id) {
+            header.id = `accordion-header-${index + 1}`;
+        }
+
+        header.setAttribute('aria-controls', content.id);
+        content.setAttribute('aria-labelledby', header.id);
+        header.setAttribute('role', 'button');
+        header.setAttribute('tabindex', '0');
+        content.setAttribute('role', 'region');
+
+        const isInitiallyExpanded = header.getAttribute('aria-expanded') === 'true' || item.classList.contains('active');
+        header.setAttribute('aria-expanded', String(isInitiallyExpanded));
+        content.setAttribute('aria-hidden', String(!isInitiallyExpanded));
+        item.classList.toggle('active', isInitiallyExpanded);
+
+        header.addEventListener('click', () => {
+            // Optional: Close other items
+            // items.forEach(i => { if (i !== item) i.classList.remove('active'); });
+
+            item.classList.toggle('active');
+            const isActive = item.classList.contains('active');
+            header.setAttribute('aria-expanded', String(isActive));
+            content.setAttribute('aria-hidden', String(!isActive));
+        });
+
+        // Keyboard navigation support
+        header.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                header.click();
+            }
+        });
     });
 }
 
@@ -60,6 +162,11 @@ function initNavigation() {
     const dropdowns = document.querySelectorAll('.nav-dropdown');
 
     if (navToggle && navMenu) {
+        if (!navMenu.id) {
+            navMenu.id = 'primary-nav-menu';
+        }
+        navToggle.setAttribute('aria-controls', navMenu.id);
+
         navToggle.addEventListener('click', () => {
             const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
             navToggle.setAttribute('aria-expanded', !isExpanded);
@@ -70,11 +177,24 @@ function initNavigation() {
     // Mobile dropdown toggle
     dropdowns.forEach(dropdown => {
         const toggle = dropdown.querySelector('.dropdown-toggle');
+        const menu = dropdown.querySelector('.dropdown-menu');
         if (toggle) {
+            toggle.setAttribute('aria-haspopup', 'true');
+
+            if (menu && !menu.id) {
+                menu.id = `dropdown-menu-${Math.random().toString(16).slice(2)}`;
+            }
+            if (menu?.id) {
+                toggle.setAttribute('aria-controls', menu.id);
+            }
+
+            toggle.setAttribute('aria-expanded', dropdown.classList.contains('active') ? 'true' : 'false');
+
             toggle.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
                     dropdown.classList.toggle('active');
+                    toggle.setAttribute('aria-expanded', dropdown.classList.contains('active') ? 'true' : 'false');
                 }
             });
         }
@@ -115,7 +235,7 @@ function initPreviewMap() {
     // Define world regions with approximate bounds
     const regions = [
         { name: 'Europe', center: [50, 10], color: '#2d8fa8' },
-        { name: 'Russia', center: [60, 100], color: '#1e5f74' },
+        { name: 'Russia and Central Asia', center: [60, 100], color: '#1e5f74' },
         { name: 'North America', center: [45, -100], color: '#f4a261' },
         { name: 'Latin America', center: [-15, -60], color: '#e07b3c' },
         { name: 'Sub-Saharan Africa', center: [0, 20], color: '#2a9d8f' },
@@ -157,7 +277,7 @@ function initPreviewMap() {
 function initRegionalNavigator() {
     const mapContainer = document.getElementById('regions-map');
     const infoPanel = document.getElementById('region-info-panel');
-    if (!mapContainer || typeof L === 'undefined') return;
+    if (!mapContainer || !infoPanel || typeof L === 'undefined') return;
 
     const navMap = L.map('regions-map', {
         zoomControl: true,
@@ -182,7 +302,7 @@ function initRegionalNavigator() {
             color: 'var(--color-primary)'
         },
         'russia': {
-            name: 'Russia & Post-Soviet',
+            name: 'Russia and Central Asia',
             theme: 'Geopolitics & Energy',
             desc: 'Understanding the geopolitical transitions after the Soviet Union and the critical role of resource geography in global affairs.',
             link: 'chapters/03-russia/index.html',
@@ -317,40 +437,45 @@ function initRegionalNavigator() {
  * Initialize all quiz components on the page
  */
 function initQuizzes() {
-    const quizContainers = document.querySelectorAll('.quiz-container');
+    const quizContainers = document.querySelectorAll('.quiz-container[data-quiz-engine="main"]');
+    if (!quizContainers.length) return;
     
     quizContainers.forEach(container => {
         const options = container.querySelectorAll('.quiz-option');
         const feedback = container.querySelector('.quiz-feedback');
-        
-        options.forEach(option => {
-            option.addEventListener('click', () => {
-                // Prevent re-answering
-                if (container.classList.contains('answered')) return;
-                
+        if (feedback) {
+            feedback.setAttribute('aria-live', 'polite');
+            feedback.setAttribute('role', 'status');
+        }
+
+        const inputs = container.querySelectorAll('input[type="radio"]');
+        inputs.forEach(input => {
+            input.addEventListener('change', () => {
+                const option = input.closest('.quiz-option');
+                if (!option) return;
+
+                options.forEach(opt => opt.classList.remove('correct', 'incorrect'));
+                if (feedback) {
+                    feedback.classList.remove('success', 'error');
+                }
+
                 const isCorrect = option.dataset.correct === 'true';
-                
-                // Mark as answered
-                container.classList.add('answered');
-                
-                // Style the selected option
                 option.classList.add(isCorrect ? 'correct' : 'incorrect');
-                
-                // Show the correct answer if wrong
+
                 if (!isCorrect) {
                     const correctOption = container.querySelector('[data-correct="true"]');
                     if (correctOption) {
                         correctOption.classList.add('correct');
                     }
                 }
-                
-                // Show feedback
+
                 if (feedback) {
-                    feedback.classList.add('show');
-                    feedback.classList.add(isCorrect ? 'success' : 'error');
-                    feedback.textContent = isCorrect 
-                        ? '✓ Correct! ' + (option.dataset.feedback || '')
-                        : '✗ Not quite. ' + (container.querySelector('[data-correct="true"]')?.dataset.feedback || '');
+                    const correctFeedback = container.querySelector('[data-correct="true"]')?.dataset.feedback || '';
+                    const optionFeedback = option.dataset.feedback || '';
+                    feedback.classList.add('show', isCorrect ? 'success' : 'error');
+                    feedback.innerHTML = isCorrect
+                        ? `<p class="feedback-correct">✓ Correct! ${optionFeedback}</p>`
+                        : `<p class="feedback-incorrect">Try again. ${correctFeedback}</p>`;
                 }
             });
         });
@@ -360,6 +485,46 @@ function initQuizzes() {
 // =====================================================
 // Smooth Scrolling
 // =====================================================
+
+/**
+ * Add accessibility enhancements to navigation
+ */
+function initAccessibilityEnhancements() {
+    const mainContent = document.querySelector('main');
+    if (mainContent && !mainContent.id) {
+        mainContent.id = 'main-content';
+    }
+
+    // Add skip link if not present
+    if (!document.querySelector('.skip-link')) {
+        const skipLink = document.createElement('a');
+        skipLink.href = '#main-content';
+        skipLink.className = 'skip-link';
+        skipLink.textContent = 'Skip to main content';
+        document.body.insertBefore(skipLink, document.body.firstChild);
+    }
+
+    // Add ARIA labels to navigation
+    const nav = document.querySelector('.main-nav');
+    if (nav && !nav.getAttribute('aria-label')) {
+        nav.setAttribute('aria-label', 'Main navigation');
+    }
+
+    // Add landmark roles
+    if (mainContent && !mainContent.getAttribute('role')) {
+        mainContent.setAttribute('role', 'main');
+    }
+
+    const header = document.querySelector('.site-header');
+    if (header && !header.getAttribute('role')) {
+        header.setAttribute('role', 'banner');
+    }
+
+    const footer = document.querySelector('.site-footer');
+    if (footer && !footer.getAttribute('role')) {
+        footer.setAttribute('role', 'contentinfo');
+    }
+}
 
 /**
  * Enable smooth scrolling for anchor links
@@ -449,7 +614,11 @@ function initKeyTerms() {
     terms.forEach(term => {
         const definition = term.dataset.definition;
         if (!definition) return;
-        
+
+        if (!term.hasAttribute('tabindex')) {
+            term.setAttribute('tabindex', '0');
+        }
+
         const tooltip = document.createElement('span');
         tooltip.className = 'term-tooltip';
         tooltip.textContent = definition;
@@ -460,6 +629,14 @@ function initKeyTerms() {
         });
         
         term.addEventListener('mouseleave', () => {
+            tooltip.classList.remove('visible');
+        });
+
+        term.addEventListener('focus', () => {
+            tooltip.classList.add('visible');
+        });
+
+        term.addEventListener('blur', () => {
             tooltip.classList.remove('visible');
         });
     });

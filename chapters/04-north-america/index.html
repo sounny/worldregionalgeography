@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
+    <!-- Skip to Main Content Link (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <header class="site-header">
         <div class="container">
             <div class="header-brand">
@@ -28,7 +31,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="../01-introduction/index.html">1. Introduction</a></li>
                             <li><a href="../02-europe/index.html">2. Europe</a></li>
-                            <li><a href="../03-russia/index.html">3. Russia and Post-Soviet</a></li>
+                            <li><a href="../03-russia/index.html">3. Russia and Central Asia</a></li>
                             <li><a href="../04-north-america/index.html" class="active">4. North America</a></li>
                             <li><a href="../05-latin-america/index.html">5. Latin America</a></li>
                             <li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
@@ -53,37 +56,40 @@
         </div>
     </section>
 
-    <main class="chapter-content">
+    <main id="main-content" class="chapter-content">
         <div class="container">
             <div class="learning-objectives">
                 <h2>🎯 Learning Objectives</h2>
                 <ul>
-                    <li>Describe the major physical regions of North America</li>
-                    <li>Analyze urbanization patterns and metropolitan growth</li>
-                    <li>Explain the significance of USMCA and continental integration</li>
-                    <li>Evaluate immigration and cultural diversity</li>
+                    <li><strong>Identify:</strong> Locate the major physical regions of North America</li>
+                    <li><strong>Analyze:</strong> Examine urbanization patterns and metropolitan growth across the region</li>
+                    <li><strong>Explain:</strong> Describe the significance of USMCA and continental economic integration</li>
+                    <li><strong>Evaluate:</strong> Assess the geographic patterns, benefits, and challenges of immigration and cultural diversity</li>
+                    <li><strong>Apply:</strong> Use geographic concepts to understand regional disparities in development and opportunity</li>
+                    <li><strong>Compare:</strong> Contrast the geographic characteristics and development trajectories of the US, Canada, and Mexico</li>
+                    <li><strong>Create:</strong> Design a geographic strategy for addressing regional challenges such as climate adaptation or economic inequality</li>
                 </ul>
             </div>
 
             <section id="regional-profile">
                 <h2>🗽 Regional Profile</h2>
-                <div class="profile-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-4); margin: var(--space-6) 0;">
-                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                <div class="profile-grid">
+                    <div class="profile-stat">
                         <div style="font-size: 2rem;">👥</div>
                         <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">~500 Million</div>
                         <div style="color: var(--color-text-muted);">Population</div>
                     </div>
-                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                    <div class="profile-stat">
                         <div style="font-size: 2rem;">🗺️</div>
                         <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">3 Countries</div>
                         <div style="color: var(--color-text-muted);">Major Nations</div>
                     </div>
-                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                    <div class="profile-stat">
                         <div style="font-size: 2rem;">💰</div>
                         <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">$28+ Trillion</div>
                         <div style="color: var(--color-text-muted);">Combined GDP</div>
                     </div>
-                    <div class="profile-stat" style="background: var(--color-bg-alt); padding: var(--space-4); border-radius: var(--radius-md); text-align: center;">
+                    <div class="profile-stat">
                         <div style="font-size: 2rem;">🏙️</div>
                         <div style="font-size: var(--text-2xl); font-weight: 700; color: var(--color-primary);">82%</div>
                         <div style="color: var(--color-text-muted);">Urban Population</div>
@@ -93,7 +99,7 @@
 
             <section id="north-america-map">
                 <h2>🗺️ Interactive Map: North America</h2>
-                <div id="regions-map" class="interactive-map" style="height: 500px; border-radius: var(--radius-lg); overflow: hidden;"></div>
+                <div id="regions-map" class="interactive-map" role="region" aria-label="Interactive map"></div>
             </section>
 
             <section id="physical-geography">
@@ -167,22 +173,28 @@
                     <li>Maquiladoras (assembly plants) along the U.S.-Mexico border</li>
                     <li>Energy trade, especially oil and natural gas</li>
                 </ul>
+
+                <div class="inquiry-prompt">
+                    <h3>🔍 Geographic Inquiry</h3>
+                    <p>The U.S.-Mexico border is one of the world's most economically integrated yet socially divided boundaries. How can geographic analysis explain both the intense economic ties (trade, supply chains) and the intense political disputes (immigration, drug trafficking, border security)?</p>
+                </div>
             </section>
 
-            <section id="texas-connection">
-                <div class="case-study" style="border-left-color: #bf5700;">
-                    <div class="case-study-header">
-                        <span class="case-study-label" style="background: #bf5700;">Texas Connection</span>
-                        <h4>Texas: A Geographic Crossroads</h4>
+            <section id="texas-connection" class="section-container">
+                <div class="texas-toggle">
+                    <button class="btn-texas-toggle" type="button" aria-expanded="false">
+                        <span class="star-icon">⭐</span> Texas Connection: Texas - A Geographic Crossroads
+                    </button>
+                    <div class="texas-content hidden" aria-hidden="true">
+                        <p>Texas exemplifies North American geographic diversity, spanning multiple climate zones, cultural influences, and economic systems. As the second-largest state by both area and population, Texas connects the U.S. to Mexico through the world's busiest land border.</p>
+                        <p><strong>Key Geographic Features:</strong></p>
+                        <ul>
+                            <li><strong>Border Region:</strong> The Rio Grande Valley supports agriculture and manufacturing</li>
+                            <li><strong>Gulf Coast:</strong> Petroleum refining, shipping, and hurricane vulnerability</li>
+                            <li><strong>Hill Country:</strong> Tourism and ranching in the Edwards Plateau</li>
+                            <li><strong>Panhandle:</strong> Cotton, cattle, and wind energy on the High Plains</li>
+                        </ul>
                     </div>
-                    <p>Texas exemplifies North American geographic diversity, spanning multiple climate zones, cultural influences, and economic systems. As the second-largest state by both area and population, Texas connects the U.S. to Mexico through the world's busiest land border.</p>
-                    <p><strong>Key Geographic Features:</strong></p>
-                    <ul>
-                        <li><strong>Border Region:</strong> The Rio Grande Valley supports agriculture and manufacturing</li>
-                        <li><strong>Gulf Coast:</strong> Petroleum refining, shipping, and hurricane vulnerability</li>
-                        <li><strong>Hill Country:</strong> Tourism and ranching in the Edwards Plateau</li>
-                        <li><strong>Panhandle:</strong> Cotton, cattle, and wind energy on the High Plains</li>
-                    </ul>
                 </div>
             </section>
 
@@ -206,7 +218,7 @@
             </section>
 
             <nav class="chapter-nav">
-                <a href="../03-russia/index.html" class="chapter-nav-link">← Chapter 3: Russia</a>
+                <a href="../03-russia/index.html" class="chapter-nav-link">← Chapter 3: Russia and Central Asia</a>
                 <a href="../05-latin-america/index.html" class="chapter-nav-link">Chapter 5: Latin America →</a>
             </nav>
         </div>
