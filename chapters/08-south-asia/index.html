@@ -6,6 +6,8 @@
     <title>Chapter 8: South Asia | World Regional Geography</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="../../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="../../js/chart-data.js"></script>
 </head>
 <body>
     <!-- Skip to Main Content Link (Accessibility) -->
@@ -26,190 +28,265 @@
         </div>
     </section>
 
+<body>
+    <!-- Skip to Main Content Link (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="site-header">
+        <div class="container">
+            <div class="header-brand">
+                <a href="../../index.html" class="logo">
+                    <span class="logo-icon">🌍</span>
+                    <span class="logo-text">World Regional Geography</span>
+                </a>
+            </div>
+            <nav class="main-nav" aria-label="Main navigation">
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="../../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active">Chapters</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../01-introduction/index.html">1. Introduction</a></li>
+                            <li><a href="../02-europe/index.html">2. Europe</a></li>
+                            <li><a href="../03-russia/index.html">3. Russia and Central Asia</a></li>
+                            <li><a href="../04-north-america/index.html">4. North America</a></li>
+                            <li><a href="../05-latin-america/index.html">5. Latin America</a></li>
+                            <li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
+                            <li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa and SW Asia</a></li>
+                            <li><a href="../08-south-asia/index.html" class="active">8. South Asia</a></li>
+                            <li><a href="../09-east-asia/index.html">9. East Asia</a></li>
+                            <li><a href="../10-southeast-asia/index.html">10. Southeast Asia</a></li>
+                            <li><a href="../11-australia-oceania/index.html">11. Australia and Oceania</a></li>
+                            <li><a href="../12-conclusion/index.html">12. Global Connections</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="chapter-header">
+        <div class="container">
+            <p class="chapter-meta">Chapter 8 · Week 10</p>
+            <h1 class="chapter-title">South Asia: Population and Monsoons</h1>
+            <p class="chapter-description">Home to nearly two billion people, South Asia is defined by the Himalayan mountains, the monsoon climate, extraordinary religious diversity, and rapid economic transformation.</p>
+        </div>
+    </section>
+
     <main id="main-content" class="chapter-content">
         <div class="container">
-            <div class="learning-objectives">
-                <h2>🎯 Learning Objectives</h2>
-                <ul>
-                    <li><strong>Describe:</strong> Explain the physical geography including the Himalayas and monsoon system</li>
-                    <li><strong>Analyze:</strong> Examine the partition of British India and its lasting geopolitical and social effects</li>
-                    <li><strong>Understand:</strong> Summarize population dynamics and the concept of the demographic dividend</li>
-                    <li><strong>Evaluate:</strong> Assess climate change impacts and adaptation strategies for the region</li>
-                    <li><strong>Apply:</strong> Use geographic concepts to understand regional inequality and development disparities</li>
-                    <li><strong>Compare:</strong> Contrast the geographic characteristics and development paths of major South Asian countries</li>
-                    <li><strong>Create:</strong> Design a strategy for managing shared water resources and addressing climate vulnerability across borders</li>
-                </ul>
-            </div>
+            
+            <!-- 1. Learning Objectives -->
+            <section id="objectives" class="section-container">
+                <div class="learning-objectives">
+                    <h2>🎯 Learning Objectives</h2>
+                    <p>By the end of this chapter, you will be able to:</p>
+                    <ul>
+                        <li><strong>Describe:</strong> Explain the physical geography including the Himalayas and monsoon system</li>
+                        <li><strong>Analyze:</strong> Examine the partition of British India and its lasting geopolitical effects</li>
+                        <li><strong>Understand:</strong> Summarize population dynamics and the concept of the demographic dividend</li>
+                        <li><strong>Evaluate:</strong> Assess climate change impacts and adaptation strategies</li>
+                        <li><strong>Apply:</strong> Use geographic concepts to understand regional inequality</li>
+                    </ul>
+                </div>
+            </section>
 
-            <section id="regional-profile">
-                <h2>🏛️ Regional Profile</h2>
+            <!-- 2. Regional Profile (Snapshot) -->
+            <section id="profile" class="section-container">
+                <h2>🕌 Regional Snapshot: The Indian Subcontinent</h2>
                 <div class="profile-grid">
-                    <div class="profile-stat">
-                        <div class="stat-icon">👥</div>
-                        <div class="stat-value">~1.9 Billion</div>
-                        <div class="stat-label">Population</div>
+                    <div class="profile-item">
+                        <strong>Population</strong>
+                        <span>~1.9 Billion</span>
                     </div>
-                    <div class="profile-stat">
-                        <div class="stat-icon">🏔️</div>
-                        <div class="stat-value">Himalayas</div>
-                        <div class="stat-label">World's Highest Mountains</div>
+                    <div class="profile-item">
+                        <strong>Highest Point</strong>
+                        <span>Mount Everest (8,848m)</span>
                     </div>
-                    <div class="profile-stat">
-                        <div class="stat-icon">🌧️</div>
-                        <div class="stat-value">Monsoon</div>
-                        <div class="stat-label">Defines Agriculture</div>
+                    <div class="profile-item">
+                        <strong>Dominant Climate</strong>
+                        <span>Tropical Monsoon</span>
                     </div>
-                    <div class="profile-stat">
-                        <div class="stat-icon">🛕</div>
-                        <div class="stat-value">Diverse</div>
-                        <div class="stat-label">Religious Traditions</div>
+                    <div class="profile-item">
+                        <strong>Primary Theme</strong>
+                        <span>Population & Environment</span>
                     </div>
                 </div>
-            </section>
-
-            <section id="south-asia-map">
-                <h2>🗺️ Interactive Map: South Asia</h2>
-                <div id="regions-map" class="interactive-map" role="region" aria-label="Interactive map"></div>
-            </section>
-
-            <section id="physical-geography">
-                <h2>Physical Geography</h2>
+                <p class="mt-4">South Asia is a clear example of a "physiographic region," bounded by the world's highest mountains to the north and the Indian Ocean to the south. It is one of the world's most densely populated areas, owing to the fertile river plains of the Indus, Ganges, and Brahmaputra.</p>
                 
-                <h3>Mountains and Monsoons</h3>
-                <p>South Asia is defined by two major physical features: the towering Himalayas to the north and the seasonal monsoon winds that drive the region's climate.</p>
-                <ul>
-                    <li><strong>The Himalayas:</strong> Created by the collision of the Indian and Eurasian tectonic plates, these are the highest mountains in the world and the source of major rivers like the Indus, Ganges, and Brahmaputra.</li>
-                    <li><strong>The Monsoon:</strong> A seasonal wind shift that brings heavy rains in the summer, vital for agriculture but also causing dangerous floods.</li>
-                </ul>
-
-                <div class="regional-grid">
-                    <figure class="figure figure-center">
-                        <img src="../../images/himalayas.jpg" alt="Himalayan landscape">
-                        <figcaption>
-                            <strong>Figure 8.1:</strong> The Himalayas. A formidable barrier and critical water tower for the subcontinent.
-                        </figcaption>
-                    </figure>
-                    <figure class="figure figure-center">
-                        <img src="../../images/india_regions_map.jpg" alt="Map of India's regions">
-                        <figcaption>
-                            <strong>Figure 8.2:</strong> Regional Divisions. Understanding the diverse cultural and physical regions of India.
-                        </figcaption>
-                    </figure>
-                </div>
-            </section>
-
-            <section id="cultural-heritage">
-                <h2>🕌 RICH CULTURAL HERITAGE</h2>
-                <p>Home to the Indus Valley Civilization, South Asia is a mosaic of languages, religions, and traditions. The Taj Mahal stands as a testament to the region's architectural and historical depth.</p>
-                
-                <figure class="figure figure-center figure-spaced">
-                    <img src="../../images/taj_mahal.jpg" alt="The Taj Mahal">
-                    <figcaption>
-                        <strong>Figure 8.3:</strong> The Taj Mahal, Agra. A UNESCO World Heritage site and symbol of India's rich history.
-                    </figcaption>
+                <figure class="figure" style="max-width: 600px; margin: var(--space-6) auto;">
+                    <img src="../../images/india_regions_map.jpg" alt="Map of South Asian regions">
+                    <figcaption><strong>Figure 8.0:</strong> Regional Context. The subcontinent includes India, Pakistan, Bangladesh, Nepal, Bhutan, Sri Lanka, and the Maldives.</figcaption>
                 </figure>
             </section>
 
-            <section id="global-theme">
-                <h2>🌐 Global Theme: Population and Economic Growth</h2>
-                <p>South Asia is the world's most populous region. Balancing the needs of a growing population with economic development and environmental sustainability is its critical challenge.</p>
-                
-                <h3>The Urban Challenge</h3>
-                <p>Rapid urbanization is straining infrastructure in megacities like Mumbai, Delhi, and Dhaka. Yet, these cities are also engines of innovation and growth.</p>
+            <!-- 3. Interactive Regional Map -->
+            <section id="interactive-map" class="section-container">
+                <h2>🗺️ Interactive Map: The Subcontinent</h2>
+                <p>Explore the physical barriers of the Himalayas and the dense urban centers of the Ganges Plain. Click on major cities like Delhi, Mumbai, and Dhaka to learn about their explosive growth.</p>
+                <div id="regions-map" class="interactive-map"></div>
+                <div class="map-controls">
+                    <p class="text-sm italic text-muted">Toggle between Physical terrain and Political boundaries. Notice how the river systems define the borders and population centers.</p>
+                </div>
+            </section>
 
-                <div class="regional-grid">
-                    <figure class="figure figure-center">
-                        <img src="../../images/dhaka_street.jpg" alt="Crowded street in Dhaka">
-                        <figcaption>
-                            <strong>Figure 8.4:</strong> Urban Density. Vibrant and crowded street scenes are common in South Asia's fast-growing cities.
-                        </figcaption>
+            <!-- 4. Physical Geography Analysis -->
+            <section id="physical-geography" class="section-container">
+                <h2>⛰️ Physical Geography: Mountains and Monsoons</h2>
+                <p>South Asia's geography is dominated by the collision of tectonic plates. The Indian Plate continues to crash into the Eurasian Plate, raising the <strong>Himalayas</strong> higher each year.</p>
+                
+                <div class="figure-row">
+                    <figure class="figure">
+                        <img src="../../images/himalayas.jpg" alt="Himalayan mountain range">
+                        <figcaption><strong>Figure 8.1:</strong> The Roof of the World. The Himalayas act as a climate barrier, preventing cold Central Asian air from reaching the tropical south.</figcaption>
                     </figure>
-                    <figure class="figure figure-center">
-                        <img src="../../images/tata_nano.jpg" alt="Tara Nano Car">
-                        <figcaption>
-                            <strong>Figure 8.5:</strong> Industrial Innovation. The Tata Nano represents India's growing manufacturing capabilities and consumer market.
-                        </figcaption>
+                    <figure class="figure">
+                        <img src="../../images/rain_shadow.jpg" alt="Monsoon diagram">
+                        <figcaption><strong>Figure 8.2:</strong> The Monsoon. The seasonal reversal of winds brings torrential summer rains that are vital for agriculture but dangerous for flooding.</figcaption>
                     </figure>
                 </div>
-
+                
+                <p>The <strong>Monsoon</strong> is the lifeblood of the region. A "good" monsoon means a bountiful harvest; a "bad" monsoon can lead to drought and famine. This extreme seasonality defines the agricultural calendar and cultural festivals.</p>
+                
                 <div class="inquiry-prompt">
                     <h3>🔍 Geographic Inquiry</h3>
-                    <p>South Asia is home to nearly 2 billion people with different languages, religions, and wealth levels. How can geographic analysis help us understand the tensions between rapid economic growth, environmental protection, and social equity in such a diverse region?</p>
+                    <p>Bangladesh lies on the low-lying delta where the Ganges and Brahmaputra rivers meet the sea. How does this specific physical geography make it uniquely vulnerable to both monsoon flooding from the north and cyclonic storm surges from the south?</p>
                 </div>
             </section>
 
+            <!-- 6. Important Person Break-out (Amartya Sen) -->
+            <section class="important-person-sidebar">
+                <div class="sidebar-content">
+                    <div class="person-image" style="margin-bottom: var(--space-4);">
+                        <img src="../../images/taj_mahal.jpg" alt="Cultural heritage symbol" style="border-radius: var(--radius-md);">
+                    </div>
+                    <div class="person-header">
+                        <h3>👤 Important Person</h3>
+                    </div>
+                    <div class="person-info">
+                        <strong>Amartya Sen</strong>
+                        <p class="person-title">Economist & Nobel Laureate</p>
+                        <p>Sen's work transformed development geography by arguing that famine is not caused by a lack of food, but by a lack of *access* to food (entitlements). He also helped create the <strong>Human Development Index (HDI)</strong>, shifting the focus from pure GDP to measures of health and education.</p>
+                        <a href="https://scholar.harvard.edu/sen/home" target="_blank" class="btn-text">Explore Sen's impact on development →</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Human Geography Analysis -->
+            <section id="human-geography" class="section-container">
+                <h2>👥 Human Geography: The Demographic Dividend</h2>
+                <p>South Asia is currently experiencing a <strong>Demographic Dividend</strong> - a period where the working-age population is larger than the dependent population. This offers a massive opportunity for economic growth if jobs can be created.</p>
+                
+                <div class="figure-row">
+                    <figure class="figure">
+                        <img src="../../images/dhaka_street.jpg" alt="Dense urban street in Dhaka">
+                        <figcaption><strong>Figure 8.3:</strong> Urban Density. South Asian cities are among the most densely populated in the world.</figcaption>
+                    </figure>
+                    <figure class="figure">
+                        <img src="../../images/tata_nano.jpg" alt="Tata Nano car">
+                        <figcaption><strong>Figure 8.4:</strong> Industrial Rise. India has become a global hub for manufacturing and IT services.</figcaption>
+                    </figure>
+                </div>
+
+                <p>However, the region also faces the legacy of <strong>Partition (1947)</strong>, which divided British India into India and Pakistan, leading to one of the largest mass migrations in history and ongoing geopolitical tension over Kashmir.</p>
+            </section>
+
+            <!-- 7. Texas Connection Toggle -->
             <section id="texas-connection" class="section-container">
                 <div class="texas-toggle">
-                    <button class="btn-texas-toggle" type="button" aria-expanded="false">
-                        <span class="star-icon">⭐</span> Texas Connection: Tech and Trade
+                    <button class="btn-texas-toggle" id="texas-btn">
+                        <span class="star-icon">⭐</span> Texas Connection: The Silicon Bridge
                     </button>
-                    <div class="texas-content hidden" aria-hidden="true">
-                        <p>The "Silicon Hills" of Austin have deep connections to India's tech hubs like Bangalore. Major Texas companies employ thousands in India, and the Indian diaspora in Texas is a vibrant community contributing to medicine, engineering, and business.</p>
+                    <div class="texas-content hidden" id="texas-content">
+                        <h4>From Bangalore to Austin</h4>
+                        <p>The economic geography of Texas is deeply linked to South Asia through the technology sector. The "Silicon Hills" of Austin and the "Silicon Valley of India" (Bangalore) share a massive flow of talent, investment, and innovation.</p>
+                        <p><strong>The Diaspora:</strong> The South Asian community is one of the fastest-growing demographic groups in Texas, reshaping the cultural landscape of suburbs in Dallas (like Irving and Plano) and Houston (Sugar Land) with new temples, mosques, cricket grounds, and businesses.</p>
                     </div>
                 </div>
             </section>
 
-            <section id="summary-glossary" class="section-container">
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            📖 Glossary of Terms <span class="chevron">▼</span>
-                        </button>
-                        <div class="accordion-content">
-                            <dl>
-                                <dt>Monsoon</dt>
-                                <dd>A seasonal reversing wind accompanied by heavy precipitation, essential for the region's agriculture.</dd>
-                                <dt>Partition</dt>
-                                <dd>The division of British India in 1947 into independent India and Pakistan, leading to massive migration and conflict.</dd>
-                                <dt>Caste System</dt>
-                                <dd>A historical social stratification system in India that continues to influence social dynamics.</dd>
-                                <dt>Green Revolution</dt>
-                                <dd>The introduction of high-yield crops and modern agricultural techniques that prevented famine but raised ecological concerns.</dd>
-                            </dl>
+            <!-- 8. Case Study -->
+            <section id="case-study" class="section-container">
+                <div class="case-study-gold">
+                    <div class="case-study-header">
+                        <span class="label">Case Study</span>
+                        <h2>The Maldives: Frontline of Climate Change</h2>
+                    </div>
+                    <p>The Maldives is an archipelago of 1,200 coral islands with an average elevation of just 1.5 meters above sea level. It faces an existential threat from rising sea levels caused by global climate change.</p>
+                    <div class="case-study-questions">
+                        <h4>Questions to Consider:</h4>
+                        <ul>
+                            <li>Is the Maldives' situation an example of "environmental determinism"?</li>
+                            <li>How does a nation plan for its own potential physical disappearance? (e.g., buying land abroad, building artificial islands)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. Interactive Flip Cards (Big Ideas) -->
+            <section id="big-ideas" class="section-container">
+                <h2>💡 Big Ideas: Flip to Explore</h2>
+                <p>Click on the cards below to reveal the core geographic concepts for this region.</p>
+                
+                <div class="flip-card-grid">
+                    <!-- Card 1 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-icon">🌧️</div>
+                                <h3>The Monsoon</h3>
+                                <p class="flip-card-hint">Click to flip</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>A seasonal wind shift that brings essential summer rains. It drives the agricultural economy but also causes devastating floods. It is the heartbeat of the region.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            💡 Summary of Big Ideas <span class="chevron">▼</span>
-                        </button>
-                        <div class="accordion-content">
-                            <ul>
-                                <li>The Himalayas and the monsoon system are the dominant physical forces shaping life in South Asia.</li>
-                                <li>The region is a mosaic of intense religious and linguistic diversity, with a complex history of empire and partition.</li>
-                                <li>South Asia faces the dual challenge of sustaining a massive population while adapting to severe climate change risks.</li>
-                            </ul>
+
+                    <!-- Card 2 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-icon">🚧</div>
+                                <h3>Partition</h3>
+                                <p class="flip-card-hint">Click to flip</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>The 1947 division of British India into Hindu-majority India and Muslim-majority Pakistan. It reshaped borders, caused mass migration, and fuels modern conflict.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-icon">📈</div>
+                                <h3>Demographic Dividend</h3>
+                                <p class="flip-card-hint">Click to flip</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>Economic growth potential resulting from a large working-age population. South Asia must create millions of jobs to capitalize on this youth bulge.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="knowledge-check" class="section-container">
+            <!-- 10. Knowledge Check (Quiz) -->
+            <section id="quiz" class="section-container">
                 <h2>✅ Knowledge Check</h2>
                 <div id="quiz-container" class="quiz-wrapper">
                     <p class="loading">Loading quiz questions...</p>
                 </div>
             </section>
 
-            <section id="discussion" class="section-container">
-                <h2>💬 Discussion & Reflection Prompts</h2>
-                <div class="discussion-box">
-                    <h3>Reflect on Your Learning</h3>
-                    <ol>
-                        <li><strong>Population & Resources:</strong> How do monsoons and river systems support 2 billion people? What happens when populations exceed what geography can sustain?</li>
-                        <li><strong>Water Disputes:</strong> Why do shared rivers create such intense geopolitical tensions? How can nations cooperate over shared water resources?</li>
-                        <li><strong>Development Pathways:</strong> How can South Asian nations achieve economic growth while addressing poverty, inequality, and environmental protection?</li>
-                    </ol>
-                    <h3>Discuss With Your Peers</h3>
-                    <ul>
-                        <li>What role should regional organizations play in resolving South Asian conflicts?</li>
-                        <li>How can cities like Delhi, Mumbai, and Dhaka address inequality and provide services to massive populations?</li>
-                        <li>What climate adaptation strategies are essential for monsoon-dependent agriculture?</li>
-                    </ul>
-                </div>
-            </section>
-
+            <!-- Navigation -->
             <nav class="chapter-nav">
-                <a href="../07-north-africa-sw-asia/index.html" class="chapter-nav-link">← Chapter 7: N. Africa and SW Asia</a>
+                <a href="../07-north-africa-sw-asia/index.html" class="chapter-nav-link">← Chapter 7: N. Africa & SW Asia</a>
                 <a href="../09-east-asia/index.html" class="chapter-nav-link">Chapter 9: East Asia →</a>
             </nav>
         </div>
@@ -218,33 +295,39 @@
     <footer class="site-footer"><div class="container"><div class="footer-content"><div class="footer-brand"><span class="logo-icon">🌍</span><span>World Regional Geography</span></div><div class="footer-copyright"><p>© 2026 Dr. Sounny. Open Educational Resource.</p></div></div></div></footer>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="../../js/map-init.js"></script>
+    <script src="../../js/regions-data.js"></script>
     <script src="../../js/quiz-engine.js"></script>
+    <script src="../../js/chart-data.js"></script>
     <script src="../../js/main.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof L !== 'undefined' && document.getElementById('regions-map')) {
-                const map = L.map('regions-map').setView([22, 78], 4);
-                L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { attribution: '© OpenStreetMap © CARTO' }).addTo(map);
-                const cities = [
-                    { name: 'New Delhi', coords: [28.6139, 77.2090], note: 'India capital' },
-                    { name: 'Mumbai', coords: [19.0760, 72.8777], note: 'India financial center' },
-                    { name: 'Dhaka', coords: [23.8103, 90.4125], note: 'Bangladesh capital' },
-                    { name: 'Karachi', coords: [24.8607, 67.0011], note: 'Pakistan largest city' },
-                    { name: 'Kolkata', coords: [22.5726, 88.3639], note: 'Eastern India hub' },
-                    { name: 'Kathmandu', coords: [27.7172, 85.3240], note: 'Nepal capital' }
-                ];
-                cities.forEach(city => { L.circleMarker(city.coords, { radius: 8, fillColor: '#3b82f6', color: '#fff', weight: 2, fillOpacity: 0.8 }).addTo(map).bindPopup('<strong>' + city.name + '</strong><br>' + city.note); });
+        // Initialize the Chapter 8 Interactive Map
+        document.addEventListener('DOMContentLoaded', () => {
+            const map = MapManager.initMap('regions-map', [22, 78], 4);
+            if (map && window.WorldRegionsData) {
+                const saData = window.WorldRegionsData.features.find(f => f.id === 'south-asia');
+                if (saData) {
+                    MapManager.addGeoJson(map, { type: "FeatureCollection", features: [saData] }, {
+                        style: {
+                            color: 'var(--color-primary-dark)',
+                            weight: 2,
+                            fillColor: 'var(--color-primary)',
+                            fillOpacity: 0.1
+                        }
+                    }, "South Asia Region");
+                }
             }
 
-            const quizContainer = document.getElementById('quiz-container');
-            if (quizContainer) {
-                fetch('quiz-data.json')
-                    .then(response => response.json())
-                    .then(data => QuizEngine.init('quiz-container', data))
-                    .catch(err => {
-                        console.error('Error loading quiz data:', err);
-                        quizContainer.innerHTML = '<p class="text-muted">Quiz unavailable right now.</p>';
-                    });
+            // Initialize Quiz
+            fetch('quiz-data.json')
+                .then(response => response.json())
+                .then(data => QuizEngine.init('quiz-container', data))
+                .catch(err => console.error('Error loading quiz data:', err));
+
+            // Initialize Chart if manager exists
+            if (typeof ChartDataManager !== 'undefined') {
+                ChartDataManager.createChart('south-asia-density-chart', ChartDataManager.southAsiaDensityChart);
             }
         });
     </script>

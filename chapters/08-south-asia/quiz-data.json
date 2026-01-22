@@ -1,28 +1,110 @@
 [
-  {
-    "question": "What climate system brings seasonal rains that are essential for agriculture across much of South Asia?",
-    "options": [
-      {
-        "text": "The monsoon",
-        "correct": true,
-        "feedback": "Monsoon circulation produces seasonal wet and dry periods that strongly shape farming and water management."
-      },
-      { "text": "The Gulf Stream", "correct": false },
-      { "text": "El Nino", "correct": false },
-      { "text": "The Jet Stream", "correct": false }
-    ]
-  },
-  {
-    "question": "South Asia's rapid urban growth is especially visible in which type of place?",
-    "options": [
-      {
-        "text": "Large, densely populated cities (megacities)",
-        "correct": true,
-        "feedback": "Cities such as Dhaka, Mumbai, and Karachi highlight high density and fast-paced urbanization."
-      },
-      { "text": "Uninhabited deserts only", "correct": false },
-      { "text": "Polar research stations", "correct": false },
-      { "text": "Deep ocean trenches", "correct": false }
-    ]
-  }
+    {
+        "question": "Which massive mountain range forms the northern boundary of South Asia and contains the world's highest peaks?",
+        "options": [
+            { "text": "The Andes", "correct": false },
+            { "text": "The Himalayas", "correct": true, "feedback": "Created by the collision of the Indian and Eurasian plates." },
+            { "text": "The Alps", "correct": false },
+            { "text": "The Urals", "correct": false }
+        ]
+    },
+    {
+        "question": "The seasonal wind shift that brings heavy summer rains vital for agriculture is called the:",
+        "options": [
+            { "text": "Trade Wind", "correct": false },
+            { "text": "Monsoon", "correct": true, "feedback": "The monsoon is the defining climatic feature of the subcontinent." },
+            { "text": "El Niño", "correct": false },
+            { "text": "Jet Stream", "correct": false }
+        ]
+    },
+    {
+        "question": "The 1947 Partition of British India created which two independent nations?",
+        "options": [
+            { "text": "India and China", "correct": false },
+            { "text": "India and Pakistan", "correct": true, "feedback": "Partition divided the colony along religious lines, creating a Hindu-majority India and a Muslim-majority Pakistan." },
+            { "text": "India and Bangladesh", "correct": false },
+            { "text": "Pakistan and Afghanistan", "correct": false }
+        ]
+    },
+    {
+        "question": "Regional Scenario: If a farmer in the Punjab region uses high-yield seeds and chemical fertilizers to increase wheat production, this is an example of:",
+        "options": [
+            { "text": "The Green Revolution", "correct": true, "feedback": "The Green Revolution transformed South Asian agriculture but also raised environmental concerns." },
+            { "text": "Subsistence Farming", "correct": false },
+            { "text": "Slash and Burn", "correct": false },
+            { "text": "Organic Farming", "correct": false }
+        ]
+    },
+    {
+        "question": "Which country occupies the low-lying Ganges-Brahmaputra delta and is extremely vulnerable to flooding and cyclones?",
+        "options": [
+            { "text": "Nepal", "correct": false },
+            { "text": "Bangladesh", "correct": true, "feedback": "Bangladesh's geography makes it one of the most climate-vulnerable nations on Earth." },
+            { "text": "Sri Lanka", "correct": false },
+            { "text": "Bhutan", "correct": false }
+        ]
+    },
+    {
+        "question": "Demographic Trend: South Asia is currently experiencing:",
+        "options": [
+            { "text": "Rapid population decline.", "correct": false },
+            { "text": "A 'Demographic Dividend' due to a large young workforce.", "correct": true, "feedback": "With a median age far lower than Europe or East Asia, South Asia has a vast labor pool." },
+            { "text": "Zero population growth.", "correct": false },
+            { "text": "Mass emigration to Antarctica.", "correct": false }
+        ]
+    },
+    {
+        "question": "Geographic Inquiry: Why is the Kashmir region a source of ongoing geopolitical tension?",
+        "options": [
+            { "text": "It has the world's largest oil reserves.", "correct": false },
+            { "text": "It is claimed by both India and Pakistan and controls vital water resources.", "correct": true, "feedback": "Control of the Indus headwaters makes Kashmir strategically critical." },
+            { "text": "It is an uninhabited desert.", "correct": false },
+            { "text": "It is the site of the Taj Mahal.", "correct": false }
+        ]
+    },
+    {
+        "question": "Which religion originated in South Asia?",
+        "options": [
+            { "text": "Islam", "correct": false },
+            { "text": "Buddhism", "correct": true, "feedback": "Buddhism originated in ancient India (now Nepal/India border region)." },
+            { "text": "Christianity", "correct": false },
+            { "text": "Judaism", "correct": false }
+        ]
+    },
+    {
+        "question": "What is the primary language family of North India?",
+        "options": [
+            { "text": "Dravidian", "correct": false },
+            { "text": "Indo-European (Indo-Aryan)", "correct": true, "feedback": "Hindi, Bengali, and Urdu are all Indo-Aryan languages." },
+            { "text": "Sino-Tibetan", "correct": false },
+            { "text": "Austronesian", "correct": false }
+        ]
+    },
+    {
+        "question": "Texas Connection: The 'Silicon Hills' of Austin share strong economic ties with which Indian tech hub?",
+        "options": [
+            { "text": "Mumbai", "correct": false },
+            { "text": "Bangalore (Bengaluru)", "correct": true, "feedback": "Bangalore is often called the 'Silicon Valley of India' and has deep IT connections with Texas." },
+            { "text": "Kolkata", "correct": false },
+            { "text": "Jaipur", "correct": false }
+        ]
+    },
+    {
+        "question": "Urban Geography: What is a 'Dharavi' in Mumbai?",
+        "options": [
+            { "text": "A luxury hotel.", "correct": false },
+            { "text": "One of Asia's largest informal settlements (slums).", "correct": true, "feedback": "Dharavi is a hub of recycling and small-scale industry, despite poor living conditions." },
+            { "text": "A historic temple.", "correct": false },
+            { "text": "A government office.", "correct": false }
+        ]
+    },
+    {
+        "question": "Why are the Maldives considered an 'existential' climate victim?",
+        "options": [
+            { "text": "They are in a desert.", "correct": false },
+            { "text": "They are a low-lying island nation threatened by sea-level rise.", "correct": true, "feedback": "With an average elevation of 1.5 meters, the Maldives could disappear under rising seas." },
+            { "text": "They have too many mountains.", "correct": false },
+            { "text": "They are located on a fault line.", "correct": false }
+        ]
+    }
 ]
