@@ -6,6 +6,8 @@
     <title>Chapter 10: Southeast Asia | World Regional Geography</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="../../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="../../js/chart-data.js"></script>
 </head>
 <body>
     <!-- Skip to Main Content Link (Accessibility) -->
@@ -26,178 +28,263 @@
         </div>
     </section>
 
+<body>
+    <!-- Skip to Main Content Link (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="site-header">
+        <div class="container">
+            <div class="header-brand">
+                <a href="../../index.html" class="logo">
+                    <span class="logo-icon">🌍</span>
+                    <span class="logo-text">World Regional Geography</span>
+                </a>
+            </div>
+            <nav class="main-nav" aria-label="Main navigation">
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="../../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active">Chapters</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../01-introduction/index.html">1. Introduction</a></li>
+                            <li><a href="../02-europe/index.html">2. Europe</a></li>
+                            <li><a href="../03-russia/index.html">3. Russia and Central Asia</a></li>
+                            <li><a href="../04-north-america/index.html">4. North America</a></li>
+                            <li><a href="../05-latin-america/index.html">5. Latin America</a></li>
+                            <li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
+                            <li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa and SW Asia</a></li>
+                            <li><a href="../08-south-asia/index.html">8. South Asia</a></li>
+                            <li><a href="../09-east-asia/index.html">9. East Asia</a></li>
+                            <li><a href="../10-southeast-asia/index.html" class="active">10. Southeast Asia</a></li>
+                            <li><a href="../11-australia-oceania/index.html">11. Australia and Oceania</a></li>
+                            <li><a href="../12-conclusion/index.html">12. Global Connections</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="chapter-header">
+        <div class="container">
+            <p class="chapter-meta">Chapter 10 · Week 12</p>
+            <h1 class="chapter-title">Southeast Asia: The Crossroads</h1>
+            <p class="chapter-description">A crossroads of cultures, religions, and trade routes, Southeast Asia comprises 11 diverse nations balancing rapid development, cultural preservation, and environmental challenges.</p>
+        </div>
+    </section>
+
     <main id="main-content" class="chapter-content">
         <div class="container">
-            <div class="learning-objectives">
-                <h2>🎯 Learning Objectives</h2>
-                <ul>
-                    <li><strong>Distinguish:</strong> Identify the physical and cultural differences between mainland and insular Southeast Asia</li>
-                    <li><strong>Explain:</strong> Describe the role of ASEAN in regional integration and cooperation</li>
-                    <li><strong>Analyze:</strong> Examine maritime trade routes, strategic waterways, and their geopolitical significance</li>
-                    <li><strong>Evaluate:</strong> Assess deforestation impacts and environmental challenges across the region</li>
-                    <li><strong>Apply:</strong> Use geographic concepts to understand cultural diversity and religious distribution</li>
-                    <li><strong>Compare:</strong> Contrast development levels and strategies across different Southeast Asian nations</li>
-                    <li><strong>Create:</strong> Design a balance between rapid economic development and environmental sustainability for the region</li>
-                </ul>
-            </div>
-
-            <section id="regional-profile">
-                <h2>🌊 Regional Profile</h2>
-                <div class="profile-grid">
-                    <div class="profile-stat">
-                        <div class="stat-icon">👥</div>
-                        <div class="stat-value">~680 Million</div>
-                        <div class="stat-label">Population</div>
-                    </div>
-                    <div class="profile-stat">
-                        <div class="stat-icon">🗺️</div>
-                        <div class="stat-value">11 Countries</div>
-                        <div class="stat-label">Diverse Nations</div>
-                    </div>
-                    <div class="profile-stat">
-                        <div class="stat-icon">🚢</div>
-                        <div class="stat-value">Malacca Strait</div>
-                        <div class="stat-label">Key Trade Route</div>
-                    </div>
-                    <div class="profile-stat">
-                        <div class="stat-icon">🌴</div>
-                        <div class="stat-value">Tropical</div>
-                        <div class="stat-label">Climate Throughout</div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="southeast-asia-map">
-                <h2>🗺️ Interactive Map: Southeast Asia</h2>
-                <div id="regions-map" class="interactive-map" role="region" aria-label="Interactive map"></div>
-            </section>
-
-            <section id="physical-geography">
-                <h2>Physical Geography</h2>
-                
-                <h3>A Fractured Realm</h3>
-                <p>Southeast Asia is geographically fragmented into a mainland peninsula and a vast archipelago of thousands of islands. This fragmentation creates diverse climates and challenges for connectivity.</p>
-                <ul>
-                    <li><strong>The Archipelago:</strong> Indonesia and the Philippines together comprise over 24,000 islands, sitting on the tectonic boundary known as the Ring of Fire.</li>
-                    <li><strong>Mekong River:</strong> The "Danube of the East," flowing from China through five Southeast Asian nations, supporting millions with agriculture and fishing.</li>
-                    <li><strong>Tropical Climate:</strong> Most of the region lies within the tropics, characterized by high temperatures, monsoonal rains, and dense rainforests.</li>
-                </ul>
-
-                <div class="figure-row">
-                    <figure class="figure figure-center">
-                        <img src="../../images/indonesia_map.jpg" alt="Map of Indonesia">
-                        <figcaption>
-                            <strong>Figure 10.1:</strong> The Indonesian Archipelago. A nation of thousands of islands stretching across three time zones.
-                        </figcaption>
-                    </figure>
-                    <figure class="figure figure-center">
-                        <img src="../../images/angkor_wat.jpg" alt="Angkor Wat temple">
-                        <figcaption>
-                            <strong>Figure 10.2:</strong> Angkor Wat, Cambodia. The largest religious monument in the world, symbolizing the region's rich historical legacy.
-                        </figcaption>
-                    </figure>
-                </div>
-            </section>
-
-            <section id="global-theme">
-                <h2>🌐 Global Theme: Globalization and Uneven Development</h2>
-                <p>Southeast Asia is a region of immense economic diversity, ranging from the wealthy city-state of Singapore to developing nations like Myanmar and Laos. It is a key node in the global economy due to strategic trade routes and manufacturing.</p>
-                
-                <h3>Urban Contrasts</h3>
-                <p>Rapid urbanization is creating megacities that face challenges of congestion, inequality, and environmental sustainability.</p>
-
-                <div class="figure-row">
-                    <figure class="figure figure-center">
-                        <img src="../../images/singapore_skyline.jpg" alt="Singapore skyline">
-                        <figcaption>
-                            <strong>Figure 10.3:</strong> Singapore. An "Economic Tiger" and global financial hub, showcasing advanced urban planning.
-                        </figcaption>
-                    </figure>
-                    <figure class="figure figure-center">
-                        <img src="../../images/philippines_street.jpg" alt="Jeepney on a Philippine street">
-                        <figcaption>
-                            <strong>Figure 10.4:</strong> Manila Street Scene. The iconic "Jeepney" represents local adaptation and the vibrant, bustling nature of Southeast Asian cities.
-                        </figcaption>
-                    </figure>
-                    <figure class="figure figure-center">
-                        <img src="../../images/bangkok_skyline.jpg" alt="Bangkok skyline">
-                        <figcaption>
-                            <strong>Figure 10.5:</strong> Bangkok, Thailand. A primate city that dominates the country's economy and urban hierarchy.
-                        </figcaption>
-                    </figure>
-                </div>
-            </section>
-
-            <section id="discussion" class="section-container">
-                <h2>💬 Discussion & Reflection Prompts</h2>
-                <div class="discussion-box">
-                    <h3>Reflect on Your Learning</h3>
-                    <ol>
-                        <li><strong>ASEAN Integration:</strong> How can regional economic cooperation (ASEAN) help Southeast Asian nations balance rapid development with environmental protection?</li>
-                        <li><strong>Trade Routes & Power:</strong> Why are strategic waterways like the Malacca Strait so important to global trade and geopolitics?</li>
-                        <li><strong>Development Diversity:</strong> How can wealthy city-states like Singapore coexist with developing nations like Myanmar within the same region? What are the opportunities and challenges?</li>
-                    </ol>
-                    <h3>Discuss With Your Peers</h3>
+            
+            <!-- 1. Learning Objectives -->
+            <section id="objectives" class="section-container">
+                <div class="learning-objectives">
+                    <h2>🎯 Learning Objectives</h2>
+                    <p>By the end of this chapter, you will be able to:</p>
                     <ul>
-                        <li>How should Southeast Asia balance attracting manufacturing investment with protecting labor rights and the environment?</li>
-                        <li>What role should international organizations play in addressing transboundary environmental issues like deforestation?</li>
-                        <li>How can Southeast Asian nations build prosperity that benefits rural as well as urban populations?</li>
+                        <li><strong>Distinguish:</strong> Identify the physical and cultural differences between mainland and insular Southeast Asia</li>
+                        <li><strong>Explain:</strong> Describe the role of ASEAN in regional integration and cooperation</li>
+                        <li><strong>Analyze:</strong> Examine maritime trade routes and their geopolitical significance</li>
+                        <li><strong>Evaluate:</strong> Assess deforestation impacts and environmental challenges</li>
+                        <li><strong>Apply:</strong> Use geographic concepts to understand cultural diversity and religious distribution</li>
                     </ul>
                 </div>
             </section>
 
+            <!-- 2. Regional Profile (Snapshot) -->
+            <section id="profile" class="section-container">
+                <h2>🌊 Regional Snapshot: The Tropical Realm</h2>
+                <div class="profile-grid">
+                    <div class="profile-item">
+                        <strong>Population</strong>
+                        <span>~680 Million</span>
+                    </div>
+                    <div class="profile-item">
+                        <strong>Largest Country</strong>
+                        <span>Indonesia (Archipelago)</span>
+                    </div>
+                    <div class="profile-item">
+                        <strong>Key Choke Point</strong>
+                        <span>Strait of Malacca</span>
+                    </div>
+                    <div class="profile-item">
+                        <strong>Primary Theme</strong>
+                        <span>Connectivity & Diversity</span>
+                    </div>
+                </div>
+                <p class="mt-4">Southeast Asia is a "shatter belt" region, historically caught between the influence of India and China (hence "Indochina"). It is physically divided into a mainland peninsula (Vietnam, Thailand, Laos, Cambodia, Myanmar) and a vast island realm (Indonesia, Philippines, Malaysia, Singapore, Brunei, Timor-Leste).</p>
+                
+                <figure class="figure" style="max-width: 600px; margin: var(--space-6) auto;">
+                    <img src="../../images/indonesia_map.jpg" alt="Map of the Indonesian archipelago">
+                    <figcaption><strong>Figure 10.0:</strong> The Archipelago. Indonesia alone consists of over 17,000 islands, creating immense challenges for governance and national unity.</figcaption>
+                </figure>
+            </section>
+
+            <!-- 3. Interactive Regional Map -->
+            <section id="interactive-map" class="section-container">
+                <h2>🗺️ Interactive Map: Southeast Asia</h2>
+                <p>Explore the complex geography of the region. Note the strategic position of Singapore at the tip of the Malay Peninsula and the dense clustering of cities along the coasts.</p>
+                <div id="regions-map" class="interactive-map"></div>
+                <div class="map-controls">
+                    <p class="text-sm italic text-muted">Toggle between Physical terrain and Political boundaries. Observe how the Mekong River creates a corridor for settlement in the mainland.</p>
+                </div>
+            </section>
+
+            <!-- 4. Physical Geography Analysis -->
+            <section id="physical-geography" class="section-container">
+                <h2>🌴 Physical Geography: Rainforests and Volcanoes</h2>
+                <p>The region is defined by its tropical climate and tectonic volatility. The <strong>Mekong River</strong> is the lifeline of the mainland, supporting rice agriculture for millions. The island nations sit on the <strong>Ring of Fire</strong>, making them prone to volcanic eruptions and tsunamis.</p>
+                
+                <div class="figure-row">
+                    <figure class="figure">
+                        <img src="../../images/angkor_wat.jpg" alt="Angkor Wat temple complex">
+                        <figcaption><strong>Figure 10.1:</strong> Hydraulic Civilizations. Ancient empires like the Khmer (Angkor Wat) managed water resources to build massive societies in the tropics.</figcaption>
+                    </figure>
+                    <figure class="figure">
+                        <img src="../../images/philippines_street.jpg" alt="Tropical landscape">
+                        <figcaption><strong>Figure 10.2:</strong> Tropical Biodiversity. The region's rainforests are among the most biodiverse on Earth but are threatened by rapid deforestation.</figcaption>
+                    </figure>
+                </div>
+                
+                <p><strong>Deforestation</strong> for palm oil plantations is a critical environmental issue, particularly in Borneo and Sumatra, threatening endangered species like the orangutan and contributing to global carbon emissions.</p>
+                
+                <div class="inquiry-prompt">
+                    <h3>🔍 Geographic Inquiry</h3>
+                    <p>Singapore is an island city-state with no natural resources—it even imports fresh water from Malaysia. How has it managed to become one of the wealthiest nations on Earth purely through its geographic location and human capital?</p>
+                </div>
+            </section>
+
+            <!-- 6. Important Person Break-out (Lee Kuan Yew) -->
+            <section class="important-person-sidebar">
+                <div class="sidebar-content">
+                    <div class="person-image" style="margin-bottom: var(--space-4);">
+                        <img src="../../images/singapore_skyline.jpg" alt="Singapore skyline" style="border-radius: var(--radius-md);">
+                    </div>
+                    <div class="person-header">
+                        <h3>👤 Important Person</h3>
+                    </div>
+                    <div class="person-info">
+                        <strong>Lee Kuan Yew</strong>
+                        <p class="person-title">Founding Father of Singapore</p>
+                        <p>Lee Kuan Yew transformed Singapore from a colonial trading post with no resources into a global financial hub. His philosophy emphasized strict governance, pragmatism, and leveraging Singapore's strategic <strong>location</strong> as an entrepôt (transshipment port) between East and West.</p>
+                        <a href="https://www.britannica.com/biography/Lee-Kuan-Yew" target="_blank" class="btn-text">Learn about the 'Singapore Model' →</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Human Geography Analysis -->
+            <section id="human-geography" class="section-container">
+                <h2>👥 Human Geography: ASEAN and Diversity</h2>
+                <p>Southeast Asia is a mosaic of religions: Islam dominates the islands (Indonesia is the world's largest Muslim nation), Buddhism thrives on the mainland, and Catholicism is majority in the Philippines.</p>
+                
+                <div class="figure-row">
+                    <figure class="figure">
+                        <img src="../../images/bangkok_skyline.jpg" alt="Bangkok skyline">
+                        <figcaption><strong>Figure 10.3:</strong> Primate Cities. Bangkok is a classic "primate city," dwarfing all other cities in Thailand in size and economic power.</figcaption>
+                    </figure>
+                    <figure class="figure">
+                        <img src="../../images/philippines_street.jpg" alt="Manila jeepney">
+                        <figcaption><strong>Figure 10.4:</strong> Urban Adaptation. The jeepney in Manila symbolizes the creative adaptation of colonial leftovers into local culture.</figcaption>
+                    </figure>
+                </div>
+
+                <p>The <strong>Association of Southeast Asian Nations (ASEAN)</strong> fosters economic cooperation and political stability, helping the region navigate the rivalry between major powers like China and the US.</p>
+            </section>
+
+            <!-- 7. Texas Connection Toggle -->
             <section id="texas-connection" class="section-container">
                 <div class="texas-toggle">
-                    <button class="btn-texas-toggle" type="button" aria-expanded="false">
-                        <span class="star-icon">⭐</span> Texas Connection: Migration and Cuisine
+                    <button class="btn-texas-toggle" id="texas-btn">
+                        <span class="star-icon">⭐</span> Texas Connection: The Viet-Cajun Fusion
                     </button>
-                    <div class="texas-content hidden" aria-hidden="true">
-                        <p>Houston is home to one of the largest Vietnamese populations in the United States, a legacy of migration following the Vietnam War. This community has profoundly influenced Texas culture, particularly through cuisine (Viet-Cajun fusion). Additionally, many Filipino nurses form the backbone of the Texas healthcare system.</p>
+                    <div class="texas-content hidden" id="texas-content">
+                        <h4>From the Mekong to the Mississippi</h4>
+                        <p>Texas has a profound connection to Vietnam. Following the Vietnam War, many refugees settled along the Gulf Coast because the climate and fishing opportunities resembled home. This migration created a vibrant Vietnamese-Texan culture.</p>
+                        <p><strong>Culinary Geography:</strong> The famous "Viet-Cajun" crawfish of Houston is a perfect example of <em>cultural diffusion</em>—blending traditional Cajun boiling techniques with Vietnamese flavors like lemongrass, garlic, and butter. It is now a signature Texas dish.</p>
                     </div>
                 </div>
             </section>
 
-            <section id="summary-glossary" class="section-container">
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            📖 Glossary of Terms <span class="chevron">▼</span>
-                        </button>
-                        <div class="accordion-content">
-                            <dl>
-                                <dt>Archipelago</dt>
-                                <dd>A group of islands, describing the geography of Indonesia and the Philippines.</dd>
-                                <dt>ASEAN</dt>
-                                <dd>Association of Southeast Asian Nations, a political and economic union of 10 member states.</dd>
-                                <dt>Entrepôt</dt>
-                                <dd>A port, city, or trading post where merchandise may be imported, stored or traded, typically to be exported again (e.g., Singapore).</dd>
-                                <dt>Buffer State</dt>
-                                <dd>A neutral state lying between two rival or potentially hostile greater powers (e.g., Thailand historically).</dd>
-                            </dl>
+            <!-- 8. Case Study -->
+            <section id="case-study" class="section-container">
+                <div class="case-study-gold">
+                    <div class="case-study-header">
+                        <span class="label">Case Study</span>
+                        <h2>The South China Sea: Waters of Conflict</h2>
+                    </div>
+                    <p>The South China Sea is one of the world's busiest trade routes and potentially rich in oil and gas. China claims almost the entire sea (the "Nine-Dash Line"), conflicting with the maritime zones of Vietnam, the Philippines, Malaysia, and Brunei.</p>
+                    <div class="case-study-questions">
+                        <h4>Questions to Consider:</h4>
+                        <ul>
+                            <li>Why is control over small, uninhabited islands (like the Spratlys) so strategically important? (Hint: UNCLOS and Exclusive Economic Zones).</li>
+                            <li>How does this dispute challenge ASEAN's unity?</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9. Interactive Flip Cards (Big Ideas) -->
+            <section id="big-ideas" class="section-container">
+                <h2>💡 Big Ideas: Flip to Explore</h2>
+                <p>Click on the cards below to reveal the core geographic concepts for Southeast Asia.</p>
+                
+                <div class="flip-card-grid">
+                    <!-- Card 1 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-icon">⚓</div>
+                                <h3>Entrepôt</h3>
+                                <p class="flip-card-hint">Click to flip</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>A port city (like Singapore) where goods are imported, stored, and re-exported. It serves as a trading hub rather than a production center.</p>
+                            </div>
                         </div>
                     </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            💡 Summary of Big Ideas <span class="chevron">▼</span>
-                        </button>
-                        <div class="accordion-content">
-                            <ul>
-                                <li>Southeast Asia is a crossroads of cultures and trade routes between the Indian and Pacific Oceans.</li>
-                                <li>The region balances rapid economic growth with environmental preservation, particularly regarding rainforests.</li>
-                                <li>Geopolitics are shaped by the influence of major powers and the strategic importance of maritime choke points.</li>
-                            </ul>
+
+                    <!-- Card 2 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-icon">🏝️</div>
+                                <h3>Archipelago</h3>
+                                <p class="flip-card-hint">Click to flip</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>A chain or group of islands. Indonesia and the Philippines are archipelagic states, which creates challenges for connectivity and national unity.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                            <div class="flip-card-front">
+                                <div class="flip-card-icon">⚔️</div>
+                                <h3>Shatter Belt</h3>
+                                <p class="flip-card-hint">Click to flip</p>
+                            </div>
+                            <div class="flip-card-back">
+                                <p>A region caught between stronger colliding external cultural-political forces, under persistent stress, and often fragmented by aggressive rivals (e.g., during the Cold War).</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="knowledge-check" class="section-container">
+            <!-- 10. Knowledge Check (Quiz) -->
+            <section id="quiz" class="section-container">
                 <h2>✅ Knowledge Check</h2>
                 <div id="quiz-container" class="quiz-wrapper">
                     <p class="loading">Loading quiz questions...</p>
                 </div>
             </section>
 
+            <!-- Navigation -->
             <nav class="chapter-nav">
                 <a href="../09-east-asia/index.html" class="chapter-nav-link">← Chapter 9: East Asia</a>
                 <a href="../11-australia-oceania/index.html" class="chapter-nav-link">Chapter 11: Australia and Oceania →</a>
@@ -208,34 +295,39 @@
     <footer class="site-footer"><div class="container"><div class="footer-content"><div class="footer-brand"><span class="logo-icon">🌍</span><span>World Regional Geography</span></div><div class="footer-copyright"><p>© 2026 Dr. Sounny. Open Educational Resource.</p></div></div></div></footer>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="../../js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="../../js/map-init.js"></script>
+    <script src="../../js/regions-data.js"></script>
     <script src="../../js/quiz-engine.js"></script>
+    <script src="../../js/chart-data.js"></script>
+    <script src="../../js/main.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (typeof L !== 'undefined' && document.getElementById('regions-map')) {
-                const map = L.map('regions-map').setView([5, 115], 4);
-                L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { attribution: '© OpenStreetMap © CARTO' }).addTo(map);
-                const cities = [
-                    { name: 'Singapore', coords: [1.3521, 103.8198], note: 'City-state, financial hub' },
-                    { name: 'Bangkok', coords: [13.7563, 100.5018], note: 'Thailand capital' },
-                    { name: 'Jakarta', coords: [-6.2088, 106.8456], note: 'Indonesia capital' },
-                    { name: 'Hanoi', coords: [21.0285, 105.8542], note: 'Vietnam capital' },
-                    { name: 'Manila', coords: [14.5995, 120.9842], note: 'Philippines capital' },
-                    { name: 'Kuala Lumpur', coords: [3.1390, 101.6869], note: 'Malaysia capital' }
-                ];
-                cities.forEach(city => { L.circleMarker(city.coords, { radius: 8, fillColor: '#3b82f6', color: '#fff', weight: 2, fillOpacity: 0.8 }).addTo(map).bindPopup('<strong>' + city.name + '</strong><br>' + city.note); });
+        // Initialize the Chapter 10 Interactive Map
+        document.addEventListener('DOMContentLoaded', () => {
+            const map = MapManager.initMap('regions-map', [5, 115], 4);
+            if (map && window.WorldRegionsData) {
+                const seaData = window.WorldRegionsData.features.find(f => f.id === 'southeast-asia');
+                if (seaData) {
+                    MapManager.addGeoJson(map, { type: "FeatureCollection", features: [seaData] }, {
+                        style: {
+                            color: 'var(--color-primary-dark)',
+                            weight: 2,
+                            fillColor: 'var(--color-primary)',
+                            fillOpacity: 0.1
+                        }
+                    }, "Southeast Asia Region");
+                }
             }
 
             // Initialize Quiz
-            const quizContainer = document.getElementById('quiz-container');
-            if (quizContainer) {
-                fetch('quiz-data.json')
-                    .then(response => response.json())
-                    .then(data => QuizEngine.init('quiz-container', data))
-                    .catch(err => {
-                        console.error('Error loading quiz data:', err);
-                        quizContainer.innerHTML = '<p class="text-muted">Quiz unavailable right now.</p>';
-                    });
+            fetch('quiz-data.json')
+                .then(response => response.json())
+                .then(data => QuizEngine.init('quiz-container', data))
+                .catch(err => console.error('Error loading quiz data:', err));
+
+            // Initialize Charts
+            if (typeof ChartDataManager !== 'undefined' && typeof Chart !== 'undefined') {
+                ChartDataManager.createChart('asean-growth-chart', ChartDataManager.aseanGrowthChart);
             }
         });
     </script>

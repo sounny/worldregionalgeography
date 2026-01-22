@@ -1,28 +1,110 @@
 [
-  {
-    "question": "Which term best describes the physical geography of island nations like Indonesia and the Philippines?",
-    "options": [
-      {
-        "text": "Archipelago",
-        "correct": true,
-        "feedback": "An archipelago is a group or chain of islands."
-      },
-      { "text": "Isthmus", "correct": false },
-      { "text": "Peninsula", "correct": false },
-      { "text": "Delta", "correct": false }
-    ]
-  },
-  {
-    "question": "Which city-state is known as an 'Economic Tiger' and a major financial hub in Southeast Asia?",
-    "options": [
-      {
-        "text": "Singapore",
-        "correct": true,
-        "feedback": "Singapore is a highly developed city-state and a major global shipping and finance hub."
-      },
-      { "text": "Hanoi", "correct": false },
-      { "text": "Jakarta", "correct": false },
-      { "text": "Manila", "correct": false }
-    ]
-  }
+    {
+        "question": "Which Southeast Asian country is the world's largest archipelago state, consisting of over 17,000 islands?",
+        "options": [
+            { "text": "The Philippines", "correct": false },
+            { "text": "Indonesia", "correct": true, "feedback": "Stretching across three time zones, Indonesia is the largest island nation." },
+            { "text": "Malaysia", "correct": false },
+            { "text": "Thailand", "correct": false }
+        ]
+    },
+    {
+        "question": "The 'Strait of Malacca' is one of the world's most critical choke points because:",
+        "options": [
+            { "text": "It contains large oil reserves.", "correct": false },
+            { "text": "It connects the Indian and Pacific Oceans, carrying a huge portion of global trade.", "correct": true, "feedback": "Control of this narrow waterway has been a strategic priority for centuries." },
+            { "text": "It is the only route to Australia.", "correct": false },
+            { "text": "It is famous for pirate treasure.", "correct": false }
+        ]
+    },
+    {
+        "question": "Which city-state is known as an 'Entrepôt' and has the highest standard of living in the region?",
+        "options": [
+            { "text": "Bangkok", "correct": false },
+            { "text": "Singapore", "correct": true, "feedback": "Singapore built its wealth on its strategic location as a transshipment hub." },
+            { "text": "Jakarta", "correct": false },
+            { "text": "Ho Chi Minh City", "correct": false }
+        ]
+    },
+    {
+        "question": "Environmental Issue: Large areas of rainforest in Borneo and Sumatra are being cleared primarily for:",
+        "options": [
+            { "text": "Palm oil plantations", "correct": true, "feedback": "Palm oil demand drives significant deforestation and habitat loss for orangutans." },
+            { "text": "Golf courses", "correct": false },
+            { "text": "Wheat farming", "correct": false },
+            { "text": "Ski resorts", "correct": false }
+        ]
+    },
+    {
+        "question": "The Mekong River is vital to the region because:",
+        "options": [
+            { "text": "It is the only river in Asia.", "correct": false },
+            { "text": "It supports rice agriculture and fisheries for millions in Mainland Southeast Asia.", "correct": true, "feedback": "Often called the 'Danube of the East,' it flows through five ASEAN nations." },
+            { "text": "It marks the equator.", "correct": false },
+            { "text": "It is frozen half the year.", "correct": false }
+        ]
+    },
+    {
+        "question": "Which country was the only one in Southeast Asia to avoid colonization by a European power?",
+        "options": [
+            { "text": "Vietnam", "correct": false },
+            { "text": "Thailand (Siam)", "correct": true, "feedback": "Thailand acted as a buffer state between British Burma and French Indochina." },
+            { "text": "The Philippines", "correct": false },
+            { "text": "Indonesia", "correct": false }
+        ]
+    },
+    {
+        "question": "Geopolitical Tension: The 'South China Sea' dispute involves:",
+        "options": [
+            { "text": "Fishing rights in the Arctic.", "correct": false },
+            { "text": "Competing territorial claims over islands and maritime resources between China and several ASEAN nations.", "correct": true, "feedback": "China's 'Nine-Dash Line' conflicts with claims by Vietnam, the Philippines, and others." },
+            { "text": "Control of the Panama Canal.", "correct": false },
+            { "text": "Trade tariffs with Europe.", "correct": false }
+        ]
+    },
+    {
+        "question": "Religious Geography: Which is the dominant religion in the Philippines?",
+        "options": [
+            { "text": "Islam", "correct": false },
+            { "text": "Roman Catholicism", "correct": true, "feedback": "A legacy of Spanish colonization, the Philippines is majority Catholic." },
+            { "text": "Buddhism", "correct": false },
+            { "text": "Hinduism", "correct": false }
+        ]
+    },
+    {
+        "question": "Regional Scenario: A 'Shatter Belt' is a region where:",
+        "options": [
+            { "text": "Earthquakes are common.", "correct": false },
+            { "text": "External great powers compete for influence, leading to chronic instability.", "correct": true, "feedback": "Southeast Asia was a shatter belt during the Cold War and arguably remains one today." },
+            { "text": "Glass manufacturing is the main industry.", "correct": false },
+            { "text": "There are no borders.", "correct": false }
+        ]
+    },
+    {
+        "question": "Texas Connection: The 'Viet-Cajun' crawfish phenomenon in Houston is a result of:",
+        "options": [
+            { "text": "A marketing campaign by Louisiana.", "correct": false },
+            { "text": "Cultural diffusion following the migration of Vietnamese refugees to the Gulf Coast.", "correct": true, "feedback": "Vietnamese immigrants adapted local ingredients to their culinary techniques." },
+            { "text": "A government regulation.", "correct": false },
+            { "text": "Climate change.", "correct": false }
+        ]
+    },
+    {
+        "question": "Economic Geography: Which phrase describes the 'Golden Triangle'?",
+        "options": [
+            { "text": "A popular tourist beach.", "correct": false },
+            { "text": "A border region known historically for opium production.", "correct": true, "feedback": "Located where Thailand, Laos, and Myanmar meet." },
+            { "text": "The financial district of Singapore.", "correct": false },
+            { "text": "A gold mining area in Indonesia.", "correct": false }
+        ]
+    },
+    {
+        "question": "What is 'transmigration' in the context of Indonesia?",
+        "options": [
+            { "text": "Moving capital cities.", "correct": false },
+            { "text": "A government policy to move people from densely populated Java to outer islands.", "correct": true, "feedback": "This policy aimed to balance population but often caused ethnic conflict." },
+            { "text": "Migrating birds.", "correct": false },
+            { "text": "Converting to a new religion.", "correct": false }
+        ]
+    }
 ]
