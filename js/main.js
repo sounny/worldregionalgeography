@@ -9,26 +9,38 @@
 // =====================================================
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Accessibility enhancements
-    initAccessibilityEnhancements();
-    
-    // Navigation and navigation features
     initNavigation();
-    initSmoothScroll();
-    
-    // Map initialization
     initPreviewMap();
-    initRegionalNavigator();
-    
-    // Interactive components
+    initRegionalNavigator(); // Added for dev index
     initQuizzes();
+    initSmoothScroll();
     initTexasToggle();
     initAccordions();
-    initKeyTerms();
+    initFlipCards();
 });
 
 /**
- * Initialize Texas Connection toggles with enhanced accessibility
+ * Initialize Flip Cards
+ */
+function initFlipCards() {
+    const cards = document.querySelectorAll('.flip-card');
+    cards.forEach(card => {
+        card.addEventListener('click', () => {
+            card.classList.toggle('flipped');
+        });
+        
+        // Keyboard accessibility
+        card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                card.classList.toggle('flipped');
+            }
+        });
+    });
+}
+
+/**
+ * Initialize Texas Connection toggles
  */
 function initTexasToggle() {
     const toggles = document.querySelectorAll('.texas-toggle');
