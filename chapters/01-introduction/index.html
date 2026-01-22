@@ -156,7 +156,7 @@
             <section class="important-person-sidebar">
                 <div class="sidebar-content">
                     <div class="person-image">
-                        <img src="../../images/megacities.jpg" alt="Dense urban landscape">
+                        <img src="../../images/megacities.jpg" alt="Dense urban landscape" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
                     </div>
                     <div class="person-header">
                         <h3>👤 Important Person</h3>
@@ -308,6 +308,12 @@
         </div>
     </footer>
 
+    <!-- Image Lightbox Overlay -->
+    <div id="image-lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+        <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
+        <img class="lightbox-image" src="" alt="">
+    </div>
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="../../js/map-init.js"></script>
     <script src="../../js/regions-data.js"></script>
@@ -343,6 +349,45 @@
                     });
             }
         });
+
+        // Lightbox functionality for zoomable images
+        (function() {
+            const lightbox = document.getElementById('image-lightbox');
+            const lightboxImg = lightbox.querySelector('.lightbox-image');
+            const closeBtn = lightbox.querySelector('.lightbox-close');
+            
+            // Open lightbox when clicking zoomable images
+            document.querySelectorAll('.zoomable-image').forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                    lightbox.hidden = false;
+                    document.body.style.overflow = 'hidden';
+                    closeBtn.focus();
+                });
+                // Also support keyboard activation
+                img.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        img.click();
+                    }
+                });
+            });
+            
+            // Close lightbox
+            function closeLightbox() {
+                lightbox.hidden = true;
+                document.body.style.overflow = '';
+            }
+            
+            closeBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+            });
+        })();
     </script>
 </body>
 
