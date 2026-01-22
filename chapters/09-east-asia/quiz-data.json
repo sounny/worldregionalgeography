@@ -1,28 +1,110 @@
 [
-  {
-    "question": "Which two rivers are often described as the historic lifeblood of Chinese agriculture and transport?",
-    "options": [
-      {
-        "text": "The Yellow (Huang He) and the Yangtze (Chang Jiang)",
-        "correct": true,
-        "feedback": "The Yellow and Yangtze river systems supported early settlement, farming, and state formation in China."
-      },
-      { "text": "The Nile and the Congo", "correct": false },
-      { "text": "The Rhine and the Danube", "correct": false },
-      { "text": "The Amazon and the Orinoco", "correct": false }
-    ]
-  },
-  {
-    "question": "Why do Japan and Taiwan experience frequent earthquakes and volcanic activity?",
-    "options": [
-      {
-        "text": "They sit on active tectonic plate boundaries in the Pacific Ring of Fire",
-        "correct": true,
-        "feedback": "Subduction zones and plate boundaries around the Pacific generate earthquakes, volcanoes, and tsunamis."
-      },
-      { "text": "They are located at the center of a stable continental interior", "correct": false },
-      { "text": "They have the world's largest deserts", "correct": false },
-      { "text": "They are far from the ocean", "correct": false }
-    ]
-  }
+    {
+        "question": "Which tectonic feature is responsible for the frequent earthquakes and volcanic activity in Japan and Taiwan?",
+        "options": [
+            { "text": "The Mid-Atlantic Ridge", "correct": false },
+            { "text": "The Pacific Ring of Fire", "correct": true, "feedback": "This zone of subduction surrounds the Pacific Ocean and creates intense seismic activity." },
+            { "text": "The Great Rift Valley", "correct": false },
+            { "text": "The San Andreas Fault", "correct": false }
+        ]
+    },
+    {
+        "question": "What is the 'Three Gorges Dam'?",
+        "options": [
+            { "text": "A famous wall built to keep out invaders.", "correct": false },
+            { "text": "The world's largest hydroelectric power station, located on the Yangtze River.", "correct": true, "feedback": "It represents China's massive capability to re-engineer its geography for energy and flood control." },
+            { "text": "A natural canyon in Japan.", "correct": false },
+            { "text": "A disputed border crossing between North and South Korea.", "correct": false }
+        ]
+    },
+    {
+        "question": "Demographic Challenge: Japan, South Korea, and increasingly China are all facing:",
+        "options": [
+            { "text": "Rapid population explosion.", "correct": false },
+            { "text": "An aging population and shrinking workforce.", "correct": true, "feedback": "Low birth rates and high life expectancy have created a 'graying' society." },
+            { "text": "Massive immigration from Europe.", "correct": false },
+            { "text": "A shortage of cities.", "correct": false }
+        ]
+    },
+    {
+        "question": "Regional Scenario: A factory in Shenzhen, China, was established because the government designated the area as a place with flexible economic laws to attract foreign investment. This is an example of a:",
+        "options": [
+            { "text": "Communist Collective", "correct": false },
+            { "text": "Special Economic Zone (SEZ)", "correct": true, "feedback": "SEZs were the engines of China's economic opening and rapid industrialization." },
+            { "text": "Demilitarized Zone (DMZ)", "correct": false },
+            { "text": "Nature Reserve", "correct": false }
+        ]
+    },
+    {
+        "question": "The 'Hukou' system in China is:",
+        "options": [
+            { "text": "A type of traditional martial art.", "correct": false },
+            { "text": "A household registration system that ties social services to a person's place of birth.", "correct": true, "feedback": "The Hukou system limits the ability of rural migrants to access schools and healthcare in cities." },
+            { "text": "A high-speed rail network.", "correct": false },
+            { "text": "A popular style of cooking.", "correct": false }
+        ]
+    },
+    {
+        "question": "Geopolitical Flashpoint: Taiwan's political status is complex because:",
+        "options": [
+            { "text": "It is an uninhabited island.", "correct": false },
+            { "text": "It operates as a self-governing democracy but is claimed by the People's Republic of China.", "correct": true, "feedback": "This dispute is a central tension in East Asian geopolitics." },
+            { "text": "It is a colony of Japan.", "correct": false },
+            { "text": "It has no government.", "correct": false }
+        ]
+    },
+    {
+        "question": "Which philosophy emphasizes social harmony, respect for authority (filial piety), and education, and has deeply influenced East Asian culture?",
+        "options": [
+            { "text": "Daoism", "correct": false },
+            { "text": "Confucianism", "correct": true, "feedback": "Confucian values remain a bedrock of social structure in China, Korea, and Japan." },
+            { "text": "Shintoism", "correct": false },
+            { "text": "Zoroastrianism", "correct": false }
+        ]
+    },
+    {
+        "question": "Physical Geography: The 'Loess Plateau' in China is famous for:",
+        "options": [
+            { "text": "Thick deposits of windblown yellow soil that are highly erodible.", "correct": true, "feedback": "This soil gives the Yellow River (Huang He) its color and name." },
+            { "text": "Dense tropical rainforests.", "correct": false },
+            { "text": "Being the lowest point on Earth.", "correct": false },
+            { "text": "Volcanic black sand beaches.", "correct": false }
+        ]
+    },
+    {
+        "question": "The border between North Korea and South Korea is known as:",
+        "options": [
+            { "text": "The Iron Curtain", "correct": false },
+            { "text": "The Demilitarized Zone (DMZ)", "correct": true, "feedback": "Despite its name, it is one of the most heavily militarized borders in the world." },
+            { "text": "The Great Wall", "correct": false },
+            { "text": "The Maginot Line", "correct": false }
+        ]
+    },
+    {
+        "question": "Economic Geography: Which phrase best describes the 'Asian Tigers' (South Korea, Taiwan, Hong Kong, Singapore)?",
+        "options": [
+            { "text": "Countries that rely solely on agriculture.", "correct": false },
+            { "text": "Economies that experienced rapid industrialization and high growth rates from the 1960s-1990s.", "correct": true, "feedback": "These territories followed an export-oriented model to achieve developed status." },
+            { "text": "Nations with large tiger populations.", "correct": false },
+            { "text": "Countries that closed their borders to all trade.", "correct": false }
+        ]
+    },
+    {
+        "question": "Texas Connection: What is a major economic link between Texas and East Asia?",
+        "options": [
+            { "text": "The export of maple syrup.", "correct": false },
+            { "text": "The export of Liquified Natural Gas (LNG) and agricultural products from Texas ports to Asian markets.", "correct": true, "feedback": "Asian demand drives much of the activity at the Port of Houston and Corpus Christi." },
+            { "text": "A shared high-speed rail network.", "correct": false },
+            { "text": "Texas imports most of its oil from Japan.", "correct": false }
+        ]
+    },
+    {
+        "question": "Urban Geography: What is unique about the 'Pearl River Delta' region in China?",
+        "options": [
+            { "text": "It is entirely rural.", "correct": false },
+            { "text": "It creates a massive urban agglomeration merging cities like Guangzhou, Shenzhen, and Hong Kong.", "correct": true, "feedback": "It is the world's largest urban area in both size and population." },
+            { "text": "It is located in the desert.", "correct": false },
+            { "text": "It is famous for its lack of industry.", "correct": false }
+        ]
+    }
 ]
