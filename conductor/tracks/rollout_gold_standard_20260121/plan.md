@@ -13,10 +13,10 @@
 - [x] Task: Conductor - User Manual Verification 'Batch B Rollout' (Protocol in workflow.md) f0b5a69
 
 ## Phase 3: Batch C - Southern & Eastern Eurasia & Oceania (Ch 08-12)
-- [~] Task: Standardize Chapter 08 (South Asia) - Full refactor, map integration, and 10+ question quiz.
-- [ ] Task: Standardize Chapter 09 (East Asia) - Full refactor, map integration, and 10+ question quiz.
-- [ ] Task: Standardize Chapter 10 (Southeast Asia) - Full refactor, map integration, and 10+ question quiz.
-- [ ] Task: Standardize Chapter 11 (Australia & Oceania) - Full refactor, map integration, and 10+ question quiz.
+- [x] Task: Standardize Chapter 08 (South Asia) - Full refactor, map integration, and 10+ question quiz. b1bbfdf
+- [x] Task: Standardize Chapter 09 (East Asia) - Full refactor, map integration, and 10+ question quiz. b892f5c
+- [x] Task: Standardize Chapter 10 (Southeast Asia) - Full refactor, map integration, and 10+ question quiz. d13bffb
+- [~] Task: Standardize Chapter 11 (Australia & Oceania) - Full refactor, map integration, and 10+ question quiz.
 - [ ] Task: Standardize Chapter 12 (Conclusion) - Full refactor, global synthesis, and final Knowledge Check.
 - [ ] Task: Conductor - User Manual Verification 'Batch C Rollout' (Protocol in workflow.md)
 

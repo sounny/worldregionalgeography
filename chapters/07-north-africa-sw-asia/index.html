@@ -142,6 +142,18 @@
                 </div>
 
                 <p>Key geopolitical issues include the influence of <strong>OPEC</strong> on global energy markets and the persistent territorial conflicts rooted in historical claims and resource competition.</p>
+
+                <!-- Data Visualizations: MENA Oil Reserves -->
+                <div style="margin: var(--space-8) 0; padding: var(--space-6); background: #f5f5f5; border-radius: var(--radius-md);">
+                    <h3>📊 Data Exploration: Oil Reserves in MENA</h3>
+                    <p>The uneven distribution of oil reserves is the defining geographic feature of this region. These seven nations control over 50% of the world's proven oil reserves, creating vast wealth disparities and intense geopolitical competition.</p>
+                    
+                    <div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: var(--space-4) 0;">
+                        <canvas id="mena-oil-reserves-chart" height="70"></canvas>
+                    </div>
+                    
+                    <p style="margin-top: var(--space-4); font-size: var(--text-sm); color: var(--color-text-muted);"><strong>Interpretation:</strong> Notice the stark difference between Saudi Arabia (268B barrels) and countries like Qatar (26B barrels). This creates radically different economic opportunities and foreign policy alignments. Why do you think some oil-rich nations (like UAE, Qatar) have become more globally influential despite having fewer reserves?</p>
+                </div>
             </section>
 
             <!-- 7. Texas Connection Toggle -->
@@ -228,9 +240,11 @@
     <footer class="site-footer"><div class="container"><div class="footer-content"><div class="footer-brand"><span class="logo-icon">🌍</span><span>World Regional Geography</span></div><div class="footer-copyright"><p>© 2026 Dr. Sounny. Open Educational Resource.</p></div></div></div></footer>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <script src="../../js/map-init.js"></script>
     <script src="../../js/regions-data.js"></script>
     <script src="../../js/quiz-engine.js"></script>
+    <script src="../../js/chart-data.js"></script>
     <script src="../../js/main.js"></script>
     <script>
         // Initialize the Chapter 7 Interactive Map
@@ -248,6 +262,12 @@
                         }
                     }, "MENA Region");
                 }
+            }
+
+            // Initialize Chart.js visualizations
+            if (typeof ChartDataManager !== 'undefined' && typeof Chart !== 'undefined') {
+                // MENA Oil Reserves Chart
+                ChartDataManager.createChart('mena-oil-reserves-chart', ChartDataManager.menaOilReservesChart);
             }
 
             // Initialize Quiz
