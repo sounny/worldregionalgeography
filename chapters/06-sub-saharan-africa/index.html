@@ -70,7 +70,7 @@
                 <p class="mt-4">Sub-Saharan Africa is a region of immense potential and complex challenges. It contains some of the world's fastest-growing economies and its most youthful population. Geographically, it is a "continent of plateaus," where elevation and access to water define the limits of human activity.</p>
                 
                 <figure class="figure figure-narrow">
-                    <img src="../../images/africa_physical_map.jpg" alt="Physical map of Sub-Saharan Africa">
+                    <img src="../../images/africa_physical_map.jpg" alt="Physical map of Sub-Saharan Africa" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
                     <figcaption><strong>Figure 6.0:</strong> Physical Landscape. Note the vast plateaus and the distinct lack of massive linear mountain ranges compared to the Andes or Himalayas.</figcaption>
                 </figure>
             </section>
@@ -92,11 +92,11 @@
                 
                 <div class="figure-row">
                     <figure class="figure">
-                        <img src="../../images/africa_kilimanjaro.jpg" alt="Mount Kilimanjaro">
+                        <img src="../../images/africa_kilimanjaro.jpg" alt="Mount Kilimanjaro" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
                         <figcaption><strong>Figure 6.1:</strong> Volcanic Peaks. Kilimanjaro rises above the East African plateau, illustrating the dramatic topography of the Rift region.</figcaption>
                     </figure>
                     <figure class="figure">
-                        <img src="../../images/africa_transition_zone.jpg" alt="African Transition Zone map">
+                        <img src="../../images/africa_transition_zone.jpg" alt="African Transition Zone map" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
                         <figcaption><strong>Figure 6.2:</strong> The Sahel. This semi-arid belt serves as a critical transition zone between the Sahara and the tropical south.</figcaption>
                     </figure>
                 </div>
@@ -113,7 +113,7 @@
             <section class="important-person-sidebar">
                 <div class="sidebar-content">
                     <div class="person-image">
-                        <img src="../../images/africa_maasai.jpg" alt="Environmental and cultural heritage">
+                        <img src="../../images/africa_maasai.jpg" alt="Environmental and cultural heritage" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
                     </div>
                     <div class="person-header">
                         <h3>👤 Important Person</h3>
@@ -134,11 +134,11 @@
                 
                 <div class="figure-row">
                     <figure class="figure">
-                        <img src="../../images/africa_nairobi.jpg" alt="Nairobi urban landscape">
+                        <img src="../../images/africa_nairobi.jpg" alt="Nairobi urban landscape" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
                         <figcaption><strong>Figure 6.3:</strong> Rapid Urbanization. Cities like Nairobi are growing at exponential rates, creating a vibrant but strained urban geography.</figcaption>
                     </figure>
                     <figure class="figure">
-                        <img src="../../images/colonialism.jpg" alt="Colonial legacy illustration">
+                        <img src="../../images/colonialism.jpg" alt="Colonial legacy illustration" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
                         <figcaption><strong>Figure 6.4:</strong> Historical Imprint. The Scramble for Africa fundamentally reoriented the region's trade toward Europe.</figcaption>
                     </figure>
                 </div>
@@ -228,6 +228,12 @@
     </main>
 
     <footer class="site-footer"><div class="container"><div class="footer-content"><div class="footer-brand"><span class="logo-icon">🌍</span><span>World Regional Geography</span></div><div class="footer-copyright"><p>© 2026 Dr. Sounny. Open Educational Resource.</p></div></div></div></footer>
+    
+    <!-- Image Lightbox Overlay -->
+    <div id="image-lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+        <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
+        <img class="lightbox-image" src="" alt="">
+    </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="../../js/map-init.js"></script>
@@ -258,6 +264,45 @@
                 .then(data => QuizEngine.init('quiz-container', data))
                 .catch(err => console.error('Error loading quiz data:', err));
         });
+
+        // Lightbox functionality for zoomable images
+        (function() {
+            const lightbox = document.getElementById('image-lightbox');
+            const lightboxImg = lightbox.querySelector('.lightbox-image');
+            const closeBtn = lightbox.querySelector('.lightbox-close');
+            
+            // Open lightbox when clicking zoomable images
+            document.querySelectorAll('.zoomable-image').forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                    lightbox.hidden = false;
+                    document.body.style.overflow = 'hidden';
+                    closeBtn.focus();
+                });
+                // Also support keyboard activation
+                img.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        img.click();
+                    }
+                });
+            });
+            
+            // Close lightbox
+            function closeLightbox() {
+                lightbox.hidden = true;
+                document.body.style.overflow = '';
+            }
+            
+            closeBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+            });
+        })();
     </script>
 </body>
 </html>

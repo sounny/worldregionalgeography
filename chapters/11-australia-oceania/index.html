@@ -85,25 +85,25 @@
 
                 <div class="figure-row">
                     <figure class="figure figure-center">
-                        <img src="../../images/pacific_regions_map.jpg" alt="Map of Pacific Regions: Melanesia, Micronesia, Polynesia">
+                        <img src="../../images/pacific_regions_map.jpg" alt="Map of Pacific Regions: Melanesia, Micronesia, Polynesia" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
                         <figcaption>
                             <strong>Figure 11.1:</strong> The Pacific Islands. The region is traditionally divided into Melanesia, Micronesia, and Polynesia.
                         </figcaption>
                     </figure>
                     <figure class="figure figure-center">
-                        <img src="../../images/wallaces_line.jpg" alt="Map of Wallace's Line">
+                        <img src="../../images/wallaces_line.jpg" alt="Map of Wallace's Line" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
                         <figcaption>
                             <strong>Figure 11.2:</strong> Biogeographical Lines. Wallace's Line separates the ecozones of Asia and Australia.
                         </figcaption>
                     </figure>
                     <figure class="figure figure-center">
-                        <img src="../../images/uluru.jpg" alt="Uluru in the Outback">
+                        <img src="../../images/uluru.jpg" alt="Uluru in the Outback" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
                         <figcaption>
                             <strong>Figure 11.3:</strong> Uluru (Ayers Rock). A sacred site for the Anangu people and an icon of the Australian Outback.
                         </figcaption>
                     </figure>
                     <figure class="figure figure-center">
-                        <img src="../../images/nz_alps.jpg" alt="Southern Alps of New Zealand">
+                        <img src="../../images/nz_alps.jpg" alt="Southern Alps of New Zealand" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
                         <figcaption>
                             <strong>Figure 11.4:</strong> The Southern Alps, New Zealand. Dramatic mountain landscapes formed by the collision of tectonic plates.
                         </figcaption>
@@ -116,9 +116,9 @@
                 <p>From the ancient traditions of Aboriginal Australians to the diverse cultures of the Pacific, the region is defined by its people's connection to the land and sea.</p>
                 
                 <figure class="figure figure-center figure-spaced">
-                    <img src="../../images/alice_springs.jpg" alt="The Ghan train in Alice Springs">
+                    <img src="../../images/alice_springs.jpg" alt="The Ghan train in Alice Springs" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
                     <figcaption>
-                        <strong>Figure 11.4:</strong> Alice Springs. A vital hub in the Red Centre, connected by the historic Ghan railway.
+                        <strong>Figure 11.5:</strong> Alice Springs. A vital hub in the Red Centre, connected by the historic Ghan railway.
                     </figcaption>
                 </figure>
             </section>
@@ -130,9 +130,9 @@
 
                 <div class="figure-row">
                     <figure class="figure figure-center">
-                        <img src="../../images/australia_vineyard.jpg" alt="Australian Vineyard">
+                        <img src="../../images/australia_vineyard.jpg" alt="Australian Vineyard" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
                         <figcaption>
-                            <strong>Figure 11.5:</strong> Agriculture and Climate. Vineyards in Australia face challenges from changing rainfall patterns and temperatures.
+                            <strong>Figure 11.6:</strong> Agriculture and Climate. Vineyards in Australia face challenges from changing rainfall patterns and temperatures.
                         </figcaption>
                     </figure>
                 </div>
@@ -216,6 +216,12 @@
     </main>
 
     <footer class="site-footer"><div class="container"><div class="footer-content"><div class="footer-brand"><span class="logo-icon">🌍</span><span>World Regional Geography</span></div><div class="footer-copyright"><p>© 2026 Dr. Sounny. Open Educational Resource.</p></div></div></div></footer>
+    
+    <!-- Image Lightbox Overlay -->
+    <div id="image-lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+        <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
+        <img class="lightbox-image" src="" alt="">
+    </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="../../js/main.js"></script>
@@ -248,6 +254,45 @@
                     });
             }
         });
+
+        // Lightbox functionality for zoomable images
+        (function() {
+            const lightbox = document.getElementById('image-lightbox');
+            const lightboxImg = lightbox.querySelector('.lightbox-image');
+            const closeBtn = lightbox.querySelector('.lightbox-close');
+            
+            // Open lightbox when clicking zoomable images
+            document.querySelectorAll('.zoomable-image').forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                    lightbox.hidden = false;
+                    document.body.style.overflow = 'hidden';
+                    closeBtn.focus();
+                });
+                // Also support keyboard activation
+                img.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        img.click();
+                    }
+                });
+            });
+            
+            // Close lightbox
+            function closeLightbox() {
+                lightbox.hidden = true;
+                document.body.style.overflow = '';
+            }
+            
+            closeBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+            });
+        })();
     </script>
 </body>
 </html>

@@ -61,32 +61,61 @@ const MapManager = {
         if (!map || !data) return null;
 
         const defaultStyle = {
-            color: 'var(--color-primary-dark)',
+            color: '#2c3e50',
             weight: 2,
-            opacity: 1,
-            fillColor: 'var(--color-primary)',
-            fillOpacity: 0.2
+            opacity: 0.8,
+            fillColor: '#4A90A4',
+            fillOpacity: 0.25
         };
 
         const layer = L.geoJSON(data, {
-            style: options.style || defaultStyle,
+            style: (feature) => {
+                // Use region-specific color if defined in properties
+                const regionColor = feature.properties?.color || defaultStyle.fillColor;
+                return {
+                    color: options.style?.color || '#2c3e50',
+                    weight: options.style?.weight || 2,
+                    opacity: options.style?.opacity || 0.8,
+                    fillColor: regionColor,
+                    fillOpacity: options.style?.fillOpacity || 0.25
+                };
+            },
             onEachFeature: (feature, layer) => {
                 if (feature.properties && feature.properties.name) {
-                    layer.bindPopup(`<strong>${feature.properties.name}</strong>`);
+                    // Enhanced popup with link to chapter
+                    const chapterLink = feature.properties.chapter 
+                        ? `<br><a href="${feature.properties.chapter}" class="popup-link">Go to chapter →</a>` 
+                        : '';
+                    layer.bindPopup(`<strong>${feature.properties.name}</strong>${chapterLink}`);
                 }
                 
                 if (options.onEachFeature) {
                     options.onEachFeature(feature, layer);
                 }
 
+                // Store original style for mouseout
+                const originalFillOpacity = options.style?.fillOpacity || 0.25;
+                const regionColor = feature.properties?.color || defaultStyle.fillColor;
+
                 layer.on({
                     mouseover: (e) => {
                         const l = e.target;
-                        l.setStyle({ fillOpacity: 0.5 });
+                        l.setStyle({ 
+                            fillOpacity: 0.5,
+                            weight: 3
+                        });
+                        l.bringToFront();
                     },
                     mouseout: (e) => {
                         const l = e.target;
-                        l.setStyle({ fillOpacity: options.style?.fillOpacity || 0.2 });
+                        l.setStyle({ 
+                            fillOpacity: originalFillOpacity,
+                            weight: 2
+                        });
+                    },
+                    click: (e) => {
+                        // Zoom to region on click
+                        map.fitBounds(e.target.getBounds(), { padding: [20, 20] });
                     }
                 });
             }
