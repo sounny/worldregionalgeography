@@ -12,10 +12,13 @@ const RegionalData = {
         {
             type: "Feature",
             id: "europe",
-            properties: { 
-                name: "Europe", 
-                chapter: "../02-europe/index.html",
-                color: "#4A90A4"
+            properties: {
+                name: "Europe",
+                theme: "Migration & Identity",
+                desc: "Exploring European integration, the legacy of industrialization, and the contemporary challenges of migration and cultural identity.",
+                link: "chapters/02-europe/index.html",
+                center: [50, 10],
+                color: "#2d8fa8"
             },
             geometry: {
                 type: "Polygon",
@@ -61,10 +64,13 @@ const RegionalData = {
         {
             type: "Feature",
             id: "russia",
-            properties: { 
-                name: "Russia & Central Asia", 
-                chapter: "../03-russia/index.html",
-                color: "#7B68EE"
+            properties: {
+                name: "Russia and Central Asia",
+                theme: "Geopolitics & Energy",
+                desc: "Understanding the geopolitical transitions after the Soviet Union and the critical role of resource geography in global affairs.",
+                link: "chapters/03-russia/index.html",
+                center: [60, 100],
+                color: "#1e5f74"
             },
             geometry: {
                 type: "Polygon",
@@ -101,10 +107,13 @@ const RegionalData = {
         {
             type: "Feature",
             id: "north-america",
-            properties: { 
-                name: "North America", 
-                chapter: "../04-north-america/index.html",
-                color: "#2E8B57"
+            properties: {
+                name: "North America",
+                theme: "Urbanization & Diversity",
+                desc: "Analyzing urban expansion, economic integration under USMCA, and the environmental challenges facing the US and Canada.",
+                link: "chapters/04-north-america/index.html",
+                center: [45, -100],
+                color: "#f4a261"
             },
             geometry: {
                 type: "Polygon",
@@ -138,10 +147,13 @@ const RegionalData = {
         {
             type: "Feature",
             id: "latin-america",
-            properties: { 
-                name: "Latin America & Caribbean", 
-                chapter: "../05-latin-america/index.html",
-                color: "#DAA520"
+            properties: {
+                name: "Latin America",
+                theme: "Biodiversity & Inequality",
+                desc: "Studying the Amazonian ecosystems, the impact of colonialism on development, and the dynamics of urbanization in mega-cities.",
+                link: "chapters/05-latin-america/index.html",
+                center: [-15, -60],
+                color: "#e07b3c"
             },
             geometry: {
                 type: "Polygon",
@@ -187,11 +199,14 @@ const RegionalData = {
         },
         {
             type: "Feature",
-            id: "africa-sub",
-            properties: { 
-                name: "Sub-Saharan Africa", 
-                chapter: "../06-sub-saharan-africa/index.html",
-                color: "#CD853F"
+            id: "sub-saharan-africa",
+            properties: {
+                name: "Sub-Saharan Africa",
+                theme: "Development & Global Health",
+                desc: "Examining rapid demographic shifts, resource management, and the cultural diversity that defines the African continent.",
+                link: "chapters/06-sub-saharan-africa/index.html",
+                center: [0, 20],
+                color: "#2a9d8f"
             },
             geometry: {
                 type: "Polygon",
@@ -228,10 +243,13 @@ const RegionalData = {
         {
             type: "Feature",
             id: "mena",
-            properties: { 
-                name: "North Africa & SW Asia", 
-                chapter: "../07-north-africa-sw-asia/index.html",
-                color: "#DC143C"
+            properties: {
+                name: "N. Africa & SW Asia",
+                theme: "Water & Conflict",
+                desc: "The geography of arid landscapes, the geopolitics of petroleum, and the cultural significance of the region as a hearth of civilization.",
+                link: "chapters/07-north-africa-sw-asia/index.html",
+                center: [28, 30],
+                color: "#40c9b8"
             },
             geometry: {
                 type: "Polygon",
@@ -265,10 +283,13 @@ const RegionalData = {
         {
             type: "Feature",
             id: "south-asia",
-            properties: { 
-                name: "South Asia", 
-                chapter: "../08-south-asia/index.html",
-                color: "#FF8C00"
+            properties: {
+                name: "South Asia",
+                theme: "Population & Monsoons",
+                desc: "Analyzing the challenges of high population density, climate vulnerability in low-lying regions, and India's economic rise.",
+                link: "chapters/08-south-asia/index.html",
+                center: [22, 78],
+                color: "#e76f51"
             },
             geometry: {
                 type: "Polygon",
@@ -299,10 +320,13 @@ const RegionalData = {
         {
             type: "Feature",
             id: "east-asia",
-            properties: { 
-                name: "East Asia", 
-                chapter: "../09-east-asia/index.html",
-                color: "#FF4500"
+            properties: {
+                name: "East Asia",
+                theme: "Industrialization & Growth",
+                desc: "Tracking the dramatic economic shift of China, the technologic power of Japan, and the environmental costs of rapid growth.",
+                link: "chapters/09-east-asia/index.html",
+                center: [35, 115],
+                color: "#264653"
             },
             geometry: {
                 type: "Polygon",
@@ -334,10 +358,13 @@ const RegionalData = {
         {
             type: "Feature",
             id: "southeast-asia",
-            properties: { 
-                name: "Southeast Asia", 
-                chapter: "../10-southeast-asia/index.html",
-                color: "#32CD32"
+            properties: {
+                name: "Southeast Asia",
+                theme: "Globalization & Maritime Trade",
+                desc: "The strategic importance of the Malacca Strait, biodiversity in tropical rainforests, and the economic integration of ASEAN.",
+                link: "chapters/10-southeast-asia/index.html",
+                center: [5, 115],
+                color: "#287271"
             },
             geometry: {
                 type: "MultiPolygon",
@@ -387,10 +414,13 @@ const RegionalData = {
         {
             type: "Feature",
             id: "oceania",
-            properties: { 
-                name: "Australia & Oceania", 
-                chapter: "../11-australia-oceania/index.html",
-                color: "#9370DB"
+            properties: {
+                name: "Australia & Oceania",
+                theme: "Island Risk & Resilience",
+                desc: "Studying sea-level rise in the Pacific, the unique physical geography of the Outback, and indigenous land rights.",
+                link: "chapters/11-australia-oceania/index.html",
+                center: [-25, 140],
+                color: "#8ab17d"
             },
             geometry: {
                 type: "MultiPolygon",

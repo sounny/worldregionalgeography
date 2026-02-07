@@ -83,8 +83,17 @@ const MapManager = {
             onEachFeature: (feature, layer) => {
                 if (feature.properties && feature.properties.name) {
                     // Enhanced popup with link to chapter
-                    const chapterLink = feature.properties.chapter 
-                        ? `<br><a href="${feature.properties.chapter}" class="popup-link">Go to chapter →</a>` 
+                    let linkUrl = feature.properties.link || feature.properties.chapter;
+
+                    // Adjust path for chapter pages (which are two levels deep)
+                    if (linkUrl && !linkUrl.startsWith('http') && !linkUrl.startsWith('../')) {
+                        if (window.location.pathname.includes('/chapters/')) {
+                            linkUrl = '../../' + linkUrl;
+                        }
+                    }
+
+                    const chapterLink = linkUrl
+                        ? `<br><a href="${linkUrl}" class="popup-link">Go to chapter →</a>`
                         : '';
                     layer.bindPopup(`<strong>${feature.properties.name}</strong>${chapterLink}`);
                 }
