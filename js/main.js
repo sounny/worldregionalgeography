@@ -543,24 +543,26 @@ function initSmoothScroll() {
  * @param {object} config - Configuration object with center, zoom, and optional GeoJSON
  */
 function createRegionMap(containerId, config) {
+    // Check dependencies
+    if (typeof MapManager === 'undefined') {
+        console.warn('MapManager not found. Ensure js/map-init.js is loaded.');
+        return null;
+    }
+
     const container = document.getElementById(containerId);
-    if (!container || typeof L === 'undefined') return null;
+    if (!container) return null;
 
-    const map = L.map(containerId, {
-        zoomControl: true,
-        scrollWheelZoom: true
-    }).setView(config.center, config.zoom || 4);
+    // Initialize using MapManager
+    const map = MapManager.initMap(containerId, config.center, config.zoom || 4);
+    if (!map) return null;
 
-    // Base layer
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
-        subdomains: 'abcd',
-        maxZoom: 19
-    }).addTo(map);
+    // Restore scrollWheelZoom if it was originally desired
+    // (MapManager defaults to false, old createRegionMap defaulted to true)
+    map.scrollWheelZoom.enable();
 
     // Add GeoJSON if provided
     if (config.geojson) {
-        L.geoJSON(config.geojson, {
+        MapManager.addGeoJson(map, config.geojson, {
             style: config.style || {
                 fillColor: '#2d8fa8',
                 weight: 2,
@@ -569,7 +571,7 @@ function createRegionMap(containerId, config) {
                 fillOpacity: 0.3
             },
             onEachFeature: config.onEachFeature || null
-        }).addTo(map);
+        });
     }
 
     // Add markers if provided
