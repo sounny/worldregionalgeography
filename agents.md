@@ -690,3 +690,17 @@ The textbook is now **100% P1 complete** with all chapters having consistent ped
 **Testing Note**: Before releasing any changes to production, recommend running through quiz flow on each chapter to verify quiz-data.json loads correctly with the fixed main.js.
 
 ---
+### 2026-01-22: CSS Duplicate Rule Fix
+
+**Agent**: Jules (Code Health Agent)
+
+**Status Report**:
+I have resolved the duplicate CSS rule issue for `.case-study-gold` in `css/style.css`.
+
+**Completed Actions**:
+1.  **Analyzed the Issue**: Identified two blocks of CSS rules for `.case-study-gold` and related components. The second block contained unique rules (`.case-study-questions ul/li`) that were missing from the first.
+2.  **Reproduction & Verification**: Created a reproduction HTML and a Python Playwright script (`verify_css.py`) to verify the CSS behavior and ensure no regressions.
+3.  **Refactoring**: Consolidated the unique rules into the primary block and removed the duplicate block.
+4.  **Verification**: Verified the fix using the Playwright script and by running the project's test suite (`node --test tests/test-quiz-engine.js`).
+
+**Result**: The code health issue is resolved, code duplication is reduced, and maintainability is improved without changing functionality.
