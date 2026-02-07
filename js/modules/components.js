@@ -11,6 +11,27 @@ const Components = {
         this.initTexasToggle();
         this.initAccordions();
         this.initKeyTerms();
+        this.initFlipCards();
+    },
+
+    /**
+     * Initialize Flip Cards
+     */
+    initFlipCards() {
+        const cards = document.querySelectorAll('.flip-card');
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('flipped');
+            });
+
+            // Keyboard accessibility
+            card.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    card.classList.toggle('flipped');
+                }
+            });
+        });
     },
 
     /**

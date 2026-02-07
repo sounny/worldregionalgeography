@@ -188,7 +188,7 @@ const MapManager = {
             // Hover events
             marker.on('mouseover', function() {
                 this.setStyle({ radius: 20, fillOpacity: 1 });
-                this.updateInfoPanel(id);
+                updateInfoPanel(id);
             });
 
             marker.on('mouseout', function() {
