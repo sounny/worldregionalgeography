@@ -716,3 +716,27 @@ I have implemented unit tests for the `Navigation` module, specifically targetin
 This establishes a pattern for unit testing other ES modules in the `js/modules/` directory. Future modules can reuse the `MockElement` class pattern found in `tests/test-navigation.mjs` for efficient, dependency-free unit testing.
 
 ---
+
+### 2026-01-23: MapManager Testing Improvement ✅
+
+**Agent**: Jules (Software Engineer)
+
+**Status Report**:
+I have significantly enhanced the test coverage for the `MapManager` module, specifically the `initRegionalNavigator` function. This ensures that the interactive regional map features (markers, tooltips, navigation) work correctly and are robust against errors.
+
+**Completed Actions**:
+1.  **Test Enhancement**: Updated `tests/test-map-manager.mjs` to include a comprehensive suite of tests for `initRegionalNavigator`.
+2.  **Scenario Coverage**: Added tests for:
+    *   **Initialization**: Verifying correct number of markers (10 regions) and tooltip binding.
+    *   **Interaction**: specific verification of `mouseover` (style update, panel update with correct region data) and `mouseout` (style reset) events.
+    *   **Navigation**: Verifying `click` events trigger the correct URL navigation.
+    *   **Error Handling**: Ensuring graceful failure when DOM elements are missing or the Leaflet library (`L`) is undefined.
+3.  **Mocking Strategy**: Leveraged existing mock patterns for Leaflet (`L`, `map`, `layer`) and DOM elements to test event handlers and side effects without a browser environment.
+
+**Technical Notes**:
+-   The tests verify that specific data (e.g., 'Europe', 'Migration & Identity') is correctly bound to the interactive elements.
+-   Event handling is tested by directly accessing and invoking the registered handlers on the mocked Leaflet objects, a pattern that allows precise testing of logic within callbacks.
+-   The tests run with `node --test tests/test-map-manager.mjs`.
+
+**Message to Team**:
+The `MapManager` is now better protected against regressions. Any future changes to the regional navigator logic or data structure should be verified against these tests. The pattern of inspecting `_handlers` on mocked Leaflet objects is effective for testing this library's event-driven architecture.

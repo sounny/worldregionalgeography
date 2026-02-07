@@ -125,27 +125,60 @@ describe('MapManager', () => {
     });
 
     describe('initRegionalNavigator', () => {
-        test('should initialize navigator map and handle interaction', () => {
+        test('should initialize navigator map with correct markers', () => {
             MapManager.initRegionalNavigator();
 
             assert.strictEqual(mockL.map.mock.calls.length, 1);
             assert.strictEqual(mockL.map.mock.calls[0].arguments[0], 'regions-map');
 
-            // Check markers
+            // Check markers (10 regions)
             assert.strictEqual(mockL.circleMarker.mock.calls.length, 10);
 
-            // Test interaction on the last created marker
-            const marker = createdLayers[createdLayers.length - 1];
+            // Verify tooltips are bound
+            const marker = createdLayers[0];
+            assert.strictEqual(marker.bindTooltip.mock.calls.length, 1);
+        });
+
+        test('should handle mouseover interaction correctly', () => {
+            MapManager.initRegionalNavigator();
+
+            // Test interaction on the first created marker (Europe)
+            const marker = createdLayers[0];
             assert.ok(marker._handlers['mouseover'], 'mouseover handler should be attached');
 
             // Trigger mouseover
-            // This should trigger updateInfoPanel logic
             marker._handlers['mouseover'].call(marker);
 
-            // Check if panel was updated
+            // Check if style was updated
+            assert.strictEqual(marker.setStyle.mock.calls.length, 1);
+            assert.deepStrictEqual(marker.setStyle.mock.calls[0].arguments[0], { radius: 20, fillOpacity: 1 });
+
+            // Check if panel was updated with Europe data
             const panel = elementCache['region-info-panel'];
-            assert.ok(panel.innerHTML.length > 0, 'Info panel should have content');
-            assert.ok(panel.innerHTML.includes('Oceania'), 'Info panel should contain region name (last one is Oceania)');
+            assert.ok(panel.innerHTML.includes('Europe'), 'Info panel should contain region name Europe');
+            assert.ok(panel.innerHTML.includes('Migration & Identity'), 'Info panel should contain Europe theme');
+        });
+
+        test('should handle mouseout interaction correctly', () => {
+             MapManager.initRegionalNavigator();
+             const marker = createdLayers[0];
+
+             // Trigger mouseout
+             marker._handlers['mouseout'].call(marker);
+
+             // Check if style was reset
+             assert.strictEqual(marker.setStyle.mock.calls.length, 1);
+             assert.deepStrictEqual(marker.setStyle.mock.calls[0].arguments[0], { radius: 15, fillOpacity: 0.8 });
+        });
+
+        test('should handle click navigation', () => {
+            MapManager.initRegionalNavigator();
+            const marker = createdLayers[0]; // Europe
+
+            // Trigger click
+            marker._handlers['click'].call(marker);
+
+            assert.ok(mockWindow.location.href.includes('chapters/02-europe/index.html'), 'Should navigate to Europe chapter');
         });
 
         test('should fail gracefully if elements missing', () => {
@@ -156,6 +189,16 @@ describe('MapManager', () => {
              assert.strictEqual(mockL.map.mock.calls.length, 0);
 
              mockDocument.getElementById = originalGet;
+        });
+
+        test('should fail gracefully if L is undefined', () => {
+             const originalL = global.L;
+             global.L = undefined;
+
+             MapManager.initRegionalNavigator();
+             assert.strictEqual(mockL.map.mock.calls.length, 0);
+
+             global.L = originalL;
         });
     });
 
