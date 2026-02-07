@@ -497,6 +497,7 @@ The "Summary" and "Important Person" sections are still inconsistent (present in
 #### **Completed Actions This Session**
 
 **1. Created Centralized Chart Data Module** ✅
+
 - **File**: `js/chart-data.js` (new module)
 - **Scope**: 5 pre-designed, region-specific visualizations ready for deployment
 - **Features**:
@@ -508,6 +509,7 @@ The "Summary" and "Important Person" sections are still inconsistent (present in
 **2. Deployed Charts to Chapters 3 & 5** ✅
 
 **Chapter 3 (Russia & Central Asia)**
+
 - **Chart 1**: Russia's Natural Resource Distribution (Doughnut chart)
   - Oil & Gas: 35%, Minerals: 28%, Timber: 18%, Agriculture: 12%, Other: 7%
   - Context: Shows resource concentration in energy sector
@@ -516,12 +518,14 @@ The "Summary" and "Important Person" sections are still inconsistent (present in
   - Context: Illustrates economic dependency on resource extraction
 
 **Chapter 5 (Latin America & Caribbean)**
+
 - **Chart 1**: Population Growth Trend Line (1980-2030 projection)
   - Data: 242M (1980) → 430M (2020) → 465M (projected 2030)
   - Context: Shows explosive growth and slowing fertility rates
   - Includes interpretive question: "What geographic challenges arise from +35M people?"
 
 **3. Technical Integration**
+
 - Added Chart.js 3.9.1 CDN link to Ch3 and Ch5
 - Added `chart-data.js` module import to both chapters
 - Created initialization code that safely loads charts (error handling for missing libraries)
@@ -529,20 +533,20 @@ The "Summary" and "Important Person" sections are still inconsistent (present in
 
 #### **Chart Data Module Inventory**
 
-| Chart | Chapter | Type | Data Points | Status |
-|-------|---------|------|------------|--------|
-| Russia Resources | 3 | Doughnut | 5 sectors | ✅ Deployed |
-| Russia Economy | 3 | Horizontal Bar | 5 sectors | ✅ Deployed |
-| Latin America Population | 5 | Line (Trend) | 6 years | ✅ Deployed |
-| MENA Oil Reserves | 7 | Bar | 7 countries | 📅 Ready |
-| South Asia Density | 8 | Bar | 7 nations | 📅 Ready |
-| ASEAN Growth | 10 | Line (Trend) | 8 years | 📅 Ready |
+| Chart                    | Chapter | Type           | Data Points | Status      |
+| ------------------------ | ------- | -------------- | ----------- | ----------- |
+| Russia Resources         | 3       | Doughnut       | 5 sectors   | ✅ Deployed |
+| Russia Economy           | 3       | Horizontal Bar | 5 sectors   | ✅ Deployed |
+| Latin America Population | 5       | Line (Trend)   | 6 years     | ✅ Deployed |
+| MENA Oil Reserves        | 7       | Bar            | 7 countries | 📅 Ready    |
+| South Asia Density       | 8       | Bar            | 7 nations   | 📅 Ready    |
+| ASEAN Growth             | 10      | Line (Trend)   | 8 years     | 📅 Ready    |
 
 #### **Design Principles Applied**
 
 - **Pedagogical Integration**: Each chart is placed immediately after the relevant section with context and interpretation guidance
 - **Visual Hierarchy**: Charts wrapped in styled containers with descriptive headers and interpretive questions
-- **Accessibility**: 
+- **Accessibility**:
   - Color-blind friendly palette
   - Labels include both visual + text information
   - Canvas elements have appropriate context
@@ -552,6 +556,7 @@ The "Summary" and "Important Person" sections are still inconsistent (present in
 #### **Next Chart Deployments (Ready to Go)**
 
 Chapters 7, 8, 10 have pre-designed chart data waiting for integration:
+
 - **Ch7 (MENA)**: Oil reserves comparison (competitive, highlights geopolitics)
 - **Ch8 (South Asia)**: Population density comparison (contextualizes demographic pressure)
 - **Ch10 (Southeast Asia)**: ASEAN economic growth trajectory (shows regional momentum)
@@ -562,14 +567,14 @@ Estimated time to deploy all 3 chapters: **30-45 minutes** (same pattern as Ch3/
 
 **Key Achievements Summary (P2 Phase)**
 
-| Dimension | Progress | Notes |
-|-----------|----------|-------|
-| **Architecture** | ✅ Complete | Modular chart-data.js system ready for all chapters |
-| **Visualizations Deployed** | ✅ 3 charts (2 chapters) | Ch3 & Ch5 fully integrated |
-| **Pre-Designed Charts** | ✅ 6 charts ready | Ch7, Ch8, Ch10 awaiting integration |
-| **Code Quality** | ✅ High | Error handling, responsive design, accessibility built-in |
-| **User Engagement** | 📈 Improved | Interactive elements + data literacy + regional comparisons |
-| **Estimated Coverage** | 🎯 5+ chapters | 7+ charts across 5-6 chapters after completion |
+| Dimension                   | Progress                 | Notes                                                       |
+| --------------------------- | ------------------------ | ----------------------------------------------------------- |
+| **Architecture**            | ✅ Complete              | Modular chart-data.js system ready for all chapters         |
+| **Visualizations Deployed** | ✅ 3 charts (2 chapters) | Ch3 & Ch5 fully integrated                                  |
+| **Pre-Designed Charts**     | ✅ 6 charts ready        | Ch7, Ch8, Ch10 awaiting integration                         |
+| **Code Quality**            | ✅ High                  | Error handling, responsive design, accessibility built-in   |
+| **User Engagement**         | 📈 Improved              | Interactive elements + data literacy + regional comparisons |
+| **Estimated Coverage**      | 🎯 5+ chapters           | 7+ charts across 5-6 chapters after completion              |
 
 ---
 
@@ -603,21 +608,22 @@ This approach allows for rapid iteration without touching core JavaScript logic.
 
 #### **Audit Results Summary**
 
-| Component | Status | Coverage | Notes |
-|-----------|--------|----------|-------|
-| Learning Objectives (Bloom's L1-L6) | ✅ | 12/12 | All chapters have 7-8 objectives with cognitive level labels |
-| Regional Profile/Snapshot | ✅ | 12/12 | Demographic stats present in all chapters |
-| Physical Geography Section | ✅ | 12/12 | Maps, climate, landforms covered consistently |
-| Global Themes Section | ✅ | 12/12 | Globalization, development, conflict connections |
-| Texas Connection Toggle | ✅ | 12/12 | All chapters have localized relevance section |
-| Geographic Inquiry Boxes | ✅ | 12/12 | Critical thinking prompts in all chapters |
-| **Discussion & Reflection Prompts** | ✅ | **12/12** | **COMPLETED THIS SESSION** - Ch2 was missing, now added |
-| Knowledge Check (Quiz Data) | ✅ | 12/12 | 107+ questions across all chapters (quiz-data.json) |
-| Interactive Leaflet Maps | ✅ | 12/12 | All chapters have map containers |
+| Component                           | Status | Coverage  | Notes                                                        |
+| ----------------------------------- | ------ | --------- | ------------------------------------------------------------ |
+| Learning Objectives (Bloom's L1-L6) | ✅     | 12/12     | All chapters have 7-8 objectives with cognitive level labels |
+| Regional Profile/Snapshot           | ✅     | 12/12     | Demographic stats present in all chapters                    |
+| Physical Geography Section          | ✅     | 12/12     | Maps, climate, landforms covered consistently                |
+| Global Themes Section               | ✅     | 12/12     | Globalization, development, conflict connections             |
+| Texas Connection Toggle             | ✅     | 12/12     | All chapters have localized relevance section                |
+| Geographic Inquiry Boxes            | ✅     | 12/12     | Critical thinking prompts in all chapters                    |
+| **Discussion & Reflection Prompts** | ✅     | **12/12** | **COMPLETED THIS SESSION** - Ch2 was missing, now added      |
+| Knowledge Check (Quiz Data)         | ✅     | 12/12     | 107+ questions across all chapters (quiz-data.json)          |
+| Interactive Leaflet Maps            | ✅     | 12/12     | All chapters have map containers                             |
 
 #### **Critical Fixes Applied This Session**
 
 **Fix #1: Chapter 2 Discussion Section** ✅
+
 - **Issue**: Ch2 was missing discussion & reflection prompts section (only chapter without it)
 - **Solution**: Added standardized discussion section to Ch2 with 3 reflection + 3 peer discussion questions
 - **Impact**: 12/12 chapters now 100% complete with discussion scaffolds
@@ -626,33 +632,36 @@ This approach allows for rapid iteration without touching core JavaScript logic.
   - Peer discussion: EU model applicability, climate impacts, Brexit geographic factors
 
 **Fix #2: JavaScript Merge Conflict in main.js** ✅
+
 - **Issue**: 3x DOMContentLoaded event listeners in main.js (lines 1-50) causing duplicate initialization
 - **Solution**: Consolidated all listeners into single clean entry point with ordered function calls
 - **Impact**: Prevents multiple initializations of nav, toggles, quizzes, maps - improves performance
 - **Structure**:
   ```javascript
-  document.addEventListener('DOMContentLoaded', () => {
-      initAccessibilityEnhancements();   // First: Core accessibility
-      initNavigation();                   // Second: Nav system
-      initSmoothScroll();                 // Third: Navigation UX
-      initPreviewMap();                   // Fourth: Map systems
-      initRegionalNavigator();
-      initQuizzes();                      // Fifth: Interactive components
-      initTexasToggle();
-      initAccordions();
-      initKeyTerms();
+  document.addEventListener("DOMContentLoaded", () => {
+    initAccessibilityEnhancements(); // First: Core accessibility
+    initNavigation(); // Second: Nav system
+    initSmoothScroll(); // Third: Navigation UX
+    initPreviewMap(); // Fourth: Map systems
+    initRegionalNavigator();
+    initQuizzes(); // Fifth: Interactive components
+    initTexasToggle();
+    initAccordions();
+    initKeyTerms();
   });
   ```
 
 #### **P2 Work Initiated**
 
 **Task 10 Status**: Refactor JavaScript for Modularity (IN PROGRESS)
+
 - ✅ Fixed main.js merge conflict (consolidated DOMContentLoaded handlers)
 - ⏳ Next: Modularize quiz-engine.js, map-init.js, create regions-data.js wrapper
 - ⏳ Next: Remove inline event listeners from HTML, use data attributes
 - ⏳ Next: Add error handling and logging to critical functions
 
 **Task 15 Completed**: Audit All Chapters for Template Compliance
+
 - ✅ Verified all 12 chapters have complete structure
 - ✅ Identified and fixed Ch2 discussion gap
 - ✅ No other structural gaps found
@@ -660,29 +669,32 @@ This approach allows for rapid iteration without touching core JavaScript logic.
 
 **Upcoming P2 Tasks** (In Priority Order):
 
-| Task | Scope | Benefit | Est. Complexity |
-|------|-------|---------|-----------------|
-| **Task 13** | Add Chart.js visualizations (5-7 regional data charts) | Interactive engagement, data literacy | Medium |
-| **Task 16** | Progress tracking widget (localStorage-based) | Student motivation, completion tracking | Medium |
-| **Task 17** | Responsive image strategy + media folder org | Better performance, maintainability | Low |
-| **Task 14** | Jest/Cypress testing + GitHub Actions CI/CD | Code quality, deployment confidence | High |
+| Task        | Scope                                                  | Benefit                                 | Est. Complexity |
+| ----------- | ------------------------------------------------------ | --------------------------------------- | --------------- |
+| **Task 13** | Add Chart.js visualizations (5-7 regional data charts) | Interactive engagement, data literacy   | Medium          |
+| **Task 16** | Progress tracking widget (localStorage-based)          | Student motivation, completion tracking | Medium          |
+| **Task 17** | Responsive image strategy + media folder org           | Better performance, maintainability     | Low             |
+| **Task 14** | Jest/Cypress testing + GitHub Actions CI/CD            | Code quality, deployment confidence     | High            |
 
 #### **Team Coordination Notes**
 
 **To Antigravity or Next Implementation Agent:**
 
 The textbook is now **100% P1 complete** with all chapters having consistent pedagogical structure:
+
 - 107+ quiz questions ✅
 - Discussion prompts in all chapters ✅
 - Higher-order thinking (Bloom's L4-L6) ✅
 - Engaging geographic inquiry boxes ✅
 
 **Current Tech Debt:**
+
 1. **main.js still contains legacy functions** - The DOMContentLoaded conflict is fixed, but many inline functions (initNavigation, initTexasToggle, etc.) should be moved to separate modules
 2. **images/ folder chaos** - 300+ images named by hash (002d10c4e3563cc1eb2dfc5a6e52298d.jpg) need organization by chapter and category
 3. **Quiz-engine.js is solid** - No changes needed; works well with JSON data files
 
 **Recommended Next Focus:**
+
 - **High Priority**: Task 13 (Chart.js) - Adds significant engagement without requiring code refactoring
 - **Medium Priority**: Task 16 (Progress tracking) - Canvas LMS integration will boost adoption
 - **Low Priority**: Task 10 continued refactoring - Wait until visualizations stabilize before modularizing
@@ -699,20 +711,48 @@ The textbook is now **100% P1 complete** with all chapters having consistent ped
 I have implemented unit tests for the `Navigation` module, specifically targeting the `initOutsideClick` functionality. This ensures the reliability of the navigation menu's behavior when users interact with the page.
 
 **Completed Actions**:
+
 1.  **Test Creation**: Created `tests/test-navigation.mjs` using the native Node.js test runner (`node:test`).
 2.  **Mock Implementation**: Implemented a lightweight `MockElement` class to simulate DOM interactions (classList, attributes, event listeners) in a Node.js environment, avoiding heavy dependencies like JSDOM.
 3.  **Test Coverage**: Added tests for:
-    *   Event listener registration.
-    *   Menu closing behavior when clicking outside the navigation area.
-    *   Menu persistence when clicking inside the navigation area.
-    *   Graceful handling of missing DOM elements.
+    - Event listener registration.
+    - Menu closing behavior when clicking outside the navigation area.
+    - Menu persistence when clicking inside the navigation area.
+    - Graceful handling of missing DOM elements.
 
 **Technical Notes**:
--   The tests use ES module imports to load `js/modules/navigation.js`.
--   Global objects (`window`, `document`) are mocked within the test file to support the module's DOM dependencies.
--   The test suite is fully self-contained and runs with `node tests/test-navigation.mjs`.
+
+- The tests use ES module imports to load `js/modules/navigation.js`.
+- Global objects (`window`, `document`) are mocked within the test file to support the module's DOM dependencies.
+- The test suite is fully self-contained and runs with `node tests/test-navigation.mjs`.
 
 **Message to Team**:
 This establishes a pattern for unit testing other ES modules in the `js/modules/` directory. Future modules can reuse the `MockElement` class pattern found in `tests/test-navigation.mjs` for efficient, dependency-free unit testing.
 
 ---
+
+### 2026-01-22: Added Unit Tests for QuizEngine.init
+
+**Agent**: Jules (Testing Engineer)
+
+**Status Report**:
+I have implemented unit tests for `QuizEngine.init` in `js/quiz-engine.js` to ensure the reliability of the quiz initialization logic.
+
+**Completed Actions**:
+
+1.  **Created `tests/test-quiz-init.js`**: A new test file using `node:test` that specifically targets `QuizEngine.init`.
+2.  **Mocked DOM Environment**: Implemented necessary mocks for `window`, `document`, and `HTMLElement` to allow testing without a browser.
+3.  **Verified Logic**: Covered scenarios for:
+    - Missing container (early return).
+    - Initialization with questions (calls `render` and `attachListeners`).
+    - Initialization without questions (calls only `attachListeners` for existing DOM).
+4.  **Verified Regressions**: Confirmed that existing tests in `tests/test-quiz-engine.js` still pass.
+
+**Files Modified**:
+
+- `tests/test-quiz-init.js` (Created)
+
+**Next Steps**:
+
+- Consider refactoring `tests/test-quiz-engine.js` to use `node:test` for consistency.
+- Add more tests for `QuizEngine.render` and `QuizEngine.attachListeners` to cover edge cases.
