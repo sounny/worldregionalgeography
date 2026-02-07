@@ -32,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Export utilities to global scope for chapter pages
     window.WRG = {
-        createRegionMap: MapManager.createRegionMap,
         initKeyTerms: Components.initKeyTerms,
         ProgressTracker: Utils.ProgressTracker
     };
