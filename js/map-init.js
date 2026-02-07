@@ -92,34 +92,40 @@ const MapManager = {
                 if (options.onEachFeature) {
                     options.onEachFeature(feature, layer);
                 }
-
-                // Store original style for mouseout
-                const originalFillOpacity = options.style?.fillOpacity || 0.25;
-                const regionColor = feature.properties?.color || defaultStyle.fillColor;
-
-                layer.on({
-                    mouseover: (e) => {
-                        const l = e.target;
-                        l.setStyle({ 
-                            fillOpacity: 0.5,
-                            weight: 3
-                        });
-                        l.bringToFront();
-                    },
-                    mouseout: (e) => {
-                        const l = e.target;
-                        l.setStyle({ 
-                            fillOpacity: originalFillOpacity,
-                            weight: 2
-                        });
-                    },
-                    click: (e) => {
-                        // Zoom to region on click
-                        map.fitBounds(e.target.getBounds(), { padding: [20, 20] });
-                    }
-                });
             }
-        }).addTo(map);
+        });
+
+        // Add event delegation to the feature group for performance
+        layer.on({
+            mouseover: (e) => {
+                const l = e.layer;
+                if (l) {
+                    l.setStyle({
+                        fillOpacity: 0.5,
+                        weight: 3
+                    });
+                    l.bringToFront();
+                }
+            },
+            mouseout: (e) => {
+                const l = e.layer;
+                if (l) {
+                    const originalFillOpacity = options.style?.fillOpacity || 0.25;
+                    l.setStyle({
+                        fillOpacity: originalFillOpacity,
+                        weight: 2
+                    });
+                }
+            },
+            click: (e) => {
+                // Zoom to region on click
+                if (e.layer) {
+                    map.fitBounds(e.layer.getBounds(), { padding: [20, 20] });
+                }
+            }
+        });
+
+        layer.addTo(map);
 
         if (map.layerControl && layerName) {
             map.layerControl.addOverlay(layer, layerName);
