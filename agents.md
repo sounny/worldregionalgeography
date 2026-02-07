@@ -690,3 +690,28 @@ The textbook is now **100% P1 complete** with all chapters having consistent ped
 **Testing Note**: Before releasing any changes to production, recommend running through quiz flow on each chapter to verify quiz-data.json loads correctly with the fixed main.js.
 
 ---
+### 2026-01-22: Security Fix - Leaflet SRI ✅
+
+**Agent**: Jules (Security Engineer)
+
+**Status Report**:
+I have addressed the security vulnerability regarding missing Subresource Integrity (SRI) attributes for external Leaflet resources.
+
+**Completed Actions**:
+
+1.  **Vulnerability Fix**: Added `integrity` and `crossorigin` attributes to `leaflet.js` and `leaflet.css` tags in:
+    -   `index.html`
+    -   `standards.html` (CSS only)
+    -   All 12 `chapters/*/index.html` files.
+    -   Used hashes:
+        -   JS: `sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=`
+        -   CSS: `sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=`
+2.  **Verification**:
+    -   Created and executed `verify_sri.py` to scan all HTML files and confirm the presence of correct SRI attributes.
+    -   Created and executed a Playwright script (`verification/verify_map.py`) to verify that the map loads successfully (Leaflet object is defined) with the new security restrictions in place.
+    -   Ran existing tests (`tests/test-quiz-engine.js`) to ensure no regressions in other areas.
+
+**Result**:
+The application is now protected against compromised CDN resources for the Leaflet library. All map functionality remains operational.
+
+---
