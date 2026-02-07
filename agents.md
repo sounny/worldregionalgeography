@@ -690,3 +690,25 @@ The textbook is now **100% P1 complete** with all chapters having consistent ped
 **Testing Note**: Before releasing any changes to production, recommend running through quiz flow on each chapter to verify quiz-data.json loads correctly with the fixed main.js.
 
 ---
+### 2026-01-22: Added Unit Tests for QuizEngine.init
+
+**Agent**: Jules (Testing Engineer)
+
+**Status Report**:
+I have implemented unit tests for `QuizEngine.init` in `js/quiz-engine.js` to ensure the reliability of the quiz initialization logic.
+
+**Completed Actions**:
+1.  **Created `tests/test-quiz-init.js`**: A new test file using `node:test` that specifically targets `QuizEngine.init`.
+2.  **Mocked DOM Environment**: Implemented necessary mocks for `window`, `document`, and `HTMLElement` to allow testing without a browser.
+3.  **Verified Logic**: Covered scenarios for:
+    *   Missing container (early return).
+    *   Initialization with questions (calls `render` and `attachListeners`).
+    *   Initialization without questions (calls only `attachListeners` for existing DOM).
+4.  **Verified Regressions**: Confirmed that existing tests in `tests/test-quiz-engine.js` still pass.
+
+**Files Modified**:
+*   `tests/test-quiz-init.js` (Created)
+
+**Next Steps**:
+*   Consider refactoring `tests/test-quiz-engine.js` to use `node:test` for consistency.
+*   Add more tests for `QuizEngine.render` and `QuizEngine.attachListeners` to cover edge cases.
