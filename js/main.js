@@ -157,6 +157,22 @@ function initNavigation() {
         });
     }
 
+    // Helper for secure ID generation
+    function getSecureId() {
+        if (typeof crypto !== 'undefined') {
+            if (typeof crypto.randomUUID === 'function') {
+                return crypto.randomUUID();
+            }
+            if (typeof crypto.getRandomValues === 'function') {
+                const array = new Uint32Array(1);
+                crypto.getRandomValues(array);
+                return array[0].toString(16);
+            }
+        }
+        // Fallback for very old environments
+        return Math.random().toString(16).slice(2);
+    }
+
     // Mobile dropdown toggle
     dropdowns.forEach(dropdown => {
         const toggle = dropdown.querySelector('.dropdown-toggle');
@@ -165,7 +181,7 @@ function initNavigation() {
             toggle.setAttribute('aria-haspopup', 'true');
 
             if (menu && !menu.id) {
-                menu.id = `dropdown-menu-${Math.random().toString(16).slice(2)}`;
+                menu.id = `dropdown-menu-${getSecureId()}`;
             }
             if (menu?.id) {
                 toggle.setAttribute('aria-controls', menu.id);
