@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
     Navigation.init();
     
     // Initialize map components
-    MapManager.initPreviewMap();
     MapManager.initRegionalNavigator();
     
     // Initialize quiz components (will be called by individual chapters)
