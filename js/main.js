@@ -116,23 +116,38 @@ function initAccordions() {
         content.setAttribute('aria-hidden', String(!isInitiallyExpanded));
         item.classList.toggle('active', isInitiallyExpanded);
 
-        header.addEventListener('click', () => {
-            // Optional: Close other items
-            // items.forEach(i => { if (i !== item) i.classList.remove('active'); });
+    });
 
-            item.classList.toggle('active');
-            const isActive = item.classList.contains('active');
-            header.setAttribute('aria-expanded', String(isActive));
-            content.setAttribute('aria-hidden', String(!isActive));
-        });
+    // Event delegation for accordions
+    document.body.addEventListener('click', (e) => {
+        const header = e.target.closest('.accordion-header');
+        if (!header) return;
 
-        // Keyboard navigation support
-        header.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
+        const item = header.closest('.accordion-item');
+        if (!item) return;
+
+        const content = item.querySelector('.accordion-content');
+        if (!content) return;
+
+        // Optional: Close other items
+        // const items = document.querySelectorAll('.accordion-item');
+        // items.forEach(i => { if (i !== item) i.classList.remove('active'); });
+
+        item.classList.toggle('active');
+        const isActive = item.classList.contains('active');
+        header.setAttribute('aria-expanded', String(isActive));
+        content.setAttribute('aria-hidden', String(!isActive));
+    });
+
+    // Keyboard navigation support
+    document.body.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            const header = e.target.closest('.accordion-header');
+            if (header) {
                 e.preventDefault();
                 header.click();
             }
-        });
+        }
     });
 }
 
