@@ -2138,3 +2138,16 @@ ol {
   display: block;
 }
 
+
+/* Footer Adjustments */
+.footer-author-link {
+    color: inherit;
+    text-decoration: underline;
+}
+
+.footer-copyright-btn {
+    margin-top: var(--space-2);
+    padding: var(--space-1) var(--space-3);
+    font-size: 0.8rem;
+    border-color: rgba(255, 255, 255, 0.3);
+}
