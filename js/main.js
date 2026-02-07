@@ -246,6 +246,8 @@ function initPreviewMap() {
     ];
 
     // Add markers for each region
+    const markers = L.featureGroup();
+
     regions.forEach(region => {
         const marker = L.circleMarker(region.center, {
             radius: 12,
@@ -254,15 +256,18 @@ function initPreviewMap() {
             weight: 2,
             opacity: 1,
             fillOpacity: 0.8
-        }).addTo(map);
+        });
 
         marker.bindPopup(`<strong>${region.name}</strong>`);
-        
-        marker.on('mouseover', function() {
-            this.openPopup();
-            this.setStyle({ radius: 16, fillOpacity: 1 });
-        });
-        
+        markers.addLayer(marker);
+    });
+
+    markers.addTo(map);
+
+    markers.on('mouseover', function(e) {
+        const marker = e.layer;
+        marker.openPopup();
+        marker.setStyle({ radius: 16, fillOpacity: 1 });
     });
 }
 
