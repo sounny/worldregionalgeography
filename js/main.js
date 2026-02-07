@@ -550,57 +550,6 @@ function initSmoothScroll() {
 }
 
 // =====================================================
-// Interactive Map for Chapters
-// =====================================================
-
-/**
- * Create an interactive map for a specific region
- * @param {string} containerId - The ID of the map container element
- * @param {object} config - Configuration object with center, zoom, and optional GeoJSON
- */
-function createRegionMap(containerId, config) {
-    const container = document.getElementById(containerId);
-    if (!container || typeof L === 'undefined') return null;
-
-    const map = L.map(containerId, {
-        zoomControl: true,
-        scrollWheelZoom: true
-    }).setView(config.center, config.zoom || 4);
-
-    // Base layer
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
-        subdomains: 'abcd',
-        maxZoom: 19
-    }).addTo(map);
-
-    // Add GeoJSON if provided
-    if (config.geojson) {
-        L.geoJSON(config.geojson, {
-            style: config.style || {
-                fillColor: '#2d8fa8',
-                weight: 2,
-                opacity: 1,
-                color: '#1e5f74',
-                fillOpacity: 0.3
-            },
-            onEachFeature: config.onEachFeature || null
-        }).addTo(map);
-    }
-
-    // Add markers if provided
-    if (config.markers) {
-        config.markers.forEach(marker => {
-            L.marker(marker.coords)
-                .bindPopup(marker.popup || marker.name)
-                .addTo(map);
-        });
-    }
-
-    return map;
-}
-
-// =====================================================
 // Key Terms Tooltip
 // =====================================================
 
@@ -679,7 +628,6 @@ const ProgressTracker = {
 
 // Export for use in chapter pages
 window.WRG = {
-    createRegionMap,
     initKeyTerms,
     ProgressTracker
 };
