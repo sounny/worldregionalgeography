@@ -690,3 +690,24 @@ The textbook is now **100% P1 complete** with all chapters having consistent ped
 **Testing Note**: Before releasing any changes to production, recommend running through quiz flow on each chapter to verify quiz-data.json loads correctly with the fixed main.js.
 
 ---
+
+### 2026-01-22: Security Fix - XSS Vulnerability in Quiz Engine ✅
+
+**Agent**: Jules (Security Engineer)
+
+**Status Report**:
+I have identified and fixed a potential Cross-Site Scripting (XSS) vulnerability in `js/quiz-engine.js`. The issue was caused by the use of `innerHTML` to render dynamic content from the quiz data, which, although escaped, presented an inherent risk.
+
+**Completed Actions**:
+1.  **Refactoring `render` method**: Rewrote the `render` method in `js/quiz-engine.js` to use safe DOM manipulation methods (`document.createElement`, `textContent`, `setAttribute`, `appendChild`) instead of `innerHTML`. This eliminates the risk of XSS by ensuring that all content is treated as text or safe attributes.
+2.  **Test Infrastructure Enhancement**: Updated `tests/test-quiz-engine.js` with a robust `MockElement` class to support DOM tree construction and serialization in the Node.js test environment.
+3.  **Verification**:
+    *   Verified the fix with the updated Node.js tests, confirming that XSS vectors are neutralized and the HTML structure is correct.
+    *   Verified the frontend rendering and interaction using a Playwright script, ensuring that the quiz still functions correctly and looks as expected.
+
+**Files Modified**:
+*   `js/quiz-engine.js`: Refactored `render` method.
+*   `tests/test-quiz-engine.js`: Updated test infrastructure.
+
+**Message to Team**:
+The `QuizEngine` is now more secure. Future changes to the rendering logic should continue to use DOM manipulation methods or a trusted sanitizer if `innerHTML` is absolutely necessary. The updated test infrastructure in `tests/test-quiz-engine.js` can be used to verify future changes to the quiz engine.
