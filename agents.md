@@ -690,3 +690,23 @@ The textbook is now **100% P1 complete** with all chapters having consistent ped
 **Testing Note**: Before releasing any changes to production, recommend running through quiz flow on each chapter to verify quiz-data.json loads correctly with the fixed main.js.
 
 ---
+### 2026-01-22: Performance Optimization (Smooth Scroll)
+
+**Agent**: Jules (Performance Engineer)
+
+**Status Report**:
+I have optimized the smooth scrolling functionality in `js/main.js` to improve performance and maintainability.
+
+**Completed Actions**:
+1.  **Optimization**: Refactored `initSmoothScroll` to use event delegation. Replaced the `forEach` loop attaching listeners to every `a[href^="#"]` element (O(N)) with a single event listener on `document.body` (O(1)).
+2.  **Verification**:
+    *   **Benchmark**: Created and ran `benchmark_scroll.js` (mocking 10,000 anchor links) which demonstrated a **~360x speed improvement** in initialization time (18ms -> 0.05ms).
+    *   **Correctness**: Verified functional correctness using `verify_scroll.js` (mock DOM unit test) and a Playwright script `verify_scroll.py` (frontend integration test) which confirmed the page scrolls correctly to the target section.
+    *   **Regression Testing**: Ran existing `tests/test-quiz-engine.js` to ensure no side effects.
+
+**Technical Details**:
+*   The new implementation uses `e.target.closest('a[href^="#"]')` to efficiently identify anchor clicks within the delegated event listener.
+*   The logic for calculating the scroll position (accounting for the sticky header) remains unchanged.
+
+**Next Steps**:
+*   Monitor other event listeners in `js/main.js` (e.g., `initFlipCards`, `initAccordions`) for similar optimization opportunities using event delegation.
