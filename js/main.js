@@ -278,6 +278,12 @@ function initRegionalNavigator() {
     const infoPanel = document.getElementById('region-info-panel');
     if (!mapContainer || !infoPanel || typeof L === 'undefined') return;
 
+    // Check if regional data is available
+    if (!window.WorldRegionsData || !window.WorldRegionsData.features) {
+        console.warn('WorldRegionsData not found. Skipping regional navigator initialization.');
+        return;
+    }
+
     const navMap = L.map('regions-map', {
         zoomControl: true,
         scrollWheelZoom: false,
@@ -291,96 +297,14 @@ function initRegionalNavigator() {
         maxZoom: 19
     }).addTo(navMap);
 
-    const regionalData = {
-        'europe': {
-            name: 'Europe',
-            theme: 'Migration & Identity',
-            desc: 'Exploring European integration, the legacy of industrialization, and the contemporary challenges of migration and cultural identity.',
-            link: 'chapters/02-europe/index.html',
-            center: [50, 10],
-            color: 'var(--color-primary)'
-        },
-        'russia': {
-            name: 'Russia and Central Asia',
-            theme: 'Geopolitics & Energy',
-            desc: 'Understanding the geopolitical transitions after the Soviet Union and the critical role of resource geography in global affairs.',
-            link: 'chapters/03-russia/index.html',
-            center: [60, 100],
-            color: '#1e5f74'
-        },
-        'north-america': {
-            name: 'North America',
-            theme: 'Urbanization & Diversity',
-            desc: 'Analyzing urban expansion, economic integration under USMCA, and the environmental challenges facing the US and Canada.',
-            link: 'chapters/04-north-america/index.html',
-            center: [45, -100],
-            color: '#f4a261'
-        },
-        'latin-america': {
-            name: 'Latin America',
-            theme: 'Biodiversity & Inequality',
-            desc: 'Studying the Amazonian ecosystems, the impact of colonialism on development, and the dynamics of urbanization in mega-cities.',
-            link: 'chapters/05-latin-america/index.html',
-            center: [-15, -60],
-            color: '#e07b3c'
-        },
-        'sub-saharan-africa': {
-            name: 'Sub-Saharan Africa',
-            theme: 'Development & Global Health',
-            desc: 'Examining rapid demographic shifts, resource management, and the cultural diversity that defines the African continent.',
-            link: 'chapters/06-sub-saharan-africa/index.html',
-            center: [0, 20],
-            color: '#2a9d8f'
-        },
-        'mena': {
-            name: 'N. Africa & SW Asia',
-            theme: 'Water & Conflict',
-            desc: 'The geography of arid landscapes, the geopolitics of petroleum, and the cultural significance of the region as a hearth of civilization.',
-            link: 'chapters/07-north-africa-sw-asia/index.html',
-            center: [28, 30],
-            color: '#40c9b8'
-        },
-        'south-asia': {
-            name: 'South Asia',
-            theme: 'Population & Monsoons',
-            desc: 'Analyzing the challenges of high population density, climate vulnerability in low-lying regions, and India\'s economic rise.',
-            link: 'chapters/08-south-asia/index.html',
-            center: [22, 78],
-            color: '#e76f51'
-        },
-        'east-asia': {
-            name: 'East Asia',
-            theme: 'Industrialization & Growth',
-            desc: 'Tracking the dramatic economic shift of China, the technologic power of Japan, and the environmental costs of rapid growth.',
-            link: 'chapters/09-east-asia/index.html',
-            center: [35, 115],
-            color: '#264653'
-        },
-        'southeast-asia': {
-            name: 'Southeast Asia',
-            theme: 'Globalization & Maritime Trade',
-            desc: 'The strategic importance of the Malacca Strait, biodiversity in tropical rainforests, and the economic integration of ASEAN.',
-            link: 'chapters/10-southeast-asia/index.html',
-            center: [5, 115],
-            color: '#287271'
-        },
-        'oceania': {
-            name: 'Australia & Oceania',
-            theme: 'Island Risk & Resilience',
-            desc: 'Studying sea-level rise in the Pacific, the unique physical geography of the Outback, and indigenous land rights.',
-            link: 'chapters/11-australia-oceania/index.html',
-            center: [-25, 140],
-            color: '#8ab17d'
-        }
-    };
-
-    // Add Markers and Link to Panel
-    Object.keys(regionalData).forEach(id => {
-        const region = regionalData[id];
+    // Use centralized data from js/regions-data.js
+    window.WorldRegionsData.features.forEach(feature => {
+        const props = feature.properties;
+        if (!props.center) return;
         
-        const marker = L.circleMarker(region.center, {
+        const marker = L.circleMarker(props.center, {
             radius: 15,
-            fillColor: region.color,
+            fillColor: props.color || 'var(--color-primary)',
             color: '#fff',
             weight: 3,
             opacity: 1,
@@ -388,7 +312,7 @@ function initRegionalNavigator() {
         }).addTo(navMap);
 
         // Tooltip
-        marker.bindTooltip(region.name, {
+        marker.bindTooltip(props.name, {
             permanent: false, 
             direction: 'top',
             className: 'region-hover-label'
@@ -397,7 +321,7 @@ function initRegionalNavigator() {
         // Hover events
         marker.on('mouseover', function() {
             this.setStyle({ radius: 20, fillOpacity: 1 });
-            updateInfoPanel(id);
+            updateInfoPanel(feature);
         });
 
         marker.on('mouseout', function() {
@@ -406,19 +330,21 @@ function initRegionalNavigator() {
 
         // Click event
         marker.on('click', function() {
-            window.location.href = region.link;
+            if (props.link) {
+                window.location.href = props.link;
+            }
         });
     });
 
-    function updateInfoPanel(id) {
-        const data = regionalData[id];
+    function updateInfoPanel(feature) {
+        const data = feature.properties;
         if (!data || !infoPanel) return;
 
         infoPanel.innerHTML = `
-            <span class="theme-badge">${data.theme}</span>
+            <span class="theme-badge">${data.theme || ''}</span>
             <h3>${data.name}</h3>
-            <p>${data.desc}</p>
-            <a href="${data.link}" class="btn btn-primary btn-go">View Chapter ➜</a>
+            <p>${data.desc || ''}</p>
+            <a href="${data.link || '#'}" class="btn btn-primary btn-go">View Chapter ➜</a>
         `;
         
         // Add a nice fade-in animation
