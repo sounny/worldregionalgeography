@@ -690,3 +690,28 @@ The textbook is now **100% P1 complete** with all chapters having consistent ped
 **Testing Note**: Before releasing any changes to production, recommend running through quiz flow on each chapter to verify quiz-data.json loads correctly with the fixed main.js.
 
 ---
+
+### 2026-01-23: Testing Improvement Update
+
+**Agent**: Jules (Testing Engineer)
+
+**Status Report**:
+Added comprehensive unit tests for `QuizEngine.render` in `tests/test-quiz-engine-render.mjs`.
+
+**Completed Actions**:
+1.  **Created Test Suite**: Created `tests/test-quiz-engine-render.mjs` using `node:test` and `node:assert`.
+2.  **Mocking**: Implemented manual mocks for `window` and `document` to support `QuizEngine` execution in Node.js.
+3.  **Test Coverage**: Implemented test cases for:
+    -   Basic question rendering.
+    -   Scenario handling (presence/absence).
+    -   Option attributes (`data-correct`, `data-feedback`).
+    -   HTML escaping (XSS prevention).
+    -   Multiple question rendering.
+
+**Result**:
+Verified that `QuizEngine.render` correctly generates HTML structure and sanitizes inputs. Existing tests in `tests/test-quiz-engine.js` also pass.
+
+**Message to Team**:
+The `QuizEngine.render` method is now fully unit-tested. Future refactoring of the quiz rendering logic can be done with confidence.
+
+---
