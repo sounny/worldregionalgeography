@@ -1,0 +1,24 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "node --test tests/unit/components.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sounny/worldregionalgeography.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/sounny/worldregionalgeography/issues"
+  },
+  "homepage": "https://github.com/sounny/worldregionalgeography#readme"
+}
