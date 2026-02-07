@@ -367,11 +367,7 @@
 
     <footer class="site-footer"><div class="container"><div class="footer-content"><div class="footer-brand"><span class="logo-icon">🌍</span><span>World Regional Geography</span></div><div class="footer-copyright"><p>© 2026 Dr. Sounny. Open Educational Resource.</p></div></div></div></footer>
     
-    <!-- Image Lightbox Overlay -->
-    <div id="image-lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
-        <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
-        <img class="lightbox-image" src="" alt="">
-    </div>
+
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
@@ -411,44 +407,12 @@
                 .catch(err => console.error('Error loading quiz data:', err));
         });
 
-        // Lightbox functionality for zoomable images
-        (function() {
-            const lightbox = document.getElementById('image-lightbox');
-            const lightboxImg = lightbox.querySelector('.lightbox-image');
-            const closeBtn = lightbox.querySelector('.lightbox-close');
-            
-            // Open lightbox when clicking zoomable images
-            document.querySelectorAll('.zoomable-image').forEach(img => {
-                img.addEventListener('click', () => {
-                    lightboxImg.src = img.src;
-                    lightboxImg.alt = img.alt;
-                    lightbox.hidden = false;
-                    document.body.style.overflow = 'hidden';
-                    closeBtn.focus();
-                });
-                // Also support keyboard activation
-                img.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        img.click();
-                    }
-                });
-            });
-            
-            // Close lightbox
-            function closeLightbox() {
-                lightbox.hidden = true;
-                document.body.style.overflow = '';
-            }
-            
-            closeBtn.addEventListener('click', closeLightbox);
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) closeLightbox();
-            });
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
-            });
-        })();
+
+    </script>
+
+    <script type="module">
+        import Lightbox from '../../js/modules/lightbox.js';
+        Lightbox.init();
     </script>
 </body>
 </html>

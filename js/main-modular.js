@@ -10,6 +10,7 @@ import MapManager from './modules/mapManager.js';
 import QuizManager from './modules/quizManager.js';
 import Components from './modules/components.js';
 import Utils from './modules/utils.js';
+import Lightbox from './modules/lightbox.js';
 
 // Main application initialization
 document.addEventListener('DOMContentLoaded', () => {
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize UI components
     Components.init();
+    Lightbox.init();
     
     // Export utilities to global scope for chapter pages
     window.WRG = {
@@ -44,5 +46,6 @@ export {
     MapManager,
     QuizManager,
     Components,
-    Utils
+    Utils,
+    Lightbox
 };
