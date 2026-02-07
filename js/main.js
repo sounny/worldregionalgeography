@@ -66,22 +66,37 @@ function initTexasToggle() {
         content.setAttribute('aria-hidden', String(isInitiallyHidden));
         content.setAttribute('role', 'region');
         content.setAttribute('aria-labelledby', btn.id);
+    });
 
-        btn.addEventListener('click', () => {
-            const isExpanded = btn.getAttribute('aria-expanded') === 'true';
-            btn.setAttribute('aria-expanded', String(!isExpanded));
-            content.classList.toggle('hidden');
-            content.setAttribute('aria-hidden', String(isExpanded));
-            btn.classList.toggle('active');
-        });
+    if (initTexasToggle.initialized) return;
+    initTexasToggle.initialized = true;
 
-        // Keyboard navigation support
-        btn.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                btn.click();
-            }
-        });
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.btn-texas-toggle');
+        if (!btn) return;
+
+        const toggle = btn.closest('.texas-toggle');
+        if (!toggle) return;
+
+        const content = toggle.querySelector('.texas-content');
+        if (!content) return;
+
+        const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!isExpanded));
+        content.classList.toggle('hidden');
+        content.setAttribute('aria-hidden', String(isExpanded));
+        btn.classList.toggle('active');
+    });
+
+    // Keyboard navigation support
+    document.addEventListener('keydown', (e) => {
+        const btn = e.target.closest('.btn-texas-toggle');
+        if (!btn) return;
+
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            btn.click();
+        }
     });
 }
 
