@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Standards Alignment | World Regional Geography</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Standards Page Specific Styles */
+        .standards-table-container {
+            overflow-x: auto;
+            margin-bottom: var(--space-8);
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .standards-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95rem;
+        }
+
+        .standards-table th,
+        .standards-table td {
+            padding: var(--space-4);
+            text-align: left;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .standards-table th {
+            background-color: var(--color-bg-alt);
+            font-weight: 600;
+            color: var(--color-text);
+            position: sticky;
+            top: 0;
+        }
+
+        .standards-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .std-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25em 0.6em;
+            border-radius: var(--radius-full);
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-right: 0.25rem;
+            margin-bottom: 0.25rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        
+        .std-badge:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .std-badge.intro {
+            background-color: #e0f2fe; /* Light Blue */
+            color: #0369a1;
+            border: 1px solid #bae6fd;
+        }
+
+        .std-badge.reinf {
+            background-color: #fef3c7; /* Light Yellow */
+            color: #b45309;
+            border: 1px solid #fde68a;
+        }
+
+        .std-badge.master {
+            background-color: #dcfce7; /* Light Green */
+            color: #15803d;
+            border: 1px solid #bbf7d0;
+        }
+
+        .std-badge.unaddressed {
+            background-color: #f3f4f6;
+            color: #6b7280;
+            border: 1px solid #e5e7eb;
+            font-style: italic;
+        }
+
+        .std-definition {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            margin-top: 0.25rem;
+        }
+        
+        .legend-box {
+            display: flex;
+            gap: var(--space-4);
+            margin-bottom: var(--space-6);
+            padding: var(--space-4);
+            background: var(--color-bg-alt);
+            border-radius: var(--radius-md);
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="site-header">
+        <div class="container">
+            <div class="header-brand">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">🌍</span>
+                    <span class="logo-text">World Regional Geography</span>
+                </a>
+            </div>
+            <nav class="main-nav" aria-label="Main navigation">
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Chapters</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="chapters/01-introduction/index.html">1. Introduction</a></li>
+                            <li><a href="chapters/02-europe/index.html">2. Europe</a></li>
+                            <li><a href="chapters/03-russia/index.html">3. Russia and Central Asia</a></li>
+                            <li><a href="chapters/04-north-america/index.html">4. North America</a></li>
+                            <li><a href="chapters/05-latin-america/index.html">5. Latin America</a></li>
+                            <li><a href="chapters/06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
+                            <li><a href="chapters/07-north-africa-sw-asia/index.html">7. N. Africa and SW Asia</a></li>
+                            <li><a href="chapters/08-south-asia/index.html">8. South Asia</a></li>
+                            <li><a href="chapters/09-east-asia/index.html">9. East Asia</a></li>
+                            <li><a href="chapters/10-southeast-asia/index.html">10. Southeast Asia</a></li>
+                            <li><a href="chapters/11-australia-oceania/index.html">11. Australia and Oceania</a></li>
+                            <li><a href="chapters/12-conclusion/index.html">12. Global Connections</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="standards.html" class="nav-link active">Standards</a></li>
+                    <li><a href="index.html#about" class="nav-link">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="chapter-header">
+        <div class="container">
+            <p class="chapter-meta">Curriculum Alignment</p>
+            <h1 class="chapter-title">Course Standards Map</h1>
+            <p class="chapter-description">This course is aligned with National Geography Standards, the Texas Core Curriculum (GEOG 1303), and Florida Sunshine State Standards. The matrix below outlines how each standard is addressed throughout the chapters.</p>
+        </div>
+    </section>
+
+    <main id="main-content" class="chapter-content">
+        <div class="container">
+            
+            <div class="legend-box">
+                <div class="legend-item"><span class="std-badge intro">I</span> Introduced</div>
+                <div class="legend-item"><span class="std-badge reinf">R</span> Reinforced</div>
+                <div class="legend-item"><span class="std-badge master">M</span> Mastered</div>
+                <div class="legend-item"><span class="std-badge unaddressed">—</span> To be addressed</div>
+            </div>
+
+            <!-- 1. National Standards -->
+            <section id="national-standards" class="section-container">
+                <h2>🇺🇸 National Geography Standards: Geography for Life</h2>
+                <div class="standards-table-container">
+                    <table class="standards-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 15%">Standard</th>
+                                <th style="width: 45%">Description</th>
+                                <th style="width: 40%">Chapter Alignment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Element I.1</strong></td>
+                                <td><div>Map Use & Spatial Thinking</div><div class="std-definition">How to use maps and other geographic representations, geospatial technologies, and spatial thinking to understand and communicate information.</div></td>
+                                <td>
+                                    <a href="chapters/01-introduction/index.html" class="std-badge intro">Ch 1 (I)</a>
+                                    <a href="chapters/12-conclusion/index.html" class="std-badge master">Ch 12 (M)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Element I.2</strong></td>
+                                <td><div>Mental Maps</div><div class="std-definition">How to use mental maps to organize information about people, places, and environments in a spatial context.</div></td>
+                                <td>
+                                    <a href="chapters/01-introduction/index.html" class="std-badge intro">Ch 1 (I)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Element I.3</strong></td>
+                                <td><div>Spatial Organization</div><div class="std-definition">How to analyze the spatial organization of people, places, and environments on Earth's surface.</div></td>
+                                <td>
+                                    <a href="chapters/01-introduction/index.html" class="std-badge intro">Ch 1 (I)</a>
+                                    <a href="chapters/02-europe/index.html" class="std-badge reinf">Ch 2 (R)</a>
+                                    <a href="chapters/04-north-america/index.html" class="std-badge reinf">Ch 4 (R)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Element II.4</strong></td>
+                                <td><div>Characteristics of Place</div><div class="std-definition">The physical and human characteristics of places.</div></td>
+                                <td>
+                                    <a href="chapters/03-russia/index.html" class="std-badge intro">Ch 3 (I)</a>
+                                    <a href="chapters/05-latin-america/index.html" class="std-badge reinf">Ch 5 (R)</a>
+                                    <span class="std-badge reinf">Ch 6-11 (R)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Element II.5</strong></td>
+                                <td><div>Regional Concepts</div><div class="std-definition">That people create regions to interpret Earth's complexity.</div></td>
+                                <td>
+                                    <a href="chapters/01-introduction/index.html" class="std-badge intro">Ch 1 (I)</a>
+                                    <a href="chapters/04-north-america/index.html" class="std-badge reinf">Ch 4 (R)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Element II.6</strong></td>
+                                <td><div>Perception of Place</div><div class="std-definition">How culture and experience influence people's perceptions of places and regions.</div></td>
+                                <td>
+                                    <a href="chapters/07-north-africa-sw-asia/index.html" class="std-badge reinf">Ch 7 (R)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Element III.7</strong></td>
+                                <td><div>Physical Processes</div><div class="std-definition">The physical processes that shape the patterns of Earth's surface.</div></td>
+                                <td>
+                                    <span class="std-badge unaddressed">—</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Element III.8</strong></td>
+                                <td><div>Ecosystems</div><div class="std-definition">The characteristics and spatial distribution of ecosystems and biomes on Earth's surface.</div></td>
+                                <td>
+                                    <span class="std-badge unaddressed">—</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Element IV.9</strong></td>
+                                <td><div>Population Geography</div><div class="std-definition">The characteristics, distribution, and migration of human populations on Earth's surface.</div></td>
+                                <td>
+                                    <a href="chapters/06-sub-saharan-africa/index.html" class="std-badge reinf">Ch 6 (R)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Element IV.10</strong></td>
+                                <td><div>Cultural Mosaics</div><div class="std-definition">The characteristics, distribution, and complexity of Earth's cultural mosaics.</div></td>
+                                <td>
+                                    <span class="std-badge unaddressed">—</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Element IV.11</strong></td>
+                                <td><div>Economic Interdependence</div><div class="std-definition">The patterns and networks of economic interdependence on Earth's surface.</div></td>
+                                <td>
+                                    <a href="chapters/09-east-asia/index.html" class="std-badge reinf">Ch 9 (R)</a>
+                                    <a href="chapters/12-conclusion/index.html" class="std-badge master">Ch 12 (M)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Element IV.12</strong></td>
+                                <td><div>Human Settlement</div><div class="std-definition">The processes, patterns, and functions of human settlement (urbanization).</div></td>
+                                <td>
+                                    <a href="chapters/04-north-america/index.html" class="std-badge reinf">Ch 4 (R)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Element IV.13</strong></td>
+                                <td><div>Geopolitics</div><div class="std-definition">How the forces of cooperation and conflict among people influence the division and control of Earth's surface.</div></td>
+                                <td>
+                                    <a href="chapters/02-europe/index.html" class="std-badge reinf">Ch 2 (R)</a>
+                                    <a href="chapters/03-russia/index.html" class="std-badge reinf">Ch 3 (R)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Element V.14</strong></td>
+                                <td><div>Human Modification</div><div class="std-definition">How human actions modify the physical environment.</div></td>
+                                <td>
+                                    <a href="chapters/11-australia-oceania/index.html" class="std-badge reinf">Ch 11 (R)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Element V.15</strong></td>
+                                <td><div>Environmental Impact</div><div class="std-definition">How physical systems affect human systems.</div></td>
+                                <td>
+                                    <a href="chapters/05-latin-america/index.html" class="std-badge reinf">Ch 5 (R)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Element V.16</strong></td>
+                                <td><div>Resource Management</div><div class="std-definition">The changes that occur in the meaning, use, distribution, and importance of resources.</div></td>
+                                <td>
+                                    <a href="chapters/03-russia/index.html" class="std-badge reinf">Ch 3 (R)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Element VI.17</strong></td>
+                                <td><div>Historical Geography</div><div class="std-definition">How to apply geography to interpret the past.</div></td>
+                                <td>
+                                    <span class="std-badge unaddressed">—</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Element VI.18</strong></td>
+                                <td><div>Planning for the Future</div><div class="std-definition">How to apply geography to interpret the present and plan for the future.</div></td>
+                                <td>
+                                    <a href="chapters/12-conclusion/index.html" class="std-badge master">Ch 12 (M)</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 2. Texas Core Curriculum -->
+            <section id="texas-standards" class="section-container">
+                <h2>🤠 Texas Core Curriculum: GEOG 1303</h2>
+                <div class="standards-table-container">
+                    <table class="standards-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 15%">Objective</th>
+                                <th style="width: 45%">Description</th>
+                                <th style="width: 40%">Chapter Alignment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>SLO 1</strong></td>
+                                <td><div>Define "Region"</div><div class="std-definition">Define and explain the geographic concept of "region."</div></td>
+                                <td>
+                                    <a href="chapters/01-introduction/index.html" class="std-badge intro">Ch 1 (I)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>SLO 2</strong></td>
+                                <td><div>Locate Features</div><div class="std-definition">Locate significant geographic features of regions and describe their characteristics.</div></td>
+                                <td>
+                                    <a href="chapters/01-introduction/index.html" class="std-badge intro">Ch 1 (I)</a>
+                                    <span class="std-badge reinf">Ch 2-11 (R)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>SLO 3</strong></td>
+                                <td><div>Globalization</div><div class="std-definition">Demonstrate knowledge of each region's role in a globalizing world.</div></td>
+                                <td>
+                                    <a href="chapters/01-introduction/index.html" class="std-badge intro">Ch 1 (I)</a>
+                                    <span class="std-badge reinf">Ch 2-11 (R)</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>SLO 4</strong></td>
+                                <td><div>Apply Concepts</div><div class="std-definition">Apply geographic concepts to understand current events, conflicts, and issues.</div></td>
+                                <td>
+                                    <a href="chapters/01-introduction/index.html" class="std-badge intro">Ch 1 (I)</a>
+                                    <a href="chapters/12-conclusion/index.html" class="std-badge master">Ch 12 (M)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>SR</strong></td>
+                                <td><div>Social Responsibility</div><div class="std-definition">Intercultural competence, civic responsibility, and engaging in global communities.</div></td>
+                                <td>
+                                    <a href="chapters/12-conclusion/index.html" class="std-badge master">Ch 12 (M)</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 3. Florida Standards -->
+            <section id="florida-standards" class="section-container">
+                <h2>☀️ Florida Sunshine State Standards (SS.912.G)</h2>
+                <div class="standards-table-container">
+                    <table class="standards-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 15%">Standard</th>
+                                <th style="width: 45%">Description</th>
+                                <th style="width: 40%">Chapter Alignment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>SS.912.G.1.1</strong></td>
+                                <td><div>Map Design</div><div class="std-definition">Design maps to classify and illustrate geographic information.</div></td>
+                                <td>
+                                    <a href="chapters/12-conclusion/index.html" class="std-badge master">Ch 12 (M)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>SS.912.G.1.2</strong></td>
+                                <td><div>Spatial Perspective</div><div class="std-definition">Use spatial perspective to analyze Earth's systems.</div></td>
+                                <td>
+                                    <a href="chapters/01-introduction/index.html" class="std-badge intro">Ch 1 (I)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>SS.912.G.1.3</strong></td>
+                                <td><div>Measurement & Scale</div><div class="std-definition">Employ applicable units of measurement and scale to solve locational problems.</div></td>
+                                <td>
+                                    <span class="std-badge unaddressed">—</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>SS.912.G.1.4</strong></td>
+                                <td><div>Information Sources</div><div class="std-definition">Analyze geographic information from a variety of sources.</div></td>
+                                <td>
+                                    <span class="std-badge unaddressed">—</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>SS.912.G.2.1</strong></td>
+                                <td><div>Regional Characteristics</div><div class="std-definition">Identify physical and human characteristics that differentiate regions.</div></td>
+                                <td>
+                                    <a href="chapters/03-russia/index.html" class="std-badge reinf">Ch 3 (R)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>SS.912.G.2.2</strong></td>
+                                <td><div>Development Factors</div><div class="std-definition">Describe factors contributing to differences between developing and developed regions.</div></td>
+                                <td>
+                                    <a href="chapters/05-latin-america/index.html" class="std-badge reinf">Ch 5 (R)</a>
+                                    <a href="chapters/06-sub-saharan-africa/index.html" class="std-badge reinf">Ch 6 (R)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>SS.912.G.2.3</strong></td>
+                                <td><div>Regional Issues</div><div class="std-definition">Analyze case studies of regional issues with critical ramifications.</div></td>
+                                <td>
+                                    <a href="chapters/02-europe/index.html" class="std-badge reinf">Ch 2 (R)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>SS.912.G.3.1</strong></td>
+                                <td><div>Major Ecosystems</div><div class="std-definition">Use geographic terms to locate and describe major ecosystems of Earth.</div></td>
+                                <td>
+                                    <span class="std-badge unaddressed">—</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>SS.912.G.3.2</strong></td>
+                                <td><div>Climate Influence</div><div class="std-definition">Explain how weather and climate influence environments.</div></td>
+                                <td>
+                                    <a href="chapters/07-north-africa-sw-asia/index.html" class="std-badge reinf">Ch 7 (R)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>SS.912.G.4.1</strong></td>
+                                <td><div>Population Changes</div><div class="std-definition">Analyze how characteristics of human populations change over time.</div></td>
+                                <td>
+                                    <span class="std-badge unaddressed">—</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>SS.912.G.4.2</strong></td>
+                                <td><div>Migration Factors</div><div class="std-definition">Analyze push/pull factors contributing to human migration.</div></td>
+                                <td>
+                                    <a href="chapters/04-north-america/index.html" class="std-badge reinf">Ch 4 (R)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>SS.912.G.4.3</strong></td>
+                                <td><div>Migration Effects</div><div class="std-definition">Analyze the effects of migration both on the place of origin and destination.</div></td>
+                                <td>
+                                    <span class="std-badge unaddressed">—</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>SS.912.G.4.7</strong></td>
+                                <td><div>Cultural Diffusion</div><div class="std-definition">Explain cultural diffusion throughout places and regions.</div></td>
+                                <td>
+                                    <a href="chapters/05-latin-america/index.html" class="std-badge reinf">Ch 5 (R)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>SS.912.G.4.9</strong></td>
+                                <td><div>Globalization Issues</div><div class="std-definition">Analyze case studies of issues in globalization.</div></td>
+                                <td>
+                                    <span class="std-badge unaddressed">—</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>SS.912.G.5.1</strong></td>
+                                <td><div>Physical Systems Impact</div><div class="std-definition">Analyze case studies of how the Earth's physical systems affect humans.</div></td>
+                                <td>
+                                    <span class="std-badge unaddressed">—</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>SS.912.G.5.2</strong></td>
+                                <td><div>Human Impact</div><div class="std-definition">Analyze case studies of how humans impact the physical environment.</div></td>
+                                <td>
+                                    <span class="std-badge unaddressed">—</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-icon">🌍</span>
+                    <span>World Regional Geography</span>
+                </div>
+                <div class="footer-copyright">
+                    <p>Made with ❤️ by Dr. Sounny. Open Educational Resource.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

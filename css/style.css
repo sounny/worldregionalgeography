@@ -597,7 +597,8 @@ ol {
   font-size: var(--text-4xl);
   margin-bottom: var(--space-6);
   color: white;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Enhanced shadow for better readability */
+
 }
 
 .hero-subtitle {

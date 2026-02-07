@@ -1,31 +1,112 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+
+
+
 <html lang="en">
+
+
+
 <head>
+
+
+
     <meta charset="UTF-8">
+
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
     <title>Chapter 10: Southeast Asia | World Regional Geography</title>
+
+
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+
+
     <link rel="stylesheet" href="../../css/style.css">
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
+
+
     <script src="../../js/chart-data.js"></script>
+
+
+
 </head>
+
+
+
 <body>
+
+
+
     <!-- Skip to Main Content Link (Accessibility) -->
+
+
+
     <a href="#main-content" class="skip-link">Skip to main content</a>
+
+
+
     
+
+
+
     <header class="site-header">
+
+
+
         <div class="container">
+
+
+
             <div class="header-brand">
+
+
+
                 <a href="../../index.html" class="logo">
-                    <span class="logo-icon">🌍</span>
+
+
+
+                    <span class="logo-icon">🌐</span>
+
+
+
                     <span class="logo-text">World Regional Geography</span>
+
+
+
                 </a>
+
+
+
             </div>
+
+
+
             <nav class="main-nav" aria-label="Main navigation">
+
+
+
                 <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+
+
+
                     <span class="hamburger"></span>
+
+
+
                 </button>
-                <ul class="nav-menu">
+
+
+
+                                <ul class="nav-menu">
                     <li><a href="../../index.html" class="nav-link">Home</a></li>
                     <li class="nav-dropdown">
                         <a href="#" class="nav-link dropdown-toggle active">Chapters</a>
@@ -36,432 +117,1714 @@
                             <li><a href="../04-north-america/index.html">4. North America</a></li>
                             <li><a href="../05-latin-america/index.html">5. Latin America</a></li>
                             <li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
-                            <li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa and SW Asia</a></li>
+                            <li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa & SW Asia</a></li>
                             <li><a href="../08-south-asia/index.html">8. South Asia</a></li>
                             <li><a href="../09-east-asia/index.html">9. East Asia</a></li>
-                            <li><a href="../10-southeast-asia/index.html" class="active">10. Southeast Asia</a></li>
-                            <li><a href="../11-australia-oceania/index.html">11. Australia and Oceania</a></li>
+                            <li><a href="../10-southeast-asia/index.html">10. Southeast Asia</a></li>
+                            <li><a href="../11-australia-oceania/index.html">11. Australia & Oceania</a></li>
                             <li><a href="../12-conclusion/index.html">12. Global Connections</a></li>
                         </ul>
                     </li>
+                    <li><a href="../../standards.html" class="nav-link">Standards</a></li>
+                    <li><a href="../../index.html#chapters" class="nav-link">Resources</a></li>
+                    <li><a href="../../index.html#about" class="nav-link">About</a></li>
                 </ul>
+
+
+
+                    </li>
+
+
+
+                </ul>
+
+
+
             </nav>
+
+
+
         </div>
+
+
+
     </header>
 
+
+
+
+
+
+
     <section class="chapter-header">
+
+
+
         <div class="container">
+
+
+
             <p class="chapter-meta">Chapter 10 · Week 12</p>
+
+
+
             <h1 class="chapter-title">Southeast Asia: The Crossroads</h1>
+
+
+
             <p class="chapter-description">A crossroads of cultures, religions, and trade routes, Southeast Asia comprises 11 diverse nations balancing rapid development, cultural preservation, and environmental challenges.</p>
+
+
+
         </div>
+
+
+
     </section>
 
+
+
+
+
+
+
     <main id="main-content" class="chapter-content">
+
+
+
         <div class="container">
+
+
+
             
+
+
+
             <!-- 1. Learning Objectives -->
+
+
+
             <!-- 1. At a Glance (Scaffold) -->
+
+
+
             <section class="learning-scaffold" aria-label="Learning scaffold">
+
+
+
                 <details class="learning-scaffold-details">
+
+
+
                     <summary>
+
+
+
                         <div class="scaffold-head">
+
+
+
                             <h2>At a Glance</h2>
+
+
+
                             <div class="scaffold-meta" aria-label="Prerequisites and time estimate">
+
+
+
                                 <span class="scaffold-chip"><strong>Prereqs:</strong> Chapter 9</span>
+
+
+
                                 <span class="scaffold-chip"><strong>Time:</strong> 50 min read + 20 min activities</span>
+
+
+
                                 <span class="scaffold-chip"><strong>Deliverable:</strong> Quiz + Reflection</span>
+
+
+
                             </div>
+
+
+
                         </div>
+
+
+
                     </summary>
 
+
+
+
+
+
+
                     <div class="scaffold-grid">
+
+
+
                         <div class="scaffold-card">
+
+
+
                             <h3>🎯 Learning Outcomes</h3>
+
+
+
                             <ul>
-                                <li><strong>Distinguish:</strong> The physical and cultural differences between <strong>Mainland</strong> (Buddhist) and <strong>Insular</strong> (Islamic/Catholic) SE Asia.</li>
-                                <li><strong>Analyze:</strong> The strategic importance of the <strong>Strait of Malacca</strong> and the South China Sea.</li>
-                                <li><strong>Explain:</strong> The role of <strong>ASEAN</strong> in maintaining regional stability.</li>
-                                <li><strong>Evaluate:</strong> The environmental cost of <strong>palm oil</strong> deforestation.</li>
-                                <li><strong>Apply:</strong> The concept of a <strong>Shatter Belt</strong> to the region's history.</li>
+
+
+
+                                <li><strong>Analyze:</strong> Distinguish the differences between <strong>Mainland</strong> and <strong>Insular</strong> SE Asia.</li>
+
+
+
+                                <li><strong>Analyze:</strong> Examine the strategic importance of the <strong>Strait of Malacca</strong> and the South China Sea.</li>
+
+
+
+                                <li><strong>Understand:</strong> Explain the role of <strong>ASEAN</strong> in maintaining regional stability.</li>
+
+
+
+                                <li><strong>Evaluate:</strong> Assess the environmental cost of <strong>palm oil</strong> deforestation.</li>
+
+
+
+                                <li><strong>Apply:</strong> Apply the concept of a <strong>Shatter Belt</strong> to the region's history.</li>
+
+
+
                             </ul>
+
+
+
                         </div>
 
+
+
+
+
+
+
                         <div class="scaffold-card">
+
+
+
                             <h3>🔑 Key Terms</h3>
-                            <p>Shatter Belt, ASEAN, Archipelago, Entrepôt, Transshipment, Domino Theory, Exclusive Economic Zone (EEZ), Primate City.</p>
+
+
+
+                            <p>Shatter Belt, ASEAN, Archipelago, EntrepÃ´t, Transshipment, Domino Theory, Exclusive Economic Zone (EEZ), Primate City.</p>
+
+
+
                         </div>
+
+
+
                     </div>
+
+
+
+
+
+
 
                     <div class="scaffold-grid">
-                        <div class="scaffold-card">
-                            <h3>🛑 Stop & Check</h3>
-                            <div class="quiz-question" style="margin-bottom:0.5rem;">Which country is the world's most populous Muslim nation?</div>
-                            <details>
-                                <summary style="padding:0; color:var(--color-primary); font-weight:600; font-size:0.9rem;">Reveal Answer</summary>
-                                <div style="margin-top:0.5rem; font-size:0.95rem; color:var(--color-text-light);">
-                                    <strong>Indonesia</strong>. Islam arrived via trade routes (the "Maritime Silk Road"), not conquest, and became the dominant religion of the diverse archipelago.
-                                </div>
-                            </details>
-                        </div>
+
+
 
                         <div class="scaffold-card">
-                            <h3>⚡ Common Misconception</h3>
-                            <p><strong>Myth:</strong> Southeast Asia is culturally homogeneous.</p>
-                            <p><strong>Fact:</strong> It is one of the most diverse regions on Earth. It includes the Catholic Philippines, Islamic Indonesia, Buddhist Thailand/Vietnam, and secular Singapore—all intersecting in a geographic "crossroads."</p>
+
+
+
+                            <h3>🛑 Stop & Check</h3>
+
+
+
+                            <div class="quiz-question" style="margin-bottom:0.5rem;">Which country is the world's most populous Muslim nation?</div>
+
+
+
+                            <details>
+
+
+
+                                <summary style="padding:0; color:var(--color-primary); font-weight:600; font-size:0.9rem;">Reveal Answer</summary>
+
+
+
+                                <div style="margin-top:0.5rem; font-size:0.95rem; color:var(--color-text-light);">
+
+
+
+                                    <strong>Indonesia</strong>. Islam arrived via trade routes (the "Maritime Silk Road"), not conquest, and became the dominant religion of the diverse archipelago.
+
+
+
+                                </div>
+
+
+
+                            </details>
+
+
+
                         </div>
+
+
+
+
+
+
+
+                        <div class="scaffold-card">
+
+
+
+                            <h3>⚡ Common Misconception</h3>
+
+
+
+                            <p><strong>Myth:</strong> Southeast Asia is culturally homogeneous.</p>
+
+
+
+                            <p><strong>Fact:</strong> It is one of the most diverse regions on Earth. It includes the Catholic Philippines, Islamic Indonesia, Buddhist Thailand/Vietnam, and secular Singapore—all intersecting in a geographic "crossroads."</p>
+
+
+
+                        </div>
+
+
+
                     </div>
+
+
+
                 </details>
+
+
+
             </section>
+
+
+
+
+
+
 
             <!-- 2. Regional Profile (Snapshot) -->
+
+
+
             <section id="profile" class="section-container">
-                <h2>🌊 Regional Snapshot: The Tropical Realm</h2>
+
+
+
+                <h2>🌐Š Regional Snapshot: The Tropical Realm</h2>
+
+
+
                 <div class="profile-grid">
+
+
+
                     <div class="profile-item">
+
+
+
                         <strong>Population</strong>
+
+
+
                         <span>~680 Million</span>
+
+
+
                     </div>
+
+
+
                     <div class="profile-item">
+
+
+
                         <strong>Largest Country</strong>
+
+
+
                         <span>Indonesia (Archipelago)</span>
+
+
+
                     </div>
+
+
+
                     <div class="profile-item">
+
+
+
                         <strong>Key Choke Point</strong>
+
+
+
                         <span>Strait of Malacca</span>
+
+
+
                     </div>
+
+
+
                     <div class="profile-item">
+
+
+
                         <strong>Primary Theme</strong>
+
+
+
                         <span>Connectivity & Diversity</span>
+
+
+
                     </div>
+
+
+
                 </div>
+
+
+
                 <p class="mt-4">Southeast Asia is a "shatter belt" region, historically caught between the influence of India and China (hence "Indochina"). It is physically divided into a mainland peninsula (Vietnam, Thailand, Laos, Cambodia, Myanmar) and a vast island realm (Indonesia, Philippines, Malaysia, Singapore, Brunei, Timor-Leste).</p>
+
+
+
                 
+
+
+
                 <figure class="figure" style="max-width: 600px; margin: var(--space-6) auto;">
+
+
+
                     <img src="../../images/indonesia_map.jpg" alt="Map of the Indonesian archipelago" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
+
+
+
                     <figcaption><strong>Figure 10.0:</strong> The Archipelago. Indonesia alone consists of over 17,000 islands, creating immense challenges for governance and national unity.</figcaption>
+
+
+
                 </figure>
+
+
+
             </section>
+
+
+
+
+
+
 
             <!-- 3. Interactive Regional Map -->
+
+
+
             <section id="interactive-map" class="section-container">
-                <h2>🗺️ Interactive Map: Southeast Asia</h2>
+
+
+
+                <h2>ðŸ—ºï¸ Interactive Map: Southeast Asia</h2>
+
+
+
                 <p>Explore the complex geography of the region. Note the strategic position of Singapore at the tip of the Malay Peninsula and the dense clustering of cities along the coasts.</p>
+
+
+
                 <div id="regions-map" class="interactive-map"></div>
+
+
+
                 <div class="map-controls">
+
+
+
                     <p class="text-sm italic text-muted">Toggle between Physical terrain and Political boundaries. Observe how the Mekong River creates a corridor for settlement in the mainland.</p>
+
+
+
                 </div>
+
+
+
             </section>
+
+
+
+
+
+
 
             <!-- 4. Physical Geography Analysis -->
+
+
+
             <section id="physical-geography" class="section-container">
-                <h2>🌴 Physical Geography: Rainforests and Volcanoes</h2>
+
+
+
+                <h2>🌐´ Physical Geography: Rainforests and Volcanoes</h2>
+
+
+
                 <p>The region is defined by its tropical climate and tectonic volatility. The <strong>Mekong River</strong> is the lifeline of the mainland, supporting rice agriculture for millions. The island nations sit on the <strong>Ring of Fire</strong>, making them prone to volcanic eruptions and tsunamis.</p>
+
+
+
                 
+
+
+
                 <div class="figure-row">
+
+
+
                     <figure class="figure">
+
+
+
                         <img src="../../images/angkor_wat.jpg" alt="Angkor Wat temple complex" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
+
+
+
                         <figcaption><strong>Figure 10.1:</strong> Hydraulic Civilizations. Ancient empires like the Khmer (Angkor Wat) managed water resources to build massive societies in the tropics.</figcaption>
+
+
+
                     </figure>
+
+
+
                     <figure class="figure">
+
+
+
                         <img src="../../images/philippines_street.jpg" alt="Tropical landscape" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
+
+
+
                         <figcaption><strong>Figure 10.2:</strong> Tropical Biodiversity. The region's rainforests are among the most biodiverse on Earth but are threatened by rapid deforestation.</figcaption>
+
+
+
                     </figure>
+
+
+
                 </div>
+
+
+
                 
+
+
+
                 <p><strong>Deforestation</strong> for palm oil plantations is a critical environmental issue, particularly in Borneo and Sumatra, threatening endangered species like the orangutan and contributing to global carbon emissions.</p>
+
+
+
                 
+
+
+
                 <div class="inquiry-prompt">
-                    <h3>🔍 Geographic Inquiry</h3>
+
+
+
+                    <h3>ðŸ” Geographic Inquiry</h3>
+
+
+
                     <p>Singapore is an island city-state with no natural resources—it even imports fresh water from Malaysia. How has it managed to become one of the wealthiest nations on Earth purely through its geographic location and human capital?</p>
+
+
+
                 </div>
+
+
+
             </section>
+
+
+
+
+
+
 
             <!-- 6. Important Person Break-out (Lee Kuan Yew) -->
+
+
+
             <section class="important-person-sidebar">
+
+
+
                 <div class="sidebar-content">
+
+
+
                     <div class="person-image" style="margin-bottom: var(--space-4);">
+
+
+
                         <img src="../../images/singapore_skyline.jpg" alt="Singapore skyline" class="zoomable-image" style="border-radius: var(--radius-md);" tabindex="0" role="button" aria-label="Click to enlarge image">
+
+
+
                     </div>
+
+
+
                     <div class="person-header">
+
+
+
                         <h3>👤 Important Person</h3>
+
+
+
                     </div>
+
+
+
                     <div class="person-info">
+
+
+
                         <strong>Lee Kuan Yew</strong>
+
+
+
                         <p class="person-title">Founding Father of Singapore</p>
-                        <p>Lee Kuan Yew transformed Singapore from a colonial trading post with no resources into a global financial hub. His philosophy emphasized strict governance, pragmatism, and leveraging Singapore's strategic <strong>location</strong> as an entrepôt (transshipment port) between East and West.</p>
+
+
+
+                        <p>Lee Kuan Yew transformed Singapore from a colonial trading post with no resources into a global financial hub. His philosophy emphasized strict governance, pragmatism, and leveraging Singapore's strategic <strong>location</strong> as an entrepÃ´t (transshipment port) between East and West.</p>
+
+
+
                         <a href="https://www.britannica.com/biography/Lee-Kuan-Yew" target="_blank" class="btn-text">Learn about the 'Singapore Model' →</a>
+
+
+
                     </div>
+
+
+
                 </div>
+
+
+
             </section>
+
+
+
+
+
+
 
             <!-- 5. Human Geography Analysis -->
+
+
+
             <section id="human-geography" class="section-container">
+
+
+
                 <h2>👥 Human Geography: ASEAN and Diversity</h2>
+
+
+
                 <p>Southeast Asia is a mosaic of religions: Islam dominates the islands (Indonesia is the world's largest Muslim nation), Buddhism thrives on the mainland, and Catholicism is majority in the Philippines.</p>
+
+
+
                 
+
+
+
                 <div class="figure-row">
+
+
+
                     <figure class="figure">
+
+
+
                         <img src="../../images/bangkok_skyline.jpg" alt="Bangkok skyline" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
+
+
+
                         <figcaption><strong>Figure 10.3:</strong> Primate Cities. Bangkok is a classic "primate city," dwarfing all other cities in Thailand in size and economic power.</figcaption>
+
+
+
                     </figure>
+
+
+
                     <figure class="figure">
+
+
+
                         <img src="../../images/philippines_street.jpg" alt="Manila jeepney" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
+
+
+
                         <figcaption><strong>Figure 10.4:</strong> Urban Adaptation. The jeepney in Manila symbolizes the creative adaptation of colonial leftovers into local culture.</figcaption>
+
+
+
                     </figure>
+
+
+
                 </div>
+
+
+
+
+
+
 
                 <p>The <strong>Association of Southeast Asian Nations (ASEAN)</strong> fosters economic cooperation and political stability, helping the region navigate the rivalry between major powers like China and the US.</p>
+
+
+
             </section>
+
+
+
+
+
+
 
             <!-- 7. Texas Connection Toggle -->
+
+
+
             <section id="texas-connection" class="section-container">
+
+
+
                 <div class="texas-toggle">
+
+
+
                     <button class="btn-texas-toggle" id="texas-btn">
-                        <span class="star-icon">⭐</span> Texas Connection: The Viet-Cajun Fusion
+
+
+
+                        <span class="star-icon">â­</span> Texas Connection: The Viet-Cajun Fusion
+
+
+
                     </button>
+
+
+
                     <div class="texas-content hidden" id="texas-content">
+
+
+
                         <h4>From the Mekong to the Mississippi</h4>
+
+
+
                         <p>Texas has a profound connection to Vietnam. Following the Vietnam War, many refugees settled along the Gulf Coast because the climate and fishing opportunities resembled home. This migration created a vibrant Vietnamese-Texan culture.</p>
+
+
+
                         <p><strong>Culinary Geography:</strong> The famous "Viet-Cajun" crawfish of Houston is a perfect example of <em>cultural diffusion</em>—blending traditional Cajun boiling techniques with Vietnamese flavors like lemongrass, garlic, and butter. It is now a signature Texas dish.</p>
+
+
+
                     </div>
+
+
+
                 </div>
+
+
+
             </section>
+
+
+
+
+
+
 
             <!-- 8. Case Study -->
+
+
+
             <section id="case-study" class="section-container">
+
+
+
                 <div class="case-study-gold">
+
+
+
                     <div class="case-study-header">
+
+
+
                         <span class="label">Case Study</span>
+
+
+
                         <h2>The South China Sea: Waters of Conflict</h2>
+
+
+
                     </div>
+
+
+
                     <p>The South China Sea is one of the world's busiest trade routes and potentially rich in oil and gas. China claims almost the entire sea (the "Nine-Dash Line"), conflicting with the maritime zones of Vietnam, the Philippines, Malaysia, and Brunei.</p>
+
+
+
                     <div class="case-study-questions">
+
+
+
                         <h4>Questions to Consider:</h4>
+
+
+
                         <ul>
+
+
+
                             <li>Why is control over small, uninhabited islands (like the Spratlys) so strategically important? (Hint: UNCLOS and Exclusive Economic Zones).</li>
+
+
+
                             <li>How does this dispute challenge ASEAN's unity?</li>
+
+
+
                         </ul>
+
+
+
                     </div>
+
+
+
                 </div>
+
+
+
             </section>
+
+
+
+
+
+
 
             <!-- 9. Interactive Flip Cards (Big Ideas) -->
+
+
+
             <section id="big-ideas" class="section-container">
+
+
+
                 <h2>💡 Big Ideas: Flip to Explore</h2>
+
+
+
                 <p>Click on the cards below to reveal the core geographic concepts for Southeast Asia.</p>
+
+
+
                 
+
+
+
                 <div class="flip-card-grid">
+
+
+
                     <!-- Card 1 -->
+
+
+
                     <div class="flip-card">
+
+
+
                         <div class="flip-card-inner">
+
+
+
                             <div class="flip-card-front">
-                                <div class="flip-card-icon">⚓</div>
-                                <h3>Entrepôt</h3>
+
+
+
+                                <div class="flip-card-icon">âš“</div>
+
+
+
+                                <h3>EntrepÃ´t</h3>
+
+
+
                                 <p class="flip-card-hint">Click to flip</p>
+
+
+
                             </div>
+
+
+
                             <div class="flip-card-back">
+
+
+
                                 <p>A port city (like Singapore) where goods are imported, stored, and re-exported. It serves as a trading hub rather than a production center.</p>
+
+
+
                             </div>
+
+
+
                         </div>
+
+
+
                     </div>
+
+
+
+
+
+
 
                     <!-- Card 2 -->
+
+
+
                     <div class="flip-card">
+
+
+
                         <div class="flip-card-inner">
+
+
+
                             <div class="flip-card-front">
-                                <div class="flip-card-icon">🏝️</div>
+
+
+
+                                <div class="flip-card-icon">ðŸï¸</div>
+
+
+
                                 <h3>Archipelago</h3>
+
+
+
                                 <p class="flip-card-hint">Click to flip</p>
+
+
+
                             </div>
+
+
+
                             <div class="flip-card-back">
+
+
+
                                 <p>A chain or group of islands. Indonesia and the Philippines are archipelagic states, which creates challenges for connectivity and national unity.</p>
+
+
+
                             </div>
+
+
+
                         </div>
+
+
+
                     </div>
+
+
+
+
+
+
 
                     <!-- Card 3 -->
+
+
+
                     <div class="flip-card">
+
+
+
                         <div class="flip-card-inner">
+
+
+
                             <div class="flip-card-front">
-                                <div class="flip-card-icon">⚔️</div>
+
+
+
+                                <div class="flip-card-icon">âš”ï¸</div>
+
+
+
                                 <h3>Shatter Belt</h3>
+
+
+
                                 <p class="flip-card-hint">Click to flip</p>
+
+
+
                             </div>
+
+
+
                             <div class="flip-card-back">
+
+
+
                                 <p>A region caught between stronger colliding external cultural-political forces, under persistent stress, and often fragmented by aggressive rivals (e.g., during the Cold War).</p>
+
+
+
                             </div>
+
+
+
                         </div>
+
+
+
                     </div>
+
+
+
                 </div>
+
+
+
             </section>
+
+
+
+
+
+
 
             <!-- 10. Knowledge Check (Quiz) -->
+
+
+
             <section id="quiz" class="section-container">
+
+
+
                 <h2>✅ Knowledge Check</h2>
+
+
+
                 <div id="quiz-container" class="quiz-wrapper">
+
+
+
                     <p class="loading">Loading quiz questions...</p>
+
+
+
                 </div>
+
+
+
             </section>
+
+
+
+
+
+
 
              <!-- Navigation -->
+
+
+
             <nav class="chapter-nav" style="display: flex; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-8);">
-                <a href="../09-east-asia/index.html" class="btn btn-primary">← Chapter 9: East Asia</a>
+
+
+
+                <a href="../09-east-asia/index.html" class="btn btn-primary">â† Chapter 9: East Asia</a>
+
+
+
                 <a href="../11-australia-oceania/index.html" class="btn btn-primary">Chapter 11: Australia and Oceania →</a>
+
+
+
             </nav>
 
+
+
+
+
+
+
             <!-- Standards Alignment Map -->
+
+
+
             <section class="standards-alignment" aria-label="Curriculum Standards Alignment">
+
+
+
                 <h2>📊 Curriculum Standards Alignment</h2>
+
+
+
                 <p class="standards-subtitle">This chapter aligns with the following National and State geography standards.</p>
+
+
+
                 
+
+
+
                 <div class="standards-grid">
+
+
+
                     <!-- National Standards -->
+
+
+
                     <details class="standard-group std-national">
+
+
+
                         <summary><h3>🇺🇸 National Geography Standards</h3></summary>
+
+
+
                         <div class="standard-content">
+
+
+
                             <div class="standard-item">
+
+
+
                                 <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element II.4</a>
+
+
+
                                 <span class="standard-desc">Physical Systems: Tropical ecosystems and archipelagic geography.</span>
+
+
+
                             </div>
+
+
+
                             <div class="standard-item">
+
+
+
                                 <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element IV.13</a>
+
+
+
                                 <span class="standard-desc">Cooperation and Conflict: ASEAN integration vs. Sea disputes.</span>
+
+
+
                             </div>
+
+
+
                             <div class="standard-item">
+
+
+
                                 <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element II.6</a>
+
+
+
                                 <span class="standard-desc">Culture: Religious diffusion (Islam, Buddhism, Christianity).</span>
+
+
+
                             </div>
+
+
+
                         </div>
+
+
+
                     </details>
+
+
+
+
+
+
 
                     <!-- Texas Standards -->
+
+
+
                     <details class="standard-group std-texas">
+
+
+
                         <summary><h3>🤠 Texas Core (GEOG 1303)</h3></summary>
+
+
+
                         <div class="standard-content">
+
+
+
                             <div class="standard-item">
+
+
+
                                 <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 2</a>
+
+
+
                                 <span class="standard-desc">Locate significant features (Mekong, Jakarta, Luzon).</span>
+
+
+
                             </div>
+
+
+
                             <div class="standard-item">
+
+
+
                                 <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 3</a>
+
+
+
                                 <span class="standard-desc">Globalization (Singapore's role in global shipping).</span>
+
+
+
                             </div>
+
+
+
                             <div class="standard-item">
+
+
+
                                 <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">Critical Thinking</a>
+
+
+
                                 <span class="standard-desc">Analyze the environmental impact of rapid development (Deforestation).</span>
+
+
+
                             </div>
+
+
+
                         </div>
+
+
+
                     </details>
+
+
+
+
+
+
 
                     <!-- Florida Standards -->
+
+
+
                     <details class="standard-group std-florida">
-                        <summary><h3>☀️ Florida Sunshine State (SS.912.G)</h3></summary>
+
+
+
+                        <summary><h3>â˜€ï¸ Florida Sunshine State (SS.912.G)</h3></summary>
+
+
+
                         <div class="standard-content">
+
+
+
                             <div class="standard-item">
+
+
+
                                 <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.2.2</a>
+
+
+
                                 <span class="standard-desc">Human-Environment Interaction: Palm oil and habitat loss.</span>
+
+
+
                             </div>
+
+
+
                             <div class="standard-item">
+
+
+
                                 <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.4.1</a>
+
+
+
                                 <span class="standard-desc">Population characteristics: Transmigration policies.</span>
+
+
+
                             </div>
+
+
+
                             <div class="standard-item">
+
+
+
                                 <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.4.7</a>
+
+
+
                                 <span class="standard-desc">Cultural characteristics: The "Crossroads" of religions.</span>
+
+
+
                             </div>
+
+
+
                         </div>
+
+
+
                     </details>
+
+
+
                 </div>
+
+
+
             </section>
 
+
+
+
+
+
+
             
+
+
+
         </div>
+
+
+
     </main>
 
-    <footer class="site-footer"><div class="container"><div class="footer-content"><div class="footer-brand"><span class="logo-icon">🌍</span><span>World Regional Geography</span></div><div class="footer-copyright"><p>© 2026 Dr. Sounny. Open Educational Resource.</p></div></div></div></footer>
+
+
+
+
+
+
+    <footer class="site-footer"><div class="container"><div class="footer-content"><div class="footer-brand"><span class="logo-icon">🌐</span><span>World Regional Geography</span></div><div class="footer-copyright"><p>Â© 2026 Dr. Sounny. Open Educational Resource.</p></div></div></div></footer>
+
+
+
     
+
+
+
     <!-- Image Lightbox Overlay -->
+
+
+
     <div id="image-lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+
+
+
         <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
+
+
+
         <img class="lightbox-image" src="" alt="">
+
+
+
     </div>
 
+
+
+
+
+
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
+
+
     <script src="../../js/map-init.js"></script>
+
+
+
     <script src="../../js/regions-data.js"></script>
+
+
+
     <script src="../../js/quiz-engine.js"></script>
+
+
+
     <script src="../../js/chart-data.js"></script>
+
+
+
     <script src="../../js/main.js"></script>
+
+
+
     <script>
+
+
+
         // Initialize the Chapter 10 Interactive Map
+
+
+
         document.addEventListener('DOMContentLoaded', () => {
+
+
+
             const map = MapManager.initMap('regions-map', [5, 115], 4);
+
+
+
             if (map && window.WorldRegionsData) {
+
+
+
                 const seaData = window.WorldRegionsData.features.find(f => f.id === 'southeast-asia');
+
+
+
                 if (seaData) {
+
+
+
                     MapManager.addGeoJson(map, { type: "FeatureCollection", features: [seaData] }, {
+
+
+
                         style: {
+
+
+
                             color: 'var(--color-primary-dark)',
+
+
+
                             weight: 2,
+
+
+
                             fillColor: 'var(--color-primary)',
+
+
+
                             fillOpacity: 0.1
+
+
+
                         }
+
+
+
                     }, "Southeast Asia Region");
+
+
+
                 }
+
+
+
             }
+
+
+
+
+
+
 
             // Initialize Quiz
+
+
+
             fetch('quiz-data.json')
+
+
+
                 .then(response => response.json())
+
+
+
                 .then(data => QuizEngine.init('quiz-container', data))
+
+
+
                 .catch(err => console.error('Error loading quiz data:', err));
 
+
+
+
+
+
+
             // Initialize Charts
+
+
+
             if (typeof ChartDataManager !== 'undefined' && typeof Chart !== 'undefined') {
+
+
+
                 ChartDataManager.createChart('asean-growth-chart', ChartDataManager.aseanGrowthChart);
+
+
+
             }
+
+
+
         });
 
+
+
+
+
+
+
         // Lightbox functionality for zoomable images
+
+
+
         (function() {
+
+
+
             const lightbox = document.getElementById('image-lightbox');
+
+
+
             const lightboxImg = lightbox.querySelector('.lightbox-image');
+
+
+
             const closeBtn = lightbox.querySelector('.lightbox-close');
+
+
+
             
+
+
+
             // Open lightbox when clicking zoomable images
+
+
+
             document.querySelectorAll('.zoomable-image').forEach(img => {
+
+
+
                 img.addEventListener('click', () => {
+
+
+
                     lightboxImg.src = img.src;
+
+
+
                     lightboxImg.alt = img.alt;
+
+
+
                     lightbox.hidden = false;
+
+
+
                     document.body.style.overflow = 'hidden';
+
+
+
                     closeBtn.focus();
+
+
+
                 });
+
+
+
                 // Also support keyboard activation
+
+
+
                 img.addEventListener('keydown', (e) => {
+
+
+
                     if (e.key === 'Enter' || e.key === ' ') {
+
+
+
                         e.preventDefault();
+
+
+
                         img.click();
+
+
+
                     }
+
+
+
                 });
+
+
+
             });
+
+
+
             
+
+
+
             // Close lightbox
+
+
+
             function closeLightbox() {
+
+
+
                 lightbox.hidden = true;
+
+
+
                 document.body.style.overflow = '';
+
+
+
             }
+
+
+
             
+
+
+
             closeBtn.addEventListener('click', closeLightbox);
+
+
+
             lightbox.addEventListener('click', (e) => {
+
+
+
                 if (e.target === lightbox) closeLightbox();
+
+
+
             });
+
+
+
             document.addEventListener('keydown', (e) => {
+
+
+
                 if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+
+
+
             });
+
+
+
         })();
+
+
+
     </script>
+
+
+
 </body>
+
+
+
 </html>
+
+
+
+
+
+
+
+
+
+
+

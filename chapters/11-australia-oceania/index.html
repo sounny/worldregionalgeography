@@ -1,405 +1,1650 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
+
+
+
 <html lang="en">
+
+
+
 <head>
+
+
+
     <meta charset="UTF-8">
+
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
     <title>Chapter 11: Australia and Oceania | World Regional Geography</title>
+
+
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+
+
     <link rel="stylesheet" href="../../css/style.css">
+
+
+
 </head>
+
+
+
 <body>
+
+
+
     <!-- Skip to Main Content Link (Accessibility) -->
+
+
+
     <a href="#main-content" class="skip-link">Skip to main content</a>
+
+
+
     
+
+
+
     <header class="site-header">
+
+
+
         <div class="container">
-            <div class="header-brand"><a href="../../index.html" class="logo"><span class="logo-icon">🌍</span><span class="logo-text">World Regional Geography</span></a></div>
-            <nav class="main-nav"><ul class="nav-menu"><li><a href="../../index.html" class="nav-link">Home</a></li><li class="nav-dropdown"><a href="#" class="nav-link dropdown-toggle active">Chapters</a><ul class="dropdown-menu"><li><a href="../01-introduction/index.html">1. Introduction</a></li><li><a href="../02-europe/index.html">2. Europe</a></li><li><a href="../03-russia/index.html">3. Russia and Central Asia</a></li><li><a href="../04-north-america/index.html">4. North America</a></li><li><a href="../05-latin-america/index.html">5. Latin America</a></li><li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li><li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa and SW Asia</a></li><li><a href="../08-south-asia/index.html">8. South Asia</a></li><li><a href="../09-east-asia/index.html">9. East Asia</a></li><li><a href="../10-southeast-asia/index.html">10. Southeast Asia</a></li><li><a href="../11-australia-oceania/index.html" class="active">11. Australia and Oceania</a></li><li><a href="../12-conclusion/index.html">12. Global Connections</a></li></ul></li></ul></nav>
+
+
+
+            <div class="header-brand"><a href="../../index.html" class="logo"><span class="logo-icon">🌐</span><span class="logo-text">World Regional Geography</span></a></div>
+
+
+
+            <nav class="main-nav">                <ul class="nav-menu">
+                    <li><a href="../../index.html" class="nav-link">Home</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active">Chapters</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="../01-introduction/index.html">1. Introduction</a></li>
+                            <li><a href="../02-europe/index.html">2. Europe</a></li>
+                            <li><a href="../03-russia/index.html">3. Russia and Central Asia</a></li>
+                            <li><a href="../04-north-america/index.html">4. North America</a></li>
+                            <li><a href="../05-latin-america/index.html">5. Latin America</a></li>
+                            <li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
+                            <li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa & SW Asia</a></li>
+                            <li><a href="../08-south-asia/index.html">8. South Asia</a></li>
+                            <li><a href="../09-east-asia/index.html">9. East Asia</a></li>
+                            <li><a href="../10-southeast-asia/index.html">10. Southeast Asia</a></li>
+                            <li><a href="../11-australia-oceania/index.html">11. Australia & Oceania</a></li>
+                            <li><a href="../12-conclusion/index.html">12. Global Connections</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../../standards.html" class="nav-link">Standards</a></li>
+                    <li><a href="../../index.html#chapters" class="nav-link">Resources</a></li>
+                    <li><a href="../../index.html#about" class="nav-link">About</a></li>
+                </ul></li></ul></nav>
+
+
+
         </div>
+
+
+
     </header>
 
+
+
+
+
+
+
     <section class="chapter-header">
+
+
+
         <div class="container">
+
+
+
             <p class="chapter-meta">Chapter 11 - Week 13</p>
+
+
+
             <h1 class="chapter-title">Australia and Oceania</h1>
+
+
+
             <p class="chapter-description">From the vast Australian Outback to thousands of Pacific islands, this region showcases unique ecosystems, Indigenous cultures, and the frontline impacts of climate change.</p>
+
+
+
         </div>
+
+
+
     </section>
 
+
+
+
+
+
+
     <main id="main-content" class="chapter-content">
+
+
+
         <div class="container">
+
+
+
             <!-- 1. At a Glance (Scaffold) -->
+
+
+
             <section class="learning-scaffold" aria-label="Learning scaffold">
+
+
+
                 <details class="learning-scaffold-details">
+
+
+
                     <summary>
+
+
+
                         <div class="scaffold-head">
+
+
+
                             <h2>At a Glance</h2>
+
+
+
                             <div class="scaffold-meta" aria-label="Prerequisites and time estimate">
+
+
+
                                 <span class="scaffold-chip"><strong>Prereqs:</strong> Chapter 10</span>
+
+
+
                                 <span class="scaffold-chip"><strong>Time:</strong> 45 min read + 20 min activities</span>
+
+
+
                                 <span class="scaffold-chip"><strong>Deliverable:</strong> Quiz + Reflection</span>
+
+
+
                             </div>
+
+
+
                         </div>
+
+
+
                     </summary>
 
+
+
+
+
+
+
                     <div class="scaffold-grid">
+
+
+
                         <div class="scaffold-card">
+
+
+
                             <h3>🎯 Learning Outcomes</h3>
+
+
+
                             <ul>
-                                <li><strong>Describe:</strong> The unique <strong>biogeography</strong> (marsupials, eucalyptus) due to isolation.</li>
-                                <li><strong>Distinguish:</strong> The cultural and physical differences between <strong>Melanesia, Micronesia, and Polynesia</strong>.</li>
-                                <li><strong>Analyze:</strong> The impact of colonization on <strong>Aboriginal</strong> and <strong>Maori</strong> peoples.</li>
-                                <li><strong>Evaluate:</strong> The existential threat of <strong>sea-level rise</strong> to low-lying atolls.</li>
-                                <li><strong>Apply:</strong> The concept of the "Tyranny of Distance" to economic development.</li>
+
+
+
+                                <li><strong>Understand:</strong> Describe the unique <strong>biogeography</strong> (marsupials, eucalyptus) due to isolation.</li>
+
+
+
+                                <li><strong>Analyze:</strong> Distinguish the cultural and physical differences between <strong>Melanesia, Micronesia, and Polynesia</strong>.</li>
+
+
+
+                                <li><strong>Analyze:</strong> Examine the impact of colonization on <strong>Aboriginal</strong> and <strong>Maori</strong> peoples.</li>
+
+
+
+                                <li><strong>Evaluate:</strong> Assess the existential threat of <strong>sea-level rise</strong> to low-lying atolls.</li>
+
+
+
+                                <li><strong>Apply:</strong> Apply the concept of the "Tyranny of Distance" to economic development.</li>
+
+
+
                             </ul>
+
+
+
                         </div>
 
+
+
+
+
+
+
                         <div class="scaffold-card">
+
+
+
                             <h3>🔑 Key Terms</h3>
+
+
+
                             <p>Biogeography, Outback, Atoll, Aborigines, Maori, EEZ (Exclusive Economic Zone), Great Barrier Reef, Wallace's Line.</p>
+
+
+
                         </div>
+
+
+
                     </div>
+
+
+
+
+
+
 
                     <div class="scaffold-grid">
-                        <div class="scaffold-card">
-                            <h3>🛑 Stop & Check</h3>
-                            <div class="quiz-question" style="margin-bottom:0.5rem;">What is the difference between a "High Island" and a "Low Island"?</div>
-                            <details>
-                                <summary style="padding:0; color:var(--color-primary); font-weight:600; font-size:0.9rem;">Reveal Answer</summary>
-                                <div style="margin-top:0.5rem; font-size:0.95rem; color:var(--color-text-light);">
-                                    <strong>High Islands</strong> are volcanic, fertile, and can support larger populations (e.g., Fiji). <strong>Low Islands</strong> are coral atolls, often just meters above sea level, making them vulnerable to storms and rising seas (e.g., Tuvalu).
-                                </div>
-                            </details>
-                        </div>
+
+
 
                         <div class="scaffold-card">
-                            <h3>⚡ Common Misconception</h3>
-                            <p><strong>Myth:</strong> Australia is entirely desert.</p>
-                            <p><strong>Fact:</strong> While the vast interior ("Outback") is arid, the coastal fringes—especially the East and Southwest—have temperate and tropical climates where <strong>85%</strong> of the population lives.</p>
+
+
+
+                            <h3>🛑 Stop & Check</h3>
+
+
+
+                            <div class="quiz-question" style="margin-bottom:0.5rem;">What is the difference between a "High Island" and a "Low Island"?</div>
+
+
+
+                            <details>
+
+
+
+                                <summary style="padding:0; color:var(--color-primary); font-weight:600; font-size:0.9rem;">Reveal Answer</summary>
+
+
+
+                                <div style="margin-top:0.5rem; font-size:0.95rem; color:var(--color-text-light);">
+
+
+
+                                    <strong>High Islands</strong> are volcanic, fertile, and can support larger populations (e.g., Fiji). <strong>Low Islands</strong> are coral atolls, often just meters above sea level, making them vulnerable to storms and rising seas (e.g., Tuvalu).
+
+
+
+                                </div>
+
+
+
+                            </details>
+
+
+
                         </div>
+
+
+
+
+
+
+
+                        <div class="scaffold-card">
+
+
+
+                            <h3>⚡ Common Misconception</h3>
+
+
+
+                            <p><strong>Myth:</strong> Australia is entirely desert.</p>
+
+
+
+                            <p><strong>Fact:</strong> While the vast interior ("Outback") is arid, the coastal fringes—especially the East and Southwest—have temperate and tropical climates where <strong>85%</strong> of the population lives.</p>
+
+
+
+                        </div>
+
+
+
                     </div>
+
+
+
                 </details>
+
+
+
             </section>
+
+
+
+
+
+
 
             <section id="regional-profile">
-                <h2>🏝️ Regional Profile</h2>
+
+
+
+                <h2>ðŸï¸ Regional Profile</h2>
+
+
+
                 <div class="profile-grid">
+
+
+
                     <div class="profile-stat">
+
+
+
                         <div class="stat-icon">👥</div>
+
+
+
                         <div class="stat-value">~45 Million</div>
+
+
+
                         <div class="stat-label">Population</div>
+
+
+
                     </div>
+
+
+
                     <div class="profile-stat">
-                        <div class="stat-icon">🗺️</div>
+
+
+
+                        <div class="stat-icon">ðŸ—ºï¸</div>
+
+
+
                         <div class="stat-value">14 Countries</div>
+
+
+
                         <div class="stat-label">Independent Nations</div>
+
+
+
                     </div>
+
+
+
                     <div class="profile-stat">
-                        <div class="stat-icon">🐨</div>
+
+
+
+                        <div class="stat-icon">ðŸ¨</div>
+
+
+
                         <div class="stat-value">Endemic</div>
+
+
+
                         <div class="stat-label">Unique Wildlife</div>
+
+
+
                     </div>
+
+
+
                     <div class="profile-stat">
-                        <div class="stat-icon">🌊</div>
+
+
+
+                        <div class="stat-icon">🌐Š</div>
+
+
+
                         <div class="stat-value">Rising Seas</div>
+
+
+
                         <div class="stat-label">Climate Threat</div>
+
+
+
                     </div>
+
+
+
                 </div>
+
+
+
             </section>
+
+
+
+
+
+
 
             <section id="oceania-map">
-                <h2>🗺️ Interactive Map: Australia and Oceania</h2>
+
+
+
+                <h2>ðŸ—ºï¸ Interactive Map: Australia and Oceania</h2>
+
+
+
                 <div id="regions-map" class="interactive-map" role="region" aria-label="Interactive map"></div>
+
+
+
             </section>
+
+
+
+
+
+
 
             <section id="physical-geography">
+
+
+
                 <h2>Physical Geography</h2>
+
+
+
                 
+
+
+
                 <h3>A Unique Biogeography</h3>
+
+
+
                 <p>Isolated for millions of years, Australia developed a unique flora and fauna found nowhere else on Earth. The continent is dry, flat, and ancient, while New Zealand is young, mountainous, and geologically active.</p>
+
+
+
                 <ul>
+
+
+
                     <li><strong>Biogeography:</strong> Wallace's Line and Weber's Line mark the boundary between Asian and Australian species, a fundamental concept in evolutionary biology.</li>
+
+
+
                     <li><strong>The Outback:</strong> The vast, arid interior of Australia, known for its red soil and iconic landmarks like Uluru.</li>
+
+
+
                     <li><strong>Island Types:</strong> The Pacific Islands are classified as high islands (volcanic, fertile) or low islands (coral atolls, vulnerable to sea-level rise).</li>
+
+
+
                 </ul>
 
+
+
+
+
+
+
                 <div class="figure-row">
+
+
+
                     <figure class="figure figure-center">
+
+
+
                         <img src="../../images/pacific_regions_map.jpg" alt="Map of Pacific Regions: Melanesia, Micronesia, Polynesia" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
+
+
+
                         <figcaption>
+
+
+
                             <strong>Figure 11.1:</strong> The Pacific Islands. The region is traditionally divided into Melanesia, Micronesia, and Polynesia.
+
+
+
                         </figcaption>
+
+
+
                     </figure>
+
+
+
                     <figure class="figure figure-center">
+
+
+
                         <img src="../../images/wallaces_line.jpg" alt="Map of Wallace's Line" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
+
+
+
                         <figcaption>
+
+
+
                             <strong>Figure 11.2:</strong> Biogeographical Lines. Wallace's Line separates the ecozones of Asia and Australia.
+
+
+
                         </figcaption>
+
+
+
                     </figure>
+
+
+
                     <figure class="figure figure-center">
+
+
+
                         <img src="../../images/uluru.jpg" alt="Uluru in the Outback" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
+
+
+
                         <figcaption>
+
+
+
                             <strong>Figure 11.3:</strong> Uluru (Ayers Rock). A sacred site for the Anangu people and an icon of the Australian Outback.
+
+
+
                         </figcaption>
+
+
+
                     </figure>
+
+
+
                     <figure class="figure figure-center">
+
+
+
                         <img src="../../images/nz_alps.jpg" alt="Southern Alps of New Zealand" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
+
+
+
                         <figcaption>
+
+
+
                             <strong>Figure 11.4:</strong> The Southern Alps, New Zealand. Dramatic mountain landscapes formed by the collision of tectonic plates.
+
+
+
                         </figcaption>
+
+
+
                     </figure>
+
+
+
                 </div>
+
+
+
             </section>
+
+
+
+
+
+
 
             <section id="human-geography">
-                <h2>🌏 Human Geography and Adaptation</h2>
+
+
+
+                <h2>🌐 Human Geography and Adaptation</h2>
+
+
+
                 <p>From the ancient traditions of Aboriginal Australians to the diverse cultures of the Pacific, the region is defined by its people's connection to the land and sea.</p>
+
+
+
                 
+
+
+
                 <figure class="figure figure-center figure-spaced">
+
+
+
                     <img src="../../images/alice_springs.jpg" alt="The Ghan train in Alice Springs" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
+
+
+
                     <figcaption>
+
+
+
                         <strong>Figure 11.5:</strong> Alice Springs. A vital hub in the Red Centre, connected by the historic Ghan railway.
+
+
+
                     </figcaption>
+
+
+
                 </figure>
+
+
+
             </section>
+
+
+
+
+
+
 
             <section id="global-theme">
-                <h2>🌐 Global Theme: Climate Change Frontline</h2>
+
+
+
+                <h2>🌐 Global Theme: Climate Change Frontline</h2>
+
+
+
                 <p>The Pacific Islands are tragic barometers for climate change. Rising sea levels urge nations like Kiribati to plan for a future where their land may no longer exist.</p>
+
+
+
                 <p>In Australia, the impact is seen in shifting agricultural zones and intensifying bushfires.</p>
 
+
+
+
+
+
+
                 <div class="figure-row">
+
+
+
                     <figure class="figure figure-center">
+
+
+
                         <img src="../../images/australia_vineyard.jpg" alt="Australian Vineyard" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
+
+
+
                         <figcaption>
+
+
+
                             <strong>Figure 11.6:</strong> Agriculture and Climate. Vineyards in Australia face challenges from changing rainfall patterns and temperatures.
+
+
+
                         </figcaption>
+
+
+
                     </figure>
+
+
+
                 </div>
+
+
+
             </section>
+
+
+
+
+
+
 
             <section id="discussion" class="section-container">
-                <h2>💬 Discussion & Reflection Prompts</h2>
+
+
+
+                <h2>ðŸ’¬ Discussion & Reflection Prompts</h2>
+
+
+
                 <div class="discussion-box">
+
+
+
                     <h3>Reflect on Your Learning</h3>
+
+
+
                     <ol>
+
+
+
                         <li><strong>Biogeography & Isolation:</strong> How has geographic isolation shaped unique ecosystems in Australia and the Pacific? What threats do these ecosystems face today?</li>
+
+
+
                         <li><strong>Island Vulnerability:</strong> Why are Pacific Island nations at existential risk from climate change? What ethical obligations do wealthy nations have?</li>
+
+
+
                         <li><strong>Indigenous Rights:</strong> How does geographic knowledge of Aboriginal peoples and Pacific Islanders offer insights for sustainable land management?</li>
+
+
+
                     </ol>
+
+
+
                     <h3>Discuss With Your Peers</h3>
+
+
+
                     <ul>
+
+
+
                         <li>What does justice look like for island nations facing climate displacement?</li>
+
+
+
                         <li>How can Australia and Pacific nations adapt to rising sea levels while maintaining cultural identity?</li>
+
+
+
                         <li>What role should Indigenous peoples play in environmental policy and conservation?</li>
+
+
+
                     </ul>
+
+
+
                 </div>
+
+
+
             </section>
+
+
+
+
+
+
 
             <section id="texas-connection" class="section-container">
+
+
+
                 <div class="texas-toggle">
+
+
+
                     <button class="btn-texas-toggle" type="button" aria-expanded="false">
-                        <span class="star-icon">⭐</span> Texas Connection: Mining and Energy
+
+
+
+                        <span class="star-icon">â­</span> Texas Connection: Mining and Energy
+
+
+
                     </button>
+
+
+
                     <div class="texas-content hidden" aria-hidden="true">
+
+
+
                         <p>Both Australia and Texas are global leaders in energy and mining. They share similar semi-arid environments and ranching cultures ("stations" in Australia, "ranches" in Texas). There is significant exchange of technology and expertise in oil, gas, and renewable energy sectors between the two regions.</p>
+
+
+
                     </div>
+
+
+
                 </div>
+
+
+
             </section>
+
+
+
+
+
+
 
             <section id="summary-glossary" class="section-container">
+
+
+
                 <div class="accordion">
+
+
+
                     <div class="accordion-item">
+
+
+
                         <button class="accordion-header">
-                            📖 Glossary of Terms <span class="chevron">▼</span>
+
+
+
+                            ðŸ“– Glossary of Terms <span class="chevron">â–¼</span>
+
+
+
                         </button>
+
+
+
                         <div class="accordion-content">
+
+
+
                             <dl>
+
+
+
                                 <dt>Outback</dt>
+
+
+
                                 <dd>The vast, remote, and arid interior of Australia.</dd>
+
+
+
                                 <dt>Atoll</dt>
+
+
+
                                 <dd>A ring-shaped coral reef including a coral rim that encircles a lagoon.</dd>
+
+
+
                                 <dt>EEZ</dt>
+
+
+
                                 <dd>Exclusive Economic Zone, a sea zone prescribed by the UN over which a state has special rights regarding marine resources.</dd>
+
+
+
                                 <dt>Biogeography</dt>
+
+
+
                                 <dd>The study of the distribution of species and ecosystems in geographic space and through geological time.</dd>
+
+
+
                             </dl>
+
+
+
                         </div>
+
+
+
                     </div>
+
+
+
                     <div class="accordion-item">
+
+
+
                         <button class="accordion-header">
-                            💡 Summary of Big Ideas <span class="chevron">▼</span>
+
+
+
+                            💡 Summary of Big Ideas <span class="chevron">â–¼</span>
+
+
+
                         </button>
+
+
+
                         <div class="accordion-content">
+
+
+
                             <ul>
+
+
+
                                 <li>Geographic isolation has led to unique ecosystems that are highly vulnerable to invasive species.</li>
+
+
+
                                 <li>Climate change poses an existential threat to low-lying Pacific Island nations.</li>
+
+
+
                                 <li>Indigenous rights and land management are central to the region's modern political discourse.</li>
+
+
+
                             </ul>
+
+
+
                         </div>
+
+
+
                     </div>
+
+
+
                 </div>
+
+
+
             </section>
+
+
+
+
+
+
 
             <!-- 10. Knowledge Check (Quiz) -->
+
+
+
             <section id="quiz" class="section-container">
+
+
+
                 <h2>✅ Knowledge Check</h2>
+
+
+
                 <div id="quiz-container" class="quiz-wrapper">
+
+
+
                     <p class="loading">Loading quiz questions...</p>
+
+
+
                 </div>
+
+
+
             </section>
+
+
+
+
+
+
 
              <!-- Navigation -->
+
+
+
             <nav class="chapter-nav" style="display: flex; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-8);">
-                <a href="../10-southeast-asia/index.html" class="btn btn-primary">← Chapter 10: Southeast Asia</a>
+
+
+
+                <a href="../10-southeast-asia/index.html" class="btn btn-primary">â† Chapter 10: Southeast Asia</a>
+
+
+
                 <a href="../12-conclusion/index.html" class="btn btn-primary">Chapter 12: Global Connections →</a>
+
+
+
             </nav>
 
+
+
+
+
+
+
             <!-- Standards Alignment Map -->
+
+
+
             <section class="standards-alignment" aria-label="Curriculum Standards Alignment">
+
+
+
                 <h2>📊 Curriculum Standards Alignment</h2>
+
+
+
                 <p class="standards-subtitle">This chapter aligns with the following National and State geography standards.</p>
+
+
+
                 
+
+
+
                 <div class="standards-grid">
+
+
+
                     <!-- National Standards -->
+
+
+
                     <details class="standard-group std-national">
+
+
+
                         <summary><h3>🇺🇸 National Geography Standards</h3></summary>
+
+
+
                         <div class="standard-content">
+
+
+
                             <div class="standard-item">
+
+
+
                                 <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element II.4</a>
+
+
+
                                 <span class="standard-desc">Physical Systems: Coral reefs and Island Biogeography.</span>
+
+
+
                             </div>
+
+
+
                             <div class="standard-item">
+
+
+
                                 <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element V.14</a>
+
+
+
                                 <span class="standard-desc">Environment and Society: Climate change refugees and adaptation.</span>
+
+
+
                             </div>
+
+
+
                             <div class="standard-item">
+
+
+
                                 <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element II.6</a>
+
+
+
                                 <span class="standard-desc">Culture: Indigenous knowledge systems (Aboriginal management).</span>
+
+
+
                             </div>
+
+
+
                         </div>
+
+
+
                     </details>
+
+
+
+
+
+
 
                     <!-- Texas Standards -->
+
+
+
                     <details class="standard-group std-texas">
+
+
+
                         <summary><h3>🤠 Texas Core (GEOG 1303)</h3></summary>
+
+
+
                         <div class="standard-content">
+
+
+
                             <div class="standard-item">
+
+
+
                                 <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 2</a>
+
+
+
                                 <span class="standard-desc">Locate significant features (Great Barrier Reef, Southern Alps).</span>
+
+
+
                             </div>
+
+
+
                             <div class="standard-item">
+
+
+
                                 <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 3</a>
+
+
+
                                 <span class="standard-desc">Globalization (Tourism and Mining impacts).</span>
+
+
+
                             </div>
+
+
+
                             <div class="standard-item">
+
+
+
                                 <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">Critical Thinking</a>
+
+
+
                                 <span class="standard-desc">Analyze the "Tyranny of Distance" and isolation.</span>
+
+
+
                             </div>
+
+
+
                         </div>
+
+
+
                     </details>
+
+
+
+
+
+
 
                     <!-- Florida Standards -->
+
+
+
                     <details class="standard-group std-florida">
-                        <summary><h3>☀️ Florida Sunshine State (SS.912.G)</h3></summary>
+
+
+
+                        <summary><h3>â˜€ï¸ Florida Sunshine State (SS.912.G)</h3></summary>
+
+
+
                         <div class="standard-content">
+
+
+
                             <div class="standard-item">
+
+
+
                                 <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.2.1</a>
+
+
+
                                 <span class="standard-desc">Physical characteristics: Comparing Continental vs. Island geography.</span>
+
+
+
                             </div>
+
+
+
                             <div class="standard-item">
+
+
+
                                 <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.3.2</a>
+
+
+
                                 <span class="standard-desc">Climate Change: Sea level rise impacts on low islands.</span>
+
+
+
                             </div>
+
+
+
                             <div class="standard-item">
+
+
+
                                 <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.4.4</a>
+
+
+
                                 <span class="standard-desc">Political Geography: EEZs and ocean resource rights.</span>
+
+
+
                             </div>
+
+
+
                         </div>
+
+
+
                     </details>
+
+
+
                 </div>
+
+
+
             </section>
+
+
+
         </div>
+
+
+
     </main>
 
-    <footer class="site-footer"><div class="container"><div class="footer-content"><div class="footer-brand"><span class="logo-icon">🌍</span><span>World Regional Geography</span></div><div class="footer-copyright"><p>© 2026 Dr. Sounny. Open Educational Resource.</p></div></div></div></footer>
+
+
+
+
+
+
+    <footer class="site-footer"><div class="container"><div class="footer-content"><div class="footer-brand"><span class="logo-icon">🌐</span><span>World Regional Geography</span></div><div class="footer-copyright"><p>Â© 2026 Dr. Sounny. Open Educational Resource.</p></div></div></div></footer>
+
+
+
     
+
+
+
     <!-- Image Lightbox Overlay -->
+
+
+
     <div id="image-lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+
+
+
         <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
+
+
+
         <img class="lightbox-image" src="" alt="">
+
+
+
     </div>
 
+
+
+
+
+
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+
     <script src="../../js/main.js"></script>
+
+
+
     <script src="../../js/quiz-engine.js"></script>
+
+
+
     <script>
+
+
+
         document.addEventListener('DOMContentLoaded', function() {
+
+
+
             if (typeof L !== 'undefined' && document.getElementById('regions-map')) {
+
+
+
                 const map = L.map('regions-map').setView([-10, 160], 3);
-                L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { attribution: '© OpenStreetMap © CARTO' }).addTo(map);
+
+
+
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { attribution: 'Â© OpenStreetMap Â© CARTO' }).addTo(map);
+
+
+
                 const cities = [
+
+
+
                     { name: 'Sydney', coords: [-33.8688, 151.2093], note: 'Australia largest city' },
+
+
+
                     { name: 'Melbourne', coords: [-37.8136, 144.9631], note: 'Cultural capital' },
+
+
+
                     { name: 'Auckland', coords: [-36.8509, 174.7645], note: 'New Zealand largest city' },
+
+
+
                     { name: 'Wellington', coords: [-41.2865, 174.7762], note: 'New Zealand capital' },
+
+
+
                     { name: 'Suva', coords: [-18.1416, 178.4419], note: 'Fiji capital' },
+
+
+
                     { name: 'Port Moresby', coords: [-9.4438, 147.1803], note: 'Papua New Guinea capital' }
+
+
+
                 ];
+
+
+
                 cities.forEach(city => { L.circleMarker(city.coords, { radius: 8, fillColor: '#3b82f6', color: '#fff', weight: 2, fillOpacity: 0.8 }).addTo(map).bindPopup('<strong>' + city.name + '</strong><br>' + city.note); });
+
+
+
             }
+
+
+
+
+
+
 
             // Initialize Quiz
+
+
+
             const quizContainer = document.getElementById('quiz-container');
+
+
+
             if (quizContainer) {
+
+
+
                 fetch('quiz-data.json')
+
+
+
                     .then(response => response.json())
+
+
+
                     .then(data => QuizEngine.init('quiz-container', data))
+
+
+
                     .catch(err => {
+
+
+
                         console.error('Error loading quiz data:', err);
+
+
+
                         quizContainer.innerHTML = '<p class="text-muted">Quiz unavailable right now.</p>';
+
+
+
                     });
+
+
+
             }
+
+
+
         });
 
+
+
+
+
+
+
         // Lightbox functionality for zoomable images
+
+
+
         (function() {
+
+
+
             const lightbox = document.getElementById('image-lightbox');
+
+
+
             const lightboxImg = lightbox.querySelector('.lightbox-image');
+
+
+
             const closeBtn = lightbox.querySelector('.lightbox-close');
+
+
+
             
+
+
+
             // Open lightbox when clicking zoomable images
+
+
+
             document.querySelectorAll('.zoomable-image').forEach(img => {
+
+
+
                 img.addEventListener('click', () => {
+
+
+
                     lightboxImg.src = img.src;
+
+
+
                     lightboxImg.alt = img.alt;
+
+
+
                     lightbox.hidden = false;
+
+
+
                     document.body.style.overflow = 'hidden';
+
+
+
                     closeBtn.focus();
+
+
+
                 });
+
+
+
                 // Also support keyboard activation
+
+
+
                 img.addEventListener('keydown', (e) => {
+
+
+
                     if (e.key === 'Enter' || e.key === ' ') {
+
+
+
                         e.preventDefault();
+
+
+
                         img.click();
+
+
+
                     }
+
+
+
                 });
+
+
+
             });
+
+
+
             
+
+
+
             // Close lightbox
+
+
+
             function closeLightbox() {
+
+
+
                 lightbox.hidden = true;
+
+
+
                 document.body.style.overflow = '';
+
+
+
             }
+
+
+
             
+
+
+
             closeBtn.addEventListener('click', closeLightbox);
+
+
+
             lightbox.addEventListener('click', (e) => {
+
+
+
                 if (e.target === lightbox) closeLightbox();
+
+
+
             });
+
+
+
             document.addEventListener('keydown', (e) => {
+
+
+
                 if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+
+
+
             });
+
+
+
         })();
+
+
+
     </script>
+
+
+
 </body>
+
+
+
 </html>
+
+
+
+
+
+
+
+
+
+
+
