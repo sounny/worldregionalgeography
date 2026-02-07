@@ -1884,3 +1884,256 @@ ol {
     }
 }
 
+/* =====================================================
+   Learning Scaffold (At a Glance)
+   ===================================================== */
+.learning-scaffold {
+  background: var(--color-bg-alt);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: var(--space-10);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+/* Custom indicator for summary */
+.learning-scaffold-details summary {
+  padding: var(--space-6);
+  cursor: pointer;
+  background: var(--color-surface);
+  transition: background var(--transition-fast);
+  list-style: none; /* Hide default triangle */
+  position: relative;
+  padding-right: var(--space-16); /* Room for chevron */
+}
+
+/* Hide default marker in Safari/Chrome */
+.learning-scaffold-details summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Custom Chevron */
+.learning-scaffold-details summary::after {
+  content: '';
+  position: absolute;
+  right: var(--space-6);
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-right: 3px solid var(--color-primary);
+  border-bottom: 3px solid var(--color-primary);
+  transform: translateY(-70%) rotate(45deg); /* Pointing down when closed */
+  transition: transform var(--transition-base);
+}
+
+.learning-scaffold-details summary:hover {
+  background: var(--color-bg-alt);
+}
+
+.learning-scaffold-details[open] summary {
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg-alt);
+}
+
+.learning-scaffold-details[open] summary::after {
+  transform: translateY(-20%) rotate(225deg); /* Pointing up when open */
+}
+
+.scaffold-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.scaffold-head h2 {
+  font-size: var(--text-2xl);
+  margin: 0;
+  color: var(--color-primary-dark);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.scaffold-meta {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.scaffold-chip {
+  font-size: var(--text-sm);
+  background: var(--color-bg);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-light);
+  font-weight: 500;
+}
+
+.scaffold-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-8);
+  padding: var(--space-8);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.scaffold-grid:last-child {
+  border-bottom: none;
+}
+
+.scaffold-card h3 {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-3);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.scaffold-card ul, .scaffold-card ol {
+  padding-left: var(--space-4);
+  color: var(--color-text-light);
+}
+
+.scaffold-card li {
+  margin-bottom: var(--space-2);
+}
+
+/* =====================================================
+   Standards Alignment Map
+   ===================================================== */
+.standards-alignment {
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  margin-top: var(--space-16);
+  border-top: 4px solid var(--color-primary);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+}
+
+.standards-alignment h2 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-2);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.standards-subtitle {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-8);
+  font-size: var(--text-base);
+}
+
+.standards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-8);
+}
+
+/* Collapsible Standards Group */
+.standard-group {
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    margin-bottom: var(--space-4);
+    overflow: hidden;
+    transition: all var(--transition-base);
+}
+
+.standard-group summary {
+    padding: var(--space-4) var(--space-6);
+    cursor: pointer;
+    background: var(--color-bg-alt);
+    user-select: none;
+    list-style: none;
+    position: relative;
+    padding-right: var(--space-12);
+}
+
+/* Hide default marker */
+.standard-group summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Custom Chevron for Standards */
+.standard-group summary::after {
+    content: '';
+    position: absolute;
+    right: var(--space-6);
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    border-right: 2px solid var(--color-text);
+    border-bottom: 2px solid var(--color-text);
+    transform: translateY(-70%) rotate(45deg);
+    transition: transform var(--transition-base);
+    opacity: 0.6;
+}
+
+.standard-group[open] summary {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.standard-group[open] summary::after {
+    transform: translateY(-20%) rotate(225deg);
+}
+
+.standard-group h3 {
+  font-size: var(--text-lg);
+  color: var(--color-primary-dark);
+  margin: 0;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.standard-content {
+    padding: var(--space-6);
+    background: var(--color-surface);
+}
+
+.standard-item {
+  margin-bottom: var(--space-4);
+}
+
+.standard-item:last-child {
+    margin-bottom: 0;
+}
+
+.standard-code {
+  display: inline-block;
+  font-family: monospace;
+  background: var(--color-primary-light); /* Lighter accent */
+  color: white; /* Contrast text */
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  font-weight: 600;
+  margin-bottom: 4px;
+  text-decoration: none;
+  transition: transform var(--transition-fast);
+}
+
+.standard-code:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
+    text-decoration: underline;
+    opacity: 0.9;
+}
+
+/* Specific colors for standard types */
+.std-texas .standard-code { background-color: #bf4040; } /* Texas Red-ish */
+.std-national .standard-code { background-color: #2d8fa8; } /* Primary Blue */
+.std-florida .standard-code { background-color: #e07b3c; } /* Secondary Orange */
+
+.standard-desc {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.5;
+  display: block;
+}
+

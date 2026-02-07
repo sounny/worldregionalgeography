@@ -28,18 +28,58 @@
 
     <main id="main-content" class="chapter-content">
         <div class="container">
-            <div class="learning-objectives">
-                <h2>🎯 Learning Objectives</h2>
-                <ul>
-                    <li><strong>Describe:</strong> Explain Australia's unique physical geography and endemic species distribution</li>
-                    <li><strong>Distinguish:</strong> Identify the differences between Melanesia, Micronesia, and Polynesia</li>
-                    <li><strong>Analyze:</strong> Examine Indigenous land rights, cultural preservation, and reconciliation efforts</li>
-                    <li><strong>Evaluate:</strong> Assess climate change threats and adaptation strategies for Pacific Island nations</li>
-                    <li><strong>Apply:</strong> Use geographic concepts to understand island biogeography and human adaptation</li>
-                    <li><strong>Compare:</strong> Contrast development challenges and opportunities across different Pacific island nations</li>
-                    <li><strong>Create:</strong> Design a climate adaptation and mitigation strategy that acknowledges Indigenous knowledge and ensures sustainable island futures</li>
-                </ul>
-            </div>
+            <!-- 1. At a Glance (Scaffold) -->
+            <section class="learning-scaffold" aria-label="Learning scaffold">
+                <details class="learning-scaffold-details">
+                    <summary>
+                        <div class="scaffold-head">
+                            <h2>At a Glance</h2>
+                            <div class="scaffold-meta" aria-label="Prerequisites and time estimate">
+                                <span class="scaffold-chip"><strong>Prereqs:</strong> Chapter 10</span>
+                                <span class="scaffold-chip"><strong>Time:</strong> 45 min read + 20 min activities</span>
+                                <span class="scaffold-chip"><strong>Deliverable:</strong> Quiz + Reflection</span>
+                            </div>
+                        </div>
+                    </summary>
+
+                    <div class="scaffold-grid">
+                        <div class="scaffold-card">
+                            <h3>🎯 Learning Outcomes</h3>
+                            <ul>
+                                <li><strong>Describe:</strong> The unique <strong>biogeography</strong> (marsupials, eucalyptus) due to isolation.</li>
+                                <li><strong>Distinguish:</strong> The cultural and physical differences between <strong>Melanesia, Micronesia, and Polynesia</strong>.</li>
+                                <li><strong>Analyze:</strong> The impact of colonization on <strong>Aboriginal</strong> and <strong>Maori</strong> peoples.</li>
+                                <li><strong>Evaluate:</strong> The existential threat of <strong>sea-level rise</strong> to low-lying atolls.</li>
+                                <li><strong>Apply:</strong> The concept of the "Tyranny of Distance" to economic development.</li>
+                            </ul>
+                        </div>
+
+                        <div class="scaffold-card">
+                            <h3>🔑 Key Terms</h3>
+                            <p>Biogeography, Outback, Atoll, Aborigines, Maori, EEZ (Exclusive Economic Zone), Great Barrier Reef, Wallace's Line.</p>
+                        </div>
+                    </div>
+
+                    <div class="scaffold-grid">
+                        <div class="scaffold-card">
+                            <h3>🛑 Stop & Check</h3>
+                            <div class="quiz-question" style="margin-bottom:0.5rem;">What is the difference between a "High Island" and a "Low Island"?</div>
+                            <details>
+                                <summary style="padding:0; color:var(--color-primary); font-weight:600; font-size:0.9rem;">Reveal Answer</summary>
+                                <div style="margin-top:0.5rem; font-size:0.95rem; color:var(--color-text-light);">
+                                    <strong>High Islands</strong> are volcanic, fertile, and can support larger populations (e.g., Fiji). <strong>Low Islands</strong> are coral atolls, often just meters above sea level, making them vulnerable to storms and rising seas (e.g., Tuvalu).
+                                </div>
+                            </details>
+                        </div>
+
+                        <div class="scaffold-card">
+                            <h3>⚡ Common Misconception</h3>
+                            <p><strong>Myth:</strong> Australia is entirely desert.</p>
+                            <p><strong>Fact:</strong> While the vast interior ("Outback") is arid, the coastal fringes—especially the East and Southwest—have temperate and tropical climates where <strong>85%</strong> of the population lives.</p>
+                        </div>
+                    </div>
+                </details>
+            </section>
 
             <section id="regional-profile">
                 <h2>🏝️ Regional Profile</h2>
@@ -201,17 +241,84 @@
                 </div>
             </section>
 
-            <section id="knowledge-check" class="section-container">
+            <!-- 10. Knowledge Check (Quiz) -->
+            <section id="quiz" class="section-container">
                 <h2>✅ Knowledge Check</h2>
                 <div id="quiz-container" class="quiz-wrapper">
                     <p class="loading">Loading quiz questions...</p>
                 </div>
             </section>
 
-            <nav class="chapter-nav">
-                <a href="../10-southeast-asia/index.html" class="chapter-nav-link">← Chapter 10: Southeast Asia</a>
-                <a href="../12-conclusion/index.html" class="chapter-nav-link">Chapter 12: Global Connections →</a>
+             <!-- Navigation -->
+            <nav class="chapter-nav" style="display: flex; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-8);">
+                <a href="../10-southeast-asia/index.html" class="btn btn-primary">← Chapter 10: Southeast Asia</a>
+                <a href="../12-conclusion/index.html" class="btn btn-primary">Chapter 12: Global Connections →</a>
             </nav>
+
+            <!-- Standards Alignment Map -->
+            <section class="standards-alignment" aria-label="Curriculum Standards Alignment">
+                <h2>📊 Curriculum Standards Alignment</h2>
+                <p class="standards-subtitle">This chapter aligns with the following National and State geography standards.</p>
+                
+                <div class="standards-grid">
+                    <!-- National Standards -->
+                    <details class="standard-group std-national">
+                        <summary><h3>🇺🇸 National Geography Standards</h3></summary>
+                        <div class="standard-content">
+                            <div class="standard-item">
+                                <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element II.4</a>
+                                <span class="standard-desc">Physical Systems: Coral reefs and Island Biogeography.</span>
+                            </div>
+                            <div class="standard-item">
+                                <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element V.14</a>
+                                <span class="standard-desc">Environment and Society: Climate change refugees and adaptation.</span>
+                            </div>
+                            <div class="standard-item">
+                                <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element II.6</a>
+                                <span class="standard-desc">Culture: Indigenous knowledge systems (Aboriginal management).</span>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- Texas Standards -->
+                    <details class="standard-group std-texas">
+                        <summary><h3>🤠 Texas Core (GEOG 1303)</h3></summary>
+                        <div class="standard-content">
+                            <div class="standard-item">
+                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 2</a>
+                                <span class="standard-desc">Locate significant features (Great Barrier Reef, Southern Alps).</span>
+                            </div>
+                            <div class="standard-item">
+                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 3</a>
+                                <span class="standard-desc">Globalization (Tourism and Mining impacts).</span>
+                            </div>
+                            <div class="standard-item">
+                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">Critical Thinking</a>
+                                <span class="standard-desc">Analyze the "Tyranny of Distance" and isolation.</span>
+                            </div>
+                        </div>
+                    </details>
+
+                    <!-- Florida Standards -->
+                    <details class="standard-group std-florida">
+                        <summary><h3>☀️ Florida Sunshine State (SS.912.G)</h3></summary>
+                        <div class="standard-content">
+                            <div class="standard-item">
+                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.2.1</a>
+                                <span class="standard-desc">Physical characteristics: Comparing Continental vs. Island geography.</span>
+                            </div>
+                            <div class="standard-item">
+                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.3.2</a>
+                                <span class="standard-desc">Climate Change: Sea level rise impacts on low islands.</span>
+                            </div>
+                            <div class="standard-item">
+                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.4.4</a>
+                                <span class="standard-desc">Political Geography: EEZs and ocean resource rights.</span>
+                            </div>
+                        </div>
+                    </details>
+                </div>
+            </section>
         </div>
     </main>
 
