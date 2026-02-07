@@ -23,22 +23,37 @@ const QuizEngine = {
     },
 
     /**
+     * Helper to escape HTML special characters to prevent XSS
+     * @param {string} str
+     * @returns {string}
+     */
+    escapeHtml(str) {
+        if (str == null) return '';
+        return String(str)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    },
+
+    /**
      * Render questions into the DOM
      * @param {HTMLElement} container 
      * @param {Array} questions 
      */
     render(container, questions) {
         container.innerHTML = questions.map((q, index) => `
-            <div class="quiz-container" data-quiz="q${index}" data-type="${q.type || 'multiple-choice'}">
-                <p class="quiz-question">${index + 1}. ${q.question}</p>
+            <div class="quiz-container" data-quiz="q${index}" data-type="${this.escapeHtml(q.type || 'multiple-choice')}">
+                <p class="quiz-question">${index + 1}. ${this.escapeHtml(q.question)}</p>
                 
-                ${q.scenario ? `<div class="quiz-scenario"><p><em>${q.scenario}</em></p></div>` : ''}
+                ${q.scenario ? `<div class="quiz-scenario"><p><em>${this.escapeHtml(q.scenario)}</em></p></div>` : ''}
 
                 <div class="quiz-options">
                     ${q.options.map((opt, i) => `
-                        <label class="quiz-option" data-correct="${opt.correct}" data-feedback="${opt.feedback || ''}">
+                        <label class="quiz-option" data-correct="${String(Boolean(opt.correct))}" data-feedback="${this.escapeHtml(opt.feedback || '')}">
                             <input type="radio" name="q${index}" value="${i}">
-                            <span>${opt.text}</span>
+                            <span>${this.escapeHtml(opt.text)}</span>
                         </label>
                     `).join('')}
                 </div>
@@ -94,9 +109,16 @@ const QuizEngine = {
                         const feedbackText = option.dataset.feedback || '';
                         const correctFeedback = quiz.querySelector('[data-correct="true"]')?.dataset.feedback || '';
 
-                        feedback.innerHTML = isCorrect
-                            ? `<p class="feedback-correct">Correct! ${feedbackText}</p>`
-                            : `<p class="feedback-incorrect">Not quite. ${correctFeedback}</p>`;
+                        // Clear previous content
+                        feedback.innerHTML = '';
+
+                        const p = document.createElement('p');
+                        p.className = isCorrect ? 'feedback-correct' : 'feedback-incorrect';
+                        p.textContent = isCorrect
+                            ? `Correct! ${feedbackText}`
+                            : `Not quite. ${correctFeedback}`;
+
+                        feedback.appendChild(p);
                     }
                 });
             });
