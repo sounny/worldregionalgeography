@@ -215,33 +215,23 @@ function initNavigation() {
  * Initialize the preview map on the home page
  */
 function initPreviewMap() {
-    const mapContainer = document.getElementById('preview-map');
-    if (!mapContainer || typeof L === 'undefined') return;
+    const mapContainer = document.getElementById('global-map');
+    if (!mapContainer || typeof MapManager === 'undefined') return;
 
-    const map = L.map('preview-map', {
-        zoomControl: true,
-        scrollWheelZoom: false
-    }).setView([20, 0], 2);
-
-    // Add tile layer
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: 'abcd',
-        maxZoom: 19
-    }).addTo(map);
+    const map = MapManager.initMap('global-map', [20, 0], 2);
 
     // Define world regions with approximate bounds
     const regions = [
-        { name: 'Europe', center: [50, 10], color: '#2d8fa8' },
-        { name: 'Russia and Central Asia', center: [60, 100], color: '#1e5f74' },
-        { name: 'North America', center: [45, -100], color: '#f4a261' },
-        { name: 'Latin America', center: [-15, -60], color: '#e07b3c' },
-        { name: 'Sub-Saharan Africa', center: [0, 20], color: '#2a9d8f' },
-        { name: 'North Africa & SW Asia', center: [28, 30], color: '#40c9b8' },
-        { name: 'South Asia', center: [22, 78], color: '#e76f51' },
-        { name: 'East Asia', center: [35, 115], color: '#264653' },
-        { name: 'Southeast Asia', center: [5, 115], color: '#287271' },
-        { name: 'Australia & Oceania', center: [-25, 140], color: '#8ab17d' }
+        { name: 'Europe', center: [50, 10], color: '#2d8fa8', url: 'chapters/02-europe/index.html' },
+        { name: 'Russia and Central Asia', center: [60, 100], color: '#1e5f74', url: 'chapters/03-russia/index.html' },
+        { name: 'North America', center: [45, -100], color: '#f4a261', url: 'chapters/04-north-america/index.html' },
+        { name: 'Latin America', center: [-15, -60], color: '#e07b3c', url: 'chapters/05-latin-america/index.html' },
+        { name: 'Sub-Saharan Africa', center: [0, 20], color: '#2a9d8f', url: 'chapters/06-sub-saharan-africa/index.html' },
+        { name: 'North Africa & SW Asia', center: [28, 30], color: '#40c9b8', url: 'chapters/07-north-africa-sw-asia/index.html' },
+        { name: 'South Asia', center: [22, 78], color: '#e76f51', url: 'chapters/08-south-asia/index.html' },
+        { name: 'East Asia', center: [35, 115], color: '#264653', url: 'chapters/09-east-asia/index.html' },
+        { name: 'Southeast Asia', center: [5, 115], color: '#287271', url: 'chapters/10-southeast-asia/index.html' },
+        { name: 'Australia & Oceania', center: [-25, 140], color: '#8ab17d', url: 'chapters/11-australia-oceania/index.html' }
     ];
 
     // Add markers for each region
@@ -255,13 +245,20 @@ function initPreviewMap() {
             fillOpacity: 0.8
         }).addTo(map);
 
-        marker.bindPopup(`<strong>${region.name}</strong>`);
+        marker.bindPopup(`<strong>${region.name}</strong><br><a href="${region.url}">Explore Chapter</a>`);
         
         marker.on('mouseover', function() {
             this.openPopup();
             this.setStyle({ radius: 16, fillOpacity: 1 });
         });
+
+        marker.on('mouseout', function() {
+            this.setStyle({ radius: 12, fillOpacity: 0.8 });
+        });
         
+        marker.on('click', function() {
+            this.openPopup();
+        });
     });
 }
 

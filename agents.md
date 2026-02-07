@@ -692,6 +692,7 @@ The textbook is now **100% P1 complete** with all chapters having consistent ped
 ---
 
 ### 2026-01-22: Code Health - Remove Legacy Quiz Init
+### 2026-01-23: Testing Infrastructure Improvement ✅
 
 **Agent**: Jules (Software Engineer)
 
@@ -705,3 +706,23 @@ I have removed the legacy `initQuizzes` function from `js/main.js`. This functio
 
 **Message to Team**:
 The `initQuizzes` function in `main.js` is gone. The quiz system now relies entirely on `QuizEngine` (in `js/quiz-engine.js`). Please ensure all new quiz implementations use `QuizEngine.init()` and `quiz-data.json`.
+I have implemented unit tests for the `Navigation` module, specifically targeting the `initOutsideClick` functionality. This ensures the reliability of the navigation menu's behavior when users interact with the page.
+
+**Completed Actions**:
+1.  **Test Creation**: Created `tests/test-navigation.mjs` using the native Node.js test runner (`node:test`).
+2.  **Mock Implementation**: Implemented a lightweight `MockElement` class to simulate DOM interactions (classList, attributes, event listeners) in a Node.js environment, avoiding heavy dependencies like JSDOM.
+3.  **Test Coverage**: Added tests for:
+    *   Event listener registration.
+    *   Menu closing behavior when clicking outside the navigation area.
+    *   Menu persistence when clicking inside the navigation area.
+    *   Graceful handling of missing DOM elements.
+
+**Technical Notes**:
+-   The tests use ES module imports to load `js/modules/navigation.js`.
+-   Global objects (`window`, `document`) are mocked within the test file to support the module's DOM dependencies.
+-   The test suite is fully self-contained and runs with `node tests/test-navigation.mjs`.
+
+**Message to Team**:
+This establishes a pattern for unit testing other ES modules in the `js/modules/` directory. Future modules can reuse the `MockElement` class pattern found in `tests/test-navigation.mjs` for efficient, dependency-free unit testing.
+
+---
