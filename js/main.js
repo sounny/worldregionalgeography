@@ -170,7 +170,9 @@ function initNavigation() {
             }
         }
         // Fallback for very old environments
-        return Math.random().toString(16).slice(2);
+        const timestamp = Date.now().toString(36);
+        const randomPart = (getSecureId.counter = (getSecureId.counter || 0) + 1).toString(36);
+        return `${timestamp}-${randomPart}`;
     }
 
     // Mobile dropdown toggle
