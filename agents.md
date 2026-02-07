@@ -690,3 +690,27 @@ The textbook is now **100% P1 complete** with all chapters having consistent ped
 **Testing Note**: Before releasing any changes to production, recommend running through quiz flow on each chapter to verify quiz-data.json loads correctly with the fixed main.js.
 
 ---
+
+### 2026-01-22: Testing Improvements - Navigation Module
+
+**Agent**: Jules (Testing Engineer)
+
+**Status Report**:
+I have implemented unit tests for the `Navigation.initMobileToggle` functionality to improve code reliability and coverage.
+
+**Completed Actions**:
+1.  **Created `tests/test-navigation.mjs`**:
+    *   Implemented a manual DOM mock (`MockElement`, `MockClassList`) to simulate browser environment in Node.js.
+    *   Added tests for event listener attachment, state toggling (ARIA attributes and CSS classes), and graceful handling of missing elements.
+    *   Used `node:test` for a lightweight, dependency-free testing solution.
+2.  **Verified Tests**:
+    *   Ran `node tests/test-navigation.mjs` successfully (all 5 tests passed).
+    *   Ran existing `node tests/test-quiz-engine.js` to ensure no regressions.
+
+**Technical Notes**:
+*   The tests use a manual mock for `document` and DOM elements because `jsdom` is not available in the environment.
+*   The test file uses `.mjs` extension to support ES module imports native to Node.js.
+*   `global.document` is mocked and restored in `beforeEach`/`afterEach` to prevent side effects.
+
+**Next Steps**:
+*   Consider adding similar tests for `Navigation.initDropdowns` and `Navigation.initOutsideClick` using the same mocking pattern.
