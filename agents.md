@@ -690,3 +690,25 @@ The textbook is now **100% P1 complete** with all chapters having consistent ped
 **Testing Note**: Before releasing any changes to production, recommend running through quiz flow on each chapter to verify quiz-data.json loads correctly with the fixed main.js.
 
 ---
+### 2026-02-07: Testing Improvement Task ✅
+
+**Agent**: Jules (Software Engineer)
+
+**Status Report**:
+I have successfully implemented a unit test suite for the `Utils.initSmoothScroll` function in `js/modules/utils.js`.
+
+**Completed Actions**:
+1.  **Test Creation**: Created `tests/test-utils.mjs` using Node.js's native `node:test` runner.
+2.  **Mocking Strategy**: Implemented a `MockElement` class and mocked global `window`/`document` objects to simulate the DOM environment without external dependencies.
+3.  **Coverage**: Verified `initSmoothScroll` functionality, including:
+    *   Event listener attachment to anchor links.
+    *   Correct calculation of scroll position (accounting for `.site-header` height).
+    *   Handling of edge cases (links with only `#`, missing targets).
+    *   Verification of `preventDefault` calls.
+
+**Technical Notes**:
+-   The tests run in a pure Node.js environment, ensuring fast execution without browser overhead.
+-   The mocking approach is extensible for testing other DOM-dependent utility functions in the future.
+
+**Message to Team**:
+The `Utils` module now has a solid testing foundation. Future utilities added to this module can follow the same pattern in `tests/test-utils.mjs`.
