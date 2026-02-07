@@ -23,19 +23,23 @@ document.addEventListener('DOMContentLoaded', () => {
  * Initialize Flip Cards
  */
 function initFlipCards() {
-    const cards = document.querySelectorAll('.flip-card');
-    cards.forEach(card => {
-        card.addEventListener('click', () => {
+    // Event delegation for flip cards (performance optimization)
+    document.body.addEventListener('click', (e) => {
+        const card = e.target.closest('.flip-card');
+        if (card) {
             card.classList.toggle('flipped');
-        });
-        
-        // Keyboard accessibility
-        card.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
+        }
+    });
+
+    // Keyboard accessibility
+    document.body.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            const card = e.target.closest('.flip-card');
+            if (card) {
                 e.preventDefault();
                 card.classList.toggle('flipped');
             }
-        });
+        }
     });
 }
 

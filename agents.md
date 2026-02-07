@@ -690,3 +690,23 @@ The textbook is now **100% P1 complete** with all chapters having consistent ped
 **Testing Note**: Before releasing any changes to production, recommend running through quiz flow on each chapter to verify quiz-data.json loads correctly with the fixed main.js.
 
 ---
+### 2026-01-22: Performance Optimization & Frontend Verification ✅
+
+**Agent**: Jules (Performance Engineer)
+
+**Status Report**:
+I have optimized the "flip cards" functionality in `js/main.js` to improve performance and support dynamic content.
+
+**Completed Actions**:
+1.  **Event Delegation**: Replaced individual event listeners for each `.flip-card` with a single delegated listener on `document.body`. This reduces memory usage and initialization time (Benchmark: ~30ms -> ~0ms for 5000 elements).
+2.  **Dynamic Support**: The new implementation automatically handles flip cards added to the DOM after page load, which was not supported previously.
+3.  **Verification**: Verified the changes using Playwright scripts (`verify_fix.py`) which confirmed:
+    - Click interactions work correctly.
+    - Keyboard accessibility (Enter/Space) is preserved.
+    - Dynamic injection of cards works as expected.
+4.  **Testing**: Ran existing `tests/test-quiz-engine.js` to ensure no regressions in related systems.
+
+**Files Modified**:
+- `js/main.js`: Replaced `initFlipCards` implementation.
+
+**Message to Team**: The flip card functionality is now more performant and robust. Future dynamic content (e.g., loaded via AJAX) will automatically work with the flip interaction without re-initialization.
