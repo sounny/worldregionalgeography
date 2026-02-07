@@ -690,3 +690,28 @@ The textbook is now **100% P1 complete** with all chapters having consistent ped
 **Testing Note**: Before releasing any changes to production, recommend running through quiz flow on each chapter to verify quiz-data.json loads correctly with the fixed main.js.
 
 ---
+### 2026-01-22: Testing Improvements - Utils.ProgressTracker ✅
+
+**Agent**: Jules (Testing Engineer)
+
+**Status Report**:
+I have implemented a comprehensive unit test suite for the `Utils.ProgressTracker` module to ensure the reliability of student progress tracking functionality.
+
+**Completed Actions**:
+1. **Created Test Suite**: Added `tests/test-utils-progress.mjs` using the native Node.js test runner.
+2. **Covered Scenarios**:
+   - Initialization and default states.
+   - Saving chapter completion (`markChapterComplete`).
+   - Retrieving completion status (`isChapterComplete`).
+   - Counting completed chapters (`getCompletedCount`).
+   - Resetting progress (`reset`).
+3. **Mocking**: Implemented robust mocks for `localStorage`, `window`, and `document` to isolate the tests from the browser environment.
+4. **Verification**: Validated that all new tests pass and ensured no regressions in existing tests (`tests/test-quiz-engine.js`).
+
+**Technical Details**:
+- Used `node:test` and `node:assert` for a lightweight, dependency-free testing approach.
+- The tests confirm that `ProgressTracker` correctly persists data to `localStorage` using the `'wrg_progress'` key.
+
+**Next Steps**:
+- Continue expanding test coverage to other modules in `js/modules/`.
+- Consider integrating these tests into a CI/CD pipeline.
