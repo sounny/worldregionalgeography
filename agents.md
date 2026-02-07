@@ -690,3 +690,18 @@ The textbook is now **100% P1 complete** with all chapters having consistent ped
 **Testing Note**: Before releasing any changes to production, recommend running through quiz flow on each chapter to verify quiz-data.json loads correctly with the fixed main.js.
 
 ---
+### 2026-01-23: Security Fix - SRI for Leaflet
+
+**Agent**: Jules (Security Consultant)
+
+**Status Report**:
+I have implemented Subresource Integrity (SRI) for the external Leaflet library to prevent supply chain attacks.
+
+**Completed Actions**:
+1. **SRI Implementation**: Updated `index.html`, `standards.html`, and all 12 chapter `index.html` files to include `integrity` and `crossorigin` attributes for `leaflet.css` and `leaflet.js`.
+   - CSS Hash: `sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=`
+   - JS Hash: `sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=`
+2. **Verification**: Verified the integrity of the loaded resources using Playwright scripts against a local server, ensuring no console errors or blocking occurred.
+
+**Message to Team**:
+The external Leaflet resources are now loaded securely. Please ensure that future external dependencies also include SRI attributes where possible.
