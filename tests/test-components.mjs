@@ -266,5 +266,64 @@ describe('Components Module', () => {
             term.dispatchEvent({ type: 'blur' });
             assert.ok(!tooltip.classList.contains('visible'), 'Tooltip should NOT be visible on blur');
         });
+
+        it('should NOT create tooltip if data-definition is missing', () => {
+            // Setup
+            const term = new MockElement('SPAN');
+            term.classList.add('term-highlight');
+            // No dataset.definition set
+
+            documentBody.appendChild(term);
+
+            // Execute
+            Components.initKeyTerms();
+
+            // Verify
+            const tooltip = term.children.find(child => child.classList && child.classList.contains('term-tooltip'));
+            assert.strictEqual(tooltip, undefined, 'Tooltip should NOT be created');
+        });
+
+        it('should NOT create tooltip if data-definition is empty', () => {
+            // Setup
+            const term = new MockElement('SPAN');
+            term.classList.add('term-highlight');
+            term.dataset.definition = '';
+
+            documentBody.appendChild(term);
+
+            // Execute
+            Components.initKeyTerms();
+
+            // Verify
+            const tooltip = term.children.find(child => child.classList && child.classList.contains('term-tooltip'));
+            assert.strictEqual(tooltip, undefined, 'Tooltip should NOT be created');
+        });
+
+        it('should initialize multiple terms correctly', () => {
+            // Setup
+            const term1 = new MockElement('SPAN');
+            term1.classList.add('term-highlight');
+            term1.dataset.definition = 'Definition 1';
+
+            const term2 = new MockElement('SPAN');
+            term2.classList.add('term-highlight');
+            term2.dataset.definition = 'Definition 2';
+
+            documentBody.appendChild(term1);
+            documentBody.appendChild(term2);
+
+            // Execute
+            Components.initKeyTerms();
+
+            // Verify Term 1
+            const tooltip1 = term1.children.find(child => child.classList.contains('term-tooltip'));
+            assert.ok(tooltip1, 'Tooltip 1 should be created');
+            assert.strictEqual(tooltip1.textContent, 'Definition 1');
+
+            // Verify Term 2
+            const tooltip2 = term2.children.find(child => child.classList.contains('term-tooltip'));
+            assert.ok(tooltip2, 'Tooltip 2 should be created');
+            assert.strictEqual(tooltip2.textContent, 'Definition 2');
+        });
     });
 });
