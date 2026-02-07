@@ -38,6 +38,7 @@ const MapManager = {
         ];
 
         // Add markers for each region
+        const markerGroup = L.layerGroup();
         regions.forEach(region => {
             const marker = L.circleMarker(region.center, {
                 radius: 12,
@@ -46,7 +47,9 @@ const MapManager = {
                 weight: 2,
                 opacity: 1,
                 fillOpacity: 0.8
-            }).addTo(map);
+            });
+
+            marker.addTo(markerGroup);
 
             marker.bindPopup(`<strong>${region.name}</strong>`);
             
@@ -59,6 +62,8 @@ const MapManager = {
                 this.setStyle({ radius: 12, fillOpacity: 0.8 });
             });
         });
+
+        markerGroup.addTo(map);
     },
 
     /**
@@ -166,6 +171,7 @@ const MapManager = {
         };
 
         // Add Markers and Link to Panel
+        const markerGroup = L.layerGroup();
         Object.keys(regionalData).forEach(id => {
             const region = regionalData[id];
             
@@ -176,7 +182,9 @@ const MapManager = {
                 weight: 3,
                 opacity: 1,
                 fillOpacity: 0.8
-            }).addTo(navMap);
+            });
+
+            marker.addTo(markerGroup);
 
             // Tooltip
             marker.bindTooltip(region.name, {
@@ -188,7 +196,7 @@ const MapManager = {
             // Hover events
             marker.on('mouseover', function() {
                 this.setStyle({ radius: 20, fillOpacity: 1 });
-                this.updateInfoPanel(id);
+                updateInfoPanel(id);
             });
 
             marker.on('mouseout', function() {
@@ -200,6 +208,8 @@ const MapManager = {
                 window.location.href = region.link;
             });
         });
+
+        markerGroup.addTo(navMap);
 
         function updateInfoPanel(id) {
             const data = regionalData[id];
