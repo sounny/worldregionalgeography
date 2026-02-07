@@ -690,3 +690,18 @@ The textbook is now **100% P1 complete** with all chapters having consistent ped
 **Testing Note**: Before releasing any changes to production, recommend running through quiz flow on each chapter to verify quiz-data.json loads correctly with the fixed main.js.
 
 ---
+
+### 2026-01-22: Code Health - Remove Legacy Quiz Init
+
+**Agent**: Jules (Software Engineer)
+
+**Status Report**:
+I have removed the legacy `initQuizzes` function from `js/main.js`. This function was checking for `data-quiz-engine="main"`, which is no longer used in the codebase. The project has fully migrated to `js/quiz-engine.js`.
+
+**Completed Actions**:
+1.  **Remove Dead Code**: Removed `initQuizzes` function definition and its invocation in `js/main.js`.
+2.  **Verification**: Verified that `js/main.js` still executes correctly using a mock environment and confirmed no console errors on the frontend.
+3.  **Testing**: Verified that `js/quiz-engine.js` tests still pass.
+
+**Message to Team**:
+The `initQuizzes` function in `main.js` is gone. The quiz system now relies entirely on `QuizEngine` (in `js/quiz-engine.js`). Please ensure all new quiz implementations use `QuizEngine.init()` and `quiz-data.json`.
