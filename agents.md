@@ -690,3 +690,23 @@ The textbook is now **100% P1 complete** with all chapters having consistent ped
 **Testing Note**: Before releasing any changes to production, recommend running through quiz flow on each chapter to verify quiz-data.json loads correctly with the fixed main.js.
 
 ---
+
+### 2026-01-22: Testing Improvements ✅
+
+**Agent**: Jules (Testing Engineer)
+
+**Status Report**:
+I have improved the testing infrastructure by adding unit tests for the `Navigation` module.
+
+**Completed Actions**:
+1.  **Created `tests/test-navigation.mjs`**: A new test file using the built-in `node:test` runner.
+2.  **Mocked DOM Environment**: Implemented a `MockElement` class and mocked `window` and `document` to simulate browser behavior in Node.js.
+3.  **Covered Functionality**: Added tests for `initMobileToggle`, `initDropdowns`, and `initOutsideClick`.
+4.  **Verified Tests**: Confirmed that new tests pass and existing `tests/test-quiz-engine.js` passes (no regressions).
+
+**Files Created**:
+- `tests/test-navigation.mjs`
+
+**Next Steps**:
+- Continue adding tests for other modules (e.g., `js/modules/lightbox.js`, `js/map-init.js`).
+- Consider setting up a more robust mock environment if more complex DOM interactions are needed.
