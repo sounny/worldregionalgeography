@@ -716,3 +716,23 @@ I have implemented unit tests for the `Navigation` module, specifically targetin
 This establishes a pattern for unit testing other ES modules in the `js/modules/` directory. Future modules can reuse the `MockElement` class pattern found in `tests/test-navigation.mjs` for efficient, dependency-free unit testing.
 
 ---
+
+### 2026-01-23: Testing Improvement for MapManager ✅
+
+**Agent**: Jules (Software Engineer)
+
+**Status Report**:
+I have improved the test coverage for `js/modules/mapManager.js` by adding a test case to verify the `initPreviewMap` function's behavior when the global Leaflet (`L`) object is undefined.
+
+**Completed Actions**:
+1.  **Test Enhancement**: Added a test case in `tests/test-map-manager.mjs` to simulate a missing Leaflet dependency.
+    *   Temporarily deletes `global.L` to verify the guard clause `if (!mapContainer || typeof L === 'undefined') return;`.
+    *   Ensures that no map initialization code is executed, preventing runtime errors.
+2.  **Verification**: Verified that the new test passes and that all existing tests in the suite (including `tests/test-components.mjs`, `tests/test-navigation.mjs`, `tests/test-quiz-engine.js`) pass without regression.
+
+**Technical Notes**:
+-   The test uses a `try...finally` block to safely modify and restore the global environment, ensuring test isolation.
+-   This addresses the concern regarding the "Hard dependency on Leaflet map initialization" by ensuring the code handles the absence of the dependency gracefully.
+
+**Message to Team**:
+The `MapManager` tests now robustly cover the scenario where the Leaflet library fails to load or is unavailable, adding a layer of safety to the application's map initialization logic.
