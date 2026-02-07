@@ -217,25 +217,6 @@ select:focus,
   box-shadow: 0 0 0 2px var(--color-bg-alt);
 }
 
-/* Skip link - Enhanced visibility */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--color-primary);
-  color: white;
-  padding: 8px 16px;
-  text-decoration: none;
-  border-radius: 0 0 var(--radius-md) 0;
-  z-index: 9999;
-  font-weight: 600;
-  transition: top 0.2s ease;
-}
-
-.skip-link:focus {
-  top: 0;
-}
-
 ul,
 ol {
   list-style-position: inside;
@@ -251,11 +232,12 @@ ol {
   left: 0;
   background: var(--color-primary);
   color: white;
-  padding: 8px 16px;
+  padding: var(--space-2) var(--space-4);
   text-decoration: none;
   border-radius: 0 0 var(--radius-md) 0;
   z-index: 9999;
   font-weight: 600;
+  transition: top 0.2s ease;
 }
 
 .skip-link:focus {
@@ -300,21 +282,6 @@ ol {
 
 .map-controls {
   margin-top: var(--space-2);
-}
-
-.skip-link {
-  position: absolute;
-  left: -999px;
-  top: var(--space-4);
-  background: var(--color-primary);
-  color: white;
-  padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-md);
-  z-index: 1001;
-}
-
-.skip-link:focus {
-  left: var(--space-4);
 }
 
 .section-title {
