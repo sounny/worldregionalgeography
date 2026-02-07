@@ -447,36 +447,36 @@ function initQuizzes() {
             feedback.setAttribute('role', 'status');
         }
 
-        const inputs = container.querySelectorAll('input[type="radio"]');
-        inputs.forEach(input => {
-            input.addEventListener('change', () => {
-                const option = input.closest('.quiz-option');
-                if (!option) return;
+        container.addEventListener('change', (e) => {
+            const input = e.target;
+            if (!input.matches('input[type="radio"]')) return;
 
-                options.forEach(opt => opt.classList.remove('correct', 'incorrect'));
-                if (feedback) {
-                    feedback.classList.remove('success', 'error');
+            const option = input.closest('.quiz-option');
+            if (!option) return;
+
+            options.forEach(opt => opt.classList.remove('correct', 'incorrect'));
+            if (feedback) {
+                feedback.classList.remove('success', 'error');
+            }
+
+            const isCorrect = option.dataset.correct === 'true';
+            option.classList.add(isCorrect ? 'correct' : 'incorrect');
+
+            if (!isCorrect) {
+                const correctOption = container.querySelector('[data-correct="true"]');
+                if (correctOption) {
+                    correctOption.classList.add('correct');
                 }
+            }
 
-                const isCorrect = option.dataset.correct === 'true';
-                option.classList.add(isCorrect ? 'correct' : 'incorrect');
-
-                if (!isCorrect) {
-                    const correctOption = container.querySelector('[data-correct="true"]');
-                    if (correctOption) {
-                        correctOption.classList.add('correct');
-                    }
-                }
-
-                if (feedback) {
-                    const correctFeedback = container.querySelector('[data-correct="true"]')?.dataset.feedback || '';
-                    const optionFeedback = option.dataset.feedback || '';
-                    feedback.classList.add('show', isCorrect ? 'success' : 'error');
-                    feedback.innerHTML = isCorrect
-                        ? `<p class="feedback-correct">✓ Correct! ${optionFeedback}</p>`
-                        : `<p class="feedback-incorrect">Try again. ${correctFeedback}</p>`;
-                }
-            });
+            if (feedback) {
+                const correctFeedback = container.querySelector('[data-correct="true"]')?.dataset.feedback || '';
+                const optionFeedback = option.dataset.feedback || '';
+                feedback.classList.add('show', isCorrect ? 'success' : 'error');
+                feedback.innerHTML = isCorrect
+                    ? `<p class="feedback-correct">✓ Correct! ${optionFeedback}</p>`
+                    : `<p class="feedback-incorrect">Try again. ${correctFeedback}</p>`;
+            }
         });
     });
 }
