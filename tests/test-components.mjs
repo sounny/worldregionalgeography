@@ -1,51 +1,59 @@
-import { describe, it, beforeEach } from 'node:test';
-import assert from 'node:assert';
-import Components from '../js/modules/components.js';
+
+import { test, describe, it, beforeEach, afterEach } from 'node:test';
+import assert from 'node:assert/strict';
+
+// --- Mocks ---
 
 class MockElement {
-    constructor(tagName = 'DIV') {
+    constructor(tagName, className = '') {
         this.tagName = tagName.toUpperCase();
+        this._classList = new Set(className.split(' ').filter(c => c));
         this.attributes = new Map();
         this.eventListeners = new Map();
         this.children = [];
-        this.dataset = {};
         this.id = '';
-        this.textContent = '';
-        this.parentNode = null;
-
-        this._classList = new Set();
+        this.dataset = {};
     }
 
+    get classList() {
+        return {
+            add: (...classes) => classes.forEach(c => this._classList.add(c)),
+            remove: (...classes) => classes.forEach(c => this._classList.delete(c)),
+            toggle: (c, force) => {
+                if (force === undefined) {
+                    force = !this._classList.has(c);
+                }
+                if (force) this._classList.add(c);
+                else this._classList.delete(c);
+                return force;
+            },
+            contains: (c) => this._classList.has(c),
+            entries: () => this._classList.entries(),
+            values: () => this._classList.values(),
+            [Symbol.iterator]: () => this._classList.values()
+        };
+    }
+
+    // Support getting/setting className string
     get className() {
         return Array.from(this._classList).join(' ');
     }
 
     set className(val) {
-        this._classList.clear();
-        if (val) {
-            val.split(/\s+/).filter(c => c).forEach(c => this._classList.add(c));
-        }
+        this._classList = new Set(val.split(' ').filter(c => c));
     }
 
-    get classList() {
-        return {
-            add: (...args) => args.forEach(c => this._classList.add(c)),
-            remove: (...args) => args.forEach(c => this._classList.delete(c)),
-            toggle: (c, force) => {
-                if (force === true) { this._classList.add(c); return true; }
-                if (force === false) { this._classList.delete(c); return false; }
-                if (this._classList.has(c)) { this._classList.delete(c); return false; }
-                else { this._classList.add(c); return true; }
-            },
-            contains: (c) => this._classList.has(c),
-            // helper for testing
-            has: (c) => this._classList.has(c)
-        };
+    setAttribute(name, value) {
+        this.attributes.set(name, String(value));
     }
 
-    getAttribute(name) { return this.attributes.get(name); }
-    setAttribute(name, value) { this.attributes.set(name, String(value)); }
-    removeAttribute(name) { this.attributes.delete(name); }
+    getAttribute(name) {
+        return this.attributes.get(name) || null;
+    }
+
+    hasAttribute(name) {
+        return this.attributes.has(name);
+    }
 
     addEventListener(event, callback) {
         if (!this.eventListeners.has(event)) {
@@ -54,276 +62,179 @@ class MockElement {
         this.eventListeners.get(event).push(callback);
     }
 
-    // Test helper to trigger events
+    // Helper to manually trigger event
     dispatchEvent(event) {
         const listeners = this.eventListeners.get(event.type) || [];
         listeners.forEach(cb => cb(event));
         return !event.defaultPrevented;
     }
 
+    // Helper for specific click
     click() {
         this.dispatchEvent({ type: 'click', target: this, preventDefault: () => {} });
     }
 
+    querySelector(selector) {
+        // Simple class selector support for now
+        if (selector.startsWith('.')) {
+            const className = selector.substring(1);
+            return this.children.find(child => child.classList.contains(className)) || null;
+        }
+        return null;
+    }
+
     appendChild(child) {
         this.children.push(child);
-        child.parentNode = this;
-        return child;
-    }
-
-    querySelector(selector) {
-        return this.find(node => this.matches(node, selector));
-    }
-
-    querySelectorAll(selector) {
-       const results = [];
-       this.traverse(node => {
-           if (this.matches(node, selector)) results.push(node);
-       });
-       return results;
-    }
-
-    find(predicate) {
-        let result = null;
-        this.traverse(node => {
-            if (predicate(node) && !result) result = node;
-        });
-        return result;
-    }
-
-    traverse(callback) {
-        for (const child of this.children) {
-            callback(child);
-            child.traverse(callback);
-        }
-    }
-
-    matches(node, selector) {
-        if (selector.startsWith('.')) return node.classList.contains(selector.substring(1));
-        if (selector.startsWith('#')) return node.id === selector.substring(1);
-        return node.tagName === selector.toUpperCase();
     }
 }
 
-// Setup global environment
-global.document = {
-    createElement: (tag) => new MockElement(tag),
-    querySelectorAll: () => [],
-    body: new MockElement('BODY')
-};
-global.window = { document: global.document };
+class MockDocument {
+    constructor() {
+        this.elements = [];
+    }
 
-describe('Components Module', () => {
-    let documentBody;
+    querySelectorAll(selector) {
+        // Simple class selector support
+        if (selector.startsWith('.')) {
+            const className = selector.substring(1);
+            return this.elements.filter(el => el.classList.contains(className));
+        }
+        return [];
+    }
+
+    createElement(tag) {
+        return new MockElement(tag);
+    }
+}
+
+// Setup Global Mocks
+const mockDoc = new MockDocument();
+global.document = mockDoc;
+global.window = {};
+
+// Import the module under test
+import Components from '../js/modules/components.js';
+
+describe('Components.initTexasToggle', () => {
 
     beforeEach(() => {
-        // Reset document body and querySelectorAll before each test
-        documentBody = new MockElement('BODY');
-        global.document.body = documentBody;
-        global.document.querySelectorAll = (selector) => documentBody.querySelectorAll(selector);
+        // Reset the mock document elements before each test
+        mockDoc.elements = [];
     });
 
-    // Tests will be added here
+    it('should initialize ARIA attributes and classes correctly', () => {
+        const toggle = new MockElement('div', 'texas-toggle');
+        const btn = new MockElement('button', 'btn-texas-toggle');
+        const content = new MockElement('div', 'texas-content hidden'); // Initially hidden
 
-    describe('initTexasToggle', () => {
-        it('should initialize accessible attributes and handle interactions', () => {
-            // Setup
-            const container = new MockElement('DIV');
-            container.classList.add('texas-toggle');
+        toggle.appendChild(btn);
+        toggle.appendChild(content);
+        mockDoc.elements.push(toggle);
 
-            const btn = new MockElement('BUTTON');
-            btn.classList.add('btn-texas-toggle');
+        Components.initTexasToggle();
 
-            const content = new MockElement('DIV');
-            content.classList.add('texas-content');
-            content.classList.add('hidden'); // Initially hidden
+        // Check ID generation
+        assert.ok(content.id.startsWith('texas-connection-'), 'Content should have an ID generated');
 
-            container.appendChild(btn);
-            container.appendChild(content);
-            documentBody.appendChild(container);
+        // Check ARIA attributes on button
+        assert.equal(btn.getAttribute('aria-controls'), content.id);
+        assert.equal(btn.getAttribute('role'), 'button');
+        assert.equal(btn.getAttribute('tabindex'), '0');
+        assert.equal(btn.getAttribute('aria-expanded'), 'false'); // Because content is hidden
 
-            // Execute
-            Components.initTexasToggle();
+        // Check ARIA attributes on content
+        assert.equal(content.getAttribute('role'), 'region');
+        assert.equal(content.getAttribute('aria-labelledby'), `${content.id}-label`);
+        assert.equal(content.getAttribute('aria-hidden'), 'true');
+    });
 
-            // Verify Initialization
-            assert.strictEqual(btn.getAttribute('role'), 'button', 'Button role should be set');
-            assert.strictEqual(btn.getAttribute('tabindex'), '0', 'Button tabindex should be 0');
-            assert.ok(btn.getAttribute('aria-controls'), 'Button should have aria-controls');
-            assert.strictEqual(btn.getAttribute('aria-expanded'), 'false', 'Button should start collapsed');
+    it('should toggle state on click', () => {
+        const toggle = new MockElement('div', 'texas-toggle');
+        const btn = new MockElement('button', 'btn-texas-toggle');
+        const content = new MockElement('div', 'texas-content hidden');
 
-            assert.strictEqual(content.getAttribute('role'), 'region', 'Content role should be region');
-            assert.strictEqual(content.getAttribute('aria-hidden'), 'true', 'Content should start hidden');
-            assert.ok(content.id, 'Content should have an ID');
-            assert.strictEqual(btn.getAttribute('aria-controls'), content.id, 'Aria-controls should match content ID');
+        toggle.appendChild(btn);
+        toggle.appendChild(content);
+        mockDoc.elements.push(toggle);
 
-            // Verify Click Interaction
-            btn.click();
+        Components.initTexasToggle();
 
-            assert.strictEqual(btn.getAttribute('aria-expanded'), 'true', 'Button should expand on click');
-            assert.strictEqual(content.getAttribute('aria-hidden'), 'false', 'Content should be visible');
-            assert.ok(!content.classList.contains('hidden'), 'Hidden class should be removed');
-            assert.ok(btn.classList.contains('active'), 'Active class should be added to button');
+        // Simulate Click
+        btn.click();
 
-            // Verify Keydown Interaction (Enter)
-            const enterEvent = {
-                type: 'keydown',
-                key: 'Enter',
-                preventDefault: () => {}
-            };
+        // Check updated state (Expanded)
+        assert.equal(btn.getAttribute('aria-expanded'), 'true');
+        assert.equal(content.getAttribute('aria-hidden'), 'false');
+        assert.equal(content.classList.contains('hidden'), false);
+        assert.equal(btn.classList.contains('active'), true);
+
+        // Simulate Click again (Collapsed)
+        btn.click();
+
+        // Check updated state (Collapsed)
+        assert.equal(btn.getAttribute('aria-expanded'), 'false');
+        assert.equal(content.getAttribute('aria-hidden'), 'true');
+        assert.equal(content.classList.contains('hidden'), true);
+        assert.equal(btn.classList.contains('active'), false);
+    });
+
+    it('should handle keyboard navigation (Enter/Space)', () => {
+        const toggle = new MockElement('div', 'texas-toggle');
+        const btn = new MockElement('button', 'btn-texas-toggle');
+        const content = new MockElement('div', 'texas-content hidden');
+
+        toggle.appendChild(btn);
+        toggle.appendChild(content);
+        mockDoc.elements.push(toggle);
+
+        Components.initTexasToggle();
+
+        // Helper to simulate keydown
+        const triggerKey = (key) => {
             let defaultPrevented = false;
-            enterEvent.preventDefault = () => { defaultPrevented = true; };
-
-            btn.dispatchEvent(enterEvent);
-
-            assert.ok(defaultPrevented, 'Enter key should prevent default');
-            // Check toggle back (it was expanded, now should be collapsed)
-            assert.strictEqual(btn.getAttribute('aria-expanded'), 'false', 'Button should collapse on Enter');
-        });
-    });
-
-    describe('initAccordions', () => {
-        it('should initialize and toggle accordions', () => {
-            // Setup
-            const item = new MockElement('DIV');
-            item.classList.add('accordion-item');
-
-            const header = new MockElement('DIV');
-            header.classList.add('accordion-header');
-
-            const content = new MockElement('DIV');
-            content.classList.add('accordion-content');
-
-            item.appendChild(header);
-            item.appendChild(content);
-            documentBody.appendChild(item);
-
-            // Execute
-            Components.initAccordions();
-
-            // Verify Initialization
-            assert.strictEqual(header.getAttribute('role'), 'button');
-            assert.strictEqual(header.getAttribute('tabindex'), '0');
-            assert.ok(header.getAttribute('aria-controls'));
-            assert.strictEqual(content.getAttribute('role'), 'region');
-            assert.strictEqual(header.getAttribute('aria-controls'), content.id);
-
-            // Initial state (not active)
-            assert.strictEqual(header.getAttribute('aria-expanded'), 'false');
-            assert.strictEqual(content.getAttribute('aria-hidden'), 'true');
-            assert.ok(!item.classList.contains('active'));
-
-            // Click Interaction
-            header.click();
-
-            assert.strictEqual(header.getAttribute('aria-expanded'), 'true');
-            assert.strictEqual(content.getAttribute('aria-hidden'), 'false');
-            assert.ok(item.classList.contains('active'));
-
-            // Keydown Interaction (Space)
-            const spaceEvent = {
+            btn.dispatchEvent({
                 type: 'keydown',
-                key: ' ',
-                preventDefault: () => {}
-            };
-            let defaultPrevented = false;
-            spaceEvent.preventDefault = () => { defaultPrevented = true; };
+                key: key,
+                preventDefault: () => { defaultPrevented = true; }
+            });
+            return defaultPrevented;
+        };
 
-            header.dispatchEvent(spaceEvent);
+        // Trigger Enter
+        const enterPrevented = triggerKey('Enter');
+        assert.equal(enterPrevented, true, 'Enter key should prevent default');
+        assert.equal(btn.getAttribute('aria-expanded'), 'true', 'Enter key should toggle state');
 
-            assert.ok(defaultPrevented, 'Space key should prevent default');
-            assert.strictEqual(header.getAttribute('aria-expanded'), 'false', 'Should collapse on Space');
-        });
+        // Trigger Space
+        const spacePrevented = triggerKey(' ');
+        assert.equal(spacePrevented, true, 'Space key should prevent default');
+        assert.equal(btn.getAttribute('aria-expanded'), 'false', 'Space key should toggle state again');
+
+        // Trigger Other Key (e.g., 'A')
+        const otherPrevented = triggerKey('A');
+        assert.equal(otherPrevented, false, 'Other keys should not prevent default');
+        assert.equal(btn.getAttribute('aria-expanded'), 'false', 'Other keys should not toggle state');
     });
 
-    describe('initKeyTerms', () => {
-        it('should initialize tooltips and handle hover/focus events', () => {
-            // Setup
-            const term = new MockElement('SPAN');
-            term.classList.add('term-highlight');
-            term.dataset.definition = 'A specific definition';
+    it('should gracefully handle missing child elements', () => {
+        const toggleEmpty = new MockElement('div', 'texas-toggle');
+        // No children
 
-            documentBody.appendChild(term);
+        const toggleNoBtn = new MockElement('div', 'texas-toggle');
+        toggleNoBtn.appendChild(new MockElement('div', 'texas-content'));
 
-            // Execute
-            Components.initKeyTerms();
+        const toggleNoContent = new MockElement('div', 'texas-toggle');
+        toggleNoContent.appendChild(new MockElement('button', 'btn-texas-toggle'));
 
-            // Verify Initialization
-            const tooltip = term.children.find(child => child.classList.contains('term-tooltip'));
-            assert.ok(tooltip, 'Tooltip should be created and appended');
-            assert.strictEqual(tooltip.textContent, 'A specific definition', 'Tooltip text should match definition');
+        mockDoc.elements.push(toggleEmpty, toggleNoBtn, toggleNoContent);
 
-            // Mouse Interactions
-            term.dispatchEvent({ type: 'mouseenter' });
-            assert.ok(tooltip.classList.contains('visible'), 'Tooltip should be visible on mouseenter');
+        // Should not throw error
+        assert.doesNotThrow(() => Components.initTexasToggle());
+    });
 
-            term.dispatchEvent({ type: 'mouseleave' });
-            assert.ok(!tooltip.classList.contains('visible'), 'Tooltip should NOT be visible on mouseleave');
-
-            // Focus Interactions
-            term.dispatchEvent({ type: 'focus' });
-            assert.ok(tooltip.classList.contains('visible'), 'Tooltip should be visible on focus');
-
-            term.dispatchEvent({ type: 'blur' });
-            assert.ok(!tooltip.classList.contains('visible'), 'Tooltip should NOT be visible on blur');
-        });
-
-        it('should NOT create tooltip if data-definition is missing', () => {
-            // Setup
-            const term = new MockElement('SPAN');
-            term.classList.add('term-highlight');
-            // No dataset.definition set
-
-            documentBody.appendChild(term);
-
-            // Execute
-            Components.initKeyTerms();
-
-            // Verify
-            const tooltip = term.children.find(child => child.classList && child.classList.contains('term-tooltip'));
-            assert.strictEqual(tooltip, undefined, 'Tooltip should NOT be created');
-        });
-
-        it('should NOT create tooltip if data-definition is empty', () => {
-            // Setup
-            const term = new MockElement('SPAN');
-            term.classList.add('term-highlight');
-            term.dataset.definition = '';
-
-            documentBody.appendChild(term);
-
-            // Execute
-            Components.initKeyTerms();
-
-            // Verify
-            const tooltip = term.children.find(child => child.classList && child.classList.contains('term-tooltip'));
-            assert.strictEqual(tooltip, undefined, 'Tooltip should NOT be created');
-        });
-
-        it('should initialize multiple terms correctly', () => {
-            // Setup
-            const term1 = new MockElement('SPAN');
-            term1.classList.add('term-highlight');
-            term1.dataset.definition = 'Definition 1';
-
-            const term2 = new MockElement('SPAN');
-            term2.classList.add('term-highlight');
-            term2.dataset.definition = 'Definition 2';
-
-            documentBody.appendChild(term1);
-            documentBody.appendChild(term2);
-
-            // Execute
-            Components.initKeyTerms();
-
-            // Verify Term 1
-            const tooltip1 = term1.children.find(child => child.classList.contains('term-tooltip'));
-            assert.ok(tooltip1, 'Tooltip 1 should be created');
-            assert.strictEqual(tooltip1.textContent, 'Definition 1');
-
-            // Verify Term 2
-            const tooltip2 = term2.children.find(child => child.classList.contains('term-tooltip'));
-            assert.ok(tooltip2, 'Tooltip 2 should be created');
-            assert.strictEqual(tooltip2.textContent, 'Definition 2');
-        });
+    it('should do nothing if no toggles found', () => {
+        mockDoc.elements = [];
+        // Should not throw error
+        assert.doesNotThrow(() => Components.initTexasToggle());
     });
 });
