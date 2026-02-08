@@ -5,6 +5,68 @@
 
 const MapManager = {
     /**
+     * Initialize the preview map on the home page
+     */
+    initPreviewMap() {
+        const mapContainer = document.getElementById('preview-map');
+        if (!mapContainer || typeof L === 'undefined') return;
+
+        const map = L.map('preview-map', {
+            zoomControl: true,
+            scrollWheelZoom: false
+        }).setView([20, 0], 2);
+
+        // Add tile layer
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+            subdomains: 'abcd',
+            maxZoom: 19
+        }).addTo(map);
+
+        // Define world regions with approximate bounds
+        const regions = [
+            { name: 'Europe', center: [50, 10], color: '#2d8fa8' },
+            { name: 'Russia', center: [60, 100], color: '#1e5f74' },
+            { name: 'North America', center: [45, -100], color: '#f4a261' },
+            { name: 'Latin America', center: [-15, -60], color: '#e07b3c' },
+            { name: 'Sub-Saharan Africa', center: [0, 20], color: '#2a9d8f' },
+            { name: 'North Africa & SW Asia', center: [28, 30], color: '#40c9b8' },
+            { name: 'South Asia', center: [22, 78], color: '#e76f51' },
+            { name: 'East Asia', center: [35, 115], color: '#264653' },
+            { name: 'Southeast Asia', center: [5, 115], color: '#287271' },
+            { name: 'Australia & Oceania', center: [-25, 140], color: '#8ab17d' }
+        ];
+
+        // Add markers for each region
+        const markerGroup = L.layerGroup();
+        regions.forEach(region => {
+            const marker = L.circleMarker(region.center, {
+                radius: 12,
+                fillColor: region.color,
+                color: '#fff',
+                weight: 2,
+                opacity: 1,
+                fillOpacity: 0.8
+            });
+
+            marker.addTo(markerGroup);
+
+            marker.bindPopup(`<strong>${region.name}</strong>`);
+            
+            marker.on('mouseover', function() {
+                this.openPopup();
+                this.setStyle({ radius: 16, fillOpacity: 1 });
+            });
+            
+            marker.on('mouseout', function() {
+                this.setStyle({ radius: 12, fillOpacity: 0.8 });
+            });
+        });
+
+        markerGroup.addTo(map);
+    },
+
+    /**
      * Initialize the interactive world map navigator
      */
     initRegionalNavigator() {
@@ -109,6 +171,7 @@ const MapManager = {
         };
 
         // Add Markers and Link to Panel
+        const markerGroup = L.layerGroup();
         Object.keys(regionalData).forEach(id => {
             const region = regionalData[id];
             
@@ -119,7 +182,9 @@ const MapManager = {
                 weight: 3,
                 opacity: 1,
                 fillOpacity: 0.8
-            }).addTo(navMap);
+            });
+
+            marker.addTo(markerGroup);
 
             // Tooltip
             marker.bindTooltip(region.name, {
@@ -131,7 +196,7 @@ const MapManager = {
             // Hover events
             marker.on('mouseover', function() {
                 this.setStyle({ radius: 20, fillOpacity: 1 });
-                this.updateInfoPanel(id);
+                updateInfoPanel(id);
             });
 
             marker.on('mouseout', function() {
@@ -143,6 +208,8 @@ const MapManager = {
                 window.location.href = region.link;
             });
         });
+
+        markerGroup.addTo(navMap);
 
         function updateInfoPanel(id) {
             const data = regionalData[id];

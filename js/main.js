@@ -267,6 +267,7 @@ function initPreviewMap() {
     ];
 
     // Add markers for each region
+    const markerGroup = L.layerGroup();
     regions.forEach(region => {
         const marker = L.circleMarker(region.center, {
             radius: 12,
@@ -275,7 +276,9 @@ function initPreviewMap() {
             weight: 2,
             opacity: 1,
             fillOpacity: 0.8
-        }).addTo(map);
+        });
+
+        marker.addTo(markerGroup);
 
         marker.bindPopup(`<strong>${region.name}</strong>`);
         
@@ -285,6 +288,8 @@ function initPreviewMap() {
         });
         
     });
+
+    markerGroup.addTo(map);
 }
 
 // =====================================================
@@ -396,6 +401,7 @@ function initRegionalNavigator() {
     };
 
     // Add Markers and Link to Panel
+    const markerGroup = L.layerGroup();
     Object.keys(regionalData).forEach(id => {
         const region = regionalData[id];
         
@@ -406,7 +412,9 @@ function initRegionalNavigator() {
             weight: 3,
             opacity: 1,
             fillOpacity: 0.8
-        }).addTo(navMap);
+        });
+
+        marker.addTo(markerGroup);
 
         // Tooltip
         marker.bindTooltip(region.name, {
@@ -430,6 +438,8 @@ function initRegionalNavigator() {
             window.location.href = region.link;
         });
     });
+
+    markerGroup.addTo(navMap);
 
     function updateInfoPanel(id) {
         const data = regionalData[id];
