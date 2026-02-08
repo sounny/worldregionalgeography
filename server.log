@@ -1,4 +1,5 @@
-127.0.0.1 - - [07/Feb/2026 15:04:53] "GET /index.html HTTP/1.1" 200 -
-127.0.0.1 - - [07/Feb/2026 15:04:53] "GET /css/style.css HTTP/1.1" 200 -
-127.0.0.1 - - [07/Feb/2026 15:04:53] "GET /js/main.js HTTP/1.1" 200 -
-127.0.0.1 - - [07/Feb/2026 15:04:53] "GET /images/hero_banner.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/Feb/2026 14:42:47] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [07/Feb/2026 14:42:47] "GET /css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [07/Feb/2026 14:42:47] "GET /images/hero_banner.png HTTP/1.1" 200 -
+127.0.0.1 - - [07/Feb/2026 14:42:48] "GET /js/main.js HTTP/1.1" 200 -
+127.0.0.1 - - [07/Feb/2026 14:42:48] "GET /js/home-map.js HTTP/1.1" 200 -
