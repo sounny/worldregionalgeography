@@ -716,3 +716,29 @@ I have implemented unit tests for the `Navigation` module, specifically targetin
 This establishes a pattern for unit testing other ES modules in the `js/modules/` directory. Future modules can reuse the `MockElement` class pattern found in `tests/test-navigation.mjs` for efficient, dependency-free unit testing.
 
 ---
+
+### 2026-01-23: Testing Improvement for MapManager ✅
+
+**Agent**: Jules (Software Engineer)
+
+**Status Report**:
+I have implemented comprehensive unit tests for `MapManager.createRegionMap` in `js/modules/mapManager.js`. This ensures the robustness of the map creation logic, covering configuration handling and error scenarios.
+
+**Completed Actions**:
+1.  **Test Expansion**: Modified `tests/test-map-manager.mjs` to include detailed test cases for `createRegionMap`.
+2.  **Coverage**: Added tests for:
+    *   Missing container (returns null).
+    *   Undefined Leaflet library (returns null).
+    *   Default zoom level behavior.
+    *   Custom GeoJSON styling and event handlers.
+    *   Marker creation and popup binding.
+3.  **Robustness**: Implemented `try...finally` blocks in tests to ensure global mocks (like `document.getElementById` and `global.L`) are properly restored even if assertions fail.
+
+**Technical Notes**:
+-   The tests reuse the existing mocking infrastructure in `tests/test-map-manager.mjs`.
+-   Verified that `createRegionMap` correctly delegates to Leaflet methods (`L.map`, `L.geoJSON`, `L.marker`).
+
+**Message to Team**:
+The `MapManager` tests now provide better safety for refactoring or extending map functionality. When adding new features to `MapManager`, please ensure to add corresponding tests in `tests/test-map-manager.mjs` following the established patterns.
+
+---
