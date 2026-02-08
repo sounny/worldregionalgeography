@@ -1,28 +1,158 @@
 [
   {
-    "question": "Which term describes the increasing interconnectedness of the world's markets and cultures?",
+    "question": "Which term describes the increasing interconnectedness of the world's markets, cultures, and populations?",
     "options": [
       {
         "text": "Globalization",
         "correct": true,
-        "feedback": "Globalization refers to growing interdependence through flows of goods, people, ideas, and capital."
+        "feedback": "Globalization is the process of interaction and integration among people, companies, and governments worldwide."
       },
       { "text": "Isolationism", "correct": false },
-      { "text": "Balkanization", "correct": false },
-      { "text": "Permafrost", "correct": false }
+      { "text": "Nationalism", "correct": false },
+      { "text": "Regionalism", "correct": false }
     ]
   },
   {
-    "question": "Which challenge is repeatedly framed across regions as a defining 21st-century issue with global impacts?",
+    "question": "The proposed geological epoch where human activity is the dominant influence on climate and the environment is called the:",
     "options": [
       {
-        "text": "Climate change",
+        "text": "Anthropocene",
         "correct": true,
-        "feedback": "Climate change affects physical systems and human systems across every world region."
+        "feedback": "The term 'Anthropocene' highlights that humanity is now a geological force shaping the planet's future."
       },
-      { "text": "The formation of Pangaea", "correct": false },
-      { "text": "The invention of agriculture", "correct": false },
-      { "text": "The Bronze Age", "correct": false }
+      { "text": "Jurassic", "correct": false },
+      { "text": "Pleistocene", "correct": false },
+      { "text": "Holocene", "correct": false }
+    ]
+  },
+  {
+    "question": "How does the 'Greenhouse Effect' primarily work?",
+    "options": [
+      {
+        "text": "Gases like CO2 trap heat in the atmosphere, preventing it from escaping back into space.",
+        "correct": true,
+        "feedback": "This natural process keeps Earth warm, but human emissions are intensifying it, leading to global warming."
+      },
+      { "text": "The ozone layer reflects all sunlight back to the sun.", "correct": false },
+      { "text": "Volcanoes emit cooling ash that blocks the sun.", "correct": false },
+      { "text": "Ocean currents stop moving, heating up the water.", "correct": false }
+    ]
+  },
+  {
+    "question": "The divide between the 'Global North' and 'Global South' typically refers to:",
+    "options": [
+      {
+        "text": "Socio-economic inequalities between developed (wealthier) and developing (poorer) countries.",
+        "correct": true,
+        "feedback": "While not purely geographical (Australia is in the south but part of the 'Global North' economically), this term describes the development gap."
+      },
+      { "text": "The equator separating the hemispheres.", "correct": false },
+      { "text": "The difference in magnetic polarity.", "correct": false },
+      { "text": "The separation of land and water hemispheres.", "correct": false }
+    ]
+  },
+  {
+    "question": "What is 'placelessness' in the cultural landscape?",
+    "options": [
+      {
+        "text": "The loss of uniqueness, where different places begin to look the same (e.g., identical chain stores).",
+        "correct": true,
+        "feedback": "Globalization often leads to homogenized landscapes where distinctive local character is erased."
+      },
+      { "text": "A place with no people.", "correct": false },
+      { "text": "A map with no labels.", "correct": false },
+      { "text": "The feeling of being lost.", "correct": false }
+    ]
+  },
+  {
+    "question": "Which of the following is a key driver of modern migration patterns?",
+    "options": [
+      {
+        "text": "Economic opportunity (labor migration) and conflict (refugees).",
+        "correct": true,
+        "feedback": "People move primarily to improve their standard of living ('pull' factors) or to escape danger ('push' factors)."
+      },
+      { "text": "The desire to see more famous landmarks.", "correct": false },
+      { "text": "Seasonal bird migration patterns.", "correct": false },
+      { "text": "The rotation of the earth.", "correct": false }
+    ]
+  },
+  {
+    "question": "In the context of the global economy, a 'supply chain' refers to:",
+    "options": [
+      {
+        "text": "The network of individuals, organizations, resources, and technologies involved in creating a product.",
+        "correct": true,
+        "feedback": "Global supply chains link raw materials in one region, manufacturing in another, and consumers in a third."
+      },
+      { "text": "A physical metal chain used in shipping.", "correct": false },
+      { "text": "A local farmers market.", "correct": false },
+      { "text": "The internet cables connecting continents.", "correct": false }
+    ]
+  },
+  {
+    "question": "Antarctica is unique among world regions because:",
+    "options": [
+      {
+        "text": "It has no permanent human population and is governed by an international treaty for science and peace.",
+        "correct": true,
+        "feedback": "The Antarctic Treaty prohibits military activity and mineral mining, reserving the continent for research."
+      },
+      { "text": "It is the most densely populated continent.", "correct": false },
+      { "text": "It is a single country owned by the USA.", "correct": false },
+      { "text": "It has a tropical climate in the summer.", "correct": false }
+    ]
+  },
+  {
+    "question": "Which concept describes the adaptation of global products to local cultures (e.g., a McDonald's serving Paneer Burgers in India)?",
+    "options": [
+      {
+        "text": "Glocalization",
+        "correct": true,
+        "feedback": "Glocalization captures the interplay where the global and local shape each other."
+      },
+      { "text": "Colonization", "correct": false },
+      { "text": "Urbanization", "correct": false },
+      { "text": "Industrialization", "correct": false }
+    ]
+  },
+  {
+    "question": "Texas's role in the global economy is best exemplified by:",
+    "options": [
+      {
+        "text": "Its energy sector (oil/gas) and status as a major international trading hub.",
+        "correct": true,
+        "feedback": "Texas is a top exporter, connecting the US to global markets through ports like Houston and energy pipelines."
+      },
+      { "text": "Its isolation from international borders.", "correct": false },
+      { "text": "Its refusal to participate in international trade.", "correct": false },
+      { "text": "Its lack of immigrant communities.", "correct": false }
+    ]
+  },
+  {
+    "question": "What is 'Sustainable Development'?",
+    "options": [
+      {
+        "text": "Development that meets present needs without compromising the ability of future generations to meet their own needs.",
+        "correct": true,
+        "feedback": "It bridges the gap between economic growth and environmental protection."
+      },
+      { "text": "Stopping all economic growth to save nature.", "correct": false },
+      { "text": "Using up all resources as quickly as possible.", "correct": false },
+      { "text": "Building cities only in deserts.", "correct": false }
+    ]
+  },
+  {
+    "question": "Geographic literacy—understanding the 'why of where'—helps us:",
+    "options": [
+      {
+        "text": "Understand the connections between human societies and the physical environment in a complex world.",
+        "correct": true,
+        "feedback": "Geography provides the framework to analyze how global systems (climate, economy, culture) interact."
+      },
+      { "text": "Memorize state capitals only.", "correct": false },
+      { "text": "Win trivia games but has no real-world application.", "correct": false },
+      { "text": "Predict the stock market perfectly.", "correct": false }
     ]
   }
 ]

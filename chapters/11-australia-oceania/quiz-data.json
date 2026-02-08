@@ -5,7 +5,7 @@
       {
         "text": "Uluru",
         "correct": true,
-        "feedback": "Uluru is a well-known sandstone monolith in central Australia and a major cultural landmark."
+        "feedback": "Uluru (Ayers Rock) is a massive sandstone monolith in the heart of the Northern Territory's arid 'Red Centre'."
       },
       { "text": "Mount Everest", "correct": false },
       { "text": "The Alps", "correct": false },
@@ -13,16 +13,173 @@
     ]
   },
   {
-    "question": "Many Pacific Islands are classified as low islands. Which type is a low island?",
+    "question": "Many Pacific Islands are classified as 'low islands.' What is the primary characteristic of a low island?",
     "options": [
       {
-        "text": "Coral atoll",
+        "text": "It is made of coral reefs or atolls and sits very close to sea level.",
         "correct": true,
-        "feedback": "Coral atolls are low-lying islands that are highly vulnerable to sea-level rise."
+        "feedback": "Low islands are typically coral atolls built on submerged volcanic cones, making them extremely vulnerable to sea-level rise."
       },
-      { "text": "Glaciated fjord", "correct": false },
-      { "text": "Young fold mountain", "correct": false },
-      { "text": "Continental plateau", "correct": false }
+      {
+        "text": "It is a high volcanic peak with fertile soil.",
+        "correct": false
+      },
+      {
+        "text": "It is formed by continental drift and is rich in minerals.",
+        "correct": false
+      },
+      { "text": "It is covered in glaciers.", "correct": false }
+    ]
+  },
+  {
+    "question": "What is the name of the biogeographical boundary that separates the ecozones of Asia and Australia?",
+    "options": [
+      {
+        "text": "Wallace's Line",
+        "correct": true,
+        "feedback": "Wallace's Line separates the placental mammals of Asia from the marsupials of Australia/New Guinea."
+      },
+      { "text": "The Prime Meridian", "correct": false },
+      { "text": "The Equator", "correct": false },
+      { "text": "The Maginot Line", "correct": false }
+    ]
+  },
+  {
+    "question": "Which region of the Pacific is characterized by 'many islands' and includes Hawaii, New Zealand, and Easter Island?",
+    "options": [
+      {
+        "text": "Polynesia",
+        "correct": true,
+        "feedback": "Polynesia (meaning 'many islands') forms a vast triangle with Hawaii, New Zealand, and Easter Island at the corners."
+      },
+      { "text": "Micronesia", "correct": false },
+      { "text": "Melanesia", "correct": false },
+      { "text": "Indonesia", "correct": false }
+    ]
+  },
+  {
+    "question": "Which of the following best describes the 'Outback'?",
+    "options": [
+      {
+        "text": "The vast, sparsely populated, and arid interior of Australia.",
+        "correct": true,
+        "feedback": "The Outback covers most of the continent but supports a very small percentage of the population due to its arid climate."
+      },
+      {
+        "text": "The lush rainforests of Northern Queensland.",
+        "correct": false
+      },
+      {
+        "text": "The urban corridor from Sydney to Melbourne.",
+        "correct": false
+      },
+      {
+        "text": "The coral reef system off the northeast coast.",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Why are marsupials like kangaroos and koalas so prevalent in Australia but rare elsewhere?",
+    "options": [
+      {
+        "text": "Geographic isolation allowed them to evolve without competition from placental mammals.",
+        "correct": true,
+        "feedback": "Australia broke away from Gondwana early, allowing marsupials to diversify in isolation."
+      },
+      { "text": "They were imported by European settlers.", "correct": false },
+      {
+        "text": "The climate is too cold for other animals.",
+        "correct": false
+      },
+      {
+        "text": "They migrated across land bridges recently.",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Which indigenous people are the traditional custodians of the land in Australia?",
+    "options": [
+      {
+        "text": "Aboriginal Australians and Torres Strait Islanders",
+        "correct": true,
+        "feedback": "These groups have inhabited the continent for over 65,000 years, possessing the world's oldest continuous living culture."
+      },
+      { "text": "The Maori", "correct": false },
+      { "text": "The Polynesians", "correct": false },
+      { "text": "The Inuit", "correct": false }
+    ]
+  },
+  {
+    "question": "What is the primary existential threat facing low-lying Pacific nations like Kiribati and Tuvalu?",
+    "options": [
+      {
+        "text": "Rising sea levels due to climate change",
+        "correct": true,
+        "feedback": "With elevations often less than 2 meters above sea level, these nations face total submersion if oceans continue to rise."
+      },
+      { "text": "Volcanic eruptions", "correct": false },
+      { "text": "Deforestation", "correct": false },
+      { "text": "Overpopulation", "correct": false }
+    ]
+  },
+  {
+    "question": "The 'Great Barrier Reef' is located off the coast of which region?",
+    "options": [
+      {
+        "text": "Northeastern Australia (Queensland)",
+        "correct": true,
+        "feedback": "It is the world's largest coral reef system, visible from space, but threatened by coral bleaching."
+      },
+      { "text": "New Zealand's South Island", "correct": false },
+      { "text": "Papua New Guinea", "correct": false },
+      { "text": "Tasmania", "correct": false }
+    ]
+  },
+  {
+    "question": "New Zealand is physically distinct from Australia because:",
+    "options": [
+      {
+        "text": "It is geologically young, mountainous, and located on a plate boundary.",
+        "correct": true,
+        "feedback": "New Zealand sits on the Ring of Fire, giving it volcanoes and high mountains (Southern Alps), unlike Australia's flat, ancient stable craton."
+      },
+      { "text": "It is entirely desert.", "correct": false },
+      { "text": "It is connected to Antarctica by ice.", "correct": false },
+      { "text": "It has no indigenous history.", "correct": false }
+    ]
+  },
+  {
+    "question": "Who are the Maori?",
+    "options": [
+      {
+        "text": "The indigenous Polynesian people of New Zealand.",
+        "correct": true,
+        "feedback": "The Maori arrived in Aotearoa (New Zealand) roughly 700 years ago and developed a distinct warrior culture."
+      },
+      { "text": "The first European settlers in Australia.", "correct": false },
+      { "text": "The inhabitants of the Outback.", "correct": false },
+      { "text": "A political party in Fiji.", "correct": false }
+    ]
+  },
+  {
+    "question": "What does the concept 'Tyranny of Distance' refer to in the context of this region?",
+    "options": [
+      {
+        "text": "The economic and social challenges caused by being far from major global markets and population centers.",
+        "correct": true,
+        "feedback": "Australia and New Zealand are geographically remote from Europe and North America, historically impacting trade and travel costs."
+      },
+      {
+        "text": "The distance between the rich and poor within a city.",
+        "correct": false
+      },
+      { "text": "The length of the coastline.", "correct": false },
+      {
+        "text": "The strict laws regarding social distancing.",
+        "correct": false
+      }
     ]
   }
 ]
