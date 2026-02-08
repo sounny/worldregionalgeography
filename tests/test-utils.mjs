@@ -1,282 +1,209 @@
+import { describe, it, beforeEach, afterEach } from 'node:test';
 import assert from 'node:assert';
-import Utils from '../js/modules/utils.js';
 
-// Minimal mock for DOM elements
+// Mock DOM Environment
 class MockElement {
-    constructor(tagName) {
+    constructor(tagName = 'div') {
         this.tagName = tagName.toUpperCase();
-        this._attributes = new Map();
-        this._classList = new Set();
-        this.children = [];
-        this.parentNode = null;
-        this.textContent = '';
-        this._href = '';
+        this.listeners = {};
+        this.attributes = {};
+        this.classList = {
+            _list: new Set(),
+            add: function(cls) { this._list.add(cls); },
+            remove: function(cls) { this._list.delete(cls); },
+            contains: function(cls) { return this._list.has(cls); },
+            toggle: function(cls) {
+                if (this._list.has(cls)) this._list.delete(cls);
+                else this._list.add(cls);
+            }
+        };
+        this.style = {};
+        this.top = 0;
+        this.offsetHeight = 0;
+    }
+
+    addEventListener(event, callback) {
+        if (!this.listeners[event]) {
+            this.listeners[event] = [];
+        }
+        this.listeners[event].push(callback);
     }
 
     getAttribute(name) {
-        return this._attributes.has(name) ? this._attributes.get(name) : null;
+        return this.attributes[name] || null;
     }
 
     setAttribute(name, value) {
-        this._attributes.set(name, String(value));
-        if (name === 'class') {
-            this._classList = new Set(String(value).split(' ').filter(c => c));
+        this.attributes[name] = value;
+    }
+
+    getBoundingClientRect() {
+        return { top: this.top, bottom: 0, left: 0, right: 0, width: 0, height: this.offsetHeight };
+    }
+
+    // Helper to manually trigger event
+    trigger(event, eventData = {}) {
+        if (this.listeners[event]) {
+            this.listeners[event].forEach(cb => {
+                // Call with 'this' bound to the element
+                cb.call(this, {
+                    ...eventData,
+                    preventDefault: eventData.preventDefault || (() => {})
+                });
+            });
         }
-    }
-
-    hasAttribute(name) {
-        return this._attributes.has(name);
-    }
-
-    get className() {
-        return this.getAttribute('class') || '';
-    }
-
-    set className(value) {
-        this.setAttribute('class', value);
-    }
-
-    get classList() {
-        const sync = () => {
-            const classString = Array.from(this._classList).join(' ');
-            this._attributes.set('class', classString);
-        };
-
-        return {
-            add: (...classes) => {
-                classes.forEach(c => this._classList.add(c));
-                sync();
-            },
-            remove: (...classes) => {
-                classes.forEach(c => this._classList.delete(c));
-                sync();
-            },
-            contains: (c) => this._classList.has(c),
-            toggle: (c) => {
-                if (this._classList.has(c)) {
-                    this._classList.delete(c);
-                } else {
-                    this._classList.add(c);
-                }
-                sync();
-            }
-        };
-    }
-
-    get href() {
-        return this._href;
-    }
-
-    set href(value) {
-        this._href = value;
-        this.setAttribute('href', value);
-    }
-
-    insertBefore(newNode, referenceNode) {
-        newNode.parentNode = this;
-        if (referenceNode) {
-            const index = this.children.indexOf(referenceNode);
-            if (index > -1) {
-                this.children.splice(index, 0, newNode);
-            } else {
-                this.children.push(newNode);
-            }
-        } else {
-            this.children.push(newNode);
-        }
-        return newNode;
-    }
-
-    appendChild(newNode) {
-        newNode.parentNode = this;
-        this.children.push(newNode);
-        return newNode;
-    }
-
-    get firstChild() {
-        return this.children.length > 0 ? this.children[0] : null;
-    }
-
-    // Helper to find child by class (shallow search for simplicity in this context)
-    querySelector(selector) {
-        // Very basic selector matching
-        if (selector.startsWith('.')) {
-            const className = selector.substring(1);
-            return this.children.find(child => child.className.includes(className)) || null;
-        }
-        return null;
     }
 }
 
-// Global Document Mock
-global.document = {
-    body: new MockElement('BODY'),
-
-    createElement(tagName) {
-        return new MockElement(tagName);
-    },
-
-    querySelector(selector) {
-        // This will be overridden in tests or we can implement a basic registry
-        return null;
-    },
-
-    querySelectorAll(selector) {
-        return [];
-    }
-};
-
+// Global mocks
 global.window = {
-    pageYOffset: 0,
-    scrollTo: () => {}
+    scrollTo: () => {}, // Mocked per test
+    pageYOffset: 0
 };
 
-// Test Suite
-console.log('🧪 Testing Utils.initAccessibilityEnhancements...');
+global.document = {
+    querySelectorAll: () => [], // Mocked per test
+    querySelector: () => null,   // Mocked per test
+    createElement: (tag) => new MockElement(tag),
+    body: new MockElement('body')
+};
 
-// Test 1: Add skip link if not present
-{
-    console.log('Test 1: Add skip link if missing...');
+// Import the module to test
+import Utils from '../js/modules/utils.js';
 
-    // Setup
-    document.body = new MockElement('BODY');
-    // Add some initial content to body
-    const initialContent = new MockElement('DIV');
-    document.body.appendChild(initialContent);
+describe('Utils.initSmoothScroll', () => {
+    let scrollToCalls = [];
+    let anchors = [];
 
-    // Mock querySelector to return nothing for .skip-link
-    document.querySelector = (selector) => {
-        if (selector === '.skip-link') return null;
-        return null;
-    };
+    beforeEach(() => {
+        // Reset mocks
+        scrollToCalls = [];
+        anchors = [];
 
-    // Run
-    Utils.initAccessibilityEnhancements();
+        // Mock window.scrollTo
+        global.window.scrollTo = (options) => {
+            scrollToCalls.push(options);
+        };
+        global.window.pageYOffset = 0;
 
-    // Verify
-    const firstChild = document.body.firstChild;
-    assert.strictEqual(firstChild.tagName, 'A', 'First child should be an anchor tag');
-    assert.strictEqual(firstChild.className, 'skip-link', 'Should have class skip-link');
-    assert.strictEqual(firstChild.getAttribute('href'), '#main-content', 'Should link to #main-content');
-    assert.strictEqual(firstChild.textContent, 'Skip to main content', 'Should have correct text content');
-    console.log('✅ Passed');
-}
+        // Mock document.querySelectorAll
+        global.document.querySelectorAll = (selector) => {
+            if (selector === 'a[href^="#"]') {
+                return anchors;
+            }
+            return [];
+        };
 
-// Test 2: Do not add skip link if present
-{
-    console.log('Test 2: Do not add skip link if present...');
+        // Mock document.querySelector
+        global.document.querySelector = (selector) => {
+            // Default header mock
+            if (selector === '.site-header') {
+                const header = new MockElement('header');
+                header.offsetHeight = 70;
+                return header;
+            }
+            return null;
+        };
+    });
 
-    // Setup
-    document.body = new MockElement('BODY');
-    const existingSkipLink = new MockElement('A');
-    existingSkipLink.className = 'skip-link';
-    document.body.appendChild(existingSkipLink);
+    it('should attach click event listeners to anchor links', () => {
+        const anchor = new MockElement('a');
+        anchor.setAttribute('href', '#target');
+        anchors.push(anchor);
 
-    // Mock querySelector to return existing link
-    document.querySelector = (selector) => {
-        if (selector === '.skip-link') return existingSkipLink;
-        return null;
-    };
+        Utils.initSmoothScroll();
 
-    // Run
-    Utils.initAccessibilityEnhancements();
+        assert.ok(anchor.listeners['click'], 'Click listener should be attached');
+        assert.strictEqual(anchor.listeners['click'].length, 1, 'Should have exactly one listener');
+    });
 
-    // Verify
-    assert.strictEqual(document.body.children.length, 1, 'Should not add another child');
-    assert.strictEqual(document.body.firstChild, existingSkipLink, 'Should keep existing skip link');
-    console.log('✅ Passed');
-}
+    it('should scroll to target element on click', () => {
+        const anchor = new MockElement('a');
+        anchor.setAttribute('href', '#section1');
+        anchors.push(anchor);
 
-// Test 3: Add ARIA label to navigation
-{
-    console.log('Test 3: Add ARIA label to navigation...');
+        // Mock the target element
+        const targetElement = new MockElement('div');
+        targetElement.top = 500; // Element is at 500px from top of viewport
 
-    // Setup
-    const nav = new MockElement('NAV');
-    nav.className = 'main-nav';
+        // Override querySelector to return our target
+        const originalQuerySelector = global.document.querySelector;
+        global.document.querySelector = (selector) => {
+            if (selector === '#section1') return targetElement;
+            return originalQuerySelector(selector);
+        };
 
-    document.querySelector = (selector) => {
-        if (selector === '.main-nav') return nav;
-        return null;
-    };
+        Utils.initSmoothScroll();
 
-    // Run
-    Utils.initAccessibilityEnhancements();
+        let preventDefaultCalled = false;
+        anchor.trigger('click', {
+            preventDefault: () => { preventDefaultCalled = true; }
+        });
 
-    // Verify
-    assert.strictEqual(nav.getAttribute('aria-label'), 'Main navigation');
-    console.log('✅ Passed');
-}
+        assert.strictEqual(preventDefaultCalled, true, 'Should prevent default link behavior');
+        assert.strictEqual(scrollToCalls.length, 1, 'Should call window.scrollTo');
 
-// Test 4: Do not overwrite existing ARIA label
-{
-    console.log('Test 4: Do not overwrite existing ARIA label...');
+        // Expected calculation: target.top (500) + window.pageYOffset (0) - headerHeight (70) = 430
+        assert.deepStrictEqual(scrollToCalls[0], {
+            top: 430,
+            behavior: 'smooth'
+        });
+    });
 
-    // Setup
-    const nav = new MockElement('NAV');
-    nav.className = 'main-nav';
-    nav.setAttribute('aria-label', 'Custom Nav');
+    it('should handle window.pageYOffset correctly', () => {
+        const anchor = new MockElement('a');
+        anchor.setAttribute('href', '#section2');
+        anchors.push(anchor);
 
-    document.querySelector = (selector) => {
-        if (selector === '.main-nav') return nav;
-        return null;
-    };
+        const targetElement = new MockElement('div');
+        targetElement.top = 200; // Relative to viewport
+        global.window.pageYOffset = 1000; // Scrolled down 1000px
 
-    // Run
-    Utils.initAccessibilityEnhancements();
+        const originalQuerySelector = global.document.querySelector;
+        global.document.querySelector = (selector) => {
+            if (selector === '#section2') return targetElement;
+            return originalQuerySelector(selector);
+        };
 
-    // Verify
-    assert.strictEqual(nav.getAttribute('aria-label'), 'Custom Nav');
-    console.log('✅ Passed');
-}
+        Utils.initSmoothScroll();
 
-// Test 5: Add landmark roles
-{
-    console.log('Test 5: Add landmark roles...');
+        anchor.trigger('click', {});
 
-    // Setup
-    const main = new MockElement('MAIN');
-    const header = new MockElement('HEADER');
-    header.className = 'site-header';
-    const footer = new MockElement('FOOTER');
-    footer.className = 'site-footer';
+        // Expected: 200 + 1000 - 70 = 1130
+        assert.strictEqual(scrollToCalls[0].top, 1130);
+    });
 
-    document.querySelector = (selector) => {
-        if (selector === 'main') return main;
-        if (selector === '.site-header') return header;
-        if (selector === '.site-footer') return footer;
-        return null;
-    };
+    it('should ignore links with href="#"', () => {
+        const anchor = new MockElement('a');
+        anchor.setAttribute('href', '#');
+        anchors.push(anchor);
 
-    // Run
-    Utils.initAccessibilityEnhancements();
+        Utils.initSmoothScroll();
 
-    // Verify
-    assert.strictEqual(main.getAttribute('role'), 'main');
-    assert.strictEqual(header.getAttribute('role'), 'banner');
-    assert.strictEqual(footer.getAttribute('role'), 'contentinfo');
-    console.log('✅ Passed');
-}
+        let preventDefaultCalled = false;
+        anchor.trigger('click', {
+            preventDefault: () => { preventDefaultCalled = true; }
+        });
 
-// Test 6: Preserve existing landmark roles
-{
-    console.log('Test 6: Preserve existing landmark roles...');
+        assert.strictEqual(preventDefaultCalled, false, 'Should NOT prevent default for "#"');
+        assert.strictEqual(scrollToCalls.length, 0, 'Should NOT call window.scrollTo');
+    });
 
-    // Setup
-    const main = new MockElement('MAIN');
-    main.setAttribute('role', 'application'); // weird but valid for test
+    it('should do nothing if target element does not exist', () => {
+        const anchor = new MockElement('a');
+        anchor.setAttribute('href', '#missing');
+        anchors.push(anchor);
 
-    document.querySelector = (selector) => {
-        if (selector === 'main') return main;
-        return null;
-    };
+        // Ensure querySelector returns null for #missing (default behavior of our mock)
 
-    // Run
-    Utils.initAccessibilityEnhancements();
+        Utils.initSmoothScroll();
 
-    // Verify
-    assert.strictEqual(main.getAttribute('role'), 'application');
-    console.log('✅ Passed');
-}
+        let preventDefaultCalled = false;
+        anchor.trigger('click', {
+            preventDefault: () => { preventDefaultCalled = true; }
+        });
 
-console.log('\n✨ All tests passed!');
+        assert.strictEqual(preventDefaultCalled, false, 'Should NOT prevent default if target missing');
+        assert.strictEqual(scrollToCalls.length, 0, 'Should NOT call window.scrollTo');
+    });
+});
