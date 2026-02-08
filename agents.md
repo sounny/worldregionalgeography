@@ -690,28 +690,53 @@ The textbook is now **100% P1 complete** with all chapters having consistent ped
 **Testing Note**: Before releasing any changes to production, recommend running through quiz flow on each chapter to verify quiz-data.json loads correctly with the fixed main.js.
 
 ---
-### 2026-01-22: Testing Improvements - Utils.ProgressTracker ✅
 
-**Agent**: Jules (Testing Engineer)
+### 2026-01-23: Testing Infrastructure Improvement ✅
+
+**Agent**: Jules (Software Engineer)
 
 **Status Report**:
-I have implemented a comprehensive unit test suite for the `Utils.ProgressTracker` module to ensure the reliability of student progress tracking functionality.
+I have implemented unit tests for the `Navigation` module, specifically targeting the `initOutsideClick` functionality. This ensures the reliability of the navigation menu's behavior when users interact with the page.
 
 **Completed Actions**:
-1. **Created Test Suite**: Added `tests/test-utils-progress.mjs` using the native Node.js test runner.
-2. **Covered Scenarios**:
-   - Initialization and default states.
-   - Saving chapter completion (`markChapterComplete`).
-   - Retrieving completion status (`isChapterComplete`).
-   - Counting completed chapters (`getCompletedCount`).
-   - Resetting progress (`reset`).
-3. **Mocking**: Implemented robust mocks for `localStorage`, `window`, and `document` to isolate the tests from the browser environment.
-4. **Verification**: Validated that all new tests pass and ensured no regressions in existing tests (`tests/test-quiz-engine.js`).
+1.  **Test Creation**: Created `tests/test-navigation.mjs` using the native Node.js test runner (`node:test`).
+2.  **Mock Implementation**: Implemented a lightweight `MockElement` class to simulate DOM interactions (classList, attributes, event listeners) in a Node.js environment, avoiding heavy dependencies like JSDOM.
+3.  **Test Coverage**: Added tests for:
+    *   Event listener registration.
+    *   Menu closing behavior when clicking outside the navigation area.
+    *   Menu persistence when clicking inside the navigation area.
+    *   Graceful handling of missing DOM elements.
 
-**Technical Details**:
-- Used `node:test` and `node:assert` for a lightweight, dependency-free testing approach.
-- The tests confirm that `ProgressTracker` correctly persists data to `localStorage` using the `'wrg_progress'` key.
+**Technical Notes**:
+-   The tests use ES module imports to load `js/modules/navigation.js`.
+-   Global objects (`window`, `document`) are mocked within the test file to support the module's DOM dependencies.
+-   The test suite is fully self-contained and runs with `node tests/test-navigation.mjs`.
 
-**Next Steps**:
-- Continue expanding test coverage to other modules in `js/modules/`.
-- Consider integrating these tests into a CI/CD pipeline.
+**Message to Team**:
+This establishes a pattern for unit testing other ES modules in the `js/modules/` directory. Future modules can reuse the `MockElement` class pattern found in `tests/test-navigation.mjs` for efficient, dependency-free unit testing.
+
+---
+
+### 2026-01-23: MapManager Testing Improvement ✅
+
+**Agent**: Jules (Software Engineer)
+
+**Status Report**:
+I have significantly enhanced the test coverage for the `MapManager` module, specifically the `initRegionalNavigator` function. This ensures that the interactive regional map features (markers, tooltips, navigation) work correctly and are robust against errors.
+
+**Completed Actions**:
+1.  **Test Enhancement**: Updated `tests/test-map-manager.mjs` to include a comprehensive suite of tests for `initRegionalNavigator`.
+2.  **Scenario Coverage**: Added tests for:
+    *   **Initialization**: Verifying correct number of markers (10 regions) and tooltip binding.
+    *   **Interaction**: specific verification of `mouseover` (style update, panel update with correct region data) and `mouseout` (style reset) events.
+    *   **Navigation**: Verifying `click` events trigger the correct URL navigation.
+    *   **Error Handling**: Ensuring graceful failure when DOM elements are missing or the Leaflet library (`L`) is undefined.
+3.  **Mocking Strategy**: Leveraged existing mock patterns for Leaflet (`L`, `map`, `layer`) and DOM elements to test event handlers and side effects without a browser environment.
+
+**Technical Notes**:
+-   The tests verify that specific data (e.g., 'Europe', 'Migration & Identity') is correctly bound to the interactive elements.
+-   Event handling is tested by directly accessing and invoking the registered handlers on the mocked Leaflet objects, a pattern that allows precise testing of logic within callbacks.
+-   The tests run with `node --test tests/test-map-manager.mjs`.
+
+**Message to Team**:
+The `MapManager` is now better protected against regressions. Any future changes to the regional navigator logic or data structure should be verified against these tests. The pattern of inspecting `_handlers` on mocked Leaflet objects is effective for testing this library's event-driven architecture.
