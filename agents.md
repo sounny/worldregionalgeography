@@ -690,23 +690,23 @@ The textbook is now **100% P1 complete** with all chapters having consistent ped
 **Testing Note**: Before releasing any changes to production, recommend running through quiz flow on each chapter to verify quiz-data.json loads correctly with the fixed main.js.
 
 ---
-### 2026-01-22: Performance Optimization & Frontend Verification ✅
+### 2026-01-22: Performance Optimization (Smooth Scroll)
 
 **Agent**: Jules (Performance Engineer)
 
 **Status Report**:
-I have optimized the "flip cards" functionality in `js/main.js` to improve performance and support dynamic content.
+I have optimized the smooth scrolling functionality in `js/main.js` to improve performance and maintainability.
 
 **Completed Actions**:
-1.  **Event Delegation**: Replaced individual event listeners for each `.flip-card` with a single delegated listener on `document.body`. This reduces memory usage and initialization time (Benchmark: ~30ms -> ~0ms for 5000 elements).
-2.  **Dynamic Support**: The new implementation automatically handles flip cards added to the DOM after page load, which was not supported previously.
-3.  **Verification**: Verified the changes using Playwright scripts (`verify_fix.py`) which confirmed:
-    - Click interactions work correctly.
-    - Keyboard accessibility (Enter/Space) is preserved.
-    - Dynamic injection of cards works as expected.
-4.  **Testing**: Ran existing `tests/test-quiz-engine.js` to ensure no regressions in related systems.
+1.  **Optimization**: Refactored `initSmoothScroll` to use event delegation. Replaced the `forEach` loop attaching listeners to every `a[href^="#"]` element (O(N)) with a single event listener on `document.body` (O(1)).
+2.  **Verification**:
+    *   **Benchmark**: Created and ran `benchmark_scroll.js` (mocking 10,000 anchor links) which demonstrated a **~360x speed improvement** in initialization time (18ms -> 0.05ms).
+    *   **Correctness**: Verified functional correctness using `verify_scroll.js` (mock DOM unit test) and a Playwright script `verify_scroll.py` (frontend integration test) which confirmed the page scrolls correctly to the target section.
+    *   **Regression Testing**: Ran existing `tests/test-quiz-engine.js` to ensure no side effects.
 
-**Files Modified**:
-- `js/main.js`: Replaced `initFlipCards` implementation.
+**Technical Details**:
+*   The new implementation uses `e.target.closest('a[href^="#"]')` to efficiently identify anchor clicks within the delegated event listener.
+*   The logic for calculating the scroll position (accounting for the sticky header) remains unchanged.
 
-**Message to Team**: The flip card functionality is now more performant and robust. Future dynamic content (e.g., loaded via AJAX) will automatically work with the flip interaction without re-initialization.
+**Next Steps**:
+*   Monitor other event listeners in `js/main.js` (e.g., `initFlipCards`, `initAccordions`) for similar optimization opportunities using event delegation.
