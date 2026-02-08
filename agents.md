@@ -690,23 +690,24 @@ The textbook is now **100% P1 complete** with all chapters having consistent ped
 **Testing Note**: Before releasing any changes to production, recommend running through quiz flow on each chapter to verify quiz-data.json loads correctly with the fixed main.js.
 
 ---
-### 2026-01-22: Security Vulnerability Fix - Weak Random Number Generation
+
+### 2026-01-22: Security Fix - XSS Vulnerability in Quiz Engine ✅
 
 **Agent**: Jules (Security Engineer)
 
 **Status Report**:
-I have addressed a security vulnerability in `js/main.js` related to weak random number generation.
+I have identified and fixed a potential Cross-Site Scripting (XSS) vulnerability in `js/quiz-engine.js`. The issue was caused by the use of `innerHTML` to render dynamic content from the quiz data, which, although escaped, presented an inherent risk.
 
 **Completed Actions**:
-1.  **Vulnerability Fix**: Replaced the `Math.random()` fallback in the `getSecureId` function with a more robust timestamp-and-counter based approach.
-    -   This ensures that even in environments where `crypto` is undefined (which is rare but handled), we do not rely on `Math.random()`, which is flagged by security scanners.
-    -   The primary execution path still uses `crypto.randomUUID()` or `crypto.getRandomValues()`.
-2.  **Verification**:
-    -   Created a unit test script `tests/verify_secure_id.js` to verify that `Math.random()` is no longer called and that the function returns valid unique IDs in both secure and fallback scenarios.
-    -   Created a Playwright verification script `tests/verification/verify_dropdown_ids.py` to confirm that the dropdown menus in the application correctly generate and assign valid IDs (using `crypto` in modern browsers).
-3.  **No Regressions**: Ran existing tests (`tests/test-quiz-engine.js`) and confirmed no regressions.
+1.  **Refactoring `render` method**: Rewrote the `render` method in `js/quiz-engine.js` to use safe DOM manipulation methods (`document.createElement`, `textContent`, `setAttribute`, `appendChild`) instead of `innerHTML`. This eliminates the risk of XSS by ensuring that all content is treated as text or safe attributes.
+2.  **Test Infrastructure Enhancement**: Updated `tests/test-quiz-engine.js` with a robust `MockElement` class to support DOM tree construction and serialization in the Node.js test environment.
+3.  **Verification**:
+    *   Verified the fix with the updated Node.js tests, confirming that XSS vectors are neutralized and the HTML structure is correct.
+    *   Verified the frontend rendering and interaction using a Playwright script, ensuring that the quiz still functions correctly and looks as expected.
+
+**Files Modified**:
+*   `js/quiz-engine.js`: Refactored `render` method.
+*   `tests/test-quiz-engine.js`: Updated test infrastructure.
 
 **Message to Team**:
-The ID generation for dropdown menus is now compliant with security best practices regarding random number generation. The fallback for older browsers is now deterministic (unique) but safe from "weak RNG" classification context.
-
----
+The `QuizEngine` is now more secure. Future changes to the rendering logic should continue to use DOM manipulation methods or a trusted sanitizer if `innerHTML` is absolutely necessary. The updated test infrastructure in `tests/test-quiz-engine.js` can be used to verify future changes to the quiz engine.

@@ -43,23 +43,63 @@ const QuizEngine = {
      * @param {Array} questions 
      */
     render(container, questions) {
-        container.innerHTML = questions.map((q, index) => `
-            <div class="quiz-container" data-quiz="q${index}" data-type="${this.escapeHtml(q.type || 'multiple-choice')}">
-                <p class="quiz-question">${index + 1}. ${this.escapeHtml(q.question)}</p>
-                
-                ${q.scenario ? `<div class="quiz-scenario"><p><em>${this.escapeHtml(q.scenario)}</em></p></div>` : ''}
+        // Clear existing content safely
+        container.innerHTML = '';
 
-                <div class="quiz-options">
-                    ${q.options.map((opt, i) => `
-                        <label class="quiz-option" data-correct="${String(Boolean(opt.correct))}" data-feedback="${this.escapeHtml(opt.feedback || '')}">
-                            <input type="radio" name="q${index}" value="${i}">
-                            <span>${this.escapeHtml(opt.text)}</span>
-                        </label>
-                    `).join('')}
-                </div>
-                <div class="quiz-feedback"></div>
-            </div>
-        `).join('');
+        questions.forEach((q, index) => {
+            const quizDiv = document.createElement('div');
+            quizDiv.className = 'quiz-container';
+            quizDiv.setAttribute('data-quiz', `q${index}`);
+            // setAttribute automatically handles escaping for attribute values
+            quizDiv.setAttribute('data-type', q.type || 'multiple-choice');
+
+            const questionP = document.createElement('p');
+            questionP.className = 'quiz-question';
+            // textContent automatically escapes HTML, preventing XSS
+            questionP.textContent = `${index + 1}. ${q.question}`;
+            quizDiv.appendChild(questionP);
+
+            if (q.scenario) {
+                const scenarioDiv = document.createElement('div');
+                scenarioDiv.className = 'quiz-scenario';
+                const p = document.createElement('p');
+                const em = document.createElement('em');
+                em.textContent = q.scenario;
+                p.appendChild(em);
+                scenarioDiv.appendChild(p);
+                quizDiv.appendChild(scenarioDiv);
+            }
+
+            const optionsDiv = document.createElement('div');
+            optionsDiv.className = 'quiz-options';
+
+            q.options.forEach((opt, i) => {
+                const label = document.createElement('label');
+                label.className = 'quiz-option';
+                label.setAttribute('data-correct', String(Boolean(opt.correct)));
+                label.setAttribute('data-feedback', opt.feedback || '');
+
+                const input = document.createElement('input');
+                input.type = 'radio';
+                input.name = `q${index}`;
+                input.value = i;
+                
+                const span = document.createElement('span');
+                span.textContent = opt.text;
+
+                label.appendChild(input);
+                label.appendChild(span);
+                optionsDiv.appendChild(label);
+            });
+
+            quizDiv.appendChild(optionsDiv);
+
+            const feedbackDiv = document.createElement('div');
+            feedbackDiv.className = 'quiz-feedback';
+            quizDiv.appendChild(feedbackDiv);
+
+            container.appendChild(quizDiv);
+        });
     },
 
     /**
