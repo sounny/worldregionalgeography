@@ -690,23 +690,17 @@ The textbook is now **100% P1 complete** with all chapters having consistent ped
 **Testing Note**: Before releasing any changes to production, recommend running through quiz flow on each chapter to verify quiz-data.json loads correctly with the fixed main.js.
 
 ---
+### 2026-01-22: CSS Duplicate Rule Fix
 
-### 2026-01-22: Testing Improvements ✅
-
-**Agent**: Jules (Testing Engineer)
+**Agent**: Jules (Code Health Agent)
 
 **Status Report**:
-I have improved the testing infrastructure by adding unit tests for the `Navigation` module.
+I have resolved the duplicate CSS rule issue for `.case-study-gold` in `css/style.css`.
 
 **Completed Actions**:
-1.  **Created `tests/test-navigation.mjs`**: A new test file using the built-in `node:test` runner.
-2.  **Mocked DOM Environment**: Implemented a `MockElement` class and mocked `window` and `document` to simulate browser behavior in Node.js.
-3.  **Covered Functionality**: Added tests for `initMobileToggle`, `initDropdowns`, and `initOutsideClick`.
-4.  **Verified Tests**: Confirmed that new tests pass and existing `tests/test-quiz-engine.js` passes (no regressions).
+1.  **Analyzed the Issue**: Identified two blocks of CSS rules for `.case-study-gold` and related components. The second block contained unique rules (`.case-study-questions ul/li`) that were missing from the first.
+2.  **Reproduction & Verification**: Created a reproduction HTML and a Python Playwright script (`verify_css.py`) to verify the CSS behavior and ensure no regressions.
+3.  **Refactoring**: Consolidated the unique rules into the primary block and removed the duplicate block.
+4.  **Verification**: Verified the fix using the Playwright script and by running the project's test suite (`node --test tests/test-quiz-engine.js`).
 
-**Files Created**:
-- `tests/test-navigation.mjs`
-
-**Next Steps**:
-- Continue adding tests for other modules (e.g., `js/modules/lightbox.js`, `js/map-init.js`).
-- Consider setting up a more robust mock environment if more complex DOM interactions are needed.
+**Result**: The code health issue is resolved, code duplication is reduced, and maintainability is improved without changing functionality.
