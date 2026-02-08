@@ -157,6 +157,24 @@ function initNavigation() {
         });
     }
 
+    // Helper for secure ID generation
+    function getSecureId() {
+        if (typeof crypto !== 'undefined') {
+            if (typeof crypto.randomUUID === 'function') {
+                return crypto.randomUUID();
+            }
+            if (typeof crypto.getRandomValues === 'function') {
+                const array = new Uint32Array(1);
+                crypto.getRandomValues(array);
+                return array[0].toString(16);
+            }
+        }
+        // Fallback for very old environments
+        const timestamp = Date.now().toString(36);
+        const randomPart = (getSecureId.counter = (getSecureId.counter || 0) + 1).toString(36);
+        return `${timestamp}-${randomPart}`;
+    }
+
     // Mobile dropdown toggle
     dropdowns.forEach(dropdown => {
         const toggle = dropdown.querySelector('.dropdown-toggle');
@@ -165,7 +183,7 @@ function initNavigation() {
             toggle.setAttribute('aria-haspopup', 'true');
 
             if (menu && !menu.id) {
-                menu.id = `dropdown-menu-${Math.random().toString(16).slice(2)}`;
+                menu.id = `dropdown-menu-${getSecureId()}`;
             }
             if (menu?.id) {
                 toggle.setAttribute('aria-controls', menu.id);
@@ -534,59 +552,6 @@ function initSmoothScroll() {
 }
 
 // =====================================================
-// Interactive Map for Chapters
-// =====================================================
-
-/**
- * Create an interactive map for a specific region
- * @param {string} containerId - The ID of the map container element
- * @param {object} config - Configuration object with center, zoom, and optional GeoJSON
- */
-function createRegionMap(containerId, config) {
-    // Check dependencies
-    if (typeof MapManager === 'undefined') {
-        console.warn('MapManager not found. Ensure js/map-init.js is loaded.');
-        return null;
-    }
-
-    const container = document.getElementById(containerId);
-    if (!container) return null;
-
-    // Initialize using MapManager
-    const map = MapManager.initMap(containerId, config.center, config.zoom || 4);
-    if (!map) return null;
-
-    // Restore scrollWheelZoom if it was originally desired
-    // (MapManager defaults to false, old createRegionMap defaulted to true)
-    map.scrollWheelZoom.enable();
-
-    // Add GeoJSON if provided
-    if (config.geojson) {
-        MapManager.addGeoJson(map, config.geojson, {
-            style: config.style || {
-                fillColor: '#2d8fa8',
-                weight: 2,
-                opacity: 1,
-                color: '#1e5f74',
-                fillOpacity: 0.3
-            },
-            onEachFeature: config.onEachFeature || null
-        });
-    }
-
-    // Add markers if provided
-    if (config.markers) {
-        config.markers.forEach(marker => {
-            L.marker(marker.coords)
-                .bindPopup(marker.popup || marker.name)
-                .addTo(map);
-        });
-    }
-
-    return map;
-}
-
-// =====================================================
 // Key Terms Tooltip
 // =====================================================
 
@@ -665,7 +630,6 @@ const ProgressTracker = {
 
 // Export for use in chapter pages
 window.WRG = {
-    createRegionMap,
     initKeyTerms,
     ProgressTracker
 };
