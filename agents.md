@@ -690,74 +690,27 @@ The textbook is now **100% P1 complete** with all chapters having consistent ped
 **Testing Note**: Before releasing any changes to production, recommend running through quiz flow on each chapter to verify quiz-data.json loads correctly with the fixed main.js.
 
 ---
-### 2026-01-22: Security Fix - Leaflet SRI ✅
 
-**Agent**: Jules (Security Engineer)
+### 2026-01-22: Testing Improvements - Navigation Module
 
-**Status Report**:
-I have addressed the security vulnerability regarding missing Subresource Integrity (SRI) attributes for external Leaflet resources.
-
-**Completed Actions**:
-
-1.  **Vulnerability Fix**: Added `integrity` and `crossorigin` attributes to `leaflet.js` and `leaflet.css` tags in:
-    -   `index.html`
-    -   `standards.html` (CSS only)
-    -   All 12 `chapters/*/index.html` files.
-    -   Used hashes:
-        -   JS: `sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=`
-        -   CSS: `sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=`
-2.  **Verification**:
-    -   Created and executed `verify_sri.py` to scan all HTML files and confirm the presence of correct SRI attributes.
-    -   Created and executed a Playwright script (`verification/verify_map.py`) to verify that the map loads successfully (Leaflet object is defined) with the new security restrictions in place.
-    -   Ran existing tests (`tests/test-quiz-engine.js`) to ensure no regressions in other areas.
-
-**Result**:
-The application is now protected against compromised CDN resources for the Leaflet library. All map functionality remains operational.
-
----
-
-### 2026-01-23: Testing Improvement for MapManager ✅
-
-**Agent**: Jules (Software Engineer)
+**Agent**: Jules (Testing Engineer)
 
 **Status Report**:
-I have implemented comprehensive unit tests for `MapManager.createRegionMap` in `js/modules/mapManager.js`. This ensures the robustness of the map creation logic, covering configuration handling and error scenarios.
+I have implemented unit tests for the `Navigation.initMobileToggle` functionality to improve code reliability and coverage.
 
 **Completed Actions**:
-1.  **Test Expansion**: Modified `tests/test-map-manager.mjs` to include detailed test cases for `createRegionMap`.
-2.  **Coverage**: Added tests for:
-    *   Missing container (returns null).
-    *   Undefined Leaflet library (returns null).
-    *   Default zoom level behavior.
-    *   Custom GeoJSON styling and event handlers.
-    *   Marker creation and popup binding.
-3.  **Robustness**: Implemented `try...finally` blocks in tests to ensure global mocks (like `document.getElementById` and `global.L`) are properly restored even if assertions fail.
+1.  **Created `tests/test-navigation.mjs`**:
+    *   Implemented a manual DOM mock (`MockElement`, `MockClassList`) to simulate browser environment in Node.js.
+    *   Added tests for event listener attachment, state toggling (ARIA attributes and CSS classes), and graceful handling of missing elements.
+    *   Used `node:test` for a lightweight, dependency-free testing solution.
+2.  **Verified Tests**:
+    *   Ran `node tests/test-navigation.mjs` successfully (all 5 tests passed).
+    *   Ran existing `node tests/test-quiz-engine.js` to ensure no regressions.
 
 **Technical Notes**:
--   The tests reuse the existing mocking infrastructure in `tests/test-map-manager.mjs`.
--   Verified that `createRegionMap` correctly delegates to Leaflet methods (`L.map`, `L.geoJSON`, `L.marker`).
+*   The tests use a manual mock for `document` and DOM elements because `jsdom` is not available in the environment.
+*   The test file uses `.mjs` extension to support ES module imports native to Node.js.
+*   `global.document` is mocked and restored in `beforeEach`/`afterEach` to prevent side effects.
 
-**Message to Team**:
-The `MapManager` tests now provide better safety for refactoring or extending map functionality. When adding new features to `MapManager`, please ensure to add corresponding tests in `tests/test-map-manager.mjs` following the established patterns.
-
----
-
-### 2026-01-23: Testing Improvement for MapManager ✅
-
-**Agent**: Jules (Software Engineer)
-
-**Status Report**:
-I have improved the test coverage for `js/modules/mapManager.js` by adding a test case to verify the `initPreviewMap` function's behavior when the global Leaflet (`L`) object is undefined.
-
-**Completed Actions**:
-1.  **Test Enhancement**: Added a test case in `tests/test-map-manager.mjs` to simulate a missing Leaflet dependency.
-    *   Temporarily deletes `global.L` to verify the guard clause `if (!mapContainer || typeof L === 'undefined') return;`.
-    *   Ensures that no map initialization code is executed, preventing runtime errors.
-2.  **Verification**: Verified that the new test passes and that all existing tests in the suite (including `tests/test-components.mjs`, `tests/test-navigation.mjs`, `tests/test-quiz-engine.js`) pass without regression.
-
-**Technical Notes**:
--   The test uses a `try...finally` block to safely modify and restore the global environment, ensuring test isolation.
--   This addresses the concern regarding the "Hard dependency on Leaflet map initialization" by ensuring the code handles the absence of the dependency gracefully.
-
-**Message to Team**:
-The `MapManager` tests now robustly cover the scenario where the Leaflet library fails to load or is unavailable, adding a layer of safety to the application's map initialization logic.
+**Next Steps**:
+*   Consider adding similar tests for `Navigation.initDropdowns` and `Navigation.initOutsideClick` using the same mocking pattern.
