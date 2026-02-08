@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="World Regional Geography - An interactive open educational resource exploring the world's major regions through geographic analysis.">
     <title>World Regional Geography</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -200,8 +200,7 @@
         </div>
     </footer>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="js/regions-data.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -217,25 +216,33 @@
                     attribution: '© OpenStreetMap © CARTO'
                 }).addTo(map);
 
-                // Add region markers from centralized data
-                if (window.WorldRegionsData && window.WorldRegionsData.features) {
-                    window.WorldRegionsData.features.forEach(feature => {
-                        const props = feature.properties;
-                        if (props.center) {
-                            L.circleMarker(props.center, {
-                                radius: 12,
-                                fillColor: '#3b82f6',
-                                color: '#fff',
-                                weight: 2,
-                                fillOpacity: 0.8
-                            }).addTo(map)
-                            .bindPopup('<strong>' + props.name + '</strong><br><a href="' + props.link + '">Explore Chapter</a>')
-                            .on('click', function() {
-                                this.openPopup();
-                            });
-                        }
+                // Add region markers
+                const regions = [
+                    { name: 'Europe', coords: [50, 10], url: 'chapters/02-europe/index.html' },
+                    { name: 'Russia and Central Asia', coords: [60, 100], url: 'chapters/03-russia/index.html' },
+                    { name: 'North America', coords: [40, -100], url: 'chapters/04-north-america/index.html' },
+                    { name: 'Latin America', coords: [-10, -60], url: 'chapters/05-latin-america/index.html' },
+                    { name: 'Sub-Saharan Africa', coords: [0, 20], url: 'chapters/06-sub-saharan-africa/index.html' },
+                    { name: 'Middle East', coords: [25, 45], url: 'chapters/07-north-africa-sw-asia/index.html' },
+                    { name: 'South Asia', coords: [20, 78], url: 'chapters/08-south-asia/index.html' },
+                    { name: 'East Asia', coords: [35, 105], url: 'chapters/09-east-asia/index.html' },
+                    { name: 'Southeast Asia', coords: [5, 115], url: 'chapters/10-southeast-asia/index.html' },
+                    { name: 'Oceania', coords: [-25, 135], url: 'chapters/11-australia-oceania/index.html' }
+                ];
+
+                regions.forEach(region => {
+                    L.circleMarker(region.coords, {
+                        radius: 12,
+                        fillColor: '#3b82f6',
+                        color: '#fff',
+                        weight: 2,
+                        fillOpacity: 0.8
+                    }).addTo(map)
+                    .bindPopup('<strong>' + region.name + '</strong><br><a href="' + region.url + '">Explore Chapter</a>')
+                    .on('click', function() {
+                        this.openPopup();
                     });
-                }
+                });
             }
 
         });
