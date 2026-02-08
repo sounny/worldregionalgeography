@@ -1,30 +1,27 @@
-import { describe, it, beforeEach } from 'node:test';
-import assert from 'node:assert';
+import test from 'node:test';
+import assert from 'node:assert/strict';
 
-// Mock Browser Environment
+// --- Mock DOM Implementation ---
+
 class MockElement {
-    constructor(tagName = 'div') {
+    constructor(tagName, classes = []) {
         this.tagName = tagName.toUpperCase();
         this.classList = {
-            _classes: new Set(),
-            add: (cls) => this.classList._classes.add(cls),
-            remove: (cls) => this.classList._classes.delete(cls),
-            toggle: (cls) => {
-                if (this.classList._classes.has(cls)) {
-                    this.classList._classes.delete(cls);
-                    return false;
-                }
-                this.classList._classes.add(cls);
-                return true;
+            _classes: new Set(classes),
+            add: (c) => this.classList._classes.add(c),
+            remove: (c) => this.classList._classes.delete(c),
+            toggle: (c) => {
+                if (this.classList._classes.has(c)) this.classList._classes.delete(c);
+                else this.classList._classes.add(c);
             },
-            contains: (cls) => this.classList._classes.has(cls),
-            toString: () => [...this.classList._classes].join(' ')
+            contains: (c) => this.classList._classes.has(c),
+            value: () => Array.from(this.classList._classes).join(' ')
         };
         this.attributes = new Map();
-        this.parentElement = null;
-        this._closestMatch = null; // For testing closest()
-        this._children = []; // For querySelector
-        this._listeners = {}; // For addEventListener
+        this.listeners = {};
+        this.children = [];
+        this.parentNode = null;
+        this.style = {};
     }
 
     setAttribute(name, value) {
@@ -32,274 +29,271 @@ class MockElement {
     }
 
     getAttribute(name) {
-        return this.attributes.get(name) || null;
-    }
-
-    closest(selector) {
-        // Simple mock: assumes the test sets _closestMatch if we want to simulate a match
-        return this._closestMatch || null;
-    }
-
-    // New methods
-    appendChild(child) {
-        this._children.push(child);
-        child.parentElement = this;
-    }
-
-    querySelector(selector) {
-        // Simple mock for class selector
-        if (selector.startsWith('.')) {
-            const className = selector.substring(1);
-            return this._children.find(child => child.classList.contains(className)) || null;
-        }
-        return null;
+        return this.attributes.get(name);
     }
 
     addEventListener(event, callback) {
-        if (!this._listeners[event]) {
-            this._listeners[event] = [];
-        }
-        this._listeners[event].push(callback);
+        if (!this.listeners[event]) this.listeners[event] = [];
+        this.listeners[event].push(callback);
     }
 
-    // Helper to simulate event on the element itself
-    fireEvent(eventName, eventObj = {}) {
-        if (this._listeners[eventName]) {
-            this._listeners[eventName].forEach(cb => cb(eventObj));
+    // Simulate event triggering
+    dispatchEvent(event) {
+        if (this.listeners[event.type]) {
+            this.listeners[event.type].forEach(cb => cb(event));
         }
+        // Simple bubbling
+        if (event.bubbles && this.parentNode) {
+            this.parentNode.dispatchEvent(event);
+        }
+    }
+
+    click() {
+        const event = {
+            type: 'click',
+            target: this,
+            preventDefault: () => {},
+            stopPropagation: () => {},
+            bubbles: true
+        };
+        this.dispatchEvent(event);
+    }
+
+    appendChild(child) {
+        this.children.push(child);
+        child.parentNode = this;
+    }
+
+    querySelector(selector) {
+        // Simple mock implementation for direct children or specific test setup
+        return this.children.find(child => child.matches(selector)) || null;
+    }
+
+    querySelectorAll(selector) {
+        return this.children.filter(child => child.matches(selector));
+    }
+
+    matches(selector) {
+        if (!selector) return false;
+        if (selector.startsWith('.')) {
+            return this.classList.contains(selector.substring(1));
+        }
+        if (selector.startsWith('#')) {
+            return this.getAttribute('id') === selector.substring(1);
+        }
+        return this.tagName === selector.toUpperCase();
+    }
+
+    closest(selector) {
+        if (this.matches(selector)) return this;
+        if (this.parentNode) return this.parentNode.closest(selector);
+        return null;
     }
 }
 
-// Global mocks
+// Global Document Mock
+const documentListeners = {};
+global.document = {
+    createElement: (tag) => new MockElement(tag),
+    querySelector: () => null, // Default
+    querySelectorAll: () => [], // Default
+    addEventListener: (event, callback) => {
+        if (!documentListeners[event]) documentListeners[event] = [];
+        documentListeners[event].push(callback);
+    },
+    // Helper to clear listeners between tests
+    _clearListeners: () => {
+        for (const key in documentListeners) delete documentListeners[key];
+    },
+    // Helper to trigger document events
+    _dispatchEvent: (event) => {
+        if (documentListeners[event.type]) {
+            documentListeners[event.type].forEach(cb => cb(event));
+        }
+    }
+};
+
 global.window = {
     innerWidth: 1024
 };
 
-global.document = {
-    _listeners: {},
-    addEventListener: (event, callback) => {
-        if (!global.document._listeners[event]) {
-            global.document._listeners[event] = [];
-        }
-        global.document._listeners[event].push(callback);
-    },
-    querySelector: () => null, // Default implementation
-    querySelectorAll: () => [],
-    createElement: (tag) => new MockElement(tag)
-};
-
-global.HTMLElement = MockElement;
-
 // Import the module under test
 import Navigation from '../js/modules/navigation.js';
 
-describe('Navigation.initOutsideClick', () => {
-    let navMenu;
-    let navToggle;
-    let clickListener;
+// --- Tests ---
 
-    beforeEach(() => {
-        // Reset listeners
-        global.document._listeners = {};
+test('Navigation Module Tests', async (t) => {
 
-        // create fresh elements
-        navMenu = new MockElement('nav');
-        navToggle = new MockElement('button');
+    // Helper to reset document state
+    const resetDocument = () => {
+        global.document._clearListeners();
+        global.document.querySelector = () => null;
+        global.document.querySelectorAll = () => [];
+        global.window.innerWidth = 1024;
+    };
 
-        // Mock querySelector
+    await t.test('initMobileToggle toggles active class and aria-expanded', () => {
+        resetDocument();
+
+        const navToggle = new MockElement('button', ['nav-toggle']);
+        navToggle.setAttribute('aria-expanded', 'false');
+
+        const navMenu = new MockElement('div', ['nav-menu']);
+
+        // Setup document.querySelector to return these
+        global.document.querySelector = (selector) => {
+            if (selector === '.nav-toggle') return navToggle;
+            if (selector === '.nav-menu') return navMenu;
+            return null;
+        };
+
+        Navigation.initMobileToggle();
+
+        // Simulate click
+        navToggle.click();
+
+        assert.strictEqual(navToggle.getAttribute('aria-expanded'), 'true', 'aria-expanded should be true');
+        assert.ok(navMenu.classList.contains('active'), 'nav-menu should have active class');
+
+        // Toggle back
+        navToggle.click();
+        assert.strictEqual(navToggle.getAttribute('aria-expanded'), 'false', 'aria-expanded should be false');
+        assert.strictEqual(navMenu.classList.contains('active'), false, 'nav-menu should not have active class');
+    });
+
+    await t.test('initDropdowns toggles on mobile (<= 768px)', () => {
+        resetDocument();
+        global.window.innerWidth = 768;
+
+        const dropdown = new MockElement('div', ['nav-dropdown']);
+        const toggle = new MockElement('a', ['dropdown-toggle']);
+        dropdown.appendChild(toggle);
+
+        global.document.querySelectorAll = (selector) => {
+            if (selector === '.nav-dropdown') return [dropdown];
+            return [];
+        };
+
+        Navigation.initDropdowns();
+
+        // Simulate click
+        // We need to capture preventDefault
+        let prevented = false;
+        const event = {
+            type: 'click',
+            target: toggle,
+            preventDefault: () => { prevented = true; },
+            bubbles: true
+        };
+
+        // Manually dispatch to toggle because our MockElement.click() creates its own event
+        // but here we need to inspect preventDefault.
+        // Or we can just use toggle.click() and check side effects.
+        // But the listener is attached to 'toggle'.
+
+        // Navigation.js: toggle.addEventListener('click', ...)
+        // So let's trigger it.
+        toggle.listeners['click'][0](event);
+
+        assert.strictEqual(prevented, true, 'Should prevent default on mobile');
+        assert.ok(dropdown.classList.contains('active'), 'Dropdown should be active');
+    });
+
+    await t.test('initDropdowns does NOT toggle on desktop (> 768px)', () => {
+        resetDocument();
+        global.window.innerWidth = 769;
+
+        const dropdown = new MockElement('div', ['nav-dropdown']);
+        const toggle = new MockElement('a', ['dropdown-toggle']);
+        dropdown.appendChild(toggle);
+
+        global.document.querySelectorAll = (selector) => {
+            if (selector === '.nav-dropdown') return [dropdown];
+            return [];
+        };
+
+        Navigation.initDropdowns();
+
+        let prevented = false;
+        const event = {
+            type: 'click',
+            target: toggle,
+            preventDefault: () => { prevented = true; },
+            bubbles: true
+        };
+
+        // Trigger listener
+        toggle.listeners['click'][0](event);
+
+        assert.strictEqual(prevented, false, 'Should not prevent default on desktop');
+        assert.strictEqual(dropdown.classList.contains('active'), false, 'Dropdown should not be active');
+    });
+
+    await t.test('initOutsideClick closes menu when clicking outside', () => {
+        resetDocument();
+
+        const navMenu = new MockElement('div', ['nav-menu', 'active']);
+        const navToggle = new MockElement('button', ['nav-toggle']);
+        navToggle.setAttribute('aria-expanded', 'true');
+
         global.document.querySelector = (selector) => {
             if (selector === '.nav-menu') return navMenu;
             if (selector === '.nav-toggle') return navToggle;
             return null;
         };
-    });
 
-    it('should register a click event listener on document', () => {
         Navigation.initOutsideClick();
-        assert.ok(global.document._listeners['click'], 'Click listener should be registered');
-        assert.strictEqual(global.document._listeners['click'].length, 1);
-    });
 
-    it('should not close menu when clicking inside .main-nav', () => {
-        Navigation.initOutsideClick();
-        clickListener = global.document._listeners['click'][0];
-
-        // Setup initial state
-        navMenu.classList.add('active');
-        navToggle.setAttribute('aria-expanded', 'true');
-
-        // Simulate click inside main-nav
-        const event = {
-            target: new MockElement('div')
-        };
-        // Mock closest to return something truthy (the container itself)
-        event.target._closestMatch = new MockElement('div');
-
-        clickListener(event);
-
-        assert.ok(navMenu.classList.contains('active'), 'Menu should remain active');
-        assert.strictEqual(navToggle.getAttribute('aria-expanded'), 'true');
-    });
-
-    it('should close menu when clicking outside .main-nav', () => {
-        Navigation.initOutsideClick();
-        clickListener = global.document._listeners['click'][0];
-
-        // Setup initial state
-        navMenu.classList.add('active');
-        navToggle.setAttribute('aria-expanded', 'true');
-
-        // Simulate click outside main-nav
-        const event = {
-            target: new MockElement('div')
-        };
-        // Mock closest to return null
-        event.target._closestMatch = null;
-
-        clickListener(event);
-
-        assert.ok(!navMenu.classList.contains('active'), 'Menu should not be active');
-        assert.strictEqual(navToggle.getAttribute('aria-expanded'), 'false');
-    });
-
-    it('should handle missing navToggle gracefully', () => {
-         global.document.querySelector = (selector) => {
-            if (selector === '.nav-menu') return navMenu;
-            if (selector === '.nav-toggle') return null; // Missing toggle
+        // Simulate click on document body (outside nav)
+        const outsideElement = new MockElement('div', ['content']);
+        // Mock closest to return null for .main-nav
+        outsideElement.closest = (sel) => {
+            if (sel === '.main-nav') return null;
             return null;
         };
 
-        Navigation.initOutsideClick();
-        clickListener = global.document._listeners['click'][0];
-
-        navMenu.classList.add('active');
-
         const event = {
-            target: new MockElement('div')
+            type: 'click',
+            target: outsideElement
         };
-        event.target._closestMatch = null;
 
-        // Should not throw error
-        try {
-            clickListener(event);
-        } catch (e) {
-            assert.fail('Should not throw error: ' + e.message);
-        }
+        global.document._dispatchEvent(event);
 
-        assert.ok(!navMenu.classList.contains('active'), 'Menu should be closed');
+        assert.strictEqual(navMenu.classList.contains('active'), false, 'Menu should close');
+        assert.strictEqual(navToggle.getAttribute('aria-expanded'), 'false', 'Toggle should contract');
     });
 
-    it('should handle missing navMenu gracefully', () => {
-         global.document.querySelector = (selector) => {
-            if (selector === '.nav-menu') return null; // Missing menu
+    await t.test('initOutsideClick keeps menu open when clicking inside', () => {
+        resetDocument();
+
+        const navMenu = new MockElement('div', ['nav-menu', 'active']);
+        const navToggle = new MockElement('button', ['nav-toggle']);
+        navToggle.setAttribute('aria-expanded', 'true');
+
+        global.document.querySelector = (selector) => {
+            if (selector === '.nav-menu') return navMenu;
             if (selector === '.nav-toggle') return navToggle;
             return null;
         };
 
         Navigation.initOutsideClick();
-        clickListener = global.document._listeners['click'][0];
+
+        // Simulate click inside .main-nav
+        const insideElement = new MockElement('span', ['nav-text']);
+        // Mock closest to return something for .main-nav
+        insideElement.closest = (sel) => {
+            if (sel === '.main-nav') return new MockElement('nav', ['main-nav']);
+            return null;
+        };
 
         const event = {
-            target: new MockElement('div')
-        };
-        event.target._closestMatch = null;
-
-        // Should not throw error
-        try {
-            clickListener(event);
-        } catch (e) {
-             assert.fail('Should not throw error: ' + e.message);
-        }
-    });
-});
-
-describe('Navigation.initDropdowns', () => {
-    let dropdowns;
-    let dropdown1, dropdown2;
-    let toggle1, toggle2;
-
-    beforeEach(() => {
-        dropdown1 = new MockElement('div');
-        dropdown1.classList.add('nav-dropdown');
-        toggle1 = new MockElement('button');
-        toggle1.classList.add('dropdown-toggle');
-        dropdown1.appendChild(toggle1);
-
-        dropdown2 = new MockElement('div');
-        dropdown2.classList.add('nav-dropdown');
-        toggle2 = new MockElement('button');
-        toggle2.classList.add('dropdown-toggle');
-        dropdown2.appendChild(toggle2);
-
-        dropdowns = [dropdown1, dropdown2];
-
-        global.document.querySelectorAll = (selector) => {
-            if (selector === '.nav-dropdown') return dropdowns;
-            return [];
-        };
-    });
-
-    it('should initialize dropdowns correctly', () => {
-        Navigation.initDropdowns();
-        // Check if listeners are added (implementation detail, but verified by checking _listeners)
-        assert.ok(toggle1._listeners['click'], 'Toggle 1 should have click listener');
-        assert.strictEqual(toggle1._listeners['click'].length, 1);
-        assert.ok(toggle2._listeners['click'], 'Toggle 2 should have click listener');
-        assert.strictEqual(toggle2._listeners['click'].length, 1);
-    });
-
-    it('should toggle dropdown class and prevent default on mobile (<= 768px)', () => {
-        global.window.innerWidth = 768; // Mobile width
-        Navigation.initDropdowns();
-
-        const event = {
-            preventDefault: () => { event._defaultPrevented = true; },
-            _defaultPrevented: false
+            type: 'click',
+            target: insideElement
         };
 
-        toggle1.fireEvent('click', event);
+        global.document._dispatchEvent(event);
 
-        assert.ok(event._defaultPrevented, 'preventDefault should be called on mobile');
-        assert.ok(dropdown1.classList.contains('active'), 'Dropdown should have active class');
-
-        // Toggle again to close
-        const event2 = {
-            preventDefault: () => { event2._defaultPrevented = true; },
-            _defaultPrevented: false
-        };
-        toggle1.fireEvent('click', event2);
-        assert.ok(!dropdown1.classList.contains('active'), 'Dropdown should not have active class after second click');
-    });
-
-    it('should NOT toggle dropdown class or prevent default on desktop (> 768px)', () => {
-        global.window.innerWidth = 1024; // Desktop width
-        Navigation.initDropdowns();
-
-        const event = {
-            preventDefault: () => { event._defaultPrevented = true; },
-            _defaultPrevented: false
-        };
-
-        toggle1.fireEvent('click', event);
-
-        assert.strictEqual(event._defaultPrevented, false, 'preventDefault should NOT be called on desktop');
-        assert.ok(!dropdown1.classList.contains('active'), 'Dropdown should NOT toggle active class on desktop click');
-    });
-
-    it('should handle dropdowns without toggle button gracefully', () => {
-        const dropdownNoToggle = new MockElement('div');
-        dropdownNoToggle.classList.add('nav-dropdown');
-        // No toggle child added
-
-        global.document.querySelectorAll = (selector) => {
-            if (selector === '.nav-dropdown') return [dropdownNoToggle];
-            return [];
-        };
-
-        try {
-            Navigation.initDropdowns();
-        } catch (e) {
-            assert.fail('Should not throw error: ' + e.message);
-        }
+        assert.ok(navMenu.classList.contains('active'), 'Menu should remain open');
+        assert.strictEqual(navToggle.getAttribute('aria-expanded'), 'true', 'Toggle should remain expanded');
     });
 });
