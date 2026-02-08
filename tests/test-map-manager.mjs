@@ -122,6 +122,21 @@ describe('MapManager', () => {
             // Restore
             mockDocument.getElementById = originalGet;
         });
+
+        test('should not initialize if Leaflet (L) is undefined', () => {
+            const originalL = global.L;
+            // specific to node global context
+            delete global.L;
+
+            try {
+                MapManager.initPreviewMap();
+
+                // Should return early, so no map creation
+                assert.strictEqual(mockL.map.mock.calls.length, 0);
+            } finally {
+                global.L = originalL;
+            }
+        });
     });
 
     describe('initRegionalNavigator', () => {
