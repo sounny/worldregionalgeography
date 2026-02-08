@@ -664,7 +664,7 @@
 
 
 
-                        <a href="https://www.greenbeltmovement.org/wangari-maathai" target="_blank" rel="noopener noreferrer" class="btn-text">Read about her legacy →</a>
+                        <a href="https://www.greenbeltmovement.org/wangari-maathai" target="_blank" class="btn-text">Read about her legacy →</a>
 
 
 
@@ -1120,7 +1120,7 @@
 
 
 
-                                <a href="https://www.ncge.org/geography-for-life" target="_blank" rel="noopener noreferrer" class="standard-code">Element II.4</a>
+                                <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element II.4</a>
 
 
 
@@ -1136,7 +1136,7 @@
 
 
 
-                                <a href="https://www.ncge.org/geography-for-life" target="_blank" rel="noopener noreferrer" class="standard-code">Element IV.9</a>
+                                <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element IV.9</a>
 
 
 
@@ -1152,7 +1152,7 @@
 
 
 
-                                <a href="https://www.ncge.org/geography-for-life" target="_blank" rel="noopener noreferrer" class="standard-code">Element V.14</a>
+                                <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element V.14</a>
 
 
 
@@ -1196,7 +1196,7 @@
 
 
 
-                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" rel="noopener noreferrer" class="standard-code">SLO 1 & 2</a>
+                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 1 & 2</a>
 
 
 
@@ -1212,7 +1212,7 @@
 
 
 
-                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" rel="noopener noreferrer" class="standard-code">SLO 3</a>
+                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 3</a>
 
 
 
@@ -1228,7 +1228,7 @@
 
 
 
-                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" rel="noopener noreferrer" class="standard-code">Social Responsibility</a>
+                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">Social Responsibility</a>
 
 
 
@@ -1272,7 +1272,7 @@
 
 
 
-                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" rel="noopener noreferrer" class="standard-code">SS.912.G.1.2</a>
+                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.1.2</a>
 
 
 
@@ -1288,7 +1288,7 @@
 
 
 
-                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" rel="noopener noreferrer" class="standard-code">SS.912.G.2.2</a>
+                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.2.2</a>
 
 
 
@@ -1304,7 +1304,7 @@
 
 
 
-                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" rel="noopener noreferrer" class="standard-code">SS.912.G.4.1</a>
+                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.4.1</a>
 
 
 
@@ -1360,7 +1360,23 @@
 
 
 
+    <!-- Image Lightbox Overlay -->
 
+
+
+    <div id="image-lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+
+
+
+        <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
+
+
+
+        <img class="lightbox-image" src="" alt="">
+
+
+
+    </div>
 
 
 
@@ -1408,7 +1424,7 @@
 
 
 
-                const africaData = window.WorldRegionsData.features.find(f => f.id === 'sub-saharan-africa');
+                const africaData = window.WorldRegionsData.features.find(f => f.id === 'africa-sub');
 
 
 
@@ -1488,7 +1504,155 @@
 
 
 
+        // Lightbox functionality for zoomable images
 
+
+
+        (function() {
+
+
+
+            const lightbox = document.getElementById('image-lightbox');
+
+
+
+            const lightboxImg = lightbox.querySelector('.lightbox-image');
+
+
+
+            const closeBtn = lightbox.querySelector('.lightbox-close');
+
+
+
+            
+
+
+
+            // Open lightbox when clicking zoomable images
+
+
+
+            document.querySelectorAll('.zoomable-image').forEach(img => {
+
+
+
+                img.addEventListener('click', () => {
+
+
+
+                    lightboxImg.src = img.src;
+
+
+
+                    lightboxImg.alt = img.alt;
+
+
+
+                    lightbox.hidden = false;
+
+
+
+                    document.body.style.overflow = 'hidden';
+
+
+
+                    closeBtn.focus();
+
+
+
+                });
+
+
+
+                // Also support keyboard activation
+
+
+
+                img.addEventListener('keydown', (e) => {
+
+
+
+                    if (e.key === 'Enter' || e.key === ' ') {
+
+
+
+                        e.preventDefault();
+
+
+
+                        img.click();
+
+
+
+                    }
+
+
+
+                });
+
+
+
+            });
+
+
+
+            
+
+
+
+            // Close lightbox
+
+
+
+            function closeLightbox() {
+
+
+
+                lightbox.hidden = true;
+
+
+
+                document.body.style.overflow = '';
+
+
+
+            }
+
+
+
+            
+
+
+
+            closeBtn.addEventListener('click', closeLightbox);
+
+
+
+            lightbox.addEventListener('click', (e) => {
+
+
+
+                if (e.target === lightbox) closeLightbox();
+
+
+
+            });
+
+
+
+            document.addEventListener('keydown', (e) => {
+
+
+
+                if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+
+
+
+            });
+
+
+
+        })();
 
 
 
@@ -1496,11 +1660,6 @@
 
 
 
-
-    <script type="module">
-        import Lightbox from '../../js/modules/lightbox.js';
-        Lightbox.init();
-    </script>
 </body>
 
 

@@ -225,7 +225,7 @@
                         <strong>Jane Jacobs</strong>
                         <p class="person-title">Urban Theorist & Activist</p>
                         <p>Jacobs transformed our understanding of the "human geography" of cities. She argued that vibrant urban life is created by "eyes on the street" and mixed-use neighborhoods, challenging the mid-20th century trend of massive highway construction and urban renewal.</p>
-                        <a href="https://www.janejacobsvalkyrie.com/" target="_blank" rel="noopener noreferrer" class="btn-text">Explore Jacobs's impact on city planning →</a>
+                        <a href="https://www.janejacobsvalkyrie.com/" target="_blank" class="btn-text">Explore Jacobs's impact on city planning →</a>
                     </div>
                 </div>
             </section>
@@ -519,15 +519,15 @@
                         <summary><h3>🇺🇸 National Geography Standards</h3></summary>
                         <div class="standard-content">
                             <div class="standard-item">
-                                <a href="https://www.ncge.org/geography-for-life" target="_blank" rel="noopener noreferrer" class="standard-code">Element I.3</a>
+                                <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element I.3</a>
                                 <span class="standard-desc">Spatial Organization: Urban hierarchy and Megalopolis formation.</span>
                             </div>
                             <div class="standard-item">
-                                <a href="https://www.ncge.org/geography-for-life" target="_blank" rel="noopener noreferrer" class="standard-code">Element IV.11</a>
+                                <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element IV.11</a>
                                 <span class="standard-desc">Economic Interdependence: Global trade networks (USMCA).</span>
                             </div>
                             <div class="standard-item">
-                                <a href="https://www.ncge.org/geography-for-life" target="_blank" rel="noopener noreferrer" class="standard-code">Element II.4</a>
+                                <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element II.4</a>
                                 <span class="standard-desc">Characteristics of Place: Physical regions (Shield, Plains, Mountains).</span>
                             </div>
                         </div>
@@ -538,15 +538,15 @@
                         <summary><h3>🤠 Texas Core (GEOG 1303)</h3></summary>
                         <div class="standard-content">
                             <div class="standard-item">
-                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" rel="noopener noreferrer" class="standard-code">SLO 1</a>
+                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 1</a>
                                 <span class="standard-desc">Define "region" (Functional vs. Formal regions).</span>
                             </div>
                             <div class="standard-item">
-                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" rel="noopener noreferrer" class="standard-code">SLO 2</a>
+                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 2</a>
                                 <span class="standard-desc">Locate significant geographic features (Mississippi River, Rockies, Great Lakes).</span>
                             </div>
                             <div class="standard-item">
-                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" rel="noopener noreferrer" class="standard-code">SLO 3</a>
+                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 3</a>
                                 <span class="standard-desc">Globalization (Migration effects and cultural diffusion).</span>
                             </div>
                         </div>
@@ -557,15 +557,15 @@
                         <summary><h3>☀️ Florida Sunshine State (SS.912.G)</h3></summary>
                         <div class="standard-content">
                             <div class="standard-item">
-                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" rel="noopener noreferrer" class="standard-code">SS.912.G.2.1</a>
+                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.2.1</a>
                                 <span class="standard-desc">Identify physical characteristics of places (Landforms).</span>
                             </div>
                             <div class="standard-item">
-                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" rel="noopener noreferrer" class="standard-code">SS.912.G.4.2</a>
+                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.4.2</a>
                                 <span class="standard-desc">Analyze push/pull factors of migration (Sun Belt shift, Immigration).</span>
                             </div>
                             <div class="standard-item">
-                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" rel="noopener noreferrer" class="standard-code">SS.912.G.4.3</a>
+                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.4.3</a>
                                 <span class="standard-desc">Use geographic terms to analyze urban growth (Megalopolis).</span>
                             </div>
                         </div>
@@ -591,7 +591,11 @@
         </div>
     </footer>
 
-
+    <!-- Image Lightbox Overlay -->
+    <div id="image-lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+        <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
+        <img class="lightbox-image" src="" alt="">
+    </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="../../js/map-init.js"></script>
@@ -625,12 +629,44 @@
                 .catch(err => console.error('Error loading quiz data:', err));
         });
 
-
-    </script>
-
-    <script type="module">
-        import Lightbox from '../../js/modules/lightbox.js';
-        Lightbox.init();
+        // Lightbox functionality for zoomable images
+        (function() {
+            const lightbox = document.getElementById('image-lightbox');
+            const lightboxImg = lightbox.querySelector('.lightbox-image');
+            const closeBtn = lightbox.querySelector('.lightbox-close');
+            
+            // Open lightbox when clicking zoomable images
+            document.querySelectorAll('.zoomable-image').forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                    lightbox.hidden = false;
+                    document.body.style.overflow = 'hidden';
+                    closeBtn.focus();
+                });
+                // Also support keyboard activation
+                img.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        img.click();
+                    }
+                });
+            });
+            
+            // Close lightbox
+            function closeLightbox() {
+                lightbox.hidden = true;
+                document.body.style.overflow = '';
+            }
+            
+            closeBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+            });
+        })();
     </script>
 </body>
 </html>

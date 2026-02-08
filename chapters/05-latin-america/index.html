@@ -243,7 +243,7 @@
                         <strong>Rigoberta Menchú</strong>
                         <p class="person-title">Human Rights Activist & Nobel Laureate</p>
                         <p>A K'iche' Maya woman from Guatemala, Menchú has dedicated her life to advocating for the rights of Indigenous peoples in Latin America. Her work highlights the ongoing geographic struggles over land rights, sovereignty, and environmental stewardship in the face of resource extraction.</p>
-                        <a href="https://www.nobelprize.org/prizes/peace/1992/menchu/biographical/" target="_blank" rel="noopener noreferrer" class="btn-text">Learn about her advocacy →</a>
+                        <a href="https://www.nobelprize.org/prizes/peace/1992/menchu/biographical/" target="_blank" class="btn-text">Learn about her advocacy →</a>
                     </div>
                 </div>
             </section>
@@ -592,15 +592,15 @@
                         <summary><h3>🇺🇸 National Geography Standards</h3></summary>
                         <div class="standard-content">
                             <div class="standard-item">
-                                <a href="https://www.ncge.org/geography-for-life" target="_blank" rel="noopener noreferrer" class="standard-code">Element II.6</a>
+                                <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element II.6</a>
                                 <span class="standard-desc">The Uses of Geography: Perception of Places (Indigenous vs. Colonial).</span>
                             </div>
                             <div class="standard-item">
-                                <a href="https://www.ncge.org/geography-for-life" target="_blank" rel="noopener noreferrer" class="standard-code">Element V.14</a>
+                                <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element V.14</a>
                                 <span class="standard-desc">Human Modification: Environmental consequences (Amazon Deforestation).</span>
                             </div>
                             <div class="standard-item">
-                                <a href="https://www.ncge.org/geography-for-life" target="_blank" rel="noopener noreferrer" class="standard-code">Element IV.12</a>
+                                <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element IV.12</a>
                                 <span class="standard-desc">Human Settlements: Functions and patterns (Mega-cities, Favelas).</span>
                             </div>
                         </div>
@@ -611,15 +611,15 @@
                         <summary><h3>🤠 Texas Core (GEOG 1303)</h3></summary>
                         <div class="standard-content">
                             <div class="standard-item">
-                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" rel="noopener noreferrer" class="standard-code">SLO 1</a>
+                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 1</a>
                                 <span class="standard-desc">Define "region" (Latin cultural realm).</span>
                             </div>
                             <div class="standard-item">
-                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" rel="noopener noreferrer" class="standard-code">SLO 2</a>
+                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 2</a>
                                 <span class="standard-desc">Locate significant geographic features (Andes, Amazon, Panama Canal).</span>
                             </div>
                             <div class="standard-item">
-                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" rel="noopener noreferrer" class="standard-code">SLO 3</a>
+                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 3</a>
                                 <span class="standard-desc">Globalization (Colonial legacy, impact on Texas).</span>
                             </div>
                         </div>
@@ -630,15 +630,15 @@
                         <summary><h3>☀️ Florida Sunshine State (SS.912.G)</h3></summary>
                         <div class="standard-content">
                             <div class="standard-item">
-                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" rel="noopener noreferrer" class="standard-code">SS.912.G.2.1</a>
+                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.2.1</a>
                                 <span class="standard-desc">Identify physical characteristics of places (Altitudinal Zonation).</span>
                             </div>
                             <div class="standard-item">
-                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" rel="noopener noreferrer" class="standard-code">SS.912.G.4.1</a>
+                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.4.1</a>
                                 <span class="standard-desc">Interpret population growth and distribution (Urbanization patterns).</span>
                             </div>
                             <div class="standard-item">
-                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" rel="noopener noreferrer" class="standard-code">SS.912.G.5.2</a>
+                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.5.2</a>
                                 <span class="standard-desc">Analyze how humans impact the physical environment (Deforestation).</span>
                             </div>
                         </div>
@@ -659,7 +659,11 @@
         </div>
     </footer>
 
-
+    <!-- Image Lightbox Overlay -->
+    <div id="image-lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+        <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
+        <img class="lightbox-image" src="" alt="">
+    </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <script src="../../js/map-init.js"></script>
@@ -693,12 +697,44 @@
                 .catch(err => console.error('Error loading quiz data:', err));
         });
 
-
-    </script>
-
-    <script type="module">
-        import Lightbox from '../../js/modules/lightbox.js';
-        Lightbox.init();
+        // Lightbox functionality for zoomable images
+        (function() {
+            const lightbox = document.getElementById('image-lightbox');
+            const lightboxImg = lightbox.querySelector('.lightbox-image');
+            const closeBtn = lightbox.querySelector('.lightbox-close');
+            
+            // Open lightbox when clicking zoomable images
+            document.querySelectorAll('.zoomable-image').forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightboxImg.alt = img.alt;
+                    lightbox.hidden = false;
+                    document.body.style.overflow = 'hidden';
+                    closeBtn.focus();
+                });
+                // Also support keyboard activation
+                img.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        img.click();
+                    }
+                });
+            });
+            
+            // Close lightbox
+            function closeLightbox() {
+                lightbox.hidden = true;
+                document.body.style.overflow = '';
+            }
+            
+            closeBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+            });
+        })();
     </script>
 </body>
 </html>
