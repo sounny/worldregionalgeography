@@ -691,38 +691,22 @@ The textbook is now **100% P1 complete** with all chapters having consistent ped
 
 ---
 
-### 2026-01-22: Code Health - Remove Legacy Quiz Init
-### 2026-01-23: Testing Infrastructure Improvement ✅
+### 2026-01-22: Testing Improvements ✅
 
-**Agent**: Jules (Software Engineer)
+**Agent**: Jules (Testing Engineer)
 
 **Status Report**:
-I have removed the legacy `initQuizzes` function from `js/main.js`. This function was checking for `data-quiz-engine="main"`, which is no longer used in the codebase. The project has fully migrated to `js/quiz-engine.js`.
+I have improved the testing infrastructure by adding unit tests for the `Navigation` module.
 
 **Completed Actions**:
-1.  **Remove Dead Code**: Removed `initQuizzes` function definition and its invocation in `js/main.js`.
-2.  **Verification**: Verified that `js/main.js` still executes correctly using a mock environment and confirmed no console errors on the frontend.
-3.  **Testing**: Verified that `js/quiz-engine.js` tests still pass.
+1.  **Created `tests/test-navigation.mjs`**: A new test file using the built-in `node:test` runner.
+2.  **Mocked DOM Environment**: Implemented a `MockElement` class and mocked `window` and `document` to simulate browser behavior in Node.js.
+3.  **Covered Functionality**: Added tests for `initMobileToggle`, `initDropdowns`, and `initOutsideClick`.
+4.  **Verified Tests**: Confirmed that new tests pass and existing `tests/test-quiz-engine.js` passes (no regressions).
 
-**Message to Team**:
-The `initQuizzes` function in `main.js` is gone. The quiz system now relies entirely on `QuizEngine` (in `js/quiz-engine.js`). Please ensure all new quiz implementations use `QuizEngine.init()` and `quiz-data.json`.
-I have implemented unit tests for the `Navigation` module, specifically targeting the `initOutsideClick` functionality. This ensures the reliability of the navigation menu's behavior when users interact with the page.
+**Files Created**:
+- `tests/test-navigation.mjs`
 
-**Completed Actions**:
-1.  **Test Creation**: Created `tests/test-navigation.mjs` using the native Node.js test runner (`node:test`).
-2.  **Mock Implementation**: Implemented a lightweight `MockElement` class to simulate DOM interactions (classList, attributes, event listeners) in a Node.js environment, avoiding heavy dependencies like JSDOM.
-3.  **Test Coverage**: Added tests for:
-    *   Event listener registration.
-    *   Menu closing behavior when clicking outside the navigation area.
-    *   Menu persistence when clicking inside the navigation area.
-    *   Graceful handling of missing DOM elements.
-
-**Technical Notes**:
--   The tests use ES module imports to load `js/modules/navigation.js`.
--   Global objects (`window`, `document`) are mocked within the test file to support the module's DOM dependencies.
--   The test suite is fully self-contained and runs with `node tests/test-navigation.mjs`.
-
-**Message to Team**:
-This establishes a pattern for unit testing other ES modules in the `js/modules/` directory. Future modules can reuse the `MockElement` class pattern found in `tests/test-navigation.mjs` for efficient, dependency-free unit testing.
-
----
+**Next Steps**:
+- Continue adding tests for other modules (e.g., `js/modules/lightbox.js`, `js/map-init.js`).
+- Consider setting up a more robust mock environment if more complex DOM interactions are needed.
