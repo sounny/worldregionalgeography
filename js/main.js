@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initPreviewMap();
     initGlobalMap();
     initRegionalNavigator(); // Added for dev index
-    initQuizzes();
     initSmoothScroll();
     initTexasToggle();
     initAccordions();
@@ -399,59 +398,6 @@ function initRegionalNavigator() {
         infoPanel.offsetHeight; // trigger reflow
         infoPanel.style.animation = 'fadeIn 0.3s ease-out forwards';
     }
-}
-
-// =====================================================
-// Quiz Component
-// =====================================================
-
-/**
- * Initialize all quiz components on the page
- */
-function initQuizzes() {
-    const quizContainers = document.querySelectorAll('.quiz-container[data-quiz-engine="main"]');
-    if (!quizContainers.length) return;
-    
-    quizContainers.forEach(container => {
-        const options = container.querySelectorAll('.quiz-option');
-        const feedback = container.querySelector('.quiz-feedback');
-        if (feedback) {
-            feedback.setAttribute('aria-live', 'polite');
-            feedback.setAttribute('role', 'status');
-        }
-
-        const inputs = container.querySelectorAll('input[type="radio"]');
-        inputs.forEach(input => {
-            input.addEventListener('change', () => {
-                const option = input.closest('.quiz-option');
-                if (!option) return;
-
-                options.forEach(opt => opt.classList.remove('correct', 'incorrect'));
-                if (feedback) {
-                    feedback.classList.remove('success', 'error');
-                }
-
-                const isCorrect = option.dataset.correct === 'true';
-                option.classList.add(isCorrect ? 'correct' : 'incorrect');
-
-                if (!isCorrect) {
-                    const correctOption = container.querySelector('[data-correct="true"]');
-                    if (correctOption) {
-                        correctOption.classList.add('correct');
-                    }
-                }
-
-                if (feedback) {
-                    const correctFeedback = container.querySelector('[data-correct="true"]')?.dataset.feedback || '';
-                    const optionFeedback = option.dataset.feedback || '';
-                    feedback.classList.add('show', isCorrect ? 'success' : 'error');
-                    feedback.innerHTML = isCorrect
-                        ? `<p class="feedback-correct">✓ Correct! ${optionFeedback}</p>`
-                        : `<p class="feedback-incorrect">Try again. ${correctFeedback}</p>`;
-                }
-            });
-        });
-    });
 }
 
 // =====================================================
