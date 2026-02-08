@@ -7,462 +7,1339 @@
  */
 
 const RegionalData = {
-    type: "FeatureCollection",
-    features: [
+    "type": "FeatureCollection",
+    "features": [
         {
-            type: "Feature",
-            id: "europe",
-            properties: {
-                name: "Europe",
-                theme: "Migration & Identity",
-                desc: "Exploring European integration, the legacy of industrialization, and the contemporary challenges of migration and cultural identity.",
-                link: "chapters/02-europe/index.html",
-                center: [50, 10],
-                color: "#2d8fa8"
+            "type": "Feature",
+            "id": "europe",
+            "properties": {
+                "name": "Europe",
+                "chapter": "../02-europe/index.html",
+                "color": "var(--color-primary)",
+                "theme": "Migration & Identity",
+                "desc": "Exploring European integration, the legacy of industrialization, and the contemporary challenges of migration and cultural identity.",
+                "link": "chapters/02-europe/index.html",
+                "center": [
+                    50,
+                    10
+                ]
             },
-            geometry: {
-                type: "Polygon",
-                coordinates: [[
-                    [-10, 36],   // Portugal/Spain SW
-                    [-9, 38],    // Portugal coast
-                    [-9, 43],    // NW Spain
-                    [-5, 44],    // N Spain
-                    [-2, 44],    // Pyrenees
-                    [3, 43],     // S France
-                    [5, 43],     // French Riviera
-                    [8, 44],     // NW Italy
-                    [12, 37],    // S Italy
-                    [18, 40],    // Adriatic
-                    [20, 35],    // Greece S
-                    [26, 35],    // Crete
-                    [29, 41],    // Turkey/Europe border
-                    [28, 46],    // Black Sea coast
-                    [40, 47],    // Ukraine/Russia border
-                    [32, 55],    // Belarus
-                    [28, 56],    // Baltic states
-                    [24, 59],    // Estonia
-                    [28, 70],    // N Finland
-                    [25, 71],    // Norway N
-                    [18, 70],    // N Norway
-                    [10, 63],    // Norway coast
-                    [5, 62],     // Norway
-                    [5, 58],     // S Norway
-                    [8, 55],     // Denmark
-                    [4, 52],     // Netherlands
-                    [-4, 50],    // Channel
-                    [-6, 54],    // Ireland
-                    [-10, 52],   // W Ireland
-                    [-5, 58],    // Scotland
-                    [-8, 58],    // W Scotland
-                    [-6, 50],    // SW Britain
-                    [-5, 48],    // Brittany
-                    [-2, 47],    // W France
-                    [-10, 36]    // Close polygon
-                ]]
-            }
-        },
-        {
-            type: "Feature",
-            id: "russia",
-            properties: {
-                name: "Russia and Central Asia",
-                theme: "Geopolitics & Energy",
-                desc: "Understanding the geopolitical transitions after the Soviet Union and the critical role of resource geography in global affairs.",
-                link: "chapters/03-russia/index.html",
-                center: [60, 100],
-                color: "#1e5f74"
-            },
-            geometry: {
-                type: "Polygon",
-                coordinates: [[
-                    [28, 70],    // Finland border
-                    [40, 68],    // Kola
-                    [55, 70],    // Arkhangelsk
-                    [70, 73],    // Yamal
-                    [80, 74],    // W Siberia
-                    [100, 78],   // Taymyr
-                    [120, 74],   // Laptev Sea coast
-                    [140, 72],   // E Siberia
-                    [170, 70],   // Chukotka
-                    [170, 65],   // NE Russia
-                    [165, 60],   // Sea of Okhotsk
-                    [155, 50],   // Kamchatka
-                    [143, 47],   // Sakhalin
-                    [135, 43],   // Vladivostok
-                    [127, 42],   // China border
-                    [120, 50],   // Mongolia border
-                    [87, 50],    // Kazakhstan border
-                    [80, 45],    // Central Asia
-                    [55, 37],    // Turkmenistan
-                    [52, 37],    // Caspian S
-                    [48, 42],    // Caspian
-                    [47, 45],    // N Caspian
-                    [40, 47],    // Ukraine border
-                    [32, 55],    // Belarus border
-                    [28, 56],    // Baltic
-                    [28, 70]     // Close polygon
-                ]]
-            }
-        },
-        {
-            type: "Feature",
-            id: "north-america",
-            properties: {
-                name: "North America",
-                theme: "Urbanization & Diversity",
-                desc: "Analyzing urban expansion, economic integration under USMCA, and the environmental challenges facing the US and Canada.",
-                link: "chapters/04-north-america/index.html",
-                center: [45, -100],
-                color: "#f4a261"
-            },
-            geometry: {
-                type: "Polygon",
-                coordinates: [[
-                    [-168, 66],  // Alaska
-                    [-165, 70],  // N Alaska
-                    [-145, 70],  // Yukon coast
-                    [-130, 72],  // NWT
-                    [-95, 74],   // Nunavut
-                    [-85, 70],   // Hudson Bay N
-                    [-70, 73],   // Baffin
-                    [-62, 67],   // Labrador N
-                    [-55, 52],   // Newfoundland
-                    [-66, 44],   // Nova Scotia
-                    [-70, 42],   // New England
-                    [-75, 35],   // E Coast
-                    [-80, 25],   // Florida
-                    [-97, 26],   // Texas Gulf
-                    [-105, 20], // Mexico border (approx)
-                    [-117, 32],  // SW US
-                    [-124, 40],  // W Coast
-                    [-125, 48],  // Pacific NW
-                    [-130, 55],  // BC
-                    [-140, 60],  // Alaska border
-                    [-150, 61],  // S Alaska
-                    [-165, 55],  // Aleutians
-                    [-168, 66]   // Close polygon
-                ]]
-            }
-        },
-        {
-            type: "Feature",
-            id: "latin-america",
-            properties: {
-                name: "Latin America",
-                theme: "Biodiversity & Inequality",
-                desc: "Studying the Amazonian ecosystems, the impact of colonialism on development, and the dynamics of urbanization in mega-cities.",
-                link: "chapters/05-latin-america/index.html",
-                center: [-15, -60],
-                color: "#e07b3c"
-            },
-            geometry: {
-                type: "Polygon",
-                coordinates: [[
-                    [-117, 32],  // Baja California
-                    [-105, 20],  // W Mexico
-                    [-95, 16],   // S Mexico
-                    [-87, 15],   // Central America
-                    [-83, 8],    // Costa Rica
-                    [-77, 8],    // Panama
-                    [-75, 10],   // Colombia
-                    [-62, 10],   // Venezuela
-                    [-60, 14],   // Caribbean
-                    [-60, 22],   // Caribbean N
-                    [-65, 18],   // Puerto Rico
-                    [-77, 20],   // Jamaica/Cuba
-                    [-85, 22],   // Cuba
-                    [-97, 26],   // Gulf of Mexico
-                    [-105, 20],  // Loop back inland
-                    [-77, 8],    // Colombia
-                    [-81, 2],    // Ecuador
-                    [-80, -4],   // Peru
-                    [-70, -18],  // Bolivia
-                    [-70, -27],  // N Chile
-                    [-72, -40],  // S Chile
-                    [-75, -53],  // Patagonia
-                    [-68, -55],  // Tierra del Fuego
-                    [-65, -50],  // Argentina S
-                    [-58, -38],  // Buenos Aires
-                    [-53, -34],  // Uruguay
-                    [-48, -28],  // S Brazil
-                    [-42, -23],  // Rio
-                    [-35, -7],   // NE Brazil
-                    [-50, 0],    // Amazon mouth
-                    [-52, 5],    // Guiana
-                    [-60, 8],    // Venezuela
-                    [-73, 12],   // Colombia N
-                    [-83, 16],   // Central America
-                    [-105, 20],  // Mexico
-                    [-117, 32]   // Close polygon
-                ]]
-            }
-        },
-        {
-            type: "Feature",
-            id: "sub-saharan-africa",
-            properties: {
-                name: "Sub-Saharan Africa",
-                theme: "Development & Global Health",
-                desc: "Examining rapid demographic shifts, resource management, and the cultural diversity that defines the African continent.",
-                link: "chapters/06-sub-saharan-africa/index.html",
-                center: [0, 20],
-                color: "#2a9d8f"
-            },
-            geometry: {
-                type: "Polygon",
-                coordinates: [[
-                    [-17, 15],   // Senegal
-                    [-15, 11],   // Guinea-Bissau
-                    [-8, 5],     // Ivory Coast
-                    [2, 6],      // Ghana/Togo
-                    [9, 4],      // Nigeria S
-                    [9, 10],     // Nigeria N
-                    [15, 13],    // Chad S
-                    [24, 12],    // Sudan S
-                    [35, 12],    // Ethiopia W
-                    [42, 11],    // Ethiopia
-                    [48, 9],     // Somalia N
-                    [51, 2],     // Somalia E
-                    [45, -2],    // Kenya coast
-                    [40, -10],   // Tanzania
-                    [35, -25],   // Mozambique
-                    [32, -28],   // South Africa E
-                    [28, -33],   // South Africa S
-                    [18, -34],   // Cape Town
-                    [14, -28],   // Namibia
-                    [12, -18],   // Angola
-                    [12, -5],    // Gabon
-                    [9, 1],      // Cameroon coast
-                    [6, 4],      // Nigeria W
-                    [-5, 5],     // Liberia
-                    [-17, 12],   // Senegal
-                    [-17, 15]    // Close polygon
-                ]]
-            }
-        },
-        {
-            type: "Feature",
-            id: "mena",
-            properties: {
-                name: "N. Africa & SW Asia",
-                theme: "Water & Conflict",
-                desc: "The geography of arid landscapes, the geopolitics of petroleum, and the cultural significance of the region as a hearth of civilization.",
-                link: "chapters/07-north-africa-sw-asia/index.html",
-                center: [28, 30],
-                color: "#40c9b8"
-            },
-            geometry: {
-                type: "Polygon",
-                coordinates: [[
-                    [-17, 28],   // W Sahara
-                    [-8, 32],    // Morocco
-                    [0, 36],     // Algeria N
-                    [10, 37],    // Tunisia
-                    [25, 32],    // Libya
-                    [32, 31],    // Egypt (Mediterranean)
-                    [35, 32],    // Israel
-                    [36, 35],    // Syria
-                    [42, 37],    // Turkey SE
-                    [44, 33],    // Iraq
-                    [48, 30],    // Kuwait
-                    [56, 25],    // UAE
-                    [60, 25],    // Oman
-                    [53, 15],    // Yemen
-                    [43, 13],    // Yemen W
-                    [38, 15],    // Eritrea
-                    [32, 22],    // Egypt S
-                    [24, 22],    // Libya S
-                    [15, 24],    // Algeria S
-                    [0, 22],     // Mali/Algeria
-                    [-10, 22],   // Mauritania
-                    [-17, 21],   // W Sahara S
-                    [-17, 28]    // Close polygon
-                ]]
-            }
-        },
-        {
-            type: "Feature",
-            id: "south-asia",
-            properties: {
-                name: "South Asia",
-                theme: "Population & Monsoons",
-                desc: "Analyzing the challenges of high population density, climate vulnerability in low-lying regions, and India's economic rise.",
-                link: "chapters/08-south-asia/index.html",
-                center: [22, 78],
-                color: "#e76f51"
-            },
-            geometry: {
-                type: "Polygon",
-                coordinates: [[
-                    [61, 25],    // Pakistan W (Balochistan)
-                    [67, 24],    // Pakistan S coast
-                    [72, 21],    // Gujarat
-                    [73, 16],    // Goa
-                    [77, 8],     // Kerala
-                    [80, 6],     // Sri Lanka
-                    [82, 8],     // Sri Lanka E
-                    [85, 14],    // E India
-                    [89, 21],    // Bangladesh
-                    [92, 22],    // Bangladesh E
-                    [97, 28],    // Myanmar border
-                    [96, 28],    // NE India
-                    [92, 27],    // Bhutan
-                    [88, 27],    // Nepal E
-                    [80, 30],    // Nepal W
-                    [77, 35],    // Kashmir
-                    [71, 37],    // Afghanistan
-                    [66, 37],    // Afghanistan W
-                    [62, 35],    // Pakistan NW
-                    [61, 25]     // Close polygon
-                ]]
-            }
-        },
-        {
-            type: "Feature",
-            id: "east-asia",
-            properties: {
-                name: "East Asia",
-                theme: "Industrialization & Growth",
-                desc: "Tracking the dramatic economic shift of China, the technologic power of Japan, and the environmental costs of rapid growth.",
-                link: "chapters/09-east-asia/index.html",
-                center: [35, 115],
-                color: "#264653"
-            },
-            geometry: {
-                type: "Polygon",
-                coordinates: [[
-                    [73, 40],    // Xinjiang W
-                    [80, 45],    // Kazakhstan border
-                    [87, 50],    // Mongolia W
-                    [120, 50],   // Mongolia E
-                    [127, 42],   // NE China
-                    [129, 40],   // Korea N
-                    [130, 33],   // Korea S
-                    [131, 34],   // Japan SW
-                    [140, 36],   // Japan central
-                    [145, 44],   // Japan N (Hokkaido)
-                    [141, 45],   // Japan NE
-                    [135, 35],   // Japan W coast
-                    [128, 35],   // Korea Strait
-                    [122, 25],   // Taiwan
-                    [117, 24],   // S China coast
-                    [108, 18],   // Hainan
-                    [106, 22],   // Vietnam border
-                    [98, 24],    // Myanmar border
-                    [97, 28],    // Tibet E
-                    [80, 32],    // Tibet W
-                    [73, 40]     // Close polygon
-                ]]
-            }
-        },
-        {
-            type: "Feature",
-            id: "southeast-asia",
-            properties: {
-                name: "Southeast Asia",
-                theme: "Globalization & Maritime Trade",
-                desc: "The strategic importance of the Malacca Strait, biodiversity in tropical rainforests, and the economic integration of ASEAN.",
-                link: "chapters/10-southeast-asia/index.html",
-                center: [5, 115],
-                color: "#287271"
-            },
-            geometry: {
-                type: "MultiPolygon",
-                coordinates: [
-                    // Mainland SE Asia
-                    [[
-                        [92, 22],    // Myanmar W
-                        [94, 16],    // Myanmar S
-                        [98, 10],    // Thailand S
-                        [103, 2],    // Malaysia
-                        [104, 1],    // Singapore
-                        [103, -1],   // Sumatra
-                        [106, 6],    // Vietnam S
-                        [109, 12],   // Vietnam central
-                        [108, 21],   // Vietnam N
-                        [106, 22],   // China border
-                        [98, 24],    // Myanmar N
-                        [92, 22]     // Close polygon
-                    ]],
-                    // Indonesian Archipelago
-                    [[
-                        [95, 5],     // Sumatra N
-                        [98, -1],    // Sumatra S
-                        [105, -6],   // Java W
-                        [115, -8],   // Java E / Bali
-                        [120, -10],  // Nusa Tenggara
-                        [127, -8],   // Timor
-                        [135, -6],   // Papua W
-                        [141, -5],   // Papua E
-                        [141, -9],   // Papua S
-                        [127, -10],  // Timor Sea
-                        [118, -5],   // Kalimantan S
-                        [117, 1],    // Kalimantan E
-                        [120, 5],    // Sulawesi
-                        [127, 2],    // Maluku
-                        [125, -1],   // Sulawesi S
-                        [119, -4],   // Sulawesi SW
-                        [114, -3],   // Kalimantan S
-                        [110, 1],    // Kalimantan W
-                        [104, 1],    // Singapore/Malaysia
-                        [100, -1],   // Sumatra E
-                        [95, 5]      // Close polygon
-                    ]]
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -10,
+                            36
+                        ],
+                        [
+                            -9,
+                            38
+                        ],
+                        [
+                            -9,
+                            43
+                        ],
+                        [
+                            -5,
+                            44
+                        ],
+                        [
+                            -2,
+                            44
+                        ],
+                        [
+                            3,
+                            43
+                        ],
+                        [
+                            5,
+                            43
+                        ],
+                        [
+                            8,
+                            44
+                        ],
+                        [
+                            12,
+                            37
+                        ],
+                        [
+                            18,
+                            40
+                        ],
+                        [
+                            20,
+                            35
+                        ],
+                        [
+                            26,
+                            35
+                        ],
+                        [
+                            29,
+                            41
+                        ],
+                        [
+                            28,
+                            46
+                        ],
+                        [
+                            40,
+                            47
+                        ],
+                        [
+                            32,
+                            55
+                        ],
+                        [
+                            28,
+                            56
+                        ],
+                        [
+                            24,
+                            59
+                        ],
+                        [
+                            28,
+                            70
+                        ],
+                        [
+                            25,
+                            71
+                        ],
+                        [
+                            18,
+                            70
+                        ],
+                        [
+                            10,
+                            63
+                        ],
+                        [
+                            5,
+                            62
+                        ],
+                        [
+                            5,
+                            58
+                        ],
+                        [
+                            8,
+                            55
+                        ],
+                        [
+                            4,
+                            52
+                        ],
+                        [
+                            -4,
+                            50
+                        ],
+                        [
+                            -6,
+                            54
+                        ],
+                        [
+                            -10,
+                            52
+                        ],
+                        [
+                            -5,
+                            58
+                        ],
+                        [
+                            -8,
+                            58
+                        ],
+                        [
+                            -6,
+                            50
+                        ],
+                        [
+                            -5,
+                            48
+                        ],
+                        [
+                            -2,
+                            47
+                        ],
+                        [
+                            -10,
+                            36
+                        ]
+                    ]
                 ]
             }
         },
         {
-            type: "Feature",
-            id: "oceania",
-            properties: {
-                name: "Australia & Oceania",
-                theme: "Island Risk & Resilience",
-                desc: "Studying sea-level rise in the Pacific, the unique physical geography of the Outback, and indigenous land rights.",
-                link: "chapters/11-australia-oceania/index.html",
-                center: [-25, 140],
-                color: "#8ab17d"
+            "type": "Feature",
+            "id": "russia",
+            "properties": {
+                "name": "Russia & Central Asia",
+                "chapter": "../03-russia/index.html",
+                "color": "#1e5f74",
+                "theme": "Geopolitics & Energy",
+                "desc": "Understanding the geopolitical transitions after the Soviet Union and the critical role of resource geography in global affairs.",
+                "link": "chapters/03-russia/index.html",
+                "center": [
+                    60,
+                    100
+                ]
             },
-            geometry: {
-                type: "MultiPolygon",
-                coordinates: [
-                    // Australia
-                    [[
-                        [114, -22],  // W Australia N
-                        [113, -25],  // W Australia
-                        [115, -34],  // Perth
-                        [122, -34],  // Great Aust Bight
-                        [136, -35],  // S Australia
-                        [144, -38],  // Victoria
-                        [150, -38],  // NSW S
-                        [154, -28],  // Queensland
-                        [146, -19],  // Great Barrier Reef
-                        [142, -11],  // Cape York
-                        [136, -12],  // NT N
-                        [129, -15],  // Darwin
-                        [123, -16],  // Kimberley
-                        [114, -22]   // Close polygon
-                    ]],
-                    // New Zealand
-                    [[
-                        [166, -46],  // NZ South Island SW
-                        [168, -47],  // Fiordland
-                        [171, -44],  // Christchurch
-                        [174, -42],  // Cook Strait
-                        [178, -37],  // East Cape
-                        [175, -35],  // Auckland
-                        [172, -40],  // Wellington
-                        [166, -46]   // Close polygon
-                    ]],
-                    // Papua New Guinea
-                    [[
-                        [141, -5],   // PNG W border
-                        [145, -5],   // PNG N coast
-                        [150, -5],   // New Britain
-                        [152, -4],   // PNG NE
-                        [148, -10],  // PNG S
-                        [143, -9],   // Torres Strait
-                        [141, -5]    // Close polygon
-                    ]]
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            28,
+                            70
+                        ],
+                        [
+                            40,
+                            68
+                        ],
+                        [
+                            55,
+                            70
+                        ],
+                        [
+                            70,
+                            73
+                        ],
+                        [
+                            80,
+                            74
+                        ],
+                        [
+                            100,
+                            78
+                        ],
+                        [
+                            120,
+                            74
+                        ],
+                        [
+                            140,
+                            72
+                        ],
+                        [
+                            170,
+                            70
+                        ],
+                        [
+                            170,
+                            65
+                        ],
+                        [
+                            165,
+                            60
+                        ],
+                        [
+                            155,
+                            50
+                        ],
+                        [
+                            143,
+                            47
+                        ],
+                        [
+                            135,
+                            43
+                        ],
+                        [
+                            127,
+                            42
+                        ],
+                        [
+                            120,
+                            50
+                        ],
+                        [
+                            87,
+                            50
+                        ],
+                        [
+                            80,
+                            45
+                        ],
+                        [
+                            55,
+                            37
+                        ],
+                        [
+                            52,
+                            37
+                        ],
+                        [
+                            48,
+                            42
+                        ],
+                        [
+                            47,
+                            45
+                        ],
+                        [
+                            40,
+                            47
+                        ],
+                        [
+                            32,
+                            55
+                        ],
+                        [
+                            28,
+                            56
+                        ],
+                        [
+                            28,
+                            70
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "north-america",
+            "properties": {
+                "name": "North America",
+                "chapter": "../04-north-america/index.html",
+                "color": "#f4a261",
+                "theme": "Urbanization & Diversity",
+                "desc": "Analyzing urban expansion, economic integration under USMCA, and the environmental challenges facing the US and Canada.",
+                "link": "chapters/04-north-america/index.html",
+                "center": [
+                    45,
+                    -100
+                ]
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -168,
+                            66
+                        ],
+                        [
+                            -165,
+                            70
+                        ],
+                        [
+                            -145,
+                            70
+                        ],
+                        [
+                            -130,
+                            72
+                        ],
+                        [
+                            -95,
+                            74
+                        ],
+                        [
+                            -85,
+                            70
+                        ],
+                        [
+                            -70,
+                            73
+                        ],
+                        [
+                            -62,
+                            67
+                        ],
+                        [
+                            -55,
+                            52
+                        ],
+                        [
+                            -66,
+                            44
+                        ],
+                        [
+                            -70,
+                            42
+                        ],
+                        [
+                            -75,
+                            35
+                        ],
+                        [
+                            -80,
+                            25
+                        ],
+                        [
+                            -97,
+                            26
+                        ],
+                        [
+                            -105,
+                            20
+                        ],
+                        [
+                            -117,
+                            32
+                        ],
+                        [
+                            -124,
+                            40
+                        ],
+                        [
+                            -125,
+                            48
+                        ],
+                        [
+                            -130,
+                            55
+                        ],
+                        [
+                            -140,
+                            60
+                        ],
+                        [
+                            -150,
+                            61
+                        ],
+                        [
+                            -165,
+                            55
+                        ],
+                        [
+                            -168,
+                            66
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "latin-america",
+            "properties": {
+                "name": "Latin America & Caribbean",
+                "chapter": "../05-latin-america/index.html",
+                "color": "#e07b3c",
+                "theme": "Biodiversity & Inequality",
+                "desc": "Studying the Amazonian ecosystems, the impact of colonialism on development, and the dynamics of urbanization in mega-cities.",
+                "link": "chapters/05-latin-america/index.html",
+                "center": [
+                    -15,
+                    -60
+                ]
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -117,
+                            32
+                        ],
+                        [
+                            -105,
+                            20
+                        ],
+                        [
+                            -95,
+                            16
+                        ],
+                        [
+                            -87,
+                            15
+                        ],
+                        [
+                            -83,
+                            8
+                        ],
+                        [
+                            -77,
+                            8
+                        ],
+                        [
+                            -75,
+                            10
+                        ],
+                        [
+                            -62,
+                            10
+                        ],
+                        [
+                            -60,
+                            14
+                        ],
+                        [
+                            -60,
+                            22
+                        ],
+                        [
+                            -65,
+                            18
+                        ],
+                        [
+                            -77,
+                            20
+                        ],
+                        [
+                            -85,
+                            22
+                        ],
+                        [
+                            -97,
+                            26
+                        ],
+                        [
+                            -105,
+                            20
+                        ],
+                        [
+                            -77,
+                            8
+                        ],
+                        [
+                            -81,
+                            2
+                        ],
+                        [
+                            -80,
+                            -4
+                        ],
+                        [
+                            -70,
+                            -18
+                        ],
+                        [
+                            -70,
+                            -27
+                        ],
+                        [
+                            -72,
+                            -40
+                        ],
+                        [
+                            -75,
+                            -53
+                        ],
+                        [
+                            -68,
+                            -55
+                        ],
+                        [
+                            -65,
+                            -50
+                        ],
+                        [
+                            -58,
+                            -38
+                        ],
+                        [
+                            -53,
+                            -34
+                        ],
+                        [
+                            -48,
+                            -28
+                        ],
+                        [
+                            -42,
+                            -23
+                        ],
+                        [
+                            -35,
+                            -7
+                        ],
+                        [
+                            -50,
+                            0
+                        ],
+                        [
+                            -52,
+                            5
+                        ],
+                        [
+                            -60,
+                            8
+                        ],
+                        [
+                            -73,
+                            12
+                        ],
+                        [
+                            -83,
+                            16
+                        ],
+                        [
+                            -105,
+                            20
+                        ],
+                        [
+                            -117,
+                            32
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "africa-sub",
+            "properties": {
+                "name": "Sub-Saharan Africa",
+                "chapter": "../06-sub-saharan-africa/index.html",
+                "color": "#2a9d8f",
+                "theme": "Development & Global Health",
+                "desc": "Examining rapid demographic shifts, resource management, and the cultural diversity that defines the African continent.",
+                "link": "chapters/06-sub-saharan-africa/index.html",
+                "center": [
+                    0,
+                    20
+                ]
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -17,
+                            15
+                        ],
+                        [
+                            -15,
+                            11
+                        ],
+                        [
+                            -8,
+                            5
+                        ],
+                        [
+                            2,
+                            6
+                        ],
+                        [
+                            9,
+                            4
+                        ],
+                        [
+                            9,
+                            10
+                        ],
+                        [
+                            15,
+                            13
+                        ],
+                        [
+                            24,
+                            12
+                        ],
+                        [
+                            35,
+                            12
+                        ],
+                        [
+                            42,
+                            11
+                        ],
+                        [
+                            48,
+                            9
+                        ],
+                        [
+                            51,
+                            2
+                        ],
+                        [
+                            45,
+                            -2
+                        ],
+                        [
+                            40,
+                            -10
+                        ],
+                        [
+                            35,
+                            -25
+                        ],
+                        [
+                            32,
+                            -28
+                        ],
+                        [
+                            28,
+                            -33
+                        ],
+                        [
+                            18,
+                            -34
+                        ],
+                        [
+                            14,
+                            -28
+                        ],
+                        [
+                            12,
+                            -18
+                        ],
+                        [
+                            12,
+                            -5
+                        ],
+                        [
+                            9,
+                            1
+                        ],
+                        [
+                            6,
+                            4
+                        ],
+                        [
+                            -5,
+                            5
+                        ],
+                        [
+                            -17,
+                            12
+                        ],
+                        [
+                            -17,
+                            15
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "mena",
+            "properties": {
+                "name": "North Africa & SW Asia",
+                "chapter": "../07-north-africa-sw-asia/index.html",
+                "color": "#40c9b8",
+                "theme": "Water & Conflict",
+                "desc": "The geography of arid landscapes, the geopolitics of petroleum, and the cultural significance of the region as a hearth of civilization.",
+                "link": "chapters/07-north-africa-sw-asia/index.html",
+                "center": [
+                    28,
+                    30
+                ]
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            -17,
+                            28
+                        ],
+                        [
+                            -8,
+                            32
+                        ],
+                        [
+                            0,
+                            36
+                        ],
+                        [
+                            10,
+                            37
+                        ],
+                        [
+                            25,
+                            32
+                        ],
+                        [
+                            32,
+                            31
+                        ],
+                        [
+                            35,
+                            32
+                        ],
+                        [
+                            36,
+                            35
+                        ],
+                        [
+                            42,
+                            37
+                        ],
+                        [
+                            44,
+                            33
+                        ],
+                        [
+                            48,
+                            30
+                        ],
+                        [
+                            56,
+                            25
+                        ],
+                        [
+                            60,
+                            25
+                        ],
+                        [
+                            53,
+                            15
+                        ],
+                        [
+                            43,
+                            13
+                        ],
+                        [
+                            38,
+                            15
+                        ],
+                        [
+                            32,
+                            22
+                        ],
+                        [
+                            24,
+                            22
+                        ],
+                        [
+                            15,
+                            24
+                        ],
+                        [
+                            0,
+                            22
+                        ],
+                        [
+                            -10,
+                            22
+                        ],
+                        [
+                            -17,
+                            21
+                        ],
+                        [
+                            -17,
+                            28
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "south-asia",
+            "properties": {
+                "name": "South Asia",
+                "chapter": "../08-south-asia/index.html",
+                "color": "#e76f51",
+                "theme": "Population & Monsoons",
+                "desc": "Analyzing the challenges of high population density, climate vulnerability in low-lying regions, and India's economic rise.",
+                "link": "chapters/08-south-asia/index.html",
+                "center": [
+                    22,
+                    78
+                ]
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            61,
+                            25
+                        ],
+                        [
+                            67,
+                            24
+                        ],
+                        [
+                            72,
+                            21
+                        ],
+                        [
+                            73,
+                            16
+                        ],
+                        [
+                            77,
+                            8
+                        ],
+                        [
+                            80,
+                            6
+                        ],
+                        [
+                            82,
+                            8
+                        ],
+                        [
+                            85,
+                            14
+                        ],
+                        [
+                            89,
+                            21
+                        ],
+                        [
+                            92,
+                            22
+                        ],
+                        [
+                            97,
+                            28
+                        ],
+                        [
+                            96,
+                            28
+                        ],
+                        [
+                            92,
+                            27
+                        ],
+                        [
+                            88,
+                            27
+                        ],
+                        [
+                            80,
+                            30
+                        ],
+                        [
+                            77,
+                            35
+                        ],
+                        [
+                            71,
+                            37
+                        ],
+                        [
+                            66,
+                            37
+                        ],
+                        [
+                            62,
+                            35
+                        ],
+                        [
+                            61,
+                            25
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "east-asia",
+            "properties": {
+                "name": "East Asia",
+                "chapter": "../09-east-asia/index.html",
+                "color": "#264653",
+                "theme": "Industrialization & Growth",
+                "desc": "Tracking the dramatic economic shift of China, the technologic power of Japan, and the environmental costs of rapid growth.",
+                "link": "chapters/09-east-asia/index.html",
+                "center": [
+                    35,
+                    115
+                ]
+            },
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                    [
+                        [
+                            73,
+                            40
+                        ],
+                        [
+                            80,
+                            45
+                        ],
+                        [
+                            87,
+                            50
+                        ],
+                        [
+                            120,
+                            50
+                        ],
+                        [
+                            127,
+                            42
+                        ],
+                        [
+                            129,
+                            40
+                        ],
+                        [
+                            130,
+                            33
+                        ],
+                        [
+                            131,
+                            34
+                        ],
+                        [
+                            140,
+                            36
+                        ],
+                        [
+                            145,
+                            44
+                        ],
+                        [
+                            141,
+                            45
+                        ],
+                        [
+                            135,
+                            35
+                        ],
+                        [
+                            128,
+                            35
+                        ],
+                        [
+                            122,
+                            25
+                        ],
+                        [
+                            117,
+                            24
+                        ],
+                        [
+                            108,
+                            18
+                        ],
+                        [
+                            106,
+                            22
+                        ],
+                        [
+                            98,
+                            24
+                        ],
+                        [
+                            97,
+                            28
+                        ],
+                        [
+                            80,
+                            32
+                        ],
+                        [
+                            73,
+                            40
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "southeast-asia",
+            "properties": {
+                "name": "Southeast Asia",
+                "chapter": "../10-southeast-asia/index.html",
+                "color": "#287271",
+                "theme": "Globalization & Maritime Trade",
+                "desc": "The strategic importance of the Malacca Strait, biodiversity in tropical rainforests, and the economic integration of ASEAN.",
+                "link": "chapters/10-southeast-asia/index.html",
+                "center": [
+                    5,
+                    115
+                ]
+            },
+            "geometry": {
+                "type": "MultiPolygon",
+                "coordinates": [
+                    [
+                        [
+                            [
+                                92,
+                                22
+                            ],
+                            [
+                                94,
+                                16
+                            ],
+                            [
+                                98,
+                                10
+                            ],
+                            [
+                                103,
+                                2
+                            ],
+                            [
+                                104,
+                                1
+                            ],
+                            [
+                                103,
+                                -1
+                            ],
+                            [
+                                106,
+                                6
+                            ],
+                            [
+                                109,
+                                12
+                            ],
+                            [
+                                108,
+                                21
+                            ],
+                            [
+                                106,
+                                22
+                            ],
+                            [
+                                98,
+                                24
+                            ],
+                            [
+                                92,
+                                22
+                            ]
+                        ]
+                    ],
+                    [
+                        [
+                            [
+                                95,
+                                5
+                            ],
+                            [
+                                98,
+                                -1
+                            ],
+                            [
+                                105,
+                                -6
+                            ],
+                            [
+                                115,
+                                -8
+                            ],
+                            [
+                                120,
+                                -10
+                            ],
+                            [
+                                127,
+                                -8
+                            ],
+                            [
+                                135,
+                                -6
+                            ],
+                            [
+                                141,
+                                -5
+                            ],
+                            [
+                                141,
+                                -9
+                            ],
+                            [
+                                127,
+                                -10
+                            ],
+                            [
+                                118,
+                                -5
+                            ],
+                            [
+                                117,
+                                1
+                            ],
+                            [
+                                120,
+                                5
+                            ],
+                            [
+                                127,
+                                2
+                            ],
+                            [
+                                125,
+                                -1
+                            ],
+                            [
+                                119,
+                                -4
+                            ],
+                            [
+                                114,
+                                -3
+                            ],
+                            [
+                                110,
+                                1
+                            ],
+                            [
+                                104,
+                                1
+                            ],
+                            [
+                                100,
+                                -1
+                            ],
+                            [
+                                95,
+                                5
+                            ]
+                        ]
+                    ]
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "id": "oceania",
+            "properties": {
+                "name": "Australia & Oceania",
+                "chapter": "../11-australia-oceania/index.html",
+                "color": "#8ab17d",
+                "theme": "Island Risk & Resilience",
+                "desc": "Studying sea-level rise in the Pacific, the unique physical geography of the Outback, and indigenous land rights.",
+                "link": "chapters/11-australia-oceania/index.html",
+                "center": [
+                    -25,
+                    140
+                ]
+            },
+            "geometry": {
+                "type": "MultiPolygon",
+                "coordinates": [
+                    [
+                        [
+                            [
+                                114,
+                                -22
+                            ],
+                            [
+                                113,
+                                -25
+                            ],
+                            [
+                                115,
+                                -34
+                            ],
+                            [
+                                122,
+                                -34
+                            ],
+                            [
+                                136,
+                                -35
+                            ],
+                            [
+                                144,
+                                -38
+                            ],
+                            [
+                                150,
+                                -38
+                            ],
+                            [
+                                154,
+                                -28
+                            ],
+                            [
+                                146,
+                                -19
+                            ],
+                            [
+                                142,
+                                -11
+                            ],
+                            [
+                                136,
+                                -12
+                            ],
+                            [
+                                129,
+                                -15
+                            ],
+                            [
+                                123,
+                                -16
+                            ],
+                            [
+                                114,
+                                -22
+                            ]
+                        ]
+                    ],
+                    [
+                        [
+                            [
+                                166,
+                                -46
+                            ],
+                            [
+                                168,
+                                -47
+                            ],
+                            [
+                                171,
+                                -44
+                            ],
+                            [
+                                174,
+                                -42
+                            ],
+                            [
+                                178,
+                                -37
+                            ],
+                            [
+                                175,
+                                -35
+                            ],
+                            [
+                                172,
+                                -40
+                            ],
+                            [
+                                166,
+                                -46
+                            ]
+                        ]
+                    ],
+                    [
+                        [
+                            [
+                                141,
+                                -5
+                            ],
+                            [
+                                145,
+                                -5
+                            ],
+                            [
+                                150,
+                                -5
+                            ],
+                            [
+                                152,
+                                -4
+                            ],
+                            [
+                                148,
+                                -10
+                            ],
+                            [
+                                143,
+                                -9
+                            ],
+                            [
+                                141,
+                                -5
+                            ]
+                        ]
+                    ]
                 ]
             }
         }
