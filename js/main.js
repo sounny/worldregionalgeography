@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTexasToggle();
     initAccordions();
     initFlipCards();
+    initKeyTerms();
 });
 
 /**
@@ -586,39 +587,92 @@ function initSmoothScroll() {
 // =====================================================
 
 /**
- * Initialize tooltips for key terms
+ * Initialize tooltips for key terms (Optimized)
  */
 function initKeyTerms() {
+    // 1. Ensure accessibility: Add tabindex to all terms if missing (Iterate once)
     const terms = document.querySelectorAll('.term-highlight');
-    
-    terms.forEach(term => {
-        const definition = term.dataset.definition;
-        if (!definition) return;
+    if (terms.length === 0) return;
 
+    terms.forEach(term => {
         if (!term.hasAttribute('tabindex')) {
             term.setAttribute('tabindex', '0');
         }
+    });
 
-        const tooltip = document.createElement('span');
+    // 2. Shared tooltip element (Create once)
+    let tooltip = document.getElementById('shared-term-tooltip');
+    if (!tooltip) {
+        tooltip = document.createElement('span');
+        tooltip.id = 'shared-term-tooltip';
         tooltip.className = 'term-tooltip';
+        tooltip.setAttribute('role', 'tooltip');
+        tooltip.setAttribute('aria-hidden', 'true');
+        document.body.appendChild(tooltip);
+    }
+
+    // 3. Helper to show/hide
+    const showTooltip = (target) => {
+        const definition = target.dataset.definition;
+        if (!definition) return;
+
         tooltip.textContent = definition;
-        term.appendChild(tooltip);
-        
-        term.addEventListener('mouseenter', () => {
-            tooltip.classList.add('visible');
-        });
-        
-        term.addEventListener('mouseleave', () => {
-            tooltip.classList.remove('visible');
-        });
+        tooltip.classList.add('visible');
+        tooltip.setAttribute('aria-hidden', 'false');
 
-        term.addEventListener('focus', () => {
-            tooltip.classList.add('visible');
-        });
+        // Position Logic
+        const rect = target.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+        
+        tooltip.style.position = 'absolute';
+        tooltip.style.bottom = 'auto'; // Override CSS bottom: 100%
+        // Position exactly at top of term (transform handles gap)
+        tooltip.style.top = `${rect.top + scrollTop - tooltip.offsetHeight}px`;
+        tooltip.style.left = `${rect.left + scrollLeft}px`;
+        
+        // Prevent going off-screen left
+        if (parseFloat(tooltip.style.left) < 0) tooltip.style.left = '10px';
+    };
 
-        term.addEventListener('blur', () => {
-            tooltip.classList.remove('visible');
-        });
+    const hideTooltip = () => {
+        tooltip.classList.remove('visible');
+        tooltip.setAttribute('aria-hidden', 'true');
+    };
+
+    // 4. Event Delegation (Attach listeners once to body)
+    if (document.body.dataset.keyTermsInitialized) return;
+    document.body.dataset.keyTermsInitialized = 'true';
+
+    document.body.addEventListener('mouseover', (e) => {
+        const term = e.target.closest('.term-highlight');
+        if (term) {
+            showTooltip(term);
+        }
+    });
+
+    document.body.addEventListener('mouseout', (e) => {
+        const term = e.target.closest('.term-highlight');
+        if (term) {
+             // If moving to a child of the term, don't hide
+             if (term.contains(e.relatedTarget)) return;
+            hideTooltip();
+        }
+    });
+
+    // Keyboard support (Focus delegation)
+    document.body.addEventListener('focusin', (e) => {
+        const term = e.target.closest('.term-highlight');
+        if (term) {
+            showTooltip(term);
+        }
+    });
+
+    document.body.addEventListener('focusout', (e) => {
+        const term = e.target.closest('.term-highlight');
+        if (term) {
+            hideTooltip();
+        }
     });
 }
 
