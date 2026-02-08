@@ -193,15 +193,52 @@
                     <span>World Regional Geography</span>
                 </div>
                 <div class="footer-copyright">
-                    <p>Made with ❤️ by <a href="https://sounny.github.io" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: underline;">Dr. Sounny</a>. Open Educational Resource.</p>
-                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="margin-top: var(--space-2); padding: var(--space-1) var(--space-3); font-size: 0.8rem; border-color: rgba(255,255,255,0.3);">© Copyright Info</a>
+                    <p>Made with ❤️ by <a href="https://sounny.github.io" target="_blank" style="color: inherit; text-decoration: underline;">Dr. Sounny</a>. Open Educational Resource.</p>
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" class="btn btn-secondary" style="margin-top: var(--space-2); padding: var(--space-1) var(--space-3); font-size: 0.8rem; border-color: rgba(255,255,255,0.3);">© Copyright Info</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="js/map-init.js" defer></script>
+    <script src="js/regions-data.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize global map
+            if (typeof L !== 'undefined' && document.getElementById('global-map')) {
+                const map = L.map('global-map', {
+                    minZoom: 2,
+                    maxBounds: [[-90, -180], [90, 180]],
+                    maxBoundsViscosity: 1.0
+                }).setView([20, 0], 2);
+                
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                    attribution: '© OpenStreetMap © CARTO'
+                }).addTo(map);
+
+                // Add region markers from centralized data
+                if (window.WorldRegionsData && window.WorldRegionsData.features) {
+                    window.WorldRegionsData.features.forEach(feature => {
+                        const props = feature.properties;
+                        if (props.center) {
+                            L.circleMarker(props.center, {
+                                radius: 12,
+                                fillColor: '#3b82f6',
+                                color: '#fff',
+                                weight: 2,
+                                fillOpacity: 0.8
+                            }).addTo(map)
+                            .bindPopup('<strong>' + props.name + '</strong><br><a href="' + props.link + '">Explore Chapter</a>')
+                            .on('click', function() {
+                                this.openPopup();
+                            });
+                        }
+                    });
+                }
+            }
+
+        });
+    </script>
 </body>
 </html>
