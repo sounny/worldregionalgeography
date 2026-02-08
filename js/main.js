@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTexasToggle();
     initAccordions();
     initFlipCards();
+    initStickyNav();
 });
 
 /**
