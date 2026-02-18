@@ -31,6 +31,7 @@
 
 
     <link rel="stylesheet" href="../../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 
 
 
@@ -1886,7 +1887,47 @@
 
 
 
+            <!-- Regional Decisions -->
+            <section id="regional-decisions" class="section-container">
+                <div class="regional-decisions-box">
+                    <div class="decisions-header">
+                        <span class="decisions-label">🗳️ Regional Decisions</span>
+                        <h2>The Ukraine Crisis: Geography, Sovereignty, and Security</h2>
+                    </div>
+                    <p>Ukraine is a pivotal country at the crossroads of Europe and Russia — a geographic "shatter belt" where great power interests collide. Russia's 2022 invasion of Ukraine triggered the largest land war in Europe since World War II. You are attending an emergency UN Security Council session to address the crisis and propose a path forward.</p>
+                    <div class="decisions-roles">
+                        <div class="role-card">
+                            <h4>🇷🇺 Role A: Russia</h4>
+                            <p>You argue that NATO's eastward expansion threatens your security buffer zone. Ukraine's flat terrain — the same plains that Napoleon and Hitler used to invade Russia — makes it a strategic necessity. You see the Donbas and Crimea as historically Russian territories. You demand Ukraine remain neutral and outside NATO.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🇺🇦 Role B: Ukraine</h4>
+                            <p>You are a sovereign nation with the right to choose your own alliances. Russia has violated international law by annexing Crimea (2014) and invading your territory. You demand full restoration of your internationally recognized borders and NATO membership as a security guarantee.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🇩🇪 Role C: Germany (EU Representative)</h4>
+                            <p>You depend on Russian natural gas and have deep economic ties with Russia. You support Ukraine's sovereignty but fear escalation to nuclear conflict. You must balance your security commitments to NATO with your economic vulnerabilities and your role as Europe's largest economy.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🌐 Role D: UN Secretary-General</h4>
+                            <p>You must propose a ceasefire framework that all parties can accept. You have no military power — only moral authority and diplomatic tools. You must navigate the veto power of Russia on the Security Council while addressing the humanitarian catastrophe unfolding in Ukraine.</p>
+                        </div>
+                    </div>
+                    <div class="decisions-question">
+                        <strong>Your Decision:</strong> Propose a 3-point ceasefire framework. How does Ukraine's geographic position — flat terrain, access to the Black Sea, shared borders with both Russia and NATO members — make it a perpetual flashpoint? Can geography ever guarantee security?
+                    </div>
+                </div>
+            </section>
 
+            <!-- Data Visualization -->
+            <section id="data-viz" class="section-container">
+                <h2>📊 Data Exploration: Russia's Energy Dependency</h2>
+                <p>Russia is one of the world's largest exporters of fossil fuels. The chart below shows the percentage of government revenue derived from oil and gas exports — illustrating why Russia is called a "petro-state" and how vulnerable its economy is to global energy price fluctuations.</p>
+                <div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: var(--space-4) 0;">
+                    <canvas id="russia-energy-chart" height="80"></canvas>
+                </div>
+                <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-2);"><strong>Interpretation:</strong> Notice how Russia's oil revenue share spikes with global oil price booms (2008, 2014, 2022) and crashes when prices fall. How does this geographic resource dependency shape Russia's foreign policy behavior?</p>
+            </section>
 
             <section id="knowledge-check" class="section-container">
 
@@ -2552,6 +2593,46 @@
     <script type="module">
         import Lightbox from '../../js/modules/lightbox.js';
         Lightbox.init();
+    </script>
+    <script>
+        // Russia Energy Revenue Chart
+        (function() {
+            const ctx = document.getElementById('russia-energy-chart');
+            if (!ctx) return;
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['2000','2002','2004','2006','2008','2010','2012','2014','2016','2018','2020','2022'],
+                    datasets: [{
+                        label: 'Oil & Gas as % of Federal Budget Revenue',
+                        data: [35, 38, 44, 47, 52, 46, 50, 51, 36, 46, 28, 42],
+                        borderColor: 'rgba(220,53,69,0.9)',
+                        backgroundColor: 'rgba(220,53,69,0.1)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: 'rgba(220,53,69,1)',
+                        pointRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'top' },
+                        tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.y}% of federal budget` } }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 70,
+                            title: { display: true, text: '% of Federal Budget Revenue' },
+                            grid: { color: 'rgba(0,0,0,0.05)' }
+                        },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        })();
     </script>
 </body>
 

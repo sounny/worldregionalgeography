@@ -6,6 +6,7 @@
     <title>Chapter 7: North Africa and Southwest Asia | World Regional Geography</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="stylesheet" href="../../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 </head>
 <body>
     <!-- Skip to Main Content Link (Accessibility) -->
@@ -282,6 +283,67 @@
                 </div>
             </section>
 
+            <!-- Regional Decisions -->
+            <section id="regional-decisions" class="section-container">
+                <div class="regional-decisions-box">
+                    <div class="decisions-header">
+                        <span class="decisions-label">🗳️ Regional Decisions</span>
+                        <h2>Negotiating the Nile: A Water Crisis Summit</h2>
+                    </div>
+                    <p>The Nile River is the lifeblood of northeastern Africa, but its waters are shared — and contested — by 11 nations. Ethiopia has built the Grand Ethiopian Renaissance Dam (GERD), the largest hydroelectric dam in Africa. Egypt, which depends on the Nile for 97% of its freshwater, sees this as an existential threat. You are attending an emergency summit to negotiate a water-sharing agreement.</p>
+                    <div class="decisions-roles">
+                        <div class="role-card">
+                            <h4>🇪🇬 Role A: Egypt</h4>
+                            <p>Your 100 million people depend almost entirely on the Nile. You demand guaranteed minimum water flows and veto power over dam operations during droughts. You consider this a matter of national survival.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🇪🇹 Role B: Ethiopia</h4>
+                            <p>You are building the dam to provide electricity to 60% of your population who lack power. You argue that upstream nations have the right to develop their own resources and lift their people out of poverty.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🇸🇩 Role C: Sudan</h4>
+                            <p>You are caught between your two neighbors. The dam could actually benefit Sudan by regulating floods and providing cheap electricity — but you fear being pressured by both sides.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🌐 Role D: UN Mediator</h4>
+                            <p>You must craft a compromise that all parties can accept. You have access to climate data showing the Nile's flow is already declining due to climate change, making the stakes even higher.</p>
+                        </div>
+                    </div>
+                    <div class="decisions-question">
+                        <strong>Your Decision:</strong> Draft a water-sharing framework. How many years should Ethiopia take to fill the reservoir? What minimum flow must Egypt receive? How does the physical geography of the Nile basin shape each country's power in this negotiation?
+                    </div>
+                </div>
+            </section>
+
+            <!-- Discussion & Reflection -->
+            <section id="discussion" class="section-container">
+                <h2>💬 Discussion & Reflection Prompts</h2>
+                <div class="discussion-box">
+                    <h3>Reflect on Your Learning</h3>
+                    <ol>
+                        <li><strong>Water as Power:</strong> Why is water described as "the oil of the 21st century" in MENA? How does control over water resources translate into political power?</li>
+                        <li><strong>Cultural Hearth:</strong> This region gave birth to three major world religions. How does this shared religious heritage both unite and divide the region today?</li>
+                        <li><strong>Rentier States:</strong> How does oil wealth change the relationship between a government and its citizens? What happens to these states when oil revenues decline?</li>
+                    </ol>
+                    <h3>Discuss With Your Peers</h3>
+                    <ul>
+                        <li>Is desalination a sustainable long-term solution to water scarcity, or does it create new environmental problems? What role should technology play in solving geographic challenges?</li>
+                        <li>The Arab Spring showed that geographic factors (urban concentration, youth bulge, food prices) can trigger political revolutions. Can you identify similar geographic conditions in other world regions?</li>
+                        <li>How does the concept of "exotic streams" (rivers like the Nile and Tigris-Euphrates that flow through deserts) make entire civilizations vulnerable to upstream decisions?</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Data Visualization -->
+            <section id="data-viz" class="section-container">
+                <h2>📊 Data Exploration: Oil Production vs. Human Development</h2>
+                <p>Does oil wealth translate into human development? Compare oil production (barrels per day, millions) against HDI scores for selected MENA nations. The relationship is more complex than you might expect — revealing the "resource curse" paradox where some of the world's richest oil producers have surprisingly low human development scores.</p>
+                <div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: var(--space-4) 0;">
+                    <canvas id="mena-oil-chart" height="80"></canvas>
+                </div>
+                <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-2);"><strong>Interpretation:</strong> Notice that the UAE and Qatar have high oil production AND high HDI, while Iraq and Libya have high production but lower HDI. What geographic, political, and historical factors explain why oil wealth benefits some populations more than others?</p>
+            </section>
+
             <!-- 10. Knowledge Check (Quiz) -->
             <section id="quiz" class="section-container">
                 <h2>✅ Knowledge Check</h2>
@@ -446,6 +508,44 @@
             });
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+            });
+        })();
+    </script>
+    <script>
+        // MENA Oil Production vs HDI Chart
+        (function() {
+            const ctx = document.getElementById('mena-oil-chart');
+            if (!ctx) return;
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Saudi Arabia', 'UAE', 'Kuwait', 'Qatar', 'Iraq', 'Iran', 'Libya', 'Algeria', 'Egypt', 'Yemen'],
+                    datasets: [{
+                        label: 'Oil Production (million barrels/day)',
+                        data: [10.8, 3.8, 2.7, 1.8, 4.5, 3.8, 1.2, 1.5, 0.6, 0.1],
+                        backgroundColor: 'rgba(255,193,7,0.7)',
+                        borderColor: 'rgba(0,0,0,0.15)',
+                        borderWidth: 1,
+                        yAxisID: 'y'
+                    }, {
+                        label: 'HDI Score',
+                        data: [0.875, 0.911, 0.831, 0.855, 0.686, 0.774, 0.718, 0.745, 0.731, 0.455],
+                        type: 'line',
+                        borderColor: 'rgba(0,123,255,0.9)',
+                        backgroundColor: 'rgba(0,123,255,0.1)',
+                        borderWidth: 2,
+                        pointRadius: 5,
+                        yAxisID: 'y2'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { position: 'top' } },
+                    scales: {
+                        y: { beginAtZero: true, title: { display: true, text: 'Oil Production (Mb/day)' }, position: 'left' },
+                        y2: { beginAtZero: true, max: 1.0, title: { display: true, text: 'HDI Score' }, position: 'right', grid: { drawOnChartArea: false } }
+                    }
+                }
             });
         })();
     </script>

@@ -27,6 +27,7 @@
 
 
     <link rel="stylesheet" href="../../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 
 
 
@@ -1020,9 +1021,70 @@
 
 
 
+            <!-- Regional Decisions -->
+            <section id="regional-decisions" class="section-container">
+                <div class="regional-decisions-box">
+                    <div class="decisions-header">
+                        <span class="decisions-label">🗳️ Regional Decisions</span>
+                        <h2>The Congo Basin: Whose Rainforest Is It?</h2>
+                    </div>
+                    <p>The Congo Basin contains the world's second-largest tropical rainforest — a carbon sink critical to global climate stability. The Democratic Republic of Congo (DRC) sits atop vast mineral wealth (cobalt, coltan, gold) essential for electric vehicles and smartphones. Yet the DRC is one of the world's poorest countries, wracked by decades of conflict. You are attending an international summit to negotiate a Congo Basin Conservation and Development Compact.</p>
+                    <div class="decisions-roles">
+                        <div class="role-card">
+                            <h4>🇨🇩 Role A: Democratic Republic of Congo</h4>
+                            <p>You are home to 100 million people, most living in extreme poverty. Your forests and minerals are your only path to development. You argue that wealthy nations destroyed their own forests during industrialization — you should not be denied the same right. You demand payment for "ecosystem services" if you are to protect the forest.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🇪🇺 Role B: European Union</h4>
+                            <p>You have pledged billions in climate finance for forest protection. But you also need DRC's cobalt for your electric vehicle transition. You want binding conservation agreements but must address accusations that your "green" economy is built on exploited African resources.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🌿 Role C: Indigenous Forest Communities</h4>
+                            <p>Your communities have lived in and protected the Congo rainforest for millennia. Both the DRC government and foreign companies threaten your land rights. You want legal recognition of your territorial rights and veto power over any development or conservation projects on your land.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🌐 Role D: African Union Mediator</h4>
+                            <p>You want to ensure that any deal benefits African nations, not just foreign governments and corporations. You advocate for African-led conservation models and demand that mineral supply chains be processed within Africa to create local jobs and value.</p>
+                        </div>
+                    </div>
+                    <div class="decisions-question">
+                        <strong>Your Decision:</strong> Draft a Congo Basin Compact with three key provisions. How does the geography of the Congo Basin (river system, rainforest extent, mineral deposits) create both opportunity and conflict? Who should have the right to decide the fate of a globally important ecosystem?
+                    </div>
+                </div>
+            </section>
+
+            <!-- Discussion & Reflection -->
+            <section id="discussion" class="section-container">
+                <h2>💬 Discussion & Reflection Prompts</h2>
+                <div class="discussion-box">
+                    <h3>Reflect on Your Learning</h3>
+                    <ol>
+                        <li><strong>The Resource Curse:</strong> Many of Sub-Saharan Africa's richest countries in natural resources (DRC, Nigeria, Angola) have some of the highest poverty rates. How does geography — the location of resources and the colonial borders drawn around them — help explain this paradox?</li>
+                        <li><strong>The Sahel's Triple Crisis:</strong> The Sahel region faces simultaneous climate change, desertification, and political instability. How do these geographic challenges reinforce each other, and what does this tell us about the relationship between environment and conflict?</li>
+                        <li><strong>Urbanization Without Industrialization:</strong> African cities are growing faster than any other region, yet this urbanization is not accompanied by the same industrial development seen in Asia. What geographic and historical factors explain this difference?</li>
+                    </ol>
+                    <h3>Discuss With Your Peers</h3>
+                    <ul>
+                        <li>Africa has 54 countries — more than any other continent — many with borders drawn by European colonizers with no regard for ethnic or geographic realities. How do these "artificial" borders continue to shape conflict and development today?</li>
+                        <li>The Great Green Wall initiative aims to plant an 8,000 km belt of trees across the Sahel to stop desertification. Is this a viable geographic solution, or does it ignore the political and economic root causes of land degradation?</li>
+                        <li>China has become Africa's largest trading partner and infrastructure investor. How does this new geographic relationship differ from European colonialism? What are the potential benefits and risks for African nations?</li>
+                    </ul>
+                </div>
+            </section>
+
             <!-- 10. Knowledge Check (Quiz) -->
 
 
+
+            <!-- Data Visualization -->
+            <section id="data-viz" class="section-container">
+                <h2>📊 Data Exploration: Human Development in Sub-Saharan Africa</h2>
+                <p>The Human Development Index (HDI) measures a country's achievement in health, education, and income on a scale from 0 to 1. Compare HDI scores across selected Sub-Saharan African nations. Notice the dramatic variation within the region — and consider what geographic factors (landlocked vs. coastal, resource wealth, colonial history) might explain these differences.</p>
+                <div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: var(--space-4) 0;">
+                    <canvas id="africa-hdi-chart" height="80"></canvas>
+                </div>
+                <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-2);"><strong>Interpretation:</strong> Mauritius and South Africa rank significantly higher than Niger and Chad. How do geographic factors — coastline access, climate, mineral resources, and colonial borders — help explain this development gap within a single continent?</p>
+            </section>
 
             <section id="quiz" class="section-container">
 
@@ -1657,15 +1719,44 @@
 
 
     </script>
-
-
-
+    <script>
+        // Sub-Saharan Africa HDI Chart
+        (function() {
+            const ctx = document.getElementById('africa-hdi-chart');
+            if (!ctx) return;
+            const hdis = [0.804, 0.713, 0.631, 0.601, 0.574, 0.558, 0.535, 0.481, 0.452, 0.394];
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Mauritius', 'South Africa', 'Botswana', 'Ghana', 'Kenya', 'Tanzania', 'Nigeria', 'Ethiopia', 'Mozambique', 'Niger'],
+                    datasets: [{
+                        label: 'Human Development Index (HDI) Score',
+                        data: hdis,
+                        backgroundColor: hdis.map(v => v >= 0.7 ? 'rgba(40,167,69,0.8)' : v >= 0.55 ? 'rgba(255,193,7,0.8)' : 'rgba(220,53,69,0.8)'),
+                        borderColor: 'rgba(0,0,0,0.15)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { callbacks: { label: ctx => ` HDI: ${ctx.parsed.x}` } }
+                    },
+                    scales: {
+                        x: { beginAtZero: true, max: 1.0, title: { display: true, text: 'HDI Score (0-1)' } },
+                        y: { grid: { display: false } }
+                    }
+                }
+            });
+        })();
+    </script>
 </body>
 
 
 
 </html>
-
 
 
 

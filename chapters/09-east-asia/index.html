@@ -27,6 +27,7 @@
 
 
     <link rel="stylesheet" href="../../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 
 
 
@@ -1134,12 +1135,68 @@
 
 
 
+            <!-- Regional Decisions -->
+            <section id="regional-decisions" class="section-container">
+                <div class="regional-decisions-box">
+                    <div class="decisions-header">
+                        <span class="decisions-label">🗳️ Regional Decisions</span>
+                        <h2>The South China Sea: Competing Claims in the Pacific</h2>
+                    </div>
+                    <p>The South China Sea is one of the world's most strategically important waterways — carrying over $3 trillion in trade annually and sitting atop vast oil and gas reserves. China has built artificial islands and military installations on disputed reefs, claiming nearly the entire sea. Multiple nations dispute these claims. You are attending an ASEAN emergency summit to negotiate a Code of Conduct.</p>
+                    <div class="decisions-roles">
+                        <div class="role-card">
+                            <h4>🇨🇳 Role A: China</h4>
+                            <p>You claim the South China Sea based on the "Nine-Dash Line," citing historical fishing rights going back centuries. Your island-building program is complete. You reject the 2016 international tribunal ruling against your claims and see this as a matter of national sovereignty.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🇵🇭 Role B: Philippines</h4>
+                            <p>China's artificial islands are within your Exclusive Economic Zone (EEZ). Your fishermen are being blocked from traditional fishing grounds. You won the 2016 tribunal ruling but China ignores it. You need US support but also depend on Chinese investment.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🇻🇳 Role C: Vietnam</h4>
+                            <p>You have the longest history of conflict with China and the most to lose. You claim the Paracel and Spratly Islands and have your own island-building program. You want a strong multilateral agreement but must balance your economic ties with China.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🇺🇸 Role D: United States (Observer)</h4>
+                            <p>You conduct "Freedom of Navigation" operations in the disputed waters. You have mutual defense treaties with the Philippines. You see China's expansion as a threat to the rules-based international order, but you are not a party to the territorial disputes.</p>
+                        </div>
+                    </div>
+                    <div class="decisions-question">
+                        <strong>Your Decision:</strong> Draft three key principles for a South China Sea Code of Conduct. How does the physical geography of the sea (shallow continental shelf, island chains, shipping lanes) shape each country's strategic interests? Can a geographic compromise be reached?
+                    </div>
+                </div>
+            </section>
 
+            <!-- Discussion & Reflection -->
+            <section id="discussion" class="section-container">
+                <h2>💬 Discussion & Reflection Prompts</h2>
+                <div class="discussion-box">
+                    <h3>Reflect on Your Learning</h3>
+                    <ol>
+                        <li><strong>The "East Asian Miracle":</strong> Japan, South Korea, Taiwan, and China all achieved rapid economic development through export-led manufacturing. What geographic factors (location, coastlines, labor supply) enabled this model? Why hasn't it worked the same way in every region?</li>
+                        <li><strong>One-Child Policy's Legacy:</strong> China's one-child policy (1980–2015) dramatically altered its population pyramid. What geographic and economic challenges does an aging, shrinking population create for a country of China's size?</li>
+                        <li><strong>The Hukou System:</strong> China's household registration system ties social services to birthplace, creating barriers to rural-urban migration. How does this geographic control mechanism shape urbanization patterns differently from other countries?</li>
+                    </ol>
+                    <h3>Discuss With Your Peers</h3>
+                    <ul>
+                        <li>Japan and South Korea are both island/peninsula nations with few natural resources, yet they became global economic powerhouses. How did their geographic position in the Pacific help them leverage trade relationships?</li>
+                        <li>North Korea is one of the most isolated countries on Earth. How does its mountainous terrain and geographic position between China and South Korea shape its political strategy of self-reliance (Juche)?</li>
+                        <li>China's Belt and Road Initiative is building infrastructure across Asia, Africa, and Europe. Is this modern economic geography, or a new form of geopolitical influence? How does geography determine which countries are most strategically important to China?</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Data Visualization -->
+            <section id="data-viz" class="section-container">
+                <h2>📊 Data Exploration: The East Asian Economic Miracle</h2>
+                <p>East Asia's economic transformation over the past 50 years is one of the most dramatic in human history. The chart below compares GDP per capita (purchasing power parity, USD) for East Asian nations alongside the global average. Notice how Japan, South Korea, and Taiwan — all resource-poor island/peninsula nations — achieved extraordinary prosperity through trade and manufacturing.</p>
+                <div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: var(--space-4) 0;">
+                    <canvas id="east-asia-gdp-chart" height="80"></canvas>
+                </div>
+                <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-2);"><strong>Interpretation:</strong> Japan and South Korea have GDP per capita comparable to Western Europe, despite having almost no natural resources. North Korea, with similar geography and resources to South Korea, has one of the world's lowest GDPs. What does this tell us about the role of political geography (economic systems, trade openness) vs. physical geography in determining prosperity?</p>
+            </section>
 
             <!-- 10. Knowledge Check (Quiz) -->
-
-
-
             <section id="quiz" class="section-container">
 
 
@@ -1766,21 +1823,42 @@
 
             });
 
-
-
         })();
 
-
-
     </script>
-
-
-
+    <script>
+        // East Asia GDP per Capita Chart
+        (function() {
+            const ctx = document.getElementById('east-asia-gdp-chart');
+            if (!ctx) return;
+            const gdps = [42000, 35000, 33000, 18000, 12000, 1800, 8800, 65000];
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Japan', 'South Korea', 'Taiwan', 'China', 'Malaysia', 'North Korea', 'Mongolia', 'Singapore*'],
+                    datasets: [{
+                        label: 'GDP per Capita (PPP, USD, 2023)',
+                        data: gdps,
+                        backgroundColor: gdps.map(v => v >= 30000 ? 'rgba(40,167,69,0.8)' : v >= 10000 ? 'rgba(255,193,7,0.8)' : 'rgba(220,53,69,0.8)'),
+                        borderColor: 'rgba(0,0,0,0.15)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { callbacks: { label: ctx => ` $${ctx.parsed.y.toLocaleString()} per capita` } }
+                    },
+                    scales: {
+                        y: { beginAtZero: true, title: { display: true, text: 'GDP per Capita (PPP, USD)' }, grid: { color: 'rgba(0,0,0,0.05)' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        })();
+    </script>
 </body>
-
-
-
-</html>
 
 
 

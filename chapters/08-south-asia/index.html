@@ -301,6 +301,67 @@
                 </div>
             </section>
 
+            <!-- Regional Decisions -->
+            <section id="regional-decisions" class="section-container">
+                <div class="regional-decisions-box">
+                    <div class="decisions-header">
+                        <span class="decisions-label">🗳️ Regional Decisions</span>
+                        <h2>The Kashmir Crisis: Diplomacy at the Himalayas</h2>
+                    </div>
+                    <p>Kashmir is one of the world's most dangerous flashpoints — a mountainous region claimed by both India and Pakistan (and partly by China), where three nuclear-armed nations share contested borders. A recent military skirmish has escalated tensions. You are part of an emergency diplomatic team tasked with de-escalation.</p>
+                    <div class="decisions-roles">
+                        <div class="role-card">
+                            <h4>🇮🇳 Role A: India</h4>
+                            <p>You consider Kashmir an integral part of India, enshrined in your constitution. You have the world's largest army and a growing economy. You see Pakistani support for militants as the core problem and demand it stop before any talks.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🇵🇰 Role B: Pakistan</h4>
+                            <p>You argue that the Muslim-majority population of Kashmir should have the right to self-determination, as promised in a 1948 UN resolution. You see Indian military presence as an occupation and demand a plebiscite.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🏔️ Role C: Kashmiri Civil Society</h4>
+                            <p>Your people have lived under military conflict for decades. You want peace, economic development, and autonomy — but you are divided between those who want independence, those who prefer India, and those who prefer Pakistan.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🌐 Role D: UN Security Council</h4>
+                            <p>You are deeply concerned about nuclear escalation. You must propose a framework for dialogue that all parties can accept, knowing that both India and Pakistan have nuclear weapons and that China is watching closely.</p>
+                        </div>
+                    </div>
+                    <div class="decisions-question">
+                        <strong>Your Decision:</strong> Draft a 3-point de-escalation plan. How does the physical geography of the Himalayas (high altitude, glaciers, river sources) make Kashmir strategically important beyond just politics? What geographic factors make a permanent resolution so difficult?
+                    </div>
+                </div>
+            </section>
+
+            <!-- Discussion & Reflection -->
+            <section id="discussion" class="section-container">
+                <h2>💬 Discussion & Reflection Prompts</h2>
+                <div class="discussion-box">
+                    <h3>Reflect on Your Learning</h3>
+                    <ol>
+                        <li><strong>The Monsoon's Double Edge:</strong> How can the same geographic phenomenon (the monsoon) be both a blessing and a curse for South Asian societies? Give specific examples from agriculture and disaster risk.</li>
+                        <li><strong>Partition's Legacy:</strong> The 1947 Partition of British India was one of the largest forced migrations in history. How do the borders drawn at that time continue to shape conflict and identity in South Asia today?</li>
+                        <li><strong>Demographic Dividend or Burden?</strong> South Asia has the world's largest youth population. Under what conditions does this become an economic advantage, and when does it become a source of instability?</li>
+                    </ol>
+                    <h3>Discuss With Your Peers</h3>
+                    <ul>
+                        <li>India and Bangladesh are both downstream nations on rivers that originate in the Himalayas. How does climate change (glacial melting) threaten their water security, and what does this mean for regional cooperation?</li>
+                        <li>The caste system has been officially illegal in India since 1950, yet it persists in social practice. How do geographic factors (rural isolation, land ownership patterns) help explain why social hierarchies are so difficult to dismantle?</li>
+                        <li>Sri Lanka, despite being a small island, has achieved much higher human development indicators than its larger neighbors. What geographic and historical factors might explain this?</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Data Visualization -->
+            <section id="data-viz" class="section-container">
+                <h2>📊 Data Exploration: South Asia's Population Giants</h2>
+                <p>South Asia is home to nearly 2 billion people — about 25% of humanity — in a region roughly the size of the United States. The chart below compares population size and population density across South Asian nations. Consider how the monsoon climate, river systems, and agricultural potential have shaped where people concentrate.</p>
+                <div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: var(--space-4) 0;">
+                    <canvas id="south-asia-pop-chart" height="80"></canvas>
+                </div>
+                <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-2);"><strong>Interpretation:</strong> Bangladesh has one of the world's highest population densities despite being a small, low-lying delta nation. How do the physical geography of the Ganges-Brahmaputra delta and the monsoon climate explain both why so many people live there — and why they face such extreme vulnerability to flooding and sea level rise?</p>
+            </section>
+
             <!-- 10. Knowledge Check (Quiz) -->
             <section id="quiz" class="section-container">
                 <h2>✅ Knowledge Check</h2>
@@ -464,6 +525,44 @@
             });
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+            });
+        })();
+    </script>
+    <script>
+        // South Asia Population Chart
+        (function() {
+            const ctx = document.getElementById('south-asia-pop-chart');
+            if (!ctx) return;
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['India', 'Pakistan', 'Bangladesh', 'Nepal', 'Sri Lanka', 'Afghanistan', 'Bhutan', 'Maldives'],
+                    datasets: [{
+                        label: 'Population (millions)',
+                        data: [1428, 231, 170, 30, 22, 40, 0.8, 0.5],
+                        backgroundColor: 'rgba(255,140,0,0.7)',
+                        borderColor: 'rgba(0,0,0,0.15)',
+                        borderWidth: 1,
+                        yAxisID: 'y'
+                    }, {
+                        label: 'Population Density (people/km²)',
+                        data: [464, 287, 1265, 204, 341, 58, 20, 1802],
+                        type: 'line',
+                        borderColor: 'rgba(220,53,69,0.9)',
+                        backgroundColor: 'rgba(220,53,69,0.1)',
+                        borderWidth: 2,
+                        pointRadius: 5,
+                        yAxisID: 'y2'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: { legend: { position: 'top' } },
+                    scales: {
+                        y: { beginAtZero: true, title: { display: true, text: 'Population (millions)' }, position: 'left' },
+                        y2: { beginAtZero: true, title: { display: true, text: 'Density (people/km²)' }, position: 'right', grid: { drawOnChartArea: false } }
+                    }
+                }
             });
         })();
     </script>

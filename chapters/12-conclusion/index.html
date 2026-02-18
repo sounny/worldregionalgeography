@@ -27,6 +27,7 @@
 
 
     <link rel="stylesheet" href="../../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 
 
 
@@ -844,10 +845,39 @@
 
 
 
+            <!-- Regional Decisions -->
+            <section id="regional-decisions" class="section-container">
+                <div class="regional-decisions-box">
+                    <div class="decisions-header">
+                        <span class="decisions-label">🗳️ Regional Decisions</span>
+                        <h2>The Global Goals Summit: Prioritizing Our Planet's Future</h2>
+                    </div>
+                    <p>The United Nations has convened an emergency summit. The world is off-track on nearly every Sustainable Development Goal (SDG). With limited global funding and political will, world leaders must decide which challenges to prioritize. You represent a world region and must advocate for the issues most critical to your people — while negotiating with regions that have very different priorities.</p>
+                    <div class="decisions-roles">
+                        <div class="role-card">
+                            <h4>🌍 Role A: Sub-Saharan Africa Bloc</h4>
+                            <p>Your region has the world's fastest-growing population, the youngest demographic, and the greatest need for investment in education, healthcare, and infrastructure. You argue that poverty eradication and food security must come before climate action — you cannot ask people to sacrifice development for a problem you didn't cause.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🌊 Role B: Small Island Developing States (SIDS)</h4>
+                            <p>Climate change is an existential threat to your nations right now — not in 2100. You demand immediate, binding emissions reductions from wealthy nations and a robust Loss and Damage fund. Every other development goal is meaningless if your islands disappear.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🏭 Role C: Emerging Economies (India, Brazil, Indonesia)</h4>
+                            <p>You represent billions of people who are just beginning to industrialize and lift themselves out of poverty. You argue that wealthy nations industrialized without restrictions for 200 years. You demand technology transfers and green financing before you will commit to emissions targets.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>💰 Role D: Wealthy Nations (EU, USA, Japan)</h4>
+                            <p>You provide most of the world's development aid and climate finance. You want binding commitments from all nations on emissions, democracy, and human rights as conditions for aid. You face domestic political pressure to prioritize your own citizens' needs first.</p>
+                        </div>
+                    </div>
+                    <div class="decisions-question">
+                        <strong>Your Decision:</strong> After debate, rank the top 3 global priorities your coalition will fund. How does geography — where a country is located, what resources it has, what climate it faces — determine which SDGs matter most to different world regions? Is there a truly "global" solution, or are all solutions inherently geographic?
+                    </div>
+                </div>
+            </section>
+
             <!-- 10. Knowledge Check (Quiz) -->
-
-
-
             <section id="quiz" class="section-container">
 
 
@@ -868,6 +898,16 @@
 
 
 
+            </section>
+
+            <!-- Data Visualization -->
+            <section id="data-viz" class="section-container">
+                <h2>📊 Data Exploration: Progress on the Sustainable Development Goals</h2>
+                <p>The United Nations' 17 Sustainable Development Goals (SDGs) provide a framework for measuring global progress. The chart below shows the percentage of countries "on track" to meet key SDGs by 2030. The picture is sobering — and deeply geographic, as progress varies enormously by world region.</p>
+                <div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: var(--space-4) 0;">
+                    <canvas id="sdg-progress-chart" height="80"></canvas>
+                </div>
+                <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-2);"><strong>Geographic Synthesis:</strong> Notice that SDG 7 (Clean Energy) and SDG 9 (Infrastructure) show the most progress, while SDG 14 (Ocean Life) and SDG 15 (Land Life) are falling furthest behind. How does the geographic distribution of economic power, natural resources, and climate vulnerability explain which goals are being met — and which are being ignored?</p>
             </section>
 
 
@@ -1418,22 +1458,42 @@
 
             });
 
-
-
         })();
-
-
-
     </script>
-
-
-
+    <script>
+        // SDG Progress Chart
+        (function() {
+            const ctx = document.getElementById('sdg-progress-chart');
+            if (!ctx) return;
+            const onTrack = [42, 28, 35, 38, 55, 60, 22, 18, 30, 25, 15, 12, 20, 8, 10, 32, 45];
+            const labels = ['SDG 1\nNo Poverty','SDG 2\nZero Hunger','SDG 3\nGood Health','SDG 4\nEducation','SDG 5\nGender Eq.','SDG 6\nClean Water','SDG 7\nClean Energy','SDG 8\nDec. Work','SDG 9\nInfrastructure','SDG 10\nInequality','SDG 11\nCities','SDG 12\nConsumption','SDG 13\nClimate','SDG 14\nOcean Life','SDG 15\nLand Life','SDG 16\nPeace','SDG 17\nPartnerships'];
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: '% of Countries On Track to Meet Goal by 2030',
+                        data: onTrack,
+                        backgroundColor: onTrack.map(v => v >= 50 ? 'rgba(40,167,69,0.8)' : v >= 30 ? 'rgba(255,193,7,0.8)' : 'rgba(220,53,69,0.8)'),
+                        borderColor: 'rgba(0,0,0,0.1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.y}% of countries on track` } }
+                    },
+                    scales: {
+                        y: { beginAtZero: true, max: 100, title: { display: true, text: '% On Track' }, grid: { color: 'rgba(0,0,0,0.05)' } },
+                        x: { grid: { display: false }, ticks: { font: { size: 10 } } }
+                    }
+                }
+            });
+        })();
+    </script>
 </body>
-
-
-
-</html>
-
 
 
 

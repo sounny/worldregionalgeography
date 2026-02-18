@@ -7,6 +7,7 @@
     <title>Chapter 5: Latin America | World Regional Geography</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="stylesheet" href="../../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 <body>
     <!-- Skip to Main Content Link (Accessibility) -->
@@ -227,6 +228,25 @@
                 <div class="inquiry-prompt">
                     <h3>🔍 Geographic Inquiry</h3>
                     <p>The Amazon rainforest functions as a "carbon sink," absorbing CO2 and regulating global weather patterns. Deforestation for cattle ranching and soy production has accelerated dramatically. If the Amazon passes a "tipping point" and transitions to savanna, what are the potential consequences for global climate? Who bears responsibility for protecting this shared resource?</p>
+                </div>
+            </section>
+
+            <!-- 4b. Data Visualization: Latin America at a Glance -->
+            <section id="data-viz" class="section-container">
+                <h2>📊 Data Visualization: Latin America at a Glance</h2>
+                <p>Analyze the following charts to understand two of Latin America's most pressing geographic challenges: environmental destruction and economic inequality. What patterns do you notice, and what geographic factors explain them?</p>
+
+                <div class="figure-row">
+                    <div style="background:#fff; border-radius:12px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex:1;">
+                        <h3 style="font-size:1rem; margin-bottom:1rem; color:var(--color-primary-dark);">Amazon Deforestation: Annual Forest Loss (km², Brazil)</h3>
+                        <canvas id="chart-deforestation" height="220" aria-label="Line chart showing Amazon deforestation rates from 2004 to 2023"></canvas>
+                        <p style="font-size:0.85rem; color:var(--color-text-light); margin-top:0.75rem;">💡 <em>Notice the dramatic drop after 2004 (Action Plan for Deforestation Prevention) and the spike after 2018. What political and economic events explain these shifts?</em></p>
+                    </div>
+                    <div style="background:#fff; border-radius:12px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex:1;">
+                        <h3 style="font-size:1rem; margin-bottom:1rem; color:var(--color-primary-dark);">GDP per Capita: Latin American Nations (USD, 2024 est.)</h3>
+                        <canvas id="chart-gdp-la" height="220" aria-label="Horizontal bar chart comparing GDP per capita across Latin American nations"></canvas>
+                        <p style="font-size:0.85rem; color:var(--color-text-light); margin-top:0.75rem;">💡 <em>The economic gap within Latin America is enormous. How do geography (landlocked vs. coastal), colonial history, and resource endowments explain these differences?</em></p>
+                    </div>
                 </div>
             </section>
 
@@ -567,11 +587,76 @@
                 </div>
             </section>
 
+            <!-- 9b. Regional Decisions Exercise -->
+            <section id="regional-decisions" class="section-container">
+                <div style="background: linear-gradient(135deg, #1a4a2a 0%, #2d8a4a 100%); border-radius: 16px; padding: 2rem; color: #fff;">
+                    <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
+                        <span style="font-size:2rem;">🎭</span>
+                        <div>
+                            <span style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; opacity:0.8;">Role-Play Exercise</span>
+                            <h2 style="margin:0; font-size:1.4rem;">Regional Decisions: The Amazon at a Crossroads</h2>
+                        </div>
+                    </div>
+                    <p style="opacity:0.9; margin-bottom:1.5rem;">Brazil contains approximately <strong>60% of the Amazon rainforest</strong> — a global carbon sink that regulates climate for the entire planet. Yet Brazil is also a developing nation with millions of citizens in poverty, and the Amazon's resources represent enormous economic potential. You are a delegate at an <strong>International Amazon Summit</strong>. Your task: negotiate a policy framework that addresses both environmental protection and economic development.</p>
+
+                    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-bottom:1.5rem;">
+                        <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:1rem;">
+                            <strong style="display:block; margin-bottom:0.4rem;">🌿 Role A: Brazilian Farmer</strong>
+                            <p style="font-size:0.88rem; opacity:0.9; margin:0;">Your family cleared forest land to grow soybeans. Brazil is now the world's #1 soy exporter. You argue that Brazil has the sovereign right to develop its own resources, just as Europe and North America did.</p>
+                        </div>
+                        <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:1rem;">
+                            <strong style="display:block; margin-bottom:0.4rem;">🌍 Role B: EU Climate Negotiator</strong>
+                            <p style="font-size:0.88rem; opacity:0.9; margin:0;">The Amazon absorbs CO2 that affects global temperatures. You represent nations that have already industrialized and now want to preserve the forest. You offer financial incentives for conservation.</p>
+                        </div>
+                        <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:1rem;">
+                            <strong style="display:block; margin-bottom:0.4rem;">🏹 Role C: Indigenous Leader</strong>
+                            <p style="font-size:0.88rem; opacity:0.9; margin:0;">Your people have lived in the Amazon for thousands of years. Deforestation destroys your homeland, culture, and food security. You demand legal recognition of Indigenous territories and veto power over development projects.</p>
+                        </div>
+                        <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:1rem;">
+                            <strong style="display:block; margin-bottom:0.4rem;">💼 Role D: Brazilian Development Minister</strong>
+                            <p style="font-size:0.88rem; opacity:0.9; margin:0;">30 million Brazilians live in poverty. The Amazon's timber, minerals, and agricultural land represent a path to development. You seek a "sustainable development" compromise that allows controlled extraction.</p>
+                        </div>
+                    </div>
+
+                    <div style="background:rgba(255,255,255,0.1); border-radius:10px; padding:1rem;">
+                        <strong style="display:block; margin-bottom:0.5rem;">📋 Discussion Questions:</strong>
+                        <ol style="margin:0; padding-left:1.2rem; opacity:0.9; font-size:0.9rem;">
+                            <li>Does Brazil have the right to develop the Amazon, even if it harms global climate? How does this relate to the concept of <em>environmental justice</em>?</li>
+                            <li>Wealthy nations industrialized by exploiting their own natural resources. Is it fair to now restrict developing nations from doing the same?</li>
+                            <li>What role should <em>payments for ecosystem services</em> (paying Brazil to preserve the forest) play in this negotiation? Who should pay, and how much?</li>
+                            <li>How does the geographic concept of a <em>commons</em> (a shared resource) apply to the Amazon? Can international law govern a nation's internal territory?</li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+
             <!-- 10. Knowledge Check (Quiz) -->
             <section id="quiz" class="section-container">
                 <h2>✅ Knowledge Check</h2>
                 <div id="quiz-container" class="quiz-wrapper">
                     <p class="loading">Loading quiz questions...</p>
+                </div>
+            </section>
+
+            <!-- 11. Discussion & Reflection -->
+            <section id="discussion" class="section-container">
+                <div style="background: #e6f4ea; border-left: 5px solid #34a853; border-radius: 0 12px 12px 0; padding: 1.5rem;">
+                    <h2 style="color: #1a4a2a; margin-top:0;">💬 Discussion &amp; Reflection</h2>
+                    <p style="color: #333;">Use these prompts to deepen your understanding and connect chapter concepts to your own experience and the broader world.</p>
+
+                    <h3 style="color: #1a4a2a; font-size:1rem; margin-top:1.25rem;">🪞 Personal Reflection</h3>
+                    <ol style="color:#333;">
+                        <li>Think about the foods you eat regularly — potatoes, tomatoes, chocolate, corn, chili peppers. These are all products of the <strong>Columbian Exchange</strong>. How has Latin America shaped your daily life in ways you may not have recognized?</li>
+                        <li>Latin America is home to the world's largest Catholic population, a legacy of Spanish and Portuguese colonization. How does religion function as a <em>cultural landscape</em> — shaping cities, holidays, and social norms?</li>
+                        <li>Many Latin American migrants send <strong>remittances</strong> home to their families. If you were living abroad, how would you feel about this responsibility? What does this tell us about the geographic connections between people and their home regions?</li>
+                    </ol>
+
+                    <h3 style="color: #1a4a2a; font-size:1rem; margin-top:1.25rem;">🗣️ Peer Discussion Starters</h3>
+                    <ol style="color:#333;">
+                        <li><strong>"Latin America is rich in resources but poor in outcomes."</strong> Do you agree with this statement? What geographic and historical factors explain the "resource curse" that affects many commodity-dependent economies?</li>
+                        <li>The Amazon rainforest is often called the "lungs of the Earth." But Brazil argues it has the sovereign right to develop its own territory. How should the international community balance national sovereignty with global environmental responsibility?</li>
+                        <li>Latin American cities like São Paulo and Mexico City are among the world's largest, yet they contain vast informal settlements (favelas, barrios). Is rapid urbanization a sign of development or a symptom of inequality — or both?</li>
+                    </ol>
                 </div>
             </section>
 
@@ -669,6 +754,89 @@
     <script src="../../js/regions-data.js"></script>
     <script src="../../js/quiz-engine.js"></script>
     <script src="../../js/main.js"></script>
+    <script>
+        // Chapter 5 Chart.js Visualizations
+        document.addEventListener('DOMContentLoaded', () => {
+            // Amazon Deforestation Chart (line)
+            const deforestCtx = document.getElementById('chart-deforestation');
+            if (deforestCtx && window.Chart) {
+                new Chart(deforestCtx, {
+                    type: 'line',
+                    data: {
+                        labels: ['2004','2006','2008','2010','2012','2014','2016','2018','2020','2022','2023'],
+                        datasets: [{
+                            label: 'Forest Loss (km²)',
+                            data: [27772, 14286, 12911, 7000, 4571, 4848, 7893, 7536, 11088, 11568, 9001],
+                            borderColor: 'rgba(220, 80, 50, 1)',
+                            backgroundColor: 'rgba(220, 80, 50, 0.12)',
+                            borderWidth: 2.5,
+                            pointBackgroundColor: 'rgba(220, 80, 50, 1)',
+                            pointRadius: 4,
+                            fill: true,
+                            tension: 0.3
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    label: ctx => ` ${ctx.raw.toLocaleString()} km²`
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                ticks: { callback: val => val.toLocaleString() + ' km²' }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // GDP per Capita Latin America (horizontal bar)
+            const gdpCtx = document.getElementById('chart-gdp-la');
+            if (gdpCtx && window.Chart) {
+                new Chart(gdpCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Chile', 'Uruguay', 'Argentina', 'Brazil', 'Mexico', 'Colombia', 'Peru', 'Bolivia', 'Haiti'],
+                        datasets: [{
+                            label: 'GDP per Capita (USD)',
+                            data: [16500, 17800, 13700, 10200, 11000, 7200, 7100, 3500, 1700],
+                            backgroundColor: [
+                                'rgba(74,144,164,0.85)','rgba(74,144,164,0.85)','rgba(74,144,164,0.75)',
+                                'rgba(74,144,164,0.65)','rgba(74,144,164,0.65)','rgba(251,188,5,0.8)',
+                                'rgba(251,188,5,0.7)','rgba(220,80,50,0.75)','rgba(220,80,50,0.85)'
+                            ],
+                            borderRadius: 5,
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: {
+                                callbacks: {
+                                    label: ctx => ` $${ctx.raw.toLocaleString()}`
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                ticks: { callback: val => '$' + (val/1000) + 'k' }
+                            }
+                        }
+                    }
+                });
+            }
+        });
+    </script>
     <script>
         // Initialize the Chapter 5 Interactive Map
         document.addEventListener('DOMContentLoaded', () => {

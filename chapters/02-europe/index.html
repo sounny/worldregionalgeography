@@ -7,6 +7,7 @@
     <title>Chapter 2: Europe | World Regional Geography</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <link rel="stylesheet" href="../../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 </head>
 <body>
     <!-- Skip to Main Content Link (Accessibility) -->
@@ -523,6 +524,48 @@
                 </div>
             </section>
 
+            <!-- 9a. Regional Decisions -->
+            <section id="regional-decisions" class="section-container">
+                <div class="regional-decisions-box">
+                    <div class="decisions-header">
+                        <span class="decisions-label">🗳️ Regional Decisions</span>
+                        <h2>Should a New Country Join the EU?</h2>
+                    </div>
+                    <p>You are a delegate at the European Council. A new Eastern European country has applied for EU membership. It has a young democracy, a struggling economy, and a large population eager for opportunity — but it also has high corruption levels and ongoing border disputes with a neighbor.</p>
+                    <div class="decisions-roles">
+                        <div class="role-card">
+                            <h4>🇩🇪 Role A: Germany (Net Contributor)</h4>
+                            <p>You pay more into the EU budget than you receive. You worry about the cost of supporting a poorer new member, but you also value expanding the single market.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🇵🇱 Role B: Poland (Recent Member)</h4>
+                            <p>You joined the EU in 2004 and benefited enormously from EU development funds. You strongly support enlargement as a path to stability and prosperity.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🇫🇷 Role C: France (Sovereignty Advocate)</h4>
+                            <p>You are cautious about further enlargement. You believe the EU must deepen integration among existing members before expanding, and you worry about immigration flows.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🌍 Role D: The Applicant Country</h4>
+                            <p>You see EU membership as your path to economic development, democratic stability, and security. You are willing to implement difficult reforms to qualify.</p>
+                        </div>
+                    </div>
+                    <div class="decisions-question">
+                        <strong>Your Decision:</strong> After debating from your assigned role, vote: Should the EU admit this new member? What conditions, if any, should be required? How does geography (location, size, resources) affect your decision?
+                    </div>
+                </div>
+            </section>
+
+            <!-- 9b. Data Visualization -->
+            <section id="data-viz" class="section-container">
+                <h2>📊 Data Exploration: Europe's Demographic Divide</h2>
+                <p>Europe's aging population crisis is unevenly distributed. Compare total fertility rates (children per woman) across major European nations. The <strong>replacement rate</strong> of 2.1 is shown as a reference line — any country below it faces long-term population decline without immigration.</p>
+                <div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: var(--space-4) 0;">
+                    <canvas id="europe-fertility-chart" height="80"></canvas>
+                </div>
+                <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-2);"><strong>Interpretation:</strong> Notice how Southern European nations (Italy, Spain) have the lowest fertility rates, while France and Ireland are closer to replacement level. How does this demographic data connect to debates about immigration policy and the future of the EU's workforce?</p>
+            </section>
+
             <!-- 9. Discussion & Reflection Prompts -->
             <section id="discussion" class="section-container">
                 <h2>💬 Discussion & Reflection Prompts</h2>
@@ -719,6 +762,48 @@
             });
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+            });
+        })();
+    </script>
+    <script>
+        // Europe Fertility Rate Chart
+        (function() {
+            const ctx = document.getElementById('europe-fertility-chart');
+            if (!ctx) return;
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Italy', 'Spain', 'Greece', 'Germany', 'Sweden', 'Netherlands', 'UK', 'France', 'Ireland'],
+                    datasets: [{
+                        label: 'Total Fertility Rate (children per woman, 2022)',
+                        data: [1.24, 1.19, 1.32, 1.46, 1.67, 1.55, 1.56, 1.80, 1.71],
+                        backgroundColor: [
+                            'rgba(220,53,69,0.7)','rgba(220,53,69,0.7)','rgba(220,53,69,0.7)',
+                            'rgba(255,193,7,0.7)','rgba(40,167,69,0.7)','rgba(40,167,69,0.7)',
+                            'rgba(255,193,7,0.7)','rgba(40,167,69,0.7)','rgba(40,167,69,0.7)'
+                        ],
+                        borderColor: 'rgba(0,0,0,0.2)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.y} children/woman` } },
+                        annotation: {}
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            min: 0.8,
+                            max: 2.5,
+                            title: { display: true, text: 'Children per Woman' },
+                            grid: { color: 'rgba(0,0,0,0.05)' }
+                        },
+                        x: { grid: { display: false } }
+                    }
+                }
             });
         })();
     </script>

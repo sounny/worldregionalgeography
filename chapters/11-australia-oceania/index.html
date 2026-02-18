@@ -27,6 +27,7 @@
 
 
     <link rel="stylesheet" href="../../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 
 
 
@@ -992,10 +993,49 @@
 
 
 
+            <!-- Regional Decisions -->
+            <section id="regional-decisions" class="section-container">
+                <div class="regional-decisions-box">
+                    <div class="decisions-header">
+                        <span class="decisions-label">🗳️ Regional Decisions</span>
+                        <h2>Sinking Islands: Climate Refugees and National Sovereignty</h2>
+                    </div>
+                    <p>Kiribati, Tuvalu, and the Marshall Islands are among the world's lowest-lying nations — their highest points barely 2 meters above sea level. Rising seas are already contaminating freshwater supplies, eroding coastlines, and making some islands uninhabitable. These nations face a question no country has ever faced before: what happens to a nation when its land disappears?</p>
+                    <div class="decisions-roles">
+                        <div class="role-card">
+                            <h4>🏝️ Role A: Kiribati Government</h4>
+                            <p>You have already purchased land in Fiji as a potential relocation site. But your people don't want to leave — their identity, culture, and ancestral connections are tied to these islands. You demand that major carbon-emitting nations pay for the damage they caused and fund your adaptation efforts.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🇦🇺 Role B: Australia</h4>
+                            <p>You are the region's largest economy and a major coal exporter. You have offered limited climate aid but resist binding emissions targets. You face pressure to accept Pacific climate refugees but worry about setting a precedent for mass migration.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🇳🇿 Role C: New Zealand</h4>
+                            <p>You have created a special visa category for Pacific climate migrants. You see yourself as a Pacific nation with obligations to your neighbors. You want Australia to do more and support stronger international climate finance mechanisms.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🌐 Role D: UN Climate Negotiator</h4>
+                            <p>You must address an unprecedented legal question: if a nation's territory disappears, does it retain its UN seat, its EEZ fishing rights, and its international legal status? You must propose a framework for "stateless nations" that the international community can accept.</p>
+                        </div>
+                    </div>
+                    <div class="decisions-question">
+                        <strong>Your Decision:</strong> Draft a Pacific Climate Compact. Should Australia and New Zealand accept climate refugees? Should island nations retain their EEZ rights even if their land disappears? How does the geography of the Pacific (vast ocean distances, tiny land areas) make this crisis uniquely challenging?
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Visualization -->
+            <section id="data-viz" class="section-container">
+                <h2>📊 Data Exploration: Sea Level Rise Threat Index</h2>
+                <p>The following chart shows the average elevation (in meters above sea level) of Pacific Island nations compared to projected sea level rise by 2100 under a high-emissions scenario (~1 meter). Nations whose average elevation approaches or falls below this threshold face existential risk.</p>
+                <div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: var(--space-4) 0;">
+                    <canvas id="pacific-elevation-chart" height="80"></canvas>
+                </div>
+                <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-2);"><strong>Interpretation:</strong> The red dashed line represents the projected 1-meter sea level rise by 2100. Nations below or near this line face the loss of habitable land. How does this data change your perspective on international climate negotiations?</p>
+            </section>
+
             <!-- 10. Knowledge Check (Quiz) -->
-
-
-
             <section id="quiz" class="section-container">
 
 
@@ -1629,9 +1669,52 @@
 
 
     </script>
-
-
-
+    <script>
+        // Pacific Island Elevation Chart
+        (function() {
+            const ctx = document.getElementById('pacific-elevation-chart');
+            if (!ctx) return;
+            const data = [2, 3, 2, 5, 8, 12, 18, 45, 80, 120];
+            const labels = ['Tuvalu', 'Kiribati', 'Marshall Is.', 'Maldives', 'Nauru', 'Palau', 'Micronesia', 'Samoa', 'Fiji', 'Papua NG'];
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Average Elevation (meters above sea level)',
+                        data: data,
+                        backgroundColor: data.map(v => v <= 5 ? 'rgba(220,53,69,0.8)' : v <= 15 ? 'rgba(255,193,7,0.8)' : 'rgba(40,167,69,0.8)'),
+                        borderColor: 'rgba(0,0,0,0.15)',
+                        borderWidth: 1
+                    }, {
+                        label: 'Projected Sea Level Rise by 2100 (1 meter)',
+                        data: new Array(labels.length).fill(1),
+                        type: 'line',
+                        borderColor: 'rgba(220,53,69,1)',
+                        borderWidth: 2,
+                        borderDash: [6,4],
+                        pointRadius: 0,
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'top' },
+                        tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.y}m elevation` } }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: { display: true, text: 'Meters above sea level' },
+                            grid: { color: 'rgba(0,0,0,0.05)' }
+                        },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        })();
+    </script>
 </body>
 
 

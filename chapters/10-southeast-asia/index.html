@@ -1140,14 +1140,58 @@
 
 
 
+            <!-- Regional Decisions -->
+            <section id="regional-decisions" class="section-container">
+                <div class="regional-decisions-box">
+                    <div class="decisions-header">
+                        <span class="decisions-label">🗳️ Regional Decisions</span>
+                        <h2>The Mekong River: Dams, Fish, and Downstream Nations</h2>
+                    </div>
+                    <p>The Mekong River flows 4,350 km from the Tibetan Plateau through China, Myanmar, Laos, Thailand, Cambodia, and Vietnam before emptying into the South China Sea. China has built 11 mega-dams on the upper Mekong, and Laos is building more. These dams generate electricity and revenue — but they are devastating fish populations and altering flood cycles that millions of downstream farmers depend on.</p>
+                    <div class="decisions-roles">
+                        <div class="role-card">
+                            <h4>🇱🇦 Role A: Laos ("Battery of Southeast Asia")</h4>
+                            <p>You are one of the poorest countries in the region. Selling hydroelectric power to Thailand and China is your path to development. You argue that your dams are built to international safety standards and that your right to develop your own rivers cannot be denied.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🇰🇭 Role B: Cambodia</h4>
+                            <p>The Tonle Sap Lake — the heart of your food security — is fed by the Mekong's seasonal flood pulse. Upstream dams are disrupting this cycle, devastating fish catches that feed 80% of your population's protein needs. You demand compensation and flow guarantees.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🇻🇳 Role C: Vietnam (Mekong Delta)</h4>
+                            <p>Your Mekong Delta produces half of Vietnam's rice and most of its seafood exports. Reduced sediment flow from upstream dams is causing the delta to sink and saltwater to intrude into farmland. You want binding international agreements on dam operations.</p>
+                        </div>
+                        <div class="role-card">
+                            <h4>🌐 Role D: Mekong River Commission</h4>
+                            <p>You are the regional body tasked with managing the shared river. You have data but no enforcement power. You must propose a framework that balances upstream development rights with downstream survival needs — knowing that China, the most powerful upstream actor, is not a full member.</p>
+                        </div>
+                    </div>
+                    <div class="decisions-question">
+                        <strong>Your Decision:</strong> Propose a Mekong River Management Framework. What minimum water flows should be guaranteed? Should upstream nations pay compensation to downstream nations? How does the physical geography of the river (gradient, tributaries, delta) create inherent power imbalances between upstream and downstream nations?
+                    </div>
+                </div>
+            </section>
 
-
-
+            <!-- Discussion & Reflection -->
+            <section id="discussion" class="section-container">
+                <h2>💬 Discussion & Reflection Prompts</h2>
+                <div class="discussion-box">
+                    <h3>Reflect on Your Learning</h3>
+                    <ol>
+                        <li><strong>ASEAN's Limits:</strong> ASEAN operates on the principle of non-interference in member states' internal affairs. How does this geographic and political principle both enable cooperation and prevent the bloc from addressing human rights abuses or territorial disputes?</li>
+                        <li><strong>Archipelago Geography:</strong> Southeast Asia is the world's largest archipelago region. How does being divided into thousands of islands shape national identity, language diversity, and the challenges of governance in countries like Indonesia and the Philippines?</li>
+                        <li><strong>Deforestation and Palm Oil:</strong> Indonesia and Malaysia produce 85% of the world's palm oil. How does the geography of tropical rainforests create both economic opportunity and environmental destruction? Who bears the cost?</li>
+                    </ol>
+                    <h3>Discuss With Your Peers</h3>
+                    <ul>
+                        <li>Singapore is a tiny city-state with no natural resources, yet it has one of the highest GDPs per capita in the world. How did its geographic position at the tip of the Malay Peninsula make it the world's busiest port and a global financial center?</li>
+                        <li>Vietnam fought wars against France, the United States, and China, yet today it is one of the fastest-growing economies in Asia with strong trade ties to all three. How does geography (long coastline, strategic location) explain this economic transformation?</li>
+                        <li>Myanmar's military coup in 2021 triggered a civil war. How does the country's geography — ethnic minorities controlling border regions, mountainous terrain, and proximity to China — shape the conflict and international responses to it?</li>
+                    </ul>
+                </div>
+            </section>
 
             <!-- 10. Knowledge Check (Quiz) -->
-
-
-
             <section id="quiz" class="section-container">
 
 
@@ -1175,6 +1219,16 @@
 
 
 
+
+             <!-- Data Visualization -->
+            <section id="data-viz" class="section-container">
+                <h2>📊 Data Exploration: Deforestation in Southeast Asia</h2>
+                <p>Southeast Asia has some of the world's highest deforestation rates, driven by palm oil, timber, and agricultural expansion. The chart below shows forest cover loss (% of original forest remaining) for major Southeast Asian nations. This data connects directly to biodiversity loss, carbon emissions, and the livelihoods of millions of forest-dependent communities.</p>
+                <div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: var(--space-4) 0;">
+                    <canvas id="sea-forest-chart" height="80"></canvas>
+                </div>
+                <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-2);"><strong>Interpretation:</strong> Indonesia and Malaysia have lost the largest share of their original forest cover. How does the geography of tropical rainforests — concentrated in island and equatorial regions — make them both ecologically irreplaceable and economically tempting to exploit? Who benefits and who bears the cost?</p>
+            </section>
 
              <!-- Navigation -->
 
@@ -1802,22 +1856,44 @@
 
             });
 
-
-
         })();
 
-
-
     </script>
-
-
-
+    <script>
+        // Southeast Asia Deforestation Chart
+        (function() {
+            const ctx = document.getElementById('sea-forest-chart');
+            if (!ctx) return;
+            const remaining = [48, 52, 62, 70, 75, 80, 85, 88, 90, 92];
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Indonesia', 'Malaysia', 'Philippines', 'Myanmar', 'Thailand', 'Cambodia', 'Laos', 'Vietnam', 'Singapore', 'Brunei'],
+                    datasets: [{
+                        label: '% of Original Forest Cover Remaining',
+                        data: remaining,
+                        backgroundColor: remaining.map(v => v < 55 ? 'rgba(220,53,69,0.8)' : v < 75 ? 'rgba(255,193,7,0.8)' : 'rgba(40,167,69,0.8)'),
+                        borderColor: 'rgba(0,0,0,0.15)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.y}% of original forest remaining` } }
+                    },
+                    scales: {
+                        y: { beginAtZero: true, max: 100, title: { display: true, text: '% Forest Cover Remaining' }, grid: { color: 'rgba(0,0,0,0.05)' } },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+        })();
+    </script>
 </body>
 
-
-
 </html>
-
 
 
 
