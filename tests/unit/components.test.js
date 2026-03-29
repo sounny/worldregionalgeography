@@ -25,6 +25,7 @@ class MockElement {
         this.id = '';
         this._className = '';
         this.textContent = '';
+        this.style = {};
     }
 
     get className() { return this._className; }
@@ -40,6 +41,7 @@ class MockElement {
 
     setAttribute(name, value) { this.attributes[name] = String(value); }
     getAttribute(name) { return this.attributes[name] || null; }
+    hasAttribute(name) { return name in this.attributes; }
     addEventListener(event, callback) {
         if (!this.listeners[event]) this.listeners[event] = [];
         this.listeners[event].push(callback);
@@ -62,16 +64,35 @@ class MockElement {
         }
         return null;
     }
+    closest(selector) {
+        if (selector === '.term-highlight' && this.classList.contains('term-highlight')) {
+            return this;
+        }
+        return null;
+    }
+    contains(element) {
+        return this.children.includes(element);
+    }
     appendChild(child) {
         this.children.push(child);
         child.parentNode = this;
     }
 }
 
+global.window = {
+    innerWidth: 1024,
+    innerHeight: 768
+};
+
 global.document = {
     elements: [],
+    body: new MockElement('body'),
+    documentElement: { scrollTop: 0, scrollLeft: 0 },
     createElement(tagName) {
         return new MockElement(tagName);
+    },
+    getElementById(id) {
+        return this.elements.find(el => el.id === id) || null;
     },
     querySelectorAll(selector) {
         if (selector === '.texas-toggle') {
@@ -150,31 +171,57 @@ test('Components Module - initAccordions', (t) => {
 });
 
 test('Components Module - initKeyTerms', (t) => {
+    // Note: initKeyTerms was refactored in js/modules/components.js to use event delegation
+    // and a single tooltip element, rather than individual tooltips per term.
+
+    // Reset body dataset so it initializes
+    document.body.dataset = {};
+    document.body.children = [];
+    document.body.listeners = {};
+    document.elements = [];
+
     const term = new MockElement();
     term.classList.add('term-highlight');
     term.dataset.definition = 'Test definition';
+
+    // Add getBoundingClientRect for positioning logic
+    term.getBoundingClientRect = () => ({ top: 100, left: 100, width: 50, height: 20 });
 
     document.elements = [term];
 
     Components.initKeyTerms();
 
-    const tooltip = term.children.find(child => child.classList.contains('term-tooltip'));
-    assert.ok(tooltip);
+    // Verify shared tooltip was created
+    const tooltip = document.body.children.find(child => child.id === 'shared-term-tooltip');
+    assert.ok(tooltip, 'Shared tooltip should be created');
+    assert.ok(tooltip.classList.contains('term-tooltip'));
+
+    // Need a special dispatch for event delegation
+    const dispatchDelegatedEvent = (eventName, targetEl) => {
+        if (document.body.listeners[eventName]) {
+            document.body.listeners[eventName].forEach(cb => {
+                cb({
+                    type: eventName,
+                    target: targetEl
+                });
+            });
+        }
+    };
+
+    // Test mouseover
+    dispatchDelegatedEvent('mouseover', term);
+    assert.ok(tooltip.classList.contains('visible'));
     assert.strictEqual(tooltip.textContent, 'Test definition');
 
-    // Test mouseenter
-    term.dispatchEvent('mouseenter');
-    assert.ok(tooltip.classList.contains('visible'));
-
-    // Test mouseleave
-    term.dispatchEvent('mouseleave');
+    // Test mouseout
+    dispatchDelegatedEvent('mouseout', term);
     assert.ok(!tooltip.classList.contains('visible'));
 
-    // Test focus
-    term.dispatchEvent('focus');
+    // Test focusin
+    dispatchDelegatedEvent('focusin', term);
     assert.ok(tooltip.classList.contains('visible'));
 
-    // Test blur
-    term.dispatchEvent('blur');
+    // Test focusout
+    dispatchDelegatedEvent('focusout', term);
     assert.ok(!tooltip.classList.contains('visible'));
 });
