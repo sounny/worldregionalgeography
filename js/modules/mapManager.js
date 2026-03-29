@@ -215,12 +215,26 @@ const MapManager = {
             const data = regionalData[id];
             if (!data || !infoPanel) return;
 
-            infoPanel.innerHTML = `
-                <span class="theme-badge">${data.theme}</span>
-                <h3>${data.name}</h3>
-                <p>${data.desc}</p>
-                <a href="${data.link}" class="btn btn-primary btn-go">View Chapter ➜</a>
-            `;
+            infoPanel.innerHTML = ''; // Clear previous content
+
+            const badge = document.createElement('span');
+            badge.className = 'theme-badge';
+            badge.textContent = data.theme || '';
+            infoPanel.appendChild(badge);
+
+            const title = document.createElement('h3');
+            title.textContent = data.name;
+            infoPanel.appendChild(title);
+
+            const desc = document.createElement('p');
+            desc.textContent = data.desc || '';
+            infoPanel.appendChild(desc);
+
+            const link = document.createElement('a');
+            link.href = data.link || '#';
+            link.className = 'btn btn-primary btn-go';
+            link.textContent = 'View Chapter ➜';
+            infoPanel.appendChild(link);
             
             // Add a nice fade-in animation
             infoPanel.style.animation = 'none';
