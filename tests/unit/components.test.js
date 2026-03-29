@@ -24,7 +24,7 @@ class MockElement {
         this.dataset = {};
         this.id = '';
         this._className = '';
-        this.textContent = '';
+        this.textContent = ''; this.style = {};
     }
 
     get className() { return this._className; }
@@ -40,6 +40,7 @@ class MockElement {
 
     setAttribute(name, value) { this.attributes[name] = String(value); }
     getAttribute(name) { return this.attributes[name] || null; }
+    hasAttribute(name) { return Object.prototype.hasOwnProperty.call(this.attributes, name); }
     addEventListener(event, callback) {
         if (!this.listeners[event]) this.listeners[event] = [];
         this.listeners[event].push(callback);
@@ -73,6 +74,13 @@ global.document = {
     createElement(tagName) {
         return new MockElement(tagName);
     },
+    getElementById(id) {
+        return this.elements.find(el => el.id === id) || null;
+    },
+    body: Object.assign(new MockElement('body'), {
+        dataset: {},
+        appendChild(child) { this.children.push(child); child.parentNode = this; }
+    }),
     querySelectorAll(selector) {
         if (selector === '.texas-toggle') {
             return this.elements.filter(el => el.classList.contains('texas-toggle'));
@@ -154,27 +162,27 @@ test('Components Module - initKeyTerms', (t) => {
     term.classList.add('term-highlight');
     term.dataset.definition = 'Test definition';
 
-    document.elements = [term];
+    document.body.children = []; document.elements = [term]; term.getBoundingClientRect = () => ({ top: 10, left: 10, width: 100, height: 20 }); global.window = { pageYOffset: 0, pageXOffset: 0 }; document.documentElement = { scrollTop: 0, scrollLeft: 0 }; term.contains = () => false; document.body.dispatchEvent = function(event) { if (this.listeners[event.type]) { this.listeners[event.type].forEach(cb => cb(event)); } }; term.closest = (sel) => sel === '.term-highlight' ? term : null;
 
     Components.initKeyTerms();
 
-    const tooltip = term.children.find(child => child.classList.contains('term-tooltip'));
+    const tooltip = document.body.children.find(child => child.id === 'shared-term-tooltip');
     assert.ok(tooltip);
-    assert.strictEqual(tooltip.textContent, 'Test definition');
+    // tooltip content set later on mouseover
 
     // Test mouseenter
-    term.dispatchEvent('mouseenter');
-    assert.ok(tooltip.classList.contains('visible'));
+    document.body.dispatchEvent({ type: 'mouseover', target: term });
+    assert.ok(tooltip.classList.contains('visible')); assert.strictEqual(tooltip.textContent, 'Test definition');
 
     // Test mouseleave
-    term.dispatchEvent('mouseleave');
+    document.body.dispatchEvent({ type: 'mouseout', target: term, relatedTarget: null });
     assert.ok(!tooltip.classList.contains('visible'));
 
     // Test focus
-    term.dispatchEvent('focus');
+    document.body.dispatchEvent({ type: 'focusin', target: term });
     assert.ok(tooltip.classList.contains('visible'));
 
     // Test blur
-    term.dispatchEvent('blur');
+    document.body.dispatchEvent({ type: 'focusout', target: term, relatedTarget: null });
     assert.ok(!tooltip.classList.contains('visible'));
 });
