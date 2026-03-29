@@ -23,10 +23,10 @@ const MapManager = {
             maxZoom: 19
         }).addTo(map);
 
-        // Define world regions with approximate bounds
+        // Shared configuration for world regions (mirrors MAP_REGIONS in js/main.js)
         const regions = [
             { name: 'Europe', center: [50, 10], color: '#2d8fa8' },
-            { name: 'Russia', center: [60, 100], color: '#1e5f74' },
+            { name: 'Russia and Central Asia', center: [60, 100], color: '#1e5f74' },
             { name: 'North America', center: [45, -100], color: '#f4a261' },
             { name: 'Latin America', center: [-15, -60], color: '#e07b3c' },
             { name: 'Sub-Saharan Africa', center: [0, 20], color: '#2a9d8f' },
