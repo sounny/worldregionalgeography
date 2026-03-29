@@ -212,6 +212,20 @@ function initNavigation() {
 // Preview Map (Home Page)
 // =====================================================
 
+// Shared world regions configuration for map initializations
+const MAP_REGIONS = [
+    { name: 'Europe', center: [50, 10], url: 'chapters/02-europe/index.html', color: '#2d8fa8' },
+    { name: 'Russia and Central Asia', center: [60, 100], url: 'chapters/03-russia/index.html', color: '#1e5f74' },
+    { name: 'North America', center: [45, -100], url: 'chapters/04-north-america/index.html', color: '#f4a261' },
+    { name: 'Latin America', center: [-15, -60], url: 'chapters/05-latin-america/index.html', color: '#e07b3c' },
+    { name: 'Sub-Saharan Africa', center: [0, 20], url: 'chapters/06-sub-saharan-africa/index.html', color: '#2a9d8f' },
+    { name: 'North Africa & SW Asia', center: [28, 30], url: 'chapters/07-north-africa-sw-asia/index.html', color: '#40c9b8' },
+    { name: 'South Asia', center: [22, 78], url: 'chapters/08-south-asia/index.html', color: '#e76f51' },
+    { name: 'East Asia', center: [35, 115], url: 'chapters/09-east-asia/index.html', color: '#264653' },
+    { name: 'Southeast Asia', center: [5, 115], url: 'chapters/10-southeast-asia/index.html', color: '#287271' },
+    { name: 'Australia & Oceania', center: [-25, 140], url: 'chapters/11-australia-oceania/index.html', color: '#8ab17d' }
+];
+
 /**
  * Initialize the global map on the main home page
  */
@@ -228,22 +242,9 @@ function initGlobalMap() {
             attribution: '© OpenStreetMap © CARTO'
         }).addTo(map);
 
-        // Add region markers
-        const regions = [
-            { name: 'Europe', coords: [50, 10], url: 'chapters/02-europe/index.html' },
-            { name: 'Russia and Central Asia', coords: [60, 100], url: 'chapters/03-russia/index.html' },
-            { name: 'North America', coords: [40, -100], url: 'chapters/04-north-america/index.html' },
-            { name: 'Latin America', coords: [-10, -60], url: 'chapters/05-latin-america/index.html' },
-            { name: 'Sub-Saharan Africa', coords: [0, 20], url: 'chapters/06-sub-saharan-africa/index.html' },
-            { name: 'Middle East', coords: [25, 45], url: 'chapters/07-north-africa-sw-asia/index.html' },
-            { name: 'South Asia', coords: [20, 78], url: 'chapters/08-south-asia/index.html' },
-            { name: 'East Asia', coords: [35, 105], url: 'chapters/09-east-asia/index.html' },
-            { name: 'Southeast Asia', coords: [5, 115], url: 'chapters/10-southeast-asia/index.html' },
-            { name: 'Oceania', coords: [-25, 135], url: 'chapters/11-australia-oceania/index.html' }
-        ];
-
-        regions.forEach(region => {
-            L.circleMarker(region.coords, {
+        // Add region markers using shared configuration
+        MAP_REGIONS.forEach(region => {
+            L.circleMarker(region.center, {
                 radius: 12,
                 fillColor: '#3b82f6',
                 color: '#fff',
@@ -277,22 +278,8 @@ function initPreviewMap() {
         maxZoom: 19
     }).addTo(map);
 
-    // Define world regions with approximate bounds
-    const regions = [
-        { name: 'Europe', center: [50, 10], color: '#2d8fa8' },
-        { name: 'Russia and Central Asia', center: [60, 100], color: '#1e5f74' },
-        { name: 'North America', center: [45, -100], color: '#f4a261' },
-        { name: 'Latin America', center: [-15, -60], color: '#e07b3c' },
-        { name: 'Sub-Saharan Africa', center: [0, 20], color: '#2a9d8f' },
-        { name: 'North Africa & SW Asia', center: [28, 30], color: '#40c9b8' },
-        { name: 'South Asia', center: [22, 78], color: '#e76f51' },
-        { name: 'East Asia', center: [35, 115], color: '#264653' },
-        { name: 'Southeast Asia', center: [5, 115], color: '#287271' },
-        { name: 'Australia & Oceania', center: [-25, 140], color: '#8ab17d' }
-    ];
-
-    // Add markers for each region
-    regions.forEach(region => {
+    // Add markers for each region using shared configuration
+    MAP_REGIONS.forEach(region => {
         const marker = L.circleMarker(region.center, {
             radius: 12,
             fillColor: region.color,

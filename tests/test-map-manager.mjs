@@ -69,7 +69,8 @@ const mockL = {
         return layer;
     }),
     geoJSON: mock.fn(() => createMockLayer()),
-    featureGroup: mock.fn(() => createMockLayer())
+    featureGroup: mock.fn(() => createMockLayer()),
+    layerGroup: mock.fn(() => createMockLayer())
 };
 
 global.L = mockL;
