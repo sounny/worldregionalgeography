@@ -25,6 +25,7 @@ class MockElement {
         this.id = '';
         this._className = '';
         this.textContent = '';
+        this.style = {};
     }
 
     get className() { return this._className; }
@@ -33,6 +34,14 @@ class MockElement {
         this.classList.classes.clear();
         val.split(/\s+/).filter(Boolean).forEach(cls => this.classList.classes.add(cls));
     }
+
+    hasAttribute(name) { return name in this.attributes; }
+
+    closest(selector) { return this.classList.contains(selector.slice(1)) || this.tagName.toLowerCase() === selector ? this : null; }
+
+    contains(element) { return this.children.includes(element); }
+
+    getBoundingClientRect() { return { top: 0, left: 0, width: 100, height: 20 }; }
 
     click() {
         this.dispatchEvent('click');
@@ -49,7 +58,7 @@ class MockElement {
         if (this.listeners[eventName]) {
             this.listeners[eventName].forEach(cb => cb({
                 type: eventName,
-                target: this,
+                target: event.target || this,
                 key: event.key,
                 preventDefault: () => {}
             }));
@@ -68,11 +77,16 @@ class MockElement {
     }
 }
 
+global.window = { innerWidth: 1024, innerHeight: 768, scrollX: 0, scrollY: 0 };
+
 global.document = {
+    documentElement: { scrollTop: 0, scrollLeft: 0 },
+    body: new MockElement("body"),
     elements: [],
     createElement(tagName) {
         return new MockElement(tagName);
     },
+    getElementById(id) { return this.elements.find(el => el.id === id) || null; },
     querySelectorAll(selector) {
         if (selector === '.texas-toggle') {
             return this.elements.filter(el => el.classList.contains('texas-toggle'));
@@ -150,6 +164,9 @@ test('Components Module - initAccordions', (t) => {
 });
 
 test('Components Module - initKeyTerms', (t) => {
+    // Reset dataset initialized state for test
+    delete document.body.dataset.keyTermsInitialized;
+
     const term = new MockElement();
     term.classList.add('term-highlight');
     term.dataset.definition = 'Test definition';
@@ -158,23 +175,23 @@ test('Components Module - initKeyTerms', (t) => {
 
     Components.initKeyTerms();
 
-    const tooltip = term.children.find(child => child.classList.contains('term-tooltip'));
+    const tooltip = document.body.children.find(child => child.id === 'shared-term-tooltip');
     assert.ok(tooltip);
-    assert.strictEqual(tooltip.textContent, 'Test definition');
 
-    // Test mouseenter
-    term.dispatchEvent('mouseenter');
+    // Test mouseover
+    document.body.dispatchEvent({ type: 'mouseover', target: term });
+    assert.strictEqual(tooltip.textContent, 'Test definition');
     assert.ok(tooltip.classList.contains('visible'));
 
-    // Test mouseleave
-    term.dispatchEvent('mouseleave');
+    // Test mouseout
+    document.body.dispatchEvent({ type: 'mouseout', target: term });
     assert.ok(!tooltip.classList.contains('visible'));
 
-    // Test focus
-    term.dispatchEvent('focus');
+    // Test focusin
+    document.body.dispatchEvent({ type: 'focusin', target: term });
     assert.ok(tooltip.classList.contains('visible'));
 
-    // Test blur
-    term.dispatchEvent('blur');
+    // Test focusout
+    document.body.dispatchEvent({ type: 'focusout', target: term });
     assert.ok(!tooltip.classList.contains('visible'));
 });
