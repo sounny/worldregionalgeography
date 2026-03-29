@@ -25,6 +25,8 @@ class MockElement {
         this.id = '';
         this._className = '';
         this.textContent = '';
+        this.style = {};
+        this.parentNode = null;
     }
 
     get className() { return this._className; }
@@ -38,21 +40,36 @@ class MockElement {
         this.dispatchEvent('click');
     }
 
+    focus() {
+        this.dispatchEvent('focus');
+    }
+
     setAttribute(name, value) { this.attributes[name] = String(value); }
     getAttribute(name) { return this.attributes[name] || null; }
+    hasAttribute(name) { return name in this.attributes; }
     addEventListener(event, callback) {
         if (!this.listeners[event]) this.listeners[event] = [];
         this.listeners[event].push(callback);
     }
     dispatchEvent(event) {
         const eventName = typeof event === 'string' ? event : event.type;
+        const target = this;
+        const eventObj = {
+            type: eventName,
+            target: target,
+            relatedTarget: event.relatedTarget || null,
+            key: event.key,
+            preventDefault: () => {}
+        };
         if (this.listeners[eventName]) {
-            this.listeners[eventName].forEach(cb => cb({
-                type: eventName,
-                target: this,
-                key: event.key,
-                preventDefault: () => {}
-            }));
+            this.listeners[eventName].forEach(cb => cb(eventObj));
+        }
+        // Bubble to document.body for delegation
+        if (eventName !== 'mouseenter' && eventName !== 'mouseleave' && global.document && global.document.body && this !== global.document.body) {
+            // Manually trigger listeners on body to simulate delegation
+            if (global.document.body.listeners[eventName]) {
+                global.document.body.listeners[eventName].forEach(cb => cb(eventObj));
+            }
         }
     }
     querySelector(selector) {
@@ -60,18 +77,55 @@ class MockElement {
             const cls = selector.slice(1);
             return this.children.find(child => child.classList.contains(cls)) || null;
         }
+        if (selector.startsWith('#')) {
+            const id = selector.slice(1);
+            return this.children.find(child => child.id === id) || null;
+        }
         return null;
     }
     appendChild(child) {
         this.children.push(child);
         child.parentNode = this;
     }
+    closest(selector) {
+        if (selector.startsWith('.')) {
+            const cls = selector.slice(1);
+            if (this.classList.contains(cls)) return this;
+        }
+        if (selector.startsWith('#')) {
+            const id = selector.slice(1);
+            if (this.id === id) return this;
+        }
+        return this.parentNode ? this.parentNode.closest(selector) : null;
+    }
+    contains(other) {
+        if (this === other) return true;
+        return this.children.some(child => child.contains(other));
+    }
+    getBoundingClientRect() {
+        return { top: 100, left: 100, width: 50, height: 20 };
+    }
 }
+
+global.window = {
+    pageYOffset: 0,
+    pageXOffset: 0
+};
 
 global.document = {
     elements: [],
+    body: new MockElement('body'),
+    documentElement: { scrollTop: 0, scrollLeft: 0 },
     createElement(tagName) {
-        return new MockElement(tagName);
+        const el = new MockElement(tagName);
+        this.elements.push(el);
+        return el;
+    },
+    getElementById(id) {
+        if (id === 'shared-term-tooltip') {
+            return this.body.children.find(child => child.id === id) || null;
+        }
+        return this.elements.find(el => el.id === id) || null;
     },
     querySelectorAll(selector) {
         if (selector === '.texas-toggle') {
@@ -155,26 +209,27 @@ test('Components Module - initKeyTerms', (t) => {
     term.dataset.definition = 'Test definition';
 
     document.elements = [term];
+    document.body.appendChild(term);
 
     Components.initKeyTerms();
 
-    const tooltip = term.children.find(child => child.classList.contains('term-tooltip'));
+    const tooltip = document.getElementById('shared-term-tooltip');
     assert.ok(tooltip);
-    assert.strictEqual(tooltip.textContent, 'Test definition');
 
     // Test mouseenter
-    term.dispatchEvent('mouseenter');
+    term.dispatchEvent('mouseover');
+    assert.strictEqual(tooltip.textContent, 'Test definition');
     assert.ok(tooltip.classList.contains('visible'));
 
     // Test mouseleave
-    term.dispatchEvent('mouseleave');
+    term.dispatchEvent({ type: 'mouseout', relatedTarget: new MockElement('div') });
     assert.ok(!tooltip.classList.contains('visible'));
 
     // Test focus
-    term.dispatchEvent('focus');
+    term.dispatchEvent('focusin');
     assert.ok(tooltip.classList.contains('visible'));
 
     // Test blur
-    term.dispatchEvent('blur');
+    term.dispatchEvent('focusout');
     assert.ok(!tooltip.classList.contains('visible'));
 });
