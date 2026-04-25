@@ -25,6 +25,8 @@ class MockElement {
         this.id = '';
         this._className = '';
         this.textContent = '';
+        this.style = {};
+        this.offsetHeight = 0;
     }
 
     get className() { return this._className; }
@@ -40,16 +42,32 @@ class MockElement {
 
     setAttribute(name, value) { this.attributes[name] = String(value); }
     getAttribute(name) { return this.attributes[name] || null; }
+    hasAttribute(name) { return name in this.attributes; }
     addEventListener(event, callback) {
         if (!this.listeners[event]) this.listeners[event] = [];
         this.listeners[event].push(callback);
     }
+    closest(selector) {
+        if (selector.startsWith('.')) {
+            const cls = selector.slice(1);
+            if (this.classList.contains(cls)) return this;
+        }
+        return null;
+    }
+    contains(other) {
+        return this === other || this.children.includes(other);
+    }
+    getBoundingClientRect() {
+        return { top: 0, left: 0, bottom: 0, right: 0, width: 0, height: 0 };
+    }
     dispatchEvent(event) {
         const eventName = typeof event === 'string' ? event : event.type;
+        const target = event.target || this;
         if (this.listeners[eventName]) {
             this.listeners[eventName].forEach(cb => cb({
                 type: eventName,
-                target: this,
+                target: target,
+                relatedTarget: event.relatedTarget || null,
                 key: event.key,
                 preventDefault: () => {}
             }));
@@ -68,10 +86,23 @@ class MockElement {
     }
 }
 
+global.window = {
+    pageYOffset: 0,
+    pageXOffset: 0
+};
+
 global.document = {
     elements: [],
+    body: new MockElement('body'),
+    documentElement: { scrollTop: 0, scrollLeft: 0 },
     createElement(tagName) {
         return new MockElement(tagName);
+    },
+    getElementById(id) {
+        if (id === 'shared-term-tooltip') {
+            return this.body.children.find(child => child.id === id) || null;
+        }
+        return this.elements.find(el => el.id === id) || null;
     },
     querySelectorAll(selector) {
         if (selector === '.texas-toggle') {
@@ -158,23 +189,23 @@ test('Components Module - initKeyTerms', (t) => {
 
     Components.initKeyTerms();
 
-    const tooltip = term.children.find(child => child.classList.contains('term-tooltip'));
+    const tooltip = document.body.children.find(child => child.id === 'shared-term-tooltip');
     assert.ok(tooltip);
-    assert.strictEqual(tooltip.textContent, 'Test definition');
 
-    // Test mouseenter
-    term.dispatchEvent('mouseenter');
+    // Test mouseover (delegated to body)
+    document.body.dispatchEvent({ type: 'mouseover', target: term });
+    assert.strictEqual(tooltip.textContent, 'Test definition');
     assert.ok(tooltip.classList.contains('visible'));
 
-    // Test mouseleave
-    term.dispatchEvent('mouseleave');
+    // Test mouseout
+    document.body.dispatchEvent({ type: 'mouseout', target: term, relatedTarget: new MockElement() });
     assert.ok(!tooltip.classList.contains('visible'));
 
-    // Test focus
-    term.dispatchEvent('focus');
+    // Test focusin
+    document.body.dispatchEvent({ type: 'focusin', target: term });
     assert.ok(tooltip.classList.contains('visible'));
 
-    // Test blur
-    term.dispatchEvent('blur');
+    // Test focusout
+    document.body.dispatchEvent({ type: 'focusout', target: term });
     assert.ok(!tooltip.classList.contains('visible'));
 });
