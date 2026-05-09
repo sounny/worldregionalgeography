@@ -15,8 +15,8 @@ if (startIndex === -1) {
 
 // Extract body by counting braces
 let braceCount = 0;
-let body = '';
 let foundStart = false;
+let endIndex = -1;
 
 for (let i = startIndex; i < content.length; i++) {
     const char = content[i];
@@ -27,12 +27,13 @@ for (let i = startIndex; i < content.length; i++) {
         braceCount--;
     }
 
-    body += char;
-
     if (foundStart && braceCount === 0) {
+        endIndex = i;
         break;
     }
 }
+
+const body = endIndex !== -1 ? content.substring(startIndex, endIndex + 1) : content.substring(startIndex);
 
 console.log('--- Extracted function ---');
 console.log(body);
