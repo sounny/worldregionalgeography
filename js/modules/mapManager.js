@@ -215,12 +215,30 @@ const MapManager = {
             const data = regionalData[id];
             if (!data || !infoPanel) return;
 
-            infoPanel.innerHTML = `
-                <span class="theme-badge">${data.theme}</span>
-                <h3>${data.name}</h3>
-                <p>${data.desc}</p>
-                <a href="${data.link}" class="btn btn-primary btn-go">View Chapter ➜</a>
-            `;
+            infoPanel.innerHTML = ''; // Clear previous content
+
+            const themeBadge = document.createElement('span');
+            themeBadge.className = 'theme-badge';
+            themeBadge.textContent = data.theme || '';
+            infoPanel.appendChild(themeBadge);
+
+            const heading = document.createElement('h3');
+            heading.textContent = data.name || '';
+            infoPanel.appendChild(heading);
+
+            const desc = document.createElement('p');
+            desc.textContent = data.desc || '';
+            infoPanel.appendChild(desc);
+
+            const link = document.createElement('a');
+            link.className = 'btn btn-primary btn-go';
+            link.textContent = 'View Chapter ➜';
+            if (data.link && !data.link.trim().toLowerCase().startsWith('javascript:')) {
+                link.href = data.link;
+            } else {
+                link.href = '#';
+            }
+            infoPanel.appendChild(link);
             
             // Add a nice fade-in animation
             infoPanel.style.animation = 'none';
