@@ -33,7 +33,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 weight: 2,
                 fillOpacity: 0.8
             }).addTo(map)
-            .bindPopup('<strong>' + region.name + '</strong><br><a href="' + region.url + '">Explore Chapter</a>')
+            .bindPopup((function() {
+                const container = document.createElement('div');
+                const strong = document.createElement('strong');
+                strong.textContent = region.name;
+                container.appendChild(strong);
+                container.appendChild(document.createElement('br'));
+                const link = document.createElement('a');
+                if (region.url && !region.url.trim().toLowerCase().startsWith('javascript:')) {
+                    link.href = region.url;
+                }
+                link.textContent = 'Explore Chapter';
+                container.appendChild(link);
+                return container;
+            })())
             .on('click', function() {
                 this.openPopup();
             });
