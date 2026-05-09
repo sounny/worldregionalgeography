@@ -46,6 +46,8 @@ const QuizEngine = {
         // Clear existing content safely
         container.innerHTML = '';
 
+        const fragment = document.createDocumentFragment();
+
         questions.forEach((q, index) => {
             const quizDiv = document.createElement('div');
             quizDiv.className = 'quiz-container';
@@ -98,8 +100,10 @@ const QuizEngine = {
             feedbackDiv.className = 'quiz-feedback';
             quizDiv.appendChild(feedbackDiv);
 
-            container.appendChild(quizDiv);
+            fragment.appendChild(quizDiv);
         });
+
+        container.appendChild(fragment);
     },
 
     /**
