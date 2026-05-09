@@ -51,7 +51,11 @@ const MapManager = {
 
             marker.addTo(markerGroup);
 
-            marker.bindPopup(`<strong>${region.name}</strong>`);
+            const popupContainer = document.createElement('div');
+            const strong = document.createElement('strong');
+            strong.textContent = region.name;
+            popupContainer.appendChild(strong);
+            marker.bindPopup(popupContainer);
             
             marker.on('mouseover', function() {
                 this.openPopup();

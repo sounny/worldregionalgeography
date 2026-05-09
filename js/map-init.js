@@ -92,10 +92,23 @@ const MapManager = {
                         }
                     }
 
-                    const chapterLink = linkUrl
-                        ? `<br><a href="${linkUrl}" class="popup-link">Go to chapter →</a>`
-                        : '';
-                    layer.bindPopup(`<strong>${feature.properties.name}</strong>${chapterLink}`);
+                    const popupContainer = document.createElement('div');
+                    const strong = document.createElement('strong');
+                    strong.textContent = feature.properties.name;
+                    popupContainer.appendChild(strong);
+
+                    if (linkUrl) {
+                        popupContainer.appendChild(document.createElement('br'));
+                        const link = document.createElement('a');
+                        if (!linkUrl.trim().toLowerCase().startsWith('javascript:')) {
+                            link.href = linkUrl;
+                        }
+                        link.className = 'popup-link';
+                        link.textContent = 'Go to chapter →';
+                        popupContainer.appendChild(link);
+                    }
+
+                    layer.bindPopup(popupContainer);
                 }
                 
                 if (options.onEachFeature) {
