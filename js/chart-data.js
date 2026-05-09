@@ -4,41 +4,46 @@
  * Used across all chapters for regional comparisons and data-driven engagement
  */
 
-const ChartDataManager = {
-    /**
-     * Chart.js default configuration for consistency
-     */
-    defaultOptions: {
-        responsive: true,
-        maintainAspectRatio: true,
-        plugins: {
-            legend: {
-                position: 'bottom',
-                labels: {
-                    font: { family: 'system-ui, -apple-system, sans-serif', size: 12 },
-                    padding: 15,
-                    color: '#333333'
-                }
-            },
-            tooltip: {
-                backgroundColor: 'rgba(0, 0, 0, 0.8)',
-                titleFont: { family: 'system-ui, -apple-system, sans-serif', size: 13 },
-                bodyFont: { family: 'system-ui, -apple-system, sans-serif', size: 12 },
-                padding: 12,
-                cornerRadius: 4
+/**
+ * Chart.js default configuration for consistency
+ */
+const DEFAULT_CHART_OPTIONS = {
+    responsive: true,
+    maintainAspectRatio: true,
+    plugins: {
+        legend: {
+            position: 'bottom',
+            labels: {
+                font: { family: 'system-ui, -apple-system, sans-serif', size: 12 },
+                padding: 15,
+                color: '#333333'
             }
         },
-        scales: {
-            y: {
-                ticks: { color: '#333333', font: { family: 'system-ui, -apple-system, sans-serif' } },
-                grid: { color: '#e0e0e0' }
-            },
-            x: {
-                ticks: { color: '#333333', font: { family: 'system-ui, -apple-system, sans-serif' } },
-                grid: { color: '#e0e0e0' }
-            }
+        tooltip: {
+            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+            titleFont: { family: 'system-ui, -apple-system, sans-serif', size: 13 },
+            bodyFont: { family: 'system-ui, -apple-system, sans-serif', size: 12 },
+            padding: 12,
+            cornerRadius: 4
         }
     },
+    scales: {
+        y: {
+            ticks: { color: '#333333', font: { family: 'system-ui, -apple-system, sans-serif' } },
+            grid: { color: '#e0e0e0' }
+        },
+        x: {
+            ticks: { color: '#333333', font: { family: 'system-ui, -apple-system, sans-serif' } },
+            grid: { color: '#e0e0e0' }
+        }
+    }
+};
+
+const ChartDataManager = {
+    /**
+     * Re-export default options for external access if needed
+     */
+    defaultOptions: DEFAULT_CHART_OPTIONS,
 
     /**
      * COLOR PALETTE by Region
@@ -55,6 +60,35 @@ const ChartDataManager = {
         'east-asia': '#9B59B6',      // Purple
         'southeast-asia': '#1ABC9C', // Turquoise
         'oceania': '#34495E'         // Dark Gray
+    },
+
+    /**
+     * Population comparison chart config
+     */
+    getPopulationChart: function(regionPopulation, worldPopulation = 8000000000) {
+        return {
+            type: 'pie',
+            data: {
+                labels: ['Region', 'Rest of World'],
+                datasets: [{
+                    data: [regionPopulation, worldPopulation - regionPopulation],
+                    backgroundColor: ['#4A90A4', '#e0e0e0'],
+                    borderColor: '#fff',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                ...DEFAULT_CHART_OPTIONS,
+                plugins: {
+                    ...DEFAULT_CHART_OPTIONS.plugins,
+                    title: {
+                        display: true,
+                        text: 'Regional vs. Global Population',
+                        font: { size: 14, weight: 'bold' }
+                    }
+                }
+            }
+        };
     },
 
     /**
@@ -111,9 +145,10 @@ const ChartDataManager = {
             }]
         },
         options: {
-            ...this.defaultOptions,
+            ...DEFAULT_CHART_OPTIONS,
             indexAxis: 'y',
             plugins: {
+                ...DEFAULT_CHART_OPTIONS.plugins,
                 title: {
                     display: true,
                     text: 'Russia: Economic Sectors (% GDP)',
@@ -121,10 +156,12 @@ const ChartDataManager = {
                 }
             },
             scales: {
+                ...DEFAULT_CHART_OPTIONS.scales,
                 x: {
+                    ...DEFAULT_CHART_OPTIONS.scales.x,
                     beginAtZero: true,
                     max: 40,
-                    ticks: { callback: function(v) { return v + '%'; } }
+                    ticks: { ...DEFAULT_CHART_OPTIONS.scales.x.ticks, callback: function(v) { return v + '%'; } }
                 }
             }
         }
@@ -153,8 +190,9 @@ const ChartDataManager = {
             }]
         },
         options: {
-            ...this.defaultOptions,
+            ...DEFAULT_CHART_OPTIONS,
             plugins: {
+                ...DEFAULT_CHART_OPTIONS.plugins,
                 title: {
                     display: true,
                     text: 'Latin America: Population Growth (1980-2030)',
@@ -162,9 +200,11 @@ const ChartDataManager = {
                 }
             },
             scales: {
+                ...DEFAULT_CHART_OPTIONS.scales,
                 y: {
+                    ...DEFAULT_CHART_OPTIONS.scales.y,
                     beginAtZero: true,
-                    ticks: { callback: function(v) { return v + 'M'; } }
+                    ticks: { ...DEFAULT_CHART_OPTIONS.scales.y.ticks, callback: function(v) { return v + 'M'; } }
                 }
             }
         }
@@ -187,8 +227,9 @@ const ChartDataManager = {
             }]
         },
         options: {
-            ...this.defaultOptions,
+            ...DEFAULT_CHART_OPTIONS,
             plugins: {
+                ...DEFAULT_CHART_OPTIONS.plugins,
                 title: {
                     display: true,
                     text: 'MENA Region: Top Oil-Producing Nations',
@@ -196,9 +237,11 @@ const ChartDataManager = {
                 }
             },
             scales: {
+                ...DEFAULT_CHART_OPTIONS.scales,
                 y: {
+                    ...DEFAULT_CHART_OPTIONS.scales.y,
                     beginAtZero: true,
-                    ticks: { callback: function(v) { return v + 'B'; } }
+                    ticks: { ...DEFAULT_CHART_OPTIONS.scales.y.ticks, callback: function(v) { return v + 'B'; } }
                 }
             }
         }
@@ -224,8 +267,9 @@ const ChartDataManager = {
             }]
         },
         options: {
-            ...this.defaultOptions,
+            ...DEFAULT_CHART_OPTIONS,
             plugins: {
+                ...DEFAULT_CHART_OPTIONS.plugins,
                 title: {
                     display: true,
                     text: 'South Asia: Population Density',
@@ -233,9 +277,11 @@ const ChartDataManager = {
                 }
             },
             scales: {
+                ...DEFAULT_CHART_OPTIONS.scales,
                 y: {
+                    ...DEFAULT_CHART_OPTIONS.scales.y,
                     beginAtZero: true,
-                    ticks: { callback: function(v) { return v + ' /km²'; } }
+                    ticks: { ...DEFAULT_CHART_OPTIONS.scales.y.ticks, callback: function(v) { return v + ' /km²'; } }
                 }
             }
         }
@@ -264,8 +310,9 @@ const ChartDataManager = {
             }]
         },
         options: {
-            ...this.defaultOptions,
+            ...DEFAULT_CHART_OPTIONS,
             plugins: {
+                ...DEFAULT_CHART_OPTIONS.plugins,
                 title: {
                     display: true,
                     text: 'Southeast Asia: ASEAN Average GDP Growth',
@@ -273,9 +320,11 @@ const ChartDataManager = {
                 }
             },
             scales: {
+                ...DEFAULT_CHART_OPTIONS.scales,
                 y: {
+                    ...DEFAULT_CHART_OPTIONS.scales.y,
                     beginAtZero: true,
-                    ticks: { callback: function(v) { return v + '%'; } }
+                    ticks: { ...DEFAULT_CHART_OPTIONS.scales.y.ticks, callback: function(v) { return v + '%'; } }
                 }
             }
         }
