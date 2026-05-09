@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Benchmark Leaflet</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+    <div id="map" style="width: 800px; height: 600px;"></div>
+    <script>
+        const map = L.map('map').setView([51.505, -0.09], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+        window.runBenchmarkIndividual = function(numMarkers) {
+            map.eachLayer((layer) => {
+                if (layer instanceof L.CircleMarker) {
+                    map.removeLayer(layer);
+                }
+            });
+
+            const start = performance.now();
+            for (let i = 0; i < numMarkers; i++) {
+                L.circleMarker([51.5 + (Math.random() - 0.5), -0.1 + (Math.random() - 0.5)], {
+                    radius: 5
+                }).addTo(map);
+            }
+            return performance.now() - start;
+        };
+
+        window.runBenchmarkGroup = function(numMarkers) {
+            map.eachLayer((layer) => {
+                if (layer instanceof L.CircleMarker || layer instanceof L.LayerGroup) {
+                    map.removeLayer(layer);
+                }
+            });
+
+            const start = performance.now();
+            const group = L.layerGroup();
+            for (let i = 0; i < numMarkers; i++) {
+                L.circleMarker([51.5 + (Math.random() - 0.5), -0.1 + (Math.random() - 0.5)], {
+                    radius: 5
+                }).addTo(group);
+            }
+            group.addTo(map);
+            return performance.now() - start;
+        };
+    </script>
+</body>
+</html>
