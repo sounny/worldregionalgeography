@@ -386,12 +386,30 @@ function initRegionalNavigator() {
         const data = feature.properties;
         if (!data || !infoPanel) return;
 
-        infoPanel.innerHTML = `
-            <span class="theme-badge">${data.theme || ''}</span>
-            <h3>${data.name}</h3>
-            <p>${data.desc || ''}</p>
-            <a href="${data.link || '#'}" class="btn btn-primary btn-go">View Chapter ➜</a>
-        `;
+        // Clear existing content safely
+        infoPanel.innerHTML = '';
+
+        const themeBadge = document.createElement('span');
+        themeBadge.className = 'theme-badge';
+        themeBadge.textContent = data.theme || '';
+
+        const title = document.createElement('h3');
+        title.textContent = data.name || '';
+
+        const description = document.createElement('p');
+        description.textContent = data.desc || '';
+
+        const link = document.createElement('a');
+        // Block javascript: URIs for security
+        const safeLink = (data.link && !data.link.trim().toLowerCase().startsWith('javascript:')) ? data.link : '#';
+        link.setAttribute('href', safeLink);
+        link.className = 'btn btn-primary btn-go';
+        link.textContent = 'View Chapter ➜';
+
+        infoPanel.appendChild(themeBadge);
+        infoPanel.appendChild(title);
+        infoPanel.appendChild(description);
+        infoPanel.appendChild(link);
         
         // Add a nice fade-in animation
         infoPanel.style.animation = 'none';

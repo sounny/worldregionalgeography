@@ -25,6 +25,7 @@ class MockElement {
         this.id = '';
         this._className = '';
         this.textContent = '';
+        this.style = {};
     }
 
     get className() { return this._className; }
@@ -40,16 +41,20 @@ class MockElement {
 
     setAttribute(name, value) { this.attributes[name] = String(value); }
     getAttribute(name) { return this.attributes[name] || null; }
+    hasAttribute(name) { return name in this.attributes; }
     addEventListener(event, callback) {
         if (!this.listeners[event]) this.listeners[event] = [];
         this.listeners[event].push(callback);
     }
     dispatchEvent(event) {
         const eventName = typeof event === 'string' ? event : event.type;
+        const target = event.target || this;
+        const relatedTarget = event.relatedTarget || null;
         if (this.listeners[eventName]) {
             this.listeners[eventName].forEach(cb => cb({
                 type: eventName,
-                target: this,
+                target: target,
+                relatedTarget: relatedTarget,
                 key: event.key,
                 preventDefault: () => {}
             }));
@@ -60,18 +65,50 @@ class MockElement {
             const cls = selector.slice(1);
             return this.children.find(child => child.classList.contains(cls)) || null;
         }
+        if (selector.startsWith('#')) {
+            const id = selector.slice(1);
+            if (this.id === id) return this;
+            for (const child of this.children) {
+                const found = child.querySelector(selector);
+                if (found) return found;
+            }
+        }
         return null;
     }
     appendChild(child) {
         this.children.push(child);
         child.parentNode = this;
     }
+    contains(child) {
+        return this.children.includes(child) || this.children.some(c => c.contains(child));
+    }
+    closest(selector) {
+        if (selector.startsWith('.')) {
+            const cls = selector.slice(1);
+            if (this.classList.contains(cls)) return this;
+        }
+        return this.parentNode ? this.parentNode.closest(selector) : null;
+    }
+    getBoundingClientRect() {
+        return { top: 0, left: 0, bottom: 0, right: 0, width: 0, height: 0 };
+    }
 }
+
+global.window = {
+    pageYOffset: 0,
+    pageXOffset: 0
+};
 
 global.document = {
     elements: [],
+    body: new MockElement('body'),
+    documentElement: { scrollTop: 0, scrollLeft: 0 },
     createElement(tagName) {
         return new MockElement(tagName);
+    },
+    getElementById(id) {
+        if (this.body.id === id) return this.body;
+        return this.body.querySelector(`#${id}`);
     },
     querySelectorAll(selector) {
         if (selector === '.texas-toggle') {
@@ -158,23 +195,24 @@ test('Components Module - initKeyTerms', (t) => {
 
     Components.initKeyTerms();
 
-    const tooltip = term.children.find(child => child.classList.contains('term-tooltip'));
+    const tooltip = document.body.children.find(child => child.id === 'shared-term-tooltip');
     assert.ok(tooltip);
-    assert.strictEqual(tooltip.textContent, 'Test definition');
 
-    // Test mouseenter
-    term.dispatchEvent('mouseenter');
+    // Trigger show via delegation
+    document.body.dispatchEvent({ type: 'mouseover', target: term });
+
+    assert.strictEqual(tooltip.textContent, 'Test definition');
     assert.ok(tooltip.classList.contains('visible'));
 
-    // Test mouseleave
-    term.dispatchEvent('mouseleave');
+    // Trigger hide
+    document.body.dispatchEvent({ type: 'mouseout', target: term, relatedTarget: new MockElement() });
     assert.ok(!tooltip.classList.contains('visible'));
 
     // Test focus
-    term.dispatchEvent('focus');
+    document.body.dispatchEvent({ type: 'focusin', target: term });
     assert.ok(tooltip.classList.contains('visible'));
 
     // Test blur
-    term.dispatchEvent('blur');
+    document.body.dispatchEvent({ type: 'focusout', target: term });
     assert.ok(!tooltip.classList.contains('visible'));
 });
