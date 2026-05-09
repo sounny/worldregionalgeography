@@ -9,16 +9,57 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // Mock browser environment
 global.window = {};
 global.document = {
-    createElement: (tag) => ({
-        tagName: tag.toUpperCase(),
-        classList: { add: () => {}, remove: () => {}, contains: () => false },
-        dataset: {},
-        setAttribute: () => {},
-        innerHTML: '',
-        appendChild: () => {},
-        querySelector: () => null,
-        querySelectorAll: () => []
-    }),
+    createElement: (tag) => {
+        const el = {
+            tagName: tag.toUpperCase(),
+            classList: { add: () => {}, remove: () => {}, contains: () => false },
+            dataset: {},
+            setAttribute: function(k, v) { this[k] = v; },
+            innerHTML: '',
+            textContent: '',
+            appendChild: function(child) {
+                this.children = this.children || [];
+                this.children.push(child);
+            },
+            get outerHTML() {
+                let html = `<${tag.toLowerCase()}`;
+                if (this.className) html += ` class="${this.className}"`;
+                if (this.type) html += ` type="${this.type}"`;
+                if (this.name) html += ` name="${this.name}"`;
+                if (this.value !== undefined && this.value !== '') html += ` value="${this.value}"`;
+
+                for (const [k, v] of Object.entries(this.dataset)) {
+                    html += ` data-${k}="${v}"`;
+                }
+                if (this['data-quiz']) html += ` data-quiz="${this['data-quiz']}"`;
+                if (this['data-type']) html += ` data-type="${this['data-type']}"`;
+                if (this['data-correct']) html += ` data-correct="${this['data-correct']}"`;
+                if (this['data-feedback']) html += ` data-feedback="${this['data-feedback']}"`;
+
+                html += '>';
+
+                if (!['input', 'img', 'br', 'hr'].includes(tag.toLowerCase())) {
+                    let text = this.textContent || '';
+                    if (text && !this.innerHTML) {
+                        // simulate textContent escaping
+                        text = String(text)
+                            .replace(/&/g, "&amp;")
+                            .replace(/</g, "&lt;")
+                            .replace(/>/g, "&gt;")
+                            .replace(/"/g, "&quot;")
+                            .replace(/'/g, "&#039;");
+                    }
+                    html += (this.innerHTML || text || '');
+                    if (this.children) {
+                        html += this.children.map(c => c.outerHTML).join('');
+                    }
+                    html += `</${tag.toLowerCase()}>`;
+                }
+                return html;
+            }
+        };
+        return el;
+    },
     getElementById: () => null
 };
 
@@ -34,7 +75,7 @@ const QuizEngine = global.window.QuizEngine;
 
 describe('QuizEngine.render', () => {
     it('should render a single question correctly', () => {
-        const container = { innerHTML: '' };
+        const container = { innerHTML: '', appendChild: function(el) { this.innerHTML += el.outerHTML || '[Element]'; } };
         const questions = [{
             question: 'Test Question',
             options: [{ text: 'Option 1', correct: true }]
@@ -50,7 +91,7 @@ describe('QuizEngine.render', () => {
     });
 
     it('should render scenario when provided', () => {
-        const container = { innerHTML: '' };
+        const container = { innerHTML: '', appendChild: function(el) { this.innerHTML += el.outerHTML || '[Element]'; } };
         const questions = [{
             question: 'Q',
             scenario: 'Test Scenario',
@@ -63,7 +104,7 @@ describe('QuizEngine.render', () => {
     });
 
     it('should not render scenario container when not provided', () => {
-        const container = { innerHTML: '' };
+        const container = { innerHTML: '', appendChild: function(el) { this.innerHTML += el.outerHTML || '[Element]'; } };
         const questions = [{
             question: 'Q',
             options: []
@@ -74,7 +115,7 @@ describe('QuizEngine.render', () => {
     });
 
     it('should set correct data attributes for options', () => {
-        const container = { innerHTML: '' };
+        const container = { innerHTML: '', appendChild: function(el) { this.innerHTML += el.outerHTML || '[Element]'; } };
         const questions = [{
             question: 'Q',
             options: [
@@ -95,7 +136,7 @@ describe('QuizEngine.render', () => {
     });
 
     it('should escape HTML in content', () => {
-        const container = { innerHTML: '' };
+        const container = { innerHTML: '', appendChild: function(el) { this.innerHTML += el.outerHTML || '[Element]'; } };
         const questions = [{
             question: '<script>alert(1)</script>',
             scenario: '<b>Bold</b>',
@@ -120,7 +161,7 @@ describe('QuizEngine.render', () => {
     });
 
     it('should render multiple questions with correct indices', () => {
-        const container = { innerHTML: '' };
+        const container = { innerHTML: '', appendChild: function(el) { this.innerHTML += el.outerHTML || '[Element]'; } };
         const questions = [
             { question: 'Q1', options: [] },
             { question: 'Q2', options: [] }

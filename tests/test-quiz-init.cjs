@@ -40,7 +40,8 @@ describe('QuizEngine.init', () => {
             classList: { add: () => {}, remove: () => {}, contains: () => false },
             dataset: {},
             setAttribute: () => {},
-            appendChild: () => {}
+            appendChild: () => {},
+            addEventListener: () => {}
         };
 
         // Mock getElementById to return our container by default if ID matches
