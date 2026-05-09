@@ -164,13 +164,16 @@ function initNavigation() {
                 return crypto.randomUUID();
             }
             if (typeof crypto.getRandomValues === 'function') {
-                const array = new Uint32Array(1);
+                const array = new Uint32Array(2);
                 crypto.getRandomValues(array);
-                return array[0].toString(16);
+                return Array.from(array).map(b => b.toString(16).padStart(8, '0')).join('');
             }
         }
-        // Fallback for very old environments
-        return Math.random().toString(16).slice(2);
+
+        // Fallback for very old environments: timestamp + counter
+        if (!getSecureId.counter) getSecureId.counter = 0;
+        getSecureId.counter++;
+        return `${Date.now().toString(16)}-${getSecureId.counter}`;
     }
 
     // Mobile dropdown toggle
