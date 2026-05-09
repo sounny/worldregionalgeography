@@ -2,6 +2,11 @@ import test from 'node:test';
 import assert from 'node:assert';
 import Components from '../../js/modules/components.js';
 
+global.window = {
+    pageYOffset: 0,
+    pageXOffset: 0
+};
+
 // Minimal DOM Mock
 class MockElement {
     constructor(tagName = 'div') {
@@ -25,6 +30,22 @@ class MockElement {
         this.id = '';
         this._className = '';
         this.textContent = '';
+        this.style = {};
+    }
+
+    getBoundingClientRect() {
+        return { top: 0, left: 0, width: 0, height: 0 };
+    }
+
+    closest(selector) {
+        if (selector === '.term-highlight' && this.classList.contains('term-highlight')) {
+            return this;
+        }
+        return null;
+    }
+
+    contains(other) {
+        return this === other || this.children.includes(other);
     }
 
     get className() { return this._className; }
@@ -40,17 +61,20 @@ class MockElement {
 
     setAttribute(name, value) { this.attributes[name] = String(value); }
     getAttribute(name) { return this.attributes[name] || null; }
+    hasAttribute(name) { return Object.prototype.hasOwnProperty.call(this.attributes, name); }
     addEventListener(event, callback) {
         if (!this.listeners[event]) this.listeners[event] = [];
         this.listeners[event].push(callback);
     }
     dispatchEvent(event) {
         const eventName = typeof event === 'string' ? event : event.type;
+        const target = event.target || this;
         if (this.listeners[eventName]) {
             this.listeners[eventName].forEach(cb => cb({
                 type: eventName,
-                target: this,
+                target: target,
                 key: event.key,
+                relatedTarget: event.relatedTarget,
                 preventDefault: () => {}
             }));
         }
@@ -73,6 +97,11 @@ global.document = {
     createElement(tagName) {
         return new MockElement(tagName);
     },
+    getElementById(id) {
+        return null; // For simplicity in this mock
+    },
+    body: new MockElement('body'),
+    documentElement: { scrollTop: 0, scrollLeft: 0 },
     querySelectorAll(selector) {
         if (selector === '.texas-toggle') {
             return this.elements.filter(el => el.classList.contains('texas-toggle'));
@@ -158,23 +187,23 @@ test('Components Module - initKeyTerms', (t) => {
 
     Components.initKeyTerms();
 
-    const tooltip = term.children.find(child => child.classList.contains('term-tooltip'));
+    const tooltip = document.body.children.find(child => child.classList.contains('term-tooltip'));
     assert.ok(tooltip);
-    assert.strictEqual(tooltip.textContent, 'Test definition');
 
-    // Test mouseenter
-    term.dispatchEvent('mouseenter');
+    // Test mouseover (event delegation)
+    document.body.dispatchEvent({ type: 'mouseover', target: term });
+    assert.strictEqual(tooltip.textContent, 'Test definition');
     assert.ok(tooltip.classList.contains('visible'));
 
-    // Test mouseleave
-    term.dispatchEvent('mouseleave');
+    // Test mouseout
+    document.body.dispatchEvent({ type: 'mouseout', target: term });
     assert.ok(!tooltip.classList.contains('visible'));
 
-    // Test focus
-    term.dispatchEvent('focus');
+    // Test focusin
+    document.body.dispatchEvent({ type: 'focusin', target: term });
     assert.ok(tooltip.classList.contains('visible'));
 
-    // Test blur
-    term.dispatchEvent('blur');
+    // Test focusout
+    document.body.dispatchEvent({ type: 'focusout', target: term });
     assert.ok(!tooltip.classList.contains('visible'));
 });
