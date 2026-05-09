@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
             { name: 'Oceania', coords: [-25, 135], url: 'chapters/11-australia-oceania/index.html' }
         ];
 
+        const markersGroup = L.layerGroup();
         regions.forEach(region => {
             L.circleMarker(region.coords, {
                 radius: 12,
@@ -32,11 +33,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 color: '#fff',
                 weight: 2,
                 fillOpacity: 0.8
-            }).addTo(map)
+            }).addTo(markersGroup)
             .bindPopup('<strong>' + region.name + '</strong><br><a href="' + region.url + '">Explore Chapter</a>')
             .on('click', function() {
                 this.openPopup();
             });
         });
+        markersGroup.addTo(map);
     }
 });
