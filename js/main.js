@@ -367,7 +367,7 @@ function initRegionalNavigator() {
         // Hover events
         marker.on('mouseover', function() {
             this.setStyle({ radius: 20, fillOpacity: 1 });
-            updateInfoPanel(feature);
+            updateInfoPanelContent(feature.properties, infoPanel);
         });
 
         marker.on('mouseout', function() {
@@ -381,41 +381,45 @@ function initRegionalNavigator() {
             }
         });
     });
+}
 
-    function updateInfoPanel(feature) {
-        const data = feature.properties;
-        if (!data || !infoPanel) return;
+/**
+ * Updates the info panel with region details and applies a fade-in animation
+ * @param {Object} data - Region data containing theme, name, desc, and link
+ * @param {HTMLElement} infoPanel - The DOM element to update
+ */
+function updateInfoPanelContent(data, infoPanel) {
+    if (!data || !infoPanel) return;
 
-        // Clear existing content safely
-        infoPanel.innerHTML = '';
+    // Clear existing content safely
+    infoPanel.innerHTML = '';
 
-        const themeBadge = document.createElement('span');
-        themeBadge.className = 'theme-badge';
-        themeBadge.textContent = data.theme || '';
+    const themeBadge = document.createElement('span');
+    themeBadge.className = 'theme-badge';
+    themeBadge.textContent = data.theme || '';
 
-        const title = document.createElement('h3');
-        title.textContent = data.name || '';
+    const title = document.createElement('h3');
+    title.textContent = data.name || '';
 
-        const description = document.createElement('p');
-        description.textContent = data.desc || '';
+    const description = document.createElement('p');
+    description.textContent = data.desc || '';
 
-        const link = document.createElement('a');
-        // Block javascript: URIs for security
-        const safeLink = (data.link && !data.link.trim().toLowerCase().startsWith('javascript:')) ? data.link : '#';
-        link.setAttribute('href', safeLink);
-        link.className = 'btn btn-primary btn-go';
-        link.textContent = 'View Chapter ➜';
+    const link = document.createElement('a');
+    // Block javascript: URIs for security
+    const safeLink = (data.link && !data.link.trim().toLowerCase().startsWith('javascript:')) ? data.link : '#';
+    link.setAttribute('href', safeLink);
+    link.className = 'btn btn-primary btn-go';
+    link.textContent = 'View Chapter ➜';
 
-        infoPanel.appendChild(themeBadge);
-        infoPanel.appendChild(title);
-        infoPanel.appendChild(description);
-        infoPanel.appendChild(link);
-        
-        // Add a nice fade-in animation
-        infoPanel.style.animation = 'none';
-        infoPanel.offsetHeight; // trigger reflow
-        infoPanel.style.animation = 'fadeIn 0.3s ease-out forwards';
-    }
+    infoPanel.appendChild(themeBadge);
+    infoPanel.appendChild(title);
+    infoPanel.appendChild(description);
+    infoPanel.appendChild(link);
+
+    // Add a nice fade-in animation
+    infoPanel.style.animation = 'none';
+    infoPanel.offsetHeight; // trigger reflow
+    infoPanel.style.animation = 'fadeIn 0.3s ease-out forwards';
 }
 
 // =====================================================

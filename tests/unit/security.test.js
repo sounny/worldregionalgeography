@@ -72,13 +72,13 @@ test('Security - updateInfoPanel in js/main.js handles data safely', (t) => {
 
     // 2. Load the function from js/main.js
     const mainJs = fs.readFileSync('js/main.js', 'utf8');
-    const updateInfoPanelMatch = mainJs.match(/function updateInfoPanel\(feature\) \{([\s\S]*?)\n    \}/);
+    const updateInfoPanelMatch = [null, mainJs.substring(mainJs.indexOf('function updateInfoPanelContent(data, infoPanel) {') + 'function updateInfoPanelContent(data, infoPanel) {'.length, mainJs.indexOf('// =====================================================\n// Smooth Scrolling')).trim().replace(/}\s*$/, '')];
     const functionBody = updateInfoPanelMatch[1];
-    const updateInfoPanel = new Function('feature', 'infoPanel', 'document', functionBody);
+    const updateInfoPanel = new Function('data', 'infoPanel', 'document', functionBody);
 
     // 3. Execute with malicious data
     const maliciousFeature = global.window.WorldRegionsData.features[0];
-    updateInfoPanel(maliciousFeature, infoPanel, global.document);
+    updateInfoPanel(maliciousFeature.properties, infoPanel, global.document);
 
     // 4. Verify fix
     const html = infoPanel.innerHTML;
@@ -89,7 +89,7 @@ test('Security - updateInfoPanel in js/main.js handles data safely', (t) => {
     assert.ok(html.includes('href="#"'), 'Malicious link should be replaced with #');
 });
 
-test('Security - updateInfoPanel in js/modules/mapManager.js handles data safely', (t) => {
+test('Security - updateInfoPanel in js/modules/components.js handles data safely', (t) => {
     // 1. Mock the environment
     const infoPanel = new MockElement('div');
     infoPanel.style = { animation: '' };
@@ -109,13 +109,13 @@ test('Security - updateInfoPanel in js/modules/mapManager.js handles data safely
     };
 
     // 2. Load the function from js/modules/mapManager.js
-    const mapManagerJs = fs.readFileSync('js/modules/mapManager.js', 'utf8');
-    const updateInfoPanelMatch = mapManagerJs.match(/function updateInfoPanel\(id\) \{([\s\S]*?)\n        \}/);
+    const mapManagerJs = fs.readFileSync('js/modules/components.js', 'utf8');
+    const updateInfoPanelMatch = [null, mapManagerJs.substring(mapManagerJs.indexOf('updateInfoPanelContent(data, infoPanel) {') + 'updateInfoPanelContent(data, infoPanel) {'.length, mapManagerJs.lastIndexOf('}')).trim().replace(/}\s*$/, '')];
     const functionBody = updateInfoPanelMatch[1];
-    const updateInfoPanel = new Function('id', 'regionalData', 'infoPanel', 'document', functionBody);
+    const updateInfoPanel = new Function('data', 'infoPanel', 'document', functionBody);
 
     // 3. Execute with malicious data
-    updateInfoPanel('malicious', regionalData, infoPanel, global.document);
+    updateInfoPanel(regionalData['malicious'], infoPanel, global.document);
 
     // 4. Verify fix
     const html = infoPanel.innerHTML;
