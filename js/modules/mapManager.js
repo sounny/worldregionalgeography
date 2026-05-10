@@ -1,3 +1,4 @@
+import Components from './components.js';
 /**
  * Map Manager Module
  * Handles all map-related functionality including preview maps and regional navigators
@@ -196,7 +197,7 @@ const MapManager = {
             // Hover events
             marker.on('mouseover', function() {
                 this.setStyle({ radius: 20, fillOpacity: 1 });
-                updateInfoPanel(id);
+                Components.updateInfoPanelContent(regionalData[id], infoPanel);
             });
 
             marker.on('mouseout', function() {
@@ -211,40 +212,6 @@ const MapManager = {
 
         markerGroup.addTo(navMap);
 
-        function updateInfoPanel(id) {
-            const data = regionalData[id];
-            if (!data || !infoPanel) return;
-
-            // Clear existing content safely
-            infoPanel.innerHTML = '';
-
-            const themeBadge = document.createElement('span');
-            themeBadge.className = 'theme-badge';
-            themeBadge.textContent = data.theme || '';
-
-            const title = document.createElement('h3');
-            title.textContent = data.name || '';
-
-            const description = document.createElement('p');
-            description.textContent = data.desc || '';
-
-            const link = document.createElement('a');
-            // Block javascript: URIs for security
-            const safeLink = (data.link && !data.link.trim().toLowerCase().startsWith('javascript:')) ? data.link : '#';
-            link.setAttribute('href', safeLink);
-            link.className = 'btn btn-primary btn-go';
-            link.textContent = 'View Chapter ➜';
-
-            infoPanel.appendChild(themeBadge);
-            infoPanel.appendChild(title);
-            infoPanel.appendChild(description);
-            infoPanel.appendChild(link);
-            
-            // Add a nice fade-in animation
-            infoPanel.style.animation = 'none';
-            infoPanel.offsetHeight; // trigger reflow
-            infoPanel.style.animation = 'fadeIn 0.3s ease-out forwards';
-        }
     },
 
 };

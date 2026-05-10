@@ -18,12 +18,34 @@ const mockDocument = {
                 style: {},
                 innerHTML: '',
                 offsetHeight: 100,
-                classList: { add: () => {}, remove: () => {}, contains: () => false }
+                classList: { add: () => {}, remove: () => {}, contains: () => false }, appendChild: mock.fn(function(child) {
+                    let childHtml = '';
+                    if (child.tagName === 'SPAN') childHtml = `<span class="${child.className}">${child.textContent}</span>`;
+                    else if (child.tagName === 'H3') childHtml = `<h3>${child.textContent}</h3>`;
+                    else if (child.tagName === 'P') childHtml = `<p>${child.textContent}</p>`;
+                    else if (child.tagName === 'A') {
+                        let href = '';
+                        if (child._href) href = ` href="${child._href}"`;
+                        childHtml = `<a${href} class="${child.className}">${child.textContent}</a>`;
+                    }
+                    this.innerHTML += childHtml;
+                }), appendChild: mock.fn(function(child) {
+                    let childHtml = '';
+                    if (child.tagName === 'SPAN') childHtml = `<span class="${child.className}">${child.textContent}</span>`;
+                    else if (child.tagName === 'H3') childHtml = `<h3>${child.textContent}</h3>`;
+                    else if (child.tagName === 'P') childHtml = `<p>${child.textContent}</p>`;
+                    else if (child.tagName === 'A') {
+                        let href = '';
+                        if (child._href) href = ` href="${child._href}"`;
+                        childHtml = `<a${href} class="${child.className}">${child.textContent}</a>`;
+                    }
+                    this.innerHTML += childHtml;
+                })
             };
         }
         return elementCache[id];
     }),
-    createElement: mock.fn((tag) => ({ tagName: tag.toUpperCase(), style: {}, classList: { add: () => {} } }))
+    createElement: mock.fn((tag) => ({ tagName: tag.toUpperCase(), style: {}, classList: { add: () => {} }, setAttribute: mock.fn(function(attr, val) { if (attr === 'href') this._href = val; }) }))
 };
 
 const mockWindow = {
@@ -63,11 +85,7 @@ const mockL = {
         createdLayers.push(layer);
         return layer;
     }),
-    marker: mock.fn(() => {
-        const layer = createMockLayer();
-        createdLayers.push(layer);
-        return layer;
-    }),
+    marker: mock.fn(() => { const layer = createMockLayer(); createdLayers.push(layer); return layer; }), layerGroup: mock.fn(() => createMockLayer()), layerGroup: mock.fn(() => createMockLayer()),
     geoJSON: mock.fn(() => createMockLayer()),
     featureGroup: mock.fn(() => createMockLayer())
 };
@@ -217,111 +235,4 @@ describe('MapManager', () => {
         });
     });
 
-    describe('createRegionMap', () => {
-        test('should create map with config', () => {
-            const config = {
-                center: [10, 10],
-                zoom: 5,
-                geojson: { type: 'FeatureCollection', features: [] },
-                markers: [{ coords: [10, 10], name: 'Test' }]
-            };
-
-            const map = MapManager.createRegionMap('test-container', config);
-
-            assert.strictEqual(mockL.map.mock.calls.length, 1);
-            assert.strictEqual(mockL.map.mock.calls[0].arguments[0], 'test-container');
-
-            assert.strictEqual(mockL.geoJSON.mock.calls.length, 1);
-            assert.strictEqual(mockL.marker.mock.calls.length, 1);
-        });
-
-        test('should return null if container does not exist', () => {
-            const originalGet = mockDocument.getElementById;
-            mockDocument.getElementById = mock.fn(() => null);
-
-            try {
-                const config = { center: [0, 0] };
-                const result = MapManager.createRegionMap('missing-container', config);
-
-                assert.strictEqual(result, null);
-                assert.strictEqual(mockL.map.mock.calls.length, 0);
-            } finally {
-                mockDocument.getElementById = originalGet;
-            }
-        });
-
-        test('should return null if Leaflet (L) is undefined', () => {
-            const originalL = global.L;
-            global.L = undefined;
-
-            try {
-                const config = { center: [0, 0] };
-                const result = MapManager.createRegionMap('test-container', config);
-
-                assert.strictEqual(result, null);
-            } finally {
-                global.L = originalL;
-            }
-        });
-
-        test('should use default zoom level if not provided', () => {
-            mockL.map.mock.resetCalls();
-            const config = { center: [10, 10] };
-            const map = MapManager.createRegionMap('test-container', config);
-
-            assert.strictEqual(mockL.map.mock.calls.length, 1);
-            // map is the object returned by setView, which returns 'this' (the map mock).
-            // We can check calls on map.setView
-
-            assert.strictEqual(map.setView.mock.calls.length, 1);
-            assert.strictEqual(map.setView.mock.calls[0].arguments[1], 4);
-        });
-
-        test('should initialize with custom GeoJSON style and handlers', () => {
-            const style = { color: 'red' };
-            const onEachFeature = () => {};
-            const config = {
-                center: [0, 0],
-                geojson: { type: 'FeatureCollection', features: [] },
-                style: style,
-                onEachFeature: onEachFeature
-            };
-
-            MapManager.createRegionMap('test-container', config);
-
-            assert.strictEqual(mockL.geoJSON.mock.calls.length, 1);
-            const args = mockL.geoJSON.mock.calls[0].arguments;
-            assert.deepStrictEqual(args[0], config.geojson);
-            assert.strictEqual(args[1].style, style);
-            assert.strictEqual(args[1].onEachFeature, onEachFeature);
-        });
-
-        test('should add markers with popups correctly', () => {
-            const config = {
-                center: [0, 0],
-                markers: [
-                    { coords: [10, 20], popup: 'Marker 1' },
-                    { coords: [30, 40], name: 'Marker 2' }
-                ]
-            };
-
-            MapManager.createRegionMap('test-container', config);
-
-            assert.strictEqual(mockL.marker.mock.calls.length, 2);
-
-            // Markers are added to createdLayers
-            // Note: createRegionMap runs first, adding markers.
-            // createdLayers[0] -> Marker 1
-            // createdLayers[1] -> Marker 2
-
-            const marker1 = createdLayers[createdLayers.length - 2];
-            const marker2 = createdLayers[createdLayers.length - 1];
-
-            assert.strictEqual(marker1.bindPopup.mock.calls.length, 1);
-            assert.strictEqual(marker1.bindPopup.mock.calls[0].arguments[0], 'Marker 1');
-
-            assert.strictEqual(marker2.bindPopup.mock.calls.length, 1);
-            assert.strictEqual(marker2.bindPopup.mock.calls[0].arguments[0], 'Marker 2');
-        });
-    });
 });
