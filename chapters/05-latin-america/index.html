@@ -1,915 +1,1830 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta name="description" content="Chapter 5: Latin America - Explore the geography of Mexico, Central America, the Caribbean, and South America.">
- <title>Chapter 5: Latin America | World Regional Geography</title>
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
- <link rel="stylesheet" href="../../css/style.css">
- <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-</head>
-<body>
- <!-- Skip to Main Content Link (Accessibility) -->
- <a href="#main-content" class="skip-link">Skip to main content</a>
- 
- <header class="site-header">
- <div class="container">
- <div class="header-brand">
- <a href="../../index.html" class="logo">
- <span class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
- <span class="logo-text">World Regional Geography</span>
- </a>
- </div>
- <nav class="main-nav" aria-label="Main navigation">
- <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span class="hamburger"></span></button>
- <ul class="nav-menu">
- <li><a href="../../index.html" class="nav-link">Home</a></li>
- <li class="nav-dropdown">
- <a href="#" class="nav-link dropdown-toggle active">Chapters</a>
- <ul class="dropdown-menu">
- <li><a href="../01-introduction/index.html">1. Introduction</a></li>
- <li><a href="../02-europe/index.html">2. Europe</a></li>
- <li><a href="../03-russia/index.html">3. Russia and Central Asia</a></li>
- <li><a href="../04-north-america/index.html">4. North America</a></li>
- <li><a href="../05-latin-america/index.html">5. Latin America</a></li>
- <li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
- <li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa & SW Asia</a></li>
- <li><a href="../08-south-asia/index.html">8. South Asia</a></li>
- <li><a href="../09-east-asia/index.html">9. East Asia</a></li>
- <li><a href="../10-southeast-asia/index.html">10. Southeast Asia</a></li>
- <li><a href="../11-australia-oceania/index.html">11. Australia & Oceania</a></li>
- <li><a href="../12-conclusion/index.html">12. Global Connections</a></li>
- </ul>
- </li>
- <li><a href="../../standards.html" class="nav-link">Standards</a></li>
- <li><a href="../../index.html#chapters" class="nav-link">Resources</a></li>
- <li><a href="../../index.html#about" class="nav-link">About</a></li>
- </ul>
-            </nav>
- </div>
- </header>
-
- <section class="chapter-header">
- <div class="container">
- <p class="chapter-meta">Chapter 5 · Week 7</p>
- <h1 class="chapter-title">Latin America: Biodiversity and Inequality</h1>
- <p class="chapter-description">From the Amazon rainforest to Andean peaks, Latin America encompasses extraordinary biodiversity and cultural richness, shaped by Indigenous heritage, colonial legacies, and persistent inequality.</p>
- </div>
- </section>
-
- <main id="main-content" class="chapter-content">
- <div class="container">
- 
- <!-- 1. Learning Objectives -->
- <!-- 1. At a Glance (Scaffold) -->
- <section class="learning-scaffold" aria-label="Learning scaffold">
- <details class="learning-scaffold-details">
- <summary>
- <div class="scaffold-head">
- <h2>At a Glance</h2>
- <div class="scaffold-meta" aria-label="Prerequisites and time estimate">
- <span class="scaffold-chip"><strong>Prereqs:</strong> Chapter 4</span>
- <span class="scaffold-chip"><strong>Time:</strong> 60 min read + 20 min activities</span>
- <span class="scaffold-chip"><strong>Deliverable:</strong> Quiz + Reflection</span>
- </div>
- </div>
- </summary>
-
- <div class="scaffold-grid">
- <div class="scaffold-card">
- <h3> Learning Outcomes</h3>
- <ul>
- <li><strong>Describe:</strong> The impact of <strong>Altitudinal Zonation</strong> on settlement and agriculture.</li>
- <li><strong>Analyze:</strong> The lasting effects of the <strong>Columbian Exchange</strong> and colonial land systems.</li>
- <li><strong>Explain:</strong> The causes and global consequences of <strong>Amazon deforestation</strong>.</li>
- <li><strong>Evaluate:</strong> Urban challenges, including <strong>primate cities</strong> and informal settlements (favelas).</li>
- <li><strong>Apply:</strong> Geographic concepts to understand the region's vast economic inequality.</li>
- </ul>
- </div>
-
- <div class="scaffold-card">
- <h3> Key Terms</h3>
- <p>Altitudinal Zonation, Columbian Exchange, Mestizo, Hacienda, Favela, Remittances, Primate City, Treaty of Tordesillas, Informal Economy.</p>
- </div>
- </div>
-
- <div class="scaffold-grid">
- <div class="scaffold-card">
- <h3> Stop & Check</h3>
- <div class="quiz-question" style="margin-bottom:0.5rem;">Why are cities like Bogotá and Mexico City located at such high elevations?</div>
- <details>
- <summary style="padding:0; color:var(--color-primary); font-weight:600; font-size:0.9rem;">Reveal Answer</summary>
- <div style="margin-top:0.5rem; font-size:0.95rem; color:var(--color-text-light);">
- To escape the tropical heat and diseases of the lowlands. The <strong>Tierra Templada</strong> (Temperate Land) and <strong>Tierra Fría</strong> (Cold Land) zones offer a mild, spring-like climate year-round.
- </div>
- </details>
- </div>
-
- <div class="scaffold-card">
- <h3> Common Misconception</h3>
- <p><strong>Myth:</strong> The Amazon produces 20% of the world's oxygen and is the "lungs of the earth."</p>
- <p><strong>Fact:</strong> While the Amazon produces massive oxygen, it consumes nearly all of it through respiration and decomposition. Its true global value is as a massive <strong>carbon sink</strong> (storing CO2) and biodiversity reservoir.</p>
- </div>
- </div>
- </details>
- </section>
-
- <!-- Video Lecture -->
- <section class="video-lecture-section section-container">
- <h2> Video Lecture</h2>
- <div class="video-container">
- <iframe src="https://www.youtube.com/embed/3e6oO3YyTFA" title="Geography of Latin America Video Lecture" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
- </div>
- </section>
-
-
- <!-- 2. Regional Profile (Snapshot) -->
- <section id="profile" class="section-container">
- <h2> Regional Snapshot: Middle and South America</h2>
- <div class="profile-grid">
- <div class="profile-item">
- <strong>Population</strong>
- <span>~660 Million</span>
- </div>
- <div class="profile-item">
- <strong>Largest Forest</strong>
- <span>The Amazon Basin</span>
- </div>
- <div class="profile-item">
- <strong>Dominant Languages</strong>
- <span>Spanish & Portuguese</span>
- </div>
- <div class="profile-item">
- <strong>Primary Theme</strong>
- <span>Resource Extraction & Inequality</span>
- </div>
- </div>
- <p class="mt-4">Latin America is a region of vast physical contrasts - from the world's longest continental mountain range (the Andes) to the largest tropical rainforest (the Amazon). Its history is a record of intense cultural fusion and structural inequality born from centuries of extractive colonial rule.</p>
- 
- <figure class="figure figure-narrow">
- <img src="../../images/latin_america_map.jpg" alt="Map of Latin America" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
- <figcaption><strong>Figure 5.0:</strong> Regional Scope. Latin America includes the sub-regions of Mexico, Central America, the Caribbean, and South America.</figcaption>
- </figure>
- </section>
-
- <!-- 3. Interactive Regional Map -->
- <section id="interactive-map" class="section-container">
- <h2> Interactive Map: The Latin American Realm</h2>
- <p>Explore the physical spine of the Andes and the vast drainage basin of the Amazon. Click on major megacities like São Paulo and Mexico City to learn about their geographic significance.</p>
- <div id="regions-map" class="interactive-map"></div>
- <div class="map-controls">
- <p class="text-sm italic text-muted">Toggle between Physical terrain and Political boundaries. Notice the "Altitudinal Zonation" - how cities in the Andes are often built at high elevations to escape tropical heat.</p>
- </div>
- </section>
-
- <!-- 4. Physical Geography Analysis -->
- <section id="physical-geography" class="section-container">
- <h2> Physical Geography: Andes, Basins, and Plateaus</h2>
- <p>Latin America encompasses extraordinary physical diversity, from volcanic Caribbean islands to the world's longest mountain chain to vast river basins and coastal plains.</p>
- 
- <h3>The Andes Mountains</h3>
- <p>The <strong>Andes Mountains</strong> form the world's longest continental mountain chain, stretching 7,000 km along South America's western edge from Venezuela to Tierra del Fuego. Key characteristics:</p>
- <ul>
- <li><strong>Height:</strong> Over 50 peaks exceed 6,000 meters; Aconcagua (6,959 m) is the highest peak outside Asia</li>
- <li><strong>Active volcanism:</strong> Part of the Pacific "Ring of Fire", Cotopaxi (Ecuador) is one of the world's highest active volcanoes</li>
- <li><strong>Mineral wealth:</strong> Gold, silver, copper, tin, mining has been central to Andean economies since the Inca</li>
- <li><strong>Isolation:</strong> The rugged terrain historically isolated western South America from the interior</li>
- </ul>
- 
- <div class="note-callout">
- <h4> Altitudinal Zonation</h4>
- <p>In tropical mountains, climate and agriculture change with elevation rather than latitude. The Andes exhibit classic <strong>altitudinal zones</strong>:</p>
- <ul>
- <li><strong>Tierra Caliente (Hot Land):</strong> Sea level, 3,000 ft. Tropical crops: bananas, sugarcane, cacao</li>
- <li><strong>Tierra Templada (Temperate Land):</strong> 3,000-6,000 ft. Coffee zone, most populated</li>
- <li><strong>Tierra Fría (Cold Land):</strong> 6,000-12,000 ft. Potatoes, wheat, corn, includes major cities like Bogotá, Quito</li>
- <li><strong>Tierra Helada (Frozen Land):</strong> 12,000-15,000 ft. Grazing animals (llamas, alpacas)</li>
- <li><strong>Tierra Nevada (Snowy Land):</strong> Above 15,000 ft. Permanent snow and ice</li>
- </ul>
- <p>This explains why many Latin American capitals (Bogotá, Quito, La Paz, Mexico City) are located at high elevations, escaping tropical heat and disease.</p>
- </div>
- 
- <h3>The Amazon Basin</h3>
- <p>The <strong>Amazon River</strong> drains 40% of South America, an area nearly the size of the continental United States. Facts that illustrate its scale:</p>
- <ul>
- <li><strong>Discharge:</strong> The Amazon carries approximately 20% of all river water that flows into the world's oceans</li>
- <li><strong>Width:</strong> During rainy season, the river can exceed 160 km (100 miles) wide</li>
- <li><strong>Tributaries:</strong> More than 1,100 tributaries, 17 of which are longer than the Rhine River</li>
- <li><strong>Biodiversity:</strong> The Amazon rainforest contains approximately 10% of all species on Earth</li>
- </ul>
- <p>No bridges cross the main stem of the Amazon River, its width, seasonal flooding, and remote location make bridge construction impractical.</p>
- 
- <h3>The Altiplano and Lake Titicaca</h3>
- <p>The <strong>Altiplano</strong> ("high plain") is a vast plateau between two Andean ranges, averaging 3,750 meters elevation. <strong>Lake Titicaca</strong>, straddling Peru and Bolivia, is the world's highest navigable lake and has supported human civilization for over 3,000 years. The lake moderates temperatures, making agriculture possible at this extreme elevation.</p>
- 
- <h3>Other Major Physical Features</h3>
- <ul>
- <li><strong>Atacama Desert:</strong> The driest place on Earth, some weather stations have never recorded rain. Located in rain shadow of the Andes.</li>
- <li><strong>Brazilian Highlands:</strong> Ancient plateau region, major agricultural zone for coffee and soybeans</li>
- <li><strong>Pampas:</strong> Temperate grasslands of Argentina and Uruguay, the "breadbasket" producing wheat, cattle, and wine</li>
- <li><strong>Patagonia:</strong> Windswept semi-arid region of southern Argentina, sheep ranching and oil extraction</li>
- <li><strong>Llanos:</strong> Tropical grasslands of Venezuela and Colombia along the Orinoco River</li>
- </ul>
- 
- <div class="figure-row">
- <figure class="figure">
- <img src="../../images/south_america_regions.jpg" alt="Physical regions of South America" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
- <figcaption><strong>Figure 5.1:</strong> Physiography. The region is divided between the young Andes, the central lowlands (Amazon/Pampas), and the ancient Brazilian/Guiana Highlands.</figcaption>
- </figure>
- <figure class="figure">
- <img src="../../images/brazil_rio.jpg" alt="Coastal landscape of Rio de Janeiro" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
- <figcaption><strong>Figure 5.2:</strong> Coastal Geography. Many of Latin America's largest cities are located on the coast, a legacy of the maritime colonial economy.</figcaption>
- </figure>
- </div>
- 
- <h3>Middle America: The Caribbean and Central America</h3>
- <p>The physical geography of Middle America (Mexico, Central America, Caribbean) differs significantly:</p>
- <ul>
- <li><strong>Mexican Plateau:</strong> High central plateau (altiplano) where most Mexicans live, including Mexico City at 2,240 m</li>
- <li><strong>Central American Volcanic Chain:</strong> Part of the Ring of Fire, creating fertile volcanic soils but earthquake/eruption hazards</li>
- <li><strong>Caribbean Islands:</strong> Mix of volcanic islands (Greater and Lesser Antilles) and coral limestone formations (Bahamas)</li>
- <li><strong>Isthmus of Panama:</strong> The narrow land bridge connecting North and South America, site of the Panama Canal</li>
- </ul>
- 
- <div class="inquiry-prompt">
- <h3> Geographic Inquiry</h3>
- <p>The Amazon rainforest functions as a "carbon sink," absorbing CO2 and regulating global weather patterns. Deforestation for cattle ranching and soy production has accelerated dramatically. If the Amazon passes a "tipping point" and transitions to savanna, what are the potential consequences for global climate? Who bears responsibility for protecting this shared resource?</p>
- </div>
- </section>
-
- <!-- 4b. Data Visualization: Latin America at a Glance -->
- <section id="data-viz" class="section-container">
- <h2> Data Visualization: Latin America at a Glance</h2>
- <p>Analyze the following charts to understand two of Latin America's most pressing geographic challenges: environmental destruction and economic inequality. What patterns do you notice, and what geographic factors explain them?</p>
-
- <div class="figure-row">
- <div style="background:#fff; border-radius:12px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex:1;">
- <h3 style="font-size:1rem; margin-bottom:1rem; color:var(--color-primary-dark);">Amazon Deforestation: Annual Forest Loss (km², Brazil)</h3>
- <canvas id="chart-deforestation" height="220" aria-label="Line chart showing Amazon deforestation rates from 2004 to 2023"></canvas>
- <p style="font-size:0.85rem; color:var(--color-text-light); margin-top:0.75rem;"> <em>Notice the dramatic drop after 2004 (Action Plan for Deforestation Prevention) and the spike after 2018. What political and economic events explain these shifts?</em></p>
- </div>
- <div style="background:#fff; border-radius:12px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex:1;">
- <h3 style="font-size:1rem; margin-bottom:1rem; color:var(--color-primary-dark);">GDP per Capita: Latin American Nations (USD, 2024 est.)</h3>
- <canvas id="chart-gdp-la" height="220" aria-label="Horizontal bar chart comparing GDP per capita across Latin American nations"></canvas>
- <p style="font-size:0.85rem; color:var(--color-text-light); margin-top:0.75rem;"> <em>The economic gap within Latin America is enormous. How do geography (landlocked vs. coastal), colonial history, and resource endowments explain these differences?</em></p>
- </div>
- </div>
- </section>
-
- <!-- 6. Important Person Break-out (Rigoberta Menchú) -->
- <section class="important-person-sidebar">
- <div class="sidebar-content">
- <div class="person-image">
- <img src="../../images/6f92edca7d9c02dea591ebec2c7a1d97.jpg" alt="Rigoberta Menchú" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
- </div>
- <div class="person-header">
- <h3> Important Person</h3>
- </div>
- <div class="person-info">
- <strong>Rigoberta Menchú</strong>
- <p class="person-title">Human Rights Activist & Nobel Laureate</p>
- <p>A K'iche' Maya woman from Guatemala, Menchú has dedicated her life to advocating for the rights of Indigenous peoples in Latin America. Her work highlights the ongoing geographic struggles over land rights, sovereignty, and environmental stewardship in the face of resource extraction.</p>
- <a href="https://www.nobelprize.org/prizes/peace/1992/menchu/biographical/" target="_blank" class="btn-text">Learn about her advocacy →</a>
- </div>
- </div>
- </section>
-
- <!-- 5a. Colonial History and Indigenous Empires -->
- <section id="colonial-history" class="section-container">
- <h2> Colonial History: Empires, Conquest, and the Columbian Exchange</h2>
- 
- <h3>Pre-Columbian Civilizations</h3>
- <p>Before European contact, Latin America was home to sophisticated civilizations:</p>
- 
- <div class="note-callout">
- <h4> The Maya (300-900 CE Classical Period)</h4>
- <ul>
- <li>Located in southern Mexico, Guatemala, Belize, Honduras</li>
- <li>Built magnificent stone cities with pyramids, observatories, ball courts</li>
- <li>Developed advanced mathematics (concept of zero), astronomy, and accurate calendars</li>
- <li>Descendants still live in the region today, millions speak Mayan languages</li>
- </ul>
- </div>
- 
- <div class="note-callout">
- <h4> The Aztec Empire (1428-1521 CE)</h4>
- <ul>
- <li>Controlled central Mexico from their island capital <strong>Tenochtitlán</strong> (now Mexico City)</li>
- <li>Population estimated at 100,000-250,000, one of the world's largest cities at the time</li>
- <li>Collected tribute from subjugated peoples throughout Mesoamerica</li>
- <li>Conquered by Hernán Cortés in 1521 with Spanish soldiers, indigenous allies, and epidemic disease</li>
- </ul>
- </div>
- 
- <div class="note-callout">
- <h4> The Inca Empire (1438-1533 CE)</h4>
- <ul>
- <li>Stretched 4,000 km along the Andes from Ecuador to Chile, the largest empire in pre-Columbian Americas</li>
- <li>Built remarkable infrastructure: 40,000 km of roads, suspension bridges, terraced agriculture</li>
- <li>Capital at <strong>Cusco</strong> (Peru); Machu Picchu was a royal estate</li>
- <li>Conquered by Francisco Pizarro in 1533 after capturing the Inca emperor</li>
- </ul>
- </div>
- 
- <h3>The Columbian Exchange</h3>
- <p>The encounter between Europe and the Americas initiated a massive exchange of plants, animals, diseases, and people that transformed both hemispheres:</p>
- 
- <table class="data-table">
- <thead>
- <tr>
- <th>From Americas to Europe/Africa/Asia</th>
- <th>From Europe/Africa/Asia to Americas</th>
- </tr>
- </thead>
- <tbody>
- <tr>
- <td>Potatoes, corn (maize), tomatoes</td>
- <td>Wheat, rice, sugarcane, coffee</td>
- </tr>
- <tr>
- <td>Cacao (chocolate), vanilla, tobacco</td>
- <td>Horses, cattle, pigs, sheep</td>
- </tr>
- <tr>
- <td>Squash, beans, peppers, peanuts</td>
- <td>Smallpox, measles, influenza (devastating)</td>
- </tr>
- <tr>
- <td>Rubber, quinine (malaria treatment)</td>
- <td>Christianity, Spanish/Portuguese languages</td>
- </tr>
- </tbody>
- </table>
- 
- <div class="info-callout">
- <h4> Demographic Catastrophe</h4>
- <p>European diseases devastated indigenous populations who had no immunity. In Mexico, the population collapsed from an estimated 15-25 million in 1519 to approximately 2.5 million by 1600, a decline of 80-90%. This catastrophic population loss fundamentally reshaped Latin American society and created demand for African slave labor.</p>
- </div>
- 
- <h3>Colonial Land Systems</h3>
- <p>Spanish and Portuguese colonizers established two distinct agricultural systems:</p>
- <ul>
- <li><strong>Hacienda (Mainland):</strong> Large land grants in the interior, focused on social prestige and self-sufficiency. Indigenous workers remained on the land under a feudal-like system. Less export-oriented.</li>
- <li><strong>Plantation (Rimland):</strong> Coastal/Caribbean operations focused on export crops (sugar, tobacco, cotton). Required massive labor, first indigenous, then African slaves. Created the African diaspora in the Americas.</li>
- </ul>
- 
- <h3>The Treaty of Tordesillas (1494)</h3>
- <p>To prevent conflict between Spain and Portugal, the Pope drew a line dividing the "New World":</p>
- <ul>
- <li><strong>West of the line:</strong> Spanish territory (most of Latin America)</li>
- <li><strong>East of the line:</strong> Portuguese territory (Brazil)</li>
- </ul>
- <p>This explains why Brazil speaks Portuguese while the rest of Latin America speaks Spanish.</p>
- 
- <h3>Independence Movements (1810-1830)</h3>
- <p>Inspired by the American and French Revolutions, Latin American colonies achieved independence:</p>
- <ul>
- <li><strong>Simón Bolívar:</strong> Liberated Venezuela, Colombia, Ecuador, Peru, Bolivia</li>
- <li><strong>José de San Martín:</strong> Liberated Argentina, Chile, Peru</li>
- <li><strong>Miguel Hidalgo:</strong> Initiated Mexican independence (1810)</li>
- <li><strong>Brazil:</strong> Uniquely, declared independence peacefully in 1822 when the Portuguese prince declared himself Emperor</li>
- </ul>
- </section>
-
- <!-- 5. Human Geography Analysis -->
- <section id="human-geography" class="section-container">
- <h2> Human Geography: Colonial Legacies and Urban Challenges</h2>
- 
- <h3>Ethnic Composition: The Cultural Mosaic</h3>
- <p>Latin America's population reflects the complex mixing of indigenous, European, and African peoples:</p>
- <ul>
- <li><strong>Mestizo:</strong> Mixed European and indigenous ancestry, the majority in Mexico, Central America, Colombia, Venezuela, Ecuador</li>
- <li><strong>Mulatto:</strong> Mixed European and African ancestry, common in Caribbean and coastal Brazil</li>
- <li><strong>Indigenous:</strong> Majority or large minority in Bolivia, Peru, Guatemala, parts of Mexico, Ecuador</li>
- <li><strong>European:</strong> Dominant in Argentina, Uruguay, southern Brazil, Chile (due to 19th-century immigration)</li>
- <li><strong>African:</strong> Significant populations in Brazil, Caribbean, coastal Colombia/Venezuela</li>
- </ul>
- 
- <h3>Urbanization and Megacities</h3>
- <p>Latin America is approximately <strong>81% urbanized</strong>, one of the world's most urban regions. Megacities include:</p>
- <ul>
- <li><strong>Mexico City:</strong> 21+ million, one of the world's largest metropolitan areas, built on the ruins of Tenochtitlán</li>
- <li><strong>São Paulo:</strong> 22+ million, Brazil's economic engine, financial center</li>
- <li><strong>Buenos Aires:</strong> 15+ million, cultural capital of the "Southern Cone"</li>
- <li><strong>Rio de Janeiro:</strong> 13+ million, famous for Carnival, beaches, and stark inequality</li>
- <li><strong>Lima:</strong> 10+ million, Peru's primate city, contains nearly one-third of the national population</li>
- </ul>
- 
- <h3>Urban Structure: The Spanish Colonial Model</h3>
- <p>Spanish colonial cities follow a distinctive pattern still visible today:</p>
- <ul>
- <li><strong>Central Plaza:</strong> Main square with government buildings, cathedral, elite residences</li>
- <li><strong>Commercial Spine:</strong> Main commercial street extending from the plaza</li>
- <li><strong>Concentric Zones:</strong> Wealth decreases with distance from center (reverse of North American pattern)</li>
- <li><strong>Informal Settlements:</strong> <strong>Favelas</strong> (Brazil), <strong>barrios</strong> (Spanish-speaking countries), <strong>pueblos jóvenes</strong> (Peru) on urban periphery</li>
- </ul>
- 
- <div class="note-callout">
- <h4> Urban Dualism</h4>
- <p>Latin American cities display stark spatial inequality. In Rio de Janeiro, luxury high-rises overlook hillside favelas with inadequate water, sewage, and security. This "urban dualism" reflects the region's persistent income inequality, Latin America has the world's highest Gini coefficients (measures of inequality).</p>
- </div>
- 
- <div class="figure-row">
- <figure class="figure">
- <img src="../../images/megacities.jpg" alt="Informal housing/favelas in a megacity" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
- <figcaption><strong>Figure 5.3:</strong> Urban Dualism. In cities like Rio or São Paulo, modern skyscrapers often sit immediately adjacent to <strong>favelas</strong> (informal settlements).</figcaption>
- </figure>
- <figure class="figure">
- <img src="../../images/colonialism.jpg" alt="Colonial architecture" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
- <figcaption><strong>Figure 5.4:</strong> Colonial Imprint. The layout of many Latin American cities still follows the Spanish "Laws of the Indies" with a central plaza and cathedral.</figcaption>
- </figure>
- </div>
-
- <h3>Economic Patterns</h3>
- <p>Latin American economies share common characteristics shaped by colonial history:</p>
- <ul>
- <li><strong>Primary product exports:</strong> Heavy dependence on agricultural commodities (coffee, soybeans, beef) and minerals (copper, iron ore, oil)</li>
- <li><strong>Import substitution:</strong> Mid-20th century attempts to develop domestic manufacturing (largely unsuccessful)</li>
- <li><strong>Remittances:</strong> Money sent home by migrants, critical income source for Mexico, Central America, Caribbean. Mexico receives $50+ billion annually</li>
- <li><strong>Informal economy:</strong> Street vendors, unlicensed businesses, estimated at 50%+ of employment in many countries</li>
- </ul>
- 
- <h3>Regional Economic Blocs</h3>
- <ul>
- <li><strong>Mercosur:</strong> Southern Cone customs union (Brazil, Argentina, Uruguay, Paraguay)</li>
- <li><strong>Pacific Alliance:</strong> Free trade bloc (Mexico, Colombia, Peru, Chile), the most economically liberal</li>
- <li><strong>CARICOM:</strong> Caribbean Community, economic integration among Caribbean nations</li>
- <li><strong>USMCA:</strong> Includes Mexico with US and Canada (covered in Chapter 4)</li>
- </ul>
- </section>
-
- <!-- 7. Texas Connection Toggle -->
- <section id="texas-connection" class="section-container">
- <div class="texas-toggle">
- <button class="btn-texas-toggle" id="texas-btn">
- <span class="star-icon"></span> Texas Connection: The Borderland Fusion
- </button>
- <div class="texas-content hidden" id="texas-content">
- <h4>A Binational Reality</h4>
- <p>Texas shares a 1,254-mile border with Mexico, creating a unique geographic "shatterbelt" where cultures and economies fuse. The <strong>Tex-Mex</strong> cultural landscape is not just about food, it's a geographic reality of shared history, migration, and trade.</p>
- 
- <h5>Historical Context</h5>
- <ul>
- <li>Texas was part of <strong>New Spain</strong> and later Mexico until 1836</li>
- <li>Spanish missions (San Antonio), land grants, and ranching culture shaped early Texas</li>
- <li>Many Texas cities have Spanish names: San Antonio, El Paso, Corpus Christi, Amarillo</li>
- <li>The <strong>Tejano</strong> culture represents Texans of Mexican descent, a community predating Anglo settlement</li>
- </ul>
- 
- <h5>Economic Integration</h5>
- <ul>
- <li><strong>Port of Laredo:</strong> Busiest inland port in the United States, primary gateway for US-Mexico trade</li>
- <li><strong>Maquiladora supply chains:</strong> Texas manufacturers integrated with Mexican assembly plants</li>
- <li><strong>Twin cities:</strong> El Paso-Juárez, Laredo-Nuevo Laredo, McAllen-Reynosa function as binational metro areas</li>
- <li><strong>Remittances:</strong> Texas has one of the highest volumes of money transfers to Mexico and Central America</li>
- </ul>
- 
- <h5>Immigration and Demographics</h5>
- <ul>
- <li>40% of Texans identify as Hispanic/Latino</li>
- <li>Houston has the largest Central American population outside Central America</li>
- <li>Texas receives the most asylum seekers from the "Northern Triangle" (Guatemala, Honduras, El Salvador)</li>
- <li>Climate change and violence in Central America drive migration through Texas</li>
- </ul>
- 
- <p><strong>Geographic connection:</strong> What happens economically or politically in Mexico and Central America has immediate impacts on Texas communities, trade, and migration patterns.</p>
- </div>
- </div>
- </section>
-
- <!-- 8. Case Study -->
- <section id="case-study" class="section-container">
- <div class="case-study-gold">
- <div class="case-study-header">
- <span class="label">Case Study</span>
- <h2>The Panama Canal: A Strategic Chokepoint</h2>
- </div>
- <p>The Panama Canal is one of the world's most critical "functional regions." By cutting through the 82-km Isthmus of Panama, it connects the Atlantic and Pacific oceans, fundamentally altering global trade geography.</p>
- 
- <h4>Historical Geography</h4>
- <ul>
- <li><strong>French attempt (1881-1889):</strong> Failed due to disease (malaria, yellow fever) and engineering challenges, 22,000 workers died</li>
- <li><strong>US completion (1904-1914):</strong> Success came after understanding mosquito-borne disease transmission</li>
- <li><strong>Panamanian control (1999):</strong> Canal transferred from US to Panama after 85 years</li>
- <li><strong>Expansion (2016):</strong> Third set of locks opened, allowing larger "Neopanamax" ships</li>
- </ul>
- 
- <h4>Geographic Significance</h4>
- <ul>
- <li><strong>Trade route:</strong> Shortens New York to San Francisco voyage by 13,000 km (avoiding Cape Horn)</li>
- <li><strong>Global trade:</strong> 6% of world trade passes through the canal, 40+ ships daily</li>
- <li><strong>Revenue:</strong> Generates $4+ billion annually for Panama</li>
- </ul>
- 
- <h4>Climate Challenge</h4>
- <p>The canal operates on freshwater from <strong>Gatún Lake</strong>, each ship transit uses 200 million liters. Prolonged droughts linked to climate change have reduced lake levels, forcing <strong>draft restrictions</strong> that limit the number and size of ships. In 2023, severe drought reduced daily transits from 38 to 22 ships, creating global shipping delays.</p>
- 
- <div class="case-study-questions">
- <h4>Questions to Consider:</h4>
- <ul>
- <li>How does the "physical geography" of Panama (rainfall, tropical forests, watershed) directly impact the "economic geography" of global trade?</li>
- <li>If the canal's capacity is permanently reduced by climate change, which world regions and industries are most affected?</li>
- <li>What alternatives exist if the Panama Canal cannot handle growing ship sizes and volumes?</li>
- </ul>
- </div>
- </div>
- </section>
-
- <!-- 9. Interactive Accordions (Summary & Glossary) -->
- <section id="summary-glossary" class="section-container">
- <div class="accordion">
- <div class="accordion-item">
- <button class="accordion-header">
- Glossary of Terms <span class="chevron"></span>
- </button>
- <div class="accordion-content">
- <dl>
- <dt>Altitudinal Zonation</dt>
- <dd>The relationship between higher elevation, cooler temperatures, and distinct vegetation/crop zones in tropical mountains. Explains why many Latin American capitals are at high elevations.</dd>
- 
- <dt>Columbian Exchange</dt>
- <dd>The massive transfer of plants, animals, diseases, people, and ideas between the Americas and Europe/Africa following 1492. Transformed both hemispheres.</dd>
- 
- <dt>Treaty of Tordesillas (1494)</dt>
- <dd>Papal decree dividing the "New World" between Spain (west) and Portugal (east), explaining why Brazil speaks Portuguese.</dd>
- 
- <dt>Mestizo</dt>
- <dd>A person of mixed European and indigenous American ancestry, the majority ethnic category in much of Latin America.</dd>
- 
- <dt>Hacienda</dt>
- <dd>Large Spanish colonial land grant in the interior, focused on social prestige and self-sufficiency rather than export production. Indigenous workers lived on the land.</dd>
- 
- <dt>Plantation</dt>
- <dd>Colonial agricultural enterprise focused on single cash crops (sugar, tobacco, cotton) for export. Required massive labor, first indigenous, then African slaves.</dd>
- 
- <dt>Favela</dt>
- <dd>Brazilian term for an informal urban settlement or shantytown, typically on hillsides or urban periphery, lacking adequate infrastructure.</dd>
- 
- <dt>Barrio</dt>
- <dd>Spanish term for neighborhood, often referring to low-income or informal settlements in Latin American cities.</dd>
- 
- <dt>Remittances</dt>
- <dd>Money sent by migrants to their families in home countries. Critical income source for Mexico, Central America, and Caribbean, Mexico receives $50+ billion annually.</dd>
- 
- <dt>Primate City</dt>
- <dd>A city that dominates a country's urban hierarchy, typically 2-3 times larger than the second city. Examples: Mexico City, Lima, Buenos Aires.</dd>
- 
- <dt>Maquiladora</dt>
- <dd>A foreign-owned factory in Mexico that imports components duty-free, assembles products, and exports to the US. Concentrated along the border.</dd>
- 
- <dt>Informal Economy</dt>
- <dd>Economic activity outside government regulation or taxation, street vendors, unlicensed businesses. Estimated at 50%+ of employment in some Latin American countries.</dd>
- 
- <dt>Altiplano</dt>
- <dd>Spanish for "high plain", the elevated plateau between Andean ranges in Peru and Bolivia, including Lake Titicaca. Average elevation 3,750 meters.</dd>
- 
- <dt>Land Bridge</dt>
- <dd>A narrow strip of land connecting two larger landmasses. The Isthmus of Panama connects North and South America and is the site of the Panama Canal.</dd>
- 
- <dt>Chokepoint</dt>
- <dd>A narrow passage through which shipping must pass, creating strategic and economic significance. Panama Canal and Strait of Magellan are Latin American examples.</dd>
- </dl>
- </div>
- </div>
- <div class="accordion-item">
- <button class="accordion-header">
- Summary of Big Ideas <span class="chevron"></span>
- </button>
- <div class="accordion-content">
- <ol>
- <li><strong>Physical extremes define the region:</strong> The Andes (world's longest mountain chain), the Amazon (world's largest rainforest), the Atacama (driest desert), and the Pampas (agricultural heartland) create extraordinary environmental diversity.</li>
- <li><strong>Altitudinal zonation matters:</strong> In tropical latitudes, elevation determines climate and agricultural potential. Major cities like Bogotá, Quito, and Mexico City are located at high elevations to escape tropical heat.</li>
- <li><strong>Pre-Columbian civilizations were sophisticated:</strong> The Maya, Aztec, and Inca built advanced societies with remarkable achievements in mathematics, astronomy, engineering, and governance.</li>
- <li><strong>Colonialism reshaped everything:</strong> The Columbian Exchange, demographic catastrophe from disease, African slave trade, and extractive economic systems created lasting patterns of inequality.</li>
- <li><strong>The Treaty of Tordesillas explains the linguistic divide:</strong> Spanish dominates most of Latin America; Portuguese dominates Brazil, a legacy of papal division in 1494.</li>
- <li><strong>Extreme urbanization with stark inequality:</strong> Latin America is 81% urban, but cities display "urban dualism", modern development adjacent to informal settlements lacking basic services.</li>
- <li><strong>Export dependence continues:</strong> Economies remain heavily dependent on primary products (coffee, soybeans, minerals, oil), making them vulnerable to commodity price swings.</li>
- <li><strong>Remittances are economically critical:</strong> Money sent home by migrants provides essential income for families and communities, particularly in Mexico, Central America, and the Caribbean.</li>
- <li><strong>The Panama Canal is a global chokepoint:</strong> 6% of world trade passes through this narrow isthmus, and climate change threatens its operations.</li>
- <li><strong>Environmental challenges mount:</strong> Amazon deforestation, water scarcity, and climate vulnerability threaten both regional and global systems.</li>
- </ol>
- </div>
- </div>
- </div>
- </section>
-
- <!-- 9b. Regional Decisions Exercise -->
- <section id="regional-decisions" class="section-container">
- <div style="background: linear-gradient(135deg, #1a4a2a 0%, #2d8a4a 100%); border-radius: 16px; padding: 2rem; color: #fff;">
- <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
- <span style="font-size:1.2rem; font-weight:700;">&#9733;</span>
- <div>
- <span style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; opacity:0.8;">Role-Play Exercise</span>
- <h2 style="margin:0; font-size:1.4rem;">Regional Decisions: The Amazon at a Crossroads</h2>
- </div>
- </div>
- <p style="opacity:0.9; margin-bottom:1.5rem;">Brazil contains approximately <strong>60% of the Amazon rainforest</strong>, a global carbon sink that regulates climate for the entire planet. Yet Brazil is also a developing nation with millions of citizens in poverty, and the Amazon's resources represent enormous economic potential. You are a delegate at an <strong>International Amazon Summit</strong>. Your task: negotiate a policy framework that addresses both environmental protection and economic development.</p>
-
- <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-bottom:1.5rem;">
- <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:1rem;">
- <strong style="display:block; margin-bottom:0.4rem;"> Role A: Brazilian Farmer</strong>
- <p style="font-size:0.88rem; opacity:0.9; margin:0;">Your family cleared forest land to grow soybeans. Brazil is now the world's #1 soy exporter. You argue that Brazil has the sovereign right to develop its own resources, just as Europe and North America did.</p>
- </div>
- <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:1rem;">
- <strong style="display:block; margin-bottom:0.4rem;"> Role B: EU Climate Negotiator</strong>
- <p style="font-size:0.88rem; opacity:0.9; margin:0;">The Amazon absorbs CO2 that affects global temperatures. You represent nations that have already industrialized and now want to preserve the forest. You offer financial incentives for conservation.</p>
- </div>
- <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:1rem;">
- <strong style="display:block; margin-bottom:0.4rem;"> Role C: Indigenous Leader</strong>
- <p style="font-size:0.88rem; opacity:0.9; margin:0;">Your people have lived in the Amazon for thousands of years. Deforestation destroys your homeland, culture, and food security. You demand legal recognition of Indigenous territories and veto power over development projects.</p>
- </div>
- <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:1rem;">
- <strong style="display:block; margin-bottom:0.4rem;"> Role D: Brazilian Development Minister</strong>
- <p style="font-size:0.88rem; opacity:0.9; margin:0;">30 million Brazilians live in poverty. The Amazon's timber, minerals, and agricultural land represent a path to development. You seek a "sustainable development" compromise that allows controlled extraction.</p>
- </div>
- </div>
-
- <div style="background:rgba(255,255,255,0.1); border-radius:10px; padding:1rem;">
- <strong style="display:block; margin-bottom:0.5rem;"> Discussion Questions:</strong>
- <ol style="margin:0; padding-left:1.2rem; opacity:0.9; font-size:0.9rem;">
- <li>Does Brazil have the right to develop the Amazon, even if it harms global climate? How does this relate to the concept of <em>environmental justice</em>?</li>
- <li>Wealthy nations industrialized by exploiting their own natural resources. Is it fair to now restrict developing nations from doing the same?</li>
- <li>What role should <em>payments for ecosystem services</em> (paying Brazil to preserve the forest) play in this negotiation? Who should pay, and how much?</li>
- <li>How does the geographic concept of a <em>commons</em> (a shared resource) apply to the Amazon? Can international law govern a nation's internal territory?</li>
- </ol>
- </div>
- </div>
- </section>
-
- <!-- 10. Knowledge Check (Quiz) -->
- <section id="quiz" class="section-container">
- <h2> Knowledge Check</h2>
- <p>Test your understanding of the core concepts covered in this chapter. This quiz consists of multiple-choice questions designed to review key terms, regional patterns, and geographic relationships. Select the best answer for each question to receive immediate feedback.</p>
-<div id="quiz-container" class="quiz-wrapper">
- <p class="loading">Loading quiz questions...</p>
- </div>
- </section>
-
- <!-- 11. Discussion & Reflection Prompts -->
- <section id="discussion" class="section-container">
- <h2> Discussion & Reflection Prompts</h2>
- <div class="discussion-box">
- <p>Use these prompts to deepen your understanding and connect chapter concepts to your own experience and the broader world.</p>
-
- <h3>Reflect on Your Learning</h3>
- <ol>
- <li>Think about the foods you eat regularly, such as potatoes, tomatoes, chocolate, corn, and chili peppers. These are all products of the <strong>Columbian Exchange</strong>. How has Latin America shaped your daily life in ways you may not have recognized?</li>
- <li>Latin America is home to the world's largest Catholic population, a legacy of Spanish and Portuguese colonization. How does religion function as a <em>cultural landscape</em>, shaping cities, holidays, and social norms?</li>
- <li>Many Latin American migrants send <strong>remittances</strong> home to their families. If you were living abroad, how would you feel about this responsibility? What does this tell us about the geographic connections between people and their home regions?</li>
- </ol>
-
- <h3>Discuss With Your Peers</h3>
- <ul>
- <li><strong>"Latin America is rich in resources but poor in outcomes."</strong> Do you agree with this statement? What geographic and historical factors explain the "resource curse" that affects many commodity-dependent economies?</li>
- <li>The Amazon rainforest is often called the "lungs of the Earth." But Brazil argues it has the sovereign right to develop its own territory. How should the international community balance national sovereignty with global environmental responsibility?</li>
- <li>Latin American cities like São Paulo and Mexico City are among the world's largest, yet they contain vast informal settlements (favelas, barrios). Is rapid urbanization a sign of development or a symptom of inequality, or both?</li>
- </ul>
- </div>
- </section>
-
- <!-- Navigation -->
- <nav class="chapter-nav" style="display: flex; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-8);">
- <a href="../04-north-america/index.html" class="btn btn-primary">← Chapter 4: North America</a>
- <a href="../06-sub-saharan-africa/index.html" class="btn btn-primary">Chapter 6: Sub-Saharan Africa →</a>
- </nav>
-
- <!-- Standards Alignment Map -->
- <section class="standards-alignment" aria-label="Curriculum Standards Alignment">
- <h2> Curriculum Standards Alignment</h2>
- <p class="standards-subtitle">This chapter aligns with the following National and State geography standards.</p>
- 
- <div class="standards-grid">
- <!-- National Standards -->
- <details class="standard-group std-national">
- <summary><h3>National Geography Standards</h3></summary>
- <div class="standard-content">
- <div class="standard-item">
- <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element II.6</a>
- <span class="standard-desc">The Uses of Geography: Perception of Places (Indigenous vs. Colonial).</span>
- </div>
- <div class="standard-item">
- <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element V.14</a>
- <span class="standard-desc">Human Modification: Environmental consequences (Amazon Deforestation).</span>
- </div>
- <div class="standard-item">
- <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element IV.12</a>
- <span class="standard-desc">Human Settlements: Functions and patterns (Mega-cities, Favelas).</span>
- </div>
- </div>
- </details>
-
- <!-- Texas Standards -->
- <details class="standard-group std-texas">
- <summary><h3> Texas Core (GEOG 1303)</h3></summary>
- <div class="standard-content">
- <div class="standard-item">
- <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 1</a>
- <span class="standard-desc">Define "region" (Latin cultural realm).</span>
- </div>
- <div class="standard-item">
- <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 2</a>
- <span class="standard-desc">Locate significant geographic features (Andes, Amazon, Panama Canal).</span>
- </div>
- <div class="standard-item">
- <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 3</a>
- <span class="standard-desc">Globalization (Colonial legacy, impact on Texas).</span>
- </div>
- </div>
- </details>
-
- <!-- Florida Standards -->
- <details class="standard-group std-florida">
- <summary><h3> Florida Sunshine State (SS.912.G)</h3></summary>
- <div class="standard-content">
- <div class="standard-item">
- <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.2.1</a>
- <span class="standard-desc">Identify physical characteristics of places (Altitudinal Zonation).</span>
- </div>
- <div class="standard-item">
- <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.4.1</a>
- <span class="standard-desc">Interpret population growth and distribution (Urbanization patterns).</span>
- </div>
- <div class="standard-item">
- <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.5.2</a>
- <span class="standard-desc">Analyze how humans impact the physical environment (Deforestation).</span>
- </div>
- </div>
- </details>
- </div>
- </section>
-
- </div>
- </main>
-
- <footer class="site-footer">
- <div class="container">
- <div class="footer-content">
- <div class="footer-brand"><span class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><span>World Regional Geography</span></div>
- <div class="footer-copyright"><p>© 2026 Dr. Sounny. Open Educational Resource.</p></div>
- </div>
- </div>
- </footer>
-
- <!-- Image Lightbox Overlay -->
- <div id="image-lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
- <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
- <img class="lightbox-image" src="" alt="">
- </div>
-
- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
- <script src="../../js/map-init.js"></script>
- <script src="../../js/regions-data.js"></script>
- <script src="../../js/quiz-engine.js"></script>
- <script src="../../js/main.js"></script>
- <script>
- // Chapter 5 Chart.js Visualizations
- document.addEventListener('DOMContentLoaded', () => {
- // Amazon Deforestation Chart (line)
- const deforestCtx = document.getElementById('chart-deforestation');
- if (deforestCtx && window.Chart) {
- new Chart(deforestCtx, {
- type: 'line',
- data: {
- labels: ['2004','2006','2008','2010','2012','2014','2016','2018','2020','2022','2023'],
- datasets: [{
- label: 'Forest Loss (km²)',
- data: [27772, 14286, 12911, 7000, 4571, 4848, 7893, 7536, 11088, 11568, 9001],
- borderColor: 'rgba(220, 80, 50, 1)',
- backgroundColor: 'rgba(220, 80, 50, 0.12)',
- borderWidth: 2.5,
- pointBackgroundColor: 'rgba(220, 80, 50, 1)',
- pointRadius: 4,
- fill: true,
- tension: 0.3
- }]
- },
- options: {
- responsive: true,
- plugins: {
- legend: { display: false },
- tooltip: {
- callbacks: {
- label: ctx => ` ${ctx.raw.toLocaleString()} km²`
- }
- }
- },
- scales: {
- y: {
- beginAtZero: true,
- ticks: { callback: val => val.toLocaleString() + ' km²' }
- }
- }
- }
- });
- }
-
- // GDP per Capita Latin America (horizontal bar)
- const gdpCtx = document.getElementById('chart-gdp-la');
- if (gdpCtx && window.Chart) {
- new Chart(gdpCtx, {
- type: 'bar',
- data: {
- labels: ['Chile', 'Uruguay', 'Argentina', 'Brazil', 'Mexico', 'Colombia', 'Peru', 'Bolivia', 'Haiti'],
- datasets: [{
- label: 'GDP per Capita (USD)',
- data: [16500, 17800, 13700, 10200, 11000, 7200, 7100, 3500, 1700],
- backgroundColor: [
- 'rgba(74,144,164,0.85)','rgba(74,144,164,0.85)','rgba(74,144,164,0.75)',
- 'rgba(74,144,164,0.65)','rgba(74,144,164,0.65)','rgba(251,188,5,0.8)',
- 'rgba(251,188,5,0.7)','rgba(220,80,50,0.75)','rgba(220,80,50,0.85)'
- ],
- borderRadius: 5,
- borderWidth: 1
- }]
- },
- options: {
- indexAxis: 'y',
- responsive: true,
- plugins: {
- legend: { display: false },
- tooltip: {
- callbacks: {
- label: ctx => ` $${ctx.raw.toLocaleString()}`
- }
- }
- },
- scales: {
- x: {
- beginAtZero: true,
- ticks: { callback: val => '$' + (val/1000) + 'k' }
- }
- }
- }
- });
- }
- });
- </script>
- <script>
- // Initialize the Chapter 5 Interactive Map
- document.addEventListener('DOMContentLoaded', () => {
- const map = MapManager.initMap('regions-map', [-15, -60], 3);
- if (map && window.WorldRegionsData) {
- const laData = window.WorldRegionsData.features.find(f => f.id === 'latin-america');
- if (laData) {
- MapManager.addGeoJson(map, { type: "FeatureCollection", features: [laData] }, {
- style: {
- color: 'var(--color-primary-dark)',
- weight: 2,
- fillColor: 'var(--color-primary)',
- fillOpacity: 0.1
- }
- }, "Latin America Region");
- }
- }
-
- // Initialize the Chapter 5 Quiz from external JSON
- fetch('quiz-data.json')
- .then(response => response.json())
- .then(data => {
- QuizEngine.init('quiz-container', data);
- })
- .catch(err => console.error('Error loading quiz data:', err));
- });
-
- // Lightbox functionality for zoomable images
- (function() {
- const lightbox = document.getElementById('image-lightbox');
- const lightboxImg = lightbox.querySelector('.lightbox-image');
- const closeBtn = lightbox.querySelector('.lightbox-close');
- 
- // Open lightbox when clicking zoomable images
- document.querySelectorAll('.zoomable-image').forEach(img => {
- img.addEventListener('click', () => {
- lightboxImg.src = img.src;
- lightboxImg.alt = img.alt;
- lightbox.hidden = false;
- document.body.style.overflow = 'hidden';
- closeBtn.focus();
- });
- // Also support keyboard activation
- img.addEventListener('keydown', (e) => {
- if (e.key === 'Enter' || e.key === ' ') {
- e.preventDefault();
- img.click();
- }
- });
- });
- 
- // Close lightbox
- function closeLightbox() {
- lightbox.hidden = true;
- document.body.style.overflow = '';
- }
- 
- closeBtn.addEventListener('click', closeLightbox);
- lightbox.addEventListener('click', (e) => {
- if (e.target === lightbox) closeLightbox();
- });
- document.addEventListener('keydown', (e) => {
- if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
- });
- })();
- </script>
-</body>
-</html>
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+ <meta charset="UTF-8">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <meta name="description" content="Chapter 5: Latin America - Explore the geography of Mexico, Central America, the Caribbean, and South America.">
+
+ <title>Chapter 5: Latin America | World Regional Geography</title>
+
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+ <link rel="stylesheet" href="../../css/style.css">
+
+ <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+</head>
+
+<body>
+
+ <!-- Skip to Main Content Link (Accessibility) -->
+
+ <a href="#main-content" class="skip-link">Skip to main content</a>
+
+ 
+
+ <header class="site-header">
+
+ <div class="container">
+
+ <div class="header-brand">
+
+ <a href="../../index.html" class="logo">
+
+ <span class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+
+ <span class="logo-text">World Regional Geography</span>
+
+ </a>
+
+ </div>
+
+ <nav class="main-nav" aria-label="Main navigation">
+
+ <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span class="hamburger"></span></button>
+
+ <ul class="nav-menu">
+
+ <li><a href="../../index.html" class="nav-link">Home</a></li>
+
+ <li class="nav-dropdown">
+
+ <a href="#" class="nav-link dropdown-toggle active">Chapters</a>
+
+ <ul class="dropdown-menu">
+
+ <li><a href="../01-introduction/index.html">1. Introduction</a></li>
+
+ <li><a href="../02-europe/index.html">2. Europe</a></li>
+
+ <li><a href="../03-russia/index.html">3. Russia and Central Asia</a></li>
+
+ <li><a href="../04-north-america/index.html">4. North America</a></li>
+
+ <li><a href="../05-latin-america/index.html">5. Latin America</a></li>
+
+ <li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
+
+ <li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa & SW Asia</a></li>
+
+ <li><a href="../08-south-asia/index.html">8. South Asia</a></li>
+
+ <li><a href="../09-east-asia/index.html">9. East Asia</a></li>
+
+ <li><a href="../10-southeast-asia/index.html">10. Southeast Asia</a></li>
+
+ <li><a href="../11-australia-oceania/index.html">11. Australia & Oceania</a></li>
+
+ <li><a href="../12-conclusion/index.html">12. Global Connections</a></li>
+
+ </ul>
+
+ </li>
+
+ <li><a href="../../standards.html" class="nav-link">Standards</a></li>
+
+ <li><a href="../../index.html#chapters" class="nav-link">Resources</a></li>
+
+ <li><a href="../../index.html#about" class="nav-link">About</a></li>
+
+ </ul>
+
+            </nav>
+
+ </div>
+
+ </header>
+
+
+
+ <section class="chapter-header">
+
+ <div class="container">
+
+ <p class="chapter-meta">Chapter 5 · Week 7</p>
+
+ <h1 class="chapter-title">Latin America: Biodiversity and Inequality</h1>
+
+ <p class="chapter-description">From the Amazon rainforest to Andean peaks, Latin America encompasses extraordinary biodiversity and cultural richness, shaped by Indigenous heritage, colonial legacies, and persistent inequality.</p>
+
+ </div>
+
+ </section>
+
+
+
+ <main id="main-content" class="chapter-content">
+
+ <div class="container">
+
+ 
+
+ <!-- 1. Learning Objectives -->
+
+ <!-- 1. At a Glance (Scaffold) -->
+
+ <section class="learning-scaffold" aria-label="Learning scaffold">
+
+ <details class="learning-scaffold-details">
+
+ <summary>
+
+ <div class="scaffold-head">
+
+ <h2>At a Glance</h2>
+
+ <div class="scaffold-meta" aria-label="Prerequisites and time estimate">
+
+ <span class="scaffold-chip"><strong>Prereqs:</strong> Chapter 4</span>
+
+ <span class="scaffold-chip"><strong>Time:</strong> 60 min read + 20 min activities</span>
+
+ <span class="scaffold-chip"><strong>Deliverable:</strong> Quiz + Reflection</span>
+
+ </div>
+
+ </div>
+
+ </summary>
+
+
+
+ <div class="scaffold-grid">
+
+ <div class="scaffold-card">
+
+ <h3> Learning Outcomes</h3>
+
+ <ul>
+
+ <li><strong>Describe:</strong> The impact of <strong>Altitudinal Zonation</strong> on settlement and agriculture.</li>
+
+ <li><strong>Analyze:</strong> The lasting effects of the <strong>Columbian Exchange</strong> and colonial land systems.</li>
+
+ <li><strong>Explain:</strong> The causes and global consequences of <strong>Amazon deforestation</strong>.</li>
+
+ <li><strong>Evaluate:</strong> Urban challenges, including <strong>primate cities</strong> and informal settlements (favelas).</li>
+
+ <li><strong>Apply:</strong> Geographic concepts to understand the region's vast economic inequality.</li>
+
+ </ul>
+
+ </div>
+
+
+
+ <div class="scaffold-card">
+
+ <h3> Key Terms</h3>
+
+ <p>Altitudinal Zonation, Columbian Exchange, Mestizo, Hacienda, Favela, Remittances, Primate City, Treaty of Tordesillas, Informal Economy.</p>
+
+ </div>
+
+ </div>
+
+
+
+ <div class="scaffold-grid">
+
+ <div class="scaffold-card">
+
+ <h3> Stop & Check</h3>
+
+ <div class="quiz-question" style="margin-bottom:0.5rem;">Why are cities like Bogotá and Mexico City located at such high elevations?</div>
+
+ <details>
+
+ <summary style="padding:0; color:var(--color-primary); font-weight:600; font-size:0.9rem;">Reveal Answer</summary>
+
+ <div style="margin-top:0.5rem; font-size:0.95rem; color:var(--color-text-light);">
+
+ To escape the tropical heat and diseases of the lowlands. The <strong>Tierra Templada</strong> (Temperate Land) and <strong>Tierra Fría</strong> (Cold Land) zones offer a mild, spring-like climate year-round.
+
+ </div>
+
+ </details>
+
+ </div>
+
+
+
+ <div class="scaffold-card">
+
+ <h3> Common Misconception</h3>
+
+ <p><strong>Myth:</strong> The Amazon produces 20% of the world's oxygen and is the "lungs of the earth."</p>
+
+ <p><strong>Fact:</strong> While the Amazon produces massive oxygen, it consumes nearly all of it through respiration and decomposition. Its true global value is as a massive <strong>carbon sink</strong> (storing CO2) and biodiversity reservoir.</p>
+
+ </div>
+
+ </div>
+
+ </details>
+
+ </section>
+
+
+
+ <!-- Video Lecture -->
+
+ <section class="video-lecture-section section-container">
+
+ <h2> Video Lecture</h2>
+
+ <div class="video-container">
+
+ <iframe src="https://www.youtube.com/embed/3e6oO3YyTFA" title="Geography of Latin America Video Lecture" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+ </div>
+
+ </section>
+
+
+
+
+
+ <!-- 2. Regional Profile (Snapshot) -->
+
+ <section id="profile" class="section-container">
+
+ <h2> Regional Snapshot: Middle and South America</h2>
+
+ <div class="profile-grid">
+
+ <div class="profile-item">
+
+ <strong>Population</strong>
+
+ <span>~660 Million</span>
+
+ </div>
+
+ <div class="profile-item">
+
+ <strong>Largest Forest</strong>
+
+ <span>The Amazon Basin</span>
+
+ </div>
+
+ <div class="profile-item">
+
+ <strong>Dominant Languages</strong>
+
+ <span>Spanish & Portuguese</span>
+
+ </div>
+
+ <div class="profile-item">
+
+ <strong>Primary Theme</strong>
+
+ <span>Resource Extraction & Inequality</span>
+
+ </div>
+
+ </div>
+
+ <p class="mt-4">Latin America is a region of vast physical contrasts - from the world's longest continental mountain range (the Andes) to the largest tropical rainforest (the Amazon). Its history is a record of intense cultural fusion and structural inequality born from centuries of extractive colonial rule.</p>
+
+ 
+
+ <figure class="figure figure-narrow">
+
+ <img src="../../images/latin_america_map.jpg" alt="Map of Latin America" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
+
+ <figcaption><strong>Figure 5.0:</strong> Regional Scope. Latin America includes the sub-regions of Mexico, Central America, the Caribbean, and South America.</figcaption>
+
+ </figure>
+
+ </section>
+
+
+
+ <!-- 3. Interactive Regional Map -->
+
+ <section id="interactive-map" class="section-container">
+
+ <h2> Interactive Map: The Latin American Realm</h2>
+
+ <p>Explore the physical spine of the Andes and the vast drainage basin of the Amazon. Click on major megacities like São Paulo and Mexico City to learn about their geographic significance.</p>
+
+ <div id="regions-map" class="interactive-map"></div>
+
+ <div class="map-controls">
+
+ <p class="text-sm italic text-muted">Toggle between Physical terrain and Political boundaries. Notice the "Altitudinal Zonation" - how cities in the Andes are often built at high elevations to escape tropical heat.</p>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- 4. Physical Geography Analysis -->
+
+ <section id="physical-geography" class="section-container">
+
+ <h2> Physical Geography: Andes, Basins, and Plateaus</h2>
+
+ <p>Latin America encompasses extraordinary physical diversity, from volcanic Caribbean islands to the world's longest mountain chain to vast river basins and coastal plains.</p>
+
+ 
+
+ <h3>The Andes Mountains</h3>
+
+ <p>The <strong>Andes Mountains</strong> form the world's longest continental mountain chain, stretching 7,000 km along South America's western edge from Venezuela to Tierra del Fuego. Key characteristics:</p>
+
+ <ul>
+
+ <li><strong>Height:</strong> Over 50 peaks exceed 6,000 meters; Aconcagua (6,959 m) is the highest peak outside Asia</li>
+
+ <li><strong>Active volcanism:</strong> Part of the Pacific "Ring of Fire", Cotopaxi (Ecuador) is one of the world's highest active volcanoes</li>
+
+ <li><strong>Mineral wealth:</strong> Gold, silver, copper, tin, mining has been central to Andean economies since the Inca</li>
+
+ <li><strong>Isolation:</strong> The rugged terrain historically isolated western South America from the interior</li>
+
+ </ul>
+
+ 
+
+ <div class="note-callout">
+
+ <h4> Altitudinal Zonation</h4>
+
+ <p>In tropical mountains, climate and agriculture change with elevation rather than latitude. The Andes exhibit classic <strong>altitudinal zones</strong>:</p>
+
+ <ul>
+
+ <li><strong>Tierra Caliente (Hot Land):</strong> Sea level, 3,000 ft. Tropical crops: bananas, sugarcane, cacao</li>
+
+ <li><strong>Tierra Templada (Temperate Land):</strong> 3,000-6,000 ft. Coffee zone, most populated</li>
+
+ <li><strong>Tierra Fría (Cold Land):</strong> 6,000-12,000 ft. Potatoes, wheat, corn, includes major cities like Bogotá, Quito</li>
+
+ <li><strong>Tierra Helada (Frozen Land):</strong> 12,000-15,000 ft. Grazing animals (llamas, alpacas)</li>
+
+ <li><strong>Tierra Nevada (Snowy Land):</strong> Above 15,000 ft. Permanent snow and ice</li>
+
+ </ul>
+
+ <p>This explains why many Latin American capitals (Bogotá, Quito, La Paz, Mexico City) are located at high elevations, escaping tropical heat and disease.</p>
+
+ </div>
+
+ 
+
+ <h3>The Amazon Basin</h3>
+
+ <p>The <strong>Amazon River</strong> drains 40% of South America, an area nearly the size of the continental United States. Facts that illustrate its scale:</p>
+
+ <ul>
+
+ <li><strong>Discharge:</strong> The Amazon carries approximately 20% of all river water that flows into the world's oceans</li>
+
+ <li><strong>Width:</strong> During rainy season, the river can exceed 160 km (100 miles) wide</li>
+
+ <li><strong>Tributaries:</strong> More than 1,100 tributaries, 17 of which are longer than the Rhine River</li>
+
+ <li><strong>Biodiversity:</strong> The Amazon rainforest contains approximately 10% of all species on Earth</li>
+
+ </ul>
+
+ <p>No bridges cross the main stem of the Amazon River, its width, seasonal flooding, and remote location make bridge construction impractical.</p>
+
+ 
+
+ <h3>The Altiplano and Lake Titicaca</h3>
+
+ <p>The <strong>Altiplano</strong> ("high plain") is a vast plateau between two Andean ranges, averaging 3,750 meters elevation. <strong>Lake Titicaca</strong>, straddling Peru and Bolivia, is the world's highest navigable lake and has supported human civilization for over 3,000 years. The lake moderates temperatures, making agriculture possible at this extreme elevation.</p>
+
+ 
+
+ <h3>Other Major Physical Features</h3>
+
+ <ul>
+
+ <li><strong>Atacama Desert:</strong> The driest place on Earth, some weather stations have never recorded rain. Located in rain shadow of the Andes.</li>
+
+ <li><strong>Brazilian Highlands:</strong> Ancient plateau region, major agricultural zone for coffee and soybeans</li>
+
+ <li><strong>Pampas:</strong> Temperate grasslands of Argentina and Uruguay, the "breadbasket" producing wheat, cattle, and wine</li>
+
+ <li><strong>Patagonia:</strong> Windswept semi-arid region of southern Argentina, sheep ranching and oil extraction</li>
+
+ <li><strong>Llanos:</strong> Tropical grasslands of Venezuela and Colombia along the Orinoco River</li>
+
+ </ul>
+
+ 
+
+ <div class="figure-row">
+
+ <figure class="figure">
+
+ <img src="../../images/south_america_regions.jpg" alt="Physical regions of South America" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
+
+ <figcaption><strong>Figure 5.1:</strong> Physiography. The region is divided between the young Andes, the central lowlands (Amazon/Pampas), and the ancient Brazilian/Guiana Highlands.</figcaption>
+
+ </figure>
+
+ <figure class="figure">
+
+ <img src="../../images/brazil_rio.jpg" alt="Coastal landscape of Rio de Janeiro" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
+
+ <figcaption><strong>Figure 5.2:</strong> Coastal Geography. Many of Latin America's largest cities are located on the coast, a legacy of the maritime colonial economy.</figcaption>
+
+ </figure>
+
+ </div>
+
+ 
+
+ <h3>Middle America: The Caribbean and Central America</h3>
+
+ <p>The physical geography of Middle America (Mexico, Central America, Caribbean) differs significantly:</p>
+
+ <ul>
+
+ <li><strong>Mexican Plateau:</strong> High central plateau (altiplano) where most Mexicans live, including Mexico City at 2,240 m</li>
+
+ <li><strong>Central American Volcanic Chain:</strong> Part of the Ring of Fire, creating fertile volcanic soils but earthquake/eruption hazards</li>
+
+ <li><strong>Caribbean Islands:</strong> Mix of volcanic islands (Greater and Lesser Antilles) and coral limestone formations (Bahamas)</li>
+
+ <li><strong>Isthmus of Panama:</strong> The narrow land bridge connecting North and South America, site of the Panama Canal</li>
+
+ </ul>
+
+ 
+
+ <div class="inquiry-prompt">
+
+ <h3> Geographic Inquiry</h3>
+
+ <p>The Amazon rainforest functions as a "carbon sink," absorbing CO2 and regulating global weather patterns. Deforestation for cattle ranching and soy production has accelerated dramatically. If the Amazon passes a "tipping point" and transitions to savanna, what are the potential consequences for global climate? Who bears responsibility for protecting this shared resource?</p>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- 4b. Data Visualization: Latin America at a Glance -->
+
+ <section id="data-viz" class="section-container">
+
+ <h2> Data Visualization: Latin America at a Glance</h2>
+
+ <p>Analyze the following charts to understand two of Latin America's most pressing geographic challenges: environmental destruction and economic inequality. What patterns do you notice, and what geographic factors explain them?</p>
+
+
+
+ <div class="figure-row">
+
+ <div style="background:#fff; border-radius:12px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex:1;">
+
+ <h3 style="font-size:1rem; margin-bottom:1rem; color:var(--color-primary-dark);">Amazon Deforestation: Annual Forest Loss (km², Brazil)</h3>
+
+ <canvas id="chart-deforestation" height="220" aria-label="Line chart showing Amazon deforestation rates from 2004 to 2023"></canvas>
+
+ <p style="font-size:0.85rem; color:var(--color-text-light); margin-top:0.75rem;"> <em>Notice the dramatic drop after 2004 (Action Plan for Deforestation Prevention) and the spike after 2018. What political and economic events explain these shifts?</em></p>
+
+ </div>
+
+ <div style="background:#fff; border-radius:12px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex:1;">
+
+ <h3 style="font-size:1rem; margin-bottom:1rem; color:var(--color-primary-dark);">GDP per Capita: Latin American Nations (USD, 2024 est.)</h3>
+
+ <canvas id="chart-gdp-la" height="220" aria-label="Horizontal bar chart comparing GDP per capita across Latin American nations"></canvas>
+
+ <p style="font-size:0.85rem; color:var(--color-text-light); margin-top:0.75rem;"> <em>The economic gap within Latin America is enormous. How do geography (landlocked vs. coastal), colonial history, and resource endowments explain these differences?</em></p>
+
+ </div>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- 6. Important Person Break-out (Rigoberta Menchú) -->
+
+ <section class="important-person-sidebar">
+
+ <div class="sidebar-content">
+
+ <div class="person-image">
+
+ <img src="../../images/6f92edca7d9c02dea591ebec2c7a1d97.jpg" alt="Rigoberta Menchú" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
+
+ </div>
+
+ <div class="person-header">
+
+ <h3> Important Person</h3>
+
+ </div>
+
+ <div class="person-info">
+
+ <strong>Rigoberta Menchú</strong>
+
+ <p class="person-title">Human Rights Activist & Nobel Laureate</p>
+
+ <p>A K'iche' Maya woman from Guatemala, Menchú has dedicated her life to advocating for the rights of Indigenous peoples in Latin America. Her work highlights the ongoing geographic struggles over land rights, sovereignty, and environmental stewardship in the face of resource extraction.</p>
+
+ <a href="https://www.nobelprize.org/prizes/peace/1992/menchu/biographical/" target="_blank" class="btn-text">Learn about her advocacy →</a>
+
+ </div>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- 5a. Colonial History and Indigenous Empires -->
+
+ <section id="colonial-history" class="section-container">
+
+ <h2> Colonial History: Empires, Conquest, and the Columbian Exchange</h2>
+
+ 
+
+ <h3>Pre-Columbian Civilizations</h3>
+
+ <p>Before European contact, Latin America was home to sophisticated civilizations:</p>
+
+ 
+
+ <div class="note-callout">
+
+ <h4> The Maya (300-900 CE Classical Period)</h4>
+
+ <ul>
+
+ <li>Located in southern Mexico, Guatemala, Belize, Honduras</li>
+
+ <li>Built magnificent stone cities with pyramids, observatories, ball courts</li>
+
+ <li>Developed advanced mathematics (concept of zero), astronomy, and accurate calendars</li>
+
+ <li>Descendants still live in the region today, millions speak Mayan languages</li>
+
+ </ul>
+
+ </div>
+
+ 
+
+ <div class="note-callout">
+
+ <h4> The Aztec Empire (1428-1521 CE)</h4>
+
+ <ul>
+
+ <li>Controlled central Mexico from their island capital <strong>Tenochtitlán</strong> (now Mexico City)</li>
+
+ <li>Population estimated at 100,000-250,000, one of the world's largest cities at the time</li>
+
+ <li>Collected tribute from subjugated peoples throughout Mesoamerica</li>
+
+ <li>Conquered by Hernán Cortés in 1521 with Spanish soldiers, indigenous allies, and epidemic disease</li>
+
+ </ul>
+
+ </div>
+
+ 
+
+ <div class="note-callout">
+
+ <h4> The Inca Empire (1438-1533 CE)</h4>
+
+ <ul>
+
+ <li>Stretched 4,000 km along the Andes from Ecuador to Chile, the largest empire in pre-Columbian Americas</li>
+
+ <li>Built remarkable infrastructure: 40,000 km of roads, suspension bridges, terraced agriculture</li>
+
+ <li>Capital at <strong>Cusco</strong> (Peru); Machu Picchu was a royal estate</li>
+
+ <li>Conquered by Francisco Pizarro in 1533 after capturing the Inca emperor</li>
+
+ </ul>
+
+ </div>
+
+ 
+
+ <h3>The Columbian Exchange</h3>
+
+ <p>The encounter between Europe and the Americas initiated a massive exchange of plants, animals, diseases, and people that transformed both hemispheres:</p>
+
+ 
+
+ <table class="data-table">
+
+ <thead>
+
+ <tr>
+
+ <th>From Americas to Europe/Africa/Asia</th>
+
+ <th>From Europe/Africa/Asia to Americas</th>
+
+ </tr>
+
+ </thead>
+
+ <tbody>
+
+ <tr>
+
+ <td>Potatoes, corn (maize), tomatoes</td>
+
+ <td>Wheat, rice, sugarcane, coffee</td>
+
+ </tr>
+
+ <tr>
+
+ <td>Cacao (chocolate), vanilla, tobacco</td>
+
+ <td>Horses, cattle, pigs, sheep</td>
+
+ </tr>
+
+ <tr>
+
+ <td>Squash, beans, peppers, peanuts</td>
+
+ <td>Smallpox, measles, influenza (devastating)</td>
+
+ </tr>
+
+ <tr>
+
+ <td>Rubber, quinine (malaria treatment)</td>
+
+ <td>Christianity, Spanish/Portuguese languages</td>
+
+ </tr>
+
+ </tbody>
+
+ </table>
+
+ 
+
+ <div class="info-callout">
+
+ <h4> Demographic Catastrophe</h4>
+
+ <p>European diseases devastated indigenous populations who had no immunity. In Mexico, the population collapsed from an estimated 15-25 million in 1519 to approximately 2.5 million by 1600, a decline of 80-90%. This catastrophic population loss fundamentally reshaped Latin American society and created demand for African slave labor.</p>
+
+ </div>
+
+ 
+
+ <h3>Colonial Land Systems</h3>
+
+ <p>Spanish and Portuguese colonizers established two distinct agricultural systems:</p>
+
+ <ul>
+
+ <li><strong>Hacienda (Mainland):</strong> Large land grants in the interior, focused on social prestige and self-sufficiency. Indigenous workers remained on the land under a feudal-like system. Less export-oriented.</li>
+
+ <li><strong>Plantation (Rimland):</strong> Coastal/Caribbean operations focused on export crops (sugar, tobacco, cotton). Required massive labor, first indigenous, then African slaves. Created the African diaspora in the Americas.</li>
+
+ </ul>
+
+ 
+
+ <h3>The Treaty of Tordesillas (1494)</h3>
+
+ <p>To prevent conflict between Spain and Portugal, the Pope drew a line dividing the "New World":</p>
+
+ <ul>
+
+ <li><strong>West of the line:</strong> Spanish territory (most of Latin America)</li>
+
+ <li><strong>East of the line:</strong> Portuguese territory (Brazil)</li>
+
+ </ul>
+
+ <p>This explains why Brazil speaks Portuguese while the rest of Latin America speaks Spanish.</p>
+
+ 
+
+ <h3>Independence Movements (1810-1830)</h3>
+
+ <p>Inspired by the American and French Revolutions, Latin American colonies achieved independence:</p>
+
+ <ul>
+
+ <li><strong>Simón Bolívar:</strong> Liberated Venezuela, Colombia, Ecuador, Peru, Bolivia</li>
+
+ <li><strong>José de San Martín:</strong> Liberated Argentina, Chile, Peru</li>
+
+ <li><strong>Miguel Hidalgo:</strong> Initiated Mexican independence (1810)</li>
+
+ <li><strong>Brazil:</strong> Uniquely, declared independence peacefully in 1822 when the Portuguese prince declared himself Emperor</li>
+
+ </ul>
+
+ </section>
+
+
+
+ <!-- 5. Human Geography Analysis -->
+
+ <section id="human-geography" class="section-container">
+
+ <h2> Human Geography: Colonial Legacies and Urban Challenges</h2>
+
+ 
+
+ <h3>Ethnic Composition: The Cultural Mosaic</h3>
+
+ <p>Latin America's population reflects the complex mixing of indigenous, European, and African peoples:</p>
+
+ <ul>
+
+ <li><strong>Mestizo:</strong> Mixed European and indigenous ancestry, the majority in Mexico, Central America, Colombia, Venezuela, Ecuador</li>
+
+ <li><strong>Mulatto:</strong> Mixed European and African ancestry, common in Caribbean and coastal Brazil</li>
+
+ <li><strong>Indigenous:</strong> Majority or large minority in Bolivia, Peru, Guatemala, parts of Mexico, Ecuador</li>
+
+ <li><strong>European:</strong> Dominant in Argentina, Uruguay, southern Brazil, Chile (due to 19th-century immigration)</li>
+
+ <li><strong>African:</strong> Significant populations in Brazil, Caribbean, coastal Colombia/Venezuela</li>
+
+ </ul>
+
+ 
+
+ <h3>Urbanization and Megacities</h3>
+
+ <p>Latin America is approximately <strong>81% urbanized</strong>, one of the world's most urban regions. Megacities include:</p>
+
+ <ul>
+
+ <li><strong>Mexico City:</strong> 21+ million, one of the world's largest metropolitan areas, built on the ruins of Tenochtitlán</li>
+
+ <li><strong>São Paulo:</strong> 22+ million, Brazil's economic engine, financial center</li>
+
+ <li><strong>Buenos Aires:</strong> 15+ million, cultural capital of the "Southern Cone"</li>
+
+ <li><strong>Rio de Janeiro:</strong> 13+ million, famous for Carnival, beaches, and stark inequality</li>
+
+ <li><strong>Lima:</strong> 10+ million, Peru's primate city, contains nearly one-third of the national population</li>
+
+ </ul>
+
+ 
+
+ <h3>Urban Structure: The Spanish Colonial Model</h3>
+
+ <p>Spanish colonial cities follow a distinctive pattern still visible today:</p>
+
+ <ul>
+
+ <li><strong>Central Plaza:</strong> Main square with government buildings, cathedral, elite residences</li>
+
+ <li><strong>Commercial Spine:</strong> Main commercial street extending from the plaza</li>
+
+ <li><strong>Concentric Zones:</strong> Wealth decreases with distance from center (reverse of North American pattern)</li>
+
+ <li><strong>Informal Settlements:</strong> <strong>Favelas</strong> (Brazil), <strong>barrios</strong> (Spanish-speaking countries), <strong>pueblos jóvenes</strong> (Peru) on urban periphery</li>
+
+ </ul>
+
+ 
+
+ <div class="note-callout">
+
+ <h4> Urban Dualism</h4>
+
+ <p>Latin American cities display stark spatial inequality. In Rio de Janeiro, luxury high-rises overlook hillside favelas with inadequate water, sewage, and security. This "urban dualism" reflects the region's persistent income inequality, Latin America has the world's highest Gini coefficients (measures of inequality).</p>
+
+ </div>
+
+ 
+
+ <div class="figure-row">
+
+ <figure class="figure">
+
+ <img src="../../images/megacities.jpg" alt="Informal housing/favelas in a megacity" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
+
+ <figcaption><strong>Figure 5.3:</strong> Urban Dualism. In cities like Rio or São Paulo, modern skyscrapers often sit immediately adjacent to <strong>favelas</strong> (informal settlements).</figcaption>
+
+ </figure>
+
+ <figure class="figure">
+
+ <img src="../../images/colonialism.jpg" alt="Colonial architecture" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
+
+ <figcaption><strong>Figure 5.4:</strong> Colonial Imprint. The layout of many Latin American cities still follows the Spanish "Laws of the Indies" with a central plaza and cathedral.</figcaption>
+
+ </figure>
+
+ </div>
+
+
+
+ <h3>Economic Patterns</h3>
+
+ <p>Latin American economies share common characteristics shaped by colonial history:</p>
+
+ <ul>
+
+ <li><strong>Primary product exports:</strong> Heavy dependence on agricultural commodities (coffee, soybeans, beef) and minerals (copper, iron ore, oil)</li>
+
+ <li><strong>Import substitution:</strong> Mid-20th century attempts to develop domestic manufacturing (largely unsuccessful)</li>
+
+ <li><strong>Remittances:</strong> Money sent home by migrants, critical income source for Mexico, Central America, Caribbean. Mexico receives $50+ billion annually</li>
+
+ <li><strong>Informal economy:</strong> Street vendors, unlicensed businesses, estimated at 50%+ of employment in many countries</li>
+
+ </ul>
+
+ 
+
+ <h3>Regional Economic Blocs</h3>
+
+ <ul>
+
+ <li><strong>Mercosur:</strong> Southern Cone customs union (Brazil, Argentina, Uruguay, Paraguay)</li>
+
+ <li><strong>Pacific Alliance:</strong> Free trade bloc (Mexico, Colombia, Peru, Chile), the most economically liberal</li>
+
+ <li><strong>CARICOM:</strong> Caribbean Community, economic integration among Caribbean nations</li>
+
+ <li><strong>USMCA:</strong> Includes Mexico with US and Canada (covered in Chapter 4)</li>
+
+ </ul>
+
+ </section>
+
+
+
+ <!-- 7. Texas Connection Toggle -->
+
+ <section id="texas-connection" class="section-container">
+
+ <div class="texas-toggle">
+
+ <button class="btn-texas-toggle" id="texas-btn">
+
+ <span class="star-icon"></span> Texas Connection: The Borderland Fusion
+
+ </button>
+
+ <div class="texas-content hidden" id="texas-content">
+
+ <h4>A Binational Reality</h4>
+
+ <p>Texas shares a 1,254-mile border with Mexico, creating a unique geographic "shatterbelt" where cultures and economies fuse. The <strong>Tex-Mex</strong> cultural landscape is not just about food, it's a geographic reality of shared history, migration, and trade.</p>
+
+ 
+
+ <h5>Historical Context</h5>
+
+ <ul>
+
+ <li>Texas was part of <strong>New Spain</strong> and later Mexico until 1836</li>
+
+ <li>Spanish missions (San Antonio), land grants, and ranching culture shaped early Texas</li>
+
+ <li>Many Texas cities have Spanish names: San Antonio, El Paso, Corpus Christi, Amarillo</li>
+
+ <li>The <strong>Tejano</strong> culture represents Texans of Mexican descent, a community predating Anglo settlement</li>
+
+ </ul>
+
+ 
+
+ <h5>Economic Integration</h5>
+
+ <ul>
+
+ <li><strong>Port of Laredo:</strong> Busiest inland port in the United States, primary gateway for US-Mexico trade</li>
+
+ <li><strong>Maquiladora supply chains:</strong> Texas manufacturers integrated with Mexican assembly plants</li>
+
+ <li><strong>Twin cities:</strong> El Paso-Juárez, Laredo-Nuevo Laredo, McAllen-Reynosa function as binational metro areas</li>
+
+ <li><strong>Remittances:</strong> Texas has one of the highest volumes of money transfers to Mexico and Central America</li>
+
+ </ul>
+
+ 
+
+ <h5>Immigration and Demographics</h5>
+
+ <ul>
+
+ <li>40% of Texans identify as Hispanic/Latino</li>
+
+ <li>Houston has the largest Central American population outside Central America</li>
+
+ <li>Texas receives the most asylum seekers from the "Northern Triangle" (Guatemala, Honduras, El Salvador)</li>
+
+ <li>Climate change and violence in Central America drive migration through Texas</li>
+
+ </ul>
+
+ 
+
+ <p><strong>Geographic connection:</strong> What happens economically or politically in Mexico and Central America has immediate impacts on Texas communities, trade, and migration patterns.</p>
+
+ </div>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- 8. Case Study -->
+
+ <section id="case-study" class="section-container">
+
+ <div class="case-study-gold">
+
+ <div class="case-study-header">
+
+ <span class="label">Case Study</span>
+
+ <h2>The Panama Canal: A Strategic Chokepoint</h2>
+
+ </div>
+
+ <p>The Panama Canal is one of the world's most critical "functional regions." By cutting through the 82-km Isthmus of Panama, it connects the Atlantic and Pacific oceans, fundamentally altering global trade geography.</p>
+
+ 
+
+ <h4>Historical Geography</h4>
+
+ <ul>
+
+ <li><strong>French attempt (1881-1889):</strong> Failed due to disease (malaria, yellow fever) and engineering challenges, 22,000 workers died</li>
+
+ <li><strong>US completion (1904-1914):</strong> Success came after understanding mosquito-borne disease transmission</li>
+
+ <li><strong>Panamanian control (1999):</strong> Canal transferred from US to Panama after 85 years</li>
+
+ <li><strong>Expansion (2016):</strong> Third set of locks opened, allowing larger "Neopanamax" ships</li>
+
+ </ul>
+
+ 
+
+ <h4>Geographic Significance</h4>
+
+ <ul>
+
+ <li><strong>Trade route:</strong> Shortens New York to San Francisco voyage by 13,000 km (avoiding Cape Horn)</li>
+
+ <li><strong>Global trade:</strong> 6% of world trade passes through the canal, 40+ ships daily</li>
+
+ <li><strong>Revenue:</strong> Generates $4+ billion annually for Panama</li>
+
+ </ul>
+
+ 
+
+ <h4>Climate Challenge</h4>
+
+ <p>The canal operates on freshwater from <strong>Gatún Lake</strong>, each ship transit uses 200 million liters. Prolonged droughts linked to climate change have reduced lake levels, forcing <strong>draft restrictions</strong> that limit the number and size of ships. In 2023, severe drought reduced daily transits from 38 to 22 ships, creating global shipping delays.</p>
+
+ 
+
+ <div class="case-study-questions">
+
+ <h4>Questions to Consider:</h4>
+
+ <ul>
+
+ <li>How does the "physical geography" of Panama (rainfall, tropical forests, watershed) directly impact the "economic geography" of global trade?</li>
+
+ <li>If the canal's capacity is permanently reduced by climate change, which world regions and industries are most affected?</li>
+
+ <li>What alternatives exist if the Panama Canal cannot handle growing ship sizes and volumes?</li>
+
+ </ul>
+
+ </div>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- 9. Interactive Accordions (Summary & Glossary) -->
+
+ <section id="summary-glossary" class="section-container">
+
+ <div class="accordion">
+
+ <div class="accordion-item">
+
+ <button class="accordion-header">
+
+ Glossary of Terms <span class="chevron"></span>
+
+ </button>
+
+ <div class="accordion-content">
+
+ <dl>
+
+ <dt>Altitudinal Zonation</dt>
+
+ <dd>The relationship between higher elevation, cooler temperatures, and distinct vegetation/crop zones in tropical mountains. Explains why many Latin American capitals are at high elevations.</dd>
+
+ 
+
+ <dt>Columbian Exchange</dt>
+
+ <dd>The massive transfer of plants, animals, diseases, people, and ideas between the Americas and Europe/Africa following 1492. Transformed both hemispheres.</dd>
+
+ 
+
+ <dt>Treaty of Tordesillas (1494)</dt>
+
+ <dd>Papal decree dividing the "New World" between Spain (west) and Portugal (east), explaining why Brazil speaks Portuguese.</dd>
+
+ 
+
+ <dt>Mestizo</dt>
+
+ <dd>A person of mixed European and indigenous American ancestry, the majority ethnic category in much of Latin America.</dd>
+
+ 
+
+ <dt>Hacienda</dt>
+
+ <dd>Large Spanish colonial land grant in the interior, focused on social prestige and self-sufficiency rather than export production. Indigenous workers lived on the land.</dd>
+
+ 
+
+ <dt>Plantation</dt>
+
+ <dd>Colonial agricultural enterprise focused on single cash crops (sugar, tobacco, cotton) for export. Required massive labor, first indigenous, then African slaves.</dd>
+
+ 
+
+ <dt>Favela</dt>
+
+ <dd>Brazilian term for an informal urban settlement or shantytown, typically on hillsides or urban periphery, lacking adequate infrastructure.</dd>
+
+ 
+
+ <dt>Barrio</dt>
+
+ <dd>Spanish term for neighborhood, often referring to low-income or informal settlements in Latin American cities.</dd>
+
+ 
+
+ <dt>Remittances</dt>
+
+ <dd>Money sent by migrants to their families in home countries. Critical income source for Mexico, Central America, and Caribbean, Mexico receives $50+ billion annually.</dd>
+
+ 
+
+ <dt>Primate City</dt>
+
+ <dd>A city that dominates a country's urban hierarchy, typically 2-3 times larger than the second city. Examples: Mexico City, Lima, Buenos Aires.</dd>
+
+ 
+
+ <dt>Maquiladora</dt>
+
+ <dd>A foreign-owned factory in Mexico that imports components duty-free, assembles products, and exports to the US. Concentrated along the border.</dd>
+
+ 
+
+ <dt>Informal Economy</dt>
+
+ <dd>Economic activity outside government regulation or taxation, street vendors, unlicensed businesses. Estimated at 50%+ of employment in some Latin American countries.</dd>
+
+ 
+
+ <dt>Altiplano</dt>
+
+ <dd>Spanish for "high plain", the elevated plateau between Andean ranges in Peru and Bolivia, including Lake Titicaca. Average elevation 3,750 meters.</dd>
+
+ 
+
+ <dt>Land Bridge</dt>
+
+ <dd>A narrow strip of land connecting two larger landmasses. The Isthmus of Panama connects North and South America and is the site of the Panama Canal.</dd>
+
+ 
+
+ <dt>Chokepoint</dt>
+
+ <dd>A narrow passage through which shipping must pass, creating strategic and economic significance. Panama Canal and Strait of Magellan are Latin American examples.</dd>
+
+ </dl>
+
+ </div>
+
+ </div>
+
+ <div class="accordion-item">
+
+ <button class="accordion-header">
+
+ Summary of Big Ideas <span class="chevron"></span>
+
+ </button>
+
+ <div class="accordion-content">
+
+ <ol>
+
+ <li><strong>Physical extremes define the region:</strong> The Andes (world's longest mountain chain), the Amazon (world's largest rainforest), the Atacama (driest desert), and the Pampas (agricultural heartland) create extraordinary environmental diversity.</li>
+
+ <li><strong>Altitudinal zonation matters:</strong> In tropical latitudes, elevation determines climate and agricultural potential. Major cities like Bogotá, Quito, and Mexico City are located at high elevations to escape tropical heat.</li>
+
+ <li><strong>Pre-Columbian civilizations were sophisticated:</strong> The Maya, Aztec, and Inca built advanced societies with remarkable achievements in mathematics, astronomy, engineering, and governance.</li>
+
+ <li><strong>Colonialism reshaped everything:</strong> The Columbian Exchange, demographic catastrophe from disease, African slave trade, and extractive economic systems created lasting patterns of inequality.</li>
+
+ <li><strong>The Treaty of Tordesillas explains the linguistic divide:</strong> Spanish dominates most of Latin America; Portuguese dominates Brazil, a legacy of papal division in 1494.</li>
+
+ <li><strong>Extreme urbanization with stark inequality:</strong> Latin America is 81% urban, but cities display "urban dualism", modern development adjacent to informal settlements lacking basic services.</li>
+
+ <li><strong>Export dependence continues:</strong> Economies remain heavily dependent on primary products (coffee, soybeans, minerals, oil), making them vulnerable to commodity price swings.</li>
+
+ <li><strong>Remittances are economically critical:</strong> Money sent home by migrants provides essential income for families and communities, particularly in Mexico, Central America, and the Caribbean.</li>
+
+ <li><strong>The Panama Canal is a global chokepoint:</strong> 6% of world trade passes through this narrow isthmus, and climate change threatens its operations.</li>
+
+ <li><strong>Environmental challenges mount:</strong> Amazon deforestation, water scarcity, and climate vulnerability threaten both regional and global systems.</li>
+
+ </ol>
+
+ </div>
+
+ </div>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- 9b. Regional Decisions Exercise -->
+
+ <section id="regional-decisions" class="section-container">
+
+ <div style="background: linear-gradient(135deg, #1a4a2a 0%, #2d8a4a 100%); border-radius: 16px; padding: 2rem; color: #fff;">
+
+ <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
+
+ <span style="font-size:1.2rem; font-weight:700;">&#9733;</span>
+
+ <div>
+
+ <span style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; opacity:0.8;">Role-Play Exercise</span>
+
+ <h2 style="margin:0; font-size:1.4rem;">Regional Decisions: The Amazon at a Crossroads</h2>
+
+ </div>
+
+ </div>
+
+ <p style="opacity:0.9; margin-bottom:1.5rem;">Brazil contains approximately <strong>60% of the Amazon rainforest</strong>, a global carbon sink that regulates climate for the entire planet. Yet Brazil is also a developing nation with millions of citizens in poverty, and the Amazon's resources represent enormous economic potential. You are a delegate at an <strong>International Amazon Summit</strong>. Your task: negotiate a policy framework that addresses both environmental protection and economic development.</p>
+
+
+
+ <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-bottom:1.5rem;">
+
+ <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:1rem;">
+
+ <strong style="display:block; margin-bottom:0.4rem;"> Role A: Brazilian Farmer</strong>
+
+ <p style="font-size:0.88rem; opacity:0.9; margin:0;">Your family cleared forest land to grow soybeans. Brazil is now the world's #1 soy exporter. You argue that Brazil has the sovereign right to develop its own resources, just as Europe and North America did.</p>
+
+ </div>
+
+ <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:1rem;">
+
+ <strong style="display:block; margin-bottom:0.4rem;"> Role B: EU Climate Negotiator</strong>
+
+ <p style="font-size:0.88rem; opacity:0.9; margin:0;">The Amazon absorbs CO2 that affects global temperatures. You represent nations that have already industrialized and now want to preserve the forest. You offer financial incentives for conservation.</p>
+
+ </div>
+
+ <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:1rem;">
+
+ <strong style="display:block; margin-bottom:0.4rem;"> Role C: Indigenous Leader</strong>
+
+ <p style="font-size:0.88rem; opacity:0.9; margin:0;">Your people have lived in the Amazon for thousands of years. Deforestation destroys your homeland, culture, and food security. You demand legal recognition of Indigenous territories and veto power over development projects.</p>
+
+ </div>
+
+ <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:1rem;">
+
+ <strong style="display:block; margin-bottom:0.4rem;"> Role D: Brazilian Development Minister</strong>
+
+ <p style="font-size:0.88rem; opacity:0.9; margin:0;">30 million Brazilians live in poverty. The Amazon's timber, minerals, and agricultural land represent a path to development. You seek a "sustainable development" compromise that allows controlled extraction.</p>
+
+ </div>
+
+ </div>
+
+
+
+ <div style="background:rgba(255,255,255,0.1); border-radius:10px; padding:1rem;">
+
+ <strong style="display:block; margin-bottom:0.5rem;"> Discussion Questions:</strong>
+
+ <ol style="margin:0; padding-left:1.2rem; opacity:0.9; font-size:0.9rem;">
+
+ <li>Does Brazil have the right to develop the Amazon, even if it harms global climate? How does this relate to the concept of <em>environmental justice</em>?</li>
+
+ <li>Wealthy nations industrialized by exploiting their own natural resources. Is it fair to now restrict developing nations from doing the same?</li>
+
+ <li>What role should <em>payments for ecosystem services</em> (paying Brazil to preserve the forest) play in this negotiation? Who should pay, and how much?</li>
+
+ <li>How does the geographic concept of a <em>commons</em> (a shared resource) apply to the Amazon? Can international law govern a nation's internal territory?</li>
+
+ </ol>
+
+ </div>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- 10. Knowledge Check (Quiz) -->
+
+ <section id="quiz" class="section-container">
+
+ <h2> Knowledge Check</h2>
+
+ <p>Test your understanding of the core concepts covered in this chapter. This quiz consists of multiple-choice questions designed to review key terms, regional patterns, and geographic relationships. Select the best answer for each question to receive immediate feedback.</p>
+
+<div id="quiz-container" class="quiz-wrapper">
+
+ <p class="loading">Loading quiz questions...</p>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- 11. Discussion and Reflection Prompts -->
+
+ <section id="discussion" class="section-container">
+
+ <h2> Discussion and Reflection Prompts</h2>
+
+ <div class="discussion-box">
+
+ <p>Use these prompts to deepen your understanding and connect chapter concepts to your own experience and the broader world.</p>
+
+
+
+ <h3>Reflect on Your Learning</h3>
+
+ <ol>
+
+ <li>Think about the foods you eat regularly, such as potatoes, tomatoes, chocolate, corn, and chili peppers. These are all products of the <strong>Columbian Exchange</strong>. How has Latin America shaped your daily life in ways you may not have recognized?</li>
+
+ <li>Latin America is home to the world's largest Catholic population, a legacy of Spanish and Portuguese colonization. How does religion function as a <em>cultural landscape</em>, shaping cities, holidays, and social norms?</li>
+
+ <li>Many Latin American migrants send <strong>remittances</strong> home to their families. If you were living abroad, how would you feel about this responsibility? What does this tell us about the geographic connections between people and their home regions?</li>
+
+ </ol>
+
+
+
+ <h3>Discuss With Your Peers</h3>
+
+ <ul>
+
+ <li><strong>"Latin America is rich in resources but poor in outcomes."</strong> Do you agree with this statement? What geographic and historical factors explain the "resource curse" that affects many commodity-dependent economies?</li>
+
+ <li>The Amazon rainforest is often called the "lungs of the Earth." But Brazil argues it has the sovereign right to develop its own territory. How should the international community balance national sovereignty with global environmental responsibility?</li>
+
+ <li>Latin American cities like São Paulo and Mexico City are among the world's largest, yet they contain vast informal settlements (favelas, barrios). Is rapid urbanization a sign of development or a symptom of inequality, or both?</li>
+
+ </ul>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- Navigation -->
+
+ <nav class="chapter-nav" style="display: flex; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-8);">
+
+ <a href="../04-north-america/index.html" class="btn btn-primary">← Chapter 4: North America</a>
+
+ <a href="../06-sub-saharan-africa/index.html" class="btn btn-primary">Chapter 6: Sub-Saharan Africa →</a>
+
+ </nav>
+
+
+
+ <!-- Standards Alignment Map -->
+
+ <section class="standards-alignment" aria-label="Curriculum Standards Alignment">
+
+ <h2> Curriculum Standards Alignment</h2>
+
+ <p class="standards-subtitle">This chapter aligns with the following National and State geography standards.</p>
+
+ 
+
+ <div class="standards-grid">
+
+ <!-- National Standards -->
+
+ <details class="standard-group std-national">
+
+ <summary><h3>National Geography Standards</h3></summary>
+
+ <div class="standard-content">
+
+ <div class="standard-item">
+
+ <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element II.6</a>
+
+ <span class="standard-desc">The Uses of Geography: Perception of Places (Indigenous vs. Colonial).</span>
+
+ </div>
+
+ <div class="standard-item">
+
+ <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element V.14</a>
+
+ <span class="standard-desc">Human Modification: Environmental consequences (Amazon Deforestation).</span>
+
+ </div>
+
+ <div class="standard-item">
+
+ <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element IV.12</a>
+
+ <span class="standard-desc">Human Settlements: Functions and patterns (Mega-cities, Favelas).</span>
+
+ </div>
+
+ </div>
+
+ </details>
+
+
+
+ <!-- Texas Standards -->
+
+ <details class="standard-group std-texas">
+
+ <summary><h3> Texas Core (GEOG 1303)</h3></summary>
+
+ <div class="standard-content">
+
+ <div class="standard-item">
+
+ <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 1</a>
+
+ <span class="standard-desc">Define "region" (Latin cultural realm).</span>
+
+ </div>
+
+ <div class="standard-item">
+
+ <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 2</a>
+
+ <span class="standard-desc">Locate significant geographic features (Andes, Amazon, Panama Canal).</span>
+
+ </div>
+
+ <div class="standard-item">
+
+ <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 3</a>
+
+ <span class="standard-desc">Globalization (Colonial legacy, impact on Texas).</span>
+
+ </div>
+
+ </div>
+
+ </details>
+
+
+
+ <!-- Florida Standards -->
+
+ <details class="standard-group std-florida">
+
+ <summary><h3> Florida Sunshine State (SS.912.G)</h3></summary>
+
+ <div class="standard-content">
+
+ <div class="standard-item">
+
+ <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.2.1</a>
+
+ <span class="standard-desc">Identify physical characteristics of places (Altitudinal Zonation).</span>
+
+ </div>
+
+ <div class="standard-item">
+
+ <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.4.1</a>
+
+ <span class="standard-desc">Interpret population growth and distribution (Urbanization patterns).</span>
+
+ </div>
+
+ <div class="standard-item">
+
+ <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.5.2</a>
+
+ <span class="standard-desc">Analyze how humans impact the physical environment (Deforestation).</span>
+
+ </div>
+
+ </div>
+
+ </details>
+
+ </div>
+
+ </section>
+
+
+
+ </div>
+
+ </main>
+
+
+
+ <footer class="site-footer">
+
+ <div class="container">
+
+ <div class="footer-content">
+
+ <div class="footer-brand"><span class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><span>World Regional Geography</span></div>
+
+ <div class="footer-copyright"><p>&copy; 2026 Dr. Sounny. Open Educational Resource.</p></div>
+
+ </div>
+
+ </div>
+
+ </footer>
+
+
+
+ <!-- Image Lightbox Overlay -->
+
+ <div id="image-lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+
+ <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
+
+ <img class="lightbox-image" src="" alt="">
+
+ </div>
+
+
+
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+ <script src="../../js/map-init.js"></script>
+
+ <script src="../../js/regions-data.js"></script>
+
+ <script src="../../js/quiz-engine.js"></script>
+
+ <script src="../../js/main.js"></script>
+
+ <script>
+
+ // Chapter 5 Chart.js Visualizations
+
+ document.addEventListener('DOMContentLoaded', () => {
+
+ // Amazon Deforestation Chart (line)
+
+ const deforestCtx = document.getElementById('chart-deforestation');
+
+ if (deforestCtx && window.Chart) {
+
+ new Chart(deforestCtx, {
+
+ type: 'line',
+
+ data: {
+
+ labels: ['2004','2006','2008','2010','2012','2014','2016','2018','2020','2022','2023'],
+
+ datasets: [{
+
+ label: 'Forest Loss (km²)',
+
+ data: [27772, 14286, 12911, 7000, 4571, 4848, 7893, 7536, 11088, 11568, 9001],
+
+ borderColor: 'rgba(220, 80, 50, 1)',
+
+ backgroundColor: 'rgba(220, 80, 50, 0.12)',
+
+ borderWidth: 2.5,
+
+ pointBackgroundColor: 'rgba(220, 80, 50, 1)',
+
+ pointRadius: 4,
+
+ fill: true,
+
+ tension: 0.3
+
+ }]
+
+ },
+
+ options: {
+
+ responsive: true,
+
+ plugins: {
+
+ legend: { display: false },
+
+ tooltip: {
+
+ callbacks: {
+
+ label: ctx => ` ${ctx.raw.toLocaleString()} km²`
+
+ }
+
+ }
+
+ },
+
+ scales: {
+
+ y: {
+
+ beginAtZero: true,
+
+ ticks: { callback: val => val.toLocaleString() + ' km²' }
+
+ }
+
+ }
+
+ }
+
+ });
+
+ }
+
+
+
+ // GDP per Capita Latin America (horizontal bar)
+
+ const gdpCtx = document.getElementById('chart-gdp-la');
+
+ if (gdpCtx && window.Chart) {
+
+ new Chart(gdpCtx, {
+
+ type: 'bar',
+
+ data: {
+
+ labels: ['Chile', 'Uruguay', 'Argentina', 'Brazil', 'Mexico', 'Colombia', 'Peru', 'Bolivia', 'Haiti'],
+
+ datasets: [{
+
+ label: 'GDP per Capita (USD)',
+
+ data: [16500, 17800, 13700, 10200, 11000, 7200, 7100, 3500, 1700],
+
+ backgroundColor: [
+
+ 'rgba(74,144,164,0.85)','rgba(74,144,164,0.85)','rgba(74,144,164,0.75)',
+
+ 'rgba(74,144,164,0.65)','rgba(74,144,164,0.65)','rgba(251,188,5,0.8)',
+
+ 'rgba(251,188,5,0.7)','rgba(220,80,50,0.75)','rgba(220,80,50,0.85)'
+
+ ],
+
+ borderRadius: 5,
+
+ borderWidth: 1
+
+ }]
+
+ },
+
+ options: {
+
+ indexAxis: 'y',
+
+ responsive: true,
+
+ plugins: {
+
+ legend: { display: false },
+
+ tooltip: {
+
+ callbacks: {
+
+ label: ctx => ` $${ctx.raw.toLocaleString()}`
+
+ }
+
+ }
+
+ },
+
+ scales: {
+
+ x: {
+
+ beginAtZero: true,
+
+ ticks: { callback: val => '$' + (val/1000) + 'k' }
+
+ }
+
+ }
+
+ }
+
+ });
+
+ }
+
+ });
+
+ </script>
+
+ <script>
+
+ // Initialize the Chapter 5 Interactive Map
+
+ document.addEventListener('DOMContentLoaded', () => {
+
+ const map = MapManager.initMap('regions-map', [-15, -60], 3);
+
+ if (map && window.WorldRegionsData) {
+
+ const laData = window.WorldRegionsData.features.find(f => f.id === 'latin-america');
+
+ if (laData) {
+
+ MapManager.addGeoJson(map, { type: "FeatureCollection", features: [laData] }, {
+
+ style: {
+
+ color: 'var(--color-primary-dark)',
+
+ weight: 2,
+
+ fillColor: 'var(--color-primary)',
+
+ fillOpacity: 0.1
+
+ }
+
+ }, "Latin America Region");
+
+ }
+
+ }
+
+
+
+ // Initialize the Chapter 5 Quiz from external JSON
+
+ fetch('quiz-data.json')
+
+ .then(response => response.json())
+
+ .then(data => {
+
+ QuizEngine.init('quiz-container', data);
+
+ })
+
+ .catch(err => console.error('Error loading quiz data:', err));
+
+ });
+
+
+
+ // Lightbox functionality for zoomable images
+
+ (function() {
+
+ const lightbox = document.getElementById('image-lightbox');
+
+ const lightboxImg = lightbox.querySelector('.lightbox-image');
+
+ const closeBtn = lightbox.querySelector('.lightbox-close');
+
+ 
+
+ // Open lightbox when clicking zoomable images
+
+ document.querySelectorAll('.zoomable-image').forEach(img => {
+
+ img.addEventListener('click', () => {
+
+ lightboxImg.src = img.src;
+
+ lightboxImg.alt = img.alt;
+
+ lightbox.hidden = false;
+
+ document.body.style.overflow = 'hidden';
+
+ closeBtn.focus();
+
+ });
+
+ // Also support keyboard activation
+
+ img.addEventListener('keydown', (e) => {
+
+ if (e.key === 'Enter' || e.key === ' ') {
+
+ e.preventDefault();
+
+ img.click();
+
+ }
+
+ });
+
+ });
+
+ 
+
+ // Close lightbox
+
+ function closeLightbox() {
+
+ lightbox.hidden = true;
+
+ document.body.style.overflow = '';
+
+ }
+
+ 
+
+ closeBtn.addEventListener('click', closeLightbox);
+
+ lightbox.addEventListener('click', (e) => {
+
+ if (e.target === lightbox) closeLightbox();
+
+ });
+
+ document.addEventListener('keydown', (e) => {
+
+ if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+
+ });
+
+ })();
+
+ </script>
+
+</body>
+
+</html>
+

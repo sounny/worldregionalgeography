@@ -1,865 +1,1728 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <meta name="description" content="Chapter 4: North America - Explore the geography of the United States, Canada, and Mexico.">
- <title>Chapter 4: North America | World Regional Geography</title>
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
- <link rel="stylesheet" href="../../css/style.css">
- <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-</head>
-<body>
- <!-- Skip to Main Content Link (Accessibility) -->
- <a href="#main-content" class="skip-link">Skip to main content</a>
- 
- <header class="site-header">
- <div class="container">
- <div class="header-brand">
- <a href="../../index.html" class="logo">
- <span class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
- <span class="logo-text">World Regional Geography</span>
- </a>
- </div>
- <nav class="main-nav" aria-label="Main navigation">
- <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
- <span class="hamburger"></span>
- </button>
- <ul class="nav-menu">
- <li><a href="../../index.html" class="nav-link">Home</a></li>
- <li class="nav-dropdown">
- <a href="#" class="nav-link dropdown-toggle active">Chapters</a>
- <ul class="dropdown-menu">
- <li><a href="../01-introduction/index.html">1. Introduction</a></li>
- <li><a href="../02-europe/index.html">2. Europe</a></li>
- <li><a href="../03-russia/index.html">3. Russia and Central Asia</a></li>
- <li><a href="../04-north-america/index.html">4. North America</a></li>
- <li><a href="../05-latin-america/index.html">5. Latin America</a></li>
- <li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
- <li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa & SW Asia</a></li>
- <li><a href="../08-south-asia/index.html">8. South Asia</a></li>
- <li><a href="../09-east-asia/index.html">9. East Asia</a></li>
- <li><a href="../10-southeast-asia/index.html">10. Southeast Asia</a></li>
- <li><a href="../11-australia-oceania/index.html">11. Australia & Oceania</a></li>
- <li><a href="../12-conclusion/index.html">12. Global Connections</a></li>
- </ul>
- </li>
- <li><a href="../../standards.html" class="nav-link">Standards</a></li>
- <li><a href="../../index.html#chapters" class="nav-link">Resources</a></li>
- <li><a href="../../index.html#about" class="nav-link">About</a></li>
- </ul>
-            </nav>
- </div>
- </header>
-
- <section class="chapter-header">
- <div class="container">
- <p class="chapter-meta">Chapter 4 · Week 6</p>
- <h1 class="chapter-title">North America: Urbanization and Diversity</h1>
- <p class="chapter-description">The United States, Canada, and Mexico form a diverse region of vast landscapes, economic integration, and complex cultural dynamics spanning from Arctic tundra to tropical forests.</p>
- </div>
- </section>
-
- <main id="main-content" class="chapter-content">
- <div class="container">
- 
- <!-- 1. Learning Objectives -->
- <!-- 1. At a Glance (Scaffold) -->
- <section class="learning-scaffold" aria-label="Learning scaffold">
- <details class="learning-scaffold-details">
- <summary>
- <div class="scaffold-head">
- <h2>At a Glance</h2>
- <div class="scaffold-meta" aria-label="Prerequisites and time estimate">
- <span class="scaffold-chip"><strong>Prereqs:</strong> Chapter 3</span>
- <span class="scaffold-chip"><strong>Time:</strong> 60 min read + 20 min activities</span>
- <span class="scaffold-chip"><strong>Deliverable:</strong> Quiz + Reflection</span>
- </div>
- </div>
- </summary>
-
- <div class="scaffold-grid">
- <div class="scaffold-card">
- <h3> Learning Outcomes</h3>
- <ul>
- <li><strong>Locate:</strong> Major physical regions (Rockies, Great Plains, Canadian Shield).</li>
- <li><strong>Analyze:</strong> Urbanization patterns (Megalopolis) and the Sun Belt population shift.</li>
- <li><strong>Explain:</strong> The economic integration of USMCA and cross-border supply chains.</li>
- <li><strong>Evaluate:</strong> The impact of immigration on cultural diversity and demographics.</li>
- <li><strong>Apply:</strong> Geographic concepts to understand the functional integration of the US-Mexico border.</li>
- </ul>
- </div>
-
- <div class="scaffold-card">
- <h3> Key Terms</h3>
- <p>Megalopolis, Sun Belt, Rain Shadow Effect, Maquiladora, USMCA, Gentrification, Functional Region, Rust Belt, Canadian Shield.</p>
- </div>
- </div>
-
- <div class="scaffold-grid">
- <div class="scaffold-card">
- <h3> Stop & Check</h3>
- <div class="quiz-question" style="margin-bottom:0.5rem;">Why are Maquiladoras located right on the US-Mexico border?</div>
- <details>
- <summary style="padding:0; color:var(--color-primary); font-weight:600; font-size:0.9rem;">Reveal Answer</summary>
- <div style="margin-top:0.5rem; font-size:0.95rem; color:var(--color-text-light);">
- To minimize transportation costs while taking advantage of lower labor costs in Mexico and duty-free import/export provisions. This creates a highly efficient cross-border manufacturing zone.
- </div>
- </details>
- </div>
-
- <div class="scaffold-card">
- <h3> Common Misconception</h3>
- <p><strong>Myth:</strong> The US economy is independent and self-sufficient.</p>
- <p><strong>Fact:</strong> North American economies are deeply integrated. Under the <strong>USMCA</strong>, a single product (like a car) often crosses the border 7-8 times during assembly before it is finished.</p>
- </div>
- </div>
- </details>
- </section>
-
- <!-- Video Lecture -->
- <section class="video-lecture-section section-container">
- <h2> Video Lecture</h2>
- <div class="video-container">
- <iframe src="https://www.youtube.com/embed/rPny_o1_G8s" title="Geography of North America Video Lecture" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
- </div>
- </section>
-
-
- <!-- 2. Regional Profile (Snapshot) -->
- <section id="profile" class="section-container">
- <h2> Regional Snapshot: North America at a Glance</h2>
- <div class="profile-grid">
- <div class="profile-item">
- <strong>Population</strong>
- <span>~500 Million (Combined)</span>
- </div>
- <div class="profile-item">
- <strong>Urbanization</strong>
- <span>~82% living in cities</span>
- </div>
- <div class="profile-item">
- <strong>Combined GDP</strong>
- <span>$28+ Trillion</span>
- </div>
- <div class="profile-item">
- <strong>Primary Theme</strong>
- <span>Economic Integration & Urban Growth</span>
- </div>
- </div>
- <p class="mt-4">North America is defined by its extreme environmental variety and its highly integrated economy. The region contains both the world's largest economy (USA) and one of the world's largest megacities (Mexico City), illustrating the vast scale of human modification of the landscape.</p>
- 
- <figure class="figure figure-narrow">
- <img src="../../images/north_america_regions.jpg" alt="Map of North American sub-regions" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
- <figcaption><strong>Figure 4.0:</strong> Regional Sub-divisions. From the Canadian Shield to the Mexican Altiplano, North America is a study in diverse physical and cultural settings.</figcaption>
- </figure>
- </section>
-
- <!-- 3. Interactive Regional Map -->
- <section id="interactive-map" class="section-container">
- <h2> Interactive Map: The Continental Core</h2>
- <p>Explore the major urban clusters and physical barriers of North America. Zoom in to see the "BosWash" megalopolis, the Texas Triangle, and the vast expanses of the Great Plains.</p>
- <div id="regions-map" class="interactive-map"></div>
- <div class="map-controls">
- <p class="text-sm italic text-muted">Toggle between Physical terrain and Political boundaries. Notice how the Mississippi River system and the Great Lakes serve as massive inland waterways for global trade.</p>
- </div>
- </section>
-
- <!-- 4. Physical Geography Analysis -->
- <section id="physical-geography" class="section-container">
- <h2> Physical Geography: Mountains, Shields, and Plains</h2>
- <p>North America's physical landscape divides into distinct physiographic regions, each shaping human settlement and economic activity.</p>
- 
- <h3>Western Mountain Systems</h3>
- <p>The young, rugged <strong>Rocky Mountains</strong> form North America's continental backbone, stretching over 4,800 km from New Mexico to Alaska. Glacial sculpting created dramatic peaks exceeding 4,000 meters. West of the Rockies lies the <strong>Intermontane Region</strong>, high plateaus and basins including the Great Basin, Columbia Plateau, and Colorado Plateau. The <strong>Pacific Coast Ranges</strong> (Sierra Nevada, Cascades, Coast Ranges) trap moisture from Pacific weather systems, creating the dramatic rain shadow effect.</p>
- 
- <div class="note-callout">
- <h4> The Rain Shadow Effect</h4>
- <p>As Pacific air masses rise over western mountains, moisture condenses and falls as precipitation on windward slopes. The leeward (east) side receives far less rainfall, explaining why Seattle receives 965mm of annual precipitation while Spokane (just 450 km east) receives only 430mm. This effect creates the semiarid Great Plains and desert landscapes of Nevada, Utah, and Arizona.</p>
- </div>
- 
- <h3>Eastern Highlands: The Appalachians</h3>
- <p>The ancient <strong>Appalachian Mountains</strong> contrast sharply with the Rockies. Formed 480 million years ago, erosion has reduced peaks to under 2,000 meters. Despite their modest elevation, the Appalachians profoundly shaped American history, they formed the first barrier to westward expansion, channeling early settlement along river valleys and creating distinct "mountain culture" communities that persisted into the 20th century.</p>
- 
- <h3>The Interior Plains</h3>
- <p>Between the mountain systems lies the continent's agricultural heartland:</p>
- <ul>
- <li><strong>Interior Lowlands:</strong> From the Appalachians to the 100th meridian, humid climate, deep soils, the Corn Belt and dairy regions</li>
- <li><strong>Great Plains:</strong> West of the 100th meridian, semiarid grasslands, the "breadbasket" producing wheat, cattle ranching, and increasingly wind energy</li>
- <li><strong>Mississippi River System:</strong> The continent's drainage backbone, connecting the Great Lakes to the Gulf of Mexico, historically the primary transportation corridor before railroads</li>
- </ul>
- 
- <h3>Canadian Shield</h3>
- <p>The <strong>Canadian Shield</strong> covers roughly half of Canada's land area, an ancient, glacially scoured landscape of exposed bedrock, thin soils, and thousands of lakes. This Precambrian rock (up to 4 billion years old) contains enormous mineral wealth (gold, nickel, copper, uranium) but supports little agriculture. Most Canadians live <em>south</em> of the Shield, concentrated within 200 km of the US border.</p>
- 
- <h3>Coastal Lowlands</h3>
- <p>The <strong>Gulf-Atlantic Coastal Plain</strong> stretches from New York to Texas, a flat, low-lying zone of barrier islands, wetlands, and the Florida peninsula. This region faces increasing vulnerability to hurricanes, sea-level rise, and coastal erosion.</p>
- 
- <div class="figure-row">
- <figure class="figure">
- <img src="../../images/north_america_physical.jpg" alt="Physical map of North America" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
- <figcaption><strong>Figure 4.1:</strong> Physiography. The continent is divided into several major regions including the Great Plains and the Canadian Shield.</figcaption>
- </figure>
- <figure class="figure">
- <img src="../../images/north_america_vegetation.jpg" alt="Vegetation zones map" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
- <figcaption><strong>Figure 4.2:</strong> Biomes. North America spans from Arctic tundra to tropical rainforests in southern Mexico.</figcaption>
- </figure>
- </div>
- 
- <h3>Climate Patterns</h3>
- <p>Two dominant patterns shape North American climate:</p>
- <ol>
- <li><strong>North-South temperature gradient:</strong> From Arctic (Type E tundra) in northern Canada to tropical (Type A) in Florida and Hawaii</li>
- <li><strong>East-West precipitation gradient:</strong> Humid conditions in the east (Type C climates) give way to semiarid conditions in the Great Plains (Type B) before increasing again at the Pacific Coast</li>
- </ol>
- <p>The climate diversity, frigid tundra, temperate forests, subtropical wetlands, deserts, and rainforests, exists within a single continent, creating extraordinary agricultural and ecological variety.</p>
- 
- <div class="inquiry-prompt">
- <h3> Geographic Inquiry</h3>
- <p>The Ogallala Aquifer supports massive irrigation in the Great Plains. As this non-renewable water source is depleted, how will the "agricultural geography" of North America be forced to shift? What regions might benefit? What populations might be displaced?</p>
- </div>
- </section>
-
- <!-- 4b. Data Visualization: North America at a Glance -->
- <section id="data-viz" class="section-container">
- <h2> Data Visualization: North America at a Glance</h2>
- <p>The following charts illustrate key geographic and economic patterns across the three North American nations. Analyze the data and consider what these numbers reveal about regional inequality and integration.</p>
-
- <div class="figure-row">
- <div style="background:#fff; border-radius:12px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex:1;">
- <h3 style="font-size:1rem; margin-bottom:1rem; color:var(--color-primary-dark);">GDP per Capita (USD, 2024 est.)</h3>
- <canvas id="chart-gdp-na" height="220" aria-label="Bar chart comparing GDP per capita of USA, Canada, and Mexico"></canvas>
- <p style="font-size:0.85rem; color:var(--color-text-light); margin-top:0.75rem;"> <em>Notice the dramatic gap between Mexico and its northern neighbors. How does this economic disparity drive migration and shape the maquiladora economy?</em></p>
- </div>
- <div style="background:#fff; border-radius:12px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex:1;">
- <h3 style="font-size:1rem; margin-bottom:1rem; color:var(--color-primary-dark);">Urbanization Rate (% Urban Population)</h3>
- <canvas id="chart-urban-na" height="220" aria-label="Bar chart comparing urbanization rates of USA, Canada, and Mexico"></canvas>
- <p style="font-size:0.85rem; color:var(--color-text-light); margin-top:0.75rem;"> <em>All three nations are highly urbanized. What geographic factors (climate, resources, trade routes) explain why cities cluster where they do in each country?</em></p>
- </div>
- </div>
- </section>
-
- <!-- 6. Important Person Break-out (Jane Jacobs) -->
- <section class="important-person-sidebar">
- <div class="sidebar-content">
- <div class="person-image">
- <img src="../../images/north_america_cities.jpg" alt="Skyline of a major North American city" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
- </div>
- <div class="person-header">
- <h3> Important Person</h3>
- </div>
- <div class="person-info">
- <strong>Jane Jacobs</strong>
- <p class="person-title">Urban Theorist & Activist</p>
- <p>Jacobs transformed our understanding of the "human geography" of cities. She argued that vibrant urban life is created by "eyes on the street" and mixed-use neighborhoods, challenging the mid-20th century trend of massive highway construction and urban renewal.</p>
- <a href="https://www.janejacobsvalkyrie.com/" target="_blank" class="btn-text">Explore Jacobs's impact on city planning →</a>
- </div>
- </div>
- </section>
-
- <!-- 5a. Colonial History and European Influence -->
- <section id="colonial-history" class="section-container">
- <h2> Colonial History: European Imprint on North America</h2>
- <p>Before European contact, North America was home to diverse Indigenous peoples, from the Inuit in the Arctic to the Aztec Empire in Mexico. Complex societies including the Iroquois Confederacy, Pueblo communities, and Mississippi mound-builders thrived for millennia. European colonization fundamentally transformed the continent.</p>
- 
- <h3>Three European Spheres of Influence</h3>
- <div class="note-callout">
- <h4>🇪🇸 Spanish Influence (1500s-1800s)</h4>
- <p><strong>Territory:</strong> Florida, Southwest (California, Arizona, New Mexico, Texas), Mexico</p>
- <ul>
- <li>
- <figure class="figure figure-inline" style="max-width: 300px; margin: 1rem 0;">
- <img src="../../images/fe71ebfd78592186fbb9b761bc5df0ed.jpg" alt="Castillo de San Marcos in St. Augustine" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
- <figcaption><strong>St. Augustine Fort:</strong> Castillo de San Marcos represents the oldest permanent European settlement in North America.</figcaption>
- </figure>
- </li>
- <li><strong>St. Augustine, Florida (1565)</strong>, oldest permanent European settlement in North America</li>
- <li>Mission system spread Catholicism and Spanish language across the Southwest</li>
- <li><strong>Lasting legacy:</strong> Place names (San Francisco, Los Angeles, San Antonio), architecture, Hispanic culture throughout the Sun Belt</li>
- </ul>
- </div>
- 
- <div class="note-callout">
- <h4>🇫🇷 French Influence (1600s-1763)</h4>
- <p><strong>Territory:</strong> Quebec, Great Lakes, Mississippi River Valley (Louisiana Territory)</p>
- <ul>
- <li>Focused on <strong>fur trade</strong> rather than large-scale settlement</li>
- <li>French place names remain: Detroit ("strait"), Baton Rouge ("red stick"), Des Moines, Louisiana</li>
- <li>Long-lot land survey system still visible along the St. Lawrence and in Louisiana</li>
- <li><strong>Lasting legacy:</strong> French-speaking Quebec (7+ million people), Cajun culture in Louisiana, bilingual Canada</li>
- </ul>
- </div>
- 
- <div class="note-callout">
- <h4>🇬🇧 British Influence (1607-1776+)</h4>
- <p><strong>Territory:</strong> Eastern seaboard (13 colonies), eventually most of Canada</p>
- <ul>
- <li><strong>Jamestown, Virginia (1607)</strong>, first permanent English settlement</li>
- <li>Large-scale agricultural settlement and demographic dominance</li>
- <li>English common law, Protestant Christianity, parliamentary government</li>
- <li><strong>Lasting legacy:</strong> English language dominance, political institutions, cultural values across most of US and Canada</li>
- </ul>
- </div>
- 
- <div class="info-callout">
- <h4> Why English Dominates</h4>
- <p>Despite Spain and France arriving earlier, British settlement patterns emphasized <em>permanent agricultural colonies</em> with entire families, while Spanish and French colonization relied more on missionaries, traders, and soldiers. By 1776, British colonies had over 2.5 million settlers, far outnumbering Spanish and French populations combined.</p>
- </div>
- </section>
-
- <!-- 5. Human Geography Analysis -->
- <section id="human-geography" class="section-container">
- <h2> Human Geography: Urbanization and Integration</h2>
- <p>North America is one of the world's most urbanized regions, with approximately 82% of the population living in metropolitan areas. The United States has over 330 million people; Canada has 40 million; and Mexico has 130 million.</p>
- 
- <h3>The Rise of the Megalopolis</h3>
- <p>Geographer Jean Gottmann coined the term <strong>Megalopolis</strong> in 1961 to describe the nearly continuous urban corridor from Boston to Washington, D.C., often called "BosWash." This concept of interconnected metropolitan areas now applies to other regions:</p>
- <ul>
- <li><strong>BosWash Corridor:</strong> Boston-New York-Philadelphia-Baltimore-Washington, D.C. (50+ million people)</li>
- <li><strong>Great Lakes Megalopolis:</strong> Chicago-Detroit-Cleveland-Pittsburgh-Toronto</li>
- <li><strong>Texas Triangle:</strong> Dallas-Houston-San Antonio-Austin (fastest-growing US megaregion)</li>
- <li><strong>Pacific Coast:</strong> San Diego-Los Angeles-San Francisco-Seattle-Vancouver</li>
- <li><strong>Mexico City Metropolitan Area:</strong> 21+ million people, one of the world's largest urban agglomerations</li>
- </ul>
- 
- <h3>Population Distribution and Migration</h3>
- <p>Population distribution reveals distinct geographic patterns:</p>
- <ul>
- <li><strong>Canada:</strong> 90% of Canadians live within 200 km of the US border; Ontario is often called "South Canada" for its southern extension</li>
- <li><strong>United States:</strong> Historic population shift from Northeast/Midwest to <strong>Sun Belt</strong> (South and Southwest)</li>
- <li><strong>Mexico:</strong> Concentration on the Central Plateau (altiplano) around Mexico City, with growth in northern border cities</li>
- </ul>
- 
- <div class="note-callout">
- <h4> The Sun Belt Shift</h4>
- <p>Since 1970, the US population center has moved steadily southwest. Three states, <strong>California, Texas, and Florida</strong>, account for nearly one-third of US population growth. Factors include:</p>
- <ul>
- <li>Air conditioning making hot climates habitable year-round</li>
- <li>Retirement migration (Florida, Arizona)</li>
- <li>Technology sector growth (Texas, California)</li>
- <li>Lower cost of living compared to Northeast</li>
- <li>Immigration from Latin America (Texas, California, Florida)</li>
- </ul>
- </div>
- 
- <h3>Immigration and Cultural Diversity</h3>
- <p>Immigration has reshaped North American demographics throughout history, and continues to do so:</p>
- <ul>
- <li><strong>Hispanic/Latino population:</strong> Now 62+ million in the US (nearly 19%), with particularly high concentrations in California, Texas, Florida, and the Southwest</li>
- <li><strong>Asian American population:</strong> Fastest-growing demographic group, concentrated in California, New York, and Texas</li>
- <li><strong>Canadian multiculturalism:</strong> Official policy since 1971; Toronto is one of the world's most diverse cities</li>
- </ul>
- 
- <div class="figure-row">
- <figure class="figure">
- <img src="../../images/us_hispanic_population.jpg" alt="Hispanic population distribution map" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
- <figcaption><strong>Figure 4.3:</strong> Demographic Diversity. The geography of immigration is highly visible in the Sun Belt and border regions.</figcaption>
- </figure>
- <figure class="figure">
- <img src="../../images/north_america_economy.jpg" alt="Economic integration map" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
- <figcaption><strong>Figure 4.4:</strong> Continental Integration. Integrated supply chains under USMCA link factories across three nations.</figcaption>
- </figure>
- </div>
-
- <h3>Economic Integration: USMCA</h3>
- <p>The <strong>USMCA</strong> (United States-Mexico-Canada Agreement, 2020) replaced NAFTA and governs the world's largest free trade zone by GDP. Key features:</p>
- <ul>
- <li><strong>Integrated manufacturing:</strong> A single automobile may cross the US-Mexico border 8+ times during production</li>
- <li><strong>Agricultural trade:</strong> US exports corn and wheat to Mexico; imports fruits, vegetables, and avocados</li>
- <li><strong>Energy integration:</strong> Cross-border pipelines and electricity transmission</li>
- <li><strong>Services and digital trade:</strong> New provisions for e-commerce and intellectual property</li>
- </ul>
- <p>This creates a massive <strong>functional region</strong>, an area defined by economic activity rather than political boundaries.</p>
-
- <div class="inquiry-prompt">
- <h3> Geographic Inquiry: Immigration and Identity</h3>
- <p>The United States is often called a "nation of immigrants." Yet immigration policy remains deeply contested. Using geographic thinking: How does the <em>spatial distribution</em> of immigrant communities shape local economies and cultures? Is the "melting pot" or "cultural mosaic" model a better description of North American multiculturalism, and does it vary by city or region?</p>
- </div>
- </section>
-
- <!-- 7. Texas Connection Toggle -->
- <section id="texas-connection" class="section-container">
- <div class="texas-toggle">
- <button class="btn-texas-toggle" id="texas-btn">
- <span class="star-icon"></span> Texas Connection: The Geographic Crossroads
- </button>
- <div class="texas-content hidden" id="texas-content">
- <h4>Local Realities in a Global Context</h4>
- <p>Texas serves as a microcosm of North American geography, spanning humid eastern forests, semiarid western plains, subtropical Gulf coast, and desert borderlands. It exemplifies nearly every theme in this chapter:</p>
- 
- <h5>Physical Geography</h5>
- <ul>
- <li><strong>Physiographic diversity:</strong> From Piney Woods to High Plains to Trans-Pecos desert, Texas contains parts of four major physiographic regions.</li>
- <li><strong>Climate transition:</strong> The 100th meridian (roughly near Interstate 35) marks the divide between the humid East and the semiarid West.</li>
- <li><strong>Water challenges:</strong> The Edwards Aquifer supplies San Antonio; Ogallala Aquifer depletion threatens Panhandle agriculture.</li>
- </ul>
- 
- <h5>Urbanization & the Texas Triangle</h5>
- <ul>
- <li>Dallas-Fort Worth, Houston, San Antonio, and Austin form one of America's fastest-growing megaregions.</li>
- <li>Houston is the 4th largest US city; DFW is the 4th largest metro area.</li>
- <li>Texas gained more residents than any other state from 2010 to 2020.</li>
- </ul>
- 
- <h5>Immigration & Cultural Identity</h5>
- <ul>
- <li>40% of Texans are Hispanic/Latino, reflecting both Spanish colonial heritage and ongoing immigration.</li>
- <li>Texas shares 1,254 miles of border with Mexico, which is the longest international border in North America.</li>
- <li>El Paso-Juárez functions as a binational metropolitan area of 2.7 million people.</li>
- </ul>
- 
- <h5>Montrose &amp; LGBTQ+ Spatial History</h5>
- <ul>
- <li><strong>Spatial sanctuary:</strong> Houston's Montrose neighborhood developed as a safe space and spatial sanctuary for the LGBTQ+ community in the mid twentieth century, illustrating how marginalized groups create distinct spaces of safety and expression.</li>
- <li><strong>Oral history mapping:</strong> A collaboration between university researchers and local groups created an oral history storymap centered on Mary's gay bar, showing how memory and community identity can be mapped as geographic data.</li>
- <li><strong>AIDS Memorial Quilt:</strong> The quilt served as a spatial and visual community map, representing individuals lost to the epidemic and reclaiming public spaces to raise awareness and demand action.</li>
- </ul>
-
- <h5>Economic Integration</h5>
- <ul>
- <li><strong>Cross-border trade:</strong> Texas exports more goods to Mexico than any other US state.</li>
- <li><strong>Port infrastructure:</strong> The Port of Houston is the busiest US port by foreign tonnage.</li>
- <li><strong>Energy transition:</strong> Texas produces more wind energy than any other state, transitioning from its historical oil-dominant economy.</li>
- </ul>
- 
- <p><strong>Flood Resilience:</strong> Just as South Asia manages monsoon cycles, Houston has become a global center for research into hurricane-driven flood management, developing innovative stormwater infrastructure after Hurricane Harvey (2017) demonstrated the vulnerability of low-lying coastal cities.</p>
- </div>
- </div>
- </section>
-
- <!-- 8. Case Study -->
- <section id="case-study" class="section-container">
- <div class="case-study-gold">
- <div class="case-study-header">
- <span class="label">Case Study</span>
- <h2>The US-Mexico Border: Integration and Division</h2>
- </div>
- <p>The 2,000-mile border between the US and Mexico is a study in contradictions. It is one of the most economically integrated boundaries in the world, with cities like El Paso-Juárez functioning as a single "binational" metropolitan area. Yet, it remains a site of intense political division regarding migration and security.</p>
- 
- <h4>Economic Integration</h4>
- <p>Over $700 billion in goods cross the US-Mexico border annually, more trade than crosses the US-China border. The border region hosts over 3,000 <strong>maquiladoras</strong>, assembly plants that import components duty-free, add value through manufacturing, and export finished products. Major industries include automotive, electronics, medical devices, and aerospace.</p>
- 
- <h4>Migration Dynamics</h4>
- <p>The border has seen multiple migration patterns:</p>
- <ul>
- <li><strong>Bracero Program (1942-1964):</strong> Brought 4.6 million Mexican agricultural workers to the US</li>
- <li><strong>Undocumented immigration peaks:</strong> Reached 12.2 million in 2007, has since declined</li>
- <li><strong>Current asylum seekers:</strong> Increasing numbers from Central America and globally</li>
- <li><strong>Reverse migration:</strong> More Mexicans returned to Mexico than arrived in the US during 2009-2014</li>
- </ul>
- 
- <div class="case-study-questions">
- <h4>Questions to Consider:</h4>
- <ul>
- <li>How do <strong>Maquiladoras</strong> illustrate the functional integration of the border region despite political boundaries?</li>
- <li>In what ways does the border serve as both a "filter" and a "barrier" in global geography?</li>
- <li>How might climate change in Central America affect migration patterns to North America?</li>
- </ul>
- </div>
- </div>
- </section>
-
- <!-- 9. Interactive Accordions (Summary & Glossary) -->
- <section id="summary-glossary" class="section-container">
- <div class="accordion">
- <div class="accordion-item">
- <button class="accordion-header">
- Glossary of Terms <span class="chevron"></span>
- </button>
- <div class="accordion-content">
- <dl>
- <dt>Megalopolis</dt>
- <dd>A large, continuous urban region formed by the merging of several metropolitan areas. Term coined by Jean Gottmann (1961) to describe the Boston-Washington corridor (BosWash).</dd>
- 
- <dt>Sun Belt</dt>
- <dd>The southern and southwestern states experiencing rapid population and economic growth since the 1960s, including Texas, Florida, Arizona, and California.</dd>
- 
- <dt>Canadian Shield</dt>
- <dd>The ancient, glacially scoured bedrock core of North America, covering half of Canada. Rich in minerals but unsuitable for agriculture.</dd>
- 
- <dt>Rain Shadow Effect</dt>
- <dd>The dry conditions on the leeward (downwind) side of a mountain range, caused when rising air masses release moisture on the windward side.</dd>
- 
- <dt>Great Plains</dt>
- <dd>The semiarid grassland region between the Rocky Mountains and the 100th meridian, characterized by wheat farming, cattle ranching, and wind energy production.</dd>
- 
- <dt>Maquiladora</dt>
- <dd>A foreign-owned factory in Mexico, typically near the US border, where imported components are assembled by workers into products for export. Enabled by NAFTA/USMCA free trade provisions.</dd>
- 
- <dt>USMCA</dt>
- <dd>The United States-Mexico-Canada Agreement (2020), a free trade agreement that replaced NAFTA, governing trade relations among the three North American nations.</dd>
- 
- <dt>Functional Region</dt>
- <dd>A geographic area organized around a node or focal point, defined by economic, social, or political activity rather than physical features. Example: commuting zones, trade networks.</dd>
- 
- <dt>Ogallala Aquifer</dt>
- <dd>A vast underground water reservoir beneath the Great Plains, providing irrigation for agriculture in eight states. Depletion threatens long-term agricultural viability.</dd>
- 
- <dt>Intermontane Region</dt>
- <dd>The area "between mountains", the plateaus, basins, and deserts between the Rocky Mountains and the Pacific Coast ranges (Great Basin, Columbia Plateau, Colorado Plateau).</dd>
- 
- <dt>Long-Lot Survey System</dt>
- <dd>A French colonial land division pattern creating long, narrow parcels extending back from rivers or roads. Visible in Quebec and Louisiana.</dd>
- 
- <dt>Border Cities (Twin Cities)</dt>
- <dd>Paired urban areas straddling an international boundary, functioning as integrated metropolitan zones. Examples: El Paso-Juárez, San Diego-Tijuana, Detroit-Windsor.</dd>
- 
- <dt>Gentrification</dt>
- <dd>The process of wealthier residents moving into urban neighborhoods, renovating housing, and often displacing lower-income residents.</dd>
- 
- <dt>Rust Belt</dt>
- <dd>The formerly industrialized region of the Great Lakes and northeastern US, characterized by deindustrialization and population decline since the 1970s.</dd>
- </dl>
- </div>
- </div>
- <div class="accordion-item">
- <button class="accordion-header">
- Summary of Big Ideas <span class="chevron"></span>
- </button>
- <div class="accordion-content">
- <ol>
- <li><strong>Physiographic diversity:</strong> North America's landforms, from young western mountains to ancient eastern highlands to interior plains, create distinct economic regions and settlement patterns.</li>
- <li><strong>Climate gradients:</strong> Temperature decreases north to south; precipitation decreases east to west until the Pacific Coast. The rain shadow effect shapes agriculture and settlement across the western half of the continent.</li>
- <li><strong>Colonial legacy:</strong> Spanish, French, and British colonization left lasting imprints on language, religion, law, and settlement patterns. British demographic dominance explains English language prevalence.</li>
- <li><strong>Highly urbanized:</strong> Over 80% of North Americans live in metropolitan areas, with megalopolitan corridors emerging along both coasts and in Texas.</li>
- <li><strong>Population shift:</strong> The Sun Belt states (South and Southwest) have gained population while the Rust Belt (Midwest/Northeast) has declined, driven by air conditioning, retirement migration, and economic restructuring.</li>
- <li><strong>Immigration reshapes demographics:</strong> Hispanic/Latino and Asian populations are the fastest-growing demographic groups, transforming cultural geography particularly in border states and gateway cities.</li>
- <li><strong>Economic integration:</strong> USMCA creates a single continental market where manufactured goods cross borders multiple times during production, a functional region transcending political boundaries.</li>
- <li><strong>Border paradox:</strong> The US-Mexico border simultaneously represents deep economic integration (maquiladoras, cross-border trade) and political tension over migration and security.</li>
- <li><strong>Environmental challenges:</strong> Water scarcity (Ogallala Aquifer depletion), coastal vulnerability (hurricanes, sea-level rise), and urbanization pressures present ongoing geographic challenges.</li>
- </ol>
- </div>
- </div>
- </div>
- </section>
-
- <!-- 10a. Regional Decisions Exercise -->
- <section id="regional-decisions" class="section-container">
- <div style="background: linear-gradient(135deg, #1a3a4a 0%, #2d6a8a 100%); border-radius: 16px; padding: 2rem; color: #fff;">
- <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
- <span style="font-size:2rem;"></span>
- <div>
- <span style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; opacity:0.8;">Role-Play Exercise</span>
- <h2 style="margin:0; font-size:1.4rem;">Regional Decisions: The Great Plains Water Crisis</h2>
- </div>
- </div>
- <p style="opacity:0.9; margin-bottom:1.5rem;">The Ogallala Aquifer is being depleted at a rate far exceeding natural recharge. At current usage rates, significant portions could be exhausted within 25-50 years. You are a member of a <strong>Tri-State Water Policy Commission</strong> representing Kansas, Nebraska, and Texas. Your task: develop a water management policy that balances agricultural needs, economic survival, and long-term sustainability.</p>
-
- <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-bottom:1.5rem;">
- <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:1rem;">
- <strong style="display:block; margin-bottom:0.4rem;"> Role A: Wheat Farmer</strong>
- <p style="font-size:0.88rem; opacity:0.9; margin:0;">Your family has farmed this land for 4 generations. Irrigation is essential, without it, you lose your livelihood. You fear any restrictions will force you to sell.</p>
- </div>
- <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:1rem;">
- <strong style="display:block; margin-bottom:0.4rem;"> Role B: City Mayor</strong>
- <p style="font-size:0.88rem; opacity:0.9; margin:0;">Your city depends on the aquifer for drinking water. Population is growing. You need long-term water security for residents, not just agriculture.</p>
- </div>
- <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:1rem;">
- <strong style="display:block; margin-bottom:0.4rem;"> Role C: Environmental Scientist</strong>
- <p style="font-size:0.88rem; opacity:0.9; margin:0;">The data is clear: current extraction is unsustainable. You advocate for immediate 30% reduction in pumping and investment in drip irrigation technology.</p>
- </div>
- <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:1rem;">
- <strong style="display:block; margin-bottom:0.4rem;"> Role D: State Economist</strong>
- <p style="font-size:0.88rem; opacity:0.9; margin:0;">Agriculture contributes $25 billion annually to the regional economy. You must weigh short-term economic pain against long-term collapse. What's the cost-benefit of conservation?</p>
- </div>
- </div>
-
- <div style="background:rgba(255,255,255,0.1); border-radius:10px; padding:1rem;">
- <strong style="display:block; margin-bottom:0.5rem;"> Discussion Questions:</strong>
- <ol style="margin:0; padding-left:1.2rem; opacity:0.9; font-size:0.9rem;">
- <li>What policy would your role advocate for? What compromises might you accept?</li>
- <li>How does the <em>geography</em> of the aquifer (spanning multiple states) complicate governance?</li>
- <li>Compare this water crisis to similar challenges in South Asia (monsoon dependence) or the Middle East (water scarcity). What can North America learn?</li>
- </ol>
- </div>
- </div>
- </section>
-
- <!-- 10. Knowledge Check (Quiz) -->
- <section id="quiz" class="section-container">
- <h2> Knowledge Check</h2>
- <p>Test your understanding of the core concepts covered in this chapter. This quiz consists of multiple-choice questions designed to review key terms, regional patterns, and geographic relationships. Select the best answer for each question to receive immediate feedback.</p>
-<div id="quiz-container" class="quiz-wrapper">
- <p class="loading">Loading quiz questions...</p>
- </div>
- </section>
-
- <!-- 11. Discussion & Reflection Prompts -->
- <section id="discussion" class="section-container">
- <h2> Discussion & Reflection Prompts</h2>
- <div class="discussion-box">
- <p>Use these prompts to deepen your understanding and connect chapter concepts to your own experience and the broader world.</p>
-
- <h3>Reflect on Your Learning</h3>
- <ol>
- <li>Think about the place where you grew up or currently live. What <strong>physiographic region</strong> is it in? How has the physical geography (climate, terrain, water) shaped the local economy and culture?</li>
- <li>The Sun Belt shift has transformed American demographics. Has your community experienced population growth or decline? What geographic factors explain this trend?</li>
- <li>How does your daily life connect to the <strong>USMCA trade network</strong>? Think about the food you eat, the car you drive, or the electronics you use: where were they made, and what borders did they cross?</li>
- </ol>
-
- <h3>Discuss With Your Peers</h3>
- <ul>
- <li><strong>"The border is both a wall and a bridge."</strong> Do you agree with this statement about the US-Mexico border? Use specific geographic evidence to support your position.</li>
- <li>Canada officially embraces <strong>multiculturalism</strong> as national policy, while the US has historically promoted a "melting pot" ideal. Which model do you think better serves a diverse society, and why?</li>
- <li>If the Ogallala Aquifer is depleted, which regions of the US would be most affected? Who should bear the cost of conservation: farmers, consumers, or governments?</li>
- </ul>
- </div>
- </section>
- 
- <!-- Navigation -->
- <nav class="chapter-nav" style="display: flex; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-8);">
- <a href="../03-russia/index.html" class="btn btn-primary">← Chapter 3: Russia & Central Asia</a>
- <a href="../05-latin-america/index.html" class="btn btn-primary">Chapter 5: Latin America →</a>
- </nav>
-
- <!-- Standards Alignment Map -->
- <section class="standards-alignment" aria-label="Curriculum Standards Alignment">
- <h2> Curriculum Standards Alignment</h2>
- <p class="standards-subtitle">This chapter aligns with the following National and State geography standards.</p>
- 
- <div class="standards-grid">
- <!-- National Standards -->
- <details class="standard-group std-national">
- <summary><h3>🇺🇸 National Geography Standards</h3></summary>
- <div class="standard-content">
- <div class="standard-item">
- <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element I.3</a>
- <span class="standard-desc">Spatial Organization: Urban hierarchy and Megalopolis formation.</span>
- </div>
- <div class="standard-item">
- <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element IV.11</a>
- <span class="standard-desc">Economic Interdependence: Global trade networks (USMCA).</span>
- </div>
- <div class="standard-item">
- <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element II.4</a>
- <span class="standard-desc">Characteristics of Place: Physical regions (Shield, Plains, Mountains).</span>
- </div>
- </div>
- </details>
-
- <!-- Texas Standards -->
- <details class="standard-group std-texas">
- <summary><h3> Texas Core (GEOG 1303)</h3></summary>
- <div class="standard-content">
- <div class="standard-item">
- <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 1</a>
- <span class="standard-desc">Define "region" (Functional vs. Formal regions).</span>
- </div>
- <div class="standard-item">
- <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 2</a>
- <span class="standard-desc">Locate significant geographic features (Mississippi River, Rockies, Great Lakes).</span>
- </div>
- <div class="standard-item">
- <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 3</a>
- <span class="standard-desc">Globalization (Migration effects and cultural diffusion).</span>
- </div>
- </div>
- </details>
-
- <!-- Florida Standards -->
- <details class="standard-group std-florida">
- <summary><h3> Florida Sunshine State (SS.912.G)</h3></summary>
- <div class="standard-content">
- <div class="standard-item">
- <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.2.1</a>
- <span class="standard-desc">Identify physical characteristics of places (Landforms).</span>
- </div>
- <div class="standard-item">
- <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.4.2</a>
- <span class="standard-desc">Analyze push/pull factors of migration (Sun Belt shift, Immigration).</span>
- </div>
- <div class="standard-item">
- <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.4.3</a>
- <span class="standard-desc">Use geographic terms to analyze urban growth (Megalopolis).</span>
- </div>
- </div>
- </details>
- </div>
- </section>
-
- </div>
- </main>
-
- <footer class="site-footer">
- <div class="container">
- <div class="footer-content">
- <div class="footer-brand">
- <span class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
- <span>World Regional Geography</span>
- </div>
- <div class="footer-copyright">
- <p>&copy; 2026 Dr. Sounny. Open Educational Resource.</p>
- </div>
- </div>
- </div>
- </footer>
-
- <!-- Image Lightbox Overlay -->
- <div id="image-lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
- <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
- <img class="lightbox-image" src="" alt="">
- </div>
-
- <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
- <script src="../../js/map-init.js"></script>
- <script src="../../js/regions-data.js"></script>
- <script src="../../js/quiz-engine.js"></script>
- <script src="../../js/main.js"></script>
- <script>
- // Chapter 4 Chart.js Visualizations
- document.addEventListener('DOMContentLoaded', () => {
- const chartColors = {
- usa: 'rgba(74, 144, 164, 0.85)',
- canada: 'rgba(52, 168, 83, 0.85)',
- mexico: 'rgba(251, 188, 5, 0.85)'
- };
- const borderColors = {
- usa: 'rgba(74, 144, 164, 1)',
- canada: 'rgba(52, 168, 83, 1)',
- mexico: 'rgba(251, 188, 5, 1)'
- };
-
- // GDP per Capita Chart
- const gdpCtx = document.getElementById('chart-gdp-na');
- if (gdpCtx && window.Chart) {
- new Chart(gdpCtx, {
- type: 'bar',
- data: {
- labels: ['United States', 'Canada', 'Mexico'],
- datasets: [{
- label: 'GDP per Capita (USD)',
- data: [80000, 55000, 11000],
- backgroundColor: [chartColors.usa, chartColors.canada, chartColors.mexico],
- borderColor: [borderColors.usa, borderColors.canada, borderColors.mexico],
- borderWidth: 2,
- borderRadius: 6
- }]
- },
- options: {
- responsive: true,
- plugins: {
- legend: { display: false },
- tooltip: {
- callbacks: {
- label: ctx => ` $${ctx.raw.toLocaleString()}`
- }
- }
- },
- scales: {
- y: {
- beginAtZero: true,
- ticks: {
- callback: val => '$' + (val/1000) + 'k'
- }
- }
- }
- }
- });
- }
-
- // Urbanization Chart
- const urbanCtx = document.getElementById('chart-urban-na');
- if (urbanCtx && window.Chart) {
- new Chart(urbanCtx, {
- type: 'bar',
- data: {
- labels: ['United States', 'Canada', 'Mexico'],
- datasets: [{
- label: 'Urban Population (%)',
- data: [83, 82, 81],
- backgroundColor: [chartColors.usa, chartColors.canada, chartColors.mexico],
- borderColor: [borderColors.usa, borderColors.canada, borderColors.mexico],
- borderWidth: 2,
- borderRadius: 6
- }]
- },
- options: {
- responsive: true,
- plugins: {
- legend: { display: false },
- tooltip: {
- callbacks: {
- label: ctx => ` ${ctx.raw}% urban`
- }
- }
- },
- scales: {
- y: {
- beginAtZero: true,
- max: 100,
- ticks: { callback: val => val + '%' }
- }
- }
- }
- });
- }
- });
- </script>
- <script>
- // Initialize the Chapter 4 Interactive Map
- document.addEventListener('DOMContentLoaded', () => {
- const map = MapManager.initMap('regions-map', [40, -100], 3);
- if (map && window.WorldRegionsData) {
- const naData = window.WorldRegionsData.features.find(f => f.id === 'north-america');
- if (naData) {
- MapManager.addGeoJson(map, { type: "FeatureCollection", features: [naData] }, {
- style: {
- color: 'var(--color-primary-dark)',
- weight: 2,
- fillColor: 'var(--color-primary)',
- fillOpacity: 0.1
- }
- }, "North America Region");
- }
- }
-
- // Initialize the Chapter 4 Quiz from external JSON
- fetch('quiz-data.json')
- .then(response => response.json())
- .then(data => {
- QuizEngine.init('quiz-container', data);
- })
- .catch(err => console.error('Error loading quiz data:', err));
- });
-
- // Lightbox functionality for zoomable images
- (function() {
- const lightbox = document.getElementById('image-lightbox');
- const lightboxImg = lightbox.querySelector('.lightbox-image');
- const closeBtn = lightbox.querySelector('.lightbox-close');
- 
- // Open lightbox when clicking zoomable images
- document.querySelectorAll('.zoomable-image').forEach(img => {
- img.addEventListener('click', () => {
- lightboxImg.src = img.src;
- lightboxImg.alt = img.alt;
- lightbox.hidden = false;
- document.body.style.overflow = 'hidden';
- closeBtn.focus();
- });
- // Also support keyboard activation
- img.addEventListener('keydown', (e) => {
- if (e.key === 'Enter' || e.key === ' ') {
- e.preventDefault();
- img.click();
- }
- });
- });
- 
- // Close lightbox
- function closeLightbox() {
- lightbox.hidden = true;
- document.body.style.overflow = '';
- }
- 
- closeBtn.addEventListener('click', closeLightbox);
- lightbox.addEventListener('click', (e) => {
- if (e.target === lightbox) closeLightbox();
- });
- document.addEventListener('keydown', (e) => {
- if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
- });
- })();
- </script>
-</body>
-</html>
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+ <meta charset="UTF-8">
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <meta name="description" content="Chapter 4: North America - Explore the geography of the United States, Canada, and Mexico.">
+
+ <title>Chapter 4: North America | World Regional Geography</title>
+
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+ <link rel="stylesheet" href="../../css/style.css">
+
+ <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+</head>
+
+<body>
+
+ <!-- Skip to Main Content Link (Accessibility) -->
+
+ <a href="#main-content" class="skip-link">Skip to main content</a>
+
+ 
+
+ <header class="site-header">
+
+ <div class="container">
+
+ <div class="header-brand">
+
+ <a href="../../index.html" class="logo">
+
+ <span class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+
+ <span class="logo-text">World Regional Geography</span>
+
+ </a>
+
+ </div>
+
+ <nav class="main-nav" aria-label="Main navigation">
+
+ <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+
+ <span class="hamburger"></span>
+
+ </button>
+
+ <ul class="nav-menu">
+
+ <li><a href="../../index.html" class="nav-link">Home</a></li>
+
+ <li class="nav-dropdown">
+
+ <a href="#" class="nav-link dropdown-toggle active">Chapters</a>
+
+ <ul class="dropdown-menu">
+
+ <li><a href="../01-introduction/index.html">1. Introduction</a></li>
+
+ <li><a href="../02-europe/index.html">2. Europe</a></li>
+
+ <li><a href="../03-russia/index.html">3. Russia and Central Asia</a></li>
+
+ <li><a href="../04-north-america/index.html">4. North America</a></li>
+
+ <li><a href="../05-latin-america/index.html">5. Latin America</a></li>
+
+ <li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
+
+ <li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa & SW Asia</a></li>
+
+ <li><a href="../08-south-asia/index.html">8. South Asia</a></li>
+
+ <li><a href="../09-east-asia/index.html">9. East Asia</a></li>
+
+ <li><a href="../10-southeast-asia/index.html">10. Southeast Asia</a></li>
+
+ <li><a href="../11-australia-oceania/index.html">11. Australia & Oceania</a></li>
+
+ <li><a href="../12-conclusion/index.html">12. Global Connections</a></li>
+
+ </ul>
+
+ </li>
+
+ <li><a href="../../standards.html" class="nav-link">Standards</a></li>
+
+ <li><a href="../../index.html#chapters" class="nav-link">Resources</a></li>
+
+ <li><a href="../../index.html#about" class="nav-link">About</a></li>
+
+ </ul>
+
+            </nav>
+
+ </div>
+
+ </header>
+
+
+
+ <section class="chapter-header">
+
+ <div class="container">
+
+ <p class="chapter-meta">Chapter 4 · Week 6</p>
+
+ <h1 class="chapter-title">North America: Urbanization and Diversity</h1>
+
+ <p class="chapter-description">The United States, Canada, and Mexico form a diverse region of vast landscapes, economic integration, and complex cultural dynamics spanning from Arctic tundra to tropical forests.</p>
+
+ </div>
+
+ </section>
+
+
+
+ <main id="main-content" class="chapter-content">
+
+ <div class="container">
+
+ 
+
+ <!-- 1. Learning Objectives -->
+
+ <!-- 1. At a Glance (Scaffold) -->
+
+ <section class="learning-scaffold" aria-label="Learning scaffold">
+
+ <details class="learning-scaffold-details">
+
+ <summary>
+
+ <div class="scaffold-head">
+
+ <h2>At a Glance</h2>
+
+ <div class="scaffold-meta" aria-label="Prerequisites and time estimate">
+
+ <span class="scaffold-chip"><strong>Prereqs:</strong> Chapter 3</span>
+
+ <span class="scaffold-chip"><strong>Time:</strong> 60 min read + 20 min activities</span>
+
+ <span class="scaffold-chip"><strong>Deliverable:</strong> Quiz + Reflection</span>
+
+ </div>
+
+ </div>
+
+ </summary>
+
+
+
+ <div class="scaffold-grid">
+
+ <div class="scaffold-card">
+
+ <h3> Learning Outcomes</h3>
+
+ <ul>
+
+ <li><strong>Locate:</strong> Major physical regions (Rockies, Great Plains, Canadian Shield).</li>
+
+ <li><strong>Analyze:</strong> Urbanization patterns (Megalopolis) and the Sun Belt population shift.</li>
+
+ <li><strong>Explain:</strong> The economic integration of USMCA and cross-border supply chains.</li>
+
+ <li><strong>Evaluate:</strong> The impact of immigration on cultural diversity and demographics.</li>
+
+ <li><strong>Apply:</strong> Geographic concepts to understand the functional integration of the US-Mexico border.</li>
+
+ </ul>
+
+ </div>
+
+
+
+ <div class="scaffold-card">
+
+ <h3> Key Terms</h3>
+
+ <p>Megalopolis, Sun Belt, Rain Shadow Effect, Maquiladora, USMCA, Gentrification, Functional Region, Rust Belt, Canadian Shield.</p>
+
+ </div>
+
+ </div>
+
+
+
+ <div class="scaffold-grid">
+
+ <div class="scaffold-card">
+
+ <h3> Stop & Check</h3>
+
+ <div class="quiz-question" style="margin-bottom:0.5rem;">Why are Maquiladoras located right on the US-Mexico border?</div>
+
+ <details>
+
+ <summary style="padding:0; color:var(--color-primary); font-weight:600; font-size:0.9rem;">Reveal Answer</summary>
+
+ <div style="margin-top:0.5rem; font-size:0.95rem; color:var(--color-text-light);">
+
+ To minimize transportation costs while taking advantage of lower labor costs in Mexico and duty-free import/export provisions. This creates a highly efficient cross-border manufacturing zone.
+
+ </div>
+
+ </details>
+
+ </div>
+
+
+
+ <div class="scaffold-card">
+
+ <h3> Common Misconception</h3>
+
+ <p><strong>Myth:</strong> The US economy is independent and self-sufficient.</p>
+
+ <p><strong>Fact:</strong> North American economies are deeply integrated. Under the <strong>USMCA</strong>, a single product (like a car) often crosses the border 7-8 times during assembly before it is finished.</p>
+
+ </div>
+
+ </div>
+
+ </details>
+
+ </section>
+
+
+
+ <!-- Video Lecture -->
+
+ <section class="video-lecture-section section-container">
+
+ <h2> Video Lecture</h2>
+
+ <div class="video-container">
+
+ <iframe src="https://www.youtube.com/embed/rPny_o1_G8s" title="Geography of North America Video Lecture" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+ </div>
+
+ </section>
+
+
+
+
+
+ <!-- 2. Regional Profile (Snapshot) -->
+
+ <section id="profile" class="section-container">
+
+ <h2> Regional Snapshot: North America at a Glance</h2>
+
+ <div class="profile-grid">
+
+ <div class="profile-item">
+
+ <strong>Population</strong>
+
+ <span>~500 Million (Combined)</span>
+
+ </div>
+
+ <div class="profile-item">
+
+ <strong>Urbanization</strong>
+
+ <span>~82% living in cities</span>
+
+ </div>
+
+ <div class="profile-item">
+
+ <strong>Combined GDP</strong>
+
+ <span>$28+ Trillion</span>
+
+ </div>
+
+ <div class="profile-item">
+
+ <strong>Primary Theme</strong>
+
+ <span>Economic Integration & Urban Growth</span>
+
+ </div>
+
+ </div>
+
+ <p class="mt-4">North America is defined by its extreme environmental variety and its highly integrated economy. The region contains both the world's largest economy (USA) and one of the world's largest megacities (Mexico City), illustrating the vast scale of human modification of the landscape.</p>
+
+ 
+
+ <figure class="figure figure-narrow">
+
+ <img src="../../images/north_america_regions.jpg" alt="Map of North American sub-regions" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
+
+ <figcaption><strong>Figure 4.0:</strong> Regional Sub-divisions. From the Canadian Shield to the Mexican Altiplano, North America is a study in diverse physical and cultural settings.</figcaption>
+
+ </figure>
+
+ </section>
+
+
+
+ <!-- 3. Interactive Regional Map -->
+
+ <section id="interactive-map" class="section-container">
+
+ <h2> Interactive Map: The Continental Core</h2>
+
+ <p>Explore the major urban clusters and physical barriers of North America. Zoom in to see the "BosWash" megalopolis, the Texas Triangle, and the vast expanses of the Great Plains.</p>
+
+ <div id="regions-map" class="interactive-map"></div>
+
+ <div class="map-controls">
+
+ <p class="text-sm italic text-muted">Toggle between Physical terrain and Political boundaries. Notice how the Mississippi River system and the Great Lakes serve as massive inland waterways for global trade.</p>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- 4. Physical Geography Analysis -->
+
+ <section id="physical-geography" class="section-container">
+
+ <h2> Physical Geography: Mountains, Shields, and Plains</h2>
+
+ <p>North America's physical landscape divides into distinct physiographic regions, each shaping human settlement and economic activity.</p>
+
+ 
+
+ <h3>Western Mountain Systems</h3>
+
+ <p>The young, rugged <strong>Rocky Mountains</strong> form North America's continental backbone, stretching over 4,800 km from New Mexico to Alaska. Glacial sculpting created dramatic peaks exceeding 4,000 meters. West of the Rockies lies the <strong>Intermontane Region</strong>, high plateaus and basins including the Great Basin, Columbia Plateau, and Colorado Plateau. The <strong>Pacific Coast Ranges</strong> (Sierra Nevada, Cascades, Coast Ranges) trap moisture from Pacific weather systems, creating the dramatic rain shadow effect.</p>
+
+ 
+
+ <div class="note-callout">
+
+ <h4> The Rain Shadow Effect</h4>
+
+ <p>As Pacific air masses rise over western mountains, moisture condenses and falls as precipitation on windward slopes. The leeward (east) side receives far less rainfall, explaining why Seattle receives 965mm of annual precipitation while Spokane (just 450 km east) receives only 430mm. This effect creates the semiarid Great Plains and desert landscapes of Nevada, Utah, and Arizona.</p>
+
+ </div>
+
+ 
+
+ <h3>Eastern Highlands: The Appalachians</h3>
+
+ <p>The ancient <strong>Appalachian Mountains</strong> contrast sharply with the Rockies. Formed 480 million years ago, erosion has reduced peaks to under 2,000 meters. Despite their modest elevation, the Appalachians profoundly shaped American history, they formed the first barrier to westward expansion, channeling early settlement along river valleys and creating distinct "mountain culture" communities that persisted into the 20th century.</p>
+
+ 
+
+ <h3>The Interior Plains</h3>
+
+ <p>Between the mountain systems lies the continent's agricultural heartland:</p>
+
+ <ul>
+
+ <li><strong>Interior Lowlands:</strong> From the Appalachians to the 100th meridian, humid climate, deep soils, the Corn Belt and dairy regions</li>
+
+ <li><strong>Great Plains:</strong> West of the 100th meridian, semiarid grasslands, the "breadbasket" producing wheat, cattle ranching, and increasingly wind energy</li>
+
+ <li><strong>Mississippi River System:</strong> The continent's drainage backbone, connecting the Great Lakes to the Gulf of Mexico, historically the primary transportation corridor before railroads</li>
+
+ </ul>
+
+ 
+
+ <h3>Canadian Shield</h3>
+
+ <p>The <strong>Canadian Shield</strong> covers roughly half of Canada's land area, an ancient, glacially scoured landscape of exposed bedrock, thin soils, and thousands of lakes. This Precambrian rock (up to 4 billion years old) contains enormous mineral wealth (gold, nickel, copper, uranium) but supports little agriculture. Most Canadians live <em>south</em> of the Shield, concentrated within 200 km of the US border.</p>
+
+ 
+
+ <h3>Coastal Lowlands</h3>
+
+ <p>The <strong>Gulf-Atlantic Coastal Plain</strong> stretches from New York to Texas, a flat, low-lying zone of barrier islands, wetlands, and the Florida peninsula. This region faces increasing vulnerability to hurricanes, sea-level rise, and coastal erosion.</p>
+
+ 
+
+ <div class="figure-row">
+
+ <figure class="figure">
+
+ <img src="../../images/north_america_physical.jpg" alt="Physical map of North America" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
+
+ <figcaption><strong>Figure 4.1:</strong> Physiography. The continent is divided into several major regions including the Great Plains and the Canadian Shield.</figcaption>
+
+ </figure>
+
+ <figure class="figure">
+
+ <img src="../../images/north_america_vegetation.jpg" alt="Vegetation zones map" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
+
+ <figcaption><strong>Figure 4.2:</strong> Biomes. North America spans from Arctic tundra to tropical rainforests in southern Mexico.</figcaption>
+
+ </figure>
+
+ </div>
+
+ 
+
+ <h3>Climate Patterns</h3>
+
+ <p>Two dominant patterns shape North American climate:</p>
+
+ <ol>
+
+ <li><strong>North-South temperature gradient:</strong> From Arctic (Type E tundra) in northern Canada to tropical (Type A) in Florida and Hawaii</li>
+
+ <li><strong>East-West precipitation gradient:</strong> Humid conditions in the east (Type C climates) give way to semiarid conditions in the Great Plains (Type B) before increasing again at the Pacific Coast</li>
+
+ </ol>
+
+ <p>The climate diversity, frigid tundra, temperate forests, subtropical wetlands, deserts, and rainforests, exists within a single continent, creating extraordinary agricultural and ecological variety.</p>
+
+ 
+
+ <div class="inquiry-prompt">
+
+ <h3> Geographic Inquiry</h3>
+
+ <p>The Ogallala Aquifer supports massive irrigation in the Great Plains. As this non-renewable water source is depleted, how will the "agricultural geography" of North America be forced to shift? What regions might benefit? What populations might be displaced?</p>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- 4b. Data Visualization: North America at a Glance -->
+
+ <section id="data-viz" class="section-container">
+
+ <h2> Data Visualization: North America at a Glance</h2>
+
+ <p>The following charts illustrate key geographic and economic patterns across the three North American nations. Analyze the data and consider what these numbers reveal about regional inequality and integration.</p>
+
+
+
+ <div class="figure-row">
+
+ <div style="background:#fff; border-radius:12px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex:1;">
+
+ <h3 style="font-size:1rem; margin-bottom:1rem; color:var(--color-primary-dark);">GDP per Capita (USD, 2024 est.)</h3>
+
+ <canvas id="chart-gdp-na" height="220" aria-label="Bar chart comparing GDP per capita of USA, Canada, and Mexico"></canvas>
+
+ <p style="font-size:0.85rem; color:var(--color-text-light); margin-top:0.75rem;"> <em>Notice the dramatic gap between Mexico and its northern neighbors. How does this economic disparity drive migration and shape the maquiladora economy?</em></p>
+
+ </div>
+
+ <div style="background:#fff; border-radius:12px; padding:1.5rem; box-shadow:0 2px 8px rgba(0,0,0,0.08); flex:1;">
+
+ <h3 style="font-size:1rem; margin-bottom:1rem; color:var(--color-primary-dark);">Urbanization Rate (% Urban Population)</h3>
+
+ <canvas id="chart-urban-na" height="220" aria-label="Bar chart comparing urbanization rates of USA, Canada, and Mexico"></canvas>
+
+ <p style="font-size:0.85rem; color:var(--color-text-light); margin-top:0.75rem;"> <em>All three nations are highly urbanized. What geographic factors (climate, resources, trade routes) explain why cities cluster where they do in each country?</em></p>
+
+ </div>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- 6. Important Person Break-out (Jane Jacobs) -->
+
+ <section class="important-person-sidebar">
+
+ <div class="sidebar-content">
+
+ <div class="person-image">
+
+ <img src="../../images/north_america_cities.jpg" alt="Skyline of a major North American city" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
+
+ </div>
+
+ <div class="person-header">
+
+ <h3> Important Person</h3>
+
+ </div>
+
+ <div class="person-info">
+
+ <strong>Jane Jacobs</strong>
+
+ <p class="person-title">Urban Theorist & Activist</p>
+
+ <p>Jacobs transformed our understanding of the "human geography" of cities. She argued that vibrant urban life is created by "eyes on the street" and mixed-use neighborhoods, challenging the mid-20th century trend of massive highway construction and urban renewal.</p>
+
+ <a href="https://www.janejacobsvalkyrie.com/" target="_blank" class="btn-text">Explore Jacobs's impact on city planning →</a>
+
+ </div>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- 5a. Colonial History and European Influence -->
+
+ <section id="colonial-history" class="section-container">
+
+ <h2> Colonial History: European Imprint on North America</h2>
+
+ <p>Before European contact, North America was home to diverse Indigenous peoples, from the Inuit in the Arctic to the Aztec Empire in Mexico. Complex societies including the Iroquois Confederacy, Pueblo communities, and Mississippi mound-builders thrived for millennia. European colonization fundamentally transformed the continent.</p>
+
+ 
+
+ <h3>Three European Spheres of Influence</h3>
+
+ <div class="note-callout">
+
+ <h4>Spanish Influence (1500s-1800s)</h4>
+
+ <p><strong>Territory:</strong> Florida, Southwest (California, Arizona, New Mexico, Texas), Mexico</p>
+
+ <ul>
+
+ <li>
+
+ <figure class="figure figure-inline" style="max-width: 300px; margin: 1rem 0;">
+
+ <img src="../../images/fe71ebfd78592186fbb9b761bc5df0ed.jpg" alt="Castillo de San Marcos in St. Augustine" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
+
+ <figcaption><strong>St. Augustine Fort:</strong> Castillo de San Marcos represents the oldest permanent European settlement in North America.</figcaption>
+
+ </figure>
+
+ </li>
+
+ <li><strong>St. Augustine, Florida (1565)</strong>, oldest permanent European settlement in North America</li>
+
+ <li>Mission system spread Catholicism and Spanish language across the Southwest</li>
+
+ <li><strong>Lasting legacy:</strong> Place names (San Francisco, Los Angeles, San Antonio), architecture, Hispanic culture throughout the Sun Belt</li>
+
+ </ul>
+
+ </div>
+
+ 
+
+ <div class="note-callout">
+
+ <h4>French Influence (1600s-1763)</h4>
+
+ <p><strong>Territory:</strong> Quebec, Great Lakes, Mississippi River Valley (Louisiana Territory)</p>
+
+ <ul>
+
+ <li>Focused on <strong>fur trade</strong> rather than large-scale settlement</li>
+
+ <li>French place names remain: Detroit ("strait"), Baton Rouge ("red stick"), Des Moines, Louisiana</li>
+
+ <li>Long-lot land survey system still visible along the St. Lawrence and in Louisiana</li>
+
+ <li><strong>Lasting legacy:</strong> French-speaking Quebec (7+ million people), Cajun culture in Louisiana, bilingual Canada</li>
+
+ </ul>
+
+ </div>
+
+ 
+
+ <div class="note-callout">
+
+ <h4>British Influence (1607-1776+)</h4>
+
+ <p><strong>Territory:</strong> Eastern seaboard (13 colonies), eventually most of Canada</p>
+
+ <ul>
+
+ <li><strong>Jamestown, Virginia (1607)</strong>, first permanent English settlement</li>
+
+ <li>Large-scale agricultural settlement and demographic dominance</li>
+
+ <li>English common law, Protestant Christianity, parliamentary government</li>
+
+ <li><strong>Lasting legacy:</strong> English language dominance, political institutions, cultural values across most of US and Canada</li>
+
+ </ul>
+
+ </div>
+
+ 
+
+ <div class="info-callout">
+
+ <h4> Why English Dominates</h4>
+
+ <p>Despite Spain and France arriving earlier, British settlement patterns emphasized <em>permanent agricultural colonies</em> with entire families, while Spanish and French colonization relied more on missionaries, traders, and soldiers. By 1776, British colonies had over 2.5 million settlers, far outnumbering Spanish and French populations combined.</p>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- 5. Human Geography Analysis -->
+
+ <section id="human-geography" class="section-container">
+
+ <h2> Human Geography: Urbanization and Integration</h2>
+
+ <p>North America is one of the world's most urbanized regions, with approximately 82% of the population living in metropolitan areas. The United States has over 330 million people; Canada has 40 million; and Mexico has 130 million.</p>
+
+ 
+
+ <h3>The Rise of the Megalopolis</h3>
+
+ <p>Geographer Jean Gottmann coined the term <strong>Megalopolis</strong> in 1961 to describe the nearly continuous urban corridor from Boston to Washington, D.C., often called "BosWash." This concept of interconnected metropolitan areas now applies to other regions:</p>
+
+ <ul>
+
+ <li><strong>BosWash Corridor:</strong> Boston-New York-Philadelphia-Baltimore-Washington, D.C. (50+ million people)</li>
+
+ <li><strong>Great Lakes Megalopolis:</strong> Chicago-Detroit-Cleveland-Pittsburgh-Toronto</li>
+
+ <li><strong>Texas Triangle:</strong> Dallas-Houston-San Antonio-Austin (fastest-growing US megaregion)</li>
+
+ <li><strong>Pacific Coast:</strong> San Diego-Los Angeles-San Francisco-Seattle-Vancouver</li>
+
+ <li><strong>Mexico City Metropolitan Area:</strong> 21+ million people, one of the world's largest urban agglomerations</li>
+
+ </ul>
+
+ 
+
+ <h3>Population Distribution and Migration</h3>
+
+ <p>Population distribution reveals distinct geographic patterns:</p>
+
+ <ul>
+
+ <li><strong>Canada:</strong> 90% of Canadians live within 200 km of the US border; Ontario is often called "South Canada" for its southern extension</li>
+
+ <li><strong>United States:</strong> Historic population shift from Northeast/Midwest to <strong>Sun Belt</strong> (South and Southwest)</li>
+
+ <li><strong>Mexico:</strong> Concentration on the Central Plateau (altiplano) around Mexico City, with growth in northern border cities</li>
+
+ </ul>
+
+ 
+
+ <div class="note-callout">
+
+ <h4> The Sun Belt Shift</h4>
+
+ <p>Since 1970, the US population center has moved steadily southwest. Three states, <strong>California, Texas, and Florida</strong>, account for nearly one-third of US population growth. Factors include:</p>
+
+ <ul>
+
+ <li>Air conditioning making hot climates habitable year-round</li>
+
+ <li>Retirement migration (Florida, Arizona)</li>
+
+ <li>Technology sector growth (Texas, California)</li>
+
+ <li>Lower cost of living compared to Northeast</li>
+
+ <li>Immigration from Latin America (Texas, California, Florida)</li>
+
+ </ul>
+
+ </div>
+
+ 
+
+ <h3>Immigration and Cultural Diversity</h3>
+
+ <p>Immigration has reshaped North American demographics throughout history, and continues to do so:</p>
+
+ <ul>
+
+ <li><strong>Hispanic/Latino population:</strong> Now 62+ million in the US (nearly 19%), with particularly high concentrations in California, Texas, Florida, and the Southwest</li>
+
+ <li><strong>Asian American population:</strong> Fastest-growing demographic group, concentrated in California, New York, and Texas</li>
+
+ <li><strong>Canadian multiculturalism:</strong> Official policy since 1971; Toronto is one of the world's most diverse cities</li>
+
+ </ul>
+
+ 
+
+ <div class="figure-row">
+
+ <figure class="figure">
+
+ <img src="../../images/us_hispanic_population.jpg" alt="Hispanic population distribution map" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
+
+ <figcaption><strong>Figure 4.3:</strong> Demographic Diversity. The geography of immigration is highly visible in the Sun Belt and border regions.</figcaption>
+
+ </figure>
+
+ <figure class="figure">
+
+ <img src="../../images/north_america_economy.jpg" alt="Economic integration map" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
+
+ <figcaption><strong>Figure 4.4:</strong> Continental Integration. Integrated supply chains under USMCA link factories across three nations.</figcaption>
+
+ </figure>
+
+ </div>
+
+
+
+ <h3>Economic Integration: USMCA</h3>
+
+ <p>The <strong>USMCA</strong> (United States-Mexico-Canada Agreement, 2020) replaced NAFTA and governs the world's largest free trade zone by GDP. Key features:</p>
+
+ <ul>
+
+ <li><strong>Integrated manufacturing:</strong> A single automobile may cross the US-Mexico border 8+ times during production</li>
+
+ <li><strong>Agricultural trade:</strong> US exports corn and wheat to Mexico; imports fruits, vegetables, and avocados</li>
+
+ <li><strong>Energy integration:</strong> Cross-border pipelines and electricity transmission</li>
+
+ <li><strong>Services and digital trade:</strong> New provisions for e-commerce and intellectual property</li>
+
+ </ul>
+
+ <p>This creates a massive <strong>functional region</strong>, an area defined by economic activity rather than political boundaries.</p>
+
+
+
+ <div class="inquiry-prompt">
+
+ <h3> Geographic Inquiry: Immigration and Identity</h3>
+
+ <p>The United States is often called a "nation of immigrants." Yet immigration policy remains deeply contested. Using geographic thinking: How does the <em>spatial distribution</em> of immigrant communities shape local economies and cultures? Is the "melting pot" or "cultural mosaic" model a better description of North American multiculturalism, and does it vary by city or region?</p>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- 7. Texas Connection Toggle -->
+
+ <section id="texas-connection" class="section-container">
+
+ <div class="texas-toggle">
+
+ <button class="btn-texas-toggle" id="texas-btn">
+
+ <span class="star-icon"></span> Texas Connection: The Geographic Crossroads
+
+ </button>
+
+ <div class="texas-content hidden" id="texas-content">
+
+ <h4>Local Realities in a Global Context</h4>
+
+ <p>Texas serves as a microcosm of North American geography, spanning humid eastern forests, semiarid western plains, subtropical Gulf coast, and desert borderlands. It exemplifies nearly every theme in this chapter:</p>
+
+ 
+
+ <h5>Physical Geography</h5>
+
+ <ul>
+
+ <li><strong>Physiographic diversity:</strong> From Piney Woods to High Plains to Trans-Pecos desert, Texas contains parts of four major physiographic regions.</li>
+
+ <li><strong>Climate transition:</strong> The 100th meridian (roughly near Interstate 35) marks the divide between the humid East and the semiarid West.</li>
+
+ <li><strong>Water challenges:</strong> The Edwards Aquifer supplies San Antonio; Ogallala Aquifer depletion threatens Panhandle agriculture.</li>
+
+ </ul>
+
+ 
+
+ <h5>Urbanization & the Texas Triangle</h5>
+
+ <ul>
+
+ <li>Dallas-Fort Worth, Houston, San Antonio, and Austin form one of America's fastest-growing megaregions.</li>
+
+ <li>Houston is the 4th largest US city; DFW is the 4th largest metro area.</li>
+
+ <li>Texas gained more residents than any other state from 2010 to 2020.</li>
+
+ </ul>
+
+ 
+
+ <h5>Immigration & Cultural Identity</h5>
+
+ <ul>
+
+ <li>40% of Texans are Hispanic/Latino, reflecting both Spanish colonial heritage and ongoing immigration.</li>
+
+ <li>Texas shares 1,254 miles of border with Mexico, which is the longest international border in North America.</li>
+
+ <li>El Paso-Juárez functions as a binational metropolitan area of 2.7 million people.</li>
+
+ </ul>
+
+ 
+
+ <h5>Montrose &amp; LGBTQ+ Spatial History</h5>
+
+ <ul>
+
+ <li><strong>Spatial sanctuary:</strong> Houston's Montrose neighborhood developed as a safe space and spatial sanctuary for the LGBTQ+ community in the mid twentieth century, illustrating how marginalized groups create distinct spaces of safety and expression.</li>
+
+ <li><strong>Oral history mapping:</strong> A collaboration between university researchers and local groups created an oral history storymap centered on Mary's gay bar, showing how memory and community identity can be mapped as geographic data.</li>
+
+ <li><strong>AIDS Memorial Quilt:</strong> The quilt served as a spatial and visual community map, representing individuals lost to the epidemic and reclaiming public spaces to raise awareness and demand action.</li>
+
+ </ul>
+
+
+
+ <h5>Economic Integration</h5>
+
+ <ul>
+
+ <li><strong>Cross-border trade:</strong> Texas exports more goods to Mexico than any other US state.</li>
+
+ <li><strong>Port infrastructure:</strong> The Port of Houston is the busiest US port by foreign tonnage.</li>
+
+ <li><strong>Energy transition:</strong> Texas produces more wind energy than any other state, transitioning from its historical oil-dominant economy.</li>
+
+ </ul>
+
+ 
+
+ <p><strong>Flood Resilience:</strong> Just as South Asia manages monsoon cycles, Houston has become a global center for research into hurricane-driven flood management, developing innovative stormwater infrastructure after Hurricane Harvey (2017) demonstrated the vulnerability of low-lying coastal cities.</p>
+
+ </div>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- 8. Case Study -->
+
+ <section id="case-study" class="section-container">
+
+ <div class="case-study-gold">
+
+ <div class="case-study-header">
+
+ <span class="label">Case Study</span>
+
+ <h2>The US-Mexico Border: Integration and Division</h2>
+
+ </div>
+
+ <p>The 2,000-mile border between the US and Mexico is a study in contradictions. It is one of the most economically integrated boundaries in the world, with cities like El Paso-Juárez functioning as a single "binational" metropolitan area. Yet, it remains a site of intense political division regarding migration and security.</p>
+
+ 
+
+ <h4>Economic Integration</h4>
+
+ <p>Over $700 billion in goods cross the US-Mexico border annually, more trade than crosses the US-China border. The border region hosts over 3,000 <strong>maquiladoras</strong>, assembly plants that import components duty-free, add value through manufacturing, and export finished products. Major industries include automotive, electronics, medical devices, and aerospace.</p>
+
+ 
+
+ <h4>Migration Dynamics</h4>
+
+ <p>The border has seen multiple migration patterns:</p>
+
+ <ul>
+
+ <li><strong>Bracero Program (1942-1964):</strong> Brought 4.6 million Mexican agricultural workers to the US</li>
+
+ <li><strong>Undocumented immigration peaks:</strong> Reached 12.2 million in 2007, has since declined</li>
+
+ <li><strong>Current asylum seekers:</strong> Increasing numbers from Central America and globally</li>
+
+ <li><strong>Reverse migration:</strong> More Mexicans returned to Mexico than arrived in the US during 2009-2014</li>
+
+ </ul>
+
+ 
+
+ <div class="case-study-questions">
+
+ <h4>Questions to Consider:</h4>
+
+ <ul>
+
+ <li>How do <strong>Maquiladoras</strong> illustrate the functional integration of the border region despite political boundaries?</li>
+
+ <li>In what ways does the border serve as both a "filter" and a "barrier" in global geography?</li>
+
+ <li>How might climate change in Central America affect migration patterns to North America?</li>
+
+ </ul>
+
+ </div>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- 9. Interactive Accordions (Summary & Glossary) -->
+
+ <section id="summary-glossary" class="section-container">
+
+ <div class="accordion">
+
+ <div class="accordion-item">
+
+ <button class="accordion-header">
+
+ Glossary of Terms <span class="chevron"></span>
+
+ </button>
+
+ <div class="accordion-content">
+
+ <dl>
+
+ <dt>Megalopolis</dt>
+
+ <dd>A large, continuous urban region formed by the merging of several metropolitan areas. Term coined by Jean Gottmann (1961) to describe the Boston-Washington corridor (BosWash).</dd>
+
+ 
+
+ <dt>Sun Belt</dt>
+
+ <dd>The southern and southwestern states experiencing rapid population and economic growth since the 1960s, including Texas, Florida, Arizona, and California.</dd>
+
+ 
+
+ <dt>Canadian Shield</dt>
+
+ <dd>The ancient, glacially scoured bedrock core of North America, covering half of Canada. Rich in minerals but unsuitable for agriculture.</dd>
+
+ 
+
+ <dt>Rain Shadow Effect</dt>
+
+ <dd>The dry conditions on the leeward (downwind) side of a mountain range, caused when rising air masses release moisture on the windward side.</dd>
+
+ 
+
+ <dt>Great Plains</dt>
+
+ <dd>The semiarid grassland region between the Rocky Mountains and the 100th meridian, characterized by wheat farming, cattle ranching, and wind energy production.</dd>
+
+ 
+
+ <dt>Maquiladora</dt>
+
+ <dd>A foreign-owned factory in Mexico, typically near the US border, where imported components are assembled by workers into products for export. Enabled by NAFTA/USMCA free trade provisions.</dd>
+
+ 
+
+ <dt>USMCA</dt>
+
+ <dd>The United States-Mexico-Canada Agreement (2020), a free trade agreement that replaced NAFTA, governing trade relations among the three North American nations.</dd>
+
+ 
+
+ <dt>Functional Region</dt>
+
+ <dd>A geographic area organized around a node or focal point, defined by economic, social, or political activity rather than physical features. Example: commuting zones, trade networks.</dd>
+
+ 
+
+ <dt>Ogallala Aquifer</dt>
+
+ <dd>A vast underground water reservoir beneath the Great Plains, providing irrigation for agriculture in eight states. Depletion threatens long-term agricultural viability.</dd>
+
+ 
+
+ <dt>Intermontane Region</dt>
+
+ <dd>The area "between mountains", the plateaus, basins, and deserts between the Rocky Mountains and the Pacific Coast ranges (Great Basin, Columbia Plateau, Colorado Plateau).</dd>
+
+ 
+
+ <dt>Long-Lot Survey System</dt>
+
+ <dd>A French colonial land division pattern creating long, narrow parcels extending back from rivers or roads. Visible in Quebec and Louisiana.</dd>
+
+ 
+
+ <dt>Border Cities (Twin Cities)</dt>
+
+ <dd>Paired urban areas straddling an international boundary, functioning as integrated metropolitan zones. Examples: El Paso-Juárez, San Diego-Tijuana, Detroit-Windsor.</dd>
+
+ 
+
+ <dt>Gentrification</dt>
+
+ <dd>The process of wealthier residents moving into urban neighborhoods, renovating housing, and often displacing lower-income residents.</dd>
+
+ 
+
+ <dt>Rust Belt</dt>
+
+ <dd>The formerly industrialized region of the Great Lakes and northeastern US, characterized by deindustrialization and population decline since the 1970s.</dd>
+
+ </dl>
+
+ </div>
+
+ </div>
+
+ <div class="accordion-item">
+
+ <button class="accordion-header">
+
+ Summary of Big Ideas <span class="chevron"></span>
+
+ </button>
+
+ <div class="accordion-content">
+
+ <ol>
+
+ <li><strong>Physiographic diversity:</strong> North America's landforms, from young western mountains to ancient eastern highlands to interior plains, create distinct economic regions and settlement patterns.</li>
+
+ <li><strong>Climate gradients:</strong> Temperature decreases north to south; precipitation decreases east to west until the Pacific Coast. The rain shadow effect shapes agriculture and settlement across the western half of the continent.</li>
+
+ <li><strong>Colonial legacy:</strong> Spanish, French, and British colonization left lasting imprints on language, religion, law, and settlement patterns. British demographic dominance explains English language prevalence.</li>
+
+ <li><strong>Highly urbanized:</strong> Over 80% of North Americans live in metropolitan areas, with megalopolitan corridors emerging along both coasts and in Texas.</li>
+
+ <li><strong>Population shift:</strong> The Sun Belt states (South and Southwest) have gained population while the Rust Belt (Midwest/Northeast) has declined, driven by air conditioning, retirement migration, and economic restructuring.</li>
+
+ <li><strong>Immigration reshapes demographics:</strong> Hispanic/Latino and Asian populations are the fastest-growing demographic groups, transforming cultural geography particularly in border states and gateway cities.</li>
+
+ <li><strong>Economic integration:</strong> USMCA creates a single continental market where manufactured goods cross borders multiple times during production, a functional region transcending political boundaries.</li>
+
+ <li><strong>Border paradox:</strong> The US-Mexico border simultaneously represents deep economic integration (maquiladoras, cross-border trade) and political tension over migration and security.</li>
+
+ <li><strong>Environmental challenges:</strong> Water scarcity (Ogallala Aquifer depletion), coastal vulnerability (hurricanes, sea-level rise), and urbanization pressures present ongoing geographic challenges.</li>
+
+ </ol>
+
+ </div>
+
+ </div>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- 10a. Regional Decisions Exercise -->
+
+ <section id="regional-decisions" class="section-container">
+
+ <div style="background: linear-gradient(135deg, #1a3a4a 0%, #2d6a8a 100%); border-radius: 16px; padding: 2rem; color: #fff;">
+
+ <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
+
+  <div>
+
+ <span style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; opacity:0.8;">Role-Play Exercise</span>
+
+ <h2 style="margin:0; font-size:1.4rem;">Regional Decisions: The Great Plains Water Crisis</h2>
+
+ </div>
+
+ </div>
+
+ <p style="opacity:0.9; margin-bottom:1.5rem;">The Ogallala Aquifer is being depleted at a rate far exceeding natural recharge. At current usage rates, significant portions could be exhausted within 25-50 years. You are a member of a <strong>Tri-State Water Policy Commission</strong> representing Kansas, Nebraska, and Texas. Your task: develop a water management policy that balances agricultural needs, economic survival, and long-term sustainability.</p>
+
+
+
+ <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-bottom:1.5rem;">
+
+ <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:1rem;">
+
+ <strong style="display:block; margin-bottom:0.4rem;"> Role A: Wheat Farmer</strong>
+
+ <p style="font-size:0.88rem; opacity:0.9; margin:0;">Your family has farmed this land for 4 generations. Irrigation is essential, without it, you lose your livelihood. You fear any restrictions will force you to sell.</p>
+
+ </div>
+
+ <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:1rem;">
+
+ <strong style="display:block; margin-bottom:0.4rem;"> Role B: City Mayor</strong>
+
+ <p style="font-size:0.88rem; opacity:0.9; margin:0;">Your city depends on the aquifer for drinking water. Population is growing. You need long-term water security for residents, not just agriculture.</p>
+
+ </div>
+
+ <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:1rem;">
+
+ <strong style="display:block; margin-bottom:0.4rem;"> Role C: Environmental Scientist</strong>
+
+ <p style="font-size:0.88rem; opacity:0.9; margin:0;">The data is clear: current extraction is unsustainable. You advocate for immediate 30% reduction in pumping and investment in drip irrigation technology.</p>
+
+ </div>
+
+ <div style="background:rgba(255,255,255,0.12); border-radius:10px; padding:1rem;">
+
+ <strong style="display:block; margin-bottom:0.4rem;"> Role D: State Economist</strong>
+
+ <p style="font-size:0.88rem; opacity:0.9; margin:0;">Agriculture contributes $25 billion annually to the regional economy. You must weigh short-term economic pain against long-term collapse. What's the cost-benefit of conservation?</p>
+
+ </div>
+
+ </div>
+
+
+
+ <div style="background:rgba(255,255,255,0.1); border-radius:10px; padding:1rem;">
+
+ <strong style="display:block; margin-bottom:0.5rem;"> Discussion Questions:</strong>
+
+ <ol style="margin:0; padding-left:1.2rem; opacity:0.9; font-size:0.9rem;">
+
+ <li>What policy would your role advocate for? What compromises might you accept?</li>
+
+ <li>How does the <em>geography</em> of the aquifer (spanning multiple states) complicate governance?</li>
+
+ <li>Compare this water crisis to similar challenges in South Asia (monsoon dependence) or the Middle East (water scarcity). What can North America learn?</li>
+
+ </ol>
+
+ </div>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- 10. Knowledge Check (Quiz) -->
+
+ <section id="quiz" class="section-container">
+
+ <h2> Knowledge Check</h2>
+
+ <p>Test your understanding of the core concepts covered in this chapter. This quiz consists of multiple-choice questions designed to review key terms, regional patterns, and geographic relationships. Select the best answer for each question to receive immediate feedback.</p>
+
+<div id="quiz-container" class="quiz-wrapper">
+
+ <p class="loading">Loading quiz questions...</p>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- 11. Discussion and Reflection Prompts -->
+
+ <section id="discussion" class="section-container">
+
+ <h2> Discussion and Reflection Prompts</h2>
+
+ <div class="discussion-box">
+
+ <p>Use these prompts to deepen your understanding and connect chapter concepts to your own experience and the broader world.</p>
+
+
+
+ <h3>Reflect on Your Learning</h3>
+
+ <ol>
+
+ <li>Think about the place where you grew up or currently live. What <strong>physiographic region</strong> is it in? How has the physical geography (climate, terrain, water) shaped the local economy and culture?</li>
+
+ <li>The Sun Belt shift has transformed American demographics. Has your community experienced population growth or decline? What geographic factors explain this trend?</li>
+
+ <li>How does your daily life connect to the <strong>USMCA trade network</strong>? Think about the food you eat, the car you drive, or the electronics you use: where were they made, and what borders did they cross?</li>
+
+ </ol>
+
+
+
+ <h3>Discuss With Your Peers</h3>
+
+ <ul>
+
+ <li><strong>"The border is both a wall and a bridge."</strong> Do you agree with this statement about the US-Mexico border? Use specific geographic evidence to support your position.</li>
+
+ <li>Canada officially embraces <strong>multiculturalism</strong> as national policy, while the US has historically promoted a "melting pot" ideal. Which model do you think better serves a diverse society, and why?</li>
+
+ <li>If the Ogallala Aquifer is depleted, which regions of the US would be most affected? Who should bear the cost of conservation: farmers, consumers, or governments?</li>
+
+ </ul>
+
+ </div>
+
+ </section>
+
+ 
+
+ <!-- Navigation -->
+
+ <nav class="chapter-nav" style="display: flex; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-8);">
+
+ <a href="../03-russia/index.html" class="btn btn-primary">← Chapter 3: Russia & Central Asia</a>
+
+ <a href="../05-latin-america/index.html" class="btn btn-primary">Chapter 5: Latin America →</a>
+
+ </nav>
+
+
+
+ <!-- Standards Alignment Map -->
+
+ <section class="standards-alignment" aria-label="Curriculum Standards Alignment">
+
+ <h2> Curriculum Standards Alignment</h2>
+
+ <p class="standards-subtitle">This chapter aligns with the following National and State geography standards.</p>
+
+ 
+
+ <div class="standards-grid">
+
+ <!-- National Standards -->
+
+ <details class="standard-group std-national">
+
+ <summary><h3>National Geography Standards</h3></summary>
+
+ <div class="standard-content">
+
+ <div class="standard-item">
+
+ <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element I.3</a>
+
+ <span class="standard-desc">Spatial Organization: Urban hierarchy and Megalopolis formation.</span>
+
+ </div>
+
+ <div class="standard-item">
+
+ <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element IV.11</a>
+
+ <span class="standard-desc">Economic Interdependence: Global trade networks (USMCA).</span>
+
+ </div>
+
+ <div class="standard-item">
+
+ <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element II.4</a>
+
+ <span class="standard-desc">Characteristics of Place: Physical regions (Shield, Plains, Mountains).</span>
+
+ </div>
+
+ </div>
+
+ </details>
+
+
+
+ <!-- Texas Standards -->
+
+ <details class="standard-group std-texas">
+
+ <summary><h3> Texas Core (GEOG 1303)</h3></summary>
+
+ <div class="standard-content">
+
+ <div class="standard-item">
+
+ <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 1</a>
+
+ <span class="standard-desc">Define "region" (Functional vs. Formal regions).</span>
+
+ </div>
+
+ <div class="standard-item">
+
+ <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 2</a>
+
+ <span class="standard-desc">Locate significant geographic features (Mississippi River, Rockies, Great Lakes).</span>
+
+ </div>
+
+ <div class="standard-item">
+
+ <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 3</a>
+
+ <span class="standard-desc">Globalization (Migration effects and cultural diffusion).</span>
+
+ </div>
+
+ </div>
+
+ </details>
+
+
+
+ <!-- Florida Standards -->
+
+ <details class="standard-group std-florida">
+
+ <summary><h3> Florida Sunshine State (SS.912.G)</h3></summary>
+
+ <div class="standard-content">
+
+ <div class="standard-item">
+
+ <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.2.1</a>
+
+ <span class="standard-desc">Identify physical characteristics of places (Landforms).</span>
+
+ </div>
+
+ <div class="standard-item">
+
+ <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.4.2</a>
+
+ <span class="standard-desc">Analyze push/pull factors of migration (Sun Belt shift, Immigration).</span>
+
+ </div>
+
+ <div class="standard-item">
+
+ <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.4.3</a>
+
+ <span class="standard-desc">Use geographic terms to analyze urban growth (Megalopolis).</span>
+
+ </div>
+
+ </div>
+
+ </details>
+
+ </div>
+
+ </section>
+
+
+
+ </div>
+
+ </main>
+
+
+
+ <footer class="site-footer">
+
+ <div class="container">
+
+ <div class="footer-content">
+
+ <div class="footer-brand">
+
+ <span class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+
+ <span>World Regional Geography</span>
+
+ </div>
+
+ <div class="footer-copyright">
+
+ <p>&copy; 2026 Dr. Sounny. Open Educational Resource.</p>
+
+ </div>
+
+ </div>
+
+ </div>
+
+ </footer>
+
+
+
+ <!-- Image Lightbox Overlay -->
+
+ <div id="image-lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+
+ <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
+
+ <img class="lightbox-image" src="" alt="">
+
+ </div>
+
+
+
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+ <script src="../../js/map-init.js"></script>
+
+ <script src="../../js/regions-data.js"></script>
+
+ <script src="../../js/quiz-engine.js"></script>
+
+ <script src="../../js/main.js"></script>
+
+ <script>
+
+ // Chapter 4 Chart.js Visualizations
+
+ document.addEventListener('DOMContentLoaded', () => {
+
+ const chartColors = {
+
+ usa: 'rgba(74, 144, 164, 0.85)',
+
+ canada: 'rgba(52, 168, 83, 0.85)',
+
+ mexico: 'rgba(251, 188, 5, 0.85)'
+
+ };
+
+ const borderColors = {
+
+ usa: 'rgba(74, 144, 164, 1)',
+
+ canada: 'rgba(52, 168, 83, 1)',
+
+ mexico: 'rgba(251, 188, 5, 1)'
+
+ };
+
+
+
+ // GDP per Capita Chart
+
+ const gdpCtx = document.getElementById('chart-gdp-na');
+
+ if (gdpCtx && window.Chart) {
+
+ new Chart(gdpCtx, {
+
+ type: 'bar',
+
+ data: {
+
+ labels: ['United States', 'Canada', 'Mexico'],
+
+ datasets: [{
+
+ label: 'GDP per Capita (USD)',
+
+ data: [80000, 55000, 11000],
+
+ backgroundColor: [chartColors.usa, chartColors.canada, chartColors.mexico],
+
+ borderColor: [borderColors.usa, borderColors.canada, borderColors.mexico],
+
+ borderWidth: 2,
+
+ borderRadius: 6
+
+ }]
+
+ },
+
+ options: {
+
+ responsive: true,
+
+ plugins: {
+
+ legend: { display: false },
+
+ tooltip: {
+
+ callbacks: {
+
+ label: ctx => ` $${ctx.raw.toLocaleString()}`
+
+ }
+
+ }
+
+ },
+
+ scales: {
+
+ y: {
+
+ beginAtZero: true,
+
+ ticks: {
+
+ callback: val => '$' + (val/1000) + 'k'
+
+ }
+
+ }
+
+ }
+
+ }
+
+ });
+
+ }
+
+
+
+ // Urbanization Chart
+
+ const urbanCtx = document.getElementById('chart-urban-na');
+
+ if (urbanCtx && window.Chart) {
+
+ new Chart(urbanCtx, {
+
+ type: 'bar',
+
+ data: {
+
+ labels: ['United States', 'Canada', 'Mexico'],
+
+ datasets: [{
+
+ label: 'Urban Population (%)',
+
+ data: [83, 82, 81],
+
+ backgroundColor: [chartColors.usa, chartColors.canada, chartColors.mexico],
+
+ borderColor: [borderColors.usa, borderColors.canada, borderColors.mexico],
+
+ borderWidth: 2,
+
+ borderRadius: 6
+
+ }]
+
+ },
+
+ options: {
+
+ responsive: true,
+
+ plugins: {
+
+ legend: { display: false },
+
+ tooltip: {
+
+ callbacks: {
+
+ label: ctx => ` ${ctx.raw}% urban`
+
+ }
+
+ }
+
+ },
+
+ scales: {
+
+ y: {
+
+ beginAtZero: true,
+
+ max: 100,
+
+ ticks: { callback: val => val + '%' }
+
+ }
+
+ }
+
+ }
+
+ });
+
+ }
+
+ });
+
+ </script>
+
+ <script>
+
+ // Initialize the Chapter 4 Interactive Map
+
+ document.addEventListener('DOMContentLoaded', () => {
+
+ const map = MapManager.initMap('regions-map', [40, -100], 3);
+
+ if (map && window.WorldRegionsData) {
+
+ const naData = window.WorldRegionsData.features.find(f => f.id === 'north-america');
+
+ if (naData) {
+
+ MapManager.addGeoJson(map, { type: "FeatureCollection", features: [naData] }, {
+
+ style: {
+
+ color: 'var(--color-primary-dark)',
+
+ weight: 2,
+
+ fillColor: 'var(--color-primary)',
+
+ fillOpacity: 0.1
+
+ }
+
+ }, "North America Region");
+
+ }
+
+ }
+
+
+
+ // Initialize the Chapter 4 Quiz from external JSON
+
+ fetch('quiz-data.json')
+
+ .then(response => response.json())
+
+ .then(data => {
+
+ QuizEngine.init('quiz-container', data);
+
+ })
+
+ .catch(err => console.error('Error loading quiz data:', err));
+
+ });
+
+
+
+ // Lightbox functionality for zoomable images
+
+ (function() {
+
+ const lightbox = document.getElementById('image-lightbox');
+
+ const lightboxImg = lightbox.querySelector('.lightbox-image');
+
+ const closeBtn = lightbox.querySelector('.lightbox-close');
+
+ 
+
+ // Open lightbox when clicking zoomable images
+
+ document.querySelectorAll('.zoomable-image').forEach(img => {
+
+ img.addEventListener('click', () => {
+
+ lightboxImg.src = img.src;
+
+ lightboxImg.alt = img.alt;
+
+ lightbox.hidden = false;
+
+ document.body.style.overflow = 'hidden';
+
+ closeBtn.focus();
+
+ });
+
+ // Also support keyboard activation
+
+ img.addEventListener('keydown', (e) => {
+
+ if (e.key === 'Enter' || e.key === ' ') {
+
+ e.preventDefault();
+
+ img.click();
+
+ }
+
+ });
+
+ });
+
+ 
+
+ // Close lightbox
+
+ function closeLightbox() {
+
+ lightbox.hidden = true;
+
+ document.body.style.overflow = '';
+
+ }
+
+ 
+
+ closeBtn.addEventListener('click', closeLightbox);
+
+ lightbox.addEventListener('click', (e) => {
+
+ if (e.target === lightbox) closeLightbox();
+
+ });
+
+ document.addEventListener('keydown', (e) => {
+
+ if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+
+ });
+
+ })();
+
+ </script>
+
+</body>
+
+</html>
+
