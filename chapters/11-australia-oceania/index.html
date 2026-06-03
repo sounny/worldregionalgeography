@@ -1,239 +1,678 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Chapter 11: Australia and Oceania | World Regional Geography</title><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" /><link rel="stylesheet" href="../../css/style.css"><script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script></head><body><!-- Skip to Main Content Link (Accessibility) --><a href="#main-content" class="skip-link">Skip to main content</a><header class="site-header"><div class="container"><div class="header-brand"><a href="../../index.html" class="logo"><span class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><span class="logo-text">World Regional Geography</span></a></div><nav class="main-nav" aria-label="Main navigation"><button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false"><span class="hamburger"></span></button><ul class="nav-menu"><li><a href="../../index.html" class="nav-link">Home</a></li><li class="nav-dropdown"><a href="#" class="nav-link dropdown-toggle active">Chapters</a><ul class="dropdown-menu"><li><a href="../01-introduction/index.html">1. Introduction</a></li><li><a href="../02-europe/index.html">2. Europe</a></li><li><a href="../03-russia/index.html">3. Russia and Central Asia</a></li><li><a href="../04-north-america/index.html">4. North America</a></li><li><a href="../05-latin-america/index.html">5. Latin America</a></li><li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li><li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa &amp; SW Asia</a></li><li><a href="../08-south-asia/index.html">8. South Asia</a></li><li><a href="../09-east-asia/index.html">9. East Asia</a></li><li><a href="../10-southeast-asia/index.html">10. Southeast Asia</a></li><li><a href="../11-australia-oceania/index.html">11. Australia &amp; Oceania</a></li><li><a href="../12-conclusion/index.html">12. Global Connections</a></li></ul></li><li><a href="../../standards.html" class="nav-link">Standards</a></li><li><a href="../../index.html#chapters" class="nav-link">Resources</a></li><li><a href="../../index.html#about" class="nav-link">About</a></li></ul></nav></div></header><section class="chapter-header"><div class="container"><p class="chapter-meta">Chapter 11 - Week 13</p><h1 class="chapter-title">Australia and Oceania</h1><p class="chapter-description">From the vast Australian Outback to thousands of Pacific islands this region showcases unique ecosystems Indigenous cultures and the frontline impacts of climate change.</p></div></section><main id="main-content" class="chapter-content"><div class="container"><!-- 1. At a Glance (Scaffold) --><section class="learning-scaffold" aria-label="Learning scaffold"><details class="learning-scaffold-details"><summary><div class="scaffold-head"><h2>At a Glance</h2><div class="scaffold-meta" aria-label="Prerequisites and time estimate"><span class="scaffold-chip"><strong>Prereqs:</strong>Chapter 10</span><span class="scaffold-chip"><strong>Time:</strong> 45 min read + 20 min activities</span><span class="scaffold-chip"><strong>Deliverable:</strong>Quiz + Reflection</span></div></div></summary><div class="scaffold-grid"><div class="scaffold-card"><h3>Learning Outcomes</h3><ul><li><strong>Understand:</strong>Describe the unique <strong>biogeography</strong> (marsupials eucalyptus) due to isolation.</li><li><strong>Analyze:</strong>Distinguish the cultural and physical differences between <strong>Melanesia Micronesia and Polynesia</strong>.</li><li><strong>Analyze:</strong>Examine the impact of colonization on <strong>Aboriginal</strong> and <strong>Maori</strong> peoples.</li><li><strong>Evaluate:</strong>Assess the existential threat of <strong>sea-level rise</strong> to low-lying atolls.</li><li><strong>Apply:</strong>Apply the concept of the "Tyranny of Distance" to economic development.</li></ul></div><div class="scaffold-card"><h3>Key Terms</h3><p>Biogeography Outback Atoll Aborigines Maori EEZ (Exclusive Economic Zone) Great Barrier Reef Wallace's Line.</p></div></div><div class="scaffold-grid"><div class="scaffold-card"><h3>Stop & Check</h3><div class="quiz-question" style="margin-bottom:0.5rem;">What is the difference between a "High Island" and a "Low Island"?</div><details><summary style="padding:0; color:var(--color-primary); font-weight:600; font-size:0.9rem;">Reveal Answer</summary><div style="margin-top:0.5rem; font-size:0.95rem; color:var(--color-text-light);"><strong>High Islands</strong> are volcanic fertile and can support larger populations (e.g. Fiji). <strong>Low Islands</strong> are coral atolls often just meters above sea level making them vulnerable to storms and rising seas (e.g. Tuvalu).
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="Chapter 11: Australia, Oceania, and Antarctica - Explore unique biogeography, Indigenous cultures, and the frontline impacts of climate change across the Pacific world.">
+ <title>Chapter 11: Australia and Oceania | World Regional Geography</title>
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+ <link rel="stylesheet" href="../../css/style.css">
+ <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+</head>
+<body>
+ <!-- Skip to Main Content Link (Accessibility) -->
+ <a href="#main-content" class="skip-link">Skip to main content</a>
 
- </div></details></div><div class="scaffold-card"><h3>Common Misconception</h3><p><strong>Myth:</strong>Australia is entirely desert.</p><p><strong>Fact:</strong>While the vast interior ("Outback") is arid the coastal fringes especially the East and Southwest have temperate and tropical climates where <strong>85%</strong> of the population lives.</p></div></div></details></section><section id="regional-profile"><h2>Regional Profile</h2><div class="profile-grid"><div class="profile-stat"><div class="stat-value">~45 Million</div><div class="stat-label">Population</div></div><div class="profile-stat"><div class="stat-value">14 Countries</div><div class="stat-label">Independent Nations</div></div><div class="profile-stat"><div class="stat-value">Endemic</div><div class="stat-label">Unique Wildlife</div></div><div class="profile-stat"><div class="stat-value">Rising Seas</div><div class="stat-label">Climate Threat</div></div></div></section><section id="oceania-map"><h2>Interactive Map: Australia and Oceania</h2><div id="regions-map" class="interactive-map" role="region" aria-label="Interactive map"></div></section><section id="physical-geography"><h2>Physical Geography</h2><h3>A Unique Biogeography</h3><p>Isolated for millions of years Australia developed a unique flora and fauna found nowhere else on Earth. The continent is dry flat and ancient while New Zealand is young mountainous and geologically active.</p><ul><li><strong>Biogeography:</strong>Wallace's Line and Weber's Line mark the boundary between Asian and Australian species a fundamental concept in evolutionary biology.</li><li><strong>The Outback:</strong>The vast arid interior of Australia known for its red soil and iconic landmarks like Uluru.</li><li><strong>Island Types:</strong>The Pacific Islands are classified as high islands (volcanic fertile) or low islands (coral atolls vulnerable to sea-level rise).</li></ul><div class="figure-row"><figure class="figure figure-center"><img src="../../images/pacific_regions_map.jpg" alt="Map of Pacific Regions: Melanesia Micronesia Polynesia" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map"><figcaption><strong>Figure 11.1:</strong>The Pacific Islands. The region is traditionally divided into Melanesia Micronesia and Polynesia.
+ <header class="site-header">
+ <div class="container">
+ <div class="header-brand">
+ <a href="../../index.html" class="logo">
+ <span class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+ <span class="logo-text">World Regional Geography</span>
+ </a>
+ </div>
+ <nav class="main-nav" aria-label="Main navigation">
+ <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+ <span class="hamburger"></span>
+ </button>
+ <ul class="nav-menu">
+ <li><a href="../../index.html" class="nav-link">Home</a></li>
+ <li class="nav-dropdown">
+ <a href="#" class="nav-link dropdown-toggle active">Chapters</a>
+ <ul class="dropdown-menu">
+ <li><a href="../01-introduction/index.html">1. Introduction</a></li>
+ <li><a href="../02-europe/index.html">2. Europe</a></li>
+ <li><a href="../03-russia/index.html">3. Russia and Central Asia</a></li>
+ <li><a href="../04-north-america/index.html">4. North America</a></li>
+ <li><a href="../05-latin-america/index.html">5. Latin America</a></li>
+ <li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
+ <li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa &amp; SW Asia</a></li>
+ <li><a href="../08-south-asia/index.html">8. South Asia</a></li>
+ <li><a href="../09-east-asia/index.html">9. East Asia</a></li>
+ <li><a href="../10-southeast-asia/index.html">10. Southeast Asia</a></li>
+ <li><a href="../11-australia-oceania/index.html">11. Australia &amp; Oceania</a></li>
+ <li><a href="../12-conclusion/index.html">12. Global Connections</a></li>
+ </ul>
+ </li>
+ <li><a href="../../standards.html" class="nav-link">Standards</a></li>
+ <li><a href="../../index.html#chapters" class="nav-link">Resources</a></li>
+ <li><a href="../../index.html#about" class="nav-link">About</a></li>
+ </ul>
+ </nav>
+ </div>
+ </header>
 
- </figcaption></figure><figure class="figure figure-center"><img src="../../images/wallaces_line.jpg" alt="Map of Wallace's Line" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map"><figcaption><strong>Figure 11.2:</strong>Biogeographical Lines. Wallace's Line separates the ecozones of Asia and Australia.
+ <section class="chapter-header">
+ <div class="container">
+ <p class="chapter-meta">Chapter 11 &middot; Week 13</p>
+ <h1 class="chapter-title">Australia, Oceania, and Antarctica: Isolation, Adaptation, and the Climate Frontier</h1>
+ <p class="chapter-description">From Southeast Asia's archipelagos, we cross Wallace's Line into a realm shaped by profound geographic isolation. Australia's ancient landmass, New Zealand's volcanic peaks, thousands of Pacific islands, and the frozen continent of Antarctica together form a region where distance, water, and time have produced the world's most distinctive ecosystems, cultures, and environmental challenges.</p>
+ </div>
+ </section>
 
- </figcaption></figure><figure class="figure figure-center"><img src="../../images/uluru.jpg" alt="Uluru in the Outback" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image"><figcaption><strong>Figure 11.3:</strong>Uluru (Ayers Rock). A sacred site for the Anangu people and an icon of the Australian Outback.
+ <main id="main-content" class="chapter-content">
+ <div class="container">
 
- </figcaption></figure><figure class="figure figure-center"><img src="../../images/nz_alps.jpg" alt="Southern Alps of New Zealand" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image"><figcaption><strong>Figure 11.4:</strong>The Southern Alps New Zealand. Dramatic mountain landscapes formed by the collision of tectonic plates.
+ <!-- 1. At a Glance (Scaffold) -->
+ <section class="learning-scaffold" aria-label="Learning scaffold">
+ <details class="learning-scaffold-details">
+ <summary>
+ <div class="scaffold-head">
+ <h2>At a Glance</h2>
+ <div class="scaffold-meta" aria-label="Prerequisites and time estimate">
+ <span class="scaffold-chip"><strong>Prereqs:</strong> Chapter 10</span>
+ <span class="scaffold-chip"><strong>Time:</strong> 60 min read + 20 min activities</span>
+ <span class="scaffold-chip"><strong>Deliverable:</strong> Quiz + Reflection</span>
+ </div>
+ </div>
+ </summary>
 
- </figcaption></figure></div></section><section id="human-geography"><h2>Human Geography and Adaptation</h2><p>From the ancient traditions of Aboriginal Australians to the diverse cultures of the Pacific the region is defined by its people's connection to the land and sea.</p><figure class="figure figure-center figure-spaced"><img src="../../images/alice_springs.jpg" alt="The Ghan train in Alice Springs" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image"><figcaption><strong>Figure 11.5:</strong>Alice Springs. A vital hub in the Red Centre connected by the historic Ghan railway.
+ <div class="scaffold-grid">
+ <div class="scaffold-card">
+ <h3>Learning Outcomes</h3>
+ <ul>
+ <li><strong>Remember:</strong> Identify Australia's major physical regions and locate the three Pacific Island sub-regions (Melanesia, Micronesia, Polynesia).</li>
+ <li><strong>Understand:</strong> Explain how tectonic isolation produced Australia's unique <strong>biogeography</strong>, including marsupials, monotremes, and eucalyptus-dominated ecosystems.</li>
+ <li><strong>Analyze:</strong> Examine how European colonization disrupted Aboriginal Australian and Maori societies, and evaluate modern reconciliation efforts.</li>
+ <li><strong>Evaluate:</strong> Assess the existential threat of <strong>sea-level rise</strong> to low-lying Pacific atoll nations and its implications for sovereignty and international law.</li>
+ <li><strong>Apply:</strong> Apply the concept of the "Tyranny of Distance" to explain patterns of economic development, trade, and geopolitical alignment across the region.</li>
+ </ul>
+ </div>
 
- </figcaption></figure></section><section id="global-theme"><h2>Global Theme: Climate Change Frontline</h2><p>The Pacific Islands are tragic barometers for climate change. Rising sea levels urge nations like Kiribati to plan for a future where their land may no longer exist.</p><p>In Australia the impact is seen in shifting agricultural zones and intensifying bushfires.</p><div class="figure-row"><figure class="figure figure-center"><img src="../../images/australia_vineyard.jpg" alt="Australian Vineyard" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image"><figcaption><strong>Figure 11.6:</strong>Agriculture and Climate. Vineyards in Australia face challenges from changing rainfall patterns and temperatures.
+ <div class="scaffold-card">
+ <h3>Key Terms</h3>
+ <p>Biogeography, Outback, Atoll, Aboriginal Australians, Maori, Exclusive Economic Zone (EEZ), Great Barrier Reef, Wallace's Line, Melanesia, Micronesia, Polynesia, Marsupial, Tyranny of Distance, Terra Nullius.</p>
+ </div>
+ </div>
 
- </figcaption></figure></div></section><section id="discussion" class="section-container"><h2>Discussion and Reflection Prompts</h2><div class="discussion-box"><h3>Reflect on Your Learning</h3><ol><li><strong>Biogeography and Isolation:</strong>How has geographic isolation shaped unique ecosystems in Australia and the Pacific? What threats do these ecosystems face today?</li><li><strong>Island Vulnerability:</strong>Why are Pacific Island nations at existential risk from climate change? What ethical obligations do wealthy nations have?</li><li><strong>Indigenous Rights:</strong>How does geographic knowledge of Aboriginal peoples and Pacific Islanders offer insights for sustainable land management?</li></ol><h3>Discuss With Your Peers</h3><ul><li>What does justice look like for island nations facing climate displacement?</li><li>How can Australia and Pacific nations adapt to rising sea levels while maintaining cultural identity?</li><li>What role should Indigenous peoples play in environmental policy and conservation?</li></ul></div></section><section id="texas-connection" class="section-container"><div class="texas-toggle"><button class="btn-texas-toggle" type="button" aria-expanded="false"><span class="star-icon"></span>Texas Connection: Mining and Energy
+ <div class="scaffold-grid">
+ <div class="scaffold-card">
+ <h3>Stop &amp; Check</h3>
+ <div class="quiz-question" style="margin-bottom:0.5rem;">What is the difference between a "high island" and a "low island" in the Pacific?</div>
+ <details>
+ <summary style="padding:0; color:var(--color-primary); font-weight:600; font-size:0.9rem;">Reveal Answer</summary>
+ <div style="margin-top:0.5rem; font-size:0.95rem; color:var(--color-text-light);">
+ <strong>High islands</strong> are volcanic in origin, with fertile soils and freshwater sources that can support larger populations (e.g., Fiji, Samoa). <strong>Low islands</strong> are coral atolls, often just 1 to 3 meters above sea level, with limited freshwater and thin soils, making them extremely vulnerable to storms and rising seas (e.g., Tuvalu, Kiribati).
+ </div>
+ </details>
+ </div>
 
- </button><div class="texas-content hidden" aria-hidden="true"><p>Both Australia and Texas are global leaders in energy and mining. They share similar semi-arid environments and ranching cultures ("stations" in Australia "ranches" in Texas). There is significant exchange of technology and expertise in oil gas and renewable energy sectors between the two regions.</p></div></div></section><section id="summary-glossary" class="section-container"><div class="accordion"><div class="accordion-item"><button class="accordion-header"> Glossary of Terms <span class="chevron"> </span></button><div class="accordion-content"><dl><dt>Outback</dt><dd>The vast remote and arid interior of Australia.</dd><dt>Atoll</dt><dd>A ring-shaped coral reef including a coral rim that encircles a lagoon.</dd><dt>EEZ</dt><dd>Exclusive Economic Zone a sea zone prescribed by the UN over which a state has special rights regarding marine resources.</dd><dt>Biogeography</dt><dd>The study of the distribution of species and ecosystems in geographic space and through geological time.</dd></dl></div></div><div class="accordion-item"><button class="accordion-header">Summary of Big Ideas <span class="chevron"> </span></button><div class="accordion-content"><ul><li>Geographic isolation has led to unique ecosystems that are highly vulnerable to invasive species.</li><li>Climate change poses an existential threat to low-lying Pacific Island nations.</li><li>Indigenous rights and land management are central to the region's modern political discourse.</li></ul></div></div></div></section><!-- Regional Decisions --><section id="regional-decisions" class="section-container"><div class="regional-decisions-box"><div class="decisions-header"><span class="decisions-label">Regional Decisions</span><h2>Sinking Islands: Climate Refugees and National Sovereignty</h2></div><p>Kiribati Tuvalu and the Marshall Islands are among the world's lowest-lying nations their highest points barely 2 meters above sea level. Rising seas are already contaminating freshwater supplies eroding coastlines and making some islands uninhabitable. These nations face a question no country has ever faced before: what happens to a nation when its land disappears?</p><div class="decisions-roles"><div class="role-card"><h4>Role A: Kiribati Government</h4><p>You have already purchased land in Fiji as a potential relocation site. But your people don't want to leave their identity culture and ancestral connections are tied to these islands. You demand that major carbon-emitting nations pay for the damage they caused and fund your adaptation efforts.</p></div><div class="role-card"><h4>Role B: Australia</h4><p>You are the region's largest economy and a major coal exporter. You have offered limited climate aid but resist binding emissions targets. You face pressure to accept Pacific climate refugees but worry about setting a precedent for mass migration.</p></div><div class="role-card"><h4>Role C: New Zealand</h4><p>You have created a special visa category for Pacific climate migrants. You see yourself as a Pacific nation with obligations to your neighbors. You want Australia to do more and support stronger international climate finance mechanisms.</p></div><div class="role-card"><h4>Role D: UN Climate Negotiator</h4><p>You must address an unprecedented legal question: if a nation's territory disappears does it retain its UN seat its EEZ fishing rights and its international legal status? You must propose a framework for "stateless nations" that the international community can accept.</p></div></div><div class="decisions-question"><strong>Your Decision:</strong>Draft a Pacific Climate Compact. Should Australia and New Zealand accept climate refugees? Should island nations retain their EEZ rights even if their land disappears? How does the geography of the Pacific (vast ocean distances tiny land areas) make this crisis uniquely challenging?
+ <div class="scaffold-card">
+ <h3>Common Misconception</h3>
+ <p><strong>Myth:</strong> Australia is entirely desert.</p>
+ <p><strong>Fact:</strong> While the vast interior ("Outback") is arid, Australia's coastal fringes, especially the eastern seaboard and the southwest, have temperate and tropical climates. Over <strong>85%</strong> of Australians live within 50 kilometers of the coast, in some of the world's most livable cities.</p>
+ </div>
+ </div>
+ </details>
+ </section>
 
- </div></div></section><!-- Data Visualization --><section id="data-viz" class="section-container"><h2>Data Exploration: Sea Level Rise Threat Index</h2><p>The following chart shows the average elevation (in meters above sea level) of Pacific Island nations compared to projected sea level rise by 2100 under a high-emissions scenario (~1 meter). Nations whose average elevation approaches or falls below this threshold face existential risk.</p><div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: var(--space-4) 0;"><canvas id="pacific-elevation-chart" height="80"></canvas></div><p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-2);"><strong>Interpretation:</strong>The red dashed line represents the projected 1-meter sea level rise by 2100. Nations below or near this line face the loss of habitable land. How does this data change your perspective on international climate negotiations?</p></section><!-- 10. Knowledge Check (Quiz) --><section id="quiz" class="section-container"><h2>Knowledge Check</h2><p>Test your understanding of the core concepts covered in this chapter. This quiz consists of multiple-choice questions designed to review key terms regional patterns and geographic relationships. Select the best answer for each question to receive immediate feedback.</p>
+ <!-- 2. Regional Profile (Snapshot) -->
+ <section id="profile" class="section-container">
+ <h2>Regional Snapshot: Australia and Oceania at a Glance</h2>
+ <div class="profile-grid">
+ <div class="profile-item">
+ <strong>Approximate Area</strong>
+ <span>~8.5 million km&sup2;</span>
+ </div>
+ <div class="profile-item">
+ <strong>Population</strong>
+ <span>~45 Million</span>
+ </div>
+ <div class="profile-item">
+ <strong>Countries</strong>
+ <span>14 independent nations</span>
+ </div>
+ <div class="profile-item">
+ <strong>Primary Theme</strong>
+ <span>Isolation, Adaptation, and Climate Vulnerability</span>
+ </div>
+ </div>
+ <p class="mt-4">This region spans the vast Pacific Ocean, from the Australian continent, the world's smallest and flattest, to over 25,000 islands scattered across an ocean that covers more of Earth's surface than all the land combined. The region is traditionally divided into four sub-regions: <strong>Australia</strong>, <strong>Melanesia</strong> (including Papua New Guinea, Fiji, Solomon Islands), <strong>Micronesia</strong> (tiny islands north of the equator), and <strong>Polynesia</strong> (the vast triangle from Hawaii to New Zealand to Easter Island). New Zealand, though geographically Polynesian, shares many characteristics with Australia due to its British colonial heritage.</p>
 
-<div id="quiz-container" class="quiz-wrapper"><p class="loading">Loading quiz questions...</p></div></section><!-- Navigation --><nav class="chapter-nav" style="display: flex; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-8);"><a href="../10-southeast-asia/index.html" class="btn btn-primary">&larr; Chapter 10: Southeast Asia</a><a href="../12-conclusion/index.html" class="btn btn-primary">&larr; Chapter 12: Global Connections &rarr;</a></nav><!-- Standards Alignment Map --><section class="standards-alignment" aria-label="Curriculum Standards Alignment"><h2>Curriculum Standards Alignment</h2><p class="standards-subtitle">This chapter aligns with the following National and State geography standards.</p><div class="standards-grid"><!-- National Standards --><details class="standard-group std-national"><summary><h3>National Geography Standards</h3></summary><div class="standard-content"><div class="standard-item"><a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element II.4</a><span class="standard-desc">Physical Systems: Coral reefs and Island Biogeography.</span></div><div class="standard-item"><a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element V.14</a><span class="standard-desc">Environment and Society: Climate change refugees and adaptation.</span></div><div class="standard-item"><a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element II.6</a><span class="standard-desc">Culture: Indigenous knowledge systems (Aboriginal management).</span></div></div></details><!-- Texas Standards --><details class="standard-group std-texas"><summary><h3>Texas Core (GEOG 1303)</h3></summary><div class="standard-content"><div class="standard-item"><a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 2</a><span class="standard-desc">Locate significant features (Great Barrier Reef Southern Alps).</span></div><div class="standard-item"><a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 3</a><span class="standard-desc">Globalization (Tourism and Mining impacts).</span></div><div class="standard-item"><a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">Critical Thinking</a><span class="standard-desc">Analyze the "Tyranny of Distance" and isolation.</span></div></div></details><!-- Florida Standards --><details class="standard-group std-florida"><summary><h3>Florida Sunshine State (SS.912.G)</h3></summary><div class="standard-content"><div class="standard-item"><a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.2.1</a><span class="standard-desc">Physical characteristics: Comparing Continental vs. Island geography.</span></div><div class="standard-item"><a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.3.2</a><span class="standard-desc">Climate Change: Sea level rise impacts on low islands.</span></div><div class="standard-item"><a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.4.4</a><span class="standard-desc">Political Geography: EEZs and ocean resource rights.</span></div></div></details></div></section></div></main><footer class="site-footer"><div class="container"><div class="footer-content"><div class="footer-brand"><span class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span><span>World Regional Geography</span></div><div class="footer-copyright"><p>&copy; 2026 Dr. Sounny. Open Educational Resource.</p></div></div></div></footer><!-- Image Lightbox Overlay --><div id="image-lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image viewer" hidden><button class="lightbox-close" aria-label="Close image viewer">&times;</button><img class="lightbox-image" src="" alt=""></div><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script><script src="../../js/main.js"></script><script src="../../js/quiz-engine.js"></script><script>document.addEventListener('DOMContentLoaded', function() {
+ <figure class="figure figure-narrow">
+ <img src="../../images/pacific_regions_map.jpg" alt="Map of Pacific Regions: Melanesia, Micronesia, Polynesia" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
+ <figcaption><strong>Figure 11.1:</strong> The Pacific Islands. The region is traditionally divided into Melanesia, Micronesia, and Polynesia, each with distinct cultural and physical characteristics.</figcaption>
+ </figure>
+ </section>
 
+ <!-- 3. Interactive Regional Map -->
+ <section id="interactive-map" class="section-container">
+ <h2>Interactive Map: Australia and Oceania</h2>
+ <p>Explore the vast distances of Oceania. Notice how Australia dominates the landmass while thousands of islands are scattered across an ocean area larger than the entire African continent. Zoom in to see the isolation that has shaped this region's unique geography.</p>
+ <div id="regions-map" class="interactive-map" role="region" aria-label="Interactive map"></div>
+ <div class="map-controls">
+ <p class="text-sm italic text-muted">Click on city markers to learn about key urban centers. Notice the extreme concentration of population along Australia's eastern coast and the vast empty distances of the interior.</p>
+ </div>
+ </section>
+
+ <!-- 4. Physical Geography Analysis -->
+ <section id="physical-geography" class="section-container">
+ <h2>Physical Geography: An Ancient Land and a Young Ocean</h2>
+ <p>The physical geography of this region is defined by extraordinary contrasts. Australia is the world's oldest, flattest, and driest inhabited continent, its rocks dating back over 3 billion years. New Zealand, by comparison, sits on an active plate boundary and is one of Earth's youngest major landmasses. The Pacific Islands range from towering volcanic peaks to coral atolls barely visible above the waves. Understanding these physical foundations is essential to grasping why this region developed such unique ecosystems and why it now faces unprecedented environmental challenges.</p>
+
+ <div class="figure-row">
+ <figure class="figure">
+ <img src="../../images/uluru.jpg" alt="Uluru in the Australian Outback" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
+ <figcaption><strong>Figure 11.2:</strong> Uluru (Ayers Rock). This 348-meter sandstone monolith in central Australia is over 500 million years old and holds deep spiritual significance for the Anangu people.</figcaption>
+ </figure>
+ <figure class="figure">
+ <img src="../../images/nz_alps.jpg" alt="Southern Alps of New Zealand" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
+ <figcaption><strong>Figure 11.3:</strong> The Southern Alps, New Zealand. These dramatic mountains, reaching 3,724 meters at Aoraki/Mount Cook, were formed by the collision of the Pacific and Australian tectonic plates.</figcaption>
+ </figure>
+ </div>
+
+ <h3>Australia: The Ancient Shield</h3>
+ <p>Australia sits at the center of the Indo-Australian Plate, far from any active tectonic boundary. This geological stability means that the continent has no active volcanoes and experiences few earthquakes. Over hundreds of millions of years, erosion has worn down ancient mountain ranges into low plateaus and flat plains. The <strong>Great Dividing Range</strong> along the eastern coast, Australia's most significant mountain system, barely reaches 2,200 meters, modest compared to the Andes or Himalayas.</p>
+ <p>The continent's interior, known as the <strong>Outback</strong>, is dominated by arid and semi-arid landscapes. The Simpson Desert, Great Victoria Desert, and Gibson Desert cover vast areas of the interior. Australia receives less rainfall on average than any inhabited continent, and much of its drainage is <strong>endorheic</strong> (flowing inland rather than to the sea). Lake Eyre, the continent's lowest point at 15 meters below sea level, fills with water only a few times per century during rare flood events.</p>
+
+ <h3>The Great Barrier Reef</h3>
+ <p>Off Australia's northeast coast lies the <strong>Great Barrier Reef</strong>, the world's largest coral reef system, stretching over 2,300 kilometers and visible from space. Composed of nearly 3,000 individual reef systems and hundreds of islands, it supports an extraordinary diversity of marine life, including over 1,500 species of fish, 400 types of coral, and endangered species such as the dugong and green sea turtle.</p>
+ <p>The reef is under severe threat from <strong>coral bleaching</strong> caused by rising ocean temperatures. Mass bleaching events in 2016, 2017, 2020, and 2022 damaged over half of the reef's coral cover. Scientists warn that if global temperatures rise more than 1.5 degrees Celsius above pre-industrial levels, the reef could lose most of its living coral. The economic stakes are enormous: the reef generates over $6 billion annually in tourism revenue and supports approximately 64,000 jobs.</p>
+
+ <h3>New Zealand: The Shaky Isles</h3>
+ <p>New Zealand straddles the boundary between the Pacific and Australian tectonic plates, making it one of the most geologically active places on Earth. The North Island features volcanic landscapes, including the Taupo Volcanic Zone with its geothermal hot springs, geysers, and the occasionally explosive Mount Ruapehu. The South Island is dominated by the <strong>Southern Alps</strong>, a chain of mountains created by the collision of the two plates, with glaciers carving dramatic fjords along the southwestern coast.</p>
+ <p>This tectonic activity brings significant seismic risk. The 2011 Christchurch earthquake (magnitude 6.3) killed 185 people and destroyed much of the city center, a reminder that New Zealand's dramatic landscapes come with inherent dangers. The country's volcanic soils, however, support productive agriculture, and its abundant rainfall and temperate climate make it one of the world's most productive pastoral economies.</p>
+
+ <h3>Pacific Islands: High and Low</h3>
+ <p>The thousands of islands scattered across the Pacific are classified into two fundamental types based on their geological origin. <strong>High islands</strong> are volcanic in origin, formed by magma rising from hotspots or subduction zones. These islands, such as Fiji, Samoa, and Papua New Guinea, have mountainous terrain, fertile volcanic soils, abundant freshwater, and can support substantial populations. Papua New Guinea alone has over 9 million people and some of the world's highest linguistic diversity, with over 800 languages spoken.</p>
+ <p><strong>Low islands</strong> are coral atolls, ring-shaped reefs formed around the rim of a subsiding volcanic island. As the volcano sinks below the sea surface, the coral continues to grow upward, leaving a ring of land surrounding a central lagoon. These atolls, such as those making up Tuvalu, Kiribati, and the Marshall Islands, rarely rise more than 2 to 3 meters above sea level. Their limited area, thin soils, and dependence on rainfall for freshwater make them among the most vulnerable places on Earth to climate change.</p>
+
+ <h3>Antarctica: The Frozen Continent</h3>
+ <p>Although not typically grouped with Oceania, <strong>Antarctica</strong> is the southernmost continent and exerts a profound influence on the entire Pacific region through ocean currents and climate systems. Covering 14 million km&sup2;, Antarctica holds approximately 70% of the world's freshwater, locked in an ice sheet that averages 2.16 kilometers in thickness. If this ice were to melt entirely, global sea levels would rise by an estimated 58 meters.</p>
+ <p>No country owns Antarctica. The <strong>Antarctic Treaty System</strong> (1959), signed by 54 nations, designates the continent as a scientific preserve and bans military activity and mineral mining. Research stations from dozens of countries study climate change, ozone depletion, and unique ecosystems. The continent's ice cores provide some of the most valuable records of Earth's past climate, containing air bubbles that preserve atmospheric composition going back 800,000 years.</p>
+
+ <div class="inquiry-prompt">
+ <h3>Geographic Inquiry</h3>
+ <p>Australia and Antarctica were once joined as part of the supercontinent Gondwana. They began separating approximately 45 million years ago. How did this tectonic separation contribute to Australia's unique biogeography? Consider: (1) the evolution of marsupials in isolation, (2) the development of Antarctica's ice sheet after separation, and (3) how ocean currents changed as the continents drifted apart.</p>
+ </div>
+ </section>
+
+ <!-- Important Person Sidebar -->
+ <section class="important-person-sidebar">
+ <div class="sidebar-content">
+ <div class="person-image">
+ <img src="../../images/uluru.jpg" alt="Australian landscape representing Aboriginal land rights" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
+ </div>
+ <div class="person-header">
+ <h3>Important Person</h3>
+ </div>
+ <div class="person-info">
+ <strong>Eddie Koiki Mabo (1936-1992)</strong>
+ <p class="person-title">Champion of Aboriginal Land Rights</p>
+ <p>Eddie Mabo, a Torres Strait Islander from Mer (Murray Island), challenged the legal doctrine of <strong>terra nullius</strong>, the fiction that Australia was "land belonging to no one" before British colonization. His decade-long legal battle culminated in the landmark <strong>Mabo v. Queensland (No. 2)</strong> decision by the High Court of Australia in 1992, which recognized native title for the first time in Australian law. This ruling overturned 200 years of legal precedent and fundamentally changed the relationship between Indigenous Australians and the land. Tragically, Mabo died five months before the decision was handed down.</p>
+ <a href="https://aiatsis.gov.au/explore/mabo-case" target="_blank" class="btn-text">Learn more about the Mabo decision at AIATSIS &rarr;</a>
+ </div>
+ </div>
+ </section>
+
+ <!-- 5. Human Geography Analysis -->
+ <section id="human-geography" class="section-container">
+ <h2>Human Geography: Peoples of the Pacific World</h2>
+ <p>The human geography of Australia and Oceania is shaped by two defining forces: the ancient, continuous occupation of the land by Indigenous peoples, and the relatively recent arrival of European colonizers. The tension between these two histories, between deep connection to place and the disruptions of colonialism, continues to define the region's political and cultural landscape today.</p>
+
+ <h3>Aboriginal Australians: The World's Oldest Living Culture</h3>
+ <p>Aboriginal Australians have inhabited the continent for at least <strong>65,000 years</strong>, making theirs the longest continuous cultural tradition on Earth. When the first humans arrived, likely crossing land bridges and short sea passages from Southeast Asia during lower sea levels, they found a continent of megafauna, including giant marsupials, enormous reptiles, and flightless birds. Over millennia, Aboriginal peoples developed sophisticated land management practices, most notably the use of <strong>fire-stick farming</strong>, the deliberate burning of vegetation to promote new growth, manage wildlife, and prevent catastrophic wildfires.</p>
+ <p>Before European contact, an estimated 250 to 300 distinct language groups existed across the continent, each with its own territory, laws, and spiritual traditions tied to the land through the system known as the <strong>Dreaming</strong> (or Dreamtime). This complex belief system connects people, animals, and landscape features to ancestral creation beings, making the land itself a living archive of cultural knowledge. European colonization, beginning with the British First Fleet in 1788, devastated Aboriginal societies through violence, disease, dispossession, and the forced removal of children from their families (the "Stolen Generations"). The legal fiction of <strong>terra nullius</strong> denied Aboriginal land ownership until the Mabo decision of 1992.</p>
+
+ <h3>Pacific Islander Cultures and Polynesian Navigation</h3>
+ <p>The settlement of the Pacific Islands represents one of the greatest feats of human navigation in history. Beginning around 3,000 years ago, <strong>Austronesian peoples</strong> spread from Southeast Asia through Melanesia and out into the open Pacific, eventually reaching Hawaii, Easter Island (Rapa Nui), and New Zealand. These voyages, covering thousands of kilometers of open ocean in double-hulled canoes, were accomplished without instruments, using knowledge of stars, ocean currents, wave patterns, and the flight paths of birds.</p>
+ <p>The <strong>Maori</strong> of New Zealand, who arrived from eastern Polynesia around 1250-1300 CE, developed a distinctive culture adapted to New Zealand's temperate climate, one very different from the tropical islands their ancestors left. Their social structure, centered on the <strong>whanau</strong> (extended family), <strong>hapu</strong> (sub-tribe), and <strong>iwi</strong> (tribe), maintained deep connections to specific territories and resources. The Treaty of Waitangi (1840), signed between the British Crown and Maori chiefs, remains a contested but foundational document in New Zealand's bicultural identity. Unlike Australia's terra nullius approach, New Zealand at least acknowledged Indigenous sovereignty, even if the treaty's terms were frequently violated.</p>
+
+ <h3>Colonization and Modern Immigration</h3>
+ <p>European colonization transformed Australia, New Zealand, and many Pacific Islands from Indigenous-governed territories into settler societies modeled on British institutions. Australia's colonial history is particularly complex. Initially established as a penal colony in 1788, it attracted free settlers through the gold rushes of the 1850s and eventually federated as a nation in 1901. For much of the 20th century, Australia maintained the <strong>"White Australia" policy</strong> (formally the Immigration Restriction Act of 1901), which effectively barred non-European immigration until it was dismantled between 1966 and 1973.</p>
+ <p>Since then, Australia has become one of the world's most multicultural societies. Approximately 30% of Australians were born overseas, with significant communities from China, India, the Philippines, Vietnam, and the United Kingdom. Today, Sydney and Melbourne are among the most ethnically diverse cities in the Asia-Pacific region. New Zealand has followed a similar trajectory, with significant immigration from Pacific Island nations (Samoa, Tonga, Cook Islands) as well as from Asia, creating a society that is approximately 70% European, 17% Maori, 15% Asian, and 8% Pacific Islander (with overlapping categories).</p>
+
+ <h3>Urbanization and the Tyranny of Distance</h3>
+ <p>Australia is one of the most urbanized countries in the world, with over 85% of its population living in coastal cities. The five largest cities, Sydney, Melbourne, Brisbane, Perth, and Adelaide, together contain over 60% of the national population. This extreme coastal concentration reflects both the aridity of the interior and the historical importance of ports for trade with Britain and, increasingly, with Asia. Geographer Geoffrey Blainey coined the phrase <strong>"Tyranny of Distance"</strong> to describe how Australia's remoteness from European markets shaped its economic development, cultural identity, and political alignments.</p>
+ <p>In the Pacific Islands, urbanization is accelerating rapidly, particularly in Melanesia. Port Moresby (Papua New Guinea), Suva (Fiji), and Noumea (New Caledonia) face challenges common to rapidly growing cities in developing countries: inadequate infrastructure, informal settlements, unemployment, and pressure on water and sanitation systems. The contrast between urban growth and the traditional village-based life of most Pacific Islanders creates social tensions around land rights, employment, and cultural change.</p>
+
+ <h3>Economic Geography: Mining, Tourism, and the Sea</h3>
+ <p>Australia's economy is dominated by its vast mineral wealth. The country is the world's largest exporter of iron ore, a major producer of coal, gold, lithium, and natural gas, and possesses some of the world's largest reserves of uranium. The mining sector generates enormous export revenue, particularly from sales to China, Japan, and South Korea. However, this resource dependence creates vulnerability to commodity price swings and raises environmental concerns about mining's impact on landscapes and groundwater systems.</p>
+ <p>For the Pacific Island nations, the ocean itself is the primary economic resource. Many small island states control enormous <strong>Exclusive Economic Zones</strong> (EEZs) that extend 200 nautical miles from their coastlines, giving them jurisdiction over vast areas of ocean rich in tuna and other fish stocks. Fishing license fees paid by distant-water fishing fleets (from Japan, China, the United States, and Europe) provide a significant share of national income for countries like Kiribati and the Marshall Islands. Tourism is another pillar, particularly for Fiji, French Polynesia, and Palau, but it brings challenges of environmental degradation, cultural commodification, and economic dependence on external visitors.</p>
+ </section>
+
+ <!-- Data Visualization -->
+ <section id="data-viz" class="section-container">
+ <h2>Data Exploration: Sea Level Rise Threat Index</h2>
+ <p>The following chart shows the average elevation (in meters above sea level) of Pacific Island nations compared to projected sea level rise by 2100 under a high-emissions scenario (approximately 1 meter). Nations whose average elevation approaches or falls below this threshold face existential risk to their territory, freshwater supplies, and agricultural land.</p>
+ <div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: var(--space-4) 0;">
+ <canvas id="pacific-elevation-chart" height="80"></canvas>
+ </div>
+ <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-2);"><strong>Interpretation:</strong> The red dashed line represents the projected 1-meter sea level rise by 2100. Nations below or near this line face the loss of habitable land. Notice how the atolls of Tuvalu, Kiribati, and the Marshall Islands are the most vulnerable, while higher volcanic islands like Fiji and Papua New Guinea have more geographic resilience. How does this data connect to debates about climate justice and international responsibility?</p>
+ </section>
+
+ <!-- Texas Connection Toggle -->
+ <section id="texas-connection" class="section-container">
+ <div class="texas-toggle">
+ <button class="btn-texas-toggle" id="texas-btn">
+ <span class="star-icon"></span> Texas Connection: Mining, Ranching, and Water Scarcity
+ </button>
+ <div class="texas-content hidden" id="texas-content">
+ <h4>Shared Landscapes, Shared Challenges</h4>
+ <p>Australia and Texas share striking geographic and economic parallels. Both are vast, semi-arid regions with economies historically built on ranching and resource extraction. Australian "stations" (cattle ranches) can cover areas larger than some U.S. states, just as Texas ranches like the King Ranch span hundreds of thousands of acres. Both regions face ongoing challenges of <strong>water scarcity</strong>: Texas draws heavily on the Ogallala Aquifer, while Australia depends on the Murray-Darling Basin, both of which are being depleted faster than they recharge.</p>
+ <h4>Energy and Mining Connections</h4>
+ <p>Texas and Australia are global leaders in energy production and minerals. Texas is the largest U.S. producer of oil and natural gas; Australia is the world's largest exporter of LNG and iron ore. There is significant exchange of technology and expertise between the two regions, particularly in hydraulic fracturing, renewable energy development, and mining engineering. Both regions are also navigating the <strong>energy transition</strong>: Texas leads the United States in wind energy capacity, while Australia has some of the world's highest per-capita solar energy installations.</p>
+ <h4>The Pacific and the Gulf</h4>
+ <p>Just as Texas faces hurricane threats from the Gulf of Mexico, Australia's northern coastline is vulnerable to tropical cyclones. Both regions have invested heavily in disaster preparedness and emergency response, and both have experienced catastrophic flooding events that exposed the vulnerabilities of rapid coastal urbanization.</p>
+ </div>
+ </div>
+ </section>
+
+ <!-- Case Study -->
+ <section id="case-study" class="section-container">
+ <div class="case-study-gold">
+ <div class="case-study-header">
+ <span class="label">Case Study</span>
+ <h2>The Great Barrier Reef: Managing a World Heritage Site Under Threat</h2>
+ </div>
+ <p>The Great Barrier Reef, spanning 2,300 kilometers along Australia's northeast coast, is the largest living structure on Earth and a UNESCO World Heritage Site since 1981. It supports extraordinary biodiversity and generates over $6 billion annually in tourism revenue. Yet the reef is in crisis. Four mass coral bleaching events between 2016 and 2022 have damaged or destroyed over half of the reef's shallow-water corals.</p>
+ <p>Coral bleaching occurs when ocean temperatures rise above the normal range, causing corals to expel the symbiotic algae (zooxanthellae) that provide them with food and color. Without these algae, the coral turns white and, if conditions persist, dies. The root cause is <strong>anthropogenic climate change</strong>: ocean temperatures in the Coral Sea have risen by approximately 0.8 degrees Celsius since 1900. Agricultural runoff carrying fertilizers and sediment from Queensland's coastal farms further stresses the reef.</p>
+ <p>The Australian government has committed over $1 billion to reef protection through the Reef 2050 Plan, funding water quality improvement, crown-of-thorns starfish control, and coral restoration research. However, critics argue that these efforts are insufficient without aggressive action on carbon emissions, noting that Australia remains one of the world's largest coal exporters and per-capita carbon emitters.</p>
+ <div class="case-study-questions">
+ <h4>Questions to Consider:</h4>
+ <ul>
+ <li>How does the tension between Australia's coal export economy and its commitment to reef conservation illustrate the concept of <strong>sustainable development</strong>?</li>
+ <li>Who bears responsibility for saving the Great Barrier Reef: Australia alone, or the global community that contributes to climate change?</li>
+ <li>How might the loss of the reef affect not only marine ecosystems but also the <strong>economic geography</strong> of coastal Queensland?</li>
+ </ul>
+ </div>
+ </div>
+ </section>
+
+ <!-- Glossary and Summary -->
+ <section id="summary-glossary" class="section-container">
+ <div class="accordion">
+ <div class="accordion-item">
+ <button class="accordion-header">
+ Glossary of Terms <span class="chevron"></span>
+ </button>
+ <div class="accordion-content">
+ <dl>
+ <dt>Aboriginal Australians</dt>
+ <dd>The Indigenous peoples of the Australian continent, whose cultures represent the world's oldest continuous cultural traditions, dating back at least 65,000 years.</dd>
+
+ <dt>Antarctic Treaty System</dt>
+ <dd>An international agreement (1959) designating Antarctica as a scientific preserve, banning military activity and mineral exploitation on the continent.</dd>
+
+ <dt>Atoll</dt>
+ <dd>A ring-shaped coral reef, including a coral rim that encircles a lagoon, formed around a subsiding volcanic island. Examples include Kiribati and the Marshall Islands.</dd>
+
+ <dt>Biogeography</dt>
+ <dd>The study of the distribution of species and ecosystems across geographic space and through geological time, explaining patterns of biodiversity.</dd>
+
+ <dt>Coral Bleaching</dt>
+ <dd>The whitening of coral caused by the expulsion of symbiotic algae (zooxanthellae) due to environmental stress, particularly elevated ocean temperatures.</dd>
+
+ <dt>Exclusive Economic Zone (EEZ)</dt>
+ <dd>A maritime zone extending 200 nautical miles from a nation's coastline, within which that state has special rights over the exploration and use of marine resources.</dd>
+
+ <dt>Great Barrier Reef</dt>
+ <dd>The world's largest coral reef system, stretching over 2,300 kilometers along Australia's northeast coast and supporting extraordinary marine biodiversity.</dd>
+
+ <dt>Maori</dt>
+ <dd>The Indigenous Polynesian people of New Zealand, who arrived from eastern Polynesia around 1250-1300 CE and developed a distinctive culture centered on kinship, land, and sea.</dd>
+
+ <dt>Marsupial</dt>
+ <dd>A mammal that carries its young in a pouch. Marsupials dominate Australia's native mammal fauna due to the continent's long tectonic isolation from other landmasses.</dd>
+
+ <dt>Melanesia</dt>
+ <dd>A Pacific Island sub-region extending from Papua New Guinea to Fiji, characterized by high islands, great ethnic and linguistic diversity, and large land areas relative to other Pacific sub-regions.</dd>
+
+ <dt>Outback</dt>
+ <dd>The vast, remote, and predominantly arid interior of Australia, characterized by sparse population, pastoral land use, and iconic red landscapes.</dd>
+
+ <dt>Terra Nullius</dt>
+ <dd>A Latin term meaning "land belonging to no one," used by the British to justify the colonization of Australia without negotiating treaties with Aboriginal peoples. Overturned by the Mabo decision in 1992.</dd>
+
+ <dt>Tyranny of Distance</dt>
+ <dd>A concept describing how Australia's geographic remoteness from major global markets shaped its economic development, trade patterns, and cultural identity.</dd>
+
+ <dt>Wallace's Line</dt>
+ <dd>A biogeographical boundary running between Borneo and Sulawesi and between Bali and Lombok, separating the animal species of Asia from those of Australia.</dd>
+ </dl>
+ </div>
+ </div>
+ <div class="accordion-item">
+ <button class="accordion-header">
+ Summary of Big Ideas <span class="chevron"></span>
+ </button>
+ <div class="accordion-content">
+ <ul>
+ <li><strong>Ancient Isolation:</strong> Australia's separation from Gondwana millions of years ago produced a continent of unique biodiversity, including marsupials and monotremes found nowhere else on Earth. Wallace's Line marks the boundary between Asian and Australian species.</li>
+ <li><strong>Geological Contrasts:</strong> Australia is the world's oldest, flattest, and driest inhabited continent, while New Zealand is geologically young and active. The Pacific Islands range from high volcanic islands with fertile soils to low coral atolls barely above sea level.</li>
+ <li><strong>The Great Barrier Reef:</strong> The world's largest coral reef system faces existential threat from coral bleaching driven by climate change, agricultural runoff, and ocean acidification. Its health is a global indicator of marine ecosystem resilience.</li>
+ <li><strong>Indigenous Continuity:</strong> Aboriginal Australians maintain the world's oldest living culture (65,000+ years). Their dispossession through terra nullius and the Stolen Generations remains one of colonialism's most profound injustices, only partially addressed by the Mabo decision and ongoing reconciliation efforts.</li>
+ <li><strong>Polynesian Navigation:</strong> The settlement of the Pacific Islands represents one of humanity's greatest navigational achievements, accomplished without instruments over thousands of kilometers of open ocean using stars, currents, and wave patterns.</li>
+ <li><strong>Climate Frontline:</strong> Low-lying Pacific atoll nations like Tuvalu and Kiribati face existential threats from sea-level rise, raising unprecedented questions about sovereignty, climate refugees, and international legal frameworks.</li>
+ <li><strong>Resource Economies:</strong> Australia's wealth derives heavily from mining (iron ore, coal, LNG, gold), while Pacific Island economies depend on fishing rights within their vast EEZs and on tourism. Both face challenges of sustainability and diversification.</li>
+ <li><strong>Tyranny of Distance:</strong> Geographic remoteness has shaped the region's economic development, trade relationships, and geopolitical alignments, driving Australia and New Zealand toward closer ties with Asia despite their European cultural heritage.</li>
+ <li><strong>Antarctica as Climate Archive:</strong> The frozen continent holds 70% of the world's freshwater and its ice cores provide 800,000 years of climate records. The Antarctic Treaty System represents a model of international scientific cooperation.</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ </section>
+
+ <!-- Regional Decisions -->
+ <section id="regional-decisions" class="section-container">
+ <div class="regional-decisions-box">
+ <div class="decisions-header">
+ <span class="decisions-label">Regional Decisions</span>
+ <h2>Sinking Islands: Climate Refugees and National Sovereignty</h2>
+ </div>
+ <p>Kiribati, Tuvalu, and the Marshall Islands are among the world's lowest-lying nations, their highest points barely 2 meters above sea level. Rising seas are already contaminating freshwater supplies, eroding coastlines, and making some islands uninhabitable. These nations face a question no country has ever confronted before: what happens to a nation when its land disappears?</p>
+ <div class="decisions-roles">
+ <div class="role-card">
+ <h4>Role A: Kiribati Government</h4>
+ <p>You have already purchased land in Fiji as a potential relocation site. But your people resist leaving: their identity, culture, and ancestral connections are tied to these islands. You demand that major carbon-emitting nations pay for the damage they caused and fund your adaptation efforts.</p>
+ </div>
+ <div class="role-card">
+ <h4>Role B: Australia</h4>
+ <p>You are the region's largest economy and a major coal exporter. You have offered limited climate aid but resist binding emissions targets that could harm your mining industry. You face pressure to accept Pacific climate refugees but worry about setting a precedent for mass migration.</p>
+ </div>
+ <div class="role-card">
+ <h4>Role C: New Zealand</h4>
+ <p>You have created a special visa category for Pacific climate migrants. You see yourself as a Pacific nation with obligations to your neighbors. You want Australia to do more and support stronger international climate finance mechanisms.</p>
+ </div>
+ <div class="role-card">
+ <h4>Role D: UN Climate Negotiator</h4>
+ <p>You must address an unprecedented legal question: if a nation's territory disappears, does it retain its UN seat, its EEZ fishing rights, and its international legal status? You must propose a framework for "stateless nations" that the international community can accept.</p>
+ </div>
+ </div>
+ <div class="decisions-question">
+ <strong>Your Decision:</strong> Draft a Pacific Climate Compact. Should Australia and New Zealand accept climate refugees? Should island nations retain their EEZ rights even if their land disappears? How does the geography of the Pacific (vast ocean distances, tiny land areas) make this crisis uniquely challenging?
+ </div>
+ </div>
+ </section>
+
+ <!-- Knowledge Check (Quiz) -->
+ <section id="quiz" class="section-container">
+ <h2>Knowledge Check</h2>
+ <p>Test your understanding of the core concepts covered in this chapter. This quiz consists of multiple-choice questions designed to review key terms, regional patterns, and geographic relationships. Select the best answer for each question to receive immediate feedback.</p>
+ <div id="quiz-container" class="quiz-wrapper">
+ <p class="loading">Loading quiz questions...</p>
+ </div>
+ </section>
+
+ <!-- Discussion and Reflection Prompts -->
+ <section id="discussion" class="section-container">
+ <h2>Discussion and Reflection Prompts</h2>
+ <div class="discussion-box">
+ <h3>Reflect on Your Learning</h3>
+ <ol>
+ <li><strong>Biogeography and Isolation:</strong> How has geographic isolation over millions of years shaped the unique ecosystems of Australia and the Pacific? What threats do invasive species, habitat destruction, and climate change pose to these ecosystems today?</li>
+ <li><strong>Island Vulnerability:</strong> Why are Pacific Island nations at existential risk from climate change, despite having contributed virtually nothing to global carbon emissions? What ethical obligations do wealthy, high-emitting nations have?</li>
+ <li><strong>Indigenous Knowledge:</strong> Aboriginal Australians developed sophisticated land management techniques over 65,000 years, including fire-stick farming. How might this Indigenous ecological knowledge contribute to modern environmental management and bushfire prevention?</li>
+ </ol>
+ <h3>Discuss With Your Peers</h3>
+ <ul>
+ <li>What does climate justice look like for island nations facing displacement? Should there be a new international legal category for "climate refugees"?</li>
+ <li>Australia transitioned from the "White Australia" policy to one of the world's most multicultural societies within a single generation. What geographic, economic, and political factors drove this transformation?</li>
+ <li>The Antarctic Treaty bans resource extraction and designates the continent for science. As mineral resources become scarcer, do you think this treaty will endure? What geographic factors make Antarctica both attractive and forbidding for resource exploitation?</li>
+ </ul>
+ </div>
+ </section>
+
+ <!-- Navigation -->
+ <nav class="chapter-nav" style="display: flex; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-8);">
+ <a href="../10-southeast-asia/index.html" class="btn btn-primary">&larr; Chapter 10: Southeast Asia</a>
+ <a href="../12-conclusion/index.html" class="btn btn-primary">Chapter 12: Global Connections &rarr;</a>
+ </nav>
+
+ <!-- Standards Alignment Map -->
+ <section class="standards-alignment" aria-label="Curriculum Standards Alignment">
+ <h2>Curriculum Standards Alignment</h2>
+ <p class="standards-subtitle">This chapter aligns with the following National and State geography standards.</p>
+
+ <div class="standards-grid">
+ <!-- National Standards -->
+ <details class="standard-group std-national">
+ <summary><h3>National Geography Standards</h3></summary>
+ <div class="standard-content">
+ <div class="standard-item">
+ <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element II.4</a>
+ <span class="standard-desc">Characteristics of Place: Physical (Outback, Great Barrier Reef, volcanic islands) and Human (Aboriginal culture, Pacific Islander societies).</span>
+ </div>
+ <div class="standard-item">
+ <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element III.8</a>
+ <span class="standard-desc">Ecosystems: Unique biogeography of Australia (marsupials, Wallace's Line) and marine ecosystems (coral reefs).</span>
+ </div>
+ <div class="standard-item">
+ <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element V.14</a>
+ <span class="standard-desc">Human Modification of Environment: Coral bleaching from climate change, mining impacts on landscapes, deforestation.</span>
+ </div>
+ <div class="standard-item">
+ <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element V.15</a>
+ <span class="standard-desc">Environmental Impact on Humans: Sea-level rise threatening Pacific Islands, bushfire risk in Australia, cyclone vulnerability.</span>
+ </div>
+ <div class="standard-item">
+ <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element VI.18</a>
+ <span class="standard-desc">Planning for the Future: Climate adaptation, Antarctic Treaty as model for global cooperation, reef restoration.</span>
+ </div>
+ </div>
+ </details>
+
+ <!-- Texas Standards -->
+ <details class="standard-group std-texas">
+ <summary><h3>Texas Core (GEOG 1303)</h3></summary>
+ <div class="standard-content">
+ <div class="standard-item">
+ <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 2</a>
+ <span class="standard-desc">Locate significant features: Great Barrier Reef, Southern Alps, Outback, Pacific Island sub-regions.</span>
+ </div>
+ <div class="standard-item">
+ <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 3</a>
+ <span class="standard-desc">Globalization: Mining exports, tourism economies, EEZ fishing rights, Australia-Asia trade pivot.</span>
+ </div>
+ <div class="standard-item">
+ <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 4</a>
+ <span class="standard-desc">Apply geographic concepts: Tyranny of Distance, terra nullius, climate refugees, Antarctic Treaty.</span>
+ </div>
+ <div class="standard-item">
+ <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">Critical Thinking</a>
+ <span class="standard-desc">Analyze tensions between mining economies and environmental conservation; evaluate climate justice frameworks.</span>
+ </div>
+ <div class="standard-item">
+ <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">Social Responsibility</a>
+ <span class="standard-desc">Indigenous land rights, reconciliation, ethical obligations to climate-vulnerable nations.</span>
+ </div>
+ </div>
+ </details>
+
+ <!-- Florida Standards -->
+ <details class="standard-group std-florida">
+ <summary><h3>Florida Sunshine State (SS.912.G)</h3></summary>
+ <div class="standard-content">
+ <div class="standard-item">
+ <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.2.1</a>
+ <span class="standard-desc">Physical characteristics: Continental vs. island geography, climate zones, tectonic contrasts.</span>
+ </div>
+ <div class="standard-item">
+ <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.3.2</a>
+ <span class="standard-desc">Climate influence: Sea-level rise impacts on low islands, coral bleaching, bushfire intensification.</span>
+ </div>
+ <div class="standard-item">
+ <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.4.7</a>
+ <span class="standard-desc">Cultural diffusion: Polynesian navigation and settlement, colonial cultural transplantation, multiculturalism.</span>
+ </div>
+ <div class="standard-item">
+ <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.5.2</a>
+ <span class="standard-desc">Human impact: Mining, agricultural runoff, reef degradation, invasive species introduction.</span>
+ </div>
+ </div>
+ </details>
+ </div>
+ </section>
+
+ </div>
+ </main>
+
+ <footer class="site-footer">
+ <div class="container">
+ <div class="footer-content">
+ <div class="footer-brand">
+ <span class="logo-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
+ <span>World Regional Geography</span>
+ </div>
+ <div class="footer-copyright">
+ <p>&copy; 2026 Dr. Sounny. Open Educational Resource.</p>
+ </div>
+ </div>
+ </div>
+ </footer>
+
+ <!-- Image Lightbox Overlay -->
+ <div id="image-lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+ <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
+ <img class="lightbox-image" src="" alt="">
+ </div>
+
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+ <script src="../../js/main.js"></script>
+ <script src="../../js/quiz-engine.js"></script>
+ <script>
+ document.addEventListener('DOMContentLoaded', function() {
+ // Initialize the Interactive Map
  if (typeof L !== 'undefined' && document.getElementById('regions-map')) {
-
  const map = L.map('regions-map').setView([-10, 160], 3);
-
- L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { attribution: '&copy; OpenStreetMap &copy; CARTO' }).addTo(map);
+ L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+ attribution: '&copy; OpenStreetMap &copy; CARTO'
+ }).addTo(map);
 
  const cities = [
-
- { name: 'Sydney', coords: [-33.8688, 151.2093], note: 'Australia largest city' },
-
- { name: 'Melbourne', coords: [-37.8136, 144.9631], note: 'Cultural capital' },
-
- { name: 'Auckland', coords: [-36.8509, 174.7645], note: 'New Zealand largest city' },
-
- { name: 'Wellington', coords: [-41.2865, 174.7762], note: 'New Zealand capital' },
-
- { name: 'Suva', coords: [-18.1416, 178.4419], note: 'Fiji capital' },
-
- { name: 'Port Moresby', coords: [-9.4438, 147.1803], note: 'Papua New Guinea capital' }
-
+ { name: 'Sydney', coords: [-33.8688, 151.2093], note: 'Australia\'s largest city, pop. ~5.3 million' },
+ { name: 'Melbourne', coords: [-37.8136, 144.9631], note: 'Cultural capital of Australia' },
+ { name: 'Brisbane', coords: [-27.4698, 153.0251], note: 'Gateway to the Great Barrier Reef' },
+ { name: 'Perth', coords: [-31.9505, 115.8605], note: 'Most isolated major city in the world' },
+ { name: 'Auckland', coords: [-36.8509, 174.7645], note: 'New Zealand\'s largest city' },
+ { name: 'Wellington', coords: [-41.2865, 174.7762], note: 'New Zealand capital, on a fault line' },
+ { name: 'Suva', coords: [-18.1416, 178.4419], note: 'Fiji capital, Melanesian hub' },
+ { name: 'Port Moresby', coords: [-9.4438, 147.1803], note: 'Papua New Guinea capital' },
+ { name: 'Honolulu', coords: [21.3069, -157.8583], note: 'Hawaii, Polynesian cultural center' },
+ { name: 'Canberra', coords: [-35.2809, 149.1300], note: 'Australia\'s planned capital city' }
  ];
 
- cities.forEach(city => { L.circleMarker(city.coords, { radius: 8 fillColor: '#3b82f6' color: '#fff' weight: 2 fillOpacity: 0.8 }).addTo(map).bindPopup('<strong>' + city.name + '</strong><br>' + city.note); });
-
+ cities.forEach(function(city) {
+ L.circleMarker(city.coords, {
+ radius: 8,
+ fillColor: '#3b82f6',
+ color: '#fff',
+ weight: 2,
+ fillOpacity: 0.8
+ }).addTo(map).bindPopup('<strong>' + city.name + '</strong><br>' + city.note);
+ });
  }
 
  // Initialize Quiz
-
- const quizContainer = document.getElementById('quiz-container');
-
+ var quizContainer = document.getElementById('quiz-container');
  if (quizContainer) {
-
  fetch('quiz-data.json')
-
- .then(response => response.json())
-
- .then(data =>QuizEngine.init('quiz-container', data))
-
- .catch(err => {
-
+ .then(function(response) { return response.json(); })
+ .then(function(data) { QuizEngine.init('quiz-container', data); })
+ .catch(function(err) {
  console.error('Error loading quiz data:', err);
-
  quizContainer.innerHTML = '<p class="text-muted">Quiz unavailable right now.</p>';
-
  });
-
  }
-
  });
 
  // Lightbox functionality for zoomable images
-
  (function() {
+ var lightbox = document.getElementById('image-lightbox');
+ var lightboxImg = lightbox.querySelector('.lightbox-image');
+ var closeBtn = lightbox.querySelector('.lightbox-close');
 
- const lightbox = document.getElementById('image-lightbox');
-
- const lightboxImg = lightbox.querySelector('.lightbox-image');
-
- const closeBtn = lightbox.querySelector('.lightbox-close');
-
- 
-
- // Open lightbox when clicking zoomable images
-
- document.querySelectorAll('.zoomable-image').forEach(img => {
-
- img.addEventListener('click', () => {
-
+ document.querySelectorAll('.zoomable-image').forEach(function(img) {
+ img.addEventListener('click', function() {
  lightboxImg.src = img.src;
-
  lightboxImg.alt = img.alt;
-
  lightbox.hidden = false;
-
  document.body.style.overflow = 'hidden';
-
  closeBtn.focus();
-
  });
-
- // Also support keyboard activation
-
- img.addEventListener('keydown', (e) => {
-
+ img.addEventListener('keydown', function(e) {
  if (e.key === 'Enter' || e.key === ' ') {
-
  e.preventDefault();
-
  img.click();
-
  }
-
  });
-
  });
-
- 
-
- // Close lightbox
 
  function closeLightbox() {
-
  lightbox.hidden = true;
-
  document.body.style.overflow = '';
-
  }
-
- 
 
  closeBtn.addEventListener('click', closeLightbox);
-
- lightbox.addEventListener('click', (e) => {
-
+ lightbox.addEventListener('click', function(e) {
  if (e.target === lightbox) closeLightbox();
-
  });
-
- document.addEventListener('keydown', (e) => {
-
+ document.addEventListener('keydown', function(e) {
  if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
-
  });
-
  })();
-
- </script><script>// Pacific Island Elevation Chart
-
- (function() {
-
- const ctx = document.getElementById('pacific-elevation-chart');
-
- if (!ctx) return;
-
- const data = [2, 3, 2, 5, 8, 12, 18, 45, 80, 120];
-
- const labels = ['Tuvalu', 'Kiribati' 'Marshall Is.', 'Maldives' 'Nauru', 'Palau' 'Micronesia', 'Samoa' 'Fiji', 'Papua NG'];
-
- new Chart(ctx, {
-
- type: 'bar',
-
- data: {
-
- labels: labels,
-
- datasets: [{
-
- label: 'Average Elevation (meters above sea level)',
-
- data: data,
-
- backgroundColor: data.map(v => v <= 5 ? 'rgba(220,53,69,0.8)' : v <= 15 ? 'rgba(255,193,7,0.8)' : 'rgba(40,167,69,0.8)'),
-
- borderColor: 'rgba(0,0,0,0.15)',
-
- borderWidth: 1
-
- } {
-
- label: 'Projected Sea Level Rise by 2100 (1 meter)',
-
- data: new Array(labels.length).fill(1),
-
- type: 'line',
-
- borderColor: 'rgba(220,53,69,1)',
-
- borderWidth: 2,
-
- borderDash: [6,4],
-
- pointRadius: 0,
-
- fill: false
-
- }]
-
- },
-
- options: {
-
- responsive: true,
-
- plugins: {
-
- legend: { position: 'top' },
-
- tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.y}m elevation` } }
-
- },
-
- scales: {
-
- y: {
-
- beginAtZero: true,
-
- title: { display: true, text: 'Meters above sea level' },
-
- grid: { color: 'rgba(0,0,0,0.05)' }
-
- },
-
- x: { grid: { display: false } }
-
- }
-
- }
-
- });
-
- })();
-
  </script>
-
-</body></html>
+ <script>
+ // Pacific Island Elevation Chart
+ (function() {
+ var ctx = document.getElementById('pacific-elevation-chart');
+ if (!ctx) return;
+ var elevationData = [2, 3, 2, 5, 8, 12, 18, 45, 80, 120];
+ var labels = ['Tuvalu', 'Kiribati', 'Marshall Is.', 'Maldives', 'Nauru', 'Palau', 'Micronesia', 'Samoa', 'Fiji', 'Papua NG'];
+ new Chart(ctx, {
+ type: 'bar',
+ data: {
+ labels: labels,
+ datasets: [{
+ label: 'Average Elevation (meters above sea level)',
+ data: elevationData,
+ backgroundColor: elevationData.map(function(v) {
+ return v <= 5 ? 'rgba(220,53,69,0.8)' : v <= 15 ? 'rgba(255,193,7,0.8)' : 'rgba(40,167,69,0.8)';
+ }),
+ borderColor: 'rgba(0,0,0,0.15)',
+ borderWidth: 1
+ }, {
+ label: 'Projected Sea Level Rise by 2100 (1 meter)',
+ data: new Array(labels.length).fill(1),
+ type: 'line',
+ borderColor: 'rgba(220,53,69,1)',
+ borderWidth: 2,
+ borderDash: [6, 4],
+ pointRadius: 0,
+ fill: false
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: {
+ legend: { position: 'top' },
+ tooltip: {
+ callbacks: {
+ label: function(ctx) { return ' ' + ctx.parsed.y + 'm elevation'; }
+ }
+ }
+ },
+ scales: {
+ y: {
+ beginAtZero: true,
+ title: { display: true, text: 'Meters above sea level' },
+ grid: { color: 'rgba(0,0,0,0.05)' }
+ },
+ x: { grid: { display: false } }
+ }
+ }
+ });
+ })();
+ </script>
+</body>
+</html>
