@@ -17,7 +17,7 @@ const MapManager = {
         }).setView([20, 0], 2);
 
         // Add tile layer
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
             subdomains: 'abcd',
             maxZoom: 19
@@ -81,7 +81,7 @@ const MapManager = {
         }).setView([20, 10], 1.5);
 
         // Darker, more professional base layer for dev
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', {
             attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
             subdomains: 'abcd',
             maxZoom: 19
@@ -219,7 +219,7 @@ const MapManager = {
                 <span class="theme-badge">${data.theme}</span>
                 <h3>${data.name}</h3>
                 <p>${data.desc}</p>
-                <a href="${data.link}" class="btn btn-primary btn-go">View Chapter ➜</a>
+                <a href="${data.link}" class="btn btn-primary btn-go">View Chapter </a>
             `;
             
             // Add a nice fade-in animation

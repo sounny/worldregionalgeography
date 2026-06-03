@@ -224,7 +224,7 @@ function initGlobalMap() {
             maxBoundsViscosity: 1.0
         }).setView([20, 0], 2);
 
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', {
             attribution: '© OpenStreetMap © CARTO'
         }).addTo(map);
 
@@ -242,10 +242,24 @@ function initGlobalMap() {
             { name: 'Oceania', coords: [-25, 135], url: 'chapters/11-australia-oceania/index.html' }
         ];
 
+        // Region-specific colors for professional appearance
+        const regionColors = {
+            'Europe': '#2d8fa8',
+            'Russia and Central Asia': '#1e5f74',
+            'North America': '#d4873f',
+            'Latin America': '#e07b3c',
+            'Sub-Saharan Africa': '#2a9d8f',
+            'Middle East': '#40c9b8',
+            'South Asia': '#e76f51',
+            'East Asia': '#264653',
+            'Southeast Asia': '#287271',
+            'Oceania': '#8ab17d'
+        };
+
         regions.forEach(region => {
             L.circleMarker(region.coords, {
                 radius: 12,
-                fillColor: '#3b82f6',
+                fillColor: regionColors[region.name] || '#4a90a4',
                 color: '#fff',
                 weight: 2,
                 fillOpacity: 0.8
@@ -337,7 +351,7 @@ function initRegionalNavigator() {
     }).setView([20, 10], 1.5);
 
     // Darker, more professional base layer for dev
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; OpenStreetMap contributors &copy; CARTO',
         subdomains: 'abcd',
         maxZoom: 19
@@ -390,7 +404,7 @@ function initRegionalNavigator() {
             <span class="theme-badge">${data.theme || ''}</span>
             <h3>${data.name}</h3>
             <p>${data.desc || ''}</p>
-            <a href="${data.link || '#'}" class="btn btn-primary btn-go">View Chapter ➜</a>
+            <a href="${data.link || '#'}" class="btn btn-primary btn-go">View Chapter</a>
         `;
         
         // Add a nice fade-in animation

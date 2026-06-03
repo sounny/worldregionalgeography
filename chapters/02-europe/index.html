@@ -1,812 +1,820 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chapter 2: Europe - Explore the physical landscapes, cultural diversity, and supranational integration of Europe.">
-    <title>Chapter 2: Europe | World Regional Geography</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
-    <link rel="stylesheet" href="../../css/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="Chapter 2: Europe - Explore the physical landscapes, cultural diversity, and supranational integration of Europe.">
+ <title>Chapter 2: Europe | World Regional Geography</title>
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+ <link rel="stylesheet" href="../../css/style.css">
+ <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
 </head>
 <body>
-    <!-- Skip to Main Content Link (Accessibility) -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-    
-    <header class="site-header">
-        <div class="container">
-            <div class="header-brand">
-                <a href="../../index.html" class="logo">
-                    <span class="logo-icon">🌍</span>
-                    <span class="logo-text">World Regional Geography</span>
-                </a>
-            </div>
-            <nav class="main-nav" aria-label="Main navigation">
-                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                    <span class="hamburger"></span>
-                </button>
-                                <ul class="nav-menu">
-                    <li><a href="../../index.html" class="nav-link">Home</a></li>
-                    <li class="nav-dropdown">
-                        <a href="#" class="nav-link dropdown-toggle active">Chapters</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="../01-introduction/index.html">1. Introduction</a></li>
-                            <li><a href="../02-europe/index.html">2. Europe</a></li>
-                            <li><a href="../03-russia/index.html">3. Russia and Central Asia</a></li>
-                            <li><a href="../04-north-america/index.html">4. North America</a></li>
-                            <li><a href="../05-latin-america/index.html">5. Latin America</a></li>
-                            <li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
-                            <li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa & SW Asia</a></li>
-                            <li><a href="../08-south-asia/index.html">8. South Asia</a></li>
-                            <li><a href="../09-east-asia/index.html">9. East Asia</a></li>
-                            <li><a href="../10-southeast-asia/index.html">10. Southeast Asia</a></li>
-                            <li><a href="../11-australia-oceania/index.html">11. Australia & Oceania</a></li>
-                            <li><a href="../12-conclusion/index.html">12. Global Connections</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="../../standards.html" class="nav-link">Standards</a></li>
-                    <li><a href="../../index.html#chapters" class="nav-link">Resources</a></li>
-                    <li><a href="../../index.html#about" class="nav-link">About</a></li>
-                </ul>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+ <!-- Skip to Main Content Link (Accessibility) -->
+ <a href="#main-content" class="skip-link">Skip to main content</a>
+ 
+ <header class="site-header">
+ <div class="container">
+ <div class="header-brand">
+ <a href="../../index.html" class="logo">
+ <span class="logo-icon">WRG</span>
+ <span class="logo-text">World Regional Geography</span>
+ </a>
+ </div>
+ <nav class="main-nav" aria-label="Main navigation">
+ <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+ <span class="hamburger"></span>
+ </button>
+ <ul class="nav-menu">
+ <li><a href="../../index.html" class="nav-link">Home</a></li>
+ <li class="nav-dropdown">
+ <a href="#" class="nav-link dropdown-toggle active">Chapters</a>
+ <ul class="dropdown-menu">
+ <li><a href="../01-introduction/index.html">1. Introduction</a></li>
+ <li><a href="../02-europe/index.html">2. Europe</a></li>
+ <li><a href="../03-russia/index.html">3. Russia and Central Asia</a></li>
+ <li><a href="../04-north-america/index.html">4. North America</a></li>
+ <li><a href="../05-latin-america/index.html">5. Latin America</a></li>
+ <li><a href="../06-sub-saharan-africa/index.html">6. Sub-Saharan Africa</a></li>
+ <li><a href="../07-north-africa-sw-asia/index.html">7. N. Africa & SW Asia</a></li>
+ <li><a href="../08-south-asia/index.html">8. South Asia</a></li>
+ <li><a href="../09-east-asia/index.html">9. East Asia</a></li>
+ <li><a href="../10-southeast-asia/index.html">10. Southeast Asia</a></li>
+ <li><a href="../11-australia-oceania/index.html">11. Australia & Oceania</a></li>
+ <li><a href="../12-conclusion/index.html">12. Global Connections</a></li>
+ </ul>
+ </li>
+ <li><a href="../../standards.html" class="nav-link">Standards</a></li>
+ <li><a href="../../index.html#chapters" class="nav-link">Resources</a></li>
+ <li><a href="../../index.html#about" class="nav-link">About</a></li>
+ </ul>
+ </nav>
+ </div>
+ </header>
 
-    <section class="chapter-header">
-        <div class="container">
-            <p class="chapter-meta">Chapter 2 · Week 2 - 3</p>
-            <h1 class="chapter-title">Europe: Integration and Identity</h1>
-            <p class="chapter-description">A peninsula of peninsulas, Europe has shaped global history through exploration, industrialization, and integration. Its geography reveals how physical landscapes and cultural systems interact across dense, diverse societies.</p>
-        </div>
-    </section>
+ <section class="chapter-header">
+ <div class="container">
+ <p class="chapter-meta">Chapter 2 · Week 2 - 3</p>
+ <h1 class="chapter-title">Europe: Integration and Identity</h1>
+ <p class="chapter-description">A peninsula of peninsulas, Europe has shaped global history through exploration, industrialization, and integration. Its geography reveals how physical landscapes and cultural systems interact across dense, diverse societies.</p>
+ </div>
+ </section>
 
-    <main id="main-content" class="chapter-content">
-        <div class="container">
-            
-            <!-- 1. Learning Objectives -->
-            <!-- 1. At a Glance (Scaffold) -->
-            <section class="learning-scaffold" aria-label="Learning scaffold">
-                <details class="learning-scaffold-details">
-                    <summary>
-                        <div class="scaffold-head">
-                            <h2>At a Glance</h2>
-                            <div class="scaffold-meta" aria-label="Prerequisites and time estimate">
-                                <span class="scaffold-chip"><strong>Prereqs:</strong> Chapter 1</span>
-                                <span class="scaffold-chip"><strong>Time:</strong> 60 min read + 20 min activities</span>
-                                <span class="scaffold-chip"><strong>Deliverable:</strong> Quiz + Reflection</span>
-                            </div>
-                        </div>
-                    </summary>
+ <main id="main-content" class="chapter-content">
+ <div class="container">
+ 
+ <!-- 1. Learning Objectives -->
+ <!-- 1. At a Glance (Scaffold) -->
+ <section class="learning-scaffold" aria-label="Learning scaffold">
+ <details class="learning-scaffold-details">
+ <summary>
+ <div class="scaffold-head">
+ <h2>At a Glance</h2>
+ <div class="scaffold-meta" aria-label="Prerequisites and time estimate">
+ <span class="scaffold-chip"><strong>Prereqs:</strong> Chapter 1</span>
+ <span class="scaffold-chip"><strong>Time:</strong> 60 min read + 20 min activities</span>
+ <span class="scaffold-chip"><strong>Deliverable:</strong> Quiz + Reflection</span>
+ </div>
+ </div>
+ </summary>
 
-                    <div class="scaffold-grid">
-                        <div class="scaffold-card">
-                            <h3>🎯 Learning Outcomes</h3>
-                            <ul>
-                                <li><strong>Remember:</strong> Identify Europe's physical boundaries, major peninsulas, and key landforms.</li>
-                                <li><strong>Understand:</strong> Explain the influence of the Gulf Stream and landforms on human settlement.</li>
-                                <li><strong>Analyze:</strong> Examine centripetal and centrifugal forces shaping the European Union (EU).</li>
-                                <li><strong>Evaluate:</strong> Assess the challenges of supranationalism (Brexit, migration, economic disparity).</li>
-                                <li><strong>Analyze:</strong> Compare the development of nation-states and the current cultural mosaic.</li>
-                            </ul>
-                        </div>
+ <div class="scaffold-grid">
+ <div class="scaffold-card">
+ <h3> Learning Outcomes</h3>
+ <ul>
+ <li><strong>Remember:</strong> Identify Europe's physical boundaries, major peninsulas, and key landforms.</li>
+ <li><strong>Understand:</strong> Explain the influence of the Gulf Stream and landforms on human settlement.</li>
+ <li><strong>Analyze:</strong> Examine centripetal and centrifugal forces shaping the European Union (EU).</li>
+ <li><strong>Evaluate:</strong> Assess the challenges of supranationalism (Brexit, migration, economic disparity).</li>
+ <li><strong>Analyze:</strong> Compare the development of nation-states and the current cultural mosaic.</li>
+ </ul>
+ </div>
 
-                        <div class="scaffold-card">
-                            <h3>🔑 Key Terms</h3>
-                            <p>Supranationalism, Peninsula of Peninsulas, Gulf Stream, Blue Banana, Schengen Area, Devolution, Centripetal Forces, Centrifugal Forces.</p>
-                        </div>
-                    </div>
+ <div class="scaffold-card">
+ <h3> Key Terms</h3>
+ <p>Supranationalism, Peninsula of Peninsulas, Gulf Stream, Blue Banana, Schengen Area, Devolution, Centripetal Forces, Centrifugal Forces.</p>
+ </div>
+ </div>
 
-                    <div class="scaffold-grid">
-                        <div class="scaffold-card">
-                            <h3>🛑 Stop & Check</h3>
-                            <div class="quiz-question" style="margin-bottom:0.5rem;">Why is Europe so mild despite being as far north as Canada?</div>
-                            <details>
-                                <summary style="padding:0; color:var(--color-primary); font-weight:600; font-size:0.9rem;">Reveal Answer</summary>
-                                <div style="margin-top:0.5rem; font-size:0.95rem; color:var(--color-text-light);">
-                                    The <strong>Gulf Stream</strong> (North Atlantic Drift) brings warm water and air from the Gulf of Mexico across the Atlantic, moderating the climate of Western Europe.
-                                </div>
-                            </details>
-                        </div>
+ <div class="scaffold-grid">
+ <div class="scaffold-card">
+ <h3> Stop & Check</h3>
+ <div class="quiz-question" style="margin-bottom:0.5rem;">Why is Europe so mild despite being as far north as Canada?</div>
+ <details>
+ <summary style="padding:0; color:var(--color-primary); font-weight:600; font-size:0.9rem;">Reveal Answer</summary>
+ <div style="margin-top:0.5rem; font-size:0.95rem; color:var(--color-text-light);">
+ The <strong>Gulf Stream</strong> (North Atlantic Drift) brings warm water and air from the Gulf of Mexico across the Atlantic, moderating the climate of Western Europe.
+ </div>
+ </details>
+ </div>
 
-                        <div class="scaffold-card">
-                            <h3>⚡ Common Misconception</h3>
-                            <p><strong>Myth:</strong> The European Union is a single country like the USA.</p>
-                            <p><strong>Fact:</strong> The EU is a <strong>supranational organization</strong> of sovereign states. Member countries pool some sovereignty (like trade) but retain independence in many others (like military).</p>
-                        </div>
-                    </div>
-                </details>
-            </section>
+ <div class="scaffold-card">
+ <h3> Common Misconception</h3>
+ <p><strong>Myth:</strong> The European Union is a single country like the USA.</p>
+ <p><strong>Fact:</strong> The EU is a <strong>supranational organization</strong> of sovereign states. Member countries pool some sovereignty (like trade) but retain independence in many others (like military).</p>
+ </div>
+ </div>
+ </details>
+ </section>
 
-            <!-- 2. Regional Profile (Snapshot) -->
-            <section id="profile" class="section-container">
-                <h2>🏛️ Regional Snapshot: Europe at a Glance</h2>
-                <div class="profile-grid">
-                    <div class="profile-item">
-                        <strong>Approximate Area</strong>
-                        <span>~10 million km²</span>
-                    </div>
-                    <div class="profile-item">
-                        <strong>Population</strong>
-                        <span>~740 Million</span>
-                    </div>
-                    <div class="profile-item">
-                        <strong>Countries</strong>
-                        <span>44 sovereign states</span>
-                    </div>
-                    <div class="profile-item">
-                        <strong>Primary Theme</strong>
-                        <span>Supranational Integration</span>
-                    </div>
-                </div>
-                <p class="mt-4">Europe is often described as a <strong>peninsula of peninsulas</strong>. Its geography is defined by its deep relationship with the sea, which has historically facilitated trade, exploration, and the spread of ideas. Despite its small land area compared to other regions, Europe's impact on global systems - from industry to law - is profound.</p>
-                
-                <figure class="figure figure-narrow">
-                    <img src="../../images/europe_map.jpg" alt="Map of European sub-regions" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
-                    <figcaption><strong>Figure 2.0:</strong> Sub-regions of Europe. We divide the continent into Northern, Southern, Western, and Eastern sub-regions based on shared cultural and historical ties.</figcaption>
-                </figure>
-            </section>
+ <!-- Video Lecture -->
+ <section class="video-lecture-section section-container">
+ <h2> Video Lecture</h2>
+ <div class="video-container">
+ <iframe src="https://www.youtube.com/embed/Zv7B_Y_qOEU" title="Geography of Europe Video Lecture" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ </div>
+ </section>
 
-            <!-- 3. Interactive Regional Map -->
-            <section id="interactive-map" class="section-container">
-                <h2>🗺️ Interactive Map: The European Peninsula</h2>
-                <p>Explore the physical and political boundaries of Europe. Zoom in to see how mountains like the Alps and rivers like the Rhine have influenced the growth of major urban centers.</p>
-                <div id="regions-map" class="interactive-map"></div>
-                <div class="map-controls">
-                    <p class="text-sm italic text-muted">Use the layer control to toggle between Physical terrain and Political boundaries. Notice the high density of urban nodes in the "Blue Banana" corridor from London to Milan.</p>
-                </div>
-            </section>
 
-            <!-- 4. Physical Geography Analysis -->
-            <section id="physical-geography" class="section-container">
-                <h2>⛰️ Physical Geography: Landforms and Climate</h2>
-                <p>Europe's landforms cluster into four major regions, each shaping human activity in distinctive ways. Understanding these physical foundations helps explain why Europe developed as the birthplace of the Industrial Revolution and remains a center of global economic activity.</p>
-                
-                <div class="figure-row">
-                    <figure class="figure">
-                        <img src="../../images/europe_physical.jpg" alt="Physical map of Europe" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
-                        <figcaption><strong>Figure 2.1:</strong> Physical Geography. Rugged highlands in the west and north give way to the vast European Plain.</figcaption>
-                    </figure>
-                    <figure class="figure">
-                        <img src="../../images/europe_climate.jpg" alt="Climate zones of Europe" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
-                        <figcaption><strong>Figure 2.2:</strong> Climatic Moderation. The North Atlantic Drift keeps Western Europe significantly warmer than comparable latitudes in North America.</figcaption>
-                    </figure>
-                </div>
-                
-                <h3>The Four Main Landform Regions</h3>
-                
-                <div class="note-callout">
-                    <h4>🏔️ 1. The Alpine Region</h4>
-                    <p>The <strong>High Alps</strong> range from eastern France to Slovenia and include several related mountain systems:</p>
-                    <ul>
-                        <li><strong>The Pyrenees</strong> – form the natural border between France and Spain</li>
-                        <li><strong>The Apennines</strong> – run the length of the Italian peninsula</li>
-                        <li><strong>The Carpathians</strong> – loop around Romania from Slovakia</li>
-                        <li><strong>The Dinaric Alps</strong> – extend through the former Yugoslavia</li>
-                    </ul>
-                    <p>Mountains historically isolated communities, leading to distinct cultural groups. Today, the Alps are a major tourism hub—Switzerland alone earns billions annually from ski resorts and Alpine tourism.</p>
-                </div>
-                
-                <div class="note-callout">
-                    <h4>🌾 2. The Northern Lowlands (European Plain)</h4>
-                    <p>This great plain extends from southern France through Germany and all the way to the Ural Mountains in Russia. Like the American Midwest, it serves as Europe's "breadbasket" with excellent agricultural soils. The region's flat terrain has also made it a historical invasion corridor—armies from Napoleon to Hitler used it to move rapidly across the continent.</p>
-                </div>
-                
-                <div class="note-callout">
-                    <h4>🏭 3. The Central Uplands</h4>
-                    <p>The foothills of the Alps stretching across southern Germany are rich in natural resources—coal, iron ore, and timber—that fueled the Industrial Revolution. Today, this region remains Europe's manufacturing heartland, home to German automotive giants like BMW, Mercedes-Benz, and Volkswagen.</p>
-                </div>
-                
-                <div class="note-callout">
-                    <h4>🌲 4. The Western Highlands</h4>
-                    <p>These rugged, ancient mountains include the Scottish Highlands, the Welsh mountains, and portions of Scandinavia. Less suitable for agriculture, these regions support grazing livestock and forestry. The Pennines in England powered early textile mills with hydropower before coal mining became dominant.</p>
-                </div>
-                
-                <h3>The Climate Advantage: The Gulf Stream</h3>
-                <p>Europe's climate is remarkably moderate for its northern latitude. Paris is at the same latitude as Fargo, North Dakota, yet enjoys a much milder climate. The secret is the <strong>Gulf Stream</strong> (North Atlantic Drift).</p>
-                
-                <p>This powerful ocean current carries warm water from the Gulf of Mexico across the Atlantic, acting as an "oceanic radiator" that warms Western Europe. This allows:</p>
-                <ul>
-                    <li>Year-round agricultural productivity in Western Europe</li>
-                    <li>Ice-free ports along Norway's Arctic coast</li>
-                    <li>Mediterranean climates that support olives, grapes, and citrus</li>
-                    <li>Dense population settlement at latitudes that would otherwise be challenging</li>
-                </ul>
-                
-                <h3>Rivers: Europe's Transportation Network</h3>
-                <p>Two major rivers divide Europe and have served as critical transportation corridors for millennia:</p>
-                <ul>
-                    <li><strong>The Rhine</strong> – flows from Switzerland north through Germany to Rotterdam, one of the world's busiest ports</li>
-                    <li><strong>The Danube</strong> – flows from Germany east through Vienna, Budapest, and Belgrade to the Black Sea</li>
-                </ul>
-                <p>These rivers, combined with Europe's extensive coastlines, meant that most of the continent was accessible by water—a crucial advantage for trade and economic development.</p>
-                
-                <div class="inquiry-prompt">
-                    <h3>🔍 Geographic Inquiry</h3>
-                    <p>Scientists warn that Arctic ice melt could disrupt the Gulf Stream by adding fresh water to the North Atlantic, slowing the current's circulation. How might the weakening or collapse of the Gulf Stream affect: (1) Europe's agricultural productivity, (2) population distribution, and (3) the global economy?</p>
-                </div>
-            </section>
+ <!-- 2. Regional Profile (Snapshot) -->
+ <section id="profile" class="section-container">
+ <h2> Regional Snapshot: Europe at a Glance</h2>
+ <div class="profile-grid">
+ <div class="profile-item">
+ <strong>Approximate Area</strong>
+ <span>~10 million km²</span>
+ </div>
+ <div class="profile-item">
+ <strong>Population</strong>
+ <span>~740 Million</span>
+ </div>
+ <div class="profile-item">
+ <strong>Countries</strong>
+ <span>44 sovereign states</span>
+ </div>
+ <div class="profile-item">
+ <strong>Primary Theme</strong>
+ <span>Supranational Integration</span>
+ </div>
+ </div>
+ <p class="mt-4">Europe is often described as a <strong>peninsula of peninsulas</strong>. Its geography is defined by its deep relationship with the sea, which has historically facilitated trade, exploration, and the spread of ideas. Despite its small land area compared to other regions, Europe's impact on global systems - from industry to law - is profound.</p>
+ 
+ <figure class="figure figure-narrow">
+ <img src="../../images/europe_map.jpg" alt="Map of European sub-regions" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
+ <figcaption><strong>Figure 2.0:</strong> Sub-regions of Europe. We divide the continent into Northern, Southern, Western, and Eastern sub-regions based on shared cultural and historical ties.</figcaption>
+ </figure>
+ </section>
 
-            <!-- 6. Important Person Break-out (Jean Monnet) -->
-            <section class="important-person-sidebar">
-                <div class="sidebar-content">
-                    <div class="person-image">
-                        <img src="../../images/europe_eu.jpg" alt="European Union flag" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
-                    </div>
-                    <div class="person-header">
-                        <h3>👤 Important Person</h3>
-                    </div>
-                    <div class="person-info">
-                        <strong>Jean Monnet</strong>
-                        <p class="person-title">Architect of European Integration</p>
-                        <p>Jean Monnet never held elective office, yet he is known as the "Father of Europe." He pioneered the idea of <strong>supranationalism</strong>, believing that by merging the coal and steel industries of former enemies, war would become "not only unthinkable but materially impossible."</p>
-                        <a href="https://european-union.europa.eu/principles-countries-history/history-eu/eu-pioneers/jean-monnet_en" target="_blank" class="btn-text">Learn more about the Monnet Plan →</a>
-                    </div>
-                </div>
-            </section>
+ <!-- 3. Interactive Regional Map -->
+ <section id="interactive-map" class="section-container">
+ <h2> Interactive Map: The European Peninsula</h2>
+ <p>Explore the physical and political boundaries of Europe. Zoom in to see how mountains like the Alps and rivers like the Rhine have influenced the growth of major urban centers.</p>
+ <div id="regions-map" class="interactive-map"></div>
+ <div class="map-controls">
+ <p class="text-sm italic text-muted">Use the layer control to toggle between Physical terrain and Political boundaries. Notice the high density of urban nodes in the "Blue Banana" corridor from London to Milan.</p>
+ </div>
+ </section>
 
-            <!-- 5. Human Geography Analysis -->
-            <section id="human-geography" class="section-container">
-                <h2>👥 Human Geography: The Cultural Mosaic</h2>
-                <p>Europe is one of the world's most urbanized and densely populated regions. Its <strong>cultural landscape</strong> is a mosaic of languages and religions, often reflecting centuries of migration and shifting political borders.</p>
-                
-                <div class="figure-row">
-                    <figure class="figure">
-                        <img src="../../images/europe_languages.jpg" alt="Language families map" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
-                        <figcaption><strong>Figure 2.3:</strong> Linguistic Diversity. Europe is divided among three primary branches of the Indo-European family: Germanic, Romance, and Slavic.</figcaption>
-                    </figure>
-                    <figure class="figure">
-                        <img src="../../images/europe_population.jpg" alt="Population density map" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
-                        <figcaption><strong>Figure 2.4:</strong> Urban Cores. The majority of Europeans live in cities, with the highest densities found in the industrial heartlands of Germany and the UK.</figcaption>
-                    </figure>
-                </div>
+ <!-- 4. Physical Geography Analysis -->
+ <section id="physical-geography" class="section-container">
+ <h2> Physical Geography: Landforms and Climate</h2>
+ <p>Europe's landforms cluster into four major regions, each shaping human activity in distinctive ways. Understanding these physical foundations helps explain why Europe developed as the birthplace of the Industrial Revolution and remains a center of global economic activity.</p>
+ 
+ <div class="figure-row">
+ <figure class="figure">
+ <img src="../../images/europe_physical.jpg" alt="Physical map of Europe" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
+ <figcaption><strong>Figure 2.1:</strong> Physical Geography. Rugged highlands in the west and north give way to the vast European Plain.</figcaption>
+ </figure>
+ <figure class="figure">
+ <img src="../../images/europe_climate.jpg" alt="Climate zones of Europe" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
+ <figcaption><strong>Figure 2.2:</strong> Climatic Moderation. The North Atlantic Drift keeps Western Europe significantly warmer than comparable latitudes in North America.</figcaption>
+ </figure>
+ </div>
+ 
+ <h3>The Four Main Landform Regions</h3>
+ 
+ <div class="note-callout">
+ <h4> 1. The Alpine Region</h4>
+ <p>The <strong>High Alps</strong> range from eastern France to Slovenia and include several related mountain systems:</p>
+ <ul>
+ <li><strong>The Pyrenees</strong>, form the natural border between France and Spain</li>
+ <li><strong>The Apennines</strong>, run the length of the Italian peninsula</li>
+ <li><strong>The Carpathians</strong>, loop around Romania from Slovakia</li>
+ <li><strong>The Dinaric Alps</strong>, extend through the former Yugoslavia</li>
+ </ul>
+ <p>Mountains historically isolated communities, leading to distinct cultural groups. Today, the Alps are a major tourism hub, Switzerland alone earns billions annually from ski resorts and Alpine tourism.</p>
+ </div>
+ 
+ <div class="note-callout">
+ <h4> 2. The Northern Lowlands (European Plain)</h4>
+ <p>This great plain extends from southern France through Germany and all the way to the Ural Mountains in Russia. Like the American Midwest, it serves as Europe's "breadbasket" with excellent agricultural soils. The region's flat terrain has also made it a historical invasion corridor, armies from Napoleon to Hitler used it to move rapidly across the continent.</p>
+ </div>
+ 
+ <div class="note-callout">
+ <h4> 3. The Central Uplands</h4>
+ <p>The foothills of the Alps stretching across southern Germany are rich in natural resources, coal, iron ore, and timber, that fueled the Industrial Revolution. Today, this region remains Europe's manufacturing heartland, home to German automotive giants like BMW, Mercedes-Benz, and Volkswagen.</p>
+ </div>
+ 
+ <div class="note-callout">
+ <h4> 4. The Western Highlands</h4>
+ <p>These rugged, ancient mountains include the Scottish Highlands, the Welsh mountains, and portions of Scandinavia. Less suitable for agriculture, these regions support grazing livestock and forestry. The Pennines in England powered early textile mills with hydropower before coal mining became dominant.</p>
+ </div>
+ 
+ <h3>The Climate Advantage: The Gulf Stream</h3>
+ <p>Europe's climate is remarkably moderate for its northern latitude. Paris is at the same latitude as Fargo, North Dakota, yet enjoys a much milder climate. The secret is the <strong>Gulf Stream</strong> (North Atlantic Drift).</p>
+ 
+ <p>This powerful ocean current carries warm water from the Gulf of Mexico across the Atlantic, acting as an "oceanic radiator" that warms Western Europe. This allows:</p>
+ <ul>
+ <li>Year-round agricultural productivity in Western Europe</li>
+ <li>Ice-free ports along Norway's Arctic coast</li>
+ <li>Mediterranean climates that support olives, grapes, and citrus</li>
+ <li>Dense population settlement at latitudes that would otherwise be challenging</li>
+ </ul>
+ 
+ <h3>Rivers: Europe's Transportation Network</h3>
+ <p>Two major rivers divide Europe and have served as critical transportation corridors for millennia:</p>
+ <ul>
+ <li><strong>The Rhine</strong>, flows from Switzerland north through Germany to Rotterdam, one of the world's busiest ports</li>
+ <li><strong>The Danube</strong>, flows from Germany east through Vienna, Budapest, and Belgrade to the Black Sea</li>
+ </ul>
+ <p>These rivers, combined with Europe's extensive coastlines, meant that most of the continent was accessible by water, a crucial advantage for trade and economic development.</p>
+ 
+ <div class="inquiry-prompt">
+ <h3> Geographic Inquiry</h3>
+ <p>Scientists warn that Arctic ice melt could disrupt the Gulf Stream by adding fresh water to the North Atlantic, slowing the current's circulation. How might the weakening or collapse of the Gulf Stream affect: (1) Europe's agricultural productivity, (2) population distribution, and (3) the global economy?</p>
+ </div>
+ </section>
 
-                <h3>Linguistic Diversity</h3>
-                <p>Despite its small size, Europe contains remarkable linguistic diversity. The major language families include:</p>
-                <ul>
-                    <li><strong>Germanic Languages:</strong> English, German, Dutch, and Scandinavian languages (Norwegian, Swedish, Danish)</li>
-                    <li><strong>Romance Languages:</strong> Spanish, French, Italian, Portuguese, and Romanian—all descended from Latin</li>
-                    <li><strong>Slavic Languages:</strong> Russian, Polish, Czech, Slovak, Serbian, Croatian, Bulgarian, and Ukrainian</li>
-                </ul>
-                <p>Some languages fall outside these major families entirely: Hungarian (Uralic), Finnish and Estonian (Finno-Ugric), Basque (language isolate with no known relatives), and Greek (its own Indo-European branch).</p>
-                
-                <h3>The "Blue Banana" and Urban Development</h3>
-                <p>Geographers have identified Europe's economic core as the <strong>"Blue Banana"</strong>—a crescent-shaped megalopolis stretching from Manchester and London through the Rhine Valley to Milan. This corridor contains:</p>
-                <ul>
-                    <li>Over 110 million people</li>
-                    <li>Europe's highest concentration of industry and services</li>
-                    <li>Major transportation hubs including Rotterdam, Frankfurt, and Brussels</li>
-                    <li>Per capita incomes significantly above the European average</li>
-                </ul>
-                
-                <h3>Demographic Challenges</h3>
-                <p>Europe faces a profound demographic challenge: an <strong>aging population</strong> combined with low birth rates. Several countries have fertility rates well below the replacement level of 2.1:</p>
-                <ul>
-                    <li>Italy: 1.24 children per woman</li>
-                    <li>Spain: 1.19 children per woman</li>
-                    <li>Germany: 1.53 children per woman</li>
-                </ul>
-                <p>This demographic shift creates pressure on pension systems, healthcare, and labor markets—driving debates about immigration policy.</p>
-                
-                <h3>Migration and Identity</h3>
-                <p>Migration has reshaped Europe's cultural landscape. The 2015 refugee crisis, primarily from Syria, Afghanistan, and Iraq, brought over one million asylum seekers to Germany alone. This migration has sparked political debates about:</p>
-                <ul>
-                    <li>Integration and multiculturalism</li>
-                    <li>The relationship between national identity and European identity</li>
-                    <li>The economic contributions vs. costs of migration</li>
-                    <li>The rise of nationalist political movements</li>
-                </ul>
-                
-                <div class="info-callout">
-                    <h4>🏛️ Historical Perspective: From Empire to Nation-State</h4>
-                    <figure class="figure figure-narrow">
-                        <img src="../../images/europe_regions.jpg" alt="Map of the Roman Empire" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
-                        <figcaption><strong>Historical Context:</strong> The Roman Empire at its greatest extent (211 AD) laid the foundation for many of Europe's legal and infrastructure systems.</figcaption>
-                    </figure>
-                    <p>Modern European borders largely emerged from the collapse of three empires after World War I: the Austro-Hungarian Empire, the Ottoman Empire, and the German Empire. Many contemporary conflicts—from the Balkans to Ukraine—have roots in these imperial legacies and the ethnic boundaries drawn in their aftermath.</p>
-                </div>
-            </section>
+ <!-- 6. Important Person Break-out (Jean Monnet) -->
+ <section class="important-person-sidebar">
+ <div class="sidebar-content">
+ <div class="person-image">
+ <img src="../../images/europe_eu.jpg" alt="European Union flag" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge image">
+ </div>
+ <div class="person-header">
+ <h3> Important Person</h3>
+ </div>
+ <div class="person-info">
+ <strong>Jean Monnet</strong>
+ <p class="person-title">Architect of European Integration</p>
+ <p>Jean Monnet never held elective office, yet he is known as the "Father of Europe." He pioneered the idea of <strong>supranationalism</strong>, believing that by merging the coal and steel industries of former enemies, war would become "not only unthinkable but materially impossible."</p>
+ <a href="https://european-union.europa.eu/principles-countries-history/history-eu/eu-pioneers/jean-monnet_en" target="_blank" class="btn-text">Learn more about the Monnet Plan →</a>
+ </div>
+ </div>
+ </section>
 
-            <!-- NEW: European Union and Supranationalism Section -->
-            <section id="european-union" class="section-container">
-                <h2>🇪🇺 The European Union: Supranationalism in Action</h2>
-                <p>The <strong>European Union (EU)</strong> represents humanity's most ambitious experiment in supranational governance—the voluntary transfer of sovereignty from nation-states to a transnational organization. Understanding the EU is essential to understanding modern Europe.</p>
-                
-                <h3>Origins: From Coal and Steel to Economic Union</h3>
-                <p>The EU's origins lie in the aftermath of World War II. French diplomat Jean Monnet believed that by integrating the coal and steel industries of former enemies, war would become "not only unthinkable but materially impossible." This led to:</p>
-                <ul>
-                    <li><strong>1951:</strong> European Coal and Steel Community (ECSC) – France, West Germany, Italy, Belgium, Netherlands, Luxembourg</li>
-                    <li><strong>1957:</strong> Treaty of Rome creates the European Economic Community (EEC)</li>
-                    <li><strong>1992:</strong> Maastricht Treaty transforms the EEC into the European Union</li>
-                    <li><strong>2002:</strong> The Euro currency launches in 12 countries</li>
-                    <li><strong>Today:</strong> 27 member states (after UK's 2020 departure)</li>
-                </ul>
-                
-                <h3>Key EU Institutions</h3>
-                <div class="note-callout">
-                    <h4>🏛️ How the EU Works</h4>
-                    <ul>
-                        <li><strong>European Commission (Brussels):</strong> The EU's executive branch—proposes legislation and enforces treaties</li>
-                        <li><strong>European Parliament (Strasbourg):</strong> Directly elected by EU citizens—approves legislation and budgets</li>
-                        <li><strong>European Council (Brussels):</strong> Heads of government set overall political direction</li>
-                        <li><strong>European Court of Justice (Luxembourg):</strong> Interprets EU law and ensures uniform application</li>
-                        <li><strong>European Central Bank (Frankfurt):</strong> Manages monetary policy for Eurozone countries</li>
-                    </ul>
-                </div>
-                
-                <h3>The Schengen Area: Borderless Europe</h3>
-                <figure class="figure figure-narrow">
-                    <img src="../../images/schengen_area.svg" alt="Map of the Schengen Area" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
-                    <figcaption><strong>Figure 2.5:</strong> The Schengen Area. Map showing member states (blue) and non-Schengen EU members (yellow/grey). Source: <a href="https://commons.wikimedia.org/wiki/File:Map_of_the_Schengen_Area.svg" target="_blank">Wikimedia Commons</a>.</figcaption>
-                </figure>
-                <p>The <strong>Schengen Agreement</strong> (1985) created a zone of free movement across 27 European countries. Within this area:</p>
-                <ul>
-                    <li>No passport controls at internal borders</li>
-                    <li>Common visa policy for non-EU visitors</li>
-                    <li>Coordinated external border security</li>
-                </ul>
-                <p>Not all EU members are in Schengen (Ireland maintains border controls), and some non-EU countries participate (Switzerland, Norway, Iceland).</p>
-                
-                <h3>Centripetal vs. Centrifugal Forces</h3>
-                <p>Geographers analyze political integration through the lens of <strong>centripetal forces</strong> (factors that bind together) and <strong>centrifugal forces</strong> (factors that pull apart):</p>
-                
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Centripetal Forces</th>
-                            <th>Centrifugal Forces</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Shared currency (Euro)</td>
-                            <td>Linguistic diversity (24 official languages)</td>
-                        </tr>
-                        <tr>
-                            <td>Freedom of movement (Schengen)</td>
-                            <td>Uneven economic development (North vs. South)</td>
-                        </tr>
-                        <tr>
-                            <td>Common market and trade rules</td>
-                            <td>Nationalism and Euroskepticism</td>
-                        </tr>
-                        <tr>
-                            <td>Shared democratic values</td>
-                            <td>Debates over sovereignty and immigration</td>
-                        </tr>
-                        <tr>
-                            <td>Peace and stability since WWII</td>
-                            <td>Brexit and potential exits</td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <div class="inquiry-prompt">
-                    <h3>🔍 Geographic Inquiry</h3>
-                    <p>The EU has been remarkably successful at preventing war between member states—a region that experienced two devastating world wars in the 20th century. Could this model of economic integration leading to political stability work in other conflict-prone regions like the Middle East or East Asia? What geographic and cultural factors would make it easier or harder?</p>
-                </div>
-            </section>
+ <!-- 5. Human Geography Analysis -->
+ <section id="human-geography" class="section-container">
+ <h2> Human Geography: The Cultural Mosaic</h2>
+ <p>Europe is one of the world's most urbanized and densely populated regions. Its <strong>cultural landscape</strong> is a mosaic of languages and religions, often reflecting centuries of migration and shifting political borders.</p>
+ 
+ <div class="figure-row">
+ <figure class="figure">
+ <img src="../../images/europe_languages.jpg" alt="Language families map" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
+ <figcaption><strong>Figure 2.3:</strong> Linguistic Diversity. Europe is divided among three primary branches of the Indo-European family: Germanic, Romance, and Slavic.</figcaption>
+ </figure>
+ <figure class="figure">
+ <img src="../../images/europe_population.jpg" alt="Population density map" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
+ <figcaption><strong>Figure 2.4:</strong> Urban Cores. The majority of Europeans live in cities, with the highest densities found in the industrial heartlands of Germany and the UK.</figcaption>
+ </figure>
+ </div>
 
-            <!-- NEW: Natural Resources and Environmental Concerns -->
-            <section id="resources" class="section-container">
-                <h2>🌿 Natural Resources and Environmental Concerns</h2>
-                <p>Europe's natural resources powered the Industrial Revolution, but intensive exploitation has created significant environmental challenges.</p>
-                
-                <h3>Natural Resources</h3>
-                <ul>
-                    <li><strong>Coal:</strong> Once abundant in Britain, Germany, Poland, and Ukraine; largely depleted and declining due to environmental concerns</li>
-                    <li><strong>North Sea Oil and Gas:</strong> Tapped since the 1970s by Norway, UK, Denmark, Netherlands, and Germany—now half depleted</li>
-                    <li><strong>Iron Ore:</strong> Found in Sweden, France, and Ukraine—crucial for steel production</li>
-                    <li><strong>Fisheries:</strong> The North Atlantic provides 10% of global fish catches, but stocks are declining due to overfishing</li>
-                    <li><strong>Forests:</strong> Cover 40% of Europe's land area, with extensive replanting programs since 2000</li>
-                </ul>
-                
-                <h3>Environmental Challenges</h3>
-                <ul>
-                    <li><strong>Acid Rain:</strong> Industrial pollution from Central Europe damages forests and lakes in Scandinavia</li>
-                    <li><strong>Air Quality:</strong> Major cities face pollution from vehicles and industry</li>
-                    <li><strong>Overfishing:</strong> Atlantic cod and bluefin tuna stocks are severely depleted</li>
-                    <li><strong>Climate Change:</strong> Southern Europe faces drought and heat waves; Alpine glaciers are retreating</li>
-                </ul>
-                
-                <div class="info-callout">
-                    <h4>🌱 The European Green Deal</h4>
-                    <p>In 2019, the EU launched the <strong>European Green Deal</strong>, aiming to make Europe the first climate-neutral continent by 2050. Key targets include: 55% reduction in greenhouse gas emissions by 2030, €1 trillion in sustainable investments, and binding requirements for renewable energy in all member states.</p>
-                </div>
-            </section>
+ <h3>Linguistic Diversity</h3>
+ <p>Despite its small size, Europe contains remarkable linguistic diversity. The major language families include:</p>
+ <ul>
+ <li><strong>Germanic Languages:</strong> English, German, Dutch, and Scandinavian languages (Norwegian, Swedish, Danish)</li>
+ <li><strong>Romance Languages:</strong> Spanish, French, Italian, Portuguese, and Romanian, all descended from Latin</li>
+ <li><strong>Slavic Languages:</strong> Russian, Polish, Czech, Slovak, Serbian, Croatian, Bulgarian, and Ukrainian</li>
+ </ul>
+ <p>Some languages fall outside these major families entirely: Hungarian (Uralic), Finnish and Estonian (Finno-Ugric), Basque (language isolate with no known relatives), and Greek (its own Indo-European branch).</p>
+ 
+ <h3>The "Blue Banana" and Urban Development</h3>
+ <p>Geographers have identified Europe's economic core as the <strong>"Blue Banana"</strong>, a crescent-shaped megalopolis stretching from Manchester and London through the Rhine Valley to Milan. This corridor contains:</p>
+ <ul>
+ <li>Over 110 million people</li>
+ <li>Europe's highest concentration of industry and services</li>
+ <li>Major transportation hubs including Rotterdam, Frankfurt, and Brussels</li>
+ <li>Per capita incomes significantly above the European average</li>
+ </ul>
+ 
+ <h3>Demographic Challenges</h3>
+ <p>Europe faces a profound demographic challenge: an <strong>aging population</strong> combined with low birth rates. Several countries have fertility rates well below the replacement level of 2.1:</p>
+ <ul>
+ <li>Italy: 1.24 children per woman</li>
+ <li>Spain: 1.19 children per woman</li>
+ <li>Germany: 1.53 children per woman</li>
+ </ul>
+ <p>This demographic shift creates pressure on pension systems, healthcare, and labor markets, driving debates about immigration policy.</p>
+ 
+ <h3>Migration and Identity</h3>
+ <p>Migration has reshaped Europe's cultural landscape. The 2015 refugee crisis, primarily from Syria, Afghanistan, and Iraq, brought over one million asylum seekers to Germany alone. This migration has sparked political debates about:</p>
+ <ul>
+ <li>Integration and multiculturalism</li>
+ <li>The relationship between national identity and European identity</li>
+ <li>The economic contributions vs. costs of migration</li>
+ <li>The rise of nationalist political movements</li>
+ </ul>
+ 
+ <div class="info-callout">
+ <h4> Historical Perspective: From Empire to Nation-State</h4>
+ <figure class="figure figure-narrow">
+ <img src="../../images/europe_regions.jpg" alt="Map of the Roman Empire" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
+ <figcaption><strong>Historical Context:</strong> The Roman Empire at its greatest extent (211 AD) laid the foundation for many of Europe's legal and infrastructure systems.</figcaption>
+ </figure>
+ <p>Modern European borders largely emerged from the collapse of three empires after World War I: the Austro-Hungarian Empire, the Ottoman Empire, and the German Empire. Many contemporary conflicts, from the Balkans to Ukraine, have roots in these imperial legacies and the ethnic boundaries drawn in their aftermath.</p>
+ </div>
+ </section>
 
-            <!-- 7. Texas Connection Toggle -->
-            <section id="texas-connection" class="section-container">
-                <div class="texas-toggle">
-                    <button class="btn-texas-toggle" id="texas-btn">
-                        <span class="star-icon">⭐</span> Texas Connection: Heritage and Global Trade
-                    </button>
-                    <div class="texas-content hidden" id="texas-content">
-                        <h4>Old World Roots, New World Ties</h4>
-                        <p>Texas culture was deeply shaped by European migration in the 19th century. From the German "Hill Country" around Fredericksburg to the Czech heritage of West, Texas, European cultural landscapes were transplanted and adapted to the local environment.</p>
-                        <p><strong>Contemporary Trade:</strong> Today, the connection is primarily economic. The European Union is one of Texas's largest trading partners. Texas energy (LNG) and high-tech components are critical to European markets, while European investment supports thousands of jobs in the Texas "Silicon Hills."</p>
-                    </div>
-                </div>
-            </section>
+ <!-- NEW: European Union and Supranationalism Section -->
+ <section id="european-union" class="section-container">
+ <h2>🇪🇺 The European Union: Supranationalism in Action</h2>
+ <p>The <strong>European Union (EU)</strong> represents humanity's most ambitious experiment in supranational governance, the voluntary transfer of sovereignty from nation-states to a transnational organization. Understanding the EU is essential to understanding modern Europe.</p>
+ 
+ <h3>Origins: From Coal and Steel to Economic Union</h3>
+ <p>The EU's origins lie in the aftermath of World War II. French diplomat Jean Monnet believed that by integrating the coal and steel industries of former enemies, war would become "not only unthinkable but materially impossible." This led to:</p>
+ <ul>
+ <li><strong>1951:</strong> European Coal and Steel Community (ECSC), France, West Germany, Italy, Belgium, Netherlands, Luxembourg</li>
+ <li><strong>1957:</strong> Treaty of Rome creates the European Economic Community (EEC)</li>
+ <li><strong>1992:</strong> Maastricht Treaty transforms the EEC into the European Union</li>
+ <li><strong>2002:</strong> The Euro currency launches in 12 countries</li>
+ <li><strong>Today:</strong> 27 member states (after UK's 2020 departure)</li>
+ </ul>
+ 
+ <h3>Key EU Institutions</h3>
+ <div class="note-callout">
+ <h4> How the EU Works</h4>
+ <ul>
+ <li><strong>European Commission (Brussels):</strong> The EU's executive branch, proposes legislation and enforces treaties</li>
+ <li><strong>European Parliament (Strasbourg):</strong> Directly elected by EU citizens, approves legislation and budgets</li>
+ <li><strong>European Council (Brussels):</strong> Heads of government set overall political direction</li>
+ <li><strong>European Court of Justice (Luxembourg):</strong> Interprets EU law and ensures uniform application</li>
+ <li><strong>European Central Bank (Frankfurt):</strong> Manages monetary policy for Eurozone countries</li>
+ </ul>
+ </div>
+ 
+ <h3>The Schengen Area: Borderless Europe</h3>
+ <figure class="figure figure-narrow">
+ <img src="../../images/schengen_area.svg" alt="Map of the Schengen Area" class="zoomable-image" tabindex="0" role="button" aria-label="Click to enlarge map">
+ <figcaption><strong>Figure 2.5:</strong> The Schengen Area. Map showing member states (blue) and non-Schengen EU members (yellow/grey). Source: <a href="https://commons.wikimedia.org/wiki/File:Map_of_the_Schengen_Area.svg" target="_blank">Wikimedia Commons</a>.</figcaption>
+ </figure>
+ <p>The <strong>Schengen Agreement</strong> (1985) created a zone of free movement across 27 European countries. Within this area:</p>
+ <ul>
+ <li>No passport controls at internal borders</li>
+ <li>Common visa policy for non-EU visitors</li>
+ <li>Coordinated external border security</li>
+ </ul>
+ <p>Not all EU members are in Schengen (Ireland maintains border controls), and some non-EU countries participate (Switzerland, Norway, Iceland).</p>
+ 
+ <h3>Centripetal vs. Centrifugal Forces</h3>
+ <p>Geographers analyze political integration through the lens of <strong>centripetal forces</strong> (factors that bind together) and <strong>centrifugal forces</strong> (factors that pull apart):</p>
+ 
+ <table class="data-table">
+ <thead>
+ <tr>
+ <th>Centripetal Forces</th>
+ <th>Centrifugal Forces</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td>Shared currency (Euro)</td>
+ <td>Linguistic diversity (24 official languages)</td>
+ </tr>
+ <tr>
+ <td>Freedom of movement (Schengen)</td>
+ <td>Uneven economic development (North vs. South)</td>
+ </tr>
+ <tr>
+ <td>Common market and trade rules</td>
+ <td>Nationalism and Euroskepticism</td>
+ </tr>
+ <tr>
+ <td>Shared democratic values</td>
+ <td>Debates over sovereignty and immigration</td>
+ </tr>
+ <tr>
+ <td>Peace and stability since WWII</td>
+ <td>Brexit and potential exits</td>
+ </tr>
+ </tbody>
+ </table>
+ 
+ <div class="inquiry-prompt">
+ <h3> Geographic Inquiry</h3>
+ <p>The EU has been remarkably successful at preventing war between member states, a region that experienced two devastating world wars in the 20th century. Could this model of economic integration leading to political stability work in other conflict-prone regions like the Middle East or East Asia? What geographic and cultural factors would make it easier or harder?</p>
+ </div>
+ </section>
 
-            <!-- 8. Case Study -->
-            <section id="case-study" class="section-container">
-                <div class="case-study-gold">
-                    <div class="case-study-header">
-                        <span class="label">Case Study</span>
-                        <h2>Brexit and the Geography of Sovereignty</h2>
-                    </div>
-                    <p>The United Kingdom's departure from the EU (Brexit) serves as a powerful example of <strong>centrifugal forces</strong> - factors that pull a region apart. This decision wasn't just political; it was geographic, impacting trade routes, fishing rights, and the status of the border on the island of Ireland.</p>
-                    <div class="case-study-questions">
-                        <h4>Questions to Consider:</h4>
-                        <ul>
-                            <li>How did the "perceptual geography" of the UK differ between urban London and rural northern England during the Brexit vote?</li>
-                            <li>What are the implications of a "hard border" for functional regions that cross international boundaries?</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+ <!-- NEW: Natural Resources and Environmental Concerns -->
+ <section id="resources" class="section-container">
+ <h2> Natural Resources and Environmental Concerns</h2>
+ <p>Europe's natural resources powered the Industrial Revolution, but intensive exploitation has created significant environmental challenges.</p>
+ 
+ <h3>Natural Resources</h3>
+ <ul>
+ <li><strong>Coal:</strong> Once abundant in Britain, Germany, Poland, and Ukraine; largely depleted and declining due to environmental concerns</li>
+ <li><strong>North Sea Oil and Gas:</strong> Tapped since the 1970s by Norway, UK, Denmark, Netherlands, and Germany, now half depleted</li>
+ <li><strong>Iron Ore:</strong> Found in Sweden, France, and Ukraine, crucial for steel production</li>
+ <li><strong>Fisheries:</strong> The North Atlantic provides 10% of global fish catches, but stocks are declining due to overfishing</li>
+ <li><strong>Forests:</strong> Cover 40% of Europe's land area, with extensive replanting programs since 2000</li>
+ </ul>
+ 
+ <h3>Environmental Challenges</h3>
+ <ul>
+ <li><strong>Acid Rain:</strong> Industrial pollution from Central Europe damages forests and lakes in Scandinavia</li>
+ <li><strong>Air Quality:</strong> Major cities face pollution from vehicles and industry</li>
+ <li><strong>Overfishing:</strong> Atlantic cod and bluefin tuna stocks are severely depleted</li>
+ <li><strong>Climate Change:</strong> Southern Europe faces drought and heat waves; Alpine glaciers are retreating</li>
+ </ul>
+ 
+ <div class="info-callout">
+ <h4> The European Green Deal</h4>
+ <p>In 2019, the EU launched the <strong>European Green Deal</strong>, aiming to make Europe the first climate-neutral continent by 2050. Key targets include: 55% reduction in greenhouse gas emissions by 2030, €1 trillion in sustainable investments, and binding requirements for renewable energy in all member states.</p>
+ </div>
+ </section>
 
-            <!-- 9. Interactive Accordions (Summary & Glossary) -->
-            <section id="summary-glossary" class="section-container">
-                <div class="accordion">
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            📖 Glossary of Terms <span class="chevron">▼</span>
-                        </button>
-                        <div class="accordion-content">
-                            <dl>
-                                <dt>Alpine Region</dt>
-                                <dd>Europe's major mountain system including the Alps, Pyrenees, Apennines, Carpathians, and Dinaric Alps.</dd>
-                                
-                                <dt>Blue Banana</dt>
-                                <dd>A crescent-shaped megalopolis stretching from Manchester through the Rhine Valley to Milan, containing Europe's economic core.</dd>
-                                
-                                <dt>Brexit</dt>
-                                <dd>The United Kingdom's withdrawal from the European Union, completed on January 31, 2020.</dd>
-                                
-                                <dt>Centrifugal Forces</dt>
-                                <dd>Factors that divide or pull apart a state or region, such as ethnic conflict, linguistic divisions, or economic inequality.</dd>
-                                
-                                <dt>Centripetal Forces</dt>
-                                <dd>Factors that bind a state or region together, such as a shared language, strong economy, or unifying national symbols.</dd>
-                                
-                                <dt>Central Uplands</dt>
-                                <dd>The foothills of the Alps in southern Germany, rich in coal, iron ore, and timber that fueled industrialization.</dd>
-                                
-                                <dt>Danube River</dt>
-                                <dd>Europe's second-longest river, flowing from Germany through Vienna, Budapest, and Belgrade to the Black Sea.</dd>
-                                
-                                <dt>European Union (EU)</dt>
-                                <dd>A supranational organization of 27 European countries promoting economic and political integration.</dd>
-                                
-                                <dt>Eurozone</dt>
-                                <dd>The 20 EU member states that have adopted the Euro as their official currency.</dd>
-                                
-                                <dt>Gulf Stream</dt>
-                                <dd>A warm ocean current that flows from the Gulf of Mexico across the Atlantic, moderating Western Europe's climate.</dd>
-                                
-                                <dt>Northern Lowlands (European Plain)</dt>
-                                <dd>The great plain extending from France through Germany to the Ural Mountains, serving as Europe's agricultural heartland.</dd>
-                                
-                                <dt>Rhine River</dt>
-                                <dd>A major European river flowing from Switzerland through Germany to Rotterdam, the Netherlands.</dd>
-                                
-                                <dt>Schengen Area</dt>
-                                <dd>A zone comprising 27 European countries that have abolished passport controls at their mutual borders.</dd>
-                                
-                                <dt>Supranationalism</dt>
-                                <dd>A system where three or more countries share authority by transferring some sovereignty to achieve common goals.</dd>
-                                
-                                <dt>Western Highlands</dt>
-                                <dd>Ancient, rugged mountain regions in Scotland, Wales, and Scandinavia, less suitable for agriculture but rich in resources.</dd>
-                            </dl>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <button class="accordion-header">
-                            💡 Summary of Big Ideas <span class="chevron">▼</span>
-                        </button>
-                        <div class="accordion-content">
-                            <ul>
-                                <li><strong>Peninsula of Peninsulas:</strong> Europe's extensive coastlines and deep relationship with the sea facilitated trade, exploration, and the spread of ideas throughout history.</li>
-                                <li><strong>Four Landforms:</strong> The Alpine Region, Central Uplands, Northern Lowlands, and Western Highlands each shaped human settlement and economic development in distinct ways.</li>
-                                <li><strong>Climate Advantage:</strong> The Gulf Stream gives Western Europe a remarkably moderate climate for its northern latitude, enabling year-round agriculture and dense population settlement.</li>
-                                <li><strong>Cultural Mosaic:</strong> Three major language families (Germanic, Romance, Slavic) and centuries of migration created Europe's rich but sometimes contentious cultural diversity.</li>
-                                <li><strong>Supranational Integration:</strong> The EU represents history's most ambitious experiment in voluntary sovereignty transfer, creating economic union and free movement across borders.</li>
-                                <li><strong>Centripetal vs. Centrifugal:</strong> Europe demonstrates both unifying forces (shared currency, open borders, economic cooperation) and dividing forces (nationalism, linguistic diversity, uneven development).</li>
-                                <li><strong>Demographic Challenge:</strong> Aging populations and low birth rates create pressure on pension systems and drive debates about immigration policy.</li>
-                                <li><strong>Environmental Pressures:</strong> Industrial heritage has left environmental challenges including depleted fisheries, acid rain, and climate change impacts.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
+ <!-- 7. Texas Connection Toggle -->
+ <section id="texas-connection" class="section-container">
+ <div class="texas-toggle">
+ <button class="btn-texas-toggle" id="texas-btn">
+ <span class="star-icon"></span> Texas Connection: Heritage and Global Trade
+ </button>
+ <div class="texas-content hidden" id="texas-content">
+ <h4>Old World Roots, New World Ties</h4>
+ <p>Texas culture was deeply shaped by European migration in the 19th century. From the German "Hill Country" around Fredericksburg to the Czech heritage of West, Texas, European cultural landscapes were transplanted and adapted to the local environment.</p>
+ <p><strong>Contemporary Trade:</strong> Today, the connection is primarily economic. The European Union is one of Texas's largest trading partners. Texas energy (LNG) and high-tech components are critical to European markets, while European investment supports thousands of jobs in the Texas "Silicon Hills."</p>
+ </div>
+ </div>
+ </section>
 
-            <!-- 9a. Regional Decisions -->
-            <section id="regional-decisions" class="section-container">
-                <div class="regional-decisions-box">
-                    <div class="decisions-header">
-                        <span class="decisions-label">🗳️ Regional Decisions</span>
-                        <h2>Should a New Country Join the EU?</h2>
-                    </div>
-                    <p>You are a delegate at the European Council. A new Eastern European country has applied for EU membership. It has a young democracy, a struggling economy, and a large population eager for opportunity — but it also has high corruption levels and ongoing border disputes with a neighbor.</p>
-                    <div class="decisions-roles">
-                        <div class="role-card">
-                            <h4>🇩🇪 Role A: Germany (Net Contributor)</h4>
-                            <p>You pay more into the EU budget than you receive. You worry about the cost of supporting a poorer new member, but you also value expanding the single market.</p>
-                        </div>
-                        <div class="role-card">
-                            <h4>🇵🇱 Role B: Poland (Recent Member)</h4>
-                            <p>You joined the EU in 2004 and benefited enormously from EU development funds. You strongly support enlargement as a path to stability and prosperity.</p>
-                        </div>
-                        <div class="role-card">
-                            <h4>🇫🇷 Role C: France (Sovereignty Advocate)</h4>
-                            <p>You are cautious about further enlargement. You believe the EU must deepen integration among existing members before expanding, and you worry about immigration flows.</p>
-                        </div>
-                        <div class="role-card">
-                            <h4>🌍 Role D: The Applicant Country</h4>
-                            <p>You see EU membership as your path to economic development, democratic stability, and security. You are willing to implement difficult reforms to qualify.</p>
-                        </div>
-                    </div>
-                    <div class="decisions-question">
-                        <strong>Your Decision:</strong> After debating from your assigned role, vote: Should the EU admit this new member? What conditions, if any, should be required? How does geography (location, size, resources) affect your decision?
-                    </div>
-                </div>
-            </section>
+ <!-- 8. Case Study -->
+ <section id="case-study" class="section-container">
+ <div class="case-study-gold">
+ <div class="case-study-header">
+ <span class="label">Case Study</span>
+ <h2>Brexit and the Geography of Sovereignty</h2>
+ </div>
+ <p>The United Kingdom's departure from the EU (Brexit) serves as a powerful example of <strong>centrifugal forces</strong> - factors that pull a region apart. This decision wasn't just political; it was geographic, impacting trade routes, fishing rights, and the status of the border on the island of Ireland.</p>
+ <div class="case-study-questions">
+ <h4>Questions to Consider:</h4>
+ <ul>
+ <li>How did the "perceptual geography" of the UK differ between urban London and rural northern England during the Brexit vote?</li>
+ <li>What are the implications of a "hard border" for functional regions that cross international boundaries?</li>
+ </ul>
+ </div>
+ </div>
+ </section>
 
-            <!-- 9b. Data Visualization -->
-            <section id="data-viz" class="section-container">
-                <h2>📊 Data Exploration: Europe's Demographic Divide</h2>
-                <p>Europe's aging population crisis is unevenly distributed. Compare total fertility rates (children per woman) across major European nations. The <strong>replacement rate</strong> of 2.1 is shown as a reference line — any country below it faces long-term population decline without immigration.</p>
-                <div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: var(--space-4) 0;">
-                    <canvas id="europe-fertility-chart" height="80"></canvas>
-                </div>
-                <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-2);"><strong>Interpretation:</strong> Notice how Southern European nations (Italy, Spain) have the lowest fertility rates, while France and Ireland are closer to replacement level. How does this demographic data connect to debates about immigration policy and the future of the EU's workforce?</p>
-            </section>
+ <!-- 9. Interactive Accordions (Summary & Glossary) -->
+ <section id="summary-glossary" class="section-container">
+ <div class="accordion">
+ <div class="accordion-item">
+ <button class="accordion-header">
+ Glossary of Terms <span class="chevron"></span>
+ </button>
+ <div class="accordion-content">
+ <dl>
+ <dt>Alpine Region</dt>
+ <dd>Europe's major mountain system including the Alps, Pyrenees, Apennines, Carpathians, and Dinaric Alps.</dd>
+ 
+ <dt>Blue Banana</dt>
+ <dd>A crescent-shaped megalopolis stretching from Manchester through the Rhine Valley to Milan, containing Europe's economic core.</dd>
+ 
+ <dt>Brexit</dt>
+ <dd>The United Kingdom's withdrawal from the European Union, completed on January 31, 2020.</dd>
+ 
+ <dt>Centrifugal Forces</dt>
+ <dd>Factors that divide or pull apart a state or region, such as ethnic conflict, linguistic divisions, or economic inequality.</dd>
+ 
+ <dt>Centripetal Forces</dt>
+ <dd>Factors that bind a state or region together, such as a shared language, strong economy, or unifying national symbols.</dd>
+ 
+ <dt>Central Uplands</dt>
+ <dd>The foothills of the Alps in southern Germany, rich in coal, iron ore, and timber that fueled industrialization.</dd>
+ 
+ <dt>Danube River</dt>
+ <dd>Europe's second-longest river, flowing from Germany through Vienna, Budapest, and Belgrade to the Black Sea.</dd>
+ 
+ <dt>European Union (EU)</dt>
+ <dd>A supranational organization of 27 European countries promoting economic and political integration.</dd>
+ 
+ <dt>Eurozone</dt>
+ <dd>The 20 EU member states that have adopted the Euro as their official currency.</dd>
+ 
+ <dt>Gulf Stream</dt>
+ <dd>A warm ocean current that flows from the Gulf of Mexico across the Atlantic, moderating Western Europe's climate.</dd>
+ 
+ <dt>Northern Lowlands (European Plain)</dt>
+ <dd>The great plain extending from France through Germany to the Ural Mountains, serving as Europe's agricultural heartland.</dd>
+ 
+ <dt>Rhine River</dt>
+ <dd>A major European river flowing from Switzerland through Germany to Rotterdam, the Netherlands.</dd>
+ 
+ <dt>Schengen Area</dt>
+ <dd>A zone comprising 27 European countries that have abolished passport controls at their mutual borders.</dd>
+ 
+ <dt>Supranationalism</dt>
+ <dd>A system where three or more countries share authority by transferring some sovereignty to achieve common goals.</dd>
+ 
+ <dt>Western Highlands</dt>
+ <dd>Ancient, rugged mountain regions in Scotland, Wales, and Scandinavia, less suitable for agriculture but rich in resources.</dd>
+ </dl>
+ </div>
+ </div>
+ <div class="accordion-item">
+ <button class="accordion-header">
+ Summary of Big Ideas <span class="chevron"></span>
+ </button>
+ <div class="accordion-content">
+ <ul>
+ <li><strong>Peninsula of Peninsulas:</strong> Europe's extensive coastlines and deep relationship with the sea facilitated trade, exploration, and the spread of ideas throughout history.</li>
+ <li><strong>Four Landforms:</strong> The Alpine Region, Central Uplands, Northern Lowlands, and Western Highlands each shaped human settlement and economic development in distinct ways.</li>
+ <li><strong>Climate Advantage:</strong> The Gulf Stream gives Western Europe a remarkably moderate climate for its northern latitude, enabling year-round agriculture and dense population settlement.</li>
+ <li><strong>Cultural Mosaic:</strong> Three major language families (Germanic, Romance, Slavic) and centuries of migration created Europe's rich but sometimes contentious cultural diversity.</li>
+ <li><strong>Supranational Integration:</strong> The EU represents history's most ambitious experiment in voluntary sovereignty transfer, creating economic union and free movement across borders.</li>
+ <li><strong>Centripetal vs. Centrifugal:</strong> Europe demonstrates both unifying forces (shared currency, open borders, economic cooperation) and dividing forces (nationalism, linguistic diversity, uneven development).</li>
+ <li><strong>Demographic Challenge:</strong> Aging populations and low birth rates create pressure on pension systems and drive debates about immigration policy.</li>
+ <li><strong>Environmental Pressures:</strong> Industrial heritage has left environmental challenges including depleted fisheries, acid rain, and climate change impacts.</li>
+ </ul>
+ </div>
+ </div>
+ </div>
+ </section>
 
-            <!-- 9. Discussion & Reflection Prompts -->
-            <section id="discussion" class="section-container">
-                <h2>💬 Discussion & Reflection Prompts</h2>
-                <div class="discussion-box">
-                    <h3>Reflect on Your Learning</h3>
-                    <ol>
-                        <li><strong>Geographic Boundaries:</strong> Why is it difficult to define Europe's eastern boundary? How might this geographic ambiguity affect political relationships today?</li>
-                        <li><strong>Supranationalism:</strong> What are the advantages and challenges of surrendering some national sovereignty to a supranational organization like the EU?</li>
-                        <li><strong>Physical Geography & Development:</strong> How have mountains, rivers, and access to the sea shaped where Europeans have settled and built their economies?</li>
-                    </ol>
-                    <h3>Discuss With Your Peers</h3>
-                    <ul>
-                        <li>Could the EU model of integration work in other regions of the world? What geographic, cultural, or economic factors would need to be different?</li>
-                        <li>The North Atlantic Drift keeps Western Europe temperate. What would happen to migration and settlement patterns if this ocean current were disrupted by climate change?</li>
-                        <li>Brexit is an example of centrifugal forces pulling a region apart. What geographic factors might prevent other countries from leaving the EU?</li>
-                    </ul>
-                </div>
-            </section>
+ <!-- 9a. Regional Decisions -->
+ <section id="regional-decisions" class="section-container">
+ <div class="regional-decisions-box">
+ <div class="decisions-header">
+ <span class="decisions-label"> Regional Decisions</span>
+ <h2>Should a New Country Join the EU?</h2>
+ </div>
+ <p>You are a delegate at the European Council. A new Eastern European country has applied for EU membership. It has a young democracy, a struggling economy, and a large population eager for opportunity, but it also has high corruption levels and ongoing border disputes with a neighbor.</p>
+ <div class="decisions-roles">
+ <div class="role-card">
+ <h4>🇩🇪 Role A: Germany (Net Contributor)</h4>
+ <p>You pay more into the EU budget than you receive. You worry about the cost of supporting a poorer new member, but you also value expanding the single market.</p>
+ </div>
+ <div class="role-card">
+ <h4>🇵🇱 Role B: Poland (Recent Member)</h4>
+ <p>You joined the EU in 2004 and benefited enormously from EU development funds. You strongly support enlargement as a path to stability and prosperity.</p>
+ </div>
+ <div class="role-card">
+ <h4>🇫🇷 Role C: France (Sovereignty Advocate)</h4>
+ <p>You are cautious about further enlargement. You believe the EU must deepen integration among existing members before expanding, and you worry about immigration flows.</p>
+ </div>
+ <div class="role-card">
+ <h4> Role D: The Applicant Country</h4>
+ <p>You see EU membership as your path to economic development, democratic stability, and security. You are willing to implement difficult reforms to qualify.</p>
+ </div>
+ </div>
+ <div class="decisions-question">
+ <strong>Your Decision:</strong> After debating from your assigned role, vote: Should the EU admit this new member? What conditions, if any, should be required? How does geography (location, size, resources) affect your decision?
+ </div>
+ </div>
+ </section>
 
-            <!-- 10. Knowledge Check (Quiz) -->
-            <section id="quiz" class="section-container">
-                <h2>✅ Knowledge Check</h2>
-                <div id="quiz-container" class="quiz-wrapper">
-                    <p class="loading">Loading quiz questions...</p>
-                </div>
-            </section>
+ <!-- 9b. Data Visualization -->
+ <section id="data-viz" class="section-container">
+ <h2> Data Exploration: Europe's Demographic Divide</h2>
+ <p>Europe's aging population crisis is unevenly distributed. Compare total fertility rates (children per woman) across major European nations. The <strong>replacement rate</strong> of 2.1 is shown as a reference line, any country below it faces long-term population decline without immigration.</p>
+ <div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); box-shadow: 0 2px 8px rgba(0,0,0,0.1); margin: var(--space-4) 0;">
+ <canvas id="europe-fertility-chart" height="80"></canvas>
+ </div>
+ <p style="font-size: var(--text-sm); color: var(--color-text-muted); margin-top: var(--space-2);"><strong>Interpretation:</strong> Notice how Southern European nations (Italy, Spain) have the lowest fertility rates, while France and Ireland are closer to replacement level. How does this demographic data connect to debates about immigration policy and the future of the EU's workforce?</p>
+ </section>
 
-            <!-- Navigation -->
-            <nav class="chapter-nav" style="display: flex; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-8);">
-                <a href="../01-introduction/index.html" class="btn btn-primary">← Chapter 1: Introduction</a>
-                <a href="../03-russia/index.html" class="btn btn-primary">Chapter 3: Russia & Central Asia →</a>
-            </nav>
+ <!-- 9. Discussion & Reflection Prompts -->
+ <section id="discussion" class="section-container">
+ <h2> Discussion & Reflection Prompts</h2>
+ <div class="discussion-box">
+ <h3>Reflect on Your Learning</h3>
+ <ol>
+ <li><strong>Geographic Boundaries:</strong> Why is it difficult to define Europe's eastern boundary? How might this geographic ambiguity affect political relationships today?</li>
+ <li><strong>Supranationalism:</strong> What are the advantages and challenges of surrendering some national sovereignty to a supranational organization like the EU?</li>
+ <li><strong>Physical Geography & Development:</strong> How have mountains, rivers, and access to the sea shaped where Europeans have settled and built their economies?</li>
+ </ol>
+ <h3>Discuss With Your Peers</h3>
+ <ul>
+ <li>Could the EU model of integration work in other regions of the world? What geographic, cultural, or economic factors would need to be different?</li>
+ <li>The North Atlantic Drift keeps Western Europe temperate. What would happen to migration and settlement patterns if this ocean current were disrupted by climate change?</li>
+ <li>Brexit is an example of centrifugal forces pulling a region apart. What geographic factors might prevent other countries from leaving the EU?</li>
+ </ul>
+ </div>
+ </section>
 
-            <!-- Standards Alignment Map -->
-            <section class="standards-alignment" aria-label="Curriculum Standards Alignment">
-                <h2>📊 Curriculum Standards Alignment</h2>
-                <p class="standards-subtitle">This chapter aligns with the following National and State geography standards.</p>
-                
-                <div class="standards-grid">
-                    <!-- National Standards -->
-                    <details class="standard-group std-national">
-                        <summary><h3>🇺🇸 National Geography Standards</h3></summary>
-                        <div class="standard-content">
-                            <div class="standard-item">
-                                <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element II.4</a>
-                                <span class="standard-desc">Characteristics of Place: Physical (Peninsulas, Alps) and Human (Urban Cores).</span>
-                            </div>
-                            <div class="standard-item">
-                                <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element IV.13</a>
-                                <span class="standard-desc">Geopolitics: Cooperation and conflict (Supranationalism, EU, Devolution).</span>
-                            </div>
-                            <div class="standard-item">
-                                <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element IV.10</a>
-                                <span class="standard-desc">Cultural Mosaics: Linguistic diversity (Germanic, Romance, Slavic).</span>
-                            </div>
-                        </div>
-                    </details>
+ <!-- 10. Knowledge Check (Quiz) -->
+ <section id="quiz" class="section-container">
+ <h2> Knowledge Check</h2>
+ <p>Test your understanding of the core concepts covered in this chapter. This quiz consists of multiple-choice questions designed to review key terms, regional patterns, and geographic relationships. Select the best answer for each question to receive immediate feedback.</p>
+<div id="quiz-container" class="quiz-wrapper">
+ <p class="loading">Loading quiz questions...</p>
+ </div>
+ </section>
 
-                    <!-- Texas Standards -->
-                    <details class="standard-group std-texas">
-                        <summary><h3>🤠 Texas Core (GEOG 1303)</h3></summary>
-                        <div class="standard-content">
-                            <div class="standard-item">
-                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 1</a>
-                                <span class="standard-desc">Define "region" (Functional region of EU/Eurozone vs. Formal nation-states).</span>
-                            </div>
-                            <div class="standard-item">
-                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 3</a>
-                                <span class="standard-desc">Region's role in a globalizing world (EU economic integration and trade).</span>
-                            </div>
-                            <div class="standard-item">
-                                <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">Social Responsibility</a>
-                                <span class="standard-desc">Civic responsibility regarding migration policy and cultural inclusion.</span>
-                            </div>
-                        </div>
-                    </details>
+ <!-- Navigation -->
+ <nav class="chapter-nav" style="display: flex; justify-content: space-between; gap: var(--space-4); margin-bottom: var(--space-8);">
+ <a href="../01-introduction/index.html" class="btn btn-primary">← Chapter 1: Introduction</a>
+ <a href="../03-russia/index.html" class="btn btn-primary">Chapter 3: Russia & Central Asia →</a>
+ </nav>
 
-                    <!-- Florida Standards -->
-                    <details class="standard-group std-florida">
-                        <summary><h3>☀️ Florida Sunshine State (SS.912.G)</h3></summary>
-                        <div class="standard-content">
-                            <div class="standard-item">
-                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.2.1</a>
-                                <span class="standard-desc">Identify physical characteristics that define regions (Landform regions).</span>
-                            </div>
-                            <div class="standard-item">
-                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.4.2</a>
-                                <span class="standard-desc">Analyze push/pull factors of migration (2015 Refugee Crisis).</span>
-                            </div>
-                            <div class="standard-item">
-                                <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.4.7</a>
-                                <span class="standard-desc">Explain cultural diffusion throughout places (Language patterns).</span>
-                            </div>
-                        </div>
-                    </details>
-                </div>
-            </section>
+ <!-- Standards Alignment Map -->
+ <section class="standards-alignment" aria-label="Curriculum Standards Alignment">
+ <h2> Curriculum Standards Alignment</h2>
+ <p class="standards-subtitle">This chapter aligns with the following National and State geography standards.</p>
+ 
+ <div class="standards-grid">
+ <!-- National Standards -->
+ <details class="standard-group std-national">
+ <summary><h3>🇺🇸 National Geography Standards</h3></summary>
+ <div class="standard-content">
+ <div class="standard-item">
+ <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element II.4</a>
+ <span class="standard-desc">Characteristics of Place: Physical (Peninsulas, Alps) and Human (Urban Cores).</span>
+ </div>
+ <div class="standard-item">
+ <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element IV.13</a>
+ <span class="standard-desc">Geopolitics: Cooperation and conflict (Supranationalism, EU, Devolution).</span>
+ </div>
+ <div class="standard-item">
+ <a href="https://www.ncge.org/geography-for-life" target="_blank" class="standard-code">Element IV.10</a>
+ <span class="standard-desc">Cultural Mosaics: Linguistic diversity (Germanic, Romance, Slavic).</span>
+ </div>
+ </div>
+ </details>
 
-        </div>
-    </main>
+ <!-- Texas Standards -->
+ <details class="standard-group std-texas">
+ <summary><h3> Texas Core (GEOG 1303)</h3></summary>
+ <div class="standard-content">
+ <div class="standard-item">
+ <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 1</a>
+ <span class="standard-desc">Define "region" (Functional region of EU/Eurozone vs. Formal nation-states).</span>
+ </div>
+ <div class="standard-item">
+ <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">SLO 3</a>
+ <span class="standard-desc">Region's role in a globalizing world (EU economic integration and trade).</span>
+ </div>
+ <div class="standard-item">
+ <a href="https://www.thecb.state.tx.us/public-universities-health-related-institutions/academic-quality-workforce/core-curriculum/" target="_blank" class="standard-code">Social Responsibility</a>
+ <span class="standard-desc">Civic responsibility regarding migration policy and cultural inclusion.</span>
+ </div>
+ </div>
+ </details>
 
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <span class="logo-icon">🌍</span>
-                    <span>World Regional Geography</span>
-                </div>
-                <div class="footer-copyright">
-                    <p>&copy; 2026 Dr. Sounny. Open Educational Resource.</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+ <!-- Florida Standards -->
+ <details class="standard-group std-florida">
+ <summary><h3> Florida Sunshine State (SS.912.G)</h3></summary>
+ <div class="standard-content">
+ <div class="standard-item">
+ <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.2.1</a>
+ <span class="standard-desc">Identify physical characteristics that define regions (Landform regions).</span>
+ </div>
+ <div class="standard-item">
+ <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.4.2</a>
+ <span class="standard-desc">Analyze push/pull factors of migration (2015 Refugee Crisis).</span>
+ </div>
+ <div class="standard-item">
+ <a href="https://www.cpalms.org/Public/search/Standard" target="_blank" class="standard-code">SS.912.G.4.7</a>
+ <span class="standard-desc">Explain cultural diffusion throughout places (Language patterns).</span>
+ </div>
+ </div>
+ </details>
+ </div>
+ </section>
 
-    <!-- Image Lightbox Overlay -->
-    <div id="image-lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
-        <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
-        <img class="lightbox-image" src="" alt="">
-    </div>
+ </div>
+ </main>
 
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <script src="../../js/map-init.js"></script>
-    <script src="../../js/regions-data.js"></script>
-    <script src="../../js/quiz-engine.js"></script>
-    <script src="../../js/main.js"></script>
-    <script>
-        // Initialize the Chapter 2 Interactive Map
-        document.addEventListener('DOMContentLoaded', () => {
-            const map = MapManager.initMap('regions-map', [50, 10], 4);
-            if (map && window.WorldRegionsData) {
-                // Find Europe feature
-                const europeData = window.WorldRegionsData.features.find(f => f.id === 'europe');
-                if (europeData) {
-                    MapManager.addGeoJson(map, { type: "FeatureCollection", features: [europeData] }, {
-                        style: {
-                            color: 'var(--color-primary-dark)',
-                            weight: 2,
-                            fillColor: 'var(--color-primary)',
-                            fillOpacity: 0.1
-                        }
-                    }, "Europe Region");
-                }
-            }
+ <footer class="site-footer">
+ <div class="container">
+ <div class="footer-content">
+ <div class="footer-brand">
+ <span class="logo-icon">WRG</span>
+ <span>World Regional Geography</span>
+ </div>
+ <div class="footer-copyright">
+ <p>&copy; 2026 Dr. Sounny. Open Educational Resource.</p>
+ </div>
+ </div>
+ </div>
+ </footer>
 
-            // Initialize the Chapter 2 Quiz from external JSON
-            const quizContainer = document.getElementById('quiz-container');
-            if (quizContainer) {
-                fetch('quiz-data.json')
-                    .then(response => response.json())
-                    .then(data => {
-                        QuizEngine.init('quiz-container', data);
-                    })
-                    .catch(err => {
-                        console.error('Error loading quiz data:', err);
-                        quizContainer.innerHTML = '<p class="text-muted">Quiz unavailable right now.</p>';
-                    });
-            }
-        });
+ <!-- Image Lightbox Overlay -->
+ <div id="image-lightbox" class="lightbox-overlay" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+ <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
+ <img class="lightbox-image" src="" alt="">
+ </div>
 
-        // Lightbox functionality for zoomable images
-        (function() {
-            const lightbox = document.getElementById('image-lightbox');
-            const lightboxImg = lightbox.querySelector('.lightbox-image');
-            const closeBtn = lightbox.querySelector('.lightbox-close');
-            
-            // Open lightbox when clicking zoomable images
-            document.querySelectorAll('.zoomable-image').forEach(img => {
-                img.addEventListener('click', () => {
-                    lightboxImg.src = img.src;
-                    lightboxImg.alt = img.alt;
-                    lightbox.hidden = false;
-                    document.body.style.overflow = 'hidden';
-                    closeBtn.focus();
-                });
-                // Also support keyboard activation
-                img.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
-                        e.preventDefault();
-                        img.click();
-                    }
-                });
-            });
-            
-            // Close lightbox
-            function closeLightbox() {
-                lightbox.hidden = true;
-                document.body.style.overflow = '';
-            }
-            
-            closeBtn.addEventListener('click', closeLightbox);
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) closeLightbox();
-            });
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
-            });
-        })();
-    </script>
-    <script>
-        // Europe Fertility Rate Chart
-        (function() {
-            const ctx = document.getElementById('europe-fertility-chart');
-            if (!ctx) return;
-            new Chart(ctx, {
-                type: 'bar',
-                data: {
-                    labels: ['Italy', 'Spain', 'Greece', 'Germany', 'Sweden', 'Netherlands', 'UK', 'France', 'Ireland'],
-                    datasets: [{
-                        label: 'Total Fertility Rate (children per woman, 2022)',
-                        data: [1.24, 1.19, 1.32, 1.46, 1.67, 1.55, 1.56, 1.80, 1.71],
-                        backgroundColor: [
-                            'rgba(220,53,69,0.7)','rgba(220,53,69,0.7)','rgba(220,53,69,0.7)',
-                            'rgba(255,193,7,0.7)','rgba(40,167,69,0.7)','rgba(40,167,69,0.7)',
-                            'rgba(255,193,7,0.7)','rgba(40,167,69,0.7)','rgba(40,167,69,0.7)'
-                        ],
-                        borderColor: 'rgba(0,0,0,0.2)',
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.y} children/woman` } },
-                        annotation: {}
-                    },
-                    scales: {
-                        y: {
-                            beginAtZero: false,
-                            min: 0.8,
-                            max: 2.5,
-                            title: { display: true, text: 'Children per Woman' },
-                            grid: { color: 'rgba(0,0,0,0.05)' }
-                        },
-                        x: { grid: { display: false } }
-                    }
-                }
-            });
-        })();
-    </script>
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+ <script src="../../js/map-init.js"></script>
+ <script src="../../js/regions-data.js"></script>
+ <script src="../../js/quiz-engine.js"></script>
+ <script src="../../js/main.js"></script>
+ <script>
+ // Initialize the Chapter 2 Interactive Map
+ document.addEventListener('DOMContentLoaded', () => {
+ const map = MapManager.initMap('regions-map', [50, 10], 4);
+ if (map && window.WorldRegionsData) {
+ // Find Europe feature
+ const europeData = window.WorldRegionsData.features.find(f => f.id === 'europe');
+ if (europeData) {
+ MapManager.addGeoJson(map, { type: "FeatureCollection", features: [europeData] }, {
+ style: {
+ color: 'var(--color-primary-dark)',
+ weight: 2,
+ fillColor: 'var(--color-primary)',
+ fillOpacity: 0.1
+ }
+ }, "Europe Region");
+ }
+ }
+
+ // Initialize the Chapter 2 Quiz from external JSON
+ const quizContainer = document.getElementById('quiz-container');
+ if (quizContainer) {
+ fetch('quiz-data.json')
+ .then(response => response.json())
+ .then(data => {
+ QuizEngine.init('quiz-container', data);
+ })
+ .catch(err => {
+ console.error('Error loading quiz data:', err);
+ quizContainer.innerHTML = '<p class="text-muted">Quiz unavailable right now.</p>';
+ });
+ }
+ });
+
+ // Lightbox functionality for zoomable images
+ (function() {
+ const lightbox = document.getElementById('image-lightbox');
+ const lightboxImg = lightbox.querySelector('.lightbox-image');
+ const closeBtn = lightbox.querySelector('.lightbox-close');
+ 
+ // Open lightbox when clicking zoomable images
+ document.querySelectorAll('.zoomable-image').forEach(img => {
+ img.addEventListener('click', () => {
+ lightboxImg.src = img.src;
+ lightboxImg.alt = img.alt;
+ lightbox.hidden = false;
+ document.body.style.overflow = 'hidden';
+ closeBtn.focus();
+ });
+ // Also support keyboard activation
+ img.addEventListener('keydown', (e) => {
+ if (e.key === 'Enter' || e.key === ' ') {
+ e.preventDefault();
+ img.click();
+ }
+ });
+ });
+ 
+ // Close lightbox
+ function closeLightbox() {
+ lightbox.hidden = true;
+ document.body.style.overflow = '';
+ }
+ 
+ closeBtn.addEventListener('click', closeLightbox);
+ lightbox.addEventListener('click', (e) => {
+ if (e.target === lightbox) closeLightbox();
+ });
+ document.addEventListener('keydown', (e) => {
+ if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+ });
+ })();
+ </script>
+ <script>
+ // Europe Fertility Rate Chart
+ (function() {
+ const ctx = document.getElementById('europe-fertility-chart');
+ if (!ctx) return;
+ new Chart(ctx, {
+ type: 'bar',
+ data: {
+ labels: ['Italy', 'Spain', 'Greece', 'Germany', 'Sweden', 'Netherlands', 'UK', 'France', 'Ireland'],
+ datasets: [{
+ label: 'Total Fertility Rate (children per woman, 2022)',
+ data: [1.24, 1.19, 1.32, 1.46, 1.67, 1.55, 1.56, 1.80, 1.71],
+ backgroundColor: [
+ 'rgba(220,53,69,0.7)','rgba(220,53,69,0.7)','rgba(220,53,69,0.7)',
+ 'rgba(255,193,7,0.7)','rgba(40,167,69,0.7)','rgba(40,167,69,0.7)',
+ 'rgba(255,193,7,0.7)','rgba(40,167,69,0.7)','rgba(40,167,69,0.7)'
+ ],
+ borderColor: 'rgba(0,0,0,0.2)',
+ borderWidth: 1
+ }]
+ },
+ options: {
+ responsive: true,
+ plugins: {
+ legend: { display: false },
+ tooltip: { callbacks: { label: ctx => ` ${ctx.parsed.y} children/woman` } },
+ annotation: {}
+ },
+ scales: {
+ y: {
+ beginAtZero: false,
+ min: 0.8,
+ max: 2.5,
+ title: { display: true, text: 'Children per Woman' },
+ grid: { color: 'rgba(0,0,0,0.05)' }
+ },
+ x: { grid: { display: false } }
+ }
+ }
+ });
+ })();
+ </script>
 </body>
 </html>
 

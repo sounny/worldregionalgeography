@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
             maxBoundsViscosity: 1.0
         }).setView([20, 0], 2);
 
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', {
             attribution: '© OpenStreetMap © CARTO'
         }).addTo(map);
 

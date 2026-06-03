@@ -241,26 +241,7 @@ ol {
   list-style-position: inside;
 }
 
-/* =====================================================
-   Accessibility - Skip Link
-   ===================================================== */
 
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--color-primary);
-  color: white;
-  padding: 8px 16px;
-  text-decoration: none;
-  border-radius: 0 0 var(--radius-md) 0;
-  z-index: 9999;
-  font-weight: 600;
-}
-
-.skip-link:focus {
-  top: 0;
-}
 
 /* =====================================================
    Utility Classes
@@ -302,20 +283,7 @@ ol {
   margin-top: var(--space-2);
 }
 
-.skip-link {
-  position: absolute;
-  left: -999px;
-  top: var(--space-4);
-  background: var(--color-primary);
-  color: white;
-  padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-md);
-  z-index: 1001;
-}
 
-.skip-link:focus {
-  left: var(--space-4);
-}
 
 .section-title {
   text-align: center;
@@ -1653,7 +1621,7 @@ ol {
 /* Leaflet Popup Customization */
 .leaflet-popup-content {
   margin: 12px 16px;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   line-height: 1.5;
 }
 
@@ -1757,10 +1725,7 @@ ol {
   font-size: var(--text-sm);
 }
 
-.about-section {
-  padding: var(--space-16) 0;
-  background: var(--color-bg-alt);
-}
+
 
 /* Case Study Label - Texas Connection badge */
 .case-study-label {
@@ -2108,4 +2073,182 @@ ol {
     padding: var(--space-1) var(--space-3);
     font-size: 0.8rem;
     border-color: rgba(255, 255, 255, 0.3);
+}
+
+
+/* =====================================================
+   Missing Keyframe Animations
+   ===================================================== */
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    max-height: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    max-height: 500px;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================================
+   Chapter Number Badges (replaces emoji icons)
+   ===================================================== */
+
+.chapter-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+  color: white;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  margin-bottom: var(--space-3);
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+}
+
+.chapter-card:hover .chapter-number {
+  background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+  transform: scale(1.05);
+  transition: all var(--transition-base);
+}
+
+/* =====================================================
+   Logo Icon (SVG replacement)
+   ===================================================== */
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+  color: var(--color-primary);
+}
+
+.logo-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+/* =====================================================
+   Author Profile (moved from inline styles)
+   ===================================================== */
+
+.author-profile {
+  margin-top: var(--space-12);
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-8);
+}
+
+.author-profile-inner {
+  display: flex;
+  gap: var(--space-6);
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.author-avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: var(--shadow-md);
+}
+
+.author-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.author-info h3 {
+  margin-bottom: var(--space-2);
+}
+
+.author-info h4 {
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+.author-info .text-sm {
+  margin-bottom: var(--space-3);
+}
+
+.author-info .btn {
+  margin-top: var(--space-4);
+}
+
+/* =====================================================
+   Hamburger X Animation (when menu is open)
+   ===================================================== */
+
+.nav-toggle[aria-expanded="true"] .hamburger {
+  background: transparent;
+}
+
+.nav-toggle[aria-expanded="true"] .hamburger::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .hamburger::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  transition: all var(--transition-fast);
+}
+
+/* =====================================================
+   Professional Enhancements
+   ===================================================== */
+
+/* More academic heading treatment */
+.chapter-content h2 {
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: var(--space-3);
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-6);
+}
+
+.chapter-content h3 {
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-4);
+}
+
+/* Better figure captions */
+.chapter-content figcaption {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-top: var(--space-2);
+  text-align: center;
+}
+
+/* Footer brand icon */
+.footer-brand .logo-icon {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-brand .logo-icon svg {
+  width: 20px;
+  height: 20px;
 }
