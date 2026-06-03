@@ -67,6 +67,14 @@ class MockElement {
             const cls = selector.slice(1);
             return this.children.find(child => child.classList.contains(cls)) || null;
         }
+        if (selector.startsWith('#')) {
+            const id = selector.slice(1);
+            if (this.id === id) return this;
+            for (const child of this.children) {
+                const found = child.querySelector(selector);
+                if (found) return found;
+            }
+        }
         return null;
     }
     closest(selector) {
@@ -84,6 +92,19 @@ class MockElement {
     appendChild(child) {
         this.children.push(child);
         child.parentNode = this;
+    }
+    contains(child) {
+        return this.children.includes(child) || this.children.some(c => c.contains(child));
+    }
+    closest(selector) {
+        if (selector.startsWith('.')) {
+            const cls = selector.slice(1);
+            if (this.classList.contains(cls)) return this;
+        }
+        return this.parentNode ? this.parentNode.closest(selector) : null;
+    }
+    getBoundingClientRect() {
+        return { top: 0, left: 0, bottom: 0, right: 0, width: 0, height: 0 };
     }
 }
 
