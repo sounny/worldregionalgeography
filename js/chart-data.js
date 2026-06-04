@@ -111,7 +111,8 @@ const ChartDataManager = {
             }]
         },
         options: {
-            ...this.defaultOptions,
+            responsive: true,
+            maintainAspectRatio: true,
             indexAxis: 'y',
             plugins: {
                 title: {
@@ -153,7 +154,8 @@ const ChartDataManager = {
             }]
         },
         options: {
-            ...this.defaultOptions,
+            responsive: true,
+            maintainAspectRatio: true,
             plugins: {
                 title: {
                     display: true,
@@ -187,7 +189,8 @@ const ChartDataManager = {
             }]
         },
         options: {
-            ...this.defaultOptions,
+            responsive: true,
+            maintainAspectRatio: true,
             plugins: {
                 title: {
                     display: true,
@@ -213,7 +216,7 @@ const ChartDataManager = {
         data: {
             labels: ['Bangladesh', 'India', 'Pakistan', 'Sri Lanka', 'Nepal', 'Bhutan', 'Maldives'],
             datasets: [{
-                label: 'People per km²',
+                label: 'People per km\u00B2',
                 data: [1265, 464, 287, 368, 203, 43, 1719],
                 backgroundColor: [
                     '#3498DB', '#3498DB', '#3498DB', '#3498DB', 
@@ -224,7 +227,8 @@ const ChartDataManager = {
             }]
         },
         options: {
-            ...this.defaultOptions,
+            responsive: true,
+            maintainAspectRatio: true,
             plugins: {
                 title: {
                     display: true,
@@ -235,7 +239,7 @@ const ChartDataManager = {
             scales: {
                 y: {
                     beginAtZero: true,
-                    ticks: { callback: function(v) { return v + ' /km²'; } }
+                    ticks: { callback: function(v) { return v + ' /km\u00B2'; } }
                 }
             }
         }
@@ -264,7 +268,8 @@ const ChartDataManager = {
             }]
         },
         options: {
-            ...this.defaultOptions,
+            responsive: true,
+            maintainAspectRatio: true,
             plugins: {
                 title: {
                     display: true,
