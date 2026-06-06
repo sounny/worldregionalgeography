@@ -103,65 +103,72 @@ const QuizEngine = {
     },
 
     /**
-     * Attach click listeners to quiz options
+     * Attach click listeners to quiz options using event delegation
      * @param {HTMLElement} container 
      */
     attachListeners(container) {
+        // First, set up ARIA attributes for existing feedback containers
         const quizContainers = container.querySelectorAll('.quiz-container');
-        
         quizContainers.forEach(quiz => {
-            const options = quiz.querySelectorAll('.quiz-option');
             const feedback = quiz.querySelector('.quiz-feedback');
-
             if (feedback) {
                 feedback.setAttribute('aria-live', 'polite');
                 feedback.setAttribute('role', 'status');
             }
-            
-            options.forEach(option => {
-                const input = option.querySelector('input[type="radio"]');
-                if (!input) return;
+        });
 
-                // Use change so keyboard selection works (Space/Arrow keys)
-                input.addEventListener('change', () => {
-                    // Prevent re-answering if already answered
-                    if (quiz.classList.contains('answered')) return;
+        // Attach a single delegated event listener for 'change'
+        // We use an attribute check to ensure we only attach this once per container if init is called multiple times
+        if (container.dataset.quizListenersAttached) return;
+        container.dataset.quizListenersAttached = 'true';
 
-                    const isCorrect = option.dataset.correct === 'true';
+        container.addEventListener('change', (event) => {
+            const input = event.target;
+            if (input.tagName !== 'INPUT' || input.type !== 'radio') return;
 
-                    // Mark quiz as answered
-                    quiz.classList.add('answered');
+            const option = input.closest('.quiz-option');
+            if (!option) return;
 
-                    // Style the selected option
-                    option.classList.add(isCorrect ? 'correct' : 'incorrect');
+            const quiz = option.closest('.quiz-container');
+            if (!quiz) return;
 
-                    // Highlight correct answer if wrong
-                    if (!isCorrect) {
-                        const correctOption = quiz.querySelector('[data-correct="true"]');
-                        if (correctOption) correctOption.classList.add('correct');
-                    }
+            // Prevent re-answering if already answered
+            if (quiz.classList.contains('answered')) return;
 
-                    // Show feedback
-                    if (feedback) {
-                        feedback.classList.add('show');
-                        feedback.classList.add(isCorrect ? 'success' : 'error');
+            const isCorrect = option.dataset.correct === 'true';
 
-                        const feedbackText = option.dataset.feedback || '';
-                        const correctFeedback = quiz.querySelector('[data-correct="true"]')?.dataset.feedback || '';
+            // Mark quiz as answered
+            quiz.classList.add('answered');
 
-                        // Clear previous content
-                        feedback.innerHTML = '';
+            // Style the selected option
+            option.classList.add(isCorrect ? 'correct' : 'incorrect');
 
-                        const p = document.createElement('p');
-                        p.className = isCorrect ? 'feedback-correct' : 'feedback-incorrect';
-                        p.textContent = isCorrect
-                            ? `Correct! ${feedbackText}`
-                            : `Not quite. ${correctFeedback}`;
+            // Highlight correct answer if wrong
+            if (!isCorrect) {
+                const correctOption = quiz.querySelector('[data-correct="true"]');
+                if (correctOption) correctOption.classList.add('correct');
+            }
 
-                        feedback.appendChild(p);
-                    }
-                });
-            });
+            // Show feedback
+            const feedback = quiz.querySelector('.quiz-feedback');
+            if (feedback) {
+                feedback.classList.add('show');
+                feedback.classList.add(isCorrect ? 'success' : 'error');
+
+                const feedbackText = option.dataset.feedback || '';
+                const correctFeedback = quiz.querySelector('[data-correct="true"]')?.dataset.feedback || '';
+
+                // Clear previous content
+                feedback.innerHTML = '';
+
+                const p = document.createElement('p');
+                p.className = isCorrect ? 'feedback-correct' : 'feedback-incorrect';
+                p.textContent = isCorrect
+                    ? `Correct! ${feedbackText}`
+                    : `Not quite. ${correctFeedback}`;
+
+                feedback.appendChild(p);
+            }
         });
     }
 };
