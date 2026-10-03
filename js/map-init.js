@@ -3,6 +3,16 @@
  * Handles Leaflet map setup, tile layers, and GeoJSON integration.
  */
 
+function escapeHtml(str) {
+    if (str == null) return '';
+    return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
 const MapManager = {
     /**
      * Initialize a standard Leaflet map
@@ -85,6 +95,11 @@ const MapManager = {
                     // Enhanced popup with link to chapter
                     let linkUrl = feature.properties.link || feature.properties.chapter;
 
+                    // Sanitize linkUrl to prevent JavaScript execution via javascript: URIs
+                    if (linkUrl && linkUrl.trim().toLowerCase().startsWith('javascript:')) {
+                        linkUrl = '';
+                    }
+
                     // Adjust path for chapter pages (which are two levels deep)
                     if (linkUrl && !linkUrl.startsWith('http') && !linkUrl.startsWith('../')) {
                         if (window.location.pathname.includes('/chapters/')) {
@@ -92,10 +107,13 @@ const MapManager = {
                         }
                     }
 
-                    const chapterLink = linkUrl
-                        ? `<br><a href="${linkUrl}" class="popup-link">Go to chapter →</a>`
+                    const safeName = escapeHtml(feature.properties.name);
+                    const safeLink = escapeHtml(linkUrl);
+
+                    const chapterLink = safeLink
+                        ? `<br><a href="${safeLink}" class="popup-link">Go to chapter →</a>`
                         : '';
-                    layer.bindPopup(`<strong>${feature.properties.name}</strong>${chapterLink}`);
+                    layer.bindPopup(`<strong>${safeName}</strong>${chapterLink}`);
                 }
                 
                 if (options.onEachFeature) {
