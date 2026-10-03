@@ -150,6 +150,7 @@ class MockElement {
 
 global.window = {};
 global.document = {
+    createDocumentFragment: () => new MockElement(''),
     createElement: (tag) => new MockElement(tag),
     getElementById: (id) => null,
     body: new MockElement('BODY')

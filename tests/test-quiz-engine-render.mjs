@@ -8,17 +8,70 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Mock browser environment
 global.window = {};
+
+class MockElement {
+    constructor(tag) {
+        this.tagName = tag ? tag.toUpperCase() : '';
+        this.childNodes = [];
+        this.classList = { add: () => {}, remove: () => {}, contains: () => false };
+        this.dataset = {};
+        this.innerHTML = '';
+        this.textContent = '';
+    }
+    setAttribute() {}
+    appendChild(node) {
+        this.childNodes.push(node);
+        if (node.tagName === '') {
+            // It's a fragment
+            for (const child of node.childNodes) {
+                // To get proper serialization, we need to add child node directly to parent so its innerHTML gets computed correctly
+                let tempMock = new MockElement('div');
+                tempMock.appendChild(child);
+                this.innerHTML += tempMock.innerHTML;
+            }
+        }
+        // Basic serialization to string for innerHTML matching in tests
+        if (node.tagName && node.tagName !== '') {
+            let attrs = '';
+            if (node._attributes) {
+                for (const [key, val] of Object.entries(node._attributes)) {
+                    attrs += ` ${key}="${val}"`;
+                }
+            }
+            if (node.className) attrs += ` class="${node.className}"`;
+
+            // To properly mock textContent vs innerHTML escaping
+            let contentStr = '';
+            if (node.textContent && !node.innerHTML && node.childNodes.length === 0) {
+                contentStr = node.textContent
+                    .replace(/&/g, "&amp;")
+                    .replace(/</g, "&lt;")
+                    .replace(/>/g, "&gt;");
+            } else {
+                contentStr = node.innerHTML || node.textContent || '';
+            }
+            this.innerHTML += `<${node.tagName.toLowerCase()}${attrs}>${contentStr}</${node.tagName.toLowerCase()}>`;
+        }
+    }
+    querySelector() { return null; }
+    querySelectorAll() { return []; }
+
+    // Override setAttribute to capture them
+    setAttribute(name, value) {
+        if (!this._attributes) this._attributes = {};
+        // Escape quotes for attributes
+        this._attributes[name] = String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+}
+
 global.document = {
-    createElement: (tag) => ({
-        tagName: tag.toUpperCase(),
-        classList: { add: () => {}, remove: () => {}, contains: () => false },
-        dataset: {},
-        setAttribute: () => {},
-        innerHTML: '',
-        appendChild: () => {},
-        querySelector: () => null,
-        querySelectorAll: () => []
-    }),
+    createElement: (tag) => new MockElement(tag),
+    createDocumentFragment: () => new MockElement(''),
     getElementById: () => null
 };
 
@@ -34,7 +87,7 @@ const QuizEngine = global.window.QuizEngine;
 
 describe('QuizEngine.render', () => {
     it('should render a single question correctly', () => {
-        const container = { innerHTML: '' };
+        const container = new MockElement('div');
         const questions = [{
             question: 'Test Question',
             options: [{ text: 'Option 1', correct: true }]
@@ -50,7 +103,7 @@ describe('QuizEngine.render', () => {
     });
 
     it('should render scenario when provided', () => {
-        const container = { innerHTML: '' };
+        const container = new MockElement('div');
         const questions = [{
             question: 'Q',
             scenario: 'Test Scenario',
@@ -63,7 +116,7 @@ describe('QuizEngine.render', () => {
     });
 
     it('should not render scenario container when not provided', () => {
-        const container = { innerHTML: '' };
+        const container = new MockElement('div');
         const questions = [{
             question: 'Q',
             options: []
@@ -74,7 +127,7 @@ describe('QuizEngine.render', () => {
     });
 
     it('should set correct data attributes for options', () => {
-        const container = { innerHTML: '' };
+        const container = new MockElement('div');
         const questions = [{
             question: 'Q',
             options: [
@@ -95,7 +148,7 @@ describe('QuizEngine.render', () => {
     });
 
     it('should escape HTML in content', () => {
-        const container = { innerHTML: '' };
+        const container = new MockElement('div');
         const questions = [{
             question: '<script>alert(1)</script>',
             scenario: '<b>Bold</b>',
@@ -120,7 +173,7 @@ describe('QuizEngine.render', () => {
     });
 
     it('should render multiple questions with correct indices', () => {
-        const container = { innerHTML: '' };
+        const container = new MockElement('div');
         const questions = [
             { question: 'Q1', options: [] },
             { question: 'Q2', options: [] }
