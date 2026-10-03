@@ -1,0 +1,45 @@
+
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+        <script src="js/map-init.js"></script>
+        <style>
+        .leaflet-popup-content-wrapper {
+            background-color: white !important;
+        }
+        </style>
+        </head>
+        <body>
+        <div id="map" style="height: 400px; width: 600px;"></div>
+        <script>
+        // Wait for Leaflet
+        setTimeout(() => {
+            const map = MapManager.initMap('map');
+            const data = {
+                "type": "FeatureCollection",
+                "features": [
+                    {
+                        "type": "Feature",
+                        "properties": {
+                            "name": "<strong>Should be escaped</strong><img src=x onerror=alert('XSS_name')>",
+                            "link": "javascript:alert('XSS_link')"
+                        },
+                        "geometry": {
+                            "type": "Point",
+                            "coordinates": [20, 0]
+                        }
+                    }
+                ]
+            };
+            const layer = MapManager.addGeoJson(map, data);
+
+            // Open the popup on the first feature immediately to screenshot
+            layer.eachLayer(function(l) {
+                l.openPopup();
+            });
+        }, 500);
+        </script>
+        </body>
+        </html>
