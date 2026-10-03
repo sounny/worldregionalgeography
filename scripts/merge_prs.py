@@ -1,6 +1,4 @@
 import subprocess
-import sys
-import re
 
 def run_command(command, check=True):
     try:
