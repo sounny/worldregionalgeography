@@ -107,61 +107,66 @@ const QuizEngine = {
      * @param {HTMLElement} container 
      */
     attachListeners(container) {
-        const quizContainers = container.querySelectorAll('.quiz-container');
-        
-        quizContainers.forEach(quiz => {
-            const options = quiz.querySelectorAll('.quiz-option');
-            const feedback = quiz.querySelector('.quiz-feedback');
+        if (container.dataset.quizListenersAttached) return;
+        container.dataset.quizListenersAttached = 'true';
 
+        // Set up accessibility attributes for feedback elements
+        const quizContainers = container.querySelectorAll('.quiz-container');
+        quizContainers.forEach(quiz => {
+            const feedback = quiz.querySelector('.quiz-feedback');
             if (feedback) {
                 feedback.setAttribute('aria-live', 'polite');
                 feedback.setAttribute('role', 'status');
             }
+        });
+
+        // Use event delegation for input changes
+        container.addEventListener('change', (event) => {
+            const input = event.target;
+            if (input.tagName !== 'INPUT' || input.type !== 'radio') return;
+
+            const option = input.closest('.quiz-option');
+            const quiz = input.closest('.quiz-container');
             
-            options.forEach(option => {
-                const input = option.querySelector('input[type="radio"]');
-                if (!input) return;
+            if (!option || !quiz) return;
 
-                // Use change so keyboard selection works (Space/Arrow keys)
-                input.addEventListener('change', () => {
-                    // Prevent re-answering if already answered
-                    if (quiz.classList.contains('answered')) return;
+            // Prevent re-answering if already answered
+            if (quiz.classList.contains('answered')) return;
 
-                    const isCorrect = option.dataset.correct === 'true';
+            const isCorrect = option.dataset.correct === 'true';
 
-                    // Mark quiz as answered
-                    quiz.classList.add('answered');
+            // Mark quiz as answered
+            quiz.classList.add('answered');
 
-                    // Style the selected option
-                    option.classList.add(isCorrect ? 'correct' : 'incorrect');
+            // Style the selected option
+            option.classList.add(isCorrect ? 'correct' : 'incorrect');
 
-                    // Highlight correct answer if wrong
-                    if (!isCorrect) {
-                        const correctOption = quiz.querySelector('[data-correct="true"]');
-                        if (correctOption) correctOption.classList.add('correct');
-                    }
+            // Highlight correct answer if wrong
+            if (!isCorrect) {
+                const correctOption = quiz.querySelector('[data-correct="true"]');
+                if (correctOption) correctOption.classList.add('correct');
+            }
 
-                    // Show feedback
-                    if (feedback) {
-                        feedback.classList.add('show');
-                        feedback.classList.add(isCorrect ? 'success' : 'error');
+            // Show feedback
+            const feedback = quiz.querySelector('.quiz-feedback');
+            if (feedback) {
+                feedback.classList.add('show');
+                feedback.classList.add(isCorrect ? 'success' : 'error');
 
-                        const feedbackText = option.dataset.feedback || '';
-                        const correctFeedback = quiz.querySelector('[data-correct="true"]')?.dataset.feedback || '';
+                const feedbackText = option.dataset.feedback || '';
+                const correctFeedback = quiz.querySelector('[data-correct="true"]')?.dataset.feedback || '';
 
-                        // Clear previous content
-                        feedback.innerHTML = '';
+                // Clear previous content
+                feedback.innerHTML = '';
 
-                        const p = document.createElement('p');
-                        p.className = isCorrect ? 'feedback-correct' : 'feedback-incorrect';
-                        p.textContent = isCorrect
-                            ? `Correct! ${feedbackText}`
-                            : `Not quite. ${correctFeedback}`;
+                const p = document.createElement('p');
+                p.className = isCorrect ? 'feedback-correct' : 'feedback-incorrect';
+                p.textContent = isCorrect
+                    ? `Correct! ${feedbackText}`
+                    : `Not quite. ${correctFeedback}`;
 
-                        feedback.appendChild(p);
-                    }
-                });
-            });
+                feedback.appendChild(p);
+            }
         });
     }
 };
